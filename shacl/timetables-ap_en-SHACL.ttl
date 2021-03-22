@@ -2,26 +2,26 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/timetables-ap_en> <https://semiceu.github.io/shacl/timetables-ap_enshapes> <https://semiceu.github.io/shacl/timetables-ap_en#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RouteShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceLinkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#PointOnRouteShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#LineShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#StopPointInJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#TimeTabledPassingTimeShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#JourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape>,
+<https://semiceu.github.io/shacl/timetables-ap_en> <https://semiceu.github.io/shacl/timetables-ap_enshapes> <https://semiceu.github.io/shacl/timetables-ap_en#PointOnRouteShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#PointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyLinkShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#VehicleJourneyShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#PointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyLinkShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RouteLinkShape> .
+    <https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#JourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RouteShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#LineShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#TimeTabledPassingTimeShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RouteLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#StopPointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape> a shacl:NodeShape;
   shacl:closed false;
@@ -32,16 +32,16 @@
     shacl:name "etc"@en;
     shacl:path <http://fixme.com#etc>
   ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "transportmode"@en;
+    shacl:path <http://fixme.com#transportmode>
+  ], [
     shacl:class <http://fixme.com#Line>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
     shacl:name "composedOf"@en;
     shacl:path <http://fixme.com#composedOf>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "transportmode"@en;
-    shacl:path <http://fixme.com#transportmode>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -54,8 +54,9 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "destinationDisplayRef"@en;
-    shacl:path <http://fixme.com#destinationDisplayRef>
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ], [
     shacl:class <http://fixme.com#PointInJourneyPattern>;
     shacl:definition "TODO"@en;
@@ -70,26 +71,24 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
+    shacl:name "destinationDisplayRef"@en;
+    shacl:path <http://fixme.com#destinationDisplayRef>
   ];
   shacl:targetClass <http://fixme.com#JourneyPattern> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#LineShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
-  ], [
     shacl:class <http://fixme.com#Route>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
     shacl:name "madeUpOf"@en;
     shacl:path <http://fixme.com#madeUpOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "publicCode"@en;
+    shacl:path <http://fixme.com#publicCode>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -99,44 +98,45 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "transportmode"@en;
-    shacl:path <http://fixme.com#transportmode>
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "publicCode"@en;
-    shacl:path <http://fixme.com#publicCode>
+    shacl:name "transportmode"@en;
+    shacl:path <http://fixme.com#transportmode>
   ];
   shacl:targetClass <http://fixme.com#Line> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#GroupOfLines>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUpOf"@en;
-    shacl:path <http://fixme.com#madeUpOf>
-  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <http://fixme.com#etc>
+  ], [
+    shacl:class <http://fixme.com#GroupOfLines>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUpOf"@en;
+    shacl:path <http://fixme.com#madeUpOf>
   ];
   shacl:targetClass <http://fixme.com#Network> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#ScheduledStopPoint>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:path <http://fixme.com#PassengerStopAssignment.scheduledStopPoint>
-  ], [
     shacl:class <http://fixme.com#StopPlace>;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <http://fixme.com#PassengerStopAssignment.stopPlace>
+  ], [
+    shacl:class <http://fixme.com#ScheduledStopPoint>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#PassengerStopAssignment.scheduledStopPoint>
   ], [
     shacl:class <http://fixme.com#Quay>;
     shacl:definition "TODO"@en;
@@ -149,23 +149,18 @@
 <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#TimeTabledPassingTime>;
-    shacl:definition "TODO"@en;
-    shacl:name "at"@en;
-    shacl:path <http://fixme.com#at>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
-  ], [
     shacl:class <http://fixme.com#Point>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "viewedAs"@en;
     shacl:path <http://fixme.com#aViewOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ], [
     shacl:class <http://fixme.com#Point>;
     shacl:definition "TODO"@en;
@@ -179,18 +174,17 @@
     shacl:minCount 1;
     shacl:name "order"@en;
     shacl:path <http://fixme.com#order>
+  ], [
+    shacl:class <http://fixme.com#TimeTabledPassingTime>;
+    shacl:definition "TODO"@en;
+    shacl:name "at"@en;
+    shacl:path <http://fixme.com#at>
   ];
   shacl:targetClass <http://fixme.com#PointInJourneyPattern> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#PointOnRouteShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
-  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -203,6 +197,12 @@
     shacl:minCount 1;
     shacl:name "viewedAs"@en;
     shacl:path <http://fixme.com#aViewOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ], [
     shacl:class <http://fixme.com#RoutePoint>;
     shacl:definition "TODO"@en;
@@ -222,10 +222,6 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "linestring"@en
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <http://fixme.com#etc>
@@ -237,34 +233,28 @@
     shacl:name "startOf"@en;
     shacl:path <http://fixme.com#from>
   ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "distance"@en;
-    shacl:path <http://fixme.com#distance>
-  ], [
     shacl:class <http://fixme.com#RoutePoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "startOf"@en;
     shacl:path <http://fixme.com#from>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "linestring"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "distance"@en;
+    shacl:path <http://fixme.com#distance>
   ];
   shacl:targetClass <http://fixme.com#RouteLink> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "name"@en
-  ], [
-    shacl:class <http://fixme.com#RouteLink>;
-    shacl:definition "TODO"@en;
-    shacl:name "to"@en;
-    shacl:path <http://fixme.com#endOf>
-  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -280,6 +270,16 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "location"@en
+  ], [
+    shacl:class <http://fixme.com#RouteLink>;
+    shacl:definition "TODO"@en;
+    shacl:name "to"@en;
+    shacl:path <http://fixme.com#endOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "name"@en
   ];
   shacl:targetClass <http://fixme.com#RoutePoint> .
 
@@ -297,16 +297,16 @@
     shacl:name "coveredBy"@en;
     shacl:path <http://fixme.com#coveredBy>
   ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "directionRef"@en;
-    shacl:path <http://fixme.com#directionRef>
-  ], [
     shacl:class <http://fixme.com#PointOnRoute>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
     shacl:name "trough"@en;
     shacl:path <http://fixme.com#trough>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "directionRef"@en;
+    shacl:path <http://fixme.com#directionRef>
   ];
   shacl:targetClass <http://fixme.com#Route> .
 
@@ -319,6 +319,11 @@
     shacl:name "etc"@en;
     shacl:path <http://fixme.com#etc>
   ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "location"@en
+  ], [
     shacl:class <http://fixme.com#ServiceLink>;
     shacl:definition "TODO"@en;
     shacl:name "to"@en;
@@ -329,11 +334,6 @@
     shacl:maxCount 1;
     shacl:name "stopType"@en;
     shacl:path <http://fixme.com#stopType>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "location"@en
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -353,14 +353,21 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "forAlighting"@en;
-    shacl:path <http://fixme.com#forAlighting>
+    shacl:name "departureTime"@en;
+    shacl:path <http://fixme.com#departureTime>
+  ], [
+    shacl:class <http://fixme.com#ScheduledStopPoint>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "arrivalStop"@en;
+    shacl:path <http://fixme.com#arrivalStop>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "forBoarding"@en;
-    shacl:path <http://fixme.com#forBoarding>
+    shacl:name "arrivalTime"@en;
+    shacl:path <http://fixme.com#arrivalTime>
   ], [
     shacl:class <http://fixme.com#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
@@ -368,12 +375,6 @@
     shacl:minCount 1;
     shacl:name "departureStop"@en;
     shacl:path <http://fixme.com#departureStop>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "arrivalTime"@en;
-    shacl:path <http://fixme.com#arrivalTime>
   ], [
     shacl:class <http://fixme.com#Line>;
     shacl:definition "TODO"@en;
@@ -385,15 +386,14 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <http://fixme.com#departureTime>
+    shacl:name "forAlighting"@en;
+    shacl:path <http://fixme.com#forAlighting>
   ], [
-    shacl:class <http://fixme.com#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "arrivalStop"@en;
-    shacl:path <http://fixme.com#arrivalStop>
+    shacl:name "forBoarding"@en;
+    shacl:path <http://fixme.com#forBoarding>
   ];
   shacl:targetClass <http://fixme.com#ServiceJourneyLink> .
 
@@ -412,11 +412,6 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <http://fixme.com#departureTime>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <http://fixme.com#etc>
@@ -425,6 +420,11 @@
     shacl:definition "TODO"@en;
     shacl:name "madeUsing"@en;
     shacl:path <http://fixme.com#madeUsing>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "departureTime"@en;
+    shacl:path <http://fixme.com#departureTime>
   ];
   shacl:targetClass <http://fixme.com#ServiceJourney> .
 
@@ -438,18 +438,18 @@
     shacl:name "startOf"@en;
     shacl:path <http://fixme.com#from>
   ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
-  ], [
     shacl:class <http://fixme.com#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "startOf"@en;
     shacl:path <http://fixme.com#from>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -460,33 +460,18 @@
 <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#AccessModes>;
     shacl:definition "TODO"@en;
-    shacl:name "accessModes"@en
+    shacl:maxCount 1;
+    shacl:name "accessabilityAssesment"@en
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "centroid"@en
   ], [
-    shacl:class <http://fixme.com#PlaceType>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "placeType"@en
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "roadAddress"@en
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "polygon"@en
-  ], [
-    shacl:class <http://fixme.com#StopPlaceType>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "stopPlaceType"@en;
-    shacl:path <http://fixme.com#stopPlaceType>
+    shacl:name "publicCode"@en;
+    shacl:path <http://fixme.com#publicCode>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -496,7 +481,11 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "accessabilityAssesment"@en
+    shacl:name "polygon"@en
+  ], [
+    shacl:class <http://fixme.com#AccessModes>;
+    shacl:definition "TODO"@en;
+    shacl:name "accessModes"@en
   ], [
     shacl:class <http://fixme.com#Transportmode>;
     shacl:definition "TODO"@en;
@@ -511,8 +500,19 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "publicCode"@en;
-    shacl:path <http://fixme.com#publicCode>
+    shacl:name "roadAddress"@en
+  ], [
+    shacl:class <http://fixme.com#StopPlaceType>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "stopPlaceType"@en;
+    shacl:path <http://fixme.com#stopPlaceType>
+  ], [
+    shacl:class <http://fixme.com#PlaceType>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "placeType"@en
   ];
   shacl:targetClass <http://fixme.com#PassengerStopAssignment.stopPlace> .
 
@@ -521,21 +521,8 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "forAlighting"@en;
-    shacl:path <http://fixme.com#forAlighting>
-  ], [
-    shacl:class <http://fixme.com#ScheduledStopPoint>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "viewedAs"@en;
-    shacl:path <http://fixme.com#aViewOf>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etrc"@en;
-    shacl:path <http://fixme.com#etrc>
+    shacl:name "forBoarding"@en;
+    shacl:path <http://fixme.com#forBoarding>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -552,8 +539,21 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "forBoarding"@en;
-    shacl:path <http://fixme.com#forBoarding>
+    shacl:name "forAlighting"@en;
+    shacl:path <http://fixme.com#forAlighting>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etrc"@en;
+    shacl:path <http://fixme.com#etrc>
+  ], [
+    shacl:class <http://fixme.com#ScheduledStopPoint>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "viewedAs"@en;
+    shacl:path <http://fixme.com#aViewOf>
   ];
   shacl:targetClass <http://fixme.com#StopPointInJourneyPattern> .
 
@@ -562,13 +562,13 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "departureDayOffset"@en;
-    shacl:path <http://fixme.com#departureDayOffset>
+    shacl:name "arrivalTime"@en;
+    shacl:path <http://fixme.com#arrivalTime>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <http://fixme.com#departureTime>
+    shacl:name "departureDayOffset"@en;
+    shacl:path <http://fixme.com#departureDayOffset>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -577,27 +577,27 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <http://fixme.com#etc>
+    shacl:name "departureTime"@en;
+    shacl:path <http://fixme.com#departureTime>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "arrivalTime"@en;
-    shacl:path <http://fixme.com#arrivalTime>
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <http://fixme.com#etc>
   ];
   shacl:targetClass <http://fixme.com#TimeTabledPassingTime> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#VehicleJourneyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#JourneyPattern>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUsing"@en
-  ], [
     shacl:class <http://fixme.com#TimeTabledPassingTime>;
     shacl:definition "TODO"@en;
     shacl:name "passedAt"@en;
     shacl:path <http://fixme.com#passedAt>
+  ], [
+    shacl:class <http://fixme.com#JourneyPattern>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUsing"@en
   ];
   shacl:targetClass <http://fixme.com#VehicleJourney> .
