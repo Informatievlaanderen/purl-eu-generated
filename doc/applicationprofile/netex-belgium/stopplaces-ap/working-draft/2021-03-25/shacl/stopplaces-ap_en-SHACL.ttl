@@ -2,17 +2,17 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape>,
+<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#EntranceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape> .
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape> a shacl:NodeShape;
   shacl:closed false;
@@ -29,14 +29,14 @@
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:definition "TODO"@en;
     shacl:name "member"@en;
     shacl:path <https://purl.eu/ns/mobility#member>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#GroupOfStopPlaces> .
 
@@ -88,13 +88,13 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "name"@en
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
+    shacl:name "name"@en
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "TODO"@en;
@@ -138,52 +138,16 @@
     shacl:name "stopPlaceType"@en;
     shacl:path <https://purl.eu/ns/mobility#stopPlaceType>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "centroid"@en
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "roadAddress"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:definition "TODO"@en;
-    shacl:name "containing"@en;
-    shacl:path <https://purl.eu/ns/mobility#containing>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "accessabilityAssesment"@en
+    shacl:name "placeType"@en
   ], [
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "transportMode"@en;
     shacl:path <https://purl.eu/ns/mobility#transportMode>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "polygon"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "placeType"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#StopPlace>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "parentSiteRef"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#AccessModes>;
-    shacl:definition "TODO"@en;
-    shacl:name "accessModes"@en
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceEntrance>;
     shacl:definition "TODO"@en;
@@ -197,8 +161,44 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
+    shacl:name "centroid"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "polygon"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#AccessModes>;
+    shacl:definition "TODO"@en;
+    shacl:name "accessModes"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "accessabilityAssesment"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#StopPlace>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "parentSiteRef"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
     shacl:name "publicCode"@en;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "roadAddress"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:definition "TODO"@en;
+    shacl:name "containing"@en;
+    shacl:path <https://purl.eu/ns/mobility#containing>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace> .
 
