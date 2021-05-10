@@ -2,17 +2,17 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape>,
+<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#EntranceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape> .
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape> a shacl:NodeShape;
   shacl:closed false;
@@ -25,6 +25,10 @@
 <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
+  ], [
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#etc>
@@ -33,26 +37,22 @@
     shacl:definition "TODO"@en;
     shacl:name "member"@en;
     shacl:path <https://purl.eu/ns/mobility#member>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#GroupOfStopPlaces> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:path <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Quay>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "quay"@en;
     shacl:path <https://purl.eu/ns/mobility#quay>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:maxCount 1;
@@ -69,17 +69,22 @@
   shacl:closed false;
   shacl:property [
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#publicCode>
-  ], [
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Quay> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "name"@en
+  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -89,31 +94,26 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "name"@en
+    shacl:name "location"@en
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "location"@en
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:boolean;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#isEntry>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#EntranceType>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#entranceType>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#isExit>
   ], [
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -121,7 +121,7 @@
   ], [
     shacl:datatype xsd:boolean;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#isExit>
+    shacl:path <https://purl.eu/ns/mobility#isEntry>
   ], [
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
@@ -133,27 +133,12 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "polygon"@en
+    shacl:name "centroid"@en
   ], [
+    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
     shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "publicCode"@en;
-    shacl:path <https://purl.eu/ns/mobility#publicCode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:definition "TODO"@en;
-    shacl:name "containing"@en;
-    shacl:path <https://purl.eu/ns/mobility#containing>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "roadAddress"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "transportMode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
+    shacl:name "serves"@en;
+    shacl:path <https://purl.eu/ns/mobility#serves>
   ], [
     shacl:class <https://purl.eu/ns/mobility#AccessModes>;
     shacl:definition "TODO"@en;
@@ -161,7 +146,12 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "centroid"@en
+    shacl:name "roadAddress"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:definition "TODO"@en;
+    shacl:name "containing"@en;
+    shacl:path <https://purl.eu/ns/mobility#containing>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:definition "TODO"@en;
@@ -173,6 +163,25 @@
     shacl:maxCount 1;
     shacl:name "placeType"@en
   ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "polygon"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "accessabilityAssesment"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "transportMode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "publicCode"@en;
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -182,23 +191,14 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "accessabilityAssesment"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
-    shacl:definition "TODO"@en;
-    shacl:name "serves"@en;
-    shacl:path <https://purl.eu/ns/mobility#serves>
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceEntrance>;
     shacl:definition "TODO"@en;
     shacl:name "enteredThrough"@en;
     shacl:path <https://purl.eu/ns/mobility#enteredThrough>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace> .
 
