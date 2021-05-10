@@ -2,36 +2,30 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/timetables-ap_en> <https://semiceu.github.io/shacl/timetables-ap_enshapes> <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RouteShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape>,
+<https://semiceu.github.io/shacl/timetables-ap_en> <https://semiceu.github.io/shacl/timetables-ap_enshapes> <https://semiceu.github.io/shacl/timetables-ap_en#StopPointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#LineShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#TimeTabledPassingTimeShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceLinkShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyPatternShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#PointShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#JourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RouteLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RouteShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_en#TimeTabledPassingTimeShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#PointOnRouteShape>,
     <https://semiceu.github.io/shacl/timetables-ap_en#VehicleJourneyShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#StopPointInJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#RouteLinkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape> .
+    <https://semiceu.github.io/shacl/timetables-ap_en#ServiceLinkShape> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "an additional property"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Line>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
@@ -40,12 +34,18 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "name"@en
+    shacl:name "transportmode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportmode>
+  ], [
+    shacl:definition "an additional property"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "transportmode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportmode>
+    shacl:name "name"@en
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#GroupOfLines> .
 
@@ -82,53 +82,47 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "name"@en;
     shacl:path <https://purl.eu/ns/mobility#name>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
+    shacl:name "transportmode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportmode>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Route>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
     shacl:name "madeUpOf"@en;
     shacl:path <https://purl.eu/ns/mobility#madeUpOf>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "transportmode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportmode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Line> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUpOf"@en;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUpOf"@en;
-    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Network> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "quay"@en;
-    shacl:path <https://purl.eu/ns/mobility#quay>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -138,12 +132,29 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "quay"@en;
+    shacl:path <https://purl.eu/ns/mobility#quay>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#TimeTabledPassingTime>;
+    shacl:definition "TODO"@en;
+    shacl:name "at"@en;
+    shacl:path <https://purl.eu/ns/mobility#at>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -156,17 +167,6 @@
     shacl:minCount 1;
     shacl:name "aViewOf"@en;
     shacl:path <https://purl.eu/ns/mobility#aViewOf>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TimeTabledPassingTime>;
-    shacl:definition "TODO"@en;
-    shacl:name "at"@en;
-    shacl:path <https://purl.eu/ns/mobility#at>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PointInJourneyPattern> .
 
@@ -210,15 +210,8 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "distance"@en;
-    shacl:path <https://purl.eu/ns/mobility#distance>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#RoutePoint>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "from"@en;
-    shacl:path <https://purl.eu/ns/mobility#from>
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:class <https://purl.eu/ns/mobility#RoutePoint>;
     shacl:definition "TODO"@en;
@@ -227,11 +220,18 @@
     shacl:name "to"@en;
     shacl:path <https://purl.eu/ns/mobility#to>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#RoutePoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
+    shacl:name "from"@en;
+    shacl:path <https://purl.eu/ns/mobility#from>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "distance"@en;
+    shacl:path <https://purl.eu/ns/mobility#distance>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -278,27 +278,27 @@
 <https://semiceu.github.io/shacl/timetables-ap_en#RouteShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "directionRef"@en;
-    shacl:path <https://purl.eu/ns/mobility#directionRef>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
     shacl:definition "TODO"@en;
     shacl:name "coveredBy"@en;
     shacl:path <https://purl.eu/ns/mobility#coveredBy>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "trough"@en;
-    shacl:path <https://purl.eu/ns/mobility#trough>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "directionRef"@en;
+    shacl:path <https://purl.eu/ns/mobility#directionRef>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
+    shacl:definition "TODO"@en;
+    shacl:minCount 1;
+    shacl:name "trough"@en;
+    shacl:path <https://purl.eu/ns/mobility#trough>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Route> .
 
@@ -310,11 +310,6 @@
     shacl:name "endOf"@en;
     shacl:path <https://purl.eu/ns/mobility#endOf>
   ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "name"@en
-  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPointInJourneyPattern>;
     shacl:definition "TODO"@en;
     shacl:name "viewedAs"@en;
@@ -323,49 +318,35 @@
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
+    shacl:name "location"@en
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "location"@en
+    shacl:name "name"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ServiceLink>;
+    shacl:definition "TODO"@en;
+    shacl:name "startOf"@en;
+    shacl:path <https://purl.eu/ns/mobility#startOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "stopType"@en;
     shacl:path <https://purl.eu/ns/mobility#stopType>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#ServiceLink>;
-    shacl:definition "TODO"@en;
-    shacl:name "startOf"@en;
-    shacl:path <https://purl.eu/ns/mobility#startOf>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyLinkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <https://purl.eu/ns/mobility#departureTime>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Line>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "line"@en;
-    shacl:path <https://purl.eu/ns/mobility#line>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "forAlighting"@en;
-    shacl:path <https://purl.eu/ns/mobility#forAlighting>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -379,18 +360,37 @@
     shacl:name "forBoarding"@en;
     shacl:path <https://purl.eu/ns/mobility#forBoarding>
   ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "arrivalTime"@en;
-    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "departureStop"@en;
     shacl:path <https://purl.eu/ns/mobility#departureStop>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "forAlighting"@en;
+    shacl:path <https://purl.eu/ns/mobility#forAlighting>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "departureTime"@en;
+    shacl:path <https://purl.eu/ns/mobility#departureTime>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "arrivalTime"@en;
+    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Line>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "line"@en;
+    shacl:path <https://purl.eu/ns/mobility#line>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourneyLink> .
 
@@ -407,15 +407,15 @@
 <https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#ServiceJourneyPattern>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUsing"@en
+  ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "etc"@en;
     shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#ServiceJourneyPattern>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUsing"@en
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourney> .
 
@@ -431,6 +431,12 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
     shacl:name "linestring"@en
   ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
@@ -439,21 +445,46 @@
     shacl:minCount 1;
     shacl:name "to"@en;
     shacl:path <https://purl.eu/ns/mobility#to>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceLink> .
 
 <https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "publicCode"@en;
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "accessabilityAssesment"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#AccessModes>;
     shacl:definition "TODO"@en;
     shacl:name "accessModes"@en
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "centroid"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:name "placeType"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "stopPlaceType"@en;
+    shacl:path <https://purl.eu/ns/mobility#stopPlaceType>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -467,43 +498,12 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "publicCode"@en;
-    shacl:path <https://purl.eu/ns/mobility#publicCode>
+    shacl:name "polygon"@en
   ], [
     shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
     shacl:definition "TODO"@en;
     shacl:name "serves"@en;
     shacl:path <https://purl.eu/ns/mobility#serves>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "polygon"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "stopPlaceType"@en;
-    shacl:path <https://purl.eu/ns/mobility#stopPlaceType>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "accessabilityAssesment"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "placeType"@en
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "centroid"@en
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace> .
 
@@ -512,8 +512,9 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "forAlighting"@en;
-    shacl:path <https://purl.eu/ns/mobility#forAlighting>
+    shacl:minCount 1;
+    shacl:name "etrc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etrc>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -522,15 +523,8 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "order"@en;
-    shacl:path <https://purl.eu/ns/mobility#order>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etrc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etrc>
+    shacl:name "forAlighting"@en;
+    shacl:path <https://purl.eu/ns/mobility#forAlighting>
   ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:definition "TODO"@en;
@@ -538,6 +532,12 @@
     shacl:minCount 1;
     shacl:name "aViewOf"@en;
     shacl:path <https://purl.eu/ns/mobility#aViewOf>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "order"@en;
+    shacl:path <https://purl.eu/ns/mobility#order>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#StopPointInJourneyPattern> .
 
@@ -546,8 +546,8 @@
   shacl:property [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:name "arrivalTime"@en;
-    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
+    shacl:name "departureTime"@en;
+    shacl:path <https://purl.eu/ns/mobility#departureTime>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
@@ -556,19 +556,19 @@
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "etc"@en;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <https://purl.eu/ns/mobility#departureTime>
+    shacl:name "arrivalTime"@en;
+    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
   ], [
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "arrivalDayOffset"@en;
     shacl:path <https://purl.eu/ns/mobility#arrivalDayOffset>
+  ], [
+    shacl:definition "TODO"@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "etc"@en;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#TimeTabledPassingTime> .
 
@@ -579,6 +579,15 @@
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUsing"@en;
+    shacl:path <https://purl.eu/ns/mobility#madeUsing>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#workedOn>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#TimeTabledPassingTime>;
     shacl:definition "TODO"@en;
     shacl:name "passedAt"@en;
@@ -588,14 +597,5 @@
     shacl:maxCount 1;
     shacl:name "departureTime"@en;
     shacl:path <https://purl.eu/ns/mobility#departureTime>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUsing"@en;
-    shacl:path <https://purl.eu/ns/mobility#madeUsing>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#DayType>;
-    shacl:minCount 1;
-    shacl:path <https://purl.eu/ns/mobility#workedOn>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#VehicleJourney> .

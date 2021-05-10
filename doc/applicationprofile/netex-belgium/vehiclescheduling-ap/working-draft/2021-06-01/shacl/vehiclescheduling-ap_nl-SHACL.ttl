@@ -1,0 +1,388 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl> <https://semiceu.github.io/shacl/vehiclescheduling-ap_nlshapes> <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GaragePointShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PropertyOfDayShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceCalendarShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#BlockShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ParkingPointShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PointShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GroupOfLinesShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DeadRunPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DayTypeAssignmentShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#JourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DayTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceJourneyShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#LineShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#VehicleJourneyShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GarageShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#NetworkShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DeadRunShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#VehicleTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#RouteShape> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#BlockShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#startTime>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#endTime>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#VehicleType>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#using>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ParkingPoint>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#endedAt>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#workedOn>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ParkingPoint>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#startedAt>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Block> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DayTypeAssignmentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#ServiceCalendar>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#DayTypeAssignment.dayType>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#date>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#DayTypeAssignment> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DayTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#ServiceCalendar>;
+    shacl:path <https://purl.eu/ns/mobility#definedBy>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#name>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ServiceCalendar>;
+    shacl:path <https://purl.eu/ns/mobility#definedBy>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PropertyOfDay>;
+    shacl:path <https://purl.eu/ns/mobility#describedBy>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PropertyOfDay>;
+    shacl:path <https://purl.eu/ns/mobility#describedBy>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#DayTypeAssignment.dayType> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DeadRunPatternShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://purl.eu/ns/mobility#DeadRunPattern> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#DeadRunShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#DeadRun> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GaragePointShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://purl.eu/ns/mobility#GaragePoint> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GarageShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#name>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Garage> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#GroupOfLinesShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#transportmode>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Line>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#composedOf>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#GroupOfLines> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#JourneyPatternShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#destinationDisplayRef>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PointInJourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#JourneyPattern> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#LineShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#name>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#transportmode>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Route>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Line> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#NetworkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Network> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ParkingPointShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://purl.eu/ns/mobility#ParkingPoint> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PointInJourneyPatternShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#order>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Point>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#aViewOf>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#PointInJourneyPattern> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PointShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#PointInJourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#viewedAs>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Point> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#PropertyOfDayShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 5;
+    shacl:path <https://purl.eu/ns/mobility#holidayType>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:maxCount 4;
+    shacl:path <https://purl.eu/ns/mobility#season>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#name>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#PropertyOfDay> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#RouteShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#directionRef>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#coveredBy>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#Route> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceCalendarShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#from>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#to>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceJourneyPatternShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourneyPattern> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#ServiceJourneyShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourney> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#VehicleJourneyShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#departureTime>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#workedOn>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Block>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#in>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Block>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#in>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#madeUsing>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#VehicleJourney> .
+
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_nl#VehicleTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#name>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#length>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#seatingcapacity>
+  ], [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#typeOfFuel>
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility#VehicleType> .

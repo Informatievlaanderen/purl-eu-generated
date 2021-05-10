@@ -1,0 +1,625 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#BlockShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#endTime"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#endedAt"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#startTime"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#startedAt"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#VehicleType",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#using"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#workedOn"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Block"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
+          "sh:path": "https://purl.eu/ns/mobility#definedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
+          "sh:path": "https://purl.eu/ns/mobility#definedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PropertyOfDay",
+          "sh:path": "https://purl.eu/ns/mobility#describedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PropertyOfDay",
+          "sh:path": "https://purl.eu/ns/mobility#describedBy"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeAssignmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#date"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DeadRun"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DeadRunPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Garage"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GaragePointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#GaragePoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GroupOfLinesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Line",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "composedOf"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#composedOf"
+        },
+        {
+          "sh:definition": {
+            "en": "an additional property"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transportmode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportmode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#GroupOfLines"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#JourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "destinationDisplayRef"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplayRef"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "madeUpOf"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#JourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#LineShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Route",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "madeUpOf"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "publicCode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transportmode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportmode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Line"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#NetworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#GroupOfLines",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "madeUpOf"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Network"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ParkingPointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ParkingPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "viewedAs"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Point"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointInJourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "aViewOf"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#aViewOf"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "order"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#order"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PropertyOfDayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:maxCount": "5",
+          "sh:path": "https://purl.eu/ns/mobility#holidayType"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:maxCount": "4",
+          "sh:path": "https://purl.eu/ns/mobility#season"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PropertyOfDay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#RouteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPattern",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "coveredBy"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#coveredBy"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "directionRef"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#directionRef"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Route"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceCalendarShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#from"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#to"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "etc"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceJourney"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceJourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleJourneyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departureTime"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureTime"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Block",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#in"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Block",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#in"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPattern",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "madeUsing"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUsing"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#workedOn"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#VehicleJourney"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#etc"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#length"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#seatingcapacity"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#typeOfFuel"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#VehicleType"
+    }
+  ]
+}
