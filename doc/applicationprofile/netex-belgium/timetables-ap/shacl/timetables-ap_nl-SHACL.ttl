@@ -2,34 +2,33 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/timetables-ap_nl> <https://semiceu.github.io/shacl/timetables-ap_nlshapes> <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceLinkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#NetworkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#LineShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#VehicleJourneyShape>,
+<https://semiceu.github.io/shacl/timetables-ap_nl> <https://semiceu.github.io/shacl/timetables-ap_nlshapes> <https://semiceu.github.io/shacl/timetables-ap_nl#NetworkShape>,
     <https://semiceu.github.io/shacl/timetables-ap_nl#PointInJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#RoutePointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#PointOnRouteShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#StopPointInJourneyPatternShape>,
     <https://semiceu.github.io/shacl/timetables-ap_nl#GroupOfLinesShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#PointShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#JourneyPatternShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#RouteShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#LineShape>,
     <https://semiceu.github.io/shacl/timetables-ap_nl#PassengerStopAssignmentShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyShape>,
     <https://semiceu.github.io/shacl/timetables-ap_nl#TimeTabledPassingTimeShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#RouteShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#PointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyLinkShape>,
     <https://semiceu.github.io/shacl/timetables-ap_nl#RouteLinkShape>,
-    <https://semiceu.github.io/shacl/timetables-ap_nl#StopPlaceShape> .
+    <https://semiceu.github.io/shacl/timetables-ap_nl#PointOnRouteShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#JourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#StopPointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceLinkShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#RoutePointShape>,
+    <https://semiceu.github.io/shacl/timetables-ap_nl#VehicleJourneyShape> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#GroupOfLinesShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:name "transport modus"@nl;
-    shacl:path <https://purl.eu/ns/mobility#transportmode>
+    shacl:name "naam"@nl
   ], [
     shacl:definition "een bijkomende eigenschap"@nl;
     shacl:maxCount 1;
@@ -45,19 +44,14 @@
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:name "naam"@nl
+    shacl:name "transport modus"@nl;
+    shacl:path <https://purl.eu/ns/mobility#transportmode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#GroupOfLines> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#JourneyPatternShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#PointInJourneyPattern>;
     shacl:definition "Enter your translation here"@nl;
     shacl:minCount 1;
@@ -68,18 +62,18 @@
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#destinationDisplayRef>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#JourneyPattern> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#LineShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -101,28 +95,40 @@
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Line> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#NetworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Network> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#PassengerStopAssignmentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#quay>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -132,12 +138,6 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#quay>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment> .
 
@@ -218,6 +218,12 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#distance>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:definition "Enter your translation here"@nl;
@@ -230,18 +236,27 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#from>
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#distance>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#RouteLink> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#RoutePointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#viewedAs>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#RouteLink>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
@@ -250,23 +265,8 @@
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#viewedAs>
   ], [
     shacl:class <https://purl.eu/ns/mobility#RouteLink>;
     shacl:definition "Enter your translation here"@nl;
@@ -283,12 +283,6 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#coveredBy>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#trough>
-  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
@@ -299,6 +293,12 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#trough>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Route> .
 
@@ -308,70 +308,50 @@
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#ServiceLink>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#endOf>
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "naam"@nl
   ], [
-    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
+    shacl:class <https://purl.eu/ns/mobility#ServiceLink>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#endOf>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#StopPointInJourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#viewedAs>
+  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#stopType>
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl
   ], [
     shacl:class <https://purl.eu/ns/mobility#ServiceLink>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#startOf>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#StopPointInJourneyPattern>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#viewedAs>
+    shacl:path <https://purl.eu/ns/mobility#stopType>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyLinkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#arrivalStop>
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
-  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#forBoarding>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#departureStop>
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
@@ -385,12 +365,32 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#forAlighting>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#arrivalStop>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#Line>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#line>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#arrivalTime>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#departureStop>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourneyLink> .
 
@@ -407,15 +407,15 @@
 <https://semiceu.github.io/shacl/timetables-ap_nl#ServiceJourneyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#ServiceJourneyPattern>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl
-  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ServiceJourneyPattern>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourney> .
 
@@ -424,20 +424,7 @@
   shacl:property [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#etc>
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#from>
   ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:definition "Enter your translation here"@nl;
@@ -445,24 +432,36 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#to>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#from>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceLink> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#StopPlaceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "Enter your translation here"@nl;
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:definition "TODO"@nl;
     shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl
+    shacl:name "transport modus"@nl;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#publicCode>
+    shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
     shacl:class <https://purl.eu/ns/mobility#AccessModes>;
     shacl:definition "Enter your translation here"@nl;
@@ -472,11 +471,18 @@
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl
   ], [
+    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#serves>
+  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#etc>
+    shacl:name "Enter your translation here"@nl
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "Enter your translation here"@nl;
@@ -494,22 +500,21 @@
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:definition "TODO"@nl;
-    shacl:maxCount 1;
-    shacl:name "transport modus"@nl;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
     shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#serves>
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace> .
 
 <https://semiceu.github.io/shacl/timetables-ap_nl#StopPointInJourneyPatternShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#forAlighting>
+  ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -522,22 +527,17 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#order>
   ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#forBoarding>
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#forAlighting>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#ScheduledStopPoint>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#aViewOf>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#forBoarding>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#StopPointInJourneyPattern> .
 
@@ -547,17 +547,12 @@
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#arrivalDayOffset>
-  ], [
-    shacl:definition "Enter your translation here"@nl;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#departureTime>
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#departureDayOffset>
+    shacl:path <https://purl.eu/ns/mobility#arrivalDayOffset>
   ], [
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
@@ -569,6 +564,11 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#etc>
+  ], [
+    shacl:definition "Enter your translation here"@nl;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#departureDayOffset>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#TimeTabledPassingTime> .
 
@@ -580,22 +580,22 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#departureTime>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#TimeTabledPassingTime>;
-    shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <https://purl.eu/ns/mobility#passedAt>
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#workedOn>
   ], [
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#etc>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#DayType>;
-    shacl:minCount 1;
-    shacl:path <https://purl.eu/ns/mobility#workedOn>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://purl.eu/ns/mobility#madeUsing>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TimeTabledPassingTime>;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility#passedAt>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#VehicleJourney> .
