@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/c45c772e30f0d44cb40d8d4ab49079e259a6fdc2",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/c45c772e30f0d44cb40d8d4ab49079e259a6fdc2/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -20,38 +20,75 @@
   "classes": [
     {
       "uri": "https://purl.eu/ns/mobility#Block",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Block",
+      "label": {
+        "en": "Block",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The work of a vehicle from the time it leaves a Parking Point after parking until its next return to park at a Parking Point.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#endTime",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "end time",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "end time",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time when the Block ended.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "in principle this can be derived from the start time of the last Vehicle Journey and the finishing duration. ",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
               "EA-Name": "Block",
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#endedAt",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "ended at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "ended at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Parking Point where the Block ended at.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "A vehicle's return to park at a Parking Point marks the end of a Block.",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
               "EA-Name": "Block",
@@ -66,10 +103,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ParkingPoint",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#ParkingPoint",
               "range_label": {
-                "nl": "ParkingPoint"
+                "en": "Parking Point",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -77,7 +115,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
+          "uri": "https://purl.eu/ns/mobility#including",
           "name": "",
           "sort": "",
           "label": {},
@@ -89,35 +127,77 @@
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "VehicleJourney",
+              "range_uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#VehicleJourney",
+              "range_label": {
+                "en": "VehicleJourney",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#startTime",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "start time",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "start time",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time when the Block started.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "In principle this can be derived from the start time of the first Vehicle Journey and the preparation duration.",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
               "EA-Name": "Block",
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#startedAt",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "started at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "started at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Parking Point where the Block started at.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -133,10 +213,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ParkingPoint",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#ParkingPoint",
               "range_label": {
-                "nl": "ParkingPoint"
+                "en": "Parking Point",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -145,10 +226,16 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#using",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "using",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "using",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Vehicle Type used to execute the Block.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -164,10 +251,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#VehicleType",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#VehicleType",
               "range_label": {
-                "nl": "VehicleType"
+                "en": "Vehicle Type",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -176,10 +264,16 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#workedOn",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "worked on",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "worked on",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The DayType when the Block was worked on.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -195,10 +289,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DayType",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#DayType",
               "range_label": {
-                "nl": "DayType"
+                "en": "Day Type",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -209,50 +304,34 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#DayType",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
-      "usage": {},
+      "name": "Day Type",
+      "label": {
+        "en": "Day Type",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A type of day characterised by one or more properties which affect public transport operation.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "For example: weekday in school holidays.",
+        "nl": "Enter your translation here"
+      },
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#definedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "nl": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#describedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "described by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "described by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Property of Day that is used to describe the Day Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -268,40 +347,29 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#PropertyOfDay",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#PropertyOfDay",
               "range_label": {
-                "nl": "PropertyOfDay"
+                "en": "Property of Day",
+                "nl": "Enter your translation here"
               }
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Day Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -309,152 +377,53 @@
               "uri": "https://purl.eu/ns/mobility#DayType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#definedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "nl": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#describedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PropertyOfDay",
-              "range_uri": "https://purl.eu/ns/mobility#PropertyOfDay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PropertyOfDay",
-              "range_puri": "https://purl.eu/ns/mobility#PropertyOfDay",
-              "range_label": {
-                "nl": "PropertyOfDay"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#DayTypeAssignment",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Day Type Assignment",
+      "label": {
+        "en": "Day Type Assignment",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The assignment of operational characteristics, expressed by Day Types, to particular Operating Days within a Service Calendar.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DayType",
-              "range_uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#DayType",
-              "range_puri": "https://purl.eu/ns/mobility#DayType",
-              "range_label": {
-                "nl": "DayType"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "nl": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#date",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "date",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "date",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Date of the Day Type Assignment.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -462,37 +431,38 @@
               "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#DeadRun",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Dead Run",
+      "label": {
+        "en": "Dead Run",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A non-service Vehicle Journey.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [
         {
@@ -503,33 +473,20 @@
           "scoped_uri": "#VehicleJourney"
         }
       ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DeadRun",
-              "uri": "https://purl.eu/ns/mobility#DeadRun"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#DeadRunPattern",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Dead Run Pattern",
+      "label": {
+        "en": "Dead Run Pattern",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Journey Pattern to be used for Dead Runs.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [
         {
@@ -544,37 +501,31 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#Garage",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Garage",
+      "label": {
+        "en": "Garage",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Facility used for parking and maintaining vehicles.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Garage",
-              "uri": "https://purl.eu/ns/mobility#Garage"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Garage.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -582,8 +533,21 @@
               "uri": "https://purl.eu/ns/mobility#Garage"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -591,32 +555,77 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#GaragePoint",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
-      "usage": {},
-      "parents": [
-        {
-          "label": "ParkingPoint",
-          "name": "ParkingPoint",
-          "package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility#ParkingPoint",
-          "scoped_uri": "#ParkingPoint"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility#GroupOfLines",
-      "name": "GroupOfLines",
+      "name": "Garage Point",
       "label": {
-        "en": "GroupOfLines",
+        "en": "Garage Point",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "GroupOfLines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them.",
+        "en": "Parking Point in a Garage.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Parking Point",
+          "name": "ParkingPoint",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#ParkingPoint",
+          "scoped_uri": "#Parking Point"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#belongingTo",
+          "name": "belonging to",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "belonging to",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Garage to which the Garage Point belongs.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GaragePoint",
+              "uri": "https://purl.eu/ns/mobility#GaragePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Garage",
+              "range_uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Garage",
+              "range_label": {
+                "en": "Garage",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#GroupOfLines",
+      "name": "Group of Lines",
+      "label": {
+        "en": "Group of Lines",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Group of Lines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them.",
         "nl": "Enter your translation here"
       },
       "usage": {},
@@ -637,30 +646,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#^name",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfLines",
-              "uri": "https://purl.eu/ns/mobility#GroupOfLines"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#composedOf",
           "name": "composedOf",
@@ -700,15 +685,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
+          "uri": "https://purl.eu/ns/mobility#name",
+          "name": "name",
           "sort": "Enter your translation here",
           "label": {
-            "en": "etc",
+            "en": "name",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "an additional property",
+            "en": "Name of the Group of Lines.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -718,9 +703,22 @@
               "uri": "https://purl.eu/ns/mobility#GroupOfLines"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -732,7 +730,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Transportmode of the Group of Lines.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -742,8 +740,21 @@
               "uri": "https://purl.eu/ns/mobility#GroupOfLines"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -758,13 +769,13 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "The JourneyPattern model is concerned with the spatial description of services, i.e. spatial aspects of the work of the vehicles. The concerns of this model are different from those of describing the Routes and Lines. The latter are describing schematic paths of vehicles through the road network, whereas JourneyPatterns describe how the work of vehicles is performed. These work patterns describe the sequence of points where\nvehicles stop with specific points being attributed with timing information. \n\nThe working pattern described by a JourneyPattern is usually related to a Route which it covers. Several JourneyPatterns may use the same Route.",
+        "en": "An ordered list of Scheduled Stop Points and Timing Points on a single Route, describing the pattern of working for public transport vehicles. A Journey Pattern may pass through the same Point more than once.",
         "nl": "Enter your translation here"
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -788,14 +799,14 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#destinationDisplayRef",
-          "name": "destinationDisplayRef",
+          "name": "destination display reference",
           "sort": "Enter your translation here",
           "label": {
-            "en": "destinationDisplayRef",
+            "en": "destination display reference",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Destination Display associated with the Journey Pattern.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -808,30 +819,6 @@
           "range": [],
           "scopedrange": [],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "JourneyPattern",
-              "uri": "https://purl.eu/ns/mobility#JourneyPattern"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -864,7 +851,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
               "range_label": {
-                "en": "PointInJourneyPattern",
+                "en": "Point in Journey Pattern",
                 "nl": "Enter your translation here"
               }
             }
@@ -897,30 +884,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility#Line"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#madeUpOf",
           "name": "madeUpOf",
@@ -968,7 +931,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Name of the Line.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -978,21 +941,34 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#publicCode",
-          "name": "publicCode",
+          "name": "public code",
           "sort": "Enter your translation here",
           "label": {
-            "en": "publicCode",
+            "en": "public code",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Public identifier of the Line.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1016,7 +992,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Identifier of the primary transport mode of the Line.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1026,8 +1002,21 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -1042,17 +1031,17 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A Network is a named grouping of Lines under which a Transport network is known.",
+        "en": "A named grouping of Lines under which a Transport network is known.",
         "nl": "Enter your translation here"
       },
       "usage": {},
       "parents": [
         {
-          "label": "GroupOfLines",
+          "label": "Group of Lines",
           "name": "GroupOfLines",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#GroupOfLines",
-          "scoped_uri": "#GroupOfLines"
+          "scoped_uri": "#Group of Lines"
         },
         {
           "label": "Mobiliteitsdienst",
@@ -1070,30 +1059,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Network",
-              "uri": "https://purl.eu/ns/mobility#Network"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#madeUpOf",
           "name": "madeUpOf",
@@ -1124,7 +1089,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#GroupOfLines",
               "range_label": {
-                "en": "GroupOfLines",
+                "en": "Group of Lines",
                 "nl": "Enter your translation here"
               }
             }
@@ -1136,14 +1101,20 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#ParkingPoint",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Parking Point",
+      "label": {
+        "en": "Parking Point",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Relief Point where vehicles may stay unattended for a long time.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [
         {
-          "label": "ReliefPoint",
+          "label": "Relief Point",
           "name": "ReliefPoint",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#ReliefPoint",
@@ -1161,7 +1132,7 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A 0-dimensional node of the network used for the spatial description of the network. Points may be located by a Location in a given LocatingSystem.",
+        "en": "A 0-dimensional node of the Network used for the spatial description of the Network. Points may be located by a Location in a given Locating System.",
         "nl": "Enter your translation here"
       },
       "usage": {},
@@ -1197,7 +1168,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
               "range_label": {
-                "en": "PointInJourneyPattern",
+                "en": "Point in Journey Pattern",
                 "nl": "Enter your translation here"
               }
             }
@@ -1209,20 +1180,20 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
-      "name": "PointInJourneyPattern",
+      "name": "Point in Journey Pattern",
       "label": {
-        "en": "PointInJourneyPattern",
+        "en": "Point in Journey Pattern",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Each PointInJourneyPattern specifies the visit of a Service to a specific Point in a particular order within the pattern.",
+        "en": "Each Point in Journey Pattern specifies the visit of a Service to a specific Point in a particular order within the pattern.",
         "nl": "Enter your translation here"
       },
       "usage": {},
       "parents": [
         {
-          "label": "PointInLinkSequence",
+          "label": "Point in Link Sequence",
           "name": "PointInLinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
@@ -1276,30 +1247,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointInJourneyPattern",
-              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#order",
           "name": "order",
           "sort": "Enter your translation here",
@@ -1308,7 +1255,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Order of Point in Journey Pattern within Journey Pattern.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1318,8 +1265,21 @@
               "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1327,37 +1287,31 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#PropertyOfDay",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Property of Day",
+      "label": {
+        "en": "Property of Day",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A property which a day may possess, such as school holiday, weekday, summer, winter etc.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#holidayType",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "holiday type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "holiday type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The type of holiday, e.g. Christmas.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1365,17 +1319,36 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "HolidayType",
+              "range_uri": "https://purl.eu/ns/mobility#HolidayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#HolidayType",
+              "range_puri": "https://purl.eu/ns/mobility#HolidayType",
+              "range_label": {
+                "nl": "HolidayType"
+              }
+            }
+          ],
           "cardinality": "0..5",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The name of the Property of Day.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1383,17 +1356,36 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#season",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "season",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "season",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The season, e.g. winter.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1401,9 +1393,60 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Season",
+              "range_uri": "https://purl.eu/ns/mobility#Season"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Season",
+              "range_puri": "https://purl.eu/ns/mobility#Season",
+              "range_label": {
+                "nl": "Season"
+              }
+            }
+          ],
           "cardinality": "0..4",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#usedToDescribe",
+          "name": "used to describe",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "used to describe",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Day Type the Property of Day is describing.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#DayType",
+              "range_label": {
+                "en": "Day Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -1417,13 +1460,13 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "An ordered list of located Points defining one single path through the road (or rail) network. A Route may pass through the same Point more than once.",
+        "en": "Ordered list of located Points defining one single path through the road (or rail) Network. A Route may pass through the same Point more than once.",
         "nl": "Enter your translation here"
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -1492,7 +1535,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Reference to Direction of Route.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1506,48 +1549,36 @@
           "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Route",
-              "uri": "https://purl.eu/ns/mobility#Route"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceCalendar",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Service Calendar",
+      "label": {
+        "en": "Service Calendar",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Collection of Day Types Assignments.",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#from",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "from",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "from",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Inclusive start date for validity of the Service Calendar.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1555,17 +1586,36 @@
               "uri": "https://purl.eu/ns/mobility#ServiceCalendar"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#to",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "to",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "to",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Inclusive end date for validity of the Service Calendar.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1573,8 +1623,21 @@
               "uri": "https://purl.eu/ns/mobility#ServiceCalendar"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1582,14 +1645,14 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceJourney",
-      "name": "ServiceJourney",
+      "name": "Service Journey",
       "label": {
-        "en": "ServiceJourney",
+        "en": "Service Journey",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A ServiceJourney is a VehicleJourney on which passengers will be allowed to board or alight from vehicles at stops.",
+        "en": "Vehicle Journey on which passengers will be allowed to board or alight from vehicles at stops.",
         "nl": "Enter your translation here"
       },
       "usage": {},
@@ -1602,49 +1665,24 @@
           "scoped_uri": "#VehicleJourney"
         }
       ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "etc",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceJourneyPattern",
-      "name": "ServiceJourneyPattern",
+      "name": "Service Journey Pattern",
       "label": {
-        "en": "ServiceJourneyPattern",
+        "en": "Service Journey Pattern",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "The JourneyPattern for a (passenger carrying) ServiceJourney",
+        "en": "Journey Pattern for a (passenger carrying) Service Journey.",
         "nl": "Enter your translation here"
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -1683,7 +1721,7 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A VehicleJourney is the defined movement of a vehicle using a specified JourneyPattern on a particular Route. By virtue of being defined for a DayType, a VehicleJourney is a class of journeys that would take place at the same time on each day of a specified DayType.",
+        "en": "A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type.",
         "nl": "Enter your translation here"
       },
       "usage": {},
@@ -1698,7 +1736,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "TODO",
+            "en": "Time of departure.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1708,54 +1746,18 @@
               "uri": "https://purl.eu/ns/mobility#VehicleJourney"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#in",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
-            }
-          ],
           "range": [
             {
-              "range_label": "Block",
-              "range_uri": "https://purl.eu/ns/mobility#Block"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Block",
-              "range_puri": "https://purl.eu/ns/mobility#Block",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "nl": "Block"
+                "nl": "DateTime"
               }
             }
           ],
@@ -1764,10 +1766,16 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#in",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "including",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "including",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Vehicle Journeys included in the Block.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1783,10 +1791,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Block",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#Block",
               "range_label": {
-                "nl": "Block"
+                "en": "Block",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -1833,10 +1842,16 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#workedOn",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "worked on",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "worked on",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Day Type on which the Vehicle Journey is worked.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1852,10 +1867,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DayType",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility#DayType",
               "range_label": {
-                "nl": "DayType"
+                "en": "Day Type",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -1866,19 +1882,31 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#VehicleType",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Vehicle Type",
+      "label": {
+        "en": "Vehicle Type",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Vehicles may be classified using a Vehicle Type according to how they meet vehicle scheduling requirements as to capacity and on-board facilities (e.g. standard bus, double decker, etc.).",
+        "nl": "Enter your translation here"
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "https://purl.eu/ns/mobility#capacity",
+          "name": "capacity",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "capacity",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Passenger carrying capacity of the Vehicle Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1886,17 +1914,36 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#length",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "length",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "length",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Length of a Vehicle of that Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1904,17 +1951,36 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "nl": "Double"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Vehicle Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1922,35 +1988,36 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#seatingcapacity",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
+          "range": [
             {
-              "EA-Name": "VehicleType",
-              "uri": "https://purl.eu/ns/mobility#VehicleType"
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#typeOfFuel",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "type of fuel",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type of fuel",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of fuel of the Vehicle Type.",
+            "nl": "Enter your translation here"
+          },
           "usage": {},
           "domain": [
             {
@@ -1958,8 +2025,21 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "FuelType",
+              "range_uri": "https://purl.eu/ns/mobility#FuelType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#FuelType",
+              "range_puri": "https://purl.eu/ns/mobility#FuelType",
+              "range_label": {
+                "nl": "FuelType"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }

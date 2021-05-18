@@ -1,0 +1,2863 @@
+{
+  "metadata": {
+    "title": "NeTEx Belgium: Timetables (application profile)",
+    "uri": "http://fixme.com",
+    "issued": "2021-06-01",
+    "filename": "timetables-ap",
+    "navigation": {
+      "self": "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2021-06-01"
+    },
+    "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    "status": "Working Draft",
+    "statuslabel": "Onbekend",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3/CHANGELOG",
+    "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
+    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
+    "usesVocs": [],
+    "usesAPs": []
+  },
+  "classes": [
+    {
+      "uri": "https://purl.eu/ns/mobility#GroupOfLines",
+      "name": "Group of Lines",
+      "label": {
+        "en": "Group of Lines"
+      },
+      "sort": "Group of Lines",
+      "description": {
+        "en": "Group of Lines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Mobiliteitsdienst",
+          "name": "Mobiliteitsdienst",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
+        },
+        {
+          "label": "Group of Entities",
+          "name": "GroupOfEntities",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#GroupOfEntities",
+          "scoped_uri": "https://purl.eu/ns/mobility#GroupOfEntities"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#composedOf",
+          "name": "composedOf",
+          "sort": "composedOf",
+          "label": {
+            "en": "composedOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfLines",
+              "uri": "https://purl.eu/ns/mobility#GroupOfLines"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Line",
+              "range_uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Line",
+              "range_puri": "https://purl.eu/ns/mobility#Line",
+              "range_label": {
+                "en": "Line"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Group of Lines."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfLines",
+              "uri": "https://purl.eu/ns/mobility#GroupOfLines"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportmode",
+          "name": "transportmode",
+          "sort": "transportmode",
+          "label": {
+            "en": "transportmode"
+          },
+          "description": {
+            "en": "Transportmode of the Group of Lines."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfLines",
+              "uri": "https://purl.eu/ns/mobility#GroupOfLines"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#JourneyPattern",
+      "name": "Journey Pattern",
+      "label": {
+        "en": "Journey Pattern"
+      },
+      "sort": "Journey Pattern",
+      "description": {
+        "en": "An ordered list of Scheduled Stop Points and Timing Points on a single Route, describing the pattern of working for public transport vehicles. A Journey Pattern may pass through the same Point more than once."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Link Sequence",
+          "name": "LinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#LinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
+        },
+        {
+          "label": "Transportlinksequentie",
+          "name": "Transportlinksequentie",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
+        },
+        {
+          "label": "Route",
+          "name": "Route",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Route",
+          "scoped_uri": "#Route"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#destinationDisplayRef",
+          "name": "destination display reference",
+          "sort": "destination display reference",
+          "label": {
+            "en": "destination display reference"
+          },
+          "description": {
+            "en": "Destination Display associated with the Journey Pattern."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "JourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#JourneyPattern"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#madeUpOf",
+          "name": "madeUpOf",
+          "sort": "madeUpOf",
+          "label": {
+            "en": "madeUpOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "JourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#JourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point in Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+              "range_label": {
+                "en": "Point in Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Line",
+      "name": "Line",
+      "label": {
+        "en": "Line"
+      },
+      "sort": "Line",
+      "description": {
+        "en": "A grouping of Routes that is generally known to the public by a similar name or number."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Mobiliteitsdienst",
+          "name": "Mobiliteitsdienst",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#madeUpOf",
+          "name": "madeUpOf",
+          "sort": "madeUpOf",
+          "label": {
+            "en": "madeUpOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Route",
+              "range_uri": "https://purl.eu/ns/mobility#Route"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Route",
+              "range_puri": "https://purl.eu/ns/mobility#Route",
+              "range_label": {
+                "en": "Route"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Line."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "public code",
+          "sort": "public code",
+          "label": {
+            "en": "public code"
+          },
+          "description": {
+            "en": "Public identifier of the Line."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportmode",
+          "name": "transportmode",
+          "sort": "transportmode",
+          "label": {
+            "en": "transportmode"
+          },
+          "description": {
+            "en": "Identifier of the primary transport mode of the Line."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Network",
+      "name": "Network",
+      "label": {
+        "en": "Network"
+      },
+      "sort": "Network",
+      "description": {
+        "en": "A named grouping of Lines under which a Transport network is known."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Group of Lines",
+          "name": "GroupOfLines",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#GroupOfLines",
+          "scoped_uri": "#Group of Lines"
+        },
+        {
+          "label": "Mobiliteitsdienst",
+          "name": "Mobiliteitsdienst",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
+        },
+        {
+          "label": "Transportnetwerk",
+          "name": "Transportnetwerk",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportnetwerk",
+          "scoped_uri": "http://fixme.com#Transportnetwerk"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#madeUpOf",
+          "name": "madeUpOf",
+          "sort": "madeUpOf",
+          "label": {
+            "en": "madeUpOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Network",
+              "uri": "https://purl.eu/ns/mobility#Network"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GroupOfLines",
+              "range_uri": "https://purl.eu/ns/mobility#GroupOfLines"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Group of Lines",
+              "range_puri": "https://purl.eu/ns/mobility#GroupOfLines",
+              "range_label": {
+                "en": "Group of Lines"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment",
+      "name": "Passenger Stop Assignment",
+      "label": {
+        "en": "Passenger Stop Assignment"
+      },
+      "sort": "Passenger Stop Assignment",
+      "description": {
+        "en": "The allocation of a Scheduled Stop Point  to a Stop Place."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#quay",
+          "name": "quay",
+          "sort": "quay",
+          "label": {
+            "en": "quay"
+          },
+          "description": {
+            "en": "Reference to a Quay within the Stop Place to which the Scheduled Stop Point is assigned."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Quay",
+              "range_uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Quay",
+              "range_puri": "https://purl.eu/ns/mobility#Quay",
+              "range_label": {
+                "en": "Quay"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Point",
+      "name": "Point",
+      "label": {
+        "en": "Point"
+      },
+      "sort": "Point",
+      "description": {
+        "en": "A 0-dimensional node of the Network used for the spatial description of the Network. Points may be located by a Location in a given Locating System."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#viewedAs",
+          "name": "viewedAs",
+          "sort": "viewedAs",
+          "label": {
+            "en": "viewedAs"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point in Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+              "range_label": {
+                "en": "Point in Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+      "name": "Point in Journey Pattern",
+      "label": {
+        "en": "Point in Journey Pattern"
+      },
+      "sort": "Point in Journey Pattern",
+      "description": {
+        "en": "Each Point in Journey Pattern specifies the visit of a Service to a specific Point in a particular order within the pattern."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Point in Link Sequence",
+          "name": "PointInLinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#PointInLinkSequence"
+        },
+        {
+          "label": "Routeknoop",
+          "name": "Routeknoop",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Routeknoop",
+          "scoped_uri": "http://fixme.com#Routeknoop"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#aViewOf",
+          "name": "aViewOf",
+          "sort": "aViewOf",
+          "label": {
+            "en": "aViewOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point",
+              "range_puri": "https://purl.eu/ns/mobility#Point",
+              "range_label": {
+                "en": "Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#at",
+          "name": "at",
+          "sort": "at",
+          "label": {
+            "en": "at"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimeTabledPassingTime",
+              "range_uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Time Tabled Passing Time",
+              "range_puri": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+              "range_label": {
+                "en": "Time Tabled Passing Time"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#order",
+          "name": "order",
+          "sort": "order",
+          "label": {
+            "en": "order"
+          },
+          "description": {
+            "en": "Order of Point in Journey Pattern within Journey Pattern."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#PointOnRoute",
+      "name": "Point on Route",
+      "label": {
+        "en": "Point on Route"
+      },
+      "sort": "Point on Route",
+      "description": {
+        "en": "A Point on Route indicates the sequence of a Route Point within a Route. This intermediate object is required to allow a Route to go several times through the same RoutePoint."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Point in Link Sequence",
+          "name": "PointInLinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#PointInLinkSequence"
+        },
+        {
+          "label": "Routeknoop",
+          "name": "Routeknoop",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Routeknoop",
+          "scoped_uri": "http://fixme.com#Routeknoop"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#aViewOf",
+          "name": "aViewOf",
+          "sort": "aViewOf",
+          "label": {
+            "en": "aViewOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOnRoute",
+              "uri": "https://purl.eu/ns/mobility#PointOnRoute"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RoutePoint",
+              "range_uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Route Point",
+              "range_puri": "https://purl.eu/ns/mobility#RoutePoint",
+              "range_label": {
+                "en": "Route Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#order",
+          "name": "order",
+          "sort": "order",
+          "label": {
+            "en": "order"
+          },
+          "description": {
+            "en": "Order of Point on Route within Route."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOnRoute",
+              "uri": "https://purl.eu/ns/mobility#PointOnRoute"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Route",
+      "name": "Route",
+      "label": {
+        "en": "Route"
+      },
+      "sort": "Route",
+      "description": {
+        "en": "Ordered list of located Points defining one single path through the road (or rail) Network. A Route may pass through the same Point more than once."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Link Sequence",
+          "name": "LinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#LinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
+        },
+        {
+          "label": "Transportlinksequentie",
+          "name": "Transportlinksequentie",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
+        },
+        {
+          "label": "Route",
+          "name": "Route",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Route",
+          "scoped_uri": "#Route"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#coveredBy",
+          "name": "coveredBy",
+          "sort": "coveredBy",
+          "label": {
+            "en": "coveredBy"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "JourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#JourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#JourneyPattern",
+              "range_label": {
+                "en": "Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#directionRef",
+          "name": "directionRef",
+          "sort": "directionRef",
+          "label": {
+            "en": "directionRef"
+          },
+          "description": {
+            "en": "Reference to Direction of Route."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility#Route"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#trough",
+          "name": "trough",
+          "sort": "trough",
+          "label": {
+            "en": "trough"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointOnRoute",
+              "range_uri": "https://purl.eu/ns/mobility#PointOnRoute"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point on Route",
+              "range_puri": "https://purl.eu/ns/mobility#PointOnRoute",
+              "range_label": {
+                "en": "Point on Route"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#RouteLink",
+      "name": "RouteLink",
+      "label": {
+        "en": "RouteLink"
+      },
+      "sort": "RouteLink",
+      "description": {
+        "en": "An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Link",
+          "name": "Link",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Link",
+          "scoped_uri": "https://purl.eu/ns/mobility#Link"
+        },
+        {
+          "label": "Transportlink",
+          "name": "Transportlink",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlink",
+          "scoped_uri": "http://fixme.com#Transportlink"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#distance",
+          "name": "distance",
+          "sort": "distance",
+          "label": {
+            "en": "distance"
+          },
+          "description": {
+            "en": "Distance of Route Link."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RouteLink",
+              "uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "en": "Double"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#from",
+          "name": "from",
+          "sort": "from",
+          "label": {
+            "en": "from"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RouteLink",
+              "uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RoutePoint",
+              "range_uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Route Point",
+              "range_puri": "https://purl.eu/ns/mobility#RoutePoint",
+              "range_label": {
+                "en": "Route Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#linestring",
+          "name": "linestring",
+          "sort": "linestring",
+          "label": {
+            "en": "linestring"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RouteLink",
+              "uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#to",
+          "name": "to",
+          "sort": "to",
+          "label": {
+            "en": "to"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RouteLink",
+              "uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RoutePoint",
+              "range_uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Route Point",
+              "range_puri": "https://purl.eu/ns/mobility#RoutePoint",
+              "range_label": {
+                "en": "Route Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#RoutePoint",
+      "name": "Route Point",
+      "label": {
+        "en": "Route Point"
+      },
+      "sort": "Route Point",
+      "description": {
+        "en": "A Point used to define the shape of a Route through the Network. The same Point may be used in different Routes using a Point on Route."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Point",
+          "name": "Point",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Point",
+          "scoped_uri": "#Point"
+        },
+        {
+          "label": "Transportknoop",
+          "name": "Transportknoop",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportknoop",
+          "scoped_uri": "http://fixme.com#Transportknoop"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Route Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#endOf",
+          "name": "endOf",
+          "sort": "endOf",
+          "label": {
+            "en": "endOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RouteLink",
+              "range_uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#RouteLink",
+              "range_puri": "https://purl.eu/ns/mobility#RouteLink",
+              "range_label": {
+                "en": "RouteLink"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#location",
+          "name": "location",
+          "sort": "location",
+          "label": {
+            "en": "location"
+          },
+          "description": {
+            "en": "Location of the Route Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#startOf",
+          "name": "startOf",
+          "sort": "startOf",
+          "label": {
+            "en": "startOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RouteLink",
+              "range_uri": "https://purl.eu/ns/mobility#RouteLink"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#RouteLink",
+              "range_puri": "https://purl.eu/ns/mobility#RouteLink",
+              "range_label": {
+                "en": "RouteLink"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#viewedAs",
+          "name": "viewedAs",
+          "sort": "viewedAs",
+          "label": {
+            "en": "viewedAs"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility#RoutePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointOnRoute",
+              "range_uri": "https://purl.eu/ns/mobility#PointOnRoute"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point on Route",
+              "range_puri": "https://purl.eu/ns/mobility#PointOnRoute",
+              "range_label": {
+                "en": "Point on Route"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+      "name": "Scheduled Stop Point",
+      "label": {
+        "en": "Scheduled Stop Point"
+      },
+      "sort": "Scheduled Stop Point",
+      "description": {
+        "en": "A Point where passengers can board or alight from vehicles."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Transportknoop",
+          "name": "Transportknoop",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportknoop",
+          "scoped_uri": "http://fixme.com#Transportknoop"
+        },
+        {
+          "label": "Point",
+          "name": "Point",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Point",
+          "scoped_uri": "#Point"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^location",
+          "name": "location",
+          "sort": "location",
+          "label": {
+            "en": "location"
+          },
+          "description": {
+            "en": "Location of the Scheduled Stop Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Scheduled Stop Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#endOf",
+          "name": "endOf",
+          "sort": "endOf",
+          "label": {
+            "en": "endOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ServiceLink",
+              "range_uri": "https://purl.eu/ns/mobility#ServiceLink"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Service Link",
+              "range_puri": "https://purl.eu/ns/mobility#ServiceLink",
+              "range_label": {
+                "en": "Service Link"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#startOf",
+          "name": "startOf",
+          "sort": "startOf",
+          "label": {
+            "en": "startOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ServiceLink",
+              "range_uri": "https://purl.eu/ns/mobility#ServiceLink"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Service Link",
+              "range_puri": "https://purl.eu/ns/mobility#ServiceLink",
+              "range_label": {
+                "en": "Service Link"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#stopType",
+          "name": "stopType",
+          "sort": "stopType",
+          "label": {
+            "en": "stopType"
+          },
+          "description": {
+            "en": "Type of Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_label": {
+                "en": "StopPlaceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#viewedAs",
+          "name": "viewedAs",
+          "sort": "viewedAs",
+          "label": {
+            "en": "viewedAs"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Point in Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+              "range_label": {
+                "en": "Stop Point in Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ServiceJourney",
+      "name": "Service Journey",
+      "label": {
+        "en": "Service Journey"
+      },
+      "sort": "Service Journey",
+      "description": {
+        "en": "Vehicle Journey on which passengers will be allowed to board or alight from vehicles at stops."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "VehicleJourney",
+          "name": "VehicleJourney",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#VehicleJourney",
+          "scoped_uri": "#VehicleJourney"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^madeUsing",
+          "name": "madeUsing",
+          "sort": "madeUsing",
+          "label": {
+            "en": "madeUsing"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourney",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ServiceJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#ServiceJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Service Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#ServiceJourneyPattern",
+              "range_label": {
+                "en": "Service Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink",
+      "name": "Service Journey Link",
+      "label": {
+        "en": "Service Journey Link"
+      },
+      "sort": "Service Journey Link",
+      "description": {
+        "en": "The connection between two consecutive Scheduled Stop Points in a Service Journey Link. Each Service Journey Link has a particular departure and arrival time. Service Journey Links allow Routeplanners to calculate shortest Routes more easily since a Journey is executed at a specific time (on a specific Day Type)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#arrivalStop",
+          "name": "arrivalStop",
+          "sort": "arrivalStop",
+          "label": {
+            "en": "arrivalStop"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#arrivalTime",
+          "name": "arrivalTime",
+          "sort": "arrivalTime",
+          "label": {
+            "en": "arrivalTime"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#departureStop",
+          "name": "departureStop",
+          "sort": "departureStop",
+          "label": {
+            "en": "departureStop"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#departureTime",
+          "name": "departureTime",
+          "sort": "departureTime",
+          "label": {
+            "en": "departureTime"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#forAlighting",
+          "name": "forAlighting",
+          "sort": "forAlighting",
+          "label": {
+            "en": "forAlighting"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#forBoarding",
+          "name": "forBoarding",
+          "sort": "forBoarding",
+          "label": {
+            "en": "forBoarding"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#line",
+          "name": "line",
+          "sort": "line",
+          "label": {
+            "en": "line"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Line",
+              "range_uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Line",
+              "range_puri": "https://purl.eu/ns/mobility#Line",
+              "range_label": {
+                "en": "Line"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ServiceJourneyPattern",
+      "name": "Service Journey Pattern",
+      "label": {
+        "en": "Service Journey Pattern"
+      },
+      "sort": "Service Journey Pattern",
+      "description": {
+        "en": "Journey Pattern for a (passenger carrying) Service Journey."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Link Sequence",
+          "name": "LinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#LinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
+        },
+        {
+          "label": "Route",
+          "name": "Route",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Route",
+          "scoped_uri": "#Route"
+        },
+        {
+          "label": "Transportlinksequentie",
+          "name": "Transportlinksequentie",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
+        },
+        {
+          "label": "Journey Pattern",
+          "name": "JourneyPattern",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#JourneyPattern",
+          "scoped_uri": "#Journey Pattern"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#madeUpOf",
+          "name": "madeUpOf",
+          "sort": "madeUpOf",
+          "label": {
+            "en": "madeUpOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#ServiceJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Point in Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+              "range_label": {
+                "en": "Stop Point in Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ServiceLink",
+      "name": "Service Link",
+      "label": {
+        "en": "Service Link"
+      },
+      "sort": "Service Link",
+      "description": {
+        "en": "Link between an ordered pair of Scheduled Stop Points."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Link",
+          "name": "Link",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Link",
+          "scoped_uri": "https://purl.eu/ns/mobility#Link"
+        },
+        {
+          "label": "Transportlink",
+          "name": "Transportlink",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlink",
+          "scoped_uri": "http://fixme.com#Transportlink"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#from",
+          "name": "from",
+          "sort": "from",
+          "label": {
+            "en": "from"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#linestring",
+          "name": "linestring",
+          "sort": "linestring",
+          "label": {
+            "en": "linestring"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceLink"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#to",
+          "name": "to",
+          "sort": "to",
+          "label": {
+            "en": "to"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceLink",
+              "uri": "https://purl.eu/ns/mobility#ServiceLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#StopPlace",
+      "name": "Stop Place",
+      "label": {
+        "en": "Stop Place"
+      },
+      "sort": "Stop Place",
+      "description": {
+        "en": "A StopPlace represents a station, stop, port, airport or any physical point of access to the transport network."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Site",
+          "name": "Site",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Site",
+          "scoped_uri": "https://purl.eu/ns/mobility#Site"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#accessModes",
+          "name": "access modes",
+          "sort": "access modes",
+          "label": {
+            "en": "access modes"
+          },
+          "description": {
+            "en": "Access modes by which the Stop Place may be accessed."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessModes",
+              "range_uri": "https://purl.eu/ns/mobility#AccessModes"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#AccessModes",
+              "range_puri": "https://purl.eu/ns/mobility#AccessModes",
+              "range_label": {
+                "en": "AccessModes"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#accessabilityAssessment",
+          "name": "accessability assessment",
+          "sort": "accessability assessment",
+          "label": {
+            "en": "accessability assessment"
+          },
+          "description": {
+            "en": "The overall accessibility characteristics of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#centroid",
+          "name": "centroid",
+          "sort": "centroid",
+          "label": {
+            "en": "centroid"
+          },
+          "description": {
+            "en": "Centre Point of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#placeType",
+          "name": "place type",
+          "sort": "place type",
+          "label": {
+            "en": "place type"
+          },
+          "description": {
+            "en": "Categorisation of Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#PlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#PlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#PlaceType",
+              "range_label": {
+                "en": "PlaceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#polygon",
+          "name": "polygon",
+          "sort": "polygon",
+          "label": {
+            "en": "polygon"
+          },
+          "description": {
+            "en": "Polygon associated with the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "public code",
+          "sort": "public code",
+          "label": {
+            "en": "public code"
+          },
+          "description": {
+            "en": "Code used to identify a Stop Place to the public as an alternative to a name."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#roadAddress",
+          "name": "road address",
+          "sort": "road address",
+          "label": {
+            "en": "road address"
+          },
+          "description": {
+            "en": "Road address associated with the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#serves",
+          "name": "serves",
+          "sort": "serves",
+          "label": {
+            "en": "serves"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_puri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_label": {
+                "en": "TopographicPlace"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#stopPlaceType",
+          "name": "stop place type",
+          "sort": "stop place type",
+          "label": {
+            "en": "stop place type"
+          },
+          "description": {
+            "en": "The type of Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_label": {
+                "en": "StopPlaceType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportMode",
+          "name": "transport mode",
+          "sort": "transport mode",
+          "label": {
+            "en": "transport mode"
+          },
+          "description": {
+            "en": "The main transport mode of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+      "name": "Stop Point in Journey Pattern",
+      "label": {
+        "en": "Stop Point in Journey Pattern"
+      },
+      "sort": "Stop Point in Journey Pattern",
+      "description": {
+        "en": "Each Point inJourney Pattern specifies the visit of a Service to a specific Scheduled Stop Point in a particular order within the pattern."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Point in Link Sequence",
+          "name": "PointInLinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#PointInLinkSequence"
+        },
+        {
+          "label": "Routeknoop",
+          "name": "Routeknoop",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Routeknoop",
+          "scoped_uri": "http://fixme.com#Routeknoop"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#aViewOf",
+          "name": "aViewOf",
+          "sort": "aViewOf",
+          "label": {
+            "en": "aViewOf"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#forAlighting",
+          "name": "for alighting",
+          "sort": "for alighting",
+          "label": {
+            "en": "for alighting"
+          },
+          "description": {
+            "en": "Indicates whetherthe Stop Point may be used for alighting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#forBoarding",
+          "name": "for boarding",
+          "sort": "for boarding",
+          "label": {
+            "en": "for boarding"
+          },
+          "description": {
+            "en": "Indicates whetherthe Stop Point may be used for boarding."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#order",
+          "name": "order",
+          "sort": "order",
+          "label": {
+            "en": "order"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+      "name": "Time Tabled Passing Time",
+      "label": {
+        "en": "Time Tabled Passing Time"
+      },
+      "sort": "Time Tabled Passing Time",
+      "description": {
+        "en": "The PassingTimes that are the result of the scheduling process and to be published in a timetable are called TimeTabledPassingTimes. \n\nThe TimeTabledPassingTimes are normally generated a long time before the day of operation and are valid over a long period of time (e.g. summer, winter timetable)"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Passing Time",
+          "name": "PassingTime",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#PassingTime",
+          "scoped_uri": "https://purl.eu/ns/mobility#PassingTime"
+        },
+        {
+          "label": "Dienstregeling",
+          "name": "Dienstregeling",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Dienstregeling",
+          "scoped_uri": "http://fixme.com#Dienstregeling"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#arrivalDayOffset",
+          "name": "arrival day offset",
+          "sort": "arrival day offset",
+          "label": {
+            "en": "arrival day offset"
+          },
+          "description": {
+            "en": "Number of days after the starting time of the journey if not same calendar day. Default is 0 for same day."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TimeTabledPassingTime",
+              "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#arrivalTime",
+          "name": "arrivalTime",
+          "sort": "arrivalTime",
+          "label": {
+            "en": "arrivalTime"
+          },
+          "description": {
+            "en": "Arrival time at Point in Pattern."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TimeTabledPassingTime",
+              "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#departureDayOffset",
+          "name": "departure day offset",
+          "sort": "departure day offset",
+          "label": {
+            "en": "departure day offset"
+          },
+          "description": {
+            "en": "Number of days after the starting time of the journey if not same calendar day. Default is 0 for same day."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TimeTabledPassingTime",
+              "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#departureTime",
+          "name": "departureTime",
+          "sort": "departureTime",
+          "label": {
+            "en": "departureTime"
+          },
+          "description": {
+            "en": "Departure time at Point in Pattern."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TimeTabledPassingTime",
+              "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#VehicleJourney",
+      "name": "VehicleJourney",
+      "label": {
+        "en": "VehicleJourney"
+      },
+      "sort": "VehicleJourney",
+      "description": {
+        "en": "A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#departureTime",
+          "name": "departureTime",
+          "sort": "departureTime",
+          "label": {
+            "en": "departureTime"
+          },
+          "description": {
+            "en": "Time of departure."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#madeUsing",
+          "name": "madeUsing",
+          "sort": "madeUsing",
+          "label": {
+            "en": "madeUsing"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "JourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility#JourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility#JourneyPattern",
+              "range_label": {
+                "en": "Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#passedAt",
+          "name": "passedAt",
+          "sort": "passedAt",
+          "label": {
+            "en": "passedAt"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimeTabledPassingTime",
+              "range_uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Time Tabled Passing Time",
+              "range_puri": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+              "range_label": {
+                "en": "Time Tabled Passing Time"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#workedOn",
+          "name": "worked on",
+          "sort": "worked on",
+          "label": {
+            "en": "worked on"
+          },
+          "description": {
+            "en": "Day Type on which the Vehicle Journey is worked."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#DayType",
+              "range_puri": "https://purl.eu/ns/mobility#DayType",
+              "range_label": {
+                "en": "DayType"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    }
+  ],
+  "properties": [],
+  "contributors": [],
+  "datatypes": [],
+  "parents": [],
+  "documentroot": "/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2021-06-01"
+}

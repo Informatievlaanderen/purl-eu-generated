@@ -1,0 +1,934 @@
+{
+  "metadata": {
+    "title": "NeTEx Belgium: Stop Places (application profile)",
+    "uri": "http://fixme.com",
+    "issued": "2021-06-01",
+    "filename": "stopplaces-ap",
+    "navigation": {
+      "self": "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2021-06-01"
+    },
+    "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    "status": "Working Draft",
+    "statuslabel": "Onbekend",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3/CHANGELOG",
+    "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
+    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
+    "usesVocs": [],
+    "usesAPs": []
+  },
+  "classes": [
+    {
+      "uri": "https://purl.eu/ns/mobility#GroupOfStopPlaces",
+      "name": "Group of Stop Places",
+      "label": {
+        "en": "Group of Stop Places"
+      },
+      "sort": "Group of Stop Places",
+      "description": {
+        "en": "A grouping of Stop Places which will be commonly referenced for a specific purpose (stops inside an airport, main stops of a city, etc.)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#member",
+          "name": "member",
+          "sort": "member",
+          "label": {
+            "en": "member"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportMode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment",
+      "name": "Passenger Stop Assignment",
+      "label": {
+        "en": "Passenger Stop Assignment"
+      },
+      "sort": "Passenger Stop Assignment",
+      "description": {
+        "en": "The allocation of a Scheduled Stop Point  to a Stop Place."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#quay",
+          "name": "quay",
+          "sort": "quay",
+          "label": {
+            "en": "quay"
+          },
+          "description": {
+            "en": "Reference to a Quay within the Stop Place to which the Scheduled Stop Point is assigned."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Quay",
+              "range_uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Quay",
+              "range_puri": "https://purl.eu/ns/mobility#Quay",
+              "range_label": {
+                "en": "Quay"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Quay",
+      "name": "Quay",
+      "label": {
+        "en": "Quay"
+      },
+      "sort": "Quay",
+      "description": {
+        "en": "A  place such as a platform, bus stop, stance or quay side where passengers have access to public transport vehicles, taxi, cars or other means of transportation."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "public code",
+          "sort": "public code",
+          "label": {
+            "en": "public code"
+          },
+          "description": {
+            "en": "Code use to identify Quay to the public."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+      "name": "Scheduled Stop Point",
+      "label": {
+        "en": "Scheduled Stop Point"
+      },
+      "sort": "Scheduled Stop Point",
+      "description": {
+        "en": "A Point where passengers can board or alight from vehicles."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Transportknoop",
+          "name": "Transportknoop",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportknoop",
+          "scoped_uri": "http://fixme.com#Transportknoop"
+        },
+        {
+          "label": "Point",
+          "name": "Point",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Point",
+          "scoped_uri": "https://purl.eu/ns/mobility#Point"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^location",
+          "name": "location",
+          "sort": "location",
+          "label": {
+            "en": "location"
+          },
+          "description": {
+            "en": "Location of the Scheduled Stop Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Scheduled Stop Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#stopType",
+          "name": "stopType",
+          "sort": "stopType",
+          "label": {
+            "en": "stopType"
+          },
+          "description": {
+            "en": "Type of Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#StopPlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_label": {
+                "en": "StopPlaceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#StopPlace",
+      "name": "Stop Place",
+      "label": {
+        "en": "Stop Place"
+      },
+      "sort": "Stop Place",
+      "description": {
+        "en": "A StopPlace represents a station, stop, port, airport or any physical point of access to the transport network."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Site",
+          "name": "Site",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#Site",
+          "scoped_uri": "https://purl.eu/ns/mobility#Site"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^parentSiteRef",
+          "name": "parentSiteRef",
+          "sort": "parentSiteRef",
+          "label": {
+            "en": "parentSiteRef"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#accessModes",
+          "name": "access modes",
+          "sort": "access modes",
+          "label": {
+            "en": "access modes"
+          },
+          "description": {
+            "en": "Access modes by which the Stop Place may be accessed."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessModes",
+              "range_uri": "https://purl.eu/ns/mobility#AccessModes"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AccessModes",
+              "range_puri": "https://purl.eu/ns/mobility#AccessModes",
+              "range_label": {
+                "en": "AccessModes"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#accessabilityAssessment",
+          "name": "accessability assessment",
+          "sort": "accessability assessment",
+          "label": {
+            "en": "accessability assessment"
+          },
+          "description": {
+            "en": "The overall accessibility characteristics of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#centroid",
+          "name": "centroid",
+          "sort": "centroid",
+          "label": {
+            "en": "centroid"
+          },
+          "description": {
+            "en": "Centre Point of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#containing",
+          "name": "containing",
+          "sort": "containing",
+          "label": {
+            "en": "containing"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Quay",
+              "range_uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Quay",
+              "range_puri": "https://purl.eu/ns/mobility#Quay",
+              "range_label": {
+                "en": "Quay"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#enteredThrough",
+          "name": "enteredThrough",
+          "sort": "enteredThrough",
+          "label": {
+            "en": "enteredThrough"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceEntrance",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place Entrance",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceEntrance",
+              "range_label": {
+                "en": "Stop Place Entrance"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#placeType",
+          "name": "place type",
+          "sort": "place type",
+          "label": {
+            "en": "place type"
+          },
+          "description": {
+            "en": "Categorisation of Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#PlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#PlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#PlaceType",
+              "range_label": {
+                "en": "PlaceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#polygon",
+          "name": "polygon",
+          "sort": "polygon",
+          "label": {
+            "en": "polygon"
+          },
+          "description": {
+            "en": "Polygon associated with the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "public code",
+          "sort": "public code",
+          "label": {
+            "en": "public code"
+          },
+          "description": {
+            "en": "Code used to identify a Stop Place to the public as an alternative to a name."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#roadAddress",
+          "name": "road address",
+          "sort": "road address",
+          "label": {
+            "en": "road address"
+          },
+          "description": {
+            "en": "Road address associated with the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#serves",
+          "name": "serves",
+          "sort": "serves",
+          "label": {
+            "en": "serves"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_puri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_label": {
+                "en": "TopographicPlace"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#stopPlaceType",
+          "name": "stop place type",
+          "sort": "stop place type",
+          "label": {
+            "en": "stop place type"
+          },
+          "description": {
+            "en": "The type of Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceType",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#StopPlaceType",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_label": {
+                "en": "StopPlaceType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportMode",
+          "name": "transport mode",
+          "sort": "transport mode",
+          "label": {
+            "en": "transport mode"
+          },
+          "description": {
+            "en": "The main transport mode of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance",
+      "name": "Stop Place Entrance",
+      "label": {
+        "en": "Stop Place Entrance"
+      },
+      "sort": "Stop Place Entrance",
+      "description": {
+        "en": "Physical entrance or exit to/from a Stop Place for a passenger."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#entranceType",
+          "name": "entrance type",
+          "sort": "entrance type",
+          "label": {
+            "en": "entrance type"
+          },
+          "description": {
+            "en": "Type of entrance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EntranceType",
+              "range_uri": "https://purl.eu/ns/mobility#EntranceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#EntranceType",
+              "range_puri": "https://purl.eu/ns/mobility#EntranceType",
+              "range_label": {
+                "en": "EntranceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#isEntry",
+          "name": "is entry",
+          "sort": "is entry",
+          "label": {
+            "en": "is entry"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance can be used for entry to the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#isExit",
+          "name": "is exit",
+          "sort": "is exit",
+          "label": {
+            "en": "is exit"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance can be used for exit from the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "public code",
+          "sort": "public code",
+          "label": {
+            "en": "public code"
+          },
+          "description": {
+            "en": "Public code for the Stop Place Entrance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    }
+  ],
+  "properties": [],
+  "contributors": [],
+  "datatypes": [],
+  "parents": [],
+  "documentroot": "/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2021-06-01"
+}

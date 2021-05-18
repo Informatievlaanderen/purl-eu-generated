@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/c45c772e30f0d44cb40d8d4ab49079e259a6fdc2",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/c45c772e30f0d44cb40d8d4ab49079e259a6fdc2/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -20,38 +20,67 @@
   "classes": [
     {
       "uri": "https://purl.eu/ns/mobility#Block",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Block",
+      "label": {
+        "en": "Block"
+      },
+      "sort": "Block",
+      "description": {
+        "en": "The work of a vehicle from the time it leaves a Parking Point after parking until its next return to park at a Parking Point."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#endTime",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "end time",
+          "sort": "end time",
+          "label": {
+            "en": "end time"
+          },
+          "description": {
+            "en": "Time when the Block ended."
+          },
+          "usage": {
+            "en": "in principle this can be derived from the start time of the last Vehicle Journey and the finishing duration. "
+          },
           "domain": [
             {
               "EA-Name": "Block",
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#endedAt",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "ended at",
+          "sort": "ended at",
+          "label": {
+            "en": "ended at"
+          },
+          "description": {
+            "en": "The Parking Point where the Block ended at."
+          },
+          "usage": {
+            "en": "A vehicle's return to park at a Parking Point marks the end of a Block."
+          },
           "domain": [
             {
               "EA-Name": "Block",
@@ -66,10 +95,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ParkingPoint",
+              "range_uri": "#Parking Point",
               "range_puri": "https://purl.eu/ns/mobility#ParkingPoint",
               "range_label": {
-                "en": "ParkingPoint"
+                "en": "Parking Point"
               }
             }
           ],
@@ -77,7 +106,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
+          "uri": "https://purl.eu/ns/mobility#including",
           "name": "",
           "sort": "",
           "label": {},
@@ -89,35 +118,71 @@
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "VehicleJourney",
+              "range_uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#VehicleJourney",
+              "range_puri": "https://purl.eu/ns/mobility#VehicleJourney",
+              "range_label": {
+                "en": "VehicleJourney"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#startTime",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
+          "name": "start time",
+          "sort": "start time",
+          "label": {
+            "en": "start time"
+          },
+          "description": {
+            "en": "Time when the Block started."
+          },
+          "usage": {
+            "en": "In principle this can be derived from the start time of the first Vehicle Journey and the preparation duration."
+          },
           "domain": [
             {
               "EA-Name": "Block",
               "uri": "https://purl.eu/ns/mobility#Block"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#startedAt",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "started at",
+          "sort": "started at",
+          "label": {
+            "en": "started at"
+          },
+          "description": {
+            "en": "The Parking Point where the Block started at."
+          },
           "usage": {},
           "domain": [
             {
@@ -133,10 +198,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ParkingPoint",
+              "range_uri": "#Parking Point",
               "range_puri": "https://purl.eu/ns/mobility#ParkingPoint",
               "range_label": {
-                "en": "ParkingPoint"
+                "en": "Parking Point"
               }
             }
           ],
@@ -145,10 +210,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#using",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "using",
+          "sort": "using",
+          "label": {
+            "en": "using"
+          },
+          "description": {
+            "en": "Vehicle Type used to execute the Block."
+          },
           "usage": {},
           "domain": [
             {
@@ -164,10 +233,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#VehicleType",
+              "range_uri": "#Vehicle Type",
               "range_puri": "https://purl.eu/ns/mobility#VehicleType",
               "range_label": {
-                "en": "VehicleType"
+                "en": "Vehicle Type"
               }
             }
           ],
@@ -176,10 +245,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#workedOn",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "worked on",
+          "sort": "worked on",
+          "label": {
+            "en": "worked on"
+          },
+          "description": {
+            "en": "The DayType when the Block was worked on."
+          },
           "usage": {},
           "domain": [
             {
@@ -195,10 +268,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DayType",
+              "range_uri": "#Day Type",
               "range_puri": "https://purl.eu/ns/mobility#DayType",
               "range_label": {
-                "en": "DayType"
+                "en": "Day Type"
               }
             }
           ],
@@ -209,50 +282,29 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#DayType",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
-      "usage": {},
+      "name": "Day Type",
+      "label": {
+        "en": "Day Type"
+      },
+      "sort": "Day Type",
+      "description": {
+        "en": "A type of day characterised by one or more properties which affect public transport operation."
+      },
+      "usage": {
+        "en": "For example: weekday in school holidays."
+      },
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#definedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "en": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#describedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "described by",
+          "sort": "described by",
+          "label": {
+            "en": "described by"
+          },
+          "description": {
+            "en": "Property of Day that is used to describe the Day Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -268,40 +320,26 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#PropertyOfDay",
+              "range_uri": "#Property of Day",
               "range_puri": "https://purl.eu/ns/mobility#PropertyOfDay",
               "range_label": {
-                "en": "PropertyOfDay"
+                "en": "Property of Day"
               }
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Day Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -309,152 +347,49 @@
               "uri": "https://purl.eu/ns/mobility#DayType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#definedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "en": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#describedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayType",
-              "uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PropertyOfDay",
-              "range_uri": "https://purl.eu/ns/mobility#PropertyOfDay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PropertyOfDay",
-              "range_puri": "https://purl.eu/ns/mobility#PropertyOfDay",
-              "range_label": {
-                "en": "PropertyOfDay"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#DayTypeAssignment",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Day Type Assignment",
+      "label": {
+        "en": "Day Type Assignment"
+      },
+      "sort": "Day Type Assignment",
+      "description": {
+        "en": "The assignment of operational characteristics, expressed by Day Types, to particular Operating Days within a Service Calendar."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DayType",
-              "range_uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#DayType",
-              "range_puri": "https://purl.eu/ns/mobility#DayType",
-              "range_label": {
-                "en": "DayType"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ServiceCalendar",
-              "range_uri": "https://purl.eu/ns/mobility#ServiceCalendar"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ServiceCalendar",
-              "range_puri": "https://purl.eu/ns/mobility#ServiceCalendar",
-              "range_label": {
-                "en": "ServiceCalendar"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#date",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "date",
+          "sort": "date",
+          "label": {
+            "en": "date"
+          },
+          "description": {
+            "en": "Date of the Day Type Assignment."
+          },
           "usage": {},
           "domain": [
             {
@@ -462,37 +397,36 @@
               "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "en": "Date"
+              }
+            }
+          ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility#DayTypeAssignment"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#DeadRun",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Dead Run",
+      "label": {
+        "en": "Dead Run"
+      },
+      "sort": "Dead Run",
+      "description": {
+        "en": "A non-service Vehicle Journey."
+      },
       "usage": {},
       "parents": [
         {
@@ -503,33 +437,18 @@
           "scoped_uri": "#VehicleJourney"
         }
       ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DeadRun",
-              "uri": "https://purl.eu/ns/mobility#DeadRun"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#DeadRunPattern",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Dead Run Pattern",
+      "label": {
+        "en": "Dead Run Pattern"
+      },
+      "sort": "Dead Run Pattern",
+      "description": {
+        "en": "Journey Pattern to be used for Dead Runs."
+      },
       "usage": {},
       "parents": [
         {
@@ -544,37 +463,27 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#Garage",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Garage",
+      "label": {
+        "en": "Garage"
+      },
+      "sort": "Garage",
+      "description": {
+        "en": "Facility used for parking and maintaining vehicles."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Garage",
-              "uri": "https://purl.eu/ns/mobility#Garage"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Garage."
+          },
           "usage": {},
           "domain": [
             {
@@ -582,8 +491,21 @@
               "uri": "https://purl.eu/ns/mobility#Garage"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -591,31 +513,71 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#GaragePoint",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Garage Point",
+      "label": {
+        "en": "Garage Point"
+      },
+      "sort": "Garage Point",
+      "description": {
+        "en": "Parking Point in a Garage."
+      },
       "usage": {},
       "parents": [
         {
-          "label": "ParkingPoint",
+          "label": "Parking Point",
           "name": "ParkingPoint",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#ParkingPoint",
-          "scoped_uri": "#ParkingPoint"
+          "scoped_uri": "#Parking Point"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#belongingTo",
+          "name": "belonging to",
+          "sort": "belonging to",
+          "label": {
+            "en": "belonging to"
+          },
+          "description": {
+            "en": "The Garage to which the Garage Point belongs."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GaragePoint",
+              "uri": "https://purl.eu/ns/mobility#GaragePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Garage",
+              "range_uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Garage",
+              "range_puri": "https://purl.eu/ns/mobility#Garage",
+              "range_label": {
+                "en": "Garage"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#GroupOfLines",
-      "name": "GroupOfLines",
+      "name": "Group of Lines",
       "label": {
-        "en": "GroupOfLines"
+        "en": "Group of Lines"
       },
-      "sort": "GroupOfLines",
+      "sort": "Group of Lines",
       "description": {
-        "en": "GroupOfLines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them."
+        "en": "Group of Lines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them."
       },
       "usage": {},
       "parents": [
@@ -635,28 +597,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#^name",
-          "name": "name",
-          "sort": "name",
-          "label": {
-            "en": "name"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfLines",
-              "uri": "https://purl.eu/ns/mobility#GroupOfLines"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#composedOf",
           "name": "composedOf",
@@ -693,14 +633,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
+          "uri": "https://purl.eu/ns/mobility#name",
+          "name": "name",
+          "sort": "name",
           "label": {
-            "en": "etc"
+            "en": "name"
           },
           "description": {
-            "en": "an additional property"
+            "en": "Name of the Group of Lines."
           },
           "usage": {},
           "domain": [
@@ -709,9 +649,22 @@
               "uri": "https://purl.eu/ns/mobility#GroupOfLines"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -722,7 +675,7 @@
             "en": "transportmode"
           },
           "description": {
-            "en": "TODO"
+            "en": "Transportmode of the Group of Lines."
           },
           "usage": {},
           "domain": [
@@ -731,8 +684,21 @@
               "uri": "https://purl.eu/ns/mobility#GroupOfLines"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -746,12 +712,12 @@
       },
       "sort": "Journey Pattern",
       "description": {
-        "en": "The JourneyPattern model is concerned with the spatial description of services, i.e. spatial aspects of the work of the vehicles. The concerns of this model are different from those of describing the Routes and Lines. The latter are describing schematic paths of vehicles through the road network, whereas JourneyPatterns describe how the work of vehicles is performed. These work patterns describe the sequence of points where\nvehicles stop with specific points being attributed with timing information. \n\nThe working pattern described by a JourneyPattern is usually related to a Route which it covers. Several JourneyPatterns may use the same Route."
+        "en": "An ordered list of Scheduled Stop Points and Timing Points on a single Route, describing the pattern of working for public transport vehicles. A Journey Pattern may pass through the same Point more than once."
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -775,13 +741,13 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#destinationDisplayRef",
-          "name": "destinationDisplayRef",
-          "sort": "destinationDisplayRef",
+          "name": "destination display reference",
+          "sort": "destination display reference",
           "label": {
-            "en": "destinationDisplayRef"
+            "en": "destination display reference"
           },
           "description": {
-            "en": "TODO"
+            "en": "Destination Display associated with the Journey Pattern."
           },
           "usage": {},
           "domain": [
@@ -793,28 +759,6 @@
           "range": [],
           "scopedrange": [],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "JourneyPattern",
-              "uri": "https://purl.eu/ns/mobility#JourneyPattern"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -842,10 +786,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#PointInJourneyPattern",
+              "range_uri": "#Point in Journey Pattern",
               "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
               "range_label": {
-                "en": "PointInJourneyPattern"
+                "en": "Point in Journey Pattern"
               }
             }
           ],
@@ -875,28 +819,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility#Line"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#madeUpOf",
           "name": "madeUpOf",
@@ -940,7 +862,7 @@
             "en": "name"
           },
           "description": {
-            "en": "TODO"
+            "en": "Name of the Line."
           },
           "usage": {},
           "domain": [
@@ -949,20 +871,33 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#publicCode",
-          "name": "publicCode",
-          "sort": "publicCode",
+          "name": "public code",
+          "sort": "public code",
           "label": {
-            "en": "publicCode"
+            "en": "public code"
           },
           "description": {
-            "en": "TODO"
+            "en": "Public identifier of the Line."
           },
           "usage": {},
           "domain": [
@@ -984,7 +919,7 @@
             "en": "transportmode"
           },
           "description": {
-            "en": "TODO"
+            "en": "Identifier of the primary transport mode of the Line."
           },
           "usage": {},
           "domain": [
@@ -993,8 +928,21 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "en": "Transportmode"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -1008,16 +956,16 @@
       },
       "sort": "Network",
       "description": {
-        "en": "A Network is a named grouping of Lines under which a Transport network is known."
+        "en": "A named grouping of Lines under which a Transport network is known."
       },
       "usage": {},
       "parents": [
         {
-          "label": "GroupOfLines",
+          "label": "Group of Lines",
           "name": "GroupOfLines",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#GroupOfLines",
-          "scoped_uri": "#GroupOfLines"
+          "scoped_uri": "#Group of Lines"
         },
         {
           "label": "Mobiliteitsdienst",
@@ -1035,28 +983,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Network",
-              "uri": "https://purl.eu/ns/mobility#Network"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility#madeUpOf",
           "name": "madeUpOf",
@@ -1082,10 +1008,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#GroupOfLines",
+              "range_uri": "#Group of Lines",
               "range_puri": "https://purl.eu/ns/mobility#GroupOfLines",
               "range_label": {
-                "en": "GroupOfLines"
+                "en": "Group of Lines"
               }
             }
           ],
@@ -1096,14 +1022,18 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#ParkingPoint",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Parking Point",
+      "label": {
+        "en": "Parking Point"
+      },
+      "sort": "Parking Point",
+      "description": {
+        "en": "A Relief Point where vehicles may stay unattended for a long time."
+      },
       "usage": {},
       "parents": [
         {
-          "label": "ReliefPoint",
+          "label": "Relief Point",
           "name": "ReliefPoint",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#ReliefPoint",
@@ -1120,7 +1050,7 @@
       },
       "sort": "Point",
       "description": {
-        "en": "A 0-dimensional node of the network used for the spatial description of the network. Points may be located by a Location in a given LocatingSystem."
+        "en": "A 0-dimensional node of the Network used for the spatial description of the Network. Points may be located by a Location in a given Locating System."
       },
       "usage": {},
       "parents": [],
@@ -1150,10 +1080,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#PointInJourneyPattern",
+              "range_uri": "#Point in Journey Pattern",
               "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
               "range_label": {
-                "en": "PointInJourneyPattern"
+                "en": "Point in Journey Pattern"
               }
             }
           ],
@@ -1164,18 +1094,18 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
-      "name": "PointInJourneyPattern",
+      "name": "Point in Journey Pattern",
       "label": {
-        "en": "PointInJourneyPattern"
+        "en": "Point in Journey Pattern"
       },
-      "sort": "PointInJourneyPattern",
+      "sort": "Point in Journey Pattern",
       "description": {
-        "en": "Each PointInJourneyPattern specifies the visit of a Service to a specific Point in a particular order within the pattern."
+        "en": "Each Point in Journey Pattern specifies the visit of a Service to a specific Point in a particular order within the pattern."
       },
       "usage": {},
       "parents": [
         {
-          "label": "PointInLinkSequence",
+          "label": "Point in Link Sequence",
           "name": "PointInLinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
@@ -1226,28 +1156,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointInJourneyPattern",
-              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#order",
           "name": "order",
           "sort": "order",
@@ -1255,7 +1163,7 @@
             "en": "order"
           },
           "description": {
-            "en": "TODO"
+            "en": "Order of Point in Journey Pattern within Journey Pattern."
           },
           "usage": {},
           "domain": [
@@ -1264,8 +1172,21 @@
               "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1273,37 +1194,27 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#PropertyOfDay",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Property of Day",
+      "label": {
+        "en": "Property of Day"
+      },
+      "sort": "Property of Day",
+      "description": {
+        "en": "A property which a day may possess, such as school holiday, weekday, summer, winter etc."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#holidayType",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "holiday type",
+          "sort": "holiday type",
+          "label": {
+            "en": "holiday type"
+          },
+          "description": {
+            "en": "The type of holiday, e.g. Christmas."
+          },
           "usage": {},
           "domain": [
             {
@@ -1311,17 +1222,34 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "HolidayType",
+              "range_uri": "https://purl.eu/ns/mobility#HolidayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#HolidayType",
+              "range_puri": "https://purl.eu/ns/mobility#HolidayType",
+              "range_label": {
+                "en": "HolidayType"
+              }
+            }
+          ],
           "cardinality": "0..5",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "The name of the Property of Day."
+          },
           "usage": {},
           "domain": [
             {
@@ -1329,17 +1257,34 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#season",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "season",
+          "sort": "season",
+          "label": {
+            "en": "season"
+          },
+          "description": {
+            "en": "The season, e.g. winter."
+          },
           "usage": {},
           "domain": [
             {
@@ -1347,9 +1292,57 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Season",
+              "range_uri": "https://purl.eu/ns/mobility#Season"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Season",
+              "range_puri": "https://purl.eu/ns/mobility#Season",
+              "range_label": {
+                "en": "Season"
+              }
+            }
+          ],
           "cardinality": "0..4",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#usedToDescribe",
+          "name": "used to describe",
+          "sort": "used to describe",
+          "label": {
+            "en": "used to describe"
+          },
+          "description": {
+            "en": "Day Type the Property of Day is describing."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Day Type",
+              "range_puri": "https://purl.eu/ns/mobility#DayType",
+              "range_label": {
+                "en": "Day Type"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -1362,12 +1355,12 @@
       },
       "sort": "Route",
       "description": {
-        "en": "An ordered list of located Points defining one single path through the road (or rail) network. A Route may pass through the same Point more than once."
+        "en": "Ordered list of located Points defining one single path through the road (or rail) Network. A Route may pass through the same Point more than once."
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -1432,7 +1425,7 @@
             "en": "directionRef"
           },
           "description": {
-            "en": "TODO"
+            "en": "Reference to Direction of Route."
           },
           "usage": {},
           "domain": [
@@ -1445,46 +1438,32 @@
           "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Route",
-              "uri": "https://purl.eu/ns/mobility#Route"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceCalendar",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Service Calendar",
+      "label": {
+        "en": "Service Calendar"
+      },
+      "sort": "Service Calendar",
+      "description": {
+        "en": "Collection of Day Types Assignments."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#from",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "from",
+          "sort": "from",
+          "label": {
+            "en": "from"
+          },
+          "description": {
+            "en": "Inclusive start date for validity of the Service Calendar."
+          },
           "usage": {},
           "domain": [
             {
@@ -1492,17 +1471,34 @@
               "uri": "https://purl.eu/ns/mobility#ServiceCalendar"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "en": "Date"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#to",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "to",
+          "sort": "to",
+          "label": {
+            "en": "to"
+          },
+          "description": {
+            "en": "Inclusive end date for validity of the Service Calendar."
+          },
           "usage": {},
           "domain": [
             {
@@ -1510,8 +1506,21 @@
               "uri": "https://purl.eu/ns/mobility#ServiceCalendar"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "en": "Date"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1519,13 +1528,13 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceJourney",
-      "name": "ServiceJourney",
+      "name": "Service Journey",
       "label": {
-        "en": "ServiceJourney"
+        "en": "Service Journey"
       },
-      "sort": "ServiceJourney",
+      "sort": "Service Journey",
       "description": {
-        "en": "A ServiceJourney is a VehicleJourney on which passengers will be allowed to board or alight from vehicles at stops."
+        "en": "Vehicle Journey on which passengers will be allowed to board or alight from vehicles at stops."
       },
       "usage": {},
       "parents": [
@@ -1537,45 +1546,22 @@
           "scoped_uri": "#VehicleJourney"
         }
       ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "etc",
-          "sort": "etc",
-          "label": {
-            "en": "etc"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#ServiceJourneyPattern",
-      "name": "ServiceJourneyPattern",
+      "name": "Service Journey Pattern",
       "label": {
-        "en": "ServiceJourneyPattern"
+        "en": "Service Journey Pattern"
       },
-      "sort": "ServiceJourneyPattern",
+      "sort": "Service Journey Pattern",
       "description": {
-        "en": "The JourneyPattern for a (passenger carrying) ServiceJourney"
+        "en": "Journey Pattern for a (passenger carrying) Service Journey."
       },
       "usage": {},
       "parents": [
         {
-          "label": "LinkSequence",
+          "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
@@ -1613,7 +1599,7 @@
       },
       "sort": "VehicleJourney",
       "description": {
-        "en": "A VehicleJourney is the defined movement of a vehicle using a specified JourneyPattern on a particular Route. By virtue of being defined for a DayType, a VehicleJourney is a class of journeys that would take place at the same time on each day of a specified DayType."
+        "en": "A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type."
       },
       "usage": {},
       "parents": [],
@@ -1626,44 +1612,8 @@
             "en": "departureTime"
           },
           "description": {
-            "en": "TODO"
+            "en": "Time of departure."
           },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#in",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1673,16 +1623,16 @@
           ],
           "range": [
             {
-              "range_label": "Block",
-              "range_uri": "https://purl.eu/ns/mobility#Block"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Block",
-              "range_puri": "https://purl.eu/ns/mobility#Block",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "Block"
+                "en": "DateTime"
               }
             }
           ],
@@ -1691,10 +1641,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#in",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "including",
+          "sort": "including",
+          "label": {
+            "en": "including"
+          },
+          "description": {
+            "en": "Vehicle Journeys included in the Block."
+          },
           "usage": {},
           "domain": [
             {
@@ -1757,10 +1711,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#workedOn",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "worked on",
+          "sort": "worked on",
+          "label": {
+            "en": "worked on"
+          },
+          "description": {
+            "en": "Day Type on which the Vehicle Journey is worked."
+          },
           "usage": {},
           "domain": [
             {
@@ -1776,10 +1734,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DayType",
+              "range_uri": "#Day Type",
               "range_puri": "https://purl.eu/ns/mobility#DayType",
               "range_label": {
-                "en": "DayType"
+                "en": "Day Type"
               }
             }
           ],
@@ -1790,19 +1748,27 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#VehicleType",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Vehicle Type",
+      "label": {
+        "en": "Vehicle Type"
+      },
+      "sort": "Vehicle Type",
+      "description": {
+        "en": "Vehicles may be classified using a Vehicle Type according to how they meet vehicle scheduling requirements as to capacity and on-board facilities (e.g. standard bus, double decker, etc.)."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#etc",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "https://purl.eu/ns/mobility#capacity",
+          "name": "capacity",
+          "sort": "capacity",
+          "label": {
+            "en": "capacity"
+          },
+          "description": {
+            "en": "Passenger carrying capacity of the Vehicle Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -1810,17 +1776,34 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#length",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "length",
+          "sort": "length",
+          "label": {
+            "en": "length"
+          },
+          "description": {
+            "en": "Length of a Vehicle of that Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -1828,17 +1811,34 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "en": "Double"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Vehicle Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -1846,35 +1846,34 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#seatingcapacity",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
+          "range": [
             {
-              "EA-Name": "VehicleType",
-              "uri": "https://purl.eu/ns/mobility#VehicleType"
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "https://purl.eu/ns/mobility#typeOfFuel",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "type of fuel",
+          "sort": "type of fuel",
+          "label": {
+            "en": "type of fuel"
+          },
+          "description": {
+            "en": "Type of fuel of the Vehicle Type."
+          },
           "usage": {},
           "domain": [
             {
@@ -1882,8 +1881,21 @@
               "uri": "https://purl.eu/ns/mobility#VehicleType"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "FuelType",
+              "range_uri": "https://purl.eu/ns/mobility#FuelType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#FuelType",
+              "range_puri": "https://purl.eu/ns/mobility#FuelType",
+              "range_label": {
+                "en": "FuelType"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }

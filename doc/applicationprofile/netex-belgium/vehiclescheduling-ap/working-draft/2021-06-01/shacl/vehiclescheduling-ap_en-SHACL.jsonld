@@ -45,39 +45,76 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Time when the Block ended."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "end time"
+          },
           "sh:path": "https://purl.eu/ns/mobility#endTime"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
+          "sh:definition": {
+            "en": "The Parking Point where the Block ended at."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "ended at"
+          },
           "sh:path": "https://purl.eu/ns/mobility#endedAt"
         },
         {
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
+          "sh:class": "https://purl.eu/ns/mobility#VehicleJourney",
+          "sh:path": "https://purl.eu/ns/mobility#including"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Time when the Block started."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "start time"
+          },
           "sh:path": "https://purl.eu/ns/mobility#startTime"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
+          "sh:definition": {
+            "en": "The Parking Point where the Block started at."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "started at"
+          },
           "sh:path": "https://purl.eu/ns/mobility#startedAt"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#VehicleType",
+          "sh:definition": {
+            "en": "Vehicle Type used to execute the Block."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "using"
+          },
           "sh:path": "https://purl.eu/ns/mobility#using"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "The DayType when the Block was worked on."
+          },
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "worked on"
+          },
           "sh:path": "https://purl.eu/ns/mobility#workedOn"
         }
       ],
@@ -89,32 +126,28 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
-          "sh:path": "https://purl.eu/ns/mobility#definedBy"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
-          "sh:path": "https://purl.eu/ns/mobility#definedBy"
-        },
-        {
           "sh:class": "https://purl.eu/ns/mobility#PropertyOfDay",
+          "sh:definition": {
+            "en": "Property of Day that is used to describe the Day Type."
+          },
+          "sh:name": {
+            "en": "described by"
+          },
           "sh:path": "https://purl.eu/ns/mobility#describedBy"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#PropertyOfDay",
-          "sh:path": "https://purl.eu/ns/mobility#describedBy"
-        },
-        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Day Type."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
-          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
           "sh:path": "https://purl.eu/ns/mobility#name"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType"
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeAssignmentShape",
@@ -122,25 +155,15 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Date of the Day Type Assignment."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#DayTypeAssignment.dayType"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#ServiceCalendar",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar"
-        },
-        {
-          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "date"
+          },
           "sh:path": "https://purl.eu/ns/mobility#date"
-        },
-        {
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment"
@@ -149,13 +172,7 @@
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "https://purl.eu/ns/mobility#DeadRun"
     },
     {
@@ -171,12 +188,14 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Garage."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
-          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
           "sh:path": "https://purl.eu/ns/mobility#name"
         }
       ],
@@ -186,7 +205,19 @@
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GaragePointShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Garage",
+          "sh:definition": {
+            "en": "The Garage to which the Garage Point belongs."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "belonging to"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#belongingTo"
+        }
+      ],
       "sh:targetClass": "https://purl.eu/ns/mobility#GaragePoint"
     },
     {
@@ -195,14 +226,15 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Name of the Group of Lines."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^name"
+          "sh:path": "https://purl.eu/ns/mobility#name"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Line",
@@ -216,19 +248,9 @@
           "sh:path": "https://purl.eu/ns/mobility#composedOf"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
           "sh:definition": {
-            "en": "an additional property"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
-          "sh:definition": {
-            "en": "TODO"
+            "en": "Transportmode of the Group of Lines."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -246,24 +268,13 @@
       "sh:property": [
         {
           "sh:definition": {
-            "en": "TODO"
+            "en": "Destination Display associated with the Journey Pattern."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "destinationDisplayRef"
+            "en": "destination display reference"
           },
           "sh:path": "https://purl.eu/ns/mobility#destinationDisplayRef"
-        },
-        {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
@@ -285,17 +296,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
           "sh:class": "https://purl.eu/ns/mobility#Route",
           "sh:definition": {
             "en": "TODO"
@@ -307,8 +307,9 @@
           "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
         },
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Name of the Line."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -319,17 +320,18 @@
         },
         {
           "sh:definition": {
-            "en": "TODO"
+            "en": "Public identifier of the Line."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "publicCode"
+            "en": "public code"
           },
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Identifier of the primary transport mode of the Line."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -345,17 +347,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
         {
           "sh:class": "https://purl.eu/ns/mobility#GroupOfLines",
           "sh:definition": {
@@ -412,19 +403,9 @@
           "sh:path": "https://purl.eu/ns/mobility#aViewOf"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
-          "sh:definition": {
-            "en": "TODO"
+            "en": "Order of Point in Journey Pattern within Journey Pattern."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -442,21 +423,47 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
+          "sh:class": "https://purl.eu/ns/mobility#HolidayType",
+          "sh:definition": {
+            "en": "The type of holiday, e.g. Christmas."
+          },
           "sh:maxCount": "5",
+          "sh:name": {
+            "en": "holiday type"
+          },
           "sh:path": "https://purl.eu/ns/mobility#holidayType"
         },
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The name of the Property of Day."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
           "sh:path": "https://purl.eu/ns/mobility#name"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#Season",
+          "sh:definition": {
+            "en": "The season, e.g. winter."
+          },
           "sh:maxCount": "4",
+          "sh:name": {
+            "en": "season"
+          },
           "sh:path": "https://purl.eu/ns/mobility#season"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "Day Type the Property of Day is describing."
+          },
+          "sh:name": {
+            "en": "used to describe"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#usedToDescribe"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#PropertyOfDay"
@@ -478,24 +485,13 @@
         },
         {
           "sh:definition": {
-            "en": "TODO"
+            "en": "Reference to Direction of Route."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "directionRef"
           },
           "sh:path": "https://purl.eu/ns/mobility#directionRef"
-        },
-        {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#Route"
@@ -506,35 +502,37 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Inclusive start date for validity of the Service Calendar."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "from"
+          },
           "sh:path": "https://purl.eu/ns/mobility#from"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Inclusive end date for validity of the Service Calendar."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "to"
+          },
           "sh:path": "https://purl.eu/ns/mobility#to"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment.serviceCalendar"
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceCalendar"
     },
     {
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "etc"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "https://purl.eu/ns/mobility#ServiceJourney"
     },
     {
@@ -550,8 +548,9 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Time of departure."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -560,18 +559,14 @@
           "sh:path": "https://purl.eu/ns/mobility#departureTime"
         },
         {
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
-        },
-        {
           "sh:class": "https://purl.eu/ns/mobility#Block",
+          "sh:definition": {
+            "en": "Vehicle Journeys included in the Block."
+          },
           "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#in"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Block",
-          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "including"
+          },
           "sh:path": "https://purl.eu/ns/mobility#in"
         },
         {
@@ -586,7 +581,13 @@
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "Day Type on which the Vehicle Journey is worked."
+          },
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "worked on"
+          },
           "sh:path": "https://purl.eu/ns/mobility#workedOn"
         }
       ],
@@ -598,24 +599,47 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Passenger carrying capacity of the Vehicle Type."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#etc"
+          "sh:name": {
+            "en": "capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#capacity"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:definition": {
+            "en": "Length of a Vehicle of that Type."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "length"
+          },
           "sh:path": "https://purl.eu/ns/mobility#length"
         },
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Vehicle Type."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
           "sh:path": "https://purl.eu/ns/mobility#name"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#FuelType",
+          "sh:definition": {
+            "en": "Type of fuel of the Vehicle Type."
+          },
           "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#seatingcapacity"
-        },
-        {
-          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type of fuel"
+          },
           "sh:path": "https://purl.eu/ns/mobility#typeOfFuel"
         }
       ],
