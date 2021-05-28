@@ -10,14 +10,24 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6ddf91d67ddfe36b787f8e0aac62d92ae238fdb3/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/6b799e81ba0a220eaa5baa3b7928c64b23afeaaa",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/6b799e81ba0a220eaa5baa3b7928c64b23afeaaa/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "https://purl.eu/ns/mobility#Country",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
     {
       "uri": "https://purl.eu/ns/mobility#GroupOfStopPlaces",
       "name": "Group of Stop Places",
@@ -103,6 +113,26 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Level",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#Locale",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment",
@@ -224,6 +254,81 @@
       ]
     },
     {
+      "uri": "https://purl.eu/ns/mobility#PointOfInterest",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#servedBy",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#servedBy",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "https://purl.eu/ns/mobility#Quay",
       "name": "Quay",
       "label": {
@@ -236,8 +341,171 @@
         "nl": "Enter your translation here"
       },
       "usage": {},
-      "parents": [],
+      "parents": [
+        {
+          "label": "SiteElement",
+          "name": "SiteElement",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#SiteElement",
+          "scoped_uri": "https://purl.eu/ns/mobility#SiteElement"
+        }
+      ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#compassBearing",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://schema.org/QuantitativeValue",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "nl": "KwantitatieveWaarde"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#label",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#level",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility#Level",
+              "range_label": {
+                "nl": "Level"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#otherTransportmode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#plateCode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility#publicCode",
           "name": "public code",
@@ -257,8 +525,183 @@
               "uri": "https://purl.eu/ns/mobility#Quay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#quay",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Quay",
+              "range_uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Quay",
+              "range_label": {
+                "en": "Quay",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#quayType",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "QuayType",
+              "range_uri": "https://purl.eu/ns/mobility#QuayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#QuayType",
+              "range_puri": "https://purl.eu/ns/mobility#QuayType",
+              "range_label": {
+                "nl": "QuayType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#submode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#tariffZone",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TariffZone",
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_puri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_label": {
+                "nl": "TariffZone"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportMode",
+          "name": "transport mode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "transport mode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The main transport mode of the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -291,6 +734,13 @@
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#Point",
           "scoped_uri": "https://purl.eu/ns/mobility#Point"
+        },
+        {
+          "label": "TimingPoint",
+          "name": "TimingPoint",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#TimingPoint",
+          "scoped_uri": "https://purl.eu/ns/mobility#TimingPoint"
         }
       ],
       "properties": [
@@ -356,6 +806,192 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#^timingpointStatus",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimingpointStatus",
+              "range_uri": "https://purl.eu/ns/mobility#TimingpointStatus"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TimingpointStatus",
+              "range_puri": "https://purl.eu/ns/mobility#TimingpointStatus",
+              "range_label": {
+                "nl": "TimingpointStatus"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#description",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#presentation",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Presentation",
+              "range_uri": "https://purl.eu/ns/mobility#Presentation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Presentation",
+              "range_puri": "https://purl.eu/ns/mobility#Presentation",
+              "range_label": {
+                "nl": "Presentation"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#privateCode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#publicCode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#shortName",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#stopType",
           "name": "stopType",
           "sort": "Enter your translation here",
@@ -391,6 +1027,37 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#tariffZones",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TariffZone",
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_puri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_label": {
+                "nl": "TariffZone"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -417,6 +1084,316 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^afbeelding",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^alternativeName",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^covered",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CoveredType",
+              "range_uri": "https://purl.eu/ns/mobility#CoveredType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CoveredType",
+              "range_puri": "https://purl.eu/ns/mobility#CoveredType",
+              "range_label": {
+                "nl": "CoveredType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^crossRoad",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^gated",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GatedType",
+              "range_uri": "https://purl.eu/ns/mobility#GatedType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GatedType",
+              "range_puri": "https://purl.eu/ns/mobility#GatedType",
+              "range_label": {
+                "nl": "GatedType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^landmark",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^level",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility#Level",
+              "range_label": {
+                "nl": "Level"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^lighting",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LightingType",
+              "range_uri": "https://purl.eu/ns/mobility#LightingType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#LightingType",
+              "range_puri": "https://purl.eu/ns/mobility#LightingType",
+              "range_label": {
+                "nl": "LightingType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^locale",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Locale",
+              "range_uri": "https://purl.eu/ns/mobility#Locale"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Locale",
+              "range_puri": "https://purl.eu/ns/mobility#Locale",
+              "range_label": {
+                "nl": "Locale"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^organisation",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Operator",
+              "range_uri": "https://purl.eu/ns/mobility#Operator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Operator",
+              "range_puri": "https://purl.eu/ns/mobility#Operator",
+              "range_label": {
+                "nl": "Operator"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility#^parentSiteRef",
           "name": "parentSiteRef",
@@ -449,6 +1426,68 @@
               "range_label": {
                 "en": "Stop Place",
                 "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^postalAddress",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/ns/locn#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "nl": "Adresvoorstelling"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^url",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
               }
             }
           ],
@@ -511,8 +1550,52 @@
               "uri": "https://purl.eu/ns/mobility#StopPlace"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "AccessibilityAssessment",
+              "range_uri": "https://purl.eu/ns/mobility#AccessibilityAssessment"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+              "range_puri": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+              "range_label": {
+                "nl": "AccessibilityAssessment"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#borderCrossing",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -535,8 +1618,21 @@
               "uri": "https://purl.eu/ns/mobility#StopPlace"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Punt",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.opengis.net/ont/sf#Point",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_label": {
+                "nl": "Punt"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -617,6 +1713,163 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#for",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_label": {
+                "en": "Topographic Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#locatedIn",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Country",
+              "range_uri": "https://purl.eu/ns/mobility#Country"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Country",
+              "range_puri": "https://purl.eu/ns/mobility#Country",
+              "range_label": {
+                "nl": "Country"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#locatedIn",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Country",
+              "range_uri": "https://purl.eu/ns/mobility#Country"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Country",
+              "range_puri": "https://purl.eu/ns/mobility#Country",
+              "range_label": {
+                "nl": "Country"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#for",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_label": {
+                "en": "Topographic Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#otherTransportmode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#placeType",
           "name": "place type",
           "sort": "Enter your translation here",
@@ -672,8 +1925,21 @@
               "uri": "https://purl.eu/ns/mobility#StopPlace"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Polygoon",
+              "range_uri": "http://www.opengis.net/ont/sf#Polygon"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.opengis.net/ont/sf#Polygon",
+              "range_puri": "http://www.opengis.net/ont/sf#Polygon",
+              "range_label": {
+                "nl": "Polygoon"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -696,8 +1962,21 @@
               "uri": "https://purl.eu/ns/mobility#StopPlace"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -720,46 +1999,22 @@
               "uri": "https://purl.eu/ns/mobility#StopPlace"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#serves",
-          "name": "serves",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "serves",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TODO",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility#StopPlace"
-            }
-          ],
           "range": [
             {
-              "range_label": "TopographicPlace",
-              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace"
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://purl.eu/ns/mobility#TopographicPlace",
-              "range_puri": "https://purl.eu/ns/mobility#TopographicPlace",
+              "range_uri": "http://www.w3.org/ns/locn#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
               "range_label": {
-                "nl": "TopographicPlace"
+                "nl": "Adresvoorstelling"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -800,6 +2055,99 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#stopPlaceWeight",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlaceWeightyType",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlaceWeightyType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#StopPlaceWeightyType",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlaceWeightyType",
+              "range_label": {
+                "nl": "StopPlaceWeightyType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#submode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#tariffZone",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TariffZone",
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_puri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_label": {
+                "nl": "TariffZone"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#transportMode",
           "name": "transport mode",
           "sort": "Enter your translation here",
@@ -835,6 +2183,37 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#weighting",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "InterchangeUseType",
+              "range_uri": "https://purl.eu/ns/mobility#InterchangeUseType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#InterchangeUseType",
+              "range_puri": "https://purl.eu/ns/mobility#InterchangeUseType",
+              "range_label": {
+                "nl": "InterchangeUseType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -851,8 +2230,47 @@
         "nl": "Enter your translation here"
       },
       "usage": {},
-      "parents": [],
+      "parents": [
+        {
+          "label": "SiteElement",
+          "name": "SiteElement",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#SiteElement",
+          "scoped_uri": "https://purl.eu/ns/mobility#SiteElement"
+        }
+      ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#droppedKerbOutside",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility#entranceType",
           "name": "entrance type",
@@ -884,6 +2302,37 @@
               "range_puri": "https://purl.eu/ns/mobility#EntranceType",
               "range_label": {
                 "nl": "EntranceType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#height",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://schema.org/QuantitativeValue",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "nl": "KwantitatieveWaarde"
               }
             }
           ],
@@ -965,6 +2414,130 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#isExternal",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#label",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#level",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility#Level",
+              "range_label": {
+                "nl": "Level"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#otherTransportmode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#publicCode",
           "name": "public code",
           "sort": "Enter your translation here",
@@ -983,9 +2556,305 @@
               "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "https://purl.eu/ns/mobility#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Code",
+              "range_puri": "https://purl.eu/ns/mobility#Code",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#submode",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#tariffZone",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TariffZone",
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_puri": "https://purl.eu/ns/mobility#TariffZone",
+              "range_label": {
+                "nl": "TariffZone"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportMode",
+          "name": "transport mode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "transport mode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The main transport mode of the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "https://purl.eu/ns/mobility#Transportmode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportmode",
+              "range_puri": "https://purl.eu/ns/mobility#Transportmode",
+              "range_label": {
+                "nl": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#width",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlaceEntrance",
+              "uri": "https://purl.eu/ns/mobility#StopPlaceEntrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://schema.org/QuantitativeValue",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "nl": "KwantitatieveWaarde"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#TopographicPlace",
+      "name": "Topographic Place",
+      "label": {
+        "en": "Topographic Place",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A geographical settlement which provides topographical context when searching for or presenting travel information, for example as the origin or destination of a trip.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Plaats",
+          "name": "Plaats",
+          "package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Location",
+          "scoped_uri": "http://purl.org/dc/terms/Location"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#contained",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#contained",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#servedBy",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#servedBy",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
+              "range_label": {
+                "en": "Stop Place",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]

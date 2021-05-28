@@ -1,7 +1,10 @@
 {
   "@context": {
     "AccessModes": "https://purl.eu/ns/mobility#AccessModes",
+    "Country": "https://purl.eu/ns/mobility#Country",
+    "CoveredType": "https://purl.eu/ns/mobility#CoveredType",
     "EntranceType": "https://purl.eu/ns/mobility#EntranceType",
+    "GatedType": "https://purl.eu/ns/mobility#GatedType",
     "GroupOfStopPlaces": "https://purl.eu/ns/mobility#GroupOfStopPlaces",
     "GroupOfStopPlaces.member": {
       "@container": "@set",
@@ -12,6 +15,10 @@
       "@id": "https://purl.eu/ns/mobility#transportMode",
       "@type": "@id"
     },
+    "InterchangeUseType": "https://purl.eu/ns/mobility#InterchangeUseType",
+    "Level": "https://purl.eu/ns/mobility#Level",
+    "LightingType": "https://purl.eu/ns/mobility#LightingType",
+    "Locale": "https://purl.eu/ns/mobility#Locale",
     "PassengerStopAssignment": "https://purl.eu/ns/mobility#PassengerStopAssignment",
     "PassengerStopAssignment.ScheduledStopPoint": {
       "@id": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint",
@@ -26,12 +33,68 @@
       "@type": "@id"
     },
     "PlaceType": "https://purl.eu/ns/mobility#PlaceType",
+    "PointOfInterest": "https://purl.eu/ns/mobility#PointOfInterest",
+    "PointOfInterest.servedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#servedBy",
+      "@type": "@id"
+    },
     "Quay": "https://purl.eu/ns/mobility#Quay",
+    "Quay.compassBearing": {
+      "@id": "https://purl.eu/ns/mobility#compassBearing",
+      "@type": "@id"
+    },
+    "Quay.label": {
+      "@id": "https://purl.eu/ns/mobility#label",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Quay.level": {
+      "@id": "https://purl.eu/ns/mobility#level",
+      "@type": "@id"
+    },
+    "Quay.otherTransportmode": {
+      "@id": "https://purl.eu/ns/mobility#otherTransportmode",
+      "@type": "@id"
+    },
+    "Quay.plateCode": {
+      "@id": "https://purl.eu/ns/mobility#plateCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
     "Quay.publicCode": {
       "@id": "https://purl.eu/ns/mobility#publicCode",
-      "@type": ""
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
+    "Quay.quay": {
+      "@id": "https://purl.eu/ns/mobility#quay",
+      "@type": "@id"
+    },
+    "Quay.quayType": {
+      "@id": "https://purl.eu/ns/mobility#quayType",
+      "@type": "@id"
+    },
+    "Quay.submode": {
+      "@id": "https://purl.eu/ns/mobility#submode",
+      "@type": "@id"
+    },
+    "Quay.tariffZone": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#tariffZone",
+      "@type": "@id"
+    },
+    "Quay.transportMode": {
+      "@id": "https://purl.eu/ns/mobility#transportMode",
+      "@type": "@id"
+    },
+    "QuayType": "https://purl.eu/ns/mobility#QuayType",
     "ScheduledStopPoint": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+    "ScheduledStopPoint.^timingpointStatus": {
+      "@id": "https://purl.eu/ns/mobility#^timingpointStatus",
+      "@type": "@id"
+    },
+    "ScheduledStopPoint.description": {
+      "@id": "https://purl.eu/ns/mobility#description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
     "ScheduledStopPoint.location": {
       "@id": "https://purl.eu/ns/mobility#^location",
       "@type": ""
@@ -40,11 +103,82 @@
       "@id": "https://purl.eu/ns/mobility#^name",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
+    "ScheduledStopPoint.presentation": {
+      "@id": "https://purl.eu/ns/mobility#presentation",
+      "@type": "@id"
+    },
+    "ScheduledStopPoint.privateCode": {
+      "@id": "https://purl.eu/ns/mobility#privateCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ScheduledStopPoint.publicCode": {
+      "@id": "https://purl.eu/ns/mobility#publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ScheduledStopPoint.shortName": {
+      "@id": "https://purl.eu/ns/mobility#shortName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
     "ScheduledStopPoint.stopType": {
       "@id": "https://purl.eu/ns/mobility#stopType",
       "@type": "@id"
     },
+    "ScheduledStopPoint.tariffZones": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#tariffZones",
+      "@type": "@id"
+    },
     "StopPlace": "https://purl.eu/ns/mobility#StopPlace",
+    "StopPlace.^afbeelding": {
+      "@id": "https://purl.eu/ns/mobility#^afbeelding",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "StopPlace.^alternativeName": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#^alternativeName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "StopPlace.^covered": {
+      "@id": "https://purl.eu/ns/mobility#^covered",
+      "@type": "@id"
+    },
+    "StopPlace.^crossRoad": {
+      "@id": "https://purl.eu/ns/mobility#^crossRoad",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "StopPlace.^gated": {
+      "@id": "https://purl.eu/ns/mobility#^gated",
+      "@type": "@id"
+    },
+    "StopPlace.^landmark": {
+      "@id": "https://purl.eu/ns/mobility#^landmark",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "StopPlace.^level": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#^level",
+      "@type": "@id"
+    },
+    "StopPlace.^lighting": {
+      "@id": "https://purl.eu/ns/mobility#^lighting",
+      "@type": "@id"
+    },
+    "StopPlace.^locale": {
+      "@id": "https://purl.eu/ns/mobility#^locale",
+      "@type": "@id"
+    },
+    "StopPlace.^organisation": {
+      "@id": "https://purl.eu/ns/mobility#^organisation",
+      "@type": "@id"
+    },
+    "StopPlace.^postalAddress": {
+      "@id": "https://purl.eu/ns/mobility#^postalAddress",
+      "@type": "@id"
+    },
+    "StopPlace.^url": {
+      "@id": "https://purl.eu/ns/mobility#^url",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
     "StopPlace.accessModes": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility#accessModes",
@@ -52,11 +186,15 @@
     },
     "StopPlace.accessabilityAssessment": {
       "@id": "https://purl.eu/ns/mobility#accessabilityAssessment",
-      "@type": ""
+      "@type": "@id"
+    },
+    "StopPlace.borderCrossing": {
+      "@id": "https://purl.eu/ns/mobility#borderCrossing",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "StopPlace.centroid": {
       "@id": "https://purl.eu/ns/mobility#centroid",
-      "@type": ""
+      "@type": "@id"
     },
     "StopPlace.containing": {
       "@container": "@set",
@@ -66,6 +204,19 @@
     "StopPlace.enteredThrough": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility#enteredThrough",
+      "@type": "@id"
+    },
+    "StopPlace.for": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#for",
+      "@type": "@id"
+    },
+    "StopPlace.locatedIn": {
+      "@id": "https://purl.eu/ns/mobility#locatedIn",
+      "@type": "@id"
+    },
+    "StopPlace.otherTransportmode": {
+      "@id": "https://purl.eu/ns/mobility#otherTransportmode",
       "@type": "@id"
     },
     "StopPlace.parentSiteRef": {
@@ -78,32 +229,52 @@
     },
     "StopPlace.polygon": {
       "@id": "https://purl.eu/ns/mobility#polygon",
-      "@type": ""
+      "@type": "@id"
     },
     "StopPlace.publicCode": {
       "@id": "https://purl.eu/ns/mobility#publicCode",
-      "@type": ""
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "StopPlace.roadAddress": {
       "@id": "https://purl.eu/ns/mobility#roadAddress",
-      "@type": ""
-    },
-    "StopPlace.serves": {
-      "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility#serves",
       "@type": "@id"
     },
     "StopPlace.stopPlaceType": {
       "@id": "https://purl.eu/ns/mobility#stopPlaceType",
       "@type": "@id"
     },
+    "StopPlace.stopPlaceWeight": {
+      "@id": "https://purl.eu/ns/mobility#stopPlaceWeight",
+      "@type": "@id"
+    },
+    "StopPlace.submode": {
+      "@id": "https://purl.eu/ns/mobility#submode",
+      "@type": "@id"
+    },
+    "StopPlace.tariffZone": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#tariffZone",
+      "@type": "@id"
+    },
     "StopPlace.transportMode": {
       "@id": "https://purl.eu/ns/mobility#transportMode",
       "@type": "@id"
     },
+    "StopPlace.weighting": {
+      "@id": "https://purl.eu/ns/mobility#weighting",
+      "@type": "@id"
+    },
     "StopPlaceEntrance": "https://purl.eu/ns/mobility#StopPlaceEntrance",
+    "StopPlaceEntrance.droppedKerbOutside": {
+      "@id": "https://purl.eu/ns/mobility#droppedKerbOutside",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
     "StopPlaceEntrance.entranceType": {
       "@id": "https://purl.eu/ns/mobility#entranceType",
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.height": {
+      "@id": "https://purl.eu/ns/mobility#height",
       "@type": "@id"
     },
     "StopPlaceEntrance.isEntry": {
@@ -114,11 +285,56 @@
       "@id": "https://purl.eu/ns/mobility#isExit",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
+    "StopPlaceEntrance.isExternal": {
+      "@id": "https://purl.eu/ns/mobility#isExternal",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "StopPlaceEntrance.label": {
+      "@id": "https://purl.eu/ns/mobility#label",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "StopPlaceEntrance.level": {
+      "@id": "https://purl.eu/ns/mobility#level",
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.otherTransportmode": {
+      "@id": "https://purl.eu/ns/mobility#otherTransportmode",
+      "@type": "@id"
+    },
     "StopPlaceEntrance.publicCode": {
       "@id": "https://purl.eu/ns/mobility#publicCode",
-      "@type": ""
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.submode": {
+      "@id": "https://purl.eu/ns/mobility#submode",
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.tariffZone": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#tariffZone",
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.transportMode": {
+      "@id": "https://purl.eu/ns/mobility#transportMode",
+      "@type": "@id"
+    },
+    "StopPlaceEntrance.width": {
+      "@id": "https://purl.eu/ns/mobility#width",
+      "@type": "@id"
     },
     "StopPlaceType": "https://purl.eu/ns/mobility#StopPlaceType",
+    "StopPlaceWeightyType": "https://purl.eu/ns/mobility#StopPlaceWeightyType",
+    "TopographicPlace": "https://purl.eu/ns/mobility#TopographicPlace",
+    "TopographicPlace.contained": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#contained",
+      "@type": "@id"
+    },
+    "TopographicPlace.servedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#servedBy",
+      "@type": "@id"
+    },
     "Transportmode": "https://purl.eu/ns/mobility#Transportmode"
   }
 }

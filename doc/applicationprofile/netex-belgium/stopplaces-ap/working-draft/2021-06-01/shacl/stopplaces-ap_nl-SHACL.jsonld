@@ -47,11 +47,32 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#AccessModes"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#CountryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Country"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#CoveredTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#CoveredType"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#EntranceTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://purl.eu/ns/mobility#EntranceType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#GatedTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#GatedType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#GroupOfStopPlacesShape",
@@ -75,6 +96,34 @@
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#GroupOfStopPlaces"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#InterchangeUseTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#InterchangeUseType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#LevelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Level"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#LightingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#LightingType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#LocaleShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Locale"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#PassengerStopAssignmentShape",
@@ -115,11 +164,53 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#PlaceType"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#PointOfInterestShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PointOfInterest"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#QuayShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#compassBearing"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#label"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#level"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#plateCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -128,9 +219,46 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#quay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#QuayType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#quayType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#submode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:path": "https://purl.eu/ns/mobility#tariffZone"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportMode"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#Quay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#QuayTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#QuayType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#ScheduledStopPointShape",
@@ -161,6 +289,36 @@
           "sh:path": "https://purl.eu/ns/mobility#^name"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#TimingpointStatus",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^timingpointStatus"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Presentation",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#presentation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#privateCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#shortName"
+        },
+        {
           "sh:class": "https://purl.eu/ns/mobility#StopPlaceType",
           "sh:definition": {
             "nl": "Enter your translation here"
@@ -170,6 +328,10 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#stopType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:path": "https://purl.eu/ns/mobility#tariffZones"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint"
@@ -190,6 +352,7 @@
           "sh:path": "https://purl.eu/ns/mobility#accessModes"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -200,6 +363,16 @@
           "sh:path": "https://purl.eu/ns/mobility#accessabilityAssessment"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^afbeelding"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:path": "https://purl.eu/ns/mobility#^alternativeName"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -208,6 +381,45 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#centroid"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#CoveredType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^covered"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^crossRoad"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#GatedType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^gated"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^landmark"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:path": "https://purl.eu/ns/mobility#^level"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#LightingType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^lighting"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Locale",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^locale"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^organisation"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
@@ -232,6 +444,7 @@
           "sh:path": "https://purl.eu/ns/mobility#placeType"
         },
         {
+          "sh:class": "http://www.opengis.net/ont/sf#Polygon",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -242,6 +455,12 @@
           "sh:path": "https://purl.eu/ns/mobility#polygon"
         },
         {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^postalAddress"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -250,6 +469,16 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#roadAddress"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#^url"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#borderCrossing"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Quay",
@@ -272,6 +501,32 @@
           "sh:path": "https://purl.eu/ns/mobility#enteredThrough"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:path": "https://purl.eu/ns/mobility#for"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:path": "https://purl.eu/ns/mobility#for"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#locatedIn"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#locatedIn"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -280,16 +535,6 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#serves"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlaceType",
@@ -304,6 +549,20 @@
           "sh:path": "https://purl.eu/ns/mobility#stopPlaceType"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlaceWeightyType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#stopPlaceWeight"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#submode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:path": "https://purl.eu/ns/mobility#tariffZone"
+        },
+        {
           "sh:class": "https://purl.eu/ns/mobility#Transportmode",
           "sh:definition": {
             "nl": "Enter your translation here"
@@ -313,6 +572,11 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#transportMode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#InterchangeUseType",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#weighting"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace"
@@ -323,6 +587,11 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#droppedKerbOutside"
+        },
+        {
           "sh:class": "https://purl.eu/ns/mobility#EntranceType",
           "sh:definition": {
             "nl": "Enter your translation here"
@@ -332,6 +601,11 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#entranceType"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#height"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -356,6 +630,27 @@
           "sh:path": "https://purl.eu/ns/mobility#isExit"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#isExternal"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#label"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#level"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Code",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -364,6 +659,31 @@
             "nl": "Enter your translation here"
           },
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#submode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:path": "https://purl.eu/ns/mobility#tariffZone"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:path": "https://purl.eu/ns/mobility#width"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceEntrance"
@@ -374,6 +694,37 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#StopPlaceWeightyTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceWeightyType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#TopographicPlaceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#contained"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#contained"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#TopographicPlace"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_nl#TransportmodeShape",
