@@ -3,28 +3,28 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#CoveredTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#LevelShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#CountryShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#LocaleShape>,
+<https://semiceu.github.io/shacl/stopplaces-ap_en> <https://semiceu.github.io/shacl/stopplaces-ap_enshapes> <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightyTypeShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#CountryShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#GatedTypeShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#PointOfInterestShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#EntranceTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightyTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#InterchangeUseTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#LightingTypeShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#EntranceTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#LocaleShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#LevelShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#CoveredTypeShape>,
     <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape>,
-    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape> .
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#LightingTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#PointOfInterestShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#InterchangeUseTypeShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceShape>,
+    <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape> a shacl:NodeShape;
   shacl:closed false;
@@ -115,16 +115,19 @@
 <https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#label>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#plateCode>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:definition "The main transport mode of the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#otherTransportmode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#quay>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
-    shacl:path <https://purl.eu/ns/mobility#tariffZone>
+    shacl:name "transport mode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
   ], [
     shacl:class schemas:QuantitativeValue;
     shacl:maxCount 1;
@@ -134,9 +137,16 @@
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#level>
   ], [
-    shacl:datatype xsd:string;
+    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
+    shacl:path <https://purl.eu/ns/mobility#tariffZone>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#plateCode>
+    shacl:path <https://purl.eu/ns/mobility#otherTransportmode>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#quay>
   ], [
     shacl:class <https://purl.eu/ns/mobility#QuayType>;
     shacl:maxCount 1;
@@ -151,16 +161,6 @@
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#submode>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#label>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:definition "The main transport mode of the Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:name "transport mode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Quay> .
 
@@ -171,28 +171,6 @@
 <https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "Location of the Scheduled Stop Point."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "location"@en
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Name of the Scheduled Stop Point."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "name"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Presentation>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#presentation>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#description>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TimingpointStatus>;
-    shacl:maxCount 1
-  ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#privateCode>
@@ -205,30 +183,57 @@
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
   ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Name of the Scheduled Stop Point."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "name"@en
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TimingpointStatus>;
+    shacl:maxCount 1
+  ], [
+    shacl:definition "Location of the Scheduled Stop Point."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "location"@en
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#description>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Presentation>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#presentation>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
+    shacl:path <https://purl.eu/ns/mobility#tariffZones>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
     shacl:definition "Type of Stop Place."@en;
     shacl:maxCount 1;
     shacl:name "stopType"@en;
     shacl:path <https://purl.eu/ns/mobility#stopType>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
-    shacl:path <https://purl.eu/ns/mobility#tariffZones>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
-    shacl:path <https://purl.eu/ns/mobility#tariffZone>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#submode>
-  ], [
     shacl:class schemas:QuantitativeValue;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#height>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#otherTransportmode>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#label>
+  ], [
+    shacl:class schemas:QuantitativeValue;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#width>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
@@ -236,9 +241,14 @@
     shacl:name "is exit"@en;
     shacl:path <https://purl.eu/ns/mobility#isExit>
   ], [
-    shacl:datatype xsd:boolean;
+    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
+    shacl:path <https://purl.eu/ns/mobility#tariffZone>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Code>;
+    shacl:definition "Public code for the Stop Place Entrance."@en;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#isExternal>
+    shacl:name "public code"@en;
+    shacl:path <https://purl.eu/ns/mobility#publicCode>
   ], [
     shacl:class <https://purl.eu/ns/mobility#EntranceType>;
     shacl:definition "Type of entrance."@en;
@@ -246,19 +256,11 @@
     shacl:name "entrance type"@en;
     shacl:path <https://purl.eu/ns/mobility#entranceType>
   ], [
-    shacl:datatype xsd:string;
+    shacl:datatype xsd:boolean;
+    shacl:definition "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#label>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#otherTransportmode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:definition "The main transport mode of the Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:name "transport mode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
+    shacl:name "is entry"@en;
+    shacl:path <https://purl.eu/ns/mobility#isEntry>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Level>;
     shacl:maxCount 1;
@@ -268,95 +270,64 @@
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#droppedKerbOutside>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Code>;
-    shacl:definition "Public code for the Stop Place Entrance."@en;
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:definition "The main transport mode of the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:name "public code"@en;
-    shacl:path <https://purl.eu/ns/mobility#publicCode>
+    shacl:name "transport mode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#submode>
   ], [
     shacl:datatype xsd:boolean;
-    shacl:definition "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:name "is entry"@en;
-    shacl:path <https://purl.eu/ns/mobility#isEntry>
-  ], [
-    shacl:class schemas:QuantitativeValue;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#width>
+    shacl:path <https://purl.eu/ns/mobility#isExternal>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#StopPlaceEntrance> .
 
 <https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:definition "The main transport mode of the Stop Place."@en;
+    shacl:maxCount 1;
+    shacl:name "transport mode"@en;
+    shacl:path <https://purl.eu/ns/mobility#transportMode>
+  ], [
     shacl:datatype rdf:langString;
     shacl:maxCount 1
   ], [
-    shacl:datatype xsd:boolean;
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#borderCrossing>
+    shacl:path <https://purl.eu/ns/mobility#submode>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#InterchangeUseType>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#weighting>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Operator>;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#LightingType>;
+    shacl:maxCount 1
+  ], [shacl:datatype rdf:langString], [
+    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
+    shacl:definition "Categorisation of Place."@en;
+    shacl:maxCount 1;
+    shacl:name "place type"@en;
+    shacl:path <https://purl.eu/ns/mobility#placeType>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "parentSiteRef"@en
   ], [
-    shacl:class <https://purl.eu/ns/mobility#LightingType>;
-    shacl:maxCount 1
-  ], [shacl:class <https://purl.eu/ns/mobility#Level>], [
-    shacl:class <http://www.opengis.net/ont/sf#Point>;
-    shacl:definition "Centre Point of the Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:name "centroid"@en;
-    shacl:path <https://purl.eu/ns/mobility#centroid>
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:maxCount 1
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#AccessibilityAssessment>;
-    shacl:definition "The overall accessibility characteristics of the Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:name "accessability assessment"@en;
-    shacl:path <https://purl.eu/ns/mobility#accessabilityAssessment>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
-    shacl:path <https://purl.eu/ns/mobility#for>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#GatedType>;
-    shacl:maxCount 1
-  ], [
-    shacl:class <http://www.opengis.net/ont/sf#Polygon>;
-    shacl:definition "Polygon associated with the Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:name "polygon"@en;
-    shacl:path <https://purl.eu/ns/mobility#polygon>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#CoveredType>;
-    shacl:maxCount 1
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
-    shacl:definition "The type of Stop Place."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "stop place type"@en;
-    shacl:path <https://purl.eu/ns/mobility#stopPlaceType>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#AccessModes>;
-    shacl:definition "Access modes by which the Stop Place may be accessed."@en;
-    shacl:name "access modes"@en;
-    shacl:path <https://purl.eu/ns/mobility#accessModes>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Operator>;
-    shacl:maxCount 1
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:maxCount 1
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#PlaceType>;
-    shacl:definition "Categorisation of Place."@en;
-    shacl:maxCount 1;
-    shacl:name "place type"@en;
-    shacl:path <https://purl.eu/ns/mobility#placeType>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition "Road address associated with the Stop Place."@en;
@@ -366,66 +337,95 @@
   ], [
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#submode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Locale>;
-    shacl:maxCount 1
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:maxCount 1
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#otherTransportmode>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#InterchangeUseType>;
+    shacl:class <http://www.opengis.net/ont/sf#Point>;
+    shacl:definition "Centre Point of the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#weighting>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
-    shacl:path <https://purl.eu/ns/mobility#tariffZone>
-  ], [
+    shacl:name "centroid"@en;
+    shacl:path <https://purl.eu/ns/mobility#centroid>
+  ], [shacl:class <https://purl.eu/ns/mobility#Level>], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceEntrance>;
     shacl:definition "TODO"@en;
     shacl:name "enteredThrough"@en;
     shacl:path <https://purl.eu/ns/mobility#enteredThrough>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Country>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:path <https://purl.eu/ns/mobility#locatedIn>
+    shacl:class <https://purl.eu/ns/mobility#Quay>;
+    shacl:definition "TODO"@en;
+    shacl:name "containing"@en;
+    shacl:path <https://purl.eu/ns/mobility#containing>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:definition "The main transport mode of the Stop Place."@en;
+    shacl:class <https://purl.eu/ns/mobility#CoveredType>;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#AccessibilityAssessment>;
+    shacl:definition "The overall accessibility characteristics of the Stop Place."@en;
     shacl:maxCount 1;
-    shacl:name "transport mode"@en;
-    shacl:path <https://purl.eu/ns/mobility#transportMode>
+    shacl:name "accessability assessment"@en;
+    shacl:path <https://purl.eu/ns/mobility#accessabilityAssessment>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#AccessModes>;
+    shacl:definition "Access modes by which the Stop Place may be accessed."@en;
+    shacl:name "access modes"@en;
+    shacl:path <https://purl.eu/ns/mobility#accessModes>
   ], [
     shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
     shacl:path <https://purl.eu/ns/mobility#for>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#Locale>;
+    shacl:maxCount 1
+  ], [
     shacl:class <https://purl.eu/ns/mobility#Country>;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#locatedIn>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TariffZone>;
+    shacl:path <https://purl.eu/ns/mobility#tariffZone>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#borderCrossing>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TopographicPlace>;
+    shacl:path <https://purl.eu/ns/mobility#for>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#StopPlaceType>;
+    shacl:definition "The type of Stop Place."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "stop place type"@en;
+    shacl:path <https://purl.eu/ns/mobility#stopPlaceType>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:maxCount 1
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Code used to identify a Stop Place to the public as an alternative to a name."@en;
     shacl:maxCount 1;
     shacl:name "public code"@en;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
-  ], [shacl:datatype rdf:langString], [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlaceWeightyType>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#stopPlaceWeight>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:definition "TODO"@en;
-    shacl:name "containing"@en;
-    shacl:path <https://purl.eu/ns/mobility#containing>
+    shacl:class <https://purl.eu/ns/mobility#GatedType>;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Country>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#locatedIn>
+  ], [
+    shacl:class <http://www.opengis.net/ont/sf#Polygon>;
+    shacl:definition "Polygon associated with the Stop Place."@en;
+    shacl:maxCount 1;
+    shacl:name "polygon"@en;
+    shacl:path <https://purl.eu/ns/mobility#polygon>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace> .
 
@@ -441,7 +441,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
-    shacl:path <https://purl.eu/ns/mobility#servedBy>
+    shacl:path <https://purl.eu/ns/mobility#contained>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
     shacl:path <https://purl.eu/ns/mobility#contained>
@@ -450,7 +450,7 @@
     shacl:path <https://purl.eu/ns/mobility#servedBy>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
-    shacl:path <https://purl.eu/ns/mobility#contained>
+    shacl:path <https://purl.eu/ns/mobility#servedBy>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#TopographicPlace> .
 
