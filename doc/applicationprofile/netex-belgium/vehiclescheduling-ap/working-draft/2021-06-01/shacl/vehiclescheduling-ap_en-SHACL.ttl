@@ -4,42 +4,37 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/vehiclescheduling-ap_en> <https://semiceu.github.io/shacl/vehiclescheduling-ap_enshapes> <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GarageShape>,
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_en> <https://semiceu.github.io/shacl/vehiclescheduling-ap_enshapes> <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#LineShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GroupOfLinesShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#JourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GaragePointShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#BlockShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PropertyOfDayShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeAssignmentShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunPatternShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointInJourneyPatternShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GarageShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#RouteShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ParkingPointShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyPatternShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GaragePointShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeAssignmentShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleJourneyShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PropertyOfDayShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#NetworkShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceCalendarShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#LineShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#JourneyPatternShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#BlockShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GroupOfLinesShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunPatternShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#NetworkShape> .
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ParkingPointShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleJourneyShape> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#BlockShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Time when the Block started."@en;
+    shacl:class <https://purl.eu/ns/mobility#ParkingPoint>;
+    shacl:definition "The Parking Point where the Block started at."@en;
     shacl:maxCount 1;
-    shacl:name "start time"@en;
-    shacl:path <https://purl.eu/ns/mobility#startTime>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Time when the Block ended."@en;
-    shacl:maxCount 1;
-    shacl:name "end time"@en;
-    shacl:path <https://purl.eu/ns/mobility#endTime>
+    shacl:minCount 1;
+    shacl:name "started at"@en;
+    shacl:path <https://purl.eu/ns/mobility#startedAt>
   ], [
     shacl:class <https://purl.eu/ns/mobility#ParkingPoint>;
     shacl:definition "The Parking Point where the Block ended at."@en;
@@ -58,18 +53,23 @@
     shacl:class <https://purl.eu/ns/mobility#VehicleJourney>;
     shacl:path <https://purl.eu/ns/mobility#including>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#ParkingPoint>;
-    shacl:definition "The Parking Point where the Block started at."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "started at"@en;
-    shacl:path <https://purl.eu/ns/mobility#startedAt>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#DayType>;
     shacl:definition "The DayType when the Block was worked on."@en;
     shacl:minCount 1;
     shacl:name "worked on"@en;
     shacl:path <https://purl.eu/ns/mobility#workedOn>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Time when the Block started."@en;
+    shacl:maxCount 1;
+    shacl:name "start time"@en;
+    shacl:path <https://purl.eu/ns/mobility#startTime>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Time when the Block ended."@en;
+    shacl:maxCount 1;
+    shacl:name "end time"@en;
+    shacl:path <https://purl.eu/ns/mobility#endTime>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Block> .
 
@@ -133,6 +133,12 @@
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GroupOfLinesShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#Line>;
+    shacl:definition "TODO"@en;
+    shacl:minCount 1;
+    shacl:name "composedOf"@en;
+    shacl:path <https://purl.eu/ns/mobility#composedOf>
+  ], [
     shacl:datatype rdf:langString;
     shacl:definition "Name of the Group of Lines."@en;
     shacl:maxCount 1;
@@ -144,78 +150,43 @@
     shacl:maxCount 1;
     shacl:name "transportmode"@en;
     shacl:path <https://purl.eu/ns/mobility#transportmode>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Line>;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "composedOf"@en;
-    shacl:path <https://purl.eu/ns/mobility#composedOf>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#GroupOfLines> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#JourneyPatternShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#DestinationDisplay>;
-    shacl:definition "Destination Display associated with the Journey Pattern."@en;
-    shacl:maxCount 1;
-    shacl:name "destination display reference"@en;
-    shacl:path <https://purl.eu/ns/mobility#destinationDisplay>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Direction>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#direction>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#PointInJourneyPattern>;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
     shacl:name "madeUpOf"@en;
     shacl:path <https://purl.eu/ns/mobility#madeUpOf>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#DestinationDisplay>;
+    shacl:definition "Destination Display associated with the Journey Pattern."@en;
+    shacl:maxCount 1;
+    shacl:name "destination display reference"@en;
+    shacl:path <https://purl.eu/ns/mobility#destinationDisplay>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#Route>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#route>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Direction>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#direction>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#JourneyPattern> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#LineShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#shortName>
-  ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#privateCode>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#transportSubmode>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#AuthorityOrOperator>;
     shacl:path <https://purl.eu/ns/mobility#additionalOperators>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Direction>;
-    shacl:path <https://purl.eu/ns/mobility#allowedDirection>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#AccessibilityAssessment>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#accessibilityAssesment>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#description>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#TypeOfLine>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#typeOfLine>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Route>;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "madeUpOf"@en;
-    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Name of the Line."@en;
@@ -224,12 +195,12 @@
     shacl:name "name"@en;
     shacl:path <https://purl.eu/ns/mobility#name>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#NoticeAssignment>;
-    shacl:path <https://purl.eu/ns/mobility#noticeAssignment>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Presentation>;
+    shacl:datatype rdf:langString;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#presentation>
+    shacl:path <https://purl.eu/ns/mobility#description>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Direction>;
+    shacl:path <https://purl.eu/ns/mobility#allowedDirection>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Public identifier of the Line."@en;
@@ -237,40 +208,69 @@
     shacl:name "public code"@en;
     shacl:path <https://purl.eu/ns/mobility#publicCode>
   ], [
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#url>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:path <https://purl.eu/ns/mobility#otherModes>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#monitored>
-  ], [shacl:path <https://purl.eu/ns/mobility#documentLink>], [
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:definition "Identifier of the primary transport mode of the Line."@en;
     shacl:maxCount 1;
     shacl:name "transportmode"@en;
     shacl:path <https://purl.eu/ns/mobility#transportmode>
   ], [
+    shacl:datatype xsd:boolean;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#monitored>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#AuthorityOrOperator>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#transportOrganisation>
+  ], [shacl:path <https://purl.eu/ns/mobility#documentLink>], [
+    shacl:class <https://purl.eu/ns/mobility#Presentation>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#presentation>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#AccessibilityAssessment>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#accessibilityAssesment>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#shortName>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:path <https://purl.eu/ns/mobility#otherModes>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Route>;
+    shacl:definition "TODO"@en;
+    shacl:minCount 1;
+    shacl:name "madeUpOf"@en;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#NoticeAssignment>;
+    shacl:path <https://purl.eu/ns/mobility#noticeAssignment>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#url>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#TypeOfLine>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#typeOfLine>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#transportSubmode>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Line> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#NetworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUpOf"@en;
-    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
-  ], [
     shacl:datatype rdf:langString;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path <https://purl.eu/ns/mobility#name>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#GroupOfLines>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUpOf"@en;
+    shacl:path <https://purl.eu/ns/mobility#madeUpOf>
   ], [
     shacl:class <https://purl.eu/ns/mobility#AuthorityOrOperator>;
     shacl:maxCount 1;
@@ -291,17 +291,17 @@
     shacl:minCount 1;
     shacl:name "order"@en
   ], [
-    shacl:datatype xsd:boolean;
+    shacl:class <https://purl.eu/ns/mobility#DestinationDisplay>;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:path <https://purl.eu/ns/mobility#changeOfdestinationDisplay>
+    shacl:path <https://purl.eu/ns/mobility#destinationDisplay>
   ], [
     shacl:datatype rdf:langString;
     shacl:maxCount 1
   ], [
-    shacl:class <https://purl.eu/ns/mobility#DestinationDisplay>;
+    shacl:datatype xsd:boolean;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#destinationDisplay>
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility#changeOfdestinationDisplay>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Point>;
     shacl:definition "TODO"@en;
@@ -314,7 +314,11 @@
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:property [shacl:path <https://purl.eu/ns/mobility#projection>], [
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#pointNumber>
+  ], [
     shacl:class prov:Location;
     shacl:definition "Location of the Route Point."@en;
     shacl:maxCount 1;
@@ -333,21 +337,16 @@
     shacl:definition "TODO"@en;
     shacl:name "viewedAs"@en;
     shacl:path <https://purl.eu/ns/mobility#viewedAs>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#pointNumber>
-  ];
+  ], [shacl:path <https://purl.eu/ns/mobility#projection>];
   shacl:targetClass <https://purl.eu/ns/mobility#Point> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PropertyOfDayShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdf:langString;
-    shacl:definition "The name of the Property of Day."@en;
-    shacl:maxCount 1;
-    shacl:name "name"@en;
-    shacl:path <https://purl.eu/ns/mobility#name>
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:definition "Day Type the Property of Day is describing."@en;
+    shacl:name "used to describe"@en;
+    shacl:path <https://purl.eu/ns/mobility#usedToDescribe>
   ], [
     shacl:class <https://purl.eu/ns/mobility#HolidayType>;
     shacl:definition "The type of holiday, e.g. Christmas."@en;
@@ -355,10 +354,11 @@
     shacl:name "holiday type"@en;
     shacl:path <https://purl.eu/ns/mobility#holidayType>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#DayType>;
-    shacl:definition "Day Type the Property of Day is describing."@en;
-    shacl:name "used to describe"@en;
-    shacl:path <https://purl.eu/ns/mobility#usedToDescribe>
+    shacl:datatype rdf:langString;
+    shacl:definition "The name of the Property of Day."@en;
+    shacl:maxCount 1;
+    shacl:name "name"@en;
+    shacl:path <https://purl.eu/ns/mobility#name>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Season>;
     shacl:definition "The season, e.g. winter."@en;
@@ -371,30 +371,30 @@
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#RouteShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
-    shacl:definition "TODO"@en;
-    shacl:name "coveredBy"@en;
-    shacl:path <https://purl.eu/ns/mobility#coveredBy>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Line>;
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#line>
-  ], [
-    shacl:class schemas:QuantitativeValue;
-    shacl:maxCount 1
-  ], [
     shacl:class <https://purl.eu/ns/mobility#DirectionType>;
     shacl:definition "Reference to Direction of Route."@en;
     shacl:maxCount 1;
     shacl:name "directionRef"@en;
     shacl:path <https://purl.eu/ns/mobility#directionType>
   ], [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Direction>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#direction>
+  ], [
+    shacl:class schemas:QuantitativeValue;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Line>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#line>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
+    shacl:definition "TODO"@en;
+    shacl:name "coveredBy"@en;
+    shacl:path <https://purl.eu/ns/mobility#coveredBy>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:maxCount 1
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#Route> .
 
@@ -402,18 +402,18 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:date;
-    shacl:definition "Inclusive start date for validity of the Service Calendar."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "from"@en;
-    shacl:path <https://purl.eu/ns/mobility#from>
-  ], [
-    shacl:datatype xsd:date;
     shacl:definition "Inclusive end date for validity of the Service Calendar."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "to"@en;
     shacl:path <https://purl.eu/ns/mobility#to>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:definition "Inclusive start date for validity of the Service Calendar."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "from"@en;
+    shacl:path <https://purl.eu/ns/mobility#from>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceCalendar> .
 
@@ -424,12 +424,13 @@
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ServiceJourneyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility#VehicleType>;
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#vehicleType>
+  ], [
     shacl:class <https://purl.eu/ns/mobility#TrainSizetype>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#trainSize>
-  ], [
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#flexibleLineView>
   ], [
     shacl:datatype xsd:duration;
     shacl:maxCount 1;
@@ -438,44 +439,54 @@
     shacl:class <https://purl.eu/ns/mobility#ServiceFacilitySet>;
     shacl:path <https://purl.eu/ns/mobility#facility>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#DayType>;
-    shacl:path <https://purl.eu/ns/mobility#daytype>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Operator>;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#operator>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#DayType>;
+    shacl:path <https://purl.eu/ns/mobility#daytype>
+  ], [
+    shacl:maxCount 1;
+    shacl:path <https://purl.eu/ns/mobility#flexibleserviceProperties>
   ], [
     shacl:datatype xsd:time;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#departureTime>
   ], [
-    shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#flexibleserviceProperties>
+    shacl:class <https://purl.eu/ns/mobility#TrainNumber>;
+    shacl:path <https://purl.eu/ns/mobility#trainNumber>
   ], [
     shacl:datatype xsd:integer;
     shacl:maxCount 1;
     shacl:path <https://purl.eu/ns/mobility#departureDayOffset>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#TrainNumber>;
-    shacl:path <https://purl.eu/ns/mobility#trainNumber>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#VehicleType>;
     shacl:maxCount 1;
-    shacl:path <https://purl.eu/ns/mobility#vehicleType>
+    shacl:path <https://purl.eu/ns/mobility#flexibleLineView>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#ServiceJourney> .
 
 <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleJourneyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
-    shacl:maxCount 1
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Block>;
     shacl:definition "Vehicle Journeys included in the Block."@en;
     shacl:maxCount 1;
     shacl:name "including"@en;
     shacl:path <https://purl.eu/ns/mobility#in>
+  ], [
+    shacl:datatype xsd:time;
+    shacl:definition "Time of departure."@en;
+    shacl:maxCount 1;
+    shacl:name "departureTime"@en;
+    shacl:path <https://purl.eu/ns/mobility#departureTime>
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#Transportmode>;
+    shacl:maxCount 1
+  ], [
+    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
+    shacl:definition "TODO"@en;
+    shacl:name "madeUsing"@en;
+    shacl:path <https://purl.eu/ns/mobility#madeUsing>
   ], [shacl:class <https://purl.eu/ns/mobility#NoticeAssignment>], [
     shacl:class <https://purl.eu/ns/mobility#DayType>;
     shacl:definition "Day Type on which the Vehicle Journey is worked."@en;
@@ -483,19 +494,8 @@
     shacl:name "worked on"@en;
     shacl:path <https://purl.eu/ns/mobility#workedOn>
   ], [
-    shacl:class <https://purl.eu/ns/mobility#JourneyPattern>;
-    shacl:definition "TODO"@en;
-    shacl:name "madeUsing"@en;
-    shacl:path <https://purl.eu/ns/mobility#madeUsing>
-  ], [
     shacl:class <https://purl.eu/ns/mobility#Transportmode>;
     shacl:maxCount 1
-  ], [
-    shacl:datatype xsd:time;
-    shacl:definition "Time of departure."@en;
-    shacl:maxCount 1;
-    shacl:name "departureTime"@en;
-    shacl:path <https://purl.eu/ns/mobility#departureTime>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#VehicleJourney> .
 
