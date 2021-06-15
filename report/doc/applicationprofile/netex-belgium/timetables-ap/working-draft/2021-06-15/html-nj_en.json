@@ -2,7 +2,7 @@
   "metadata": {
     "title": "NeTEx Belgium: Timetables (application profile)",
     "uri": "http://fixme.com",
-    "issued": "2021-06-01",
+    "issued": "2021-06-15",
     "filename": "timetables-ap",
     "navigation": {
       "self": "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2021-06-15"
@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/59c0bb368df4779da5e06d524518114aa28d8f0e",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/59c0bb368df4779da5e06d524518114aa28d8f0e/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/2d230acd2d287286d515ae528ebbb9333aa105f3",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/2d230acd2d287286d515ae528ebbb9333aa105f3/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -711,10 +711,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -738,8 +738,21 @@
               "uri": "http://www.w3.org/ns/org#Organization"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "ContactPoint",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contact Point",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "en": "Contact Point"
+              }
+            }
+          ],
           "cardinality": "0..*",
           "codelist_uri": ""
         },
@@ -768,10 +781,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -803,10 +816,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -852,15 +865,19 @@
     },
     {
       "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Registered Organisation",
+      "label": {
+        "en": "Registered Organisation"
+      },
+      "sort": "Registered Organisation",
+      "description": {
+        "en": "An Organisation that is legally registered."
+      },
       "usage": {},
       "parents": [
         {
-          "label": "FormeleOrganisatie",
-          "name": "FormeleOrganisatie",
+          "label": "Formal Organisation",
+          "name": "FormalOrganisation",
           "package": "OSLO-Organisation",
           "uri": "http://www.w3.org/ns/org#FormalOrganization",
           "scoped_uri": "http://www.w3.org/ns/org#FormalOrganization"
@@ -876,10 +893,14 @@
       "properties": [
         {
           "uri": "http://www.w3.org/ns/regorg#legalName",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "legal name",
+          "sort": "legal name",
+          "label": {
+            "en": "legal name"
+          },
+          "description": {
+            "en": "The legal name of the Registered Organisation."
+          },
           "usage": {},
           "domain": [
             {
@@ -887,17 +908,34 @@
               "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Language String",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Language String"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
         {
           "uri": "http://www.w3.org/ns/regorg#registration",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "registration",
+          "sort": "registration",
+          "label": {
+            "en": "registration"
+          },
+          "description": {
+            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
+          },
           "usage": {},
           "domain": [
             {
@@ -905,8 +943,21 @@
               "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -946,11 +997,11 @@
           "scoped_uri": "#Organisation"
         },
         {
-          "label": "AuthorityOrOperator",
+          "label": "Authority or Operator",
           "name": "AuthorityOrOperator",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
-          "scoped_uri": "#AuthorityOrOperator"
+          "scoped_uri": "#Authority or Operator"
         }
       ],
       "properties": [
@@ -993,11 +1044,11 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
-      "name": "AuthorityOrOperator",
+      "name": "Authority or Operator",
       "label": {
-        "en": "AuthorityOrOperator"
+        "en": "Authority or Operator"
       },
-      "sort": "AuthorityOrOperator",
+      "sort": "Authority or Operator",
       "description": {
         "en": "An Authority or an Operator."
       },
@@ -1117,10 +1168,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1187,10 +1238,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1222,10 +1273,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1377,10 +1428,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1462,10 +1513,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1532,14 +1583,49 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#variant",
+          "name": "variant",
+          "sort": "variant",
+          "label": {
+            "en": "variant"
+          },
+          "description": {
+            "en": "Variant Display texts for different media."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DestinationDisplay",
+              "uri": "https://purl.eu/ns/mobility#DestinationDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DestinationDisplayVariant",
+              "range_uri": "https://purl.eu/ns/mobility#DestinationDisplayVariant"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Destination Display Variant",
+              "range_puri": "https://purl.eu/ns/mobility#DestinationDisplayVariant",
+              "range_label": {
+                "en": "Destination Display Variant"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1612,15 +1698,15 @@
           "range": [
             {
               "range_label": "DestinationDisplayVariantType",
-              "range_uri": "https://purl.eu/ns/mobility#DestinationDisplayVariantType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#DestinationDisplayVariantType",
-              "range_puri": "https://purl.eu/ns/mobility#DestinationDisplayVariantType",
+              "range_uri": "#Destination Display Variant Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "DestinationDisplayVariantType"
+                "en": "Destination Display Variant Type"
               }
             }
           ],
@@ -1652,10 +1738,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -1687,45 +1773,14 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#variant",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DestinationDisplayVariant",
-              "uri": "https://purl.eu/ns/mobility#DestinationDisplayVariant"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DestinationDisplay",
-              "range_uri": "https://purl.eu/ns/mobility#DestinationDisplay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Destination Display",
-              "range_puri": "https://purl.eu/ns/mobility#DestinationDisplay",
-              "range_label": {
-                "en": "Destination Display"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1798,15 +1853,15 @@
           "range": [
             {
               "range_label": "DirectionType",
-              "range_uri": "https://purl.eu/ns/mobility#DirectionType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#DirectionType",
-              "range_puri": "https://purl.eu/ns/mobility#DirectionType",
+              "range_uri": "#Direction Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "DirectionType"
+                "en": "Direction Type"
               }
             }
           ],
@@ -1915,10 +1970,10 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#mainLine",
-          "name": "mainl ine",
-          "sort": "mainl ine",
+          "name": "main line",
+          "sort": "main line",
           "label": {
-            "en": "mainl ine"
+            "en": "main line"
           },
           "description": {
             "en": "The main Line of the Group of Lines."
@@ -1973,10 +2028,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -2003,15 +2058,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -2238,10 +2293,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -2366,10 +2421,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#AuthorityOrOperator",
+              "range_uri": "#Authority or Operator",
               "range_puri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
               "range_label": {
-                "en": "AuthorityOrOperator"
+                "en": "Authority or Operator"
               }
             }
           ],
@@ -2436,10 +2491,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -2576,10 +2631,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -2641,15 +2696,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -2786,10 +2841,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -2816,15 +2871,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -2856,10 +2911,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#AuthorityOrOperator",
+              "range_uri": "#Authority or Operator",
               "range_puri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
               "range_label": {
-                "en": "AuthorityOrOperator"
+                "en": "Authority or Operator"
               }
             }
           ],
@@ -2886,15 +2941,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -2921,15 +2976,15 @@
           "range": [
             {
               "range_label": "TypeOfLine",
-              "range_uri": "https://purl.eu/ns/mobility#TypeOfLine"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TypeOfLine",
-              "range_puri": "https://purl.eu/ns/mobility#TypeOfLine",
+              "range_uri": "#Type of Line",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TypeOfLine"
+                "en": "Type of Line"
               }
             }
           ],
@@ -3068,10 +3123,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -3103,10 +3158,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#AuthorityOrOperator",
+              "range_uri": "#Authority or Operator",
               "range_puri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
               "range_label": {
-                "en": "AuthorityOrOperator"
+                "en": "Authority or Operator"
               }
             }
           ],
@@ -3324,10 +3379,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -3409,10 +3464,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -3476,11 +3531,11 @@
           "scoped_uri": "#Organisation"
         },
         {
-          "label": "AuthorityOrOperator",
+          "label": "Authority or Operator",
           "name": "AuthorityOrOperator",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#AuthorityOrOperator",
-          "scoped_uri": "#AuthorityOrOperator"
+          "scoped_uri": "#Authority or Operator"
         }
       ],
       "properties": [
@@ -3539,13 +3594,13 @@
           "range": [
             {
               "range_label": "Country",
-              "range_uri": "https://purl.eu/ns/mobility#Country"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://purl.eu/ns/mobility#Country",
-              "range_puri": "https://purl.eu/ns/mobility#Country",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Country"
               }
@@ -3574,15 +3629,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -3624,15 +3679,15 @@
           "range": [
             {
               "range_label": "FareClass",
-              "range_uri": "https://purl.eu/ns/mobility#FareClass"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#FareClass",
-              "range_puri": "https://purl.eu/ns/mobility#FareClass",
+              "range_uri": "#Fare Class",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "FareClass"
+                "en": "Fare Class"
               }
             }
           ],
@@ -3865,68 +3920,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PassengerStopAssignment",
-              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ScheduledStopPoint",
-              "range_uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Scheduled Stop Point",
-              "range_puri": "https://purl.eu/ns/mobility#ScheduledStopPoint",
-              "range_label": {
-                "en": "Scheduled Stop Point"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PassengerStopAssignment",
-              "uri": "https://purl.eu/ns/mobility#PassengerStopAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "StopPlace",
-              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Stop Place",
-              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
-              "range_label": {
-                "en": "Stop Place"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#quay",
           "name": "quay",
           "sort": "quay",
@@ -4036,10 +4029,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -4311,10 +4304,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -4423,10 +4416,10 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#aViewOf",
-          "name": "aViewOf",
-          "sort": "aViewOf",
+          "name": "a view of",
+          "sort": "a view of",
           "label": {
-            "en": "aViewOf"
+            "en": "a view of"
           },
           "description": {
             "en": "Reference to the Route Point."
@@ -4481,10 +4474,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -4624,13 +4617,13 @@
           "range": [
             {
               "range_label": "Crowding",
-              "range_uri": "https://purl.eu/ns/mobility#Crowding"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Crowding",
-              "range_puri": "https://purl.eu/ns/mobility#Crowding",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Crowding"
               }
@@ -4681,15 +4674,15 @@
           "range": [
             {
               "range_label": "DayOfWeek",
-              "range_uri": "https://purl.eu/ns/mobility#DayOfWeek"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#DayOfWeek",
-              "range_puri": "https://purl.eu/ns/mobility#DayOfWeek",
+              "range_uri": "#Day of Week",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "DayOfWeek"
+                "en": "Day of Week"
               }
             }
           ],
@@ -4713,8 +4706,21 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "MonthDay",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonthDay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonthDay",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonthDay",
+              "range_label": {
+                "en": "MonthDay"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -4743,10 +4749,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -4773,15 +4779,15 @@
           "range": [
             {
               "range_label": "HolidayType",
-              "range_uri": "https://purl.eu/ns/mobility#HolidayType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#HolidayType",
-              "range_puri": "https://purl.eu/ns/mobility#HolidayType",
+              "range_uri": "#Holiday Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "HolidayType"
+                "en": "Holiday Type"
               }
             }
           ],
@@ -4805,8 +4811,21 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Month",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonth",
+              "range_label": {
+                "en": "Month"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -4835,10 +4854,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -4865,13 +4884,13 @@
           "range": [
             {
               "range_label": "Season",
-              "range_uri": "https://purl.eu/ns/mobility#Season"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Season",
-              "range_puri": "https://purl.eu/ns/mobility#Season",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Season"
               }
@@ -4935,15 +4954,15 @@
           "range": [
             {
               "range_label": "WeekOfMonth",
-              "range_uri": "https://purl.eu/ns/mobility#WeekOfMonth"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#WeekOfMonth",
-              "range_puri": "https://purl.eu/ns/mobility#WeekOfMonth",
+              "range_uri": "#Week of Month",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "WeekOfMonth"
+                "en": "Week of Month"
               }
             }
           ],
@@ -5077,15 +5096,15 @@
           "range": [
             {
               "range_label": "DirectionType",
-              "range_uri": "https://purl.eu/ns/mobility#DirectionType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#DirectionType",
-              "range_puri": "https://purl.eu/ns/mobility#DirectionType",
+              "range_uri": "#Direction Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "DirectionType"
+                "en": "Direction Type"
               }
             }
           ],
@@ -5222,10 +5241,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -5271,11 +5290,11 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#RouteLink",
-      "name": "RouteLink",
+      "name": "Route Link",
       "label": {
-        "en": "RouteLink"
+        "en": "Route Link"
       },
-      "sort": "RouteLink",
+      "sort": "Route Link",
       "description": {
         "en": "An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes."
       },
@@ -5392,10 +5411,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LineString",
+              "range_uri": "#Line String",
               "range_puri": "http://www.opengis.net/ont/sf#LineString",
               "range_label": {
-                "en": "LineString"
+                "en": "Line String"
               }
             }
           ],
@@ -5427,10 +5446,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -5562,10 +5581,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#RouteLink",
+              "range_uri": "#Route Link",
               "range_puri": "https://purl.eu/ns/mobility#RouteLink",
               "range_label": {
-                "en": "RouteLink"
+                "en": "Route Link"
               }
             }
           ],
@@ -5597,10 +5616,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#RouteLink",
+              "range_uri": "#Route Link",
               "range_puri": "https://purl.eu/ns/mobility#RouteLink",
               "range_label": {
-                "en": "RouteLink"
+                "en": "Route Link"
               }
             }
           ],
@@ -5704,10 +5723,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -5809,10 +5828,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -5951,10 +5970,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -5997,41 +6016,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#stopPlace",
-          "name": "stop place",
-          "sort": "stop place",
-          "label": {
-            "en": "stop place"
-          },
-          "description": {
-            "en": "Stop Place associated with the Scheduled Stop Point."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ScheduledStopPoint",
-              "uri": "https://purl.eu/ns/mobility#ScheduledStopPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "StopPlace",
-              "range_uri": "https://purl.eu/ns/mobility#StopPlace"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Stop Place",
-              "range_puri": "https://purl.eu/ns/mobility#StopPlace",
-              "range_label": {
-                "en": "Stop Place"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#stopType",
           "name": "stop type",
           "sort": "stop type",
@@ -6051,15 +6035,15 @@
           "range": [
             {
               "range_label": "StopPlaceType",
-              "range_uri": "https://purl.eu/ns/mobility#StopPlaceType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#StopPlaceType",
-              "range_puri": "https://purl.eu/ns/mobility#StopPlaceType",
+              "range_uri": "#Stop Place Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "StopPlaceType"
+                "en": "Stop Place Type"
               }
             }
           ],
@@ -6121,15 +6105,15 @@
           "range": [
             {
               "range_label": "TimingPointStatus",
-              "range_uri": "https://purl.eu/ns/mobility#TimingPointStatus"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TimingPointStatus",
-              "range_puri": "https://purl.eu/ns/mobility#TimingPointStatus",
+              "range_uri": "#Timing Point Status",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TimingPointStatus"
+                "en": "Timing Point Status"
               }
             }
           ],
@@ -6246,10 +6230,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -6390,11 +6374,11 @@
       "usage": {},
       "parents": [
         {
-          "label": "VehicleJourney",
+          "label": "Vehicle Journey",
           "name": "VehicleJourney",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#VehicleJourney",
-          "scoped_uri": "#VehicleJourney"
+          "scoped_uri": "#Vehicle Journey"
         }
       ],
       "properties": [
@@ -6743,16 +6727,16 @@
           ],
           "range": [
             {
-              "range_label": "TrainSizetype",
-              "range_uri": "https://purl.eu/ns/mobility#TrainSizetype"
+              "range_label": "TrainSizeType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TrainSizetype",
-              "range_puri": "https://purl.eu/ns/mobility#TrainSizetype",
+              "range_uri": "#Train Size Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TrainSizetype"
+                "en": "Train Size Type"
               }
             }
           ],
@@ -6998,10 +6982,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LineString",
+              "range_uri": "#Line String",
               "range_puri": "http://www.opengis.net/ont/sf#LineString",
               "range_label": {
-                "en": "LineString"
+                "en": "Line String"
               }
             }
           ],
@@ -7033,10 +7017,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -7088,7 +7072,7 @@
       },
       "sort": "Stop Place",
       "description": {
-        "en": "A StopPlace represents a station, stop, port, airport or any physical point of access to the transport network."
+        "en": "A Stop Place represents a station, stop, port, airport or any physical point of access to the transport network."
       },
       "usage": {},
       "parents": [
@@ -7489,15 +7473,15 @@
           "range": [
             {
               "range_label": "RequestMethodType",
-              "range_uri": "https://purl.eu/ns/mobility#RequestMethodType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#RequestMethodType",
-              "range_puri": "https://purl.eu/ns/mobility#RequestMethodType",
+              "range_uri": "#Request Method Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "RequestMethodType"
+                "en": "Request Method Type"
               }
             }
           ],
@@ -7559,15 +7543,15 @@
           "range": [
             {
               "range_label": "StopUse",
-              "range_uri": "https://purl.eu/ns/mobility#StopUse"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#StopUse",
-              "range_puri": "https://purl.eu/ns/mobility#StopUse",
+              "range_uri": "#Stop Use",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "StopUse"
+                "en": "Stop Use"
               }
             }
           ],
@@ -8028,11 +8012,11 @@
     },
     {
       "uri": "https://purl.eu/ns/mobility#VehicleJourney",
-      "name": "VehicleJourney",
+      "name": "Vehicle Journey",
       "label": {
-        "en": "VehicleJourney"
+        "en": "Vehicle Journey"
       },
-      "sort": "VehicleJourney",
+      "sort": "Vehicle Journey",
       "description": {
         "en": "A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type."
       },
@@ -8242,15 +8226,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -8277,15 +8261,15 @@
           "range": [
             {
               "range_label": "TransportMode",
-              "range_uri": "https://purl.eu/ns/mobility#TransportMode"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TransportMode",
-              "range_puri": "https://purl.eu/ns/mobility#TransportMode",
+              "range_uri": "#Transport Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TransportMode"
+                "en": "Transport Mode"
               }
             }
           ],
@@ -8402,10 +8386,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -8612,10 +8596,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -8677,15 +8661,15 @@
           "range": [
             {
               "range_label": "TypeOfFuel",
-              "range_uri": "https://purl.eu/ns/mobility#TypeOfFuel"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#TypeOfFuel",
-              "range_puri": "https://purl.eu/ns/mobility#TypeOfFuel",
+              "range_uri": "#Type of Fuel",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "TypeOfFuel"
+                "en": "Type of Fuel"
               }
             }
           ],
@@ -8802,10 +8786,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -8936,269 +8920,15 @@
       },
       "usage": {},
       "parents": [],
-      "properties": [
-        {
-          "uri": "http://schema.org/email",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/faxNumber",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/hoursAvailable",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/openingHours",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/telephone",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#LangString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LangString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#address",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://xmlns.com/foaf/0.1/name",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://xmlns.com/foaf/0.1/page",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "http://www.opengis.net/ont/sf#LineString",
-      "name": "LineString",
+      "name": "Line String",
       "label": {
-        "en": "LineString"
+        "en": "Line String"
       },
-      "sort": "LineString",
+      "sort": "Line String",
       "description": {
         "en": "A curve with linear interpolation between points. Each consecutive pair of points defines a Line segment."
       },
@@ -9295,10 +9025,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -9414,11 +9144,11 @@
     },
     {
       "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-      "name": "LangString",
+      "name": "Language String",
       "label": {
-        "en": "LangString"
+        "en": "Language String"
       },
-      "sort": "LangString",
+      "sort": "Language String",
       "description": {
         "en": "Combination of a String and Language of the content of the String."
       },
@@ -9428,19 +9158,27 @@
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "Identifier",
+      "label": {
+        "en": "Identifier"
+      },
+      "sort": "Identifier",
+      "description": {
+        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "http://purl.org/dc/terms/creator",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "issuing authority URI",
+          "sort": "issuing authority URI",
+          "label": {
+            "en": "issuing authority URI"
+          },
+          "description": {
+            "en": "The URI of the issuing authority."
+          },
           "usage": {},
           "domain": [
             {
@@ -9450,16 +9188,16 @@
           ],
           "range": [
             {
-              "range_label": "Agent",
-              "range_uri": "http://purl.org/dc/terms/Agent"
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://purl.org/dc/terms/Agent",
-              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
               "range_label": {
-                "en": "Agent"
+                "en": "URI"
               }
             }
           ],
@@ -9468,10 +9206,14 @@
         },
         {
           "uri": "http://purl.org/dc/terms/issued",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "date of issue",
+          "sort": "date of issue",
+          "label": {
+            "en": "date of issue"
+          },
+          "description": {
+            "en": "The date on which the Identifier was assigned."
+          },
           "usage": {},
           "domain": [
             {
@@ -9499,10 +9241,14 @@
         },
         {
           "uri": "http://www.w3.org/2004/02/skos/core#notation",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "The value of this property is the Identifier itself."
+          },
           "usage": {},
           "domain": [
             {
@@ -9529,11 +9275,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/adms#schemaAgency",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "http://www.w3.org/ns/adms#schemeAgency",
+          "name": "issuing authority",
+          "sort": "issuing authority",
+          "label": {
+            "en": "issuing authority"
+          },
+          "description": {
+            "en": "The name of the agency responsible for issuing the Identifier."
+          },
           "usage": {},
           "domain": [
             {
@@ -9543,16 +9293,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "String"
+                "en": "Literal"
               }
             }
           ],
@@ -9573,325 +9323,7 @@
       },
       "usage": {},
       "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/ns/locn#addressArea",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#fullAddress",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorName",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postName",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#thoroughfare",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#land",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Adress Representation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "http://www.w3.org/ns/locn#Geometry",
@@ -9908,10 +9340,14 @@
       "properties": [
         {
           "uri": "http://www.opengis.net/ont/geosparql#asGML",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "as GML",
+          "sort": "as GML",
+          "label": {
+            "en": "as GML"
+          },
+          "description": {
+            "en": "Geometry expressed in GML-format."
+          },
           "usage": {},
           "domain": [
             {
@@ -9939,10 +9375,14 @@
         },
         {
           "uri": "http://www.opengis.net/ont/geosparql#asWKT",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "as WKT",
+          "sort": "as WKT",
+          "label": {
+            "en": "as WKT"
+          },
+          "description": {
+            "en": "Geometry expressed in WKT-format."
+          },
           "usage": {},
           "domain": [
             {
@@ -9971,7 +9411,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/generiek#StandardUnit",
+      "uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
       "name": "Standard Unit",
       "label": {
         "en": "Standard Unit"
@@ -10013,10 +9453,14 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#maximumHeadwayInterval",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "maximum headway interval",
+          "sort": "maximum headway interval",
+          "label": {
+            "en": "maximum headway interval"
+          },
+          "description": {
+            "en": "Maximum Headway Interval."
+          },
           "usage": {},
           "domain": [
             {
@@ -10044,10 +9488,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#minimumHeadwayInterval",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "minimum headway interval",
+          "sort": "minimum headway interval",
+          "label": {
+            "en": "minimum headway interval"
+          },
+          "description": {
+            "en": "Minimum Headway Interval."
+          },
           "usage": {},
           "domain": [
             {
@@ -10075,10 +9523,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#scheduledHeadwayInterval",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "scheduled headway interval",
+          "sort": "scheduled headway interval",
+          "label": {
+            "en": "scheduled headway interval"
+          },
+          "description": {
+            "en": "Scheduled Headway Interval."
+          },
           "usage": {},
           "domain": [
             {
@@ -10144,10 +9596,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#LangString",
+              "range_uri": "#Language String",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "LangString"
+                "en": "Language String"
               }
             }
           ],
@@ -10244,15 +9696,15 @@
           "range": [
             {
               "range_label": "HeadwayDisplay",
-              "range_uri": "https://purl.eu/ns/mobility#HeadwayDisplay"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#HeadwayDisplay",
-              "range_puri": "https://purl.eu/ns/mobility#HeadwayDisplay",
+              "range_uri": "#Headway Display",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "HeadwayDisplay"
+                "en": "Headway Display"
               }
             }
           ],
@@ -10308,13 +9760,13 @@
           "range": [
             {
               "range_label": "StandardUnit",
-              "range_uri": "https://data.vlaanderen.be/ns/generiek#StandardUnit"
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Standard Unit",
-              "range_puri": "https://data.vlaanderen.be/ns/generiek#StandardUnit",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
               "range_label": {
                 "en": "Standard Unit"
               }

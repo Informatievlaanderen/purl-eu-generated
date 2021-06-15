@@ -52,7 +52,7 @@
               <div class="head" role="status" id="status">
               <dl>
               <dt>Status</dt><dd>Working Draft</dd>
-              <dt>Published at</dt><dd>2021-06-01</dd>
+              <dt>Published at</dt><dd>2021-06-15</dd>
               <dt>This version</dt><dd><a href="https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2021-06-15">https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2021-06-15</a></dd>
               
               
@@ -67,8 +67,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/59c0bb368df4779da5e06d524518114aa28d8f0e">https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/59c0bb368df4779da5e06d524518114aa28d8f0e</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/59c0bb368df4779da5e06d524518114aa28d8f0e/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/59c0bb368df4779da5e06d524518114aa28d8f0e/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/2d230acd2d287286d515ae528ebbb9333aa105f3">https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/2d230acd2d287286d515ae528ebbb9333aa105f3</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/2d230acd2d287286d515ae528ebbb9333aa105f3/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/2d230acd2d287286d515ae528ebbb9333aa105f3/CHANGELOG</a></dd>
               <dt>Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues">https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://data.vlaanderen.be/standaarden/">https://data.vlaanderen.be/standaarden/</a></dd>
 
@@ -112,7 +112,7 @@
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
                 
                 <p>
-                  This application profile has the status of Working Draft published on 2021-06-01.
+                  This application profile has the status of Working Draft published on 2021-06-15.
 	        </p><p>
 		  Information about the process and the decisions involved in the creation of this specification are consultable at the
 		  <a href="https://data.vlaanderen.be/standaarden/">registry of standards</a>.
@@ -142,11 +142,10 @@
                     <p>This document describes the usage of the following entities for a correct usage of the Application Profile:
                       <br />
                       |
-                      <a href="#"></a> |
                       <a href="#Accessibility Assessment">Accessibility Assessment</a> |
                       <a href="#Arrival">Arrival</a> |
                       <a href="#Authority">Authority</a> |
-                      <a href="#AuthorityOrOperator">AuthorityOrOperator</a> |
+                      <a href="#Authority or Operator">Authority or Operator</a> |
                       <a href="#Call">Call</a> |
                       <a href="#Day Type">Day Type</a> |
                       <a href="#Day Type Assignment">Day Type Assignment</a> |
@@ -173,9 +172,10 @@
                       <a href="#Point Projection">Point Projection</a> |
                       <a href="#Presentation">Presentation</a> |
                       <a href="#Property of Day">Property of Day</a> |
+                      <a href="#Registered Organisation">Registered Organisation</a> |
                       <a href="#Route">Route</a> |
+                      <a href="#Route Link">Route Link</a> |
                       <a href="#Route Point">Route Point</a> |
-                      <a href="#RouteLink">RouteLink</a> |
                       <a href="#Scheduled Stop Point">Scheduled Stop Point</a> |
                       <a href="#Service Calendar">Service Calendar</a> |
                       <a href="#Service Facility Set">Service Facility Set</a> |
@@ -189,8 +189,8 @@
                       <a href="#Timeband">Timeband</a> |
                       <a href="#Train Number">Train Number</a> |
                       <a href="#Uic Operating Period">Uic Operating Period</a> |
+                      <a href="#Vehicle Journey">Vehicle Journey</a> |
                       <a href="#Vehicle Type">Vehicle Type</a> |
-                      <a href="#VehicleJourney">VehicleJourney</a> |
                       <a href="#Via">Via</a> |
                     </p>
                   </div>
@@ -200,15 +200,15 @@
                     <p> This document describes the usage of the following datatypes for a correct usage of the Application Profile:
                       <br />
                       |
-                      <a href="#"></a> |
                       <a href="#Address Representation">Address Representation</a> |
                       <a href="#Booking Arrangement">Booking Arrangement</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Geometry">Geometry</a> |
                       <a href="#Headway Interval">Headway Interval</a> |
+                      <a href="#Identifier">Identifier</a> |
                       <a href="#Journey Frequency">Journey Frequency</a> |
-                      <a href="#LangString">LangString</a> |
-                      <a href="#LineString">LineString</a> |
+                      <a href="#Language String">Language String</a> |
+                      <a href="#Line String">Line String</a> |
                       <a href="#Number">Number</a> |
                       <a href="#Point">Point</a> |
                       <a href="#Quantitative Value">Quantitative Value</a> |
@@ -227,80 +227,6 @@
             </div>
             <div class="region region--no-space-top">
               <h2 class="h2">Entities</h2>
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id=""><a href="http://www.w3.org/ns/regorg#RegisteredOrganization" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#RegisteredOrganization" data-placement="right"></a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd></dd>
-                    
-		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="http://www.w3.org/ns/org#FormalOrganization">FormeleOrganisatie</a>, 
-                        <a href="#Organisation">Organisation</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>For this entity the following properties are defined:
-                      <a href="#%3A"></a>, 
-                      <a href="#%3A"></a>.</dd>
-                    
-                  </dl>
-                </div>
-		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/regorg#legalName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/regorg#legalName" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#legalName" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/regorg#registration">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/regorg#registration" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#registration" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
             </div>
             
               <div class="region region--no-space-top">
@@ -464,7 +390,7 @@
 		    
 		    <dt>Subclass of<dt><dd>
                         <a href="#Organisation">Organisation</a>, 
-                        <a href="#AuthorityOrOperator">AuthorityOrOperator</a>
+                        <a href="#Authority or Operator">Authority or Operator</a>
 		   </dd>
                     
                     <dt>Properties</dt>
@@ -517,7 +443,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="AuthorityOrOperator"><a href="https://purl.eu/ns/mobility#AuthorityOrOperator" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#AuthorityOrOperator" data-placement="right">AuthorityOrOperator</a></h3>
+              <h3 class="h3" id="Authority or Operator"><a href="https://purl.eu/ns/mobility#AuthorityOrOperator" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#AuthorityOrOperator" data-placement="right">Authority or Operator</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>An Authority or an Operator.</dd>
@@ -804,7 +730,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -844,7 +770,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -864,7 +790,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -983,7 +909,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1189,6 +1115,7 @@
                       <a href="#Destination%20Display%3Afront%20text">front text</a>, 
                       <a href="#Destination%20Display%3Apublic%20code">public code</a>, 
                       <a href="#Destination%20Display%3Aside%20text">side text</a>, 
+                      <a href="#Destination%20Display%3Avariant">variant</a>, 
                       <a href="#Destination%20Display%3Avia">via</a>.</dd>
                     
                   </dl>
@@ -1219,7 +1146,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1259,12 +1186,32 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">Text to display on the side of the vehicle associated with the Destination Display.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Destination%20Display%3Avariant" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#variant">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#variant" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#variant" data-placement="right">
+                            variant</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Destination Display Variant" data-placement="right">Destination Display Variant</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Variant Display texts for different media.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1305,7 +1252,6 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#Destination%20Display%20Variant%3A"></a>, 
                       <a href="#Destination%20Display%20Variant%3Adestination%20display%20variant%20type">destination display variant type</a>, 
                       <a href="#Destination%20Display%20Variant%3Afront%20text">front text</a>, 
                       <a href="#Destination%20Display%20Variant%3Aside%20text">side text</a>, 
@@ -1329,26 +1275,6 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Destination%20Display%20Variant%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#variant">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#variant" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#variant" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Destination Display" data-placement="right">Destination Display</a>
-			    
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Destination%20Display%20Variant%3Adestination%20display%20variant%20type" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#destinationDisplayVariantType">
                         <td>
                           <code property="rdfs:label">
@@ -1359,7 +1285,7 @@
                         <td>
                           
 			    
-			    <a href="#DestinationDisplayVariantType" data-placement="right">DestinationDisplayVariantType</a>
+			    <a href="#Destination Display Variant Type" data-placement="right">Destination Display Variant Type</a>
 			    
                           
                         </td>
@@ -1379,7 +1305,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1399,7 +1325,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1476,7 +1402,7 @@
                         <td>
                           
 			    
-			    <a href="#DirectionType" data-placement="right">DirectionType</a>
+			    <a href="#Direction Type" data-placement="right">Direction Type</a>
 			    
                           
                         </td>
@@ -1528,7 +1454,7 @@
 		    
                     <dd>For this entity the following properties are defined:
                       <a href="#Group%20of%20Lines%3Acomposed%20of">composed of</a>, 
-                      <a href="#Group%20of%20Lines%3Amainl%20ine">mainl ine</a>, 
+                      <a href="#Group%20of%20Lines%3Amain%20line">main line</a>, 
                       <a href="#Group%20of%20Lines%3Aname">name</a>, 
                       <a href="#Group%20of%20Lines%3Atransportmode">transportmode</a>.</dd>
                     
@@ -1570,11 +1496,11 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Group%20of%20Lines%3Amainl%20ine" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#mainLine">
+                      <tr id="Group%20of%20Lines%3Amain%20line" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#mainLine">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://purl.eu/ns/mobility#mainLine" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#mainLine" data-placement="right">
-                            mainl ine</a>
+                            main line</a>
                           </code>
                         </td>
                         <td>
@@ -1600,7 +1526,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1620,7 +1546,7 @@
                         <td>
                           
 			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
 			    
                           
                         </td>
@@ -1785,7 +1711,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -1903,7 +1829,7 @@
                         <td>
                           
 			    
-			    <a href="#AuthorityOrOperator" data-placement="right">AuthorityOrOperator</a>
+			    <a href="#Authority or Operator" data-placement="right">Authority or Operator</a>
 			    
                           
                         </td>
@@ -1943,7 +1869,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2023,7 +1949,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2063,7 +1989,7 @@
                         <td>
                           
 			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
 			    
                           
                         </td>
@@ -2143,7 +2069,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2163,7 +2089,7 @@
                         <td>
                           
 			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
 			    
                           
                         </td>
@@ -2183,7 +2109,7 @@
                         <td>
                           
 			    
-			    <a href="#AuthorityOrOperator" data-placement="right">AuthorityOrOperator</a>
+			    <a href="#Authority or Operator" data-placement="right">Authority or Operator</a>
 			    
                           
                         </td>
@@ -2203,7 +2129,7 @@
                         <td>
                           
 			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
 			    
                           
                         </td>
@@ -2223,7 +2149,7 @@
                         <td>
                           
 			    
-			    <a href="#TypeOfLine" data-placement="right">TypeOfLine</a>
+			    <a href="#Type of Line" data-placement="right">Type of Line</a>
 			    
                           
                         </td>
@@ -2327,7 +2253,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2347,7 +2273,7 @@
                         <td>
                           
 			    
-			    <a href="#AuthorityOrOperator" data-placement="right">AuthorityOrOperator</a>
+			    <a href="#Authority or Operator" data-placement="right">Authority or Operator</a>
 			    
                           
                         </td>
@@ -2540,7 +2466,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2618,7 +2544,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2663,7 +2589,7 @@
 		    
 		    <dt>Subclass of<dt><dd>
                         <a href="#Organisation">Organisation</a>, 
-                        <a href="#AuthorityOrOperator">AuthorityOrOperator</a>
+                        <a href="#Authority or Operator">Authority or Operator</a>
 		   </dd>
                     
                     <dt>Properties</dt>
@@ -2721,7 +2647,7 @@
                         <td>
                           
 			    
-			    <a href="https://purl.eu/ns/mobility#Country" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#Country" data-placement="right">Country</a>
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Country</a>
                             
                           
                         </td>
@@ -2741,7 +2667,7 @@
                         <td>
                           
 			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
 			    
                           
                         </td>
@@ -2801,7 +2727,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2820,6 +2746,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="#Contact Point" data-placement="right">Contact Point</a>
+			    
+                          
                         </td>
                         <td>0..*</td>
                         <td property="rdfs:comment">Information such as mail address, telephone, ... that can be used to contact the Organisation.</td>
@@ -2837,7 +2767,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2877,7 +2807,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -2939,7 +2869,7 @@
                         <td>
                           
 			    
-			    <a href="#FareClass" data-placement="right">FareClass</a>
+			    <a href="#Fare Class" data-placement="right">Fare Class</a>
 			    
                           
                         </td>
@@ -3085,8 +3015,6 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#Passenger%20Stop%20Assignment%3A"></a>, 
-                      <a href="#Passenger%20Stop%20Assignment%3A"></a>, 
                       <a href="#Passenger%20Stop%20Assignment%3Aquay">quay</a>.</dd>
                     
                   </dl>
@@ -3106,46 +3034,6 @@
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Passenger%20Stop%20Assignment%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Scheduled Stop Point" data-placement="right">Scheduled Stop Point</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Passenger%20Stop%20Assignment%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Stop Place" data-placement="right">Stop Place</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Passenger%20Stop%20Assignment%3Aquay" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#quay">
                         <td>
@@ -3237,7 +3125,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -3423,7 +3311,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -3494,7 +3382,7 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#Point%20on%20Route%3AaViewOf">aViewOf</a>, 
+                      <a href="#Point%20on%20Route%3Aa%20view%20of">a view of</a>, 
                       <a href="#Point%20on%20Route%3Adescription">description</a>, 
                       <a href="#Point%20on%20Route%3Aorder">order</a>.</dd>
                     
@@ -3516,11 +3404,11 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Point%20on%20Route%3AaViewOf" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#aViewOf">
+                      <tr id="Point%20on%20Route%3Aa%20view%20of" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#aViewOf">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://purl.eu/ns/mobility#aViewOf" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#aViewOf" data-placement="right">
-                            aViewOf</a>
+                            a view of</a>
                           </code>
                         </td>
                         <td>
@@ -3546,7 +3434,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -3721,7 +3609,7 @@
                         <td>
                           
 			    
-			    <a href="#DayOfWeek" data-placement="right">DayOfWeek</a>
+			    <a href="#Day of Week" data-placement="right">Day of Week</a>
 			    
                           
                         </td>
@@ -3740,6 +3628,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#gMonthDay" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#gMonthDay" data-placement="right">MonthDay</a>
+                            
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">For those day types that occur on the same day every year, month and day.</td>
@@ -3757,7 +3649,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -3777,7 +3669,7 @@
                         <td>
                           
 			    
-			    <a href="#HolidayType" data-placement="right">HolidayType</a>
+			    <a href="#Holiday Type" data-placement="right">Holiday Type</a>
 			    
                           
                         </td>
@@ -3796,6 +3688,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#gMonth" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#gMonth" data-placement="right">Month</a>
+                            
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">For those day types that occur on the same month every year; a month as a number.</td>
@@ -3813,7 +3709,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -3873,12 +3769,94 @@
                         <td>
                           
 			    
-			    <a href="#WeekOfMonth" data-placement="right">WeekOfMonth</a>
+			    <a href="#Week of Month" data-placement="right">Week of Month</a>
 			    
                           
                         </td>
                         <td>0..5</td>
                         <td property="rdfs:comment">Week number of the month (1-5).</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Registered Organisation"><a href="http://www.w3.org/ns/regorg#RegisteredOrganization" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#RegisteredOrganization" data-placement="right">Registered Organisation</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>An Organisation that is legally registered.</dd>
+                    
+		    
+		    <dt>Subclass of<dt><dd>
+                        <a href="http://www.w3.org/ns/org#FormalOrganization">Formal Organisation</a>, 
+                        <a href="#Organisation">Organisation</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Registered%20Organisation%3Alegal%20name">legal name</a>, 
+                      <a href="#Registered%20Organisation%3Aregistration">registration</a>.</dd>
+                    
+                  </dl>
+                </div>
+		
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Registered%20Organisation%3Alegal%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/regorg#legalName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/regorg#legalName" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#legalName" data-placement="right">
+                            legal name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Language String" data-placement="right">Language String</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">The legal name of the Registered Organisation.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Registered%20Organisation%3Aregistration" typeof="rdfs:Property" resource="http://www.w3.org/ns/regorg#registration">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/regorg#registration" data-toggle="tooltip" data-content="http://www.w3.org/ns/regorg#registration" data-placement="right">
+                            registration</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Identifier" data-placement="right">Identifier</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -3982,7 +3960,7 @@
                         <td>
                           
 			    
-			    <a href="#DirectionType" data-placement="right">DirectionType</a>
+			    <a href="#Direction Type" data-placement="right">Direction Type</a>
 			    
                           
                         </td>
@@ -4062,7 +4040,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -4088,6 +4066,151 @@
                         </td>
                         <td>2..*</td>
                         <td property="rdfs:comment">Points through which the Route goes.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Route Link"><a href="https://purl.eu/ns/mobility#RouteLink" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#RouteLink" data-placement="right">Route Link</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes.</dd>
+                    
+		    
+		    <dt>Subclass of<dt><dd>
+                        <a href="https://purl.eu/ns/mobility#Link">Link</a>, 
+                        <a href="https://data.vlaanderen.be/ns/transportnetwerk#Transportlink">Transport Link</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Route%20Link%3Adistance">distance</a>, 
+                      <a href="#Route%20Link%3Afrom">from</a>, 
+                      <a href="#Route%20Link%3Alinestring">linestring</a>, 
+                      <a href="#Route%20Link%3Aname">name</a>, 
+                      <a href="#Route%20Link%3Ato">to</a>.</dd>
+                    
+                  </dl>
+                </div>
+		
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Route%20Link%3Adistance" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#distance">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#distance" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#distance" data-placement="right">
+                            distance</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Quantitative Value" data-placement="right">Quantitative Value</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Distance of the Route Link.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Route%20Link%3Afrom" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#from">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#from" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#from" data-placement="right">
+                            from</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Route Point" data-placement="right">Route Point</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Route Point at which the Route Link starts.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Route%20Link%3Alinestring" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#linestring">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#linestring" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#linestring" data-placement="right">
+                            linestring</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Line String" data-placement="right">Line String</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Linestring specifying the Route Link.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Route%20Link%3Aname" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#name" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#name" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Language String" data-placement="right">Language String</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Name of the Route Link.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Route%20Link%3Ato" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#to">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#to" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#to" data-placement="right">
+                            to</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Route Point" data-placement="right">Route Point</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Route Point at which the Route Link ends.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -4166,7 +4289,7 @@
                         <td>
                           
 			    
-			    <a href="#RouteLink" data-placement="right">RouteLink</a>
+			    <a href="#Route Link" data-placement="right">Route Link</a>
 			    
                           
                         </td>
@@ -4186,7 +4309,7 @@
                         <td>
                           
 			    
-			    <a href="#RouteLink" data-placement="right">RouteLink</a>
+			    <a href="#Route Link" data-placement="right">Route Link</a>
 			    
                           
                         </td>
@@ -4223,151 +4346,6 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="RouteLink"><a href="https://purl.eu/ns/mobility#RouteLink" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#RouteLink" data-placement="right">RouteLink</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes.</dd>
-                    
-		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="https://purl.eu/ns/mobility#Link">Link</a>, 
-                        <a href="https://data.vlaanderen.be/ns/transportnetwerk#Transportlink">Transport Link</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>For this entity the following properties are defined:
-                      <a href="#RouteLink%3Adistance">distance</a>, 
-                      <a href="#RouteLink%3Afrom">from</a>, 
-                      <a href="#RouteLink%3Alinestring">linestring</a>, 
-                      <a href="#RouteLink%3Aname">name</a>, 
-                      <a href="#RouteLink%3Ato">to</a>.</dd>
-                    
-                  </dl>
-                </div>
-		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="RouteLink%3Adistance" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#distance">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#distance" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#distance" data-placement="right">
-                            distance</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Quantitative Value" data-placement="right">Quantitative Value</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Distance of the Route Link.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="RouteLink%3Afrom" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#from">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#from" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#from" data-placement="right">
-                            from</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Route Point" data-placement="right">Route Point</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Route Point at which the Route Link starts.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="RouteLink%3Alinestring" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#linestring">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#linestring" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#linestring" data-placement="right">
-                            linestring</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#LineString" data-placement="right">LineString</a>
-			    
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Linestring specifying the Route Link.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="RouteLink%3Aname" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#name">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#name" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#name" data-placement="right">
-                            name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#LangString" data-placement="right">LangString</a>
-			    
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Name of the Route Link.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="RouteLink%3Ato" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#to">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#to" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#to" data-placement="right">
-                            to</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Route Point" data-placement="right">Route Point</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Route Point at which the Route Link ends.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Scheduled Stop Point"><a href="https://purl.eu/ns/mobility#ScheduledStopPoint" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#ScheduledStopPoint" data-placement="right">Scheduled Stop Point</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -4392,7 +4370,6 @@
                       <a href="#Scheduled%20Stop%20Point%3Apublic%20code">public code</a>, 
                       <a href="#Scheduled%20Stop%20Point%3Ashort%20name">short name</a>, 
                       <a href="#Scheduled%20Stop%20Point%3Astart%20of">start of</a>, 
-                      <a href="#Scheduled%20Stop%20Point%3Astop%20place">stop place</a>, 
                       <a href="#Scheduled%20Stop%20Point%3Astop%20type">stop type</a>, 
                       <a href="#Scheduled%20Stop%20Point%3Atariff%20zones">tariff zones</a>, 
                       <a href="#Scheduled%20Stop%20Point%3Atiming%20point%20status">timing point status</a>, 
@@ -4426,7 +4403,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -4486,7 +4463,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -4566,7 +4543,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -4596,26 +4573,6 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Scheduled%20Stop%20Point%3Astop%20place" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#stopPlace">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#stopPlace" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#stopPlace" data-placement="right">
-                            stop place</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Stop Place" data-placement="right">Stop Place</a>
-			    
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment">Stop Place associated with the Scheduled Stop Point.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Scheduled%20Stop%20Point%3Astop%20type" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#stopType">
                         <td>
                           <code property="rdfs:label">
@@ -4626,7 +4583,7 @@
                         <td>
                           
 			    
-			    <a href="#StopPlaceType" data-placement="right">StopPlaceType</a>
+			    <a href="#Stop Place Type" data-placement="right">Stop Place Type</a>
 			    
                           
                         </td>
@@ -4666,7 +4623,7 @@
                         <td>
                           
 			    
-			    <a href="#TimingPointStatus" data-placement="right">TimingPointStatus</a>
+			    <a href="#Timing Point Status" data-placement="right">Timing Point Status</a>
 			    
                           
                         </td>
@@ -4766,7 +4723,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -4866,7 +4823,7 @@
                     
 		    
 		    <dt>Subclass of<dt><dd>
-                        <a href="#VehicleJourney">VehicleJourney</a>
+                        <a href="#Vehicle Journey">Vehicle Journey</a>
 		   </dd>
                     
                     <dt>Properties</dt>
@@ -5105,7 +5062,7 @@
                         <td>
                           
 			    
-			    <a href="#TrainSizetype" data-placement="right">TrainSizetype</a>
+			    <a href="#Train Size Type" data-placement="right">Train Size Type</a>
 			    
                           
                         </td>
@@ -5293,7 +5250,7 @@
                         <td>
                           
 			    
-			    <a href="#LineString" data-placement="right">LineString</a>
+			    <a href="#Line String" data-placement="right">Line String</a>
 			    
                           
                         </td>
@@ -5313,7 +5270,7 @@
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -5353,7 +5310,7 @@
               <h3 class="h3" id="Stop Place"><a href="https://purl.eu/ns/mobility#StopPlace" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#StopPlace" data-placement="right">Stop Place</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A StopPlace represents a station, stop, port, airport or any physical point of access to the transport network.</dd>
+                    <dt>Description</dt><dd>A Stop Place represents a station, stop, port, airport or any physical point of access to the transport network.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -5622,7 +5579,7 @@
                         <td>
                           
 			    
-			    <a href="#RequestMethodType" data-placement="right">RequestMethodType</a>
+			    <a href="#Request Method Type" data-placement="right">Request Method Type</a>
 			    
                           
                         </td>
@@ -5662,7 +5619,7 @@
                         <td>
                           
 			    
-			    <a href="#StopUse" data-placement="right">StopUse</a>
+			    <a href="#Stop Use" data-placement="right">Stop Use</a>
 			    
                           
                         </td>
@@ -6037,6 +5994,213 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             </div>
             
               <div class="region region--no-space-top">
+              <h3 class="h3" id="Vehicle Journey"><a href="https://purl.eu/ns/mobility#VehicleJourney" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#VehicleJourney" data-placement="right">Vehicle Journey</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type.</dd>
+                    
+		    
+		    <dt>Subclass of<dt><dd>
+                        <a href="https://purl.eu/ns/mobility#Journey">Journey</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Vehicle%20Journey%3AdepartureTime">departureTime</a>, 
+                      <a href="#Vehicle%20Journey%3Amade%20using">made using</a>, 
+                      <a href="#Vehicle%20Journey%3Anotice%20assignment">notice assignment</a>, 
+                      <a href="#Vehicle%20Journey%3Apart">part</a>, 
+                      <a href="#Vehicle%20Journey%3Apassed%20at">passed at</a>, 
+                      <a href="#Vehicle%20Journey%3Atransport%20mode">transport mode</a>, 
+                      <a href="#Vehicle%20Journey%3Atransport%20submode">transport submode</a>, 
+                      <a href="#Vehicle%20Journey%3Aworked%20on">worked on</a>.</dd>
+                    
+                  </dl>
+                </div>
+		
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Vehicle%20Journey%3AdepartureTime" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#departureTime">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#departureTime" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#departureTime" data-placement="right">
+                            departureTime</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#time" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#time" data-placement="right">Time</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Time of departure.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Amade%20using" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#madeUsing">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#madeUsing" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#madeUsing" data-placement="right">
+                            made using</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Journey Pattern" data-placement="right">Journey Pattern</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Journey Pattern used to make the Vehicle Journey.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Anotice%20assignment" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#noticeAssignment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#noticeAssignment" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#noticeAssignment" data-placement="right">
+                            notice assignment</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Notice Assignment" data-placement="right">Notice Assignment</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Notice relevant for the whole Journey.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Apart" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#^part">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#^part" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#^part" data-placement="right">
+                            part</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Journey Part" data-placement="right">Journey Part</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Part of the Vehicle Journey.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Apassed%20at" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#passedAt">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#passedAt" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#passedAt" data-placement="right">
+                            passed at</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Time Tabled Passing Time" data-placement="right">Time Tabled Passing Time</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Time Tabled Passing Time at which the Vehicle Journey passes.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Atransport%20mode" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#transportMode">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#transportMode" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#transportMode" data-placement="right">
+                            transport mode</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Transport mode of the Journey.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Atransport%20submode" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#transportSubmode">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#transportSubmode" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#transportSubmode" data-placement="right">
+                            transport submode</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Transport Mode" data-placement="right">Transport Mode</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Transport submode of the Journey.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Vehicle%20Journey%3Aworked%20on" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#workedOn">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://purl.eu/ns/mobility#workedOn" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#workedOn" data-placement="right">
+                            worked on</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Day Type" data-placement="right">Day Type</a>
+			    
+                          
+                        </td>
+                        <td>1..*</td>
+                        <td property="rdfs:comment">Day Type on which the Vehicle Journey is worked.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
               <h3 class="h3" id="Vehicle Type"><a href="https://purl.eu/ns/mobility#VehicleType" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#VehicleType" data-placement="right">Vehicle Type</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -6107,7 +6271,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -6227,7 +6391,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -6267,7 +6431,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#TypeOfFuel" data-placement="right">TypeOfFuel</a>
+			    <a href="#Type of Fuel" data-placement="right">Type of Fuel</a>
 			    
                           
                         </td>
@@ -6324,213 +6488,6 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="VehicleJourney"><a href="https://purl.eu/ns/mobility#VehicleJourney" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#VehicleJourney" data-placement="right">VehicleJourney</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>A VehicleJourney is the defined movement of a vehicle using a specified Journey Pattern on a particular Route. By virtue of being defined for a Day Type, a Vehicle Journey is a class of journeys that would take place at the same time on each day of a specified Day Type.</dd>
-                    
-		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="https://purl.eu/ns/mobility#Journey">Journey</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>For this entity the following properties are defined:
-                      <a href="#VehicleJourney%3AdepartureTime">departureTime</a>, 
-                      <a href="#VehicleJourney%3Amade%20using">made using</a>, 
-                      <a href="#VehicleJourney%3Anotice%20assignment">notice assignment</a>, 
-                      <a href="#VehicleJourney%3Apart">part</a>, 
-                      <a href="#VehicleJourney%3Apassed%20at">passed at</a>, 
-                      <a href="#VehicleJourney%3Atransport%20mode">transport mode</a>, 
-                      <a href="#VehicleJourney%3Atransport%20submode">transport submode</a>, 
-                      <a href="#VehicleJourney%3Aworked%20on">worked on</a>.</dd>
-                    
-                  </dl>
-                </div>
-		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="VehicleJourney%3AdepartureTime" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#departureTime">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#departureTime" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#departureTime" data-placement="right">
-                            departureTime</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#time" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#time" data-placement="right">Time</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Time of departure.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Amade%20using" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#madeUsing">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#madeUsing" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#madeUsing" data-placement="right">
-                            made using</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Journey Pattern" data-placement="right">Journey Pattern</a>
-			    
-                          
-                        </td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Journey Pattern used to make the Vehicle Journey.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Anotice%20assignment" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#noticeAssignment">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#noticeAssignment" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#noticeAssignment" data-placement="right">
-                            notice assignment</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Notice Assignment" data-placement="right">Notice Assignment</a>
-			    
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment">Notice relevant for the whole Journey.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Apart" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#^part">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#^part" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#^part" data-placement="right">
-                            part</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Journey Part" data-placement="right">Journey Part</a>
-			    
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment">Part of the Vehicle Journey.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Apassed%20at" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#passedAt">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#passedAt" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#passedAt" data-placement="right">
-                            passed at</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Time Tabled Passing Time" data-placement="right">Time Tabled Passing Time</a>
-			    
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment">Time Tabled Passing Time at which the Vehicle Journey passes.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Atransport%20mode" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#transportMode">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#transportMode" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#transportMode" data-placement="right">
-                            transport mode</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
-			    
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Transport mode of the Journey.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Atransport%20submode" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#transportSubmode">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#transportSubmode" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#transportSubmode" data-placement="right">
-                            transport submode</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#TransportMode" data-placement="right">TransportMode</a>
-			    
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Transport submode of the Journey.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="VehicleJourney%3Aworked%20on" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#workedOn">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#workedOn" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#workedOn" data-placement="right">
-                            worked on</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Day Type" data-placement="right">Day Type</a>
-			    
-                          
-                        </td>
-                        <td>1..*</td>
-                        <td property="rdfs:comment">Day Type on which the Vehicle Journey is worked.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Via"><a href="https://purl.eu/ns/mobility#Via" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#Via" data-placement="right">Via</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -6570,7 +6527,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -6594,123 +6551,6 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id=""><a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right"></a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd></dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#%3A"></a>, 
-                      <a href="#%3A"></a>, 
-                      <a href="#%3A"></a>, 
-                      <a href="#%3A"></a>.</dd>
-                    
-                  </dl>
-                </div>
-		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://purl.org/dc/terms/issued">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/issued" data-toggle="tooltip" data-content="http://purl.org/dc/terms/issued" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2004/02/skos/core#notation" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#notation" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#schemaAgency">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/adms#schemaAgency" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#schemaAgency" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
-            </div>
-            
-            <div class="region region--no-space-top">
-              
               <h3 class="h3" id="Address Representation"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Address Representation</a></h3>
 	      
                 <div class="region region--no-space-top">
@@ -6720,274 +6560,11 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
 		    
                     <dt>Properties</dt>
 		    
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>, 
-                      <a href="#Address%20Representation%3A"></a>.</dd>
+                    <dd>There are no properties defined for this datatype.</dd>
                     
                   </dl>
                 </div>
 		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postCode">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#postCode" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postCode" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#addressArea">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#addressArea" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#addressArea" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#fullAddress">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#fullAddress" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#fullAddress" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorDesignator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#locatorDesignator" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorDesignator" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#locatorName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorName" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#poBox">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#poBox" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#poBox" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL1" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL1" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#postName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postName" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#thoroughfare">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#thoroughfare" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#thoroughfare" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#gemeentenaam">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#gemeentenaam" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#gemeentenaam" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Address%20Representation%3A" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#land">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#land" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#land" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
             </div>
             
             <div class="region region--no-space-top">
@@ -7019,202 +6596,11 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
 		    
                     <dt>Properties</dt>
 		    
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>, 
-                      <a href="#Contact%20Point%3A"></a>.</dd>
+                    <dd>There are no properties defined for this datatype.</dd>
                     
                   </dl>
                 </div>
 		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://schema.org/email">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/email" data-toggle="tooltip" data-content="http://schema.org/email" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://schema.org/faxNumber">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/faxNumber" data-toggle="tooltip" data-content="http://schema.org/faxNumber" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://schema.org/openingHours">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/openingHours" data-toggle="tooltip" data-content="http://schema.org/openingHours" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://schema.org/telephone">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/telephone" data-toggle="tooltip" data-content="http://schema.org/telephone" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://www.w3.org/2006/vcard/ns#honorific-prefix">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2006/vcard/ns#honorific-prefix" data-toggle="tooltip" data-content="http://www.w3.org/2006/vcard/ns#honorific-prefix" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#LangString" data-placement="right">LangString</a>
-			    
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#address">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#address" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/name">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/0.1/name" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/name" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/page">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/0.1/page" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/page" data-placement="right"></a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
             </div>
             
             <div class="region region--no-space-top">
@@ -7229,8 +6615,8 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                     <dt>Properties</dt>
 		    
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Geometry%3A"></a>, 
-                      <a href="#Geometry%3A"></a>.</dd>
+                      <a href="#Geometry%3Aas%20GML">as GML</a>, 
+                      <a href="#Geometry%3Aas%20WKT">as WKT</a>.</dd>
                     
                   </dl>
                 </div>
@@ -7250,10 +6636,10 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
 
                     <tbody class="supertype">
                       
-                      <tr id="Geometry%3A" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
+                      <tr id="Geometry%3Aas%20GML" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right"></a>
+                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">as GML</a>
                           </code>
                         </td>
                         <td>
@@ -7264,15 +6650,15 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">Geometry expressed in GML-format.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="Geometry%3A" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
+                      <tr id="Geometry%3Aas%20WKT" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right"></a>
+                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">as WKT</a>
                           </code>
                         </td>
                         <td>
@@ -7283,7 +6669,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">Geometry expressed in WKT-format.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -7306,9 +6692,9 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                     <dt>Properties</dt>
 		    
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Headway%20Interval%3A"></a>, 
-                      <a href="#Headway%20Interval%3A"></a>, 
-                      <a href="#Headway%20Interval%3A"></a>.</dd>
+                      <a href="#Headway%20Interval%3Amaximum%20headway%20interval">maximum headway interval</a>, 
+                      <a href="#Headway%20Interval%3Aminimum%20headway%20interval">minimum headway interval</a>, 
+                      <a href="#Headway%20Interval%3Ascheduled%20headway%20interval">scheduled headway interval</a>.</dd>
                     
                   </dl>
                 </div>
@@ -7328,10 +6714,10 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
 
                     <tbody class="supertype">
                       
-                      <tr id="Headway%20Interval%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#maximumHeadwayInterval">
+                      <tr id="Headway%20Interval%3Amaximum%20headway%20interval" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#maximumHeadwayInterval">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#maximumHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#maximumHeadwayInterval" data-placement="right"></a>
+                            <a href="https://purl.eu/ns/mobility#maximumHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#maximumHeadwayInterval" data-placement="right">maximum headway interval</a>
                           </code>
                         </td>
                         <td>
@@ -7342,15 +6728,15 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">Maximum Headway Interval.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="Headway%20Interval%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#minimumHeadwayInterval">
+                      <tr id="Headway%20Interval%3Aminimum%20headway%20interval" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#minimumHeadwayInterval">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#minimumHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#minimumHeadwayInterval" data-placement="right"></a>
+                            <a href="https://purl.eu/ns/mobility#minimumHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#minimumHeadwayInterval" data-placement="right">minimum headway interval</a>
                           </code>
                         </td>
                         <td>
@@ -7361,15 +6747,15 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">Minimum Headway Interval.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="Headway%20Interval%3A" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#scheduledHeadwayInterval">
+                      <tr id="Headway%20Interval%3Ascheduled%20headway%20interval" typeof="rdfs:Property" resource="https://purl.eu/ns/mobility#scheduledHeadwayInterval">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/mobility#scheduledHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#scheduledHeadwayInterval" data-placement="right"></a>
+                            <a href="https://purl.eu/ns/mobility#scheduledHeadwayInterval" data-toggle="tooltip" data-content="https://purl.eu/ns/mobility#scheduledHeadwayInterval" data-placement="right">scheduled headway interval</a>
                           </code>
                         </td>
                         <td>
@@ -7380,7 +6766,124 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">Scheduled Headway Interval.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="Identifier"><a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#Identifier%3Adate%20of%20issue">date of issue</a>, 
+                      <a href="#Identifier%3Aidentifier">identifier</a>, 
+                      <a href="#Identifier%3Aissuing%20authority">issuing authority</a>, 
+                      <a href="#Identifier%3Aissuing%20authority%20URI">issuing authority URI</a>.</dd>
+                    
+                  </dl>
+                </div>
+		
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="Identifier%3Adate%20of%20issue" typeof="rdfs:Property" resource="http://purl.org/dc/terms/issued">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/issued" data-toggle="tooltip" data-content="http://purl.org/dc/terms/issued" data-placement="right">date of issue</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">The date on which the Identifier was assigned.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Identifier%3Aidentifier" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2004/02/skos/core#notation" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#notation" data-placement="right">identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">The value of this property is the Identifier itself.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Identifier%3Aissuing%20authority" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#schemeAgency">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/adms#schemeAgency" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#schemeAgency" data-placement="right">issuing authority</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">The name of the agency responsible for issuing the Identifier.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Identifier%3Aissuing%20authority%20URI" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">issuing authority URI</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">The URI of the issuing authority.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -7435,7 +6938,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -7492,7 +6995,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#HeadwayDisplay" data-placement="right">HeadwayDisplay</a>
+			    <a href="#Headway Display" data-placement="right">Headway Display</a>
 			    
                           
                         </td>
@@ -7510,7 +7013,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="LangString"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a></h3>
+              <h3 class="h3" id="Language String"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Language String</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
@@ -7528,7 +7031,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="LineString"><a href="http://www.opengis.net/ont/sf#LineString" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#LineString" data-placement="right">LineString</a></h3>
+              <h3 class="h3" id="Line String"><a href="http://www.opengis.net/ont/sf#LineString" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#LineString" data-placement="right">Line String</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
@@ -7634,7 +7137,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         <td>
                           
 			    
-			    <a href="#LangString" data-placement="right">LangString</a>
+			    <a href="#Language String" data-placement="right">Language String</a>
 			    
                           
                         </td>
@@ -7806,7 +7309,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="Standard Unit"><a href="https://data.vlaanderen.be/ns/generiek#StandardUnit" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/generiek#StandardUnit" data-placement="right">Standard Unit</a></h3>
+              <h3 class="h3" id="Standard Unit"><a href="https://data.vlaanderen.be/ns/generiek#StandaardEenheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/generiek#StandaardEenheid" data-placement="right">Standard Unit</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
