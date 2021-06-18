@@ -40,39 +40,348 @@
   "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PointShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#AccessModes"
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Location of the Route Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "http://fixme.com#location"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Route Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://fixme.com#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:path": "http://fixme.com#pointNumber"
+        },
+        {
+          "sh:path": "http://fixme.com#projection"
+        }
+      ],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#CountryShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PolygonShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Country"
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#CoveredTypeShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TransportModeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#CoveredType"
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#EntranceTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#EntranceType"
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#AccessModesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#InterchangeUseTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuayTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GatedTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#GatedType"
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#CoveredTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LightingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#CountryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:definition": {
+            "en": "Stop Place located in the Country."
+          },
+          "sh:name": {
+            "en": "location of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#locationOf"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#OrganisationTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The date on which the Identifier was assigned."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "date of issue"
+          },
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The value of this property is the Identifier itself."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The name of the agency responsible for issuing the Identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "issuing authority"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemeAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "The URI of the issuing authority."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "issuing authority URI"
+          },
+          "sh:path": "http://purl.org/dc/terms/creator"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#AdressRepresentationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GeometryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "Geometry expressed in GML-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "as GML"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "Geometry expressed in WKT-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "as WKT"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#OrganisationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Other name for the Organisation."
+          },
+          "sh:name": {
+            "en": "alternative label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "Information such as mail address, telephone, ... that can be used to contact the Organisation."
+          },
+          "sh:name": {
+            "en": "contact point"
+          },
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name that is the preferred designation of the Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "preferred label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Organisation."
+          },
+          "sh:name": {
+            "en": "organisation type"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#orgType"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/org#Organization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GeregistreerdeOrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The legal name of the Registered Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal name"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#legalName"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "registration"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StandardUnitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#AccessibilityAssessmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#AccessibilityAssessment"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape",
@@ -82,7 +391,7 @@
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Stop Place that is a member of the Group of Stop Places."
           },
           "sh:name": {
             "en": "member"
@@ -90,19 +399,18 @@
           "sh:path": "https://purl.eu/ns/mobility#member"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Transport mode of the Group of Stop Places."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport mode"
+          },
           "sh:path": "https://purl.eu/ns/mobility#transportMode"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#GroupOfStopPlaces"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#InterchangeUseTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#InterchangeUseType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LevelShape",
@@ -112,13 +420,6 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#Level"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LightingTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#LightingType"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LocaleShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -126,22 +427,51 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#Locale"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#OperatorShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Postal address of the Operator."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint"
+          "sh:name": {
+            "en": "address"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#address"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Reference to the Country."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace"
+          "sh:name": {
+            "en": "Country"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#country"
         },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Primary Transport Mode of the Operator."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "primary mode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#primaryMode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Operator"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
         {
           "sh:class": "https://purl.eu/ns/mobility#Quay",
           "sh:definition": {
@@ -157,27 +487,29 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PlaceTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PlaceType"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PointOfInterestShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
-          "sh:path": "https://purl.eu/ns/mobility#servedBy"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:definition": {
+            "en": "Stop Place that serves the Point of Interest."
+          },
+          "sh:name": {
+            "en": "served by"
+          },
           "sh:path": "https://purl.eu/ns/mobility#servedBy"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#PointOfInterest"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PresentationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Presentation"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape",
@@ -186,27 +518,57 @@
       "sh:property": [
         {
           "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Bearing of street relative to Quay in degrees (absolute bearing of front part of Vehicle when stopped at Quay)."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "compass bearing"
+          },
           "sh:path": "https://purl.eu/ns/mobility#compassBearing"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Label of the Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "label"
+          },
           "sh:path": "https://purl.eu/ns/mobility#label"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:definition": {
+            "en": "Level of the Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "level"
+          },
           "sh:path": "https://purl.eu/ns/mobility#level"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Other transport modes of the Quay."
+          },
           "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
+          "sh:name": {
+            "en": "other transport mode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#otherTransportMode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Asset code used to identify the Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "plate code"
+          },
           "sh:path": "https://purl.eu/ns/mobility#plateCode"
         },
         {
@@ -222,25 +584,49 @@
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:definition": {
+            "en": "Sub Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "quay"
+          },
           "sh:path": "https://purl.eu/ns/mobility#quay"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#QuayType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Classification of the Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "quay type"
+          },
           "sh:path": "https://purl.eu/ns/mobility#quayType"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Submode of the Quay."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "submode"
+          },
           "sh:path": "https://purl.eu/ns/mobility#submode"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:definition": {
+            "en": "Tariff zone of the Quay."
+          },
+          "sh:name": {
+            "en": "tariff zone"
+          },
           "sh:path": "https://purl.eu/ns/mobility#tariffZone"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "The main transport mode of the Stop Place."
           },
@@ -254,18 +640,12 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#Quay"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuayTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#QuayType"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
           "sh:definition": {
             "en": "Location of the Scheduled Stop Point."
           },
@@ -274,7 +654,7 @@
           "sh:name": {
             "en": "location"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^location"
+          "sh:path": "https://purl.eu/ns/mobility#location"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -286,55 +666,138 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^name"
+          "sh:path": "https://purl.eu/ns/mobility#name"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TimingpointStatus",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Timing status of the Scheduled Stop Point."
+          },
           "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^timingpointStatus"
+          "sh:name": {
+            "en": "timing point status"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#timingPointStatus"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Scheduled Stop Point."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
           "sh:path": "https://purl.eu/ns/mobility#description"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Presentation",
+          "sh:definition": {
+            "en": "Presentation values to use when rendering the Stop Point such as a colour and font."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "presentation"
+          },
           "sh:path": "https://purl.eu/ns/mobility#presentation"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Alternative identifier of the Scheduled Stop Point."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "private code"
+          },
           "sh:path": "https://purl.eu/ns/mobility#privateCode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Public code of the Scheduled Stop Point."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "public code"
+          },
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name of the Scheduled Stop Point."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
           "sh:path": "https://purl.eu/ns/mobility#shortName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlaceType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Type of Stop Place."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "stopType"
+            "en": "stop type"
           },
           "sh:path": "https://purl.eu/ns/mobility#stopType"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:definition": {
+            "en": "Tariff Zones to which the Scheduled Stop Point belongs."
+          },
+          "sh:name": {
+            "en": "tariff zones"
+          },
           "sh:path": "https://purl.eu/ns/mobility#tariffZones"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint"
+      "sh:targetClass": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#ServiceLinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Distance of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "distance"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#distance"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#LineString",
+          "sh:definition": {
+            "en": "Linestring that specifies the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "linestring"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#linestring"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceLink"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape",
@@ -342,148 +805,20 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#AccessModes",
-          "sh:definition": {
-            "en": "Access modes by which the Stop Place may be accessed."
-          },
-          "sh:name": {
-            "en": "access modes"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#accessModes"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
-          "sh:definition": {
-            "en": "The overall accessibility characteristics of the Stop Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "accessability assessment"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#accessabilityAssessment"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^afbeelding"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:path": "https://purl.eu/ns/mobility#^alternativeName"
-        },
-        {
-          "sh:class": "http://www.opengis.net/ont/sf#Point",
-          "sh:definition": {
-            "en": "Centre Point of the Stop Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "centroid"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#centroid"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#CoveredType",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^covered"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^crossRoad"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#GatedType",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^gated"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^landmark"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Level",
-          "sh:path": "https://purl.eu/ns/mobility#^level"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#LightingType",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^lighting"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Locale",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^locale"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Operator",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^organisation"
-        },
-        {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Refers to the parent Stop Place of the Stop Place."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "parentSiteRef"
+            "en": "parent site reference"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^parentSiteRef"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#PlaceType",
-          "sh:definition": {
-            "en": "Categorisation of Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "place type"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#placeType"
-        },
-        {
-          "sh:class": "http://www.opengis.net/ont/sf#Polygon",
-          "sh:definition": {
-            "en": "Polygon associated with the Stop Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "polygon"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#polygon"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^postalAddress"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:definition": {
-            "en": "Road address associated with the Stop Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "road address"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#roadAddress"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#^url"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#borderCrossing"
+          "sh:path": "https://purl.eu/ns/mobility#parentSiteRef"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Quay",
           "sh:definition": {
-            "en": "TODO"
+            "en": "The Quays contained in the Stop Place, that is platforms, jetties, bays, taxi ranks, and other points of physical access to Vehicles."
           },
           "sh:name": {
             "en": "containing"
@@ -493,93 +828,67 @@
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlaceEntrance",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Entrance of the Stop Place."
           },
           "sh:name": {
-            "en": "enteredThrough"
+            "en": "entered through"
           },
           "sh:path": "https://purl.eu/ns/mobility#enteredThrough"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:definition": {
+            "en": "Stop Place that is the main terminus of the Topographic Place."
+          },
+          "sh:name": {
+            "en": "main terminus"
+          },
           "sh:path": "https://purl.eu/ns/mobility#for"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
-          "sh:path": "https://purl.eu/ns/mobility#for"
+          "sh:definition": {
+            "en": "Topographic Place in the Stop Place."
+          },
+          "sh:name": {
+            "en": "in"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#in"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Country where the Stop Place is located."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "located in"
+          },
           "sh:path": "https://purl.eu/ns/mobility#locatedIn"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Country",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#locatedIn"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:class": "https://purl.eu/ns/mobility#PointOfInterest",
           "sh:definition": {
-            "en": "Code used to identify a Stop Place to the public as an alternative to a name."
+            "en": "Point of Interest that is served by the Stop Place."
           },
-          "sh:maxCount": "1",
           "sh:name": {
-            "en": "public code"
+            "en": "serves"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility#serves"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlaceType",
+          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
           "sh:definition": {
-            "en": "The type of Stop Place."
+            "en": "Topographic Place which the Stop Place serves."
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "stop place type"
+            "en": "serves"
           },
-          "sh:path": "https://purl.eu/ns/mobility#stopPlaceType"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlaceWeightyType",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#stopPlaceWeight"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#submode"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
-          "sh:path": "https://purl.eu/ns/mobility#tariffZone"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
-          "sh:definition": {
-            "en": "The main transport mode of the Stop Place."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "transport mode"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#transportMode"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#InterchangeUseType",
-          "sh:maxCount": "1",
-          "sh:path": "https://purl.eu/ns/mobility#weighting"
+          "sh:path": "https://purl.eu/ns/mobility#serves"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace"
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlace"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape",
@@ -588,13 +897,19 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether there is a dropped curb outside the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "dropped kerb outside"
+          },
           "sh:path": "https://purl.eu/ns/mobility#droppedKerbOutside"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#EntranceType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Type of entrance."
+            "en": "Type of Entrance."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -604,7 +919,13 @@
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Height of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "height"
+          },
           "sh:path": "https://purl.eu/ns/mobility#height"
         },
         {
@@ -631,26 +952,50 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Entrance opens externally."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is external"
+          },
           "sh:path": "https://purl.eu/ns/mobility#isExternal"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Label of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "label"
+          },
           "sh:path": "https://purl.eu/ns/mobility#label"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:definition": {
+            "en": "Level of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "level"
+          },
           "sh:path": "https://purl.eu/ns/mobility#level"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Other transport mode of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "other transport mode"
+          },
           "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Code",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Public code for the Stop Place Entrance."
           },
@@ -661,16 +1006,28 @@
           "sh:path": "https://purl.eu/ns/mobility#publicCode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Submode of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "submode"
+          },
           "sh:path": "https://purl.eu/ns/mobility#submode"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:definition": {
+            "en": "Tariff zone of the Entrance."
+          },
+          "sh:name": {
+            "en": "tariff zone"
+          },
           "sh:path": "https://purl.eu/ns/mobility#tariffZone"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "The main transport mode of the Stop Place."
           },
@@ -682,25 +1039,163 @@
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Width of the Entrance."
+          },
           "sh:maxCount": "1",
+          "sh:name": {
+            "en": "width"
+          },
           "sh:path": "https://purl.eu/ns/mobility#width"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceEntrance"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPointInJourneyPatternShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceType"
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Order of Stop Point in Journey Pattern within Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "order"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#order"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#BookingArrangement",
+          "sh:definition": {
+            "en": "Booking Arrangement for stop if different from those for Service Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "booking arrangements"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#bookingArrangements"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether Destination Display changes at this point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "change of destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#changeOfDestinationDisplay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplay",
+          "sh:definition": {
+            "en": "Destination Display values to show at this point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplay"
+        },
+        {
+          "sh:definition": {
+            "en": "Flexible properties of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flexible point properties"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#flexiblePointProperties"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whetherthe Stop Point may be used for alighting."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for alighting"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#forAlighting"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whetherthe Stop Point may be used for boarding."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for boarding"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#forBoarding"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#NoticeAssignment",
+          "sh:definition": {
+            "en": "Notice for the Stop Point in Journey Pattern."
+          },
+          "sh:name": {
+            "en": "notice assignment"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#noticeAssignment"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:definition": {
+            "en": "Next Service Link after Stop Point in Journey Pattern visit."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "onward service link"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#onwardServiceLink"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Method to request stop in this particular service pattern; if none specified, as per stop."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "request method"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#requestMethod"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether stop is a request for stop in this journey. Default if false."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "request stop"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#requestStop"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of use of stop. Default is \"access\"."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "stop use"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#stopUse"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightyTypeShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TariffZoneShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceWeightyType"
+      "sh:targetClass": "https://purl.eu/ns/mobility#TariffZone"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceShape",
@@ -709,29 +1204,85 @@
       "sh:property": [
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:definition": {
+            "en": "Stop Place contained in the Topographic Place."
+          },
+          "sh:name": {
+            "en": "contained"
+          },
           "sh:path": "https://purl.eu/ns/mobility#contained"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
-          "sh:path": "https://purl.eu/ns/mobility#contained"
+          "sh:definition": {
+            "en": "Topographic Place for which the Stop Place is the main terminus."
+          },
+          "sh:name": {
+            "en": "for"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#mainTerminus"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
-          "sh:path": "https://purl.eu/ns/mobility#servedBy"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:definition": {
+            "en": "Stop Place that serves the Topographic Place."
+          },
+          "sh:name": {
+            "en": "served by"
+          },
           "sh:path": "https://purl.eu/ns/mobility#servedBy"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#TopographicPlace"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape",
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#NumberShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Transportmode"
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuantitativeValueShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:definition": {
+            "en": "Standarised unit in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "standard unit"
+          },
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The unit in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "unit"
+          },
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:definition": {
+            "en": "Number used to express the quantity of the characteristic."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
     }
   ]
 }
