@@ -1,0 +1,331 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemas: <https://schema.org/> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en> <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_enshapes> <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MeasureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#DQ_ElementShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MetadataShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#FeatureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#CategoryObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityIndexObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcessShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ResultShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirFeatureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirFeatureTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#QuantitativeValueShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SystemShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantLevelObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#PollutantTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#TM_ObjectShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SamplingFeatureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ScopedNameShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationCollectionShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#StandardUnitShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationProcedureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityLevelValueShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityLevelObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcedureShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MeasurementShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityObservationCollectionShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#NumberShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantValueObservationShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationContextShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#PropertyTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#NamedValueShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#WeatherObservedShape>,
+    <https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SensorShape> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirFeatureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#AirFeatureType>;
+    shacl:maxCount 1;
+    shacl:path <http://fixme.com#type>
+  ];
+  shacl:targetClass <http://fixme.com#AirFeature> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirFeatureTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#AirFeatureType> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantLevelObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://def.isotc211.org/iso19103/2005/Names#ScopedName>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#airpollutantLevel>
+  ];
+  shacl:targetClass <http://fixme.com#AirPollutantLevelObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#PollutantType>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#observedProperty>
+  ];
+  shacl:targetClass <http://fixme.com#AirPollutantObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirPollutantValueObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#airpollutantValue>
+  ];
+  shacl:targetClass <http://fixme.com#AirPollutantValueObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityIndexObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
+    shacl:maxCount 1;
+    shacl:path <http://fixme.com#airQualityIndex>
+  ], [
+    shacl:class <http://fixme.com#Number>;
+    shacl:maxCount 1;
+    shacl:path <http://fixme.com#reliability>
+  ];
+  shacl:targetClass <http://fixme.com#AirQualityIndexObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityLevelObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://def.isotc211.org/iso19103/2005/Names#ScopedName>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#airQualityLevel>
+  ];
+  shacl:targetClass <http://fixme.com#AirQualityLevelObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityLevelValueShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#AirQualityLevelValue> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityObservationCollectionShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
+    shacl:maxCount 1;
+    shacl:minCount 1
+  ], [
+    shacl:class <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+    shacl:minCount 1
+  ], [
+    shacl:class <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object>;
+    shacl:maxCount 1;
+    shacl:minCount 1
+  ], [
+    shacl:class <http://fixme.com#WeatherObserved>;
+    shacl:maxCount 1;
+    shacl:path <http://fixme.com#refWeatherObserved>
+  ];
+  shacl:targetClass <http://fixme.com#AirQualityObservationCollection> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#AirQualityObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#AirQualityObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#CategoryObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#DQ_ElementShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#FeatureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MeasureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#QuantitativeValue>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value>
+  ];
+  shacl:targetClass <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MeasurementShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://def.isotc211.org/iso19156/2011/Observation#Measurement> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#MetadataShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#NamedValueShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://def.isotc211.org/iso19156/2011/Observation#NamedValue> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#NumberShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass schemas:Number .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationCollectionShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationContextShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#ObservationContext.observation.source>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#ObservationContext.observation.source>
+  ] .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationProcedureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://www.w3.org/TR/vocab-ssn/#SOSAProcedure> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest>
+  ], [
+    shacl:class <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/sosa/observedProperty>
+  ], [
+    shacl:class <https://www.w3.org/TR/vocab-ssn/#SOSAProcedure>;
+    shacl:path <http://www.w3.org/ns/sosa/usedProcedure>
+  ], [
+    shacl:class <http://fixme.com#Result>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/sosa/hasSimpleResult>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata>;
+    shacl:maxCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata>
+  ], [
+    shacl:class <https://www.w3.org/TR/vocab-ssn/#SOSASensor>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/sosa/madeBySensor>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation>
+  ], [
+    shacl:class <https://www.w3.org/TR/vocab-ssn/#SOSASensor>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/sosa/madeBySensor>
+  ], [
+    shacl:class <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element>;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality>
+  ], [
+    shacl:class <https://def.isotc211.org/iso19156/2011/Observation#NamedValue>;
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter>
+  ];
+  shacl:targetClass <http://fixme.com#ObservationContext.observation.source> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#PollutantTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#PollutantType> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcedureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#Procedure> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcessShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#Process> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#PropertyTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#QuantitativeValueShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#Number>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path schemas:value
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path schemas:unitText
+  ], [
+    shacl:class <http://fixme.com#StandardUnit>;
+    shacl:maxCount 1;
+    shacl:path schemas:unitCode
+  ];
+  shacl:targetClass <http://fixme.com#QuantitativeValue> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ResultShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19156/2011/Observation#Result> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SamplingFeatureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#AirFeature>;
+    shacl:minCount 1;
+    shacl:path <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature>
+  ];
+  shacl:targetClass <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ScopedNameShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19103/2005/Names#ScopedName> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SensorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://www.w3.org/TR/vocab-ssn/#SOSASensor> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#StandardUnitShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#StandardUnit> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#SystemShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://www.w3.org/TR/vocab-ssn/#ssn-system> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#TM_ObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object> .
+
+<https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#WeatherObservedShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#WeatherObserved> .
