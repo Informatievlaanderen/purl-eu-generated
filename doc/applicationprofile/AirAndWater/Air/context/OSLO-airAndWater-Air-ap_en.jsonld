@@ -1,7 +1,11 @@
 {
   "@context": {
-    ".Observation": {
+    ".observation(source)": {
       "@id": "http://fixme.com#ObservationContext.observation.source",
+      "@type": "@id"
+    },
+    ".observation(target)": {
+      "@id": "http://fixme.com#ObservationContext.observation.target",
       "@type": "@id"
     },
     "AirFeature": "http://fixme.com#AirFeature",
@@ -11,12 +15,12 @@
     },
     "AirFeatureType": "http://fixme.com#AirFeatureType",
     "AirPollutantLevelObservation": "http://fixme.com#AirPollutantLevelObservation",
-    "AirPollutantLevelObservation.airpollutantLevel": {
+    "AirPollutantLevelObservation.airPollutantLevel": {
       "@id": "http://fixme.com#airpollutantLevel",
       "@type": "@id"
     },
     "AirPollutantObservation": "http://fixme.com#AirPollutantObservation",
-    "AirPollutantObservation.observedProperty": {
+    "AirPollutantObservation.observedOroperty": {
       "@id": "http://fixme.com#observedProperty",
       "@type": "@id"
     },
@@ -42,7 +46,7 @@
     "AirQualityLevelValue": "http://fixme.com#AirQualityLevelValue",
     "AirQualityObservation": "http://fixme.com#AirQualityObservation",
     "AirQualityObservationCollection": "http://fixme.com#AirQualityObservationCollection",
-    "AirQualityObservationCollection.^hasFeatureOfInterest": {
+    "AirQualityObservationCollection.^hasFeatureOfOnterest": {
       "@id": "http://fixme.com#^hasFeatureOfInterest",
       "@type": "@id"
     },
@@ -60,10 +64,10 @@
       "@type": "@id"
     },
     "CategoryObservation": "https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation",
-    "DQ_Element": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+    "DqElement": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
     "Feature": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-    "Measure": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
-    "Measure.measure": {
+    "Maat": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+    "Maat.maat": {
       "@id": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value",
       "@type": "@id"
     },
@@ -150,16 +154,21 @@
     },
     "Result": "http://def.isotc211.org/iso19156/2011/Observation#Result",
     "SamplingFeature": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-    "SamplingFeature.^sampledFeature": {
+    "SamplingFeature.sampledFeature": {
       "@container": "@set",
       "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
       "@type": "@id"
     },
     "ScopedName": "http://def.isotc211.org/iso19103/2005/Names#ScopedName",
     "Sensor": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+    "Sensor.madeObservation": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/madeObservation",
+      "@type": "@id"
+    },
     "StandardUnit": "http://fixme.com#StandardUnit",
     "System": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
-    "TM_Object": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+    "TmObject": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
     "WeatherObserved": "http://fixme.com#WeatherObserved"
   }
 }

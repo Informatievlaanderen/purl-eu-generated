@@ -1,11 +1,19 @@
 {
   "@context": {
-    ".Observation": {
+    ".observation(source)": {
       "@id": "http://fixme.com#ObservationContext.observation.source",
       "@type": "@id"
     },
-    ".SamplingFeature": {
+    ".observation(target)": {
+      "@id": "http://fixme.com#ObservationContext.observation.target",
+      "@type": "@id"
+    },
+    ".samplingFeature(source)": {
       "@id": "http://fixme.com#SamplingFeaturecomplex.samplingFeature.source",
+      "@type": "@id"
+    },
+    ".samplingFeature(target)": {
+      "@id": "http://fixme.com#SamplingFeaturecomplex.samplingFeature.target",
       "@type": "@id"
     },
     "BioIndicatorObservation": "http://fixme.com#BioIndicatorObservation",
@@ -38,10 +46,10 @@
       "@type": "@id"
     },
     "ChemicalAgentType": "http://fixme.com#ChemicalAgentType",
-    "DQ_Element": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+    "DqElement": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
     "Feature": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-    "Measure": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
-    "Measure.measure": {
+    "Maat": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+    "Maat.maat": {
       "@id": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value",
       "@type": "@id"
     },
@@ -127,27 +135,32 @@
     },
     "Result": "http://def.isotc211.org/iso19156/2011/Observation#Result",
     "SamplingFeature": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-    "SamplingFeature.^sampledFeature": {
-      "@container": "@set",
-      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
-      "@type": "@id"
-    },
     "SamplingFeature.relatedSamplingFeature": {
       "@container": "@set",
       "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature",
       "@type": "@id"
     },
+    "SamplingFeature.sampledFeature": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
+      "@type": "@id"
+    },
     "ScopedName": "http://def.isotc211.org/iso19103/2005/Names#ScopedName",
     "Sensor": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+    "Sensor.madeObservation": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/madeObservation",
+      "@type": "@id"
+    },
     "StandardUnit": "http://fixme.com#StandardUnit",
     "System": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
-    "TM_Object": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+    "TmObject": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
     "WaterFeature": "http://fixme.com#WaterFeature",
     "WaterFeature.type": {
       "@id": "http://fixme.com#type",
       "@type": "@id"
     },
-    "WaterFeatureType": "http://fixme.com#WaterFeatureType",
+    "WaterFeaturetype": "http://fixme.com#WaterFeatureType",
     "WaterQualityObservationCollection": "http://fixme.com#WaterQualityObservationCollection",
     "WaterQualityObservationCollection.^hasFeatureOfInterest": {
       "@id": "http://fixme.com#^hasFeatureOfInterest",

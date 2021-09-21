@@ -187,12 +187,12 @@
                     <p> This document describes the usage of the following datatypes for a correct usage of the Application Profile:
                       <br />
                       |
-                      <a href="#"></a> |
                       <a href="#Address Representation">Address Representation</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Geometry">Geometry</a> |
                       <a href="#Number">Number</a> |
                       <a href="#Point">Point</a> |
+                      <a href="#Polygoon">Polygoon</a> |
                       <a href="#Quantitative Value">Quantitative Value</a> |
                       <a href="#Standard Unit">Standard Unit</a> |
                     </p>
@@ -4578,33 +4578,13 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id=""><a href="http://www.opengis.net/ont/sf#Polygon" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#Polygon" data-placement="right"></a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd></dd>
-                    
-		    
-		    <dt>Subclass of <dt><dd>
-                        <a href="#Geometry">Geometry</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>There are no properties defined for this datatype.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-            <div class="region region--no-space-top">
-              
               <h3 class="h3" id="Address Representation"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Address Representation</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>A spatial object that in a human-readable way identifies a fixed location of a property.</dd>
+                    
+                    <dt>Usage</dt><dd>Bv als attribuut ve persoon of gebouw... De adresvoorstelling heeft niet enkel betrekking op Belgische adressen, ze kan gebruikt worden om buitenlandse adressen weer te geven (waar mogelijk andere adresaanduidingen dan huisnummer of busnummer worden gebruikt of waar adrescomponenten zoals adresgebieden voorkomen).</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -4624,6 +4604,8 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                   <dl>
                     <dt>Description</dt><dd>Information such as mail adress, telephone, ... that can be used to contact someone or something.</dd>
                     
+                    <dt>Usage</dt><dd>Bvb een persoon of organisatie of dienstverlening... Mogelijke vormen van contact: bellen, mailen etc.</dd>
+                    
 		    
                     <dt>Properties</dt>
 		    
@@ -4641,6 +4623,8 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Form and position characteristics of an Object.</dd>
+                    
+                    <dt>Usage</dt><dd>Beschrijft deze kenmerken dmv punten, lijnen, polygonen en coördinaten.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -4682,7 +4666,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">Geometry expressed in GML-format.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Gebruik http://www.opengis.net/ont/geosparql#gmlLiteral als datatype.</td>
                         <td></td>
                       </tr>
                       
@@ -4701,7 +4685,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">Geometry expressed in WKT-format.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Gebruik http://www.opengis.net/ont/geosparql#wktLiteral als datatype.</td>
                         <td></td>
                       </tr>
                       
@@ -4718,6 +4702,8 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Designation of a quantity.</dd>
+                    
+                    <dt>Usage</dt><dd>In praktijk de primitieve datatypes waarmee een hoeveelheid kan worden aangeduid,zie xsd datatypes float,double,decimal,integer etc.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -4872,11 +4858,37 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
             
             <div class="region region--no-space-top">
               
+              <h3 class="h3" id="Polygoon"><a href="http://www.opengis.net/ont/sf#Polygon" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#Polygon" data-placement="right">Polygoon</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>Oppervlak bestaande uit 1 buitengrens en 0 of meer binnengrenzen. Elke binnengrens vormt een gat in de polygoon.</dd>
+                    
+                    <dt>Usage</dt><dd>De grenzen zijn zgn lineaire ringen, ttz het zijn gesloten (niet zelfsnijdende) lijnstringen. De buitengrens wordt onderscheiden vd binnengrens door resp de kloksgewijze en tegenkloksgewijze richting waarin de ring loopt.</dd>
+                    
+		    
+		    <dt>Subclass of <dt><dd>
+                        <a href="#Geometry">Geometry</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>There are no properties defined for this datatype.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+            <div class="region region--no-space-top">
+              
               <h3 class="h3" id="Quantitative Value"><a href="https://schema.org/QuantitativeValue" data-toggle="tooltip" data-content="https://schema.org/QuantitativeValue" data-placement="right">Quantitative Value</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Designation of the quantity of a certain characteristic of an Object.</dd>
+                    
+                    <dt>Usage</dt><dd>Bv de hoogte van een object,het gewicht,de temperatuur etc. Het gaat om een kenmerk dat numeriek uitgedrukt kan worden en in een bepaalde eenheid. Kwalitatieve aanduidingen zoals hoog,laag ed vallen hier dus niet onder.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -4938,7 +4950,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">The unit in which the value is expressed.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Te gebruiken als geen standaard eenheid gekend is.</td>
                         <td></td>
                       </tr>
                       
@@ -4974,6 +4986,8 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Unit as defined by a standardising organisation.</dd>
+                    
+                    <dt>Usage</dt><dd>Datatype kan een URI zijn of een GetypeerdeString. In het eerste geval wordt verwezen naar op het web gepubliceerde eenheden, bij voorkeur deze van qudt, bv http://qudt.org/vocab/unit/M voor meter. In het geval van een  GetypeerdeString gaat de voorkeur naar de UCUM-codes, bv "km/h"^^http://w3id.org/lindt/custom_datatypes#ucumunit.</dd>
                     
 		    
                     <dt>Properties</dt>
