@@ -9,8 +9,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/80e82eff7da287db4147d145c815258657718032",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/80e82eff7da287db4147d145c815258657718032/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/76e866bdc06d3cd58f6a2379a5c50adfa33bea0c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/76e866bdc06d3cd58f6a2379a5c50adfa33bea0c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -89,9 +89,11 @@
       },
       "sort": "DQ_Element",
       "description": {
-        "en": "TODO"
+        "en": "Abstract class of all possible tests to assess the quality of a dataset."
       },
-      "usage": {},
+      "usage": {
+        "en": "This means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, ThematicAccuracy or TemporalAccuracy."
+      },
       "parents": [],
       "properties": []
     },
@@ -1454,13 +1456,13 @@
           "range": [
             {
               "range_label": "AddressRepresentation",
-              "range_uri": "http://fixme.com#AddressRepresentation"
+              "range_uri": "https//www.w3.org/ns/locn#Address"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#AddressRepresentation",
-              "range_puri": "http://fixme.com#AddressRepresentation",
+              "range_puri": "https//www.w3.org/ns/locn#Address",
               "range_label": {
                 "en": "AddressRepresentation"
               }
@@ -1489,13 +1491,13 @@
           "range": [
             {
               "range_label": "Place",
-              "range_uri": "http://fixme.com#Place"
+              "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Place",
-              "range_puri": "http://fixme.com#Place",
+              "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "en": "Place"
               }
@@ -1756,20 +1758,6 @@
       "properties": []
     },
     {
-      "uri": "http://fixme.com#Place",
-      "name": "Place",
-      "label": {
-        "en": "Place"
-      },
-      "sort": "Place",
-      "description": {
-        "en": "TODO"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://fixme.com#PointOfInterest",
       "name": "PointOfInterest",
       "label": {
@@ -1833,6 +1821,20 @@
           "scoped_uri": "#SystemProperty"
         }
       ],
+      "properties": []
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Location",
+      "name": "Place",
+      "label": {
+        "en": "Place"
+      },
+      "sort": "Place",
+      "description": {
+        "en": "A spatial region or named place."
+      },
+      "usage": {},
+      "parents": [],
       "properties": []
     },
     {
@@ -4279,14 +4281,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#hasRange",
-          "name": "hasRange",
-          "sort": "hasRange",
+          "uri": "http://fixme.com#hasOperatingRange",
+          "name": "hasOeratingRange",
+          "sort": "hasOeratingRange",
           "label": {
-            "en": "hasRange"
+            "en": "hasOeratingRange"
           },
           "description": {
-            "en": "TODO"
+            "en": "Relation from a System to an OperatingRange describing the normal operating environment of the System."
           },
           "usage": {},
           "domain": [
@@ -4297,16 +4299,16 @@
           ],
           "range": [
             {
-              "range_label": "OperatingProperty",
-              "range_uri": "http://www.w3.org/ns/ssn/systems/OperatingRange"
+              "range_label": "OperatingRange",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#OperatingProperty",
-              "range_puri": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+              "range_uri": "#OperatingRange",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange",
               "range_label": {
-                "en": "OperatingProperty"
+                "en": "OperatingRange"
               }
             }
           ],
@@ -4432,9 +4434,11 @@
       },
       "sort": "GenericName",
       "description": {
-        "en": "TODO"
+        "en": "Abstract class of all names in a Namespace."
       },
-      "usage": {},
+      "usage": {
+        "en": "Subtypes are LocalName and ScopedName. For a more detailed description of this class see ISO 19103."
+      },
       "parents": [],
       "properties": []
     },
@@ -4461,20 +4465,6 @@
       "sort": "CI_ResponsibleParty",
       "description": {
         "en": "Identification in terms of communication with the person(s) and organization(s) related to data."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://fixme.com#AddressRepresentation",
-      "name": "AddressRepresentation",
-      "label": {
-        "en": "AddressRepresentation"
-      },
-      "sort": "AddressRepresentation",
-      "description": {
-        "en": "TODO"
       },
       "usage": {},
       "parents": [],
@@ -4568,6 +4558,22 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https//www.w3.org/ns/locn#Address",
+      "name": "AddressRepresentation",
+      "label": {
+        "en": "AddressRepresentation"
+      },
+      "sort": "AddressRepresentation",
+      "description": {
+        "en": "Basic representation of an Address."
+      },
+      "usage": {
+        "en": "To be used if the Address is an attribute of another Object, eg of a Person or a Building."
+      },
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://def.isotc211.org/iso19156/2011/Observation#NamedValue",
