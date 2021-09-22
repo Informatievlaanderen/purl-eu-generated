@@ -24,10 +24,10 @@
         "en": "AirPollutantLevelObservation"
       },
       "definition": {
-        "en": "Observation intended to estimate the level to which the Air is polluted by harmful or unsuitable substances."
+        "en": "AirPollutantObservation where the presence in the Air of a harmful or unsuitable substance is expressed as a level."
       },
       "usage": {
-        "en": "Actually a Classification of the level to which these substances are present the Air. Result is a category like ModeratelyPolluted, StronglyPolluted etc. Usually based on actual AirPollutantValueObservations (possibly of several different substances) and calculated using some well-defined conversion method."
+        "en": "Basically a Classification of the amount of the substance in the Air, usually over some averaging period.Typically based on the result of an AirPollutantValueObservation by applying threshold values on the result."
       }
     },
     {
@@ -37,7 +37,7 @@
         "en": "AirPollutantObservation"
       },
       "definition": {
-        "en": "Observation intended to estimate the extent to which the Air is polluted by harmful or unsuitable substances."
+        "en": "Observation intended to estimate the presence in the Air of a harmful or unsuitable substance."
       },
       "usage": {
         "en": "By estimating the amount or level at which the substance or substances are present in the Air."
@@ -50,10 +50,10 @@
         "en": "AirPollutantValueObservation"
       },
       "definition": {
-        "en": "Observation intended to estimate the amount to which the Air is polluted by harmful or unsuitable substances."
+        "en": "AirPollutantObservation where the presence in the Air of a harmful or unsuitable substance is expressed as a number."
       },
       "usage": {
-        "en": "Actually a Measurement of the amount of some substance in the Air. Result is how much of some quantity in a certain unit like parts-per-million."
+        "en": "Actually the Measurement of the amount of the substance in the Air, usually over some averaging period. Result is how much of the substance is found eg in parts-per-million."
       }
     },
     {
@@ -63,7 +63,10 @@
         "en": "AirQualityIndexObservation"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Observation intended to estimate the overall quality of the Air, expressed as a single number."
+      },
+      "usage": {
+        "en": "Basically the aggregation of the results of a predetermined set of AirPollutantObservations over an averaging period and of substances that are considered critical for AirQuality. The result is a single number that acts as an indicator for AirQuality."
       }
     },
     {
@@ -73,7 +76,10 @@
         "en": "AirQualityLevelObservation"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Observation intended to estimate the overall quality of the Air, expressed as a level of quality."
+      },
+      "usage": {
+        "en": "The qualitylevel corresponds to a certain range of possible values of an AirQualityIndex so this is actually the Classification of the result of an AirqualityIndexObservation in categories like for example Good, Moderate, Unhealthy and VeryUnhealthy."
       }
     },
     {
@@ -87,7 +93,7 @@
         "en": "AirQualityObservation"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Observation intended to estimate the overall quality of the Air."
       }
     },
     {
@@ -133,7 +139,7 @@
         "en": "airQualityIndex"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Result of the AirQualityIndexObservation."
       }
     },
     {
@@ -143,7 +149,7 @@
         "en": "airQualityLevel"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Result of the AirQualityLevelObservation."
       }
     },
     {
@@ -168,9 +174,9 @@
     },
     {
       "EA-Guid": "{6B6ED22B-D075-4490-B094-BABF1663D497}",
-      "name": "observedOroperty",
+      "name": "observedProperty",
       "label": {
-        "en": "observedOroperty"
+        "en": "observedProperty"
       },
       "definition": {
         "en": "Type of polluting substance."
