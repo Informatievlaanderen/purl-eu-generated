@@ -9,8 +9,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/fc60704b2f5c79184f46460b20c2e28bf85b5761",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/fc60704b2f5c79184f46460b20c2e28bf85b5761/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/d78a6dbec82ec74cc5166f0a67b45009891080df",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/d78a6dbec82ec74cc5166f0a67b45009891080df/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -170,10 +170,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Maat",
+              "range_uri": "#Measure",
               "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
               "range_label": {
-                "en": "Maat"
+                "en": "Measure"
               }
             }
           ],
@@ -270,10 +270,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Maat",
+              "range_uri": "#Measure",
               "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
               "range_label": {
-                "en": "Maat"
+                "en": "Measure"
               }
             }
           ],
@@ -626,10 +626,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Maat",
+              "range_uri": "#Measure",
               "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
               "range_label": {
-                "en": "Maat"
+                "en": "Measure"
               }
             }
           ],
@@ -640,32 +640,28 @@
     },
     {
       "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
-      "name": "Maat",
+      "name": "Measure",
       "label": {
-        "en": "Maat"
+        "en": "Measure"
       },
-      "sort": "Maat",
+      "sort": "Measure",
       "description": {
-        "en": "Een afgemeten hoeveelheid ve bepaalde grootheid,uitgedrukt in een bepaalde eenheid."
+        "en": "A measured amount of a particular quantity, expressed in a paricular unit of measure."
       },
-      "usage": {
-        "en": "TODO"
-      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
           "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value",
-          "name": "maat",
-          "sort": "maat",
+          "name": "measure",
+          "sort": "measure",
           "label": {
-            "en": "maat"
+            "en": "measure"
           },
           "description": {
-            "en": "De hoeveelheid."
+            "en": "The amount."
           },
-          "usage": {
-            "en": "TODO"
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Measure",
@@ -714,9 +710,11 @@
       },
       "sort": "DQ_Element",
       "description": {
-        "en": "TODO"
+        "en": "Abstract class of all possible tests to assess the quality of a dataset."
       },
-      "usage": {},
+      "usage": {
+        "en": "this means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, thematicAccuracy or TemporalAccuracy."
+      },
       "parents": [],
       "properties": []
     },
@@ -1321,7 +1319,7 @@
       },
       "sort": "Procedure",
       "description": {
-        "en": "TODO"
+        "en": "An established or official way of doing something."
       },
       "usage": {},
       "parents": [],
@@ -1335,7 +1333,7 @@
       },
       "sort": "Process",
       "description": {
-        "en": "TODO"
+        "en": "A series of actions or steps leading to some result."
       },
       "usage": {},
       "parents": [],
@@ -1349,7 +1347,7 @@
       },
       "sort": "WeatherObserved",
       "description": {
-        "en": "TODO"
+        "en": "An Observation of weather conditions at a certain place or time."
       },
       "usage": {},
       "parents": [],
@@ -1377,10 +1375,20 @@
       },
       "sort": "Measurement",
       "description": {
-        "en": "TODO"
+        "en": "Observation of some quantifiable characteristic of an Object."
       },
-      "usage": {},
-      "parents": [],
+      "usage": {
+        "en": "Eg the mass of a Rock. Result is of type Measure. For a more detailed description of this class see ISO 19156."
+      },
+      "parents": [
+        {
+          "label": "Observation",
+          "name": "Observation",
+          "package": "Mirror",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "scoped_uri": "#Observation"
+        }
+      ],
       "properties": []
     },
     {
@@ -1683,7 +1691,7 @@
       },
       "sort": "ScopedName",
       "description": {
-        "en": "TODO"
+        "en": "Composition of the name of a Namespace and a LocalName in that Namespace."
       },
       "usage": {
         "en": "TODO"
@@ -1713,20 +1721,22 @@
       },
       "sort": "QuantitativeValue",
       "description": {
-        "en": "TODO"
+        "en": "Indication of the quantity of a particular characteristic of an Object."
       },
-      "usage": {},
+      "usage": {
+        "en": "For example, the height of an Object, the weight, the temperature etc. It applies to some property that can be expressed numerically and in a specific unit of measure. Qualitative indications of value like high, low etc. are therefore not included."
+      },
       "parents": [],
       "properties": [
         {
           "uri": "https://schema.org/unitCode",
-          "name": "StandardUnit",
-          "sort": "StandardUnit",
+          "name": "standardUnit",
+          "sort": "standardUnit",
           "label": {
-            "en": "StandardUnit"
+            "en": "standardUnit"
           },
           "description": {
-            "en": "TODO"
+            "en": "The standardized unit of measure in which the value is expressed."
           },
           "usage": {},
           "domain": [
@@ -1761,10 +1771,10 @@
             "en": "unit"
           },
           "description": {
-            "en": "TODO"
+            "en": "The unit of measure in which the value is expressed."
           },
           "usage": {
-            "en": "TODO"
+            "en": "To be used if no standard unit of measure is known."
           },
           "domain": [
             {
@@ -1798,7 +1808,7 @@
             "en": "value"
           },
           "description": {
-            "en": "TODO"
+            "en": "Number by which the quantity of the property can be expressed."
           },
           "usage": {},
           "domain": [
@@ -1835,7 +1845,7 @@
       },
       "sort": "StandardUnit",
       "description": {
-        "en": "TODO"
+        "en": "Unit of measure established by a standardizing Organisation."
       },
       "usage": {
         "en": "TODO"
@@ -1865,10 +1875,10 @@
       },
       "sort": "Number",
       "description": {
-        "en": "TODO"
+        "en": "Indication of a quantity."
       },
       "usage": {
-        "en": "TODO"
+        "en": "Actually the primitive datatypes with which a quantity can be indicated, see xsd datatypes like Float, Double, Decimal, Integer etc."
       },
       "parents": [],
       "properties": []

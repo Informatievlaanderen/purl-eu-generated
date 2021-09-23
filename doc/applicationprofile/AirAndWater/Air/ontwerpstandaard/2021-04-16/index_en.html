@@ -67,8 +67,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/fc60704b2f5c79184f46460b20c2e28bf85b5761">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/fc60704b2f5c79184f46460b20c2e28bf85b5761</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/fc60704b2f5c79184f46460b20c2e28bf85b5761/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/fc60704b2f5c79184f46460b20c2e28bf85b5761/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/d78a6dbec82ec74cc5166f0a67b45009891080df">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/d78a6dbec82ec74cc5166f0a67b45009891080df</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/d78a6dbec82ec74cc5166f0a67b45009891080df/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/d78a6dbec82ec74cc5166f0a67b45009891080df/CHANGELOG</a></dd>
               <dt>Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html">https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html</a></dd>
 
@@ -153,7 +153,7 @@
                       <a href="#CategoryObservation">CategoryObservation</a> |
                       <a href="#DQ_Element">DQ_Element</a> |
                       <a href="#Feature">Feature</a> |
-                      <a href="#Maat">Maat</a> |
+                      <a href="#Measure">Measure</a> |
                       <a href="#Measurement">Measurement</a> |
                       <a href="#Metadata">Metadata</a> |
                       <a href="#Observation">Observation</a> |
@@ -201,7 +201,9 @@
               <h3 class="h3" id="AirFeature"><a href="http://fixme.com#AirFeature" data-toggle="tooltip" data-content="http://fixme.com#AirFeature" data-placement="right">AirFeature</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Real-world Object related to Air.</dd>
+                    
+                    <dt>Usage</dt><dd>It is the featureOfInterest, the Object of which some property is observed tot assess AirQuality. This can be the Air in a certain place (eg "the Air in Brussels") or an organism that breathes the Air, etc. The AirFeature can be typed via the "type" attribute, but  substitution by a typed instance (eg an instance of type "Animal" in the example with the organism) is also allowed. In either case, the observedProperty must be a phenomenon related to the Airfeature type. If the AirFeature is not observed directly, but rather indirectly by sampling it, the Airfeature is the sampledObject and the Sample assumes the role of featureOfInterest.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -246,7 +248,7 @@
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Type of Airfeature.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -261,7 +263,9 @@
               <h3 class="h3" id="AirPollutantLevelObservation"><a href="http://fixme.com#AirPollutantLevelObservation" data-toggle="tooltip" data-content="http://fixme.com#AirPollutantLevelObservation" data-placement="right">AirPollutantLevelObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>AirPollutantObservation where the concentration in the Air of a harmful or unsuitable substance is expressed as a level.</dd>
+                    
+                    <dt>Usage</dt><dd>Basically a Classification of concentration measurements (see AirPollutantObservation) according to certain threshold values. For example if the concentration exceeds a certain number, the AirPollutant concentration could be labeled as "dangerous".</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -307,7 +311,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Result of the AirPollutantLevelObservation.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -322,7 +326,9 @@
               <h3 class="h3" id="AirPollutantObservation"><a href="http://fixme.com#AirPollutantObservation" data-toggle="tooltip" data-content="http://fixme.com#AirPollutantObservation" data-placement="right">AirPollutantObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation intended to estimate the concentration in the Air of a harmful or unsuitable substance.</dd>
+                    
+                    <dt>Usage</dt><dd>By estimating the amount or level at which the substance or substances are present in the Air.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -332,7 +338,7 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#AirPollutantObservation%3AobservedOroperty">observedOroperty</a>.</dd>
+                      <a href="#AirPollutantObservation%3AobservedProperty">observedProperty</a>.</dd>
                     
                   </dl>
                 </div>
@@ -352,11 +358,11 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="AirPollutantObservation%3AobservedOroperty" typeof="rdfs:Property" resource="http://fixme.com#observedProperty">
+                      <tr id="AirPollutantObservation%3AobservedProperty" typeof="rdfs:Property" resource="http://fixme.com#observedProperty">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://fixme.com#observedProperty" data-toggle="tooltip" data-content="http://fixme.com#observedProperty" data-placement="right">
-                            observedOroperty</a>
+                            observedProperty</a>
                           </code>
                         </td>
                         <td>
@@ -367,7 +373,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Type of polluting substance.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -382,7 +388,9 @@
               <h3 class="h3" id="AirPollutantValueObservation"><a href="http://fixme.com#AirPollutantValueObservation" data-toggle="tooltip" data-content="http://fixme.com#AirPollutantValueObservation" data-placement="right">AirPollutantValueObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>AirPollutantObservation where the concentration in the Air of a harmful or unsuitable substance is expressed as a number.</dd>
+                    
+                    <dt>Usage</dt><dd>Actually the Measurement of the amount of the substance in the Air, usually over some averaging period. Result is how much of the substance is found eg in parts-per-million.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -423,12 +431,12 @@
                         <td>
                           
 			    
-			    <a href="#Maat" data-placement="right">Maat</a>
+			    <a href="#Measure" data-placement="right">Measure</a>
 			    
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Result of the AirPollutantValueObservation.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -443,7 +451,9 @@
               <h3 class="h3" id="AirQualityIndexObservation"><a href="http://fixme.com#AirQualityIndexObservation" data-toggle="tooltip" data-content="http://fixme.com#AirQualityIndexObservation" data-placement="right">AirQualityIndexObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation intended to estimate the overall quality of the Air, expressed as a single number.</dd>
+                    
+                    <dt>Usage</dt><dd>Basically the aggregation of the results of a predetermined set of AirPollutantObservations over an averaging period and of substances that are considered critical for AirQuality. The result is a single number that acts as an indicator for AirQuality.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -485,12 +495,12 @@
                         <td>
                           
 			    
-			    <a href="#Maat" data-placement="right">Maat</a>
+			    <a href="#Measure" data-placement="right">Measure</a>
 			    
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Result of the AirQualityIndexObservation.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -525,7 +535,9 @@
               <h3 class="h3" id="AirQualityLevelObservation"><a href="http://fixme.com#AirQualityLevelObservation" data-toggle="tooltip" data-content="http://fixme.com#AirQualityLevelObservation" data-placement="right">AirQualityLevelObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation intended to estimate the overall quality of the Air, expressed as a level.</dd>
+                    
+                    <dt>Usage</dt><dd>Basically a Classification of the result of an AirQualityIndexObservation according to certain threshold values. For example if the index exceeds a certain value, the AirQuality could be labeled as "unhealthy".</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -571,7 +583,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Result of the AirQualityLevelObservation.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -586,7 +598,7 @@
               <h3 class="h3" id="AirQualityObservation"><a href="http://fixme.com#AirQualityObservation" data-toggle="tooltip" data-content="http://fixme.com#AirQualityObservation" data-placement="right">AirQualityObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation intended to estimate the overall quality of the Air.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -606,7 +618,7 @@
               <h3 class="h3" id="AirQualityObservationCollection"><a href="http://fixme.com#AirQualityObservationCollection" data-toggle="tooltip" data-content="http://fixme.com#AirQualityObservationCollection" data-placement="right">AirQualityObservationCollection</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>A Collection of one or more AirQualityObservations, whose members share a common value for one or more properties.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -654,7 +666,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">A reference to the Object that is observed by the Observations in the Collection.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -674,7 +686,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">The moment when the result of the Observations in the Collection was applicable.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -694,7 +706,7 @@
                           
                         </td>
                         <td>1..*</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Reference to an Observation that belongs to the Collection.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -714,7 +726,7 @@
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">A description of the weather conditions during the Observations in the Collection.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -729,9 +741,15 @@
               <h3 class="h3" id="CategoryObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation" data-placement="right">CategoryObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation of a class an Object belongs to.</dd>
+                    
+                    <dt>Usage</dt><dd>Eg the taxon of a Plant. Result is a ScopedName. For a more detailed description see ISO 19156.</dd>
                     
 		    
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Observation">Observation</a>
+		   </dd>
+                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -745,7 +763,9 @@
               <h3 class="h3" id="DQ_Element"><a href="http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element" data-placement="right">DQ_Element</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Abstract class of all possible tests to assess the quality of a dataset.</dd>
+                    
+                    <dt>Usage</dt><dd>this means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, thematicAccuracy or TemporalAccuracy.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -774,18 +794,16 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Maat"><a href="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure" data-placement="right">Maat</a></h3>
+              <h3 class="h3" id="Measure"><a href="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure" data-placement="right">Measure</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Een afgemeten hoeveelheid ve bepaalde grootheid,uitgedrukt in een bepaalde eenheid.</dd>
-                    
-                    <dt>Usage</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>A measured amount of a particular quantity, expressed in a paricular unit of measure.</dd>
                     
 		    
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#Maat%3Amaat">maat</a>.</dd>
+                      <a href="#Measure%3Ameasure">measure</a>.</dd>
                     
                   </dl>
                 </div>
@@ -805,11 +823,11 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Maat%3Amaat" typeof="rdfs:Property" resource="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value">
+                      <tr id="Measure%3Ameasure" typeof="rdfs:Property" resource="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value" data-placement="right">
-                            maat</a>
+                            measure</a>
                           </code>
                         </td>
                         <td>
@@ -820,8 +838,8 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">De hoeveelheid.</td>
-                        <td property="skos:scopeNote">TODO</td>
+                        <td property="rdfs:comment">The amount.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -835,9 +853,15 @@
               <h3 class="h3" id="Measurement"><a href="https://def.isotc211.org/iso19156/2011/Observation#Measurement" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#Measurement" data-placement="right">Measurement</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Observation of some quantifiable characteristic of an Object.</dd>
+                    
+                    <dt>Usage</dt><dd>Eg the mass of a Rock. Result is of type Measure. For a more detailed description of this class see ISO 19156.</dd>
                     
 		    
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Observation">Observation</a>
+		   </dd>
+                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -1212,7 +1236,7 @@
               <h3 class="h3" id="Procedure"><a href="http://fixme.com#Procedure" data-toggle="tooltip" data-content="http://fixme.com#Procedure" data-placement="right">Procedure</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>An established or official way of doing something.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1228,7 +1252,7 @@
               <h3 class="h3" id="Process"><a href="http://fixme.com#Process" data-toggle="tooltip" data-content="http://fixme.com#Process" data-placement="right">Process</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>A series of actions or steps leading to some result.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1413,7 +1437,7 @@
               <h3 class="h3" id="WeatherObserved"><a href="http://fixme.com#WeatherObserved" data-toggle="tooltip" data-content="http://fixme.com#WeatherObserved" data-placement="right">WeatherObserved</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>An Observation of weather conditions at a certain place or time.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1455,9 +1479,9 @@
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Indication of a quantity.</dd>
                     
-                    <dt>Usage</dt><dd>TODO</dd>
+                    <dt>Usage</dt><dd>Actually the primitive datatypes with which a quantity can be indicated, see xsd datatypes like Float, Double, Decimal, Integer etc.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1475,13 +1499,15 @@
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Indication of the quantity of a particular characteristic of an Object.</dd>
+                    
+                    <dt>Usage</dt><dd>For example, the height of an Object, the weight, the temperature etc. It applies to some property that can be expressed numerically and in a specific unit of measure. Qualitative indications of value like high, low etc. are therefore not included.</dd>
                     
 		    
                     <dt>Properties</dt>
 		    
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#QuantitativeValue%3AStandardUnit">StandardUnit</a>, 
+                      <a href="#QuantitativeValue%3AstandardUnit">standardUnit</a>, 
                       <a href="#QuantitativeValue%3Aunit">unit</a>, 
                       <a href="#QuantitativeValue%3Avalue">value</a>.</dd>
                     
@@ -1503,10 +1529,10 @@
 
                     <tbody class="supertype">
                       
-                      <tr id="QuantitativeValue%3AStandardUnit" typeof="rdfs:Property" resource="https://schema.org/unitCode">
+                      <tr id="QuantitativeValue%3AstandardUnit" typeof="rdfs:Property" resource="https://schema.org/unitCode">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://schema.org/unitCode" data-toggle="tooltip" data-content="https://schema.org/unitCode" data-placement="right">StandardUnit</a>
+                            <a href="https://schema.org/unitCode" data-toggle="tooltip" data-content="https://schema.org/unitCode" data-placement="right">standardUnit</a>
                           </code>
                         </td>
                         <td>
@@ -1517,7 +1543,7 @@
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">The standardized unit of measure in which the value is expressed.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1536,8 +1562,8 @@
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="skos:scopeNote">TODO</td>
+                        <td property="rdfs:comment">The unit of measure in which the value is expressed.</td>
+                        <td property="skos:scopeNote">To be used if no standard unit of measure is known.</td>
                         <td></td>
                       </tr>
                       
@@ -1555,7 +1581,7 @@
                           
                         </td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Number by which the quantity of the property can be expressed.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1572,7 +1598,7 @@
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Composition of the name of a Namespace and a LocalName in that Namespace.</dd>
                     
                     <dt>Usage</dt><dd>TODO</dd>
                     
@@ -1592,7 +1618,7 @@
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Unit of measure established by a standardizing Organisation.</dd>
                     
                     <dt>Usage</dt><dd>TODO</dd>
                     
