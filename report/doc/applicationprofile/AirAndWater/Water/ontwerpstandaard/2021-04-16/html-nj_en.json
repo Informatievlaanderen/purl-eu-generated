@@ -9,8 +9,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/2bce5c8eed033a54342d44eaf894903e96c5231b",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/2bce5c8eed033a54342d44eaf894903e96c5231b/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/951e97e107e94279e79ede2e3133e55099bf2ba5",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/951e97e107e94279e79ede2e3133e55099bf2ba5/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -25,9 +25,11 @@
       },
       "sort": "BioIndicatorObservation",
       "description": {
-        "en": "TODO"
+        "en": "Observation that assesses the biological Quality of Water based on the overall condition of indicator species."
       },
-      "usage": {},
+      "usage": {
+        "en": "These species, also called BioIndicators, are living organisms such as plants, planktons, animals, microbes More specifically, biochemical, physiological, behavioural or population changes are monitored."
+      },
       "parents": [
         {
           "label": "Observation",
@@ -35,13 +37,6 @@
           "package": "OM",
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
           "scoped_uri": "#Observation"
-        },
-        {
-          "label": "CountObservatiuon",
-          "name": "CountObservatiuon",
-          "package": "OM",
-          "uri": "http://fixme.com#CountObservatiuon",
-          "scoped_uri": "http://fixme.com#CountObservatiuon"
         }
       ],
       "properties": [
@@ -53,7 +48,7 @@
             "en": "bioIndicator"
           },
           "description": {
-            "en": "TODO"
+            "en": "Result of the BioIndicatorObservation."
           },
           "usage": {},
           "domain": [
@@ -64,16 +59,16 @@
           ],
           "range": [
             {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+              "range_label": "Result",
+              "range_uri": "http://fixme.com#Result"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_uri": "#Result",
+              "range_puri": "http://fixme.com#Result",
               "range_label": {
-                "en": "Integer"
+                "en": "Result"
               }
             }
           ],
@@ -88,7 +83,7 @@
             "en": "observedProperty"
           },
           "description": {
-            "en": "TODO"
+            "en": "Type of the observedProperty."
           },
           "usage": {},
           "domain": [
@@ -125,9 +120,11 @@
       },
       "sort": "BioticIndexObservation",
       "description": {
-        "en": "TODO"
+        "en": "Observation that assesses the biological Quality of Water on a certain scale based on what organisms are present in the Water and in what quantities."
       },
-      "usage": {},
+      "usage": {
+        "en": "In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score."
+      },
       "parents": [
         {
           "label": "Observation",
@@ -153,7 +150,7 @@
             "en": "bioticIndex"
           },
           "description": {
-            "en": "TODO"
+            "en": "Result of the BioticIndexObservation."
           },
           "usage": {},
           "domain": [
@@ -188,7 +185,7 @@
             "en": "observedProperty"
           },
           "description": {
-            "en": "TODO"
+            "en": "Type of the observedProperty."
           },
           "usage": {},
           "domain": [
@@ -225,9 +222,11 @@
       },
       "sort": "ChemicalAgentConcentrationObservation",
       "description": {
-        "en": "TODO"
+        "en": "Observation to assess  the chemical Quality of Water by estimating the concentration of a harmful or unsuitable substance."
       },
-      "usage": {},
+      "usage": {
+        "en": "Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter."
+      },
       "parents": [
         {
           "label": "Observation",
@@ -253,7 +252,7 @@
             "en": "chemicalAgentConcentration"
           },
           "description": {
-            "en": "TODO"
+            "en": "Result of the ChemicalAgentConcentrationObservation."
           },
           "usage": {},
           "domain": [
@@ -288,7 +287,7 @@
             "en": "observedProperty"
           },
           "description": {
-            "en": "TODO"
+            "en": "Type of substance."
           },
           "usage": {},
           "domain": [
@@ -328,7 +327,7 @@
         "en": "Real-world Object related to Water."
       },
       "usage": {
-        "en": "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a certain waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."
+        "en": "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."
       },
       "parents": [
         {
@@ -548,9 +547,11 @@
       },
       "sort": "WaterQualityParameterObservation",
       "description": {
-        "en": "TODO"
+        "en": "Observation to assess physical Quality of Water by measuring certain physical quantities."
       },
-      "usage": {},
+      "usage": {
+        "en": "These quantities are parameters like temperature, salinity, turbidity, suspended/disolved solids etc."
+      },
       "parents": [
         {
           "label": "Observation",
@@ -576,7 +577,7 @@
             "en": "observedProperty"
           },
           "description": {
-            "en": "TODO"
+            "en": "Tyoe of the obserdedProperty."
           },
           "usage": {},
           "domain": [
@@ -611,7 +612,7 @@
             "en": "waterQualityParameterResult"
           },
           "description": {
-            "en": "TODO"
+            "en": "Result of the WaterQualityParameterObservation."
           },
           "usage": {},
           "domain": [
@@ -1537,6 +1538,21 @@
       "name": {
         "en": "^phenomenonTime",
         "undefined": "^phenomenonTime"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://fixme.com#bioIndicator",
+      "name": {
+        "en": "bioIndicator",
+        "undefined": "bioIndicator"
       },
       "description": {},
       "domain": [
