@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/39e1990bf81fe39f1931514ff2b04a29fd3dca21",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/39e1990bf81fe39f1931514ff2b04a29fd3dca21/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/7fcb8f088dd28deb2a45dfbf5fa1551acb6f6cb5",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/7fcb8f088dd28deb2a45dfbf5fa1551acb6f6cb5/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -1874,6 +1874,371 @@
       "properties": []
     },
     {
+      "uri": "http://www.w3.org/ns/sosa/ObservationCollection",
+      "name": "ObservationCollection",
+      "label": {
+        "en": "ObservationCollection"
+      },
+      "sort": "ObservationCollection",
+      "description": {
+        "en": "A collection of one or more observations, whose members share a common value for one or more properties."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata",
+          "name": "metadata",
+          "sort": "metadata",
+          "label": {
+            "en": "metadata"
+          },
+          "description": {
+            "en": "Link to the metadata of the observationCollection."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Metadata",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Metadata",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
+              "range_label": {
+                "en": "Metadata"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter",
+          "name": "parameter",
+          "sort": "parameter",
+          "label": {
+            "en": "parameter"
+          },
+          "description": {
+            "en": "The parameter describes an arbitrary event-specific parameter. This might be an environmental parameter, an instrument setting or input, or an event-specific sampling parameter that is not tightly bound to either the feature of interest or to the observation procedure."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "NamedValue",
+              "range_uri": "https://def.isotc211.org/iso19156/2011/Observation#NamedValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#NamedValue",
+              "range_puri": "https://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+              "range_label": {
+                "en": "NamedValue"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "name": "hasFeatureOfInterest",
+          "sort": "hasFeatureOfInterest",
+          "label": {
+            "en": "hasFeatureOfInterest"
+          },
+          "description": {
+            "en": " A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Feature",
+              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Feature",
+              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "range_label": {
+                "en": "Feature"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/hasMember",
+          "name": "hasMember",
+          "sort": "hasMember",
+          "label": {
+            "en": "hasMember"
+          },
+          "description": {
+            "en": "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observation",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observation",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "en": "Observation"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
+          "name": "hasUltimateFeatureOfInterest",
+          "sort": "hasUltimateFeatureOfInterest",
+          "label": {
+            "en": "hasUltimateFeatureOfInterest"
+          },
+          "description": {
+            "en": "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Feature",
+              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Feature",
+              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "range_label": {
+                "en": "Feature"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/madeBySensor",
+          "name": "madeBySensor",
+          "sort": "madeBySensor",
+          "label": {
+            "en": "madeBySensor"
+          },
+          "description": {
+            "en": "Relation between an Observation and the Sensor which made the Observations."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sensor",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sensor",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_label": {
+                "en": "Sensor"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/observedProperty",
+          "name": "observedProperty",
+          "sort": "observedProperty",
+          "label": {
+            "en": "observedProperty"
+          },
+          "description": {
+            "en": "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PropertyType",
+              "range_uri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#PropertyType",
+              "range_puri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+              "range_label": {
+                "en": "PropertyType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/phenomenonTime",
+          "name": "phenomenonTime",
+          "sort": "phenomenonTime",
+          "label": {
+            "en": "phenomenonTime"
+          },
+          "description": {
+            "en": "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity [owl-time]."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "en": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/resultTime",
+          "name": "resultTime",
+          "sort": "resultTime",
+          "label": {
+            "en": "resultTime"
+          },
+          "description": {
+            "en": "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/usedProcedure",
+          "name": "usedProcedure",
+          "sort": "usedProcedure",
+          "label": {
+            "en": "usedProcedure"
+          },
+          "description": {
+            "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ObservationCollection",
+              "uri": "http://www.w3.org/ns/sosa/ObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ObservationProcedure",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ObservationProcedure",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+              "range_label": {
+                "en": "ObservationProcedure"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/sosa/Procedure",
       "name": "SamplingProcedure",
       "label": {
@@ -3349,376 +3714,11 @@
           "label": "ObservationCollection",
           "name": "ObservationCollection",
           "package": "SOSA-extensions",
-          "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection",
+          "uri": "http://www.w3.org/ns/sosa/ObservationCollection",
           "scoped_uri": "#ObservationCollection"
         }
       ],
       "properties": []
-    },
-    {
-      "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection",
-      "name": "ObservationCollection",
-      "label": {
-        "en": "ObservationCollection"
-      },
-      "sort": "ObservationCollection",
-      "description": {
-        "en": "A collection of one or more observations, whose members share a common value for one or more properties."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata",
-          "name": "metadata",
-          "sort": "metadata",
-          "label": {
-            "en": "metadata"
-          },
-          "description": {
-            "en": "Link to the metadata of the observationCollection."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Metadata",
-              "range_uri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Metadata",
-              "range_puri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
-              "range_label": {
-                "en": "Metadata"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter",
-          "name": "parameter",
-          "sort": "parameter",
-          "label": {
-            "en": "parameter"
-          },
-          "description": {
-            "en": "The parameter describes an arbitrary event-specific parameter. This might be an environmental parameter, an instrument setting or input, or an event-specific sampling parameter that is not tightly bound to either the feature of interest or to the observation procedure."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "NamedValue",
-              "range_uri": "https://def.isotc211.org/iso19156/2011/Observation#NamedValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#NamedValue",
-              "range_puri": "https://def.isotc211.org/iso19156/2011/Observation#NamedValue",
-              "range_label": {
-                "en": "NamedValue"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
-          "name": "hasFeatureOfInterest",
-          "sort": "hasFeatureOfInterest",
-          "label": {
-            "en": "hasFeatureOfInterest"
-          },
-          "description": {
-            "en": " A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Feature",
-              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Feature",
-              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-              "range_label": {
-                "en": "Feature"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/hasMember",
-          "name": "hasMember",
-          "sort": "hasMember",
-          "label": {
-            "en": "hasMember"
-          },
-          "description": {
-            "en": "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Observation",
-              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Observation",
-              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
-              "range_label": {
-                "en": "Observation"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
-          "name": "hasUltimateFeatureOfInterest",
-          "sort": "hasUltimateFeatureOfInterest",
-          "label": {
-            "en": "hasUltimateFeatureOfInterest"
-          },
-          "description": {
-            "en": "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Feature",
-              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Feature",
-              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-              "range_label": {
-                "en": "Feature"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/madeBySensor",
-          "name": "madeBySensor",
-          "sort": "madeBySensor",
-          "label": {
-            "en": "madeBySensor"
-          },
-          "description": {
-            "en": "Relation between an Observation and the Sensor which made the Observations."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Sensor",
-              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Sensor",
-              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
-              "range_label": {
-                "en": "Sensor"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/observedProperty",
-          "name": "observedProperty",
-          "sort": "observedProperty",
-          "label": {
-            "en": "observedProperty"
-          },
-          "description": {
-            "en": "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PropertyType",
-              "range_uri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PropertyType",
-              "range_puri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
-              "range_label": {
-                "en": "PropertyType"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/phenomenonTime",
-          "name": "phenomenonTime",
-          "sort": "phenomenonTime",
-          "label": {
-            "en": "phenomenonTime"
-          },
-          "description": {
-            "en": "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity [owl-time]."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TM_Object",
-              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TM_Object",
-              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
-              "range_label": {
-                "en": "TM_Object"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/resultTime",
-          "name": "resultTime",
-          "sort": "resultTime",
-          "label": {
-            "en": "resultTime"
-          },
-          "description": {
-            "en": "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/sosa/usedProcedure",
-          "name": "usedProcedure",
-          "sort": "usedProcedure",
-          "label": {
-            "en": "usedProcedure"
-          },
-          "description": {
-            "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ObservationCollection",
-              "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ObservationProcedure",
-              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ObservationProcedure",
-              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
-              "range_label": {
-                "en": "ObservationProcedure"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "https://www.w3.org/TR/vocab-ssn/#SOSAPlatform",
