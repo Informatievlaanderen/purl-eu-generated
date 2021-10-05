@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/8ffe7d2449b6baade1b64ae68ce28d16ebd40bd3",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/8ffe7d2449b6baade1b64ae68ce28d16ebd40bd3/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/d761744abbd1be075b858f5c024b380b8904df1a",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/d761744abbd1be075b858f5c024b380b8904df1a/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -1778,6 +1778,16 @@
       ]
     },
     {
+      "uri": "http://fixme.com#Function",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://fixme.com#Image",
       "name": "Image",
       "label": {
@@ -1857,6 +1867,16 @@
           "scoped_uri": "#SystemProperty"
         }
       ],
+      "properties": []
+    },
+    {
+      "uri": "http://fixme.com#Task",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "parents": [],
       "properties": []
     },
     {
@@ -3212,14 +3232,14 @@
       "properties": []
     },
     {
-      "uri": "https://uri.fiware.org/ns/data-models#Device",
+      "uri": "https://saref.etsi.org/core/Device",
       "name": "Device",
       "label": {
         "en": "Device"
       },
       "sort": "Device",
       "description": {
-        "en": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.). A Device is a tangible object which contains some logic and is producer and/or consumer of data. A Device is always assumed to be capable of communicating electronically via a network."
+        "en": "A tangible object designed to perform a particular task."
       },
       "usage": {},
       "parents": [
@@ -3240,351 +3260,104 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#deviceClass",
-          "name": "deviceClass",
-          "sort": "deviceClass",
+          "uri": "https://saref.etsi.org/core/accomplishes",
+          "name": "task",
+          "sort": "task",
           "label": {
-            "en": "deviceClass"
+            "en": "task"
           },
           "description": {
-            "en": "Class of constrained device as specified by RFC 7228. If the device is not a constrained device this property shall not be present."
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
+              "uri": "https://saref.etsi.org/core/Device"
             }
           ],
           "range": [
             {
-              "range_label": "DeviceClasstype",
-              "range_uri": "http://fixme.com#DeviceClasstype"
+              "range_label": "Task",
+              "range_uri": "http://fixme.com#Task"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#DeviceClasstype",
-              "range_puri": "http://fixme.com#DeviceClasstype",
+              "range_uri": "#Task",
+              "range_puri": "http://fixme.com#Task",
               "range_label": {
-                "en": "DeviceClasstype"
+                "en": "Task"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#supportedUnits",
-          "name": "supportedUnits",
-          "sort": "supportedUnits",
-          "label": {
-            "en": "supportedUnits"
-          },
-          "description": {
-            "en": "Units of measurement supported by the device. The unit code (text) of measurement given using the [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "UnitType",
-              "range_uri": "http://fixme.com#UnitType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UnitType",
-              "range_puri": "http://fixme.com#UnitType",
-              "range_label": {
-                "en": "UnitType"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/brand",
-          "name": "brandName",
-          "sort": "brandName",
-          "label": {
-            "en": "brandName"
-          },
-          "description": {
-            "en": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/image",
-          "name": "image",
-          "sort": "image",
-          "label": {
-            "en": "image"
-          },
-          "description": {
-            "en": "An image of the item"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Image",
-              "range_uri": "http://fixme.com#Image"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Image",
-              "range_puri": "http://fixme.com#Image",
-              "range_label": {
-                "en": "Image"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/category",
-          "name": "category",
-          "sort": "category",
-          "label": {
-            "en": "category"
-          },
-          "description": {
-            "en": "Device's category(ies)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DeviceType",
-              "range_uri": "http://fixme.com#DeviceType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#DeviceType",
-              "range_puri": "http://fixme.com#DeviceType",
-              "range_label": {
-                "en": "DeviceType"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/documentation",
-          "name": "documentation",
-          "sort": "documentation",
-          "label": {
-            "en": "documentation"
-          },
-          "description": {
-            "en": "A link to devices documentation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/energyLimitationClass",
-          "name": "energyLimitationClass",
-          "sort": "energyLimitationClass",
-          "label": {
-            "en": "energyLimitationClass"
-          },
-          "description": {
-            "en": "Devices class of energy limitation as per RFC 7228."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EnergyLimitationType",
-              "range_uri": "http://fixme.com#EnergyLimitationType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#EnergyLimitationType",
-              "range_puri": "http://fixme.com#EnergyLimitationType",
-              "range_label": {
-                "en": "EnergyLimitationType"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/function",
+          "uri": "https://saref.etsi.org/core/hasFunction",
           "name": "function",
           "sort": "function",
           "label": {
             "en": "function"
           },
           "description": {
-            "en": "The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function."
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
+              "uri": "https://saref.etsi.org/core/Device"
             }
           ],
           "range": [
             {
-              "range_label": "FunctionType",
-              "range_uri": "http://fixme.com#FunctionType"
+              "range_label": "Function",
+              "range_uri": "http://fixme.com#Function"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#FunctionType",
-              "range_puri": "http://fixme.com#FunctionType",
+              "range_uri": "#Function",
+              "range_puri": "http://fixme.com#Function",
               "range_label": {
-                "en": "FunctionType"
+                "en": "Function"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/manufacturerName",
-          "name": "manufacturerName",
-          "sort": "manufacturerName",
+          "uri": "https://saref.etsi.org/core/hasManufacturer",
+          "name": "manufacturer",
+          "sort": "manufacturer",
           "label": {
-            "en": "manufacturerName"
+            "en": "manufacturer"
           },
           "description": {
-            "en": "Name of the manufacturer."
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
+              "uri": "https://saref.etsi.org/core/Device"
             }
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/modelName",
-          "name": "modelName",
-          "sort": "modelName",
-          "label": {
-            "en": "modelName"
-          },
-          "description": {
-            "en": "Name of the model as given by the manufacturer."
-          },
-          "usage": {
-            "en": "This attribute is different than name which is just a codename usually given by municipalities."
-          },
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
+                "en": "LangString"
               }
             }
           ],
@@ -3592,104 +3365,34 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/supportedProtocol",
-          "name": "supportedProtocol",
-          "sort": "supportedProtocol",
+          "uri": "https://saref.etsi.org/core/hasModel",
+          "name": "model",
+          "sort": "model",
           "label": {
-            "en": "supportedProtocol"
+            "en": "model"
           },
           "description": {
-            "en": "Supported protocol(s) or networks"
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
+              "uri": "https://saref.etsi.org/core/Device"
             }
           ],
           "range": [
             {
-              "range_label": "ProtocolType",
-              "range_uri": "http://fixme.com#ProtocolType"
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#ProtocolType",
-              "range_puri": "http://fixme.com#ProtocolType",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "ProtocolType"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://uri.etsi.org/ngsi-ld/description",
-          "name": "description",
-          "sort": "description",
-          "label": {
-            "en": "description"
-          },
-          "description": {
-            "en": "Device's description."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://uri.etsi.org/ngsi-ld/name",
-          "name": "name",
-          "sort": "name",
-          "label": {
-            "en": "name"
-          },
-          "description": {
-            "en": "The name of this item."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Device",
-              "uri": "https://uri.fiware.org/ns/data-models#Device"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
+                "en": "LangString"
               }
             }
           ],
