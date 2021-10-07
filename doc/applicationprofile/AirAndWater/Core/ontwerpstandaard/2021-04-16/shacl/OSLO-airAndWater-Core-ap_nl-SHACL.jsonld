@@ -73,7 +73,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+          "sh:class": "http://www.w3.org/ns/sosa/Sensor",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -235,7 +235,7 @@
           "sh:path": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+          "sh:class": "http://www.w3.org/ns/sosa/Sensor",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -336,7 +336,7 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+          "sh:class": "http://www.w3.org/ns/sosa/om#ObservationProcedure",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -347,6 +347,13 @@
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/observations#ObservationContext.observation.target"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ProcessShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Observation#OM_Process"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ObservationContextShape",
@@ -398,7 +405,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com/#deviceClass",
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -613,6 +620,13 @@
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SamplingProcesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/observations#PreparationStep.samplingProces"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SpecimenShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -630,7 +644,7 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.materialClass"
         },
         {
-          "sh:class": "http://fixme.com/#deviceClass",
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -678,27 +692,6 @@
       "sh:targetClass": "https://purl.eu/ns/observations#PreparationStep.specimen"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#PointOfInterestShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#PointOfInterest"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ProcedureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Procedure"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ProcessShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Process"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#RepeatablityShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -706,11 +699,35 @@
       "sh:targetClass": "http://fixme.com#Repeatablity"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SamplingProcesShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SurvivalRangeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/observations#PreparationStep.samplingProces"
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/SurvivalProperty",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#SurvivalRange"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#PlaceShape",
@@ -718,6 +735,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SliceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/linked-data/cube#Slice"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#GeometryShape",
@@ -748,6 +772,13 @@
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Location"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ObservationCollectionShape",
@@ -788,7 +819,7 @@
           "sh:path": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+          "sh:class": "http://www.w3.org/ns/sosa/Sensor",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -807,7 +838,7 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "https://purl.eu/ns/observations#metadata"
+          "sh:path": "https://purl.eu/ns/observations#ObservationCollection.metadata"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
@@ -829,7 +860,7 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "https://purl.eu/ns/observations#parameter"
+          "sh:path": "https://purl.eu/ns/observations#ObservationCollection.parameter"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
@@ -854,7 +885,7 @@
           "sh:path": "http://www.w3.org/ns/sosa/resultTime"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+          "sh:class": "http://www.w3.org/ns/sosa/om#ObservationProcedure",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -868,31 +899,28 @@
       "sh:targetClass": "http://www.w3.org/ns/sosa/ObservationCollection"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SamplingProcedureShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#PlatformShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#specification"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/observations#SamplingProcedureType",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://fixme.com#type"
+          "sh:path": "http://www.w3.org/ns/sosa/hosts"
         }
       ],
+      "sh:targetClass": "http://www.w3.org/ns/sosa/Platform"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/sosa/Procedure"
     },
     {
@@ -966,7 +994,7 @@
           "sh:path": "http://www.w3.org/ns/sosa/resultTime"
         },
         {
-          "sh:class": "http://www.w3.org/ns/sosa/Procedure",
+          "sh:class": "http://www.w3.org/ns/sosa/om#SamplingProcedure",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -977,6 +1005,113 @@
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/sosa/Sampling"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SensorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/sosa/om#ObservationProcedure",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/implements"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/sosa/madeObservation"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/sosa/observes"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/sosa/Sensor"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ObservationProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/sosa/Sensor",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/implementedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "https://purl.eu/ns/observations#ObservationProcedure.specification"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/observations#ObservationProcedureType",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "https://purl.eu/ns/observations#ObservationProcedure.type"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/sosa/om#ObservationProcedure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SamplingProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "https://purl.eu/ns/observations#SamplingProcedure.specification"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/observations#SamplingProcedureType",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://fixme.com#SamplingProcedure.type"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/sosa/om#SamplingProcedure"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#AccuracyShape",
@@ -1098,6 +1233,37 @@
       "sh:targetClass": "http://www.w3.org/ns/ssn/systems/SurvivalProperty"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SystemCapabilityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/SystemProperty",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/hasSystemProperty"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/ssn/systems/SystemCapability"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SystemLifetimeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1110,6 +1276,37 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/ssn/systems/SystemProperty"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#OperatingRangeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
+          "sh:definition": {
+            "nl": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/ssn/systems/operatingRange"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#AddressRepresentationShape",
@@ -1269,219 +1466,22 @@
       "sh:targetClass": "https://saref.etsi.org/core/Task"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SliceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-data-cube/#ref_qb_Slice"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#PlatformShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/sosa/hosts"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSAPlatform"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#ObservationProcedureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/implementedBy"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "https://purl.eu/ns/observations#specification"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/observations#ObservationProcedureType",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "https://purl.eu/ns/observations#type"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SensorShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/implements"
-        },
-        {
-          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/sosa/madeObservation"
-        },
-        {
-          "sh:class": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/sosa/observes"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#OperatingRangeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/OperatingRange",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SurvivalRangeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/SurvivalProperty",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSurvivalRange"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SystemCapabilityShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/SystemProperty",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/hasSystemProperty"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/ssn/systems/Condition",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "nl": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/ssn/systems/inCondition"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSystemCapability"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Core-ap_nl#SystemShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange",
+          "sh:class": "http://www.w3.org/ns/ssn/systems/operatingRange",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#hasOperatingRange"
+          "sh:path": "http://www.w3.org/ns/ssn/systems/hasOperatingRange"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSurvivalRange",
+          "sh:class": "http://fixme.com#SurvivalRange",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -1491,7 +1491,7 @@
           "sh:path": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSystemCapability",
+          "sh:class": "http://www.w3.org/ns/ssn/systems/SystemCapability",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -1501,7 +1501,7 @@
           "sh:path": "http://www.w3.org/ns/ssn/systems/hasSystemCapability"
         },
         {
-          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAPlatform",
+          "sh:class": "http://www.w3.org/ns/sosa/Platform",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
