@@ -67,8 +67,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/16612adfe5a8ed0645d793eb41192b1b64507520">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/16612adfe5a8ed0645d793eb41192b1b64507520</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/16612adfe5a8ed0645d793eb41192b1b64507520/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/16612adfe5a8ed0645d793eb41192b1b64507520/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/962d57acb419115144fcda10ace3f3f7cbbfe54a">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/962d57acb419115144fcda10ace3f3f7cbbfe54a</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/962d57acb419115144fcda10ace3f3f7cbbfe54a/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/962d57acb419115144fcda10ace3f3f7cbbfe54a/CHANGELOG</a></dd>
               <dt>Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html">https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html</a></dd>
 
@@ -103,7 +103,7 @@
             <div class="region region--no-space-top typography" id="summary">
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
                 
-<p>The OSLO Air & Water - Core application profile specifies how Observations should be described in general. It forms the basis for domain-specific application profiles such as <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Air">OSLO Air & Water - Air Quality</a> and <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Water">OSLO Air & Water - Water Quality</a>.</p>
+<p>The ODALA Air & Water - Core application profile specifies how Observations should be described in general. It forms the basis for domain-specific application profiles such as <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Air">ODALA Air & Water - Air Quality</a> and <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Water">ODALA Air & Water - Water Quality</a>.</p>
 <p>The profile is based on <a href="https://www.iso.org/standard/32574.html">ISO 19156 Observations and Measurements</a> and on the <a href="https://www.w3.org/TR/vocab-ssn/">OGC/W3C Semantic Sensor Network Ontology</a>.</p>
 <p>From Observations and Measurements, the profile adopts the way an Observation should be described: as an activity performed at a particular time and with a particular Result. It is considered very important to clearly indicate which Object is being observed and which characteristic of that Object.</p>
 <p>Objects are usually not directly observable, usually one observes a part that is considered representative of the whole. This can be a specific place, eg a measuring station (class SpatialSamplingFeature) or a physical sample taken from the Object (class Specimen), eg a water sample.</p>
@@ -156,6 +156,7 @@
                       <br />
                       |
                       <a href="#Accuracy">Accuracy</a> |
+                      <a href="#Agent">Agent</a> |
                       <a href="#Any">Any</a> |
                       <a href="#BatteryLifetime">BatteryLifetime</a> |
                       <a href="#CategoryObservation">CategoryObservation</a> |
@@ -226,6 +227,7 @@
                       <a href="#CI_ResponsibleParty">CI_ResponsibleParty</a> |
                       <a href="#GenericName">GenericName</a> |
                       <a href="#Geometry">Geometry</a> |
+                      <a href="#Identifier">Identifier</a> |
                       <a href="#Location">Location</a> |
                       <a href="#NamedValue">NamedValue</a> |
                       <a href="#TM_Object">TM_Object</a> |
@@ -266,12 +268,28 @@
             </div>
             
               <div class="region region--no-space-top">
+              <h3 class="h3" id="Agent"><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>Someone or something that can act or has the power to act.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
               <h3 class="h3" id="Any"><a href="http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any" data-placement="right">Any</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>TODO</dd>
+                    <dt>Description</dt><dd>Represents instances of any type.</dd>
                     
-                    <dt>Usage</dt><dd>TODO</dd>
+                    <dt>Usage</dt><dd>To be substituted by a suitable concrete class, datatype...</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -787,6 +805,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An entity responsible for making contributions to the resource.</td>
@@ -802,6 +824,10 @@
                           </code>
                         </td>
                         <td>
+                          
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
                           
                         </td>
                         <td>0..1</td>
@@ -819,6 +845,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
+                            
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An account of the resource.</td>
@@ -834,6 +864,10 @@
                           </code>
                         </td>
                         <td>
+                          
+			    
+			    <a href="#Identifier" data-placement="right">Identifier</a>
+			    
                           
                         </td>
                         <td>0..1</td>
@@ -851,6 +885,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An entity responsible for making the resource available.</td>
@@ -866,6 +904,10 @@
                           </code>
                         </td>
                         <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+                            
                           
                         </td>
                         <td>0..1</td>
@@ -883,6 +925,10 @@
                         </td>
                         <td>
                           
+			    
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
+                            
+                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">The topic of the resource.</td>
@@ -898,6 +944,10 @@
                           </code>
                         </td>
                         <td>
+                          
+			    
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
+                            
                           
                         </td>
                         <td>0..1</td>
@@ -1339,10 +1389,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationCollection%3Ametadata" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationCollection.metadata">
+                      <tr id="ObservationCollection%3Ametadata" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationCollection.metadata" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationCollection.metadata" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata" data-placement="right">
                             metadata</a>
                           </code>
                         </td>
@@ -1379,10 +1429,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationCollection%3Aparameter" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationCollection.parameter">
+                      <tr id="ObservationCollection%3Aparameter" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationCollection.parameter" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationCollection.parameter" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter" data-placement="right">
                             parameter</a>
                           </code>
                         </td>
@@ -1620,10 +1670,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationProcedure.specification">
+                      <tr id="ObservationProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationProcedure.specification" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification" data-placement="right">
                             specification</a>
                           </code>
                         </td>
@@ -1640,10 +1690,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationProcedure.type">
+                      <tr id="ObservationProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationProcedure.type" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type" data-placement="right">
                             type</a>
                           </code>
                         </td>
@@ -2631,10 +2681,10 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="SamplingProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#SamplingProcedure.specification">
+                      <tr id="SamplingProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#SamplingProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#SamplingProcedure.specification" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification" data-placement="right">
                             specification</a>
                           </code>
                         </td>
@@ -2651,10 +2701,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="SamplingProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#SamplingProcedure.type">
+                      <tr id="SamplingProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#SamplingProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#SamplingProcedure.type" data-placement="right">
+                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type" data-placement="right">
                             type</a>
                           </code>
                         </td>
@@ -3600,6 +3650,63 @@
                         <td>0..1</td>
                         <td property="rdfs:comment">Geometry expressed in WKT format</td>
                         <td property="skos:scopeNote">Use http://www.opengis.net/ont/geosparql#wktLiteral as datatype.</td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="Identifier"><a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>Information used to uniquely identify an object.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#Identifier%3Aidentifier">identifier</a>.</dd>
+                    
+                  </dl>
+                </div>
+		
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="Identifier%3Aidentifier" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2004/02/skos/core#notation" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#notation" data-placement="right">identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">String used to uniquely identify the object.</td>
+                        <td property="skos:scopeNote">The string part of the literal is the actual identifier, the type part refers to the identification system and its version.</td>
                         <td></td>
                       </tr>
                       

@@ -76,14 +76,14 @@
     "void": "http://rdfs.org/ns/void#",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
-  "@id": "https://purl.eu/ns/observations",
+  "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "authors": [],
-  "baseURI": "https://purl.eu/ns/observations#",
+  "baseURI": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#",
   "branchtag": "master",
   "classes": [
     {
-      "@id": "https://purl.eu/ns/observations#ObservationProcedureType",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedureType",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{E08E5866-B4E9-477f-BAD5-F4C9F54BA6C9}",
       "ap-definition-en": {
@@ -114,7 +114,7 @@
       "parents": []
     },
     {
-      "@id": "https://purl.eu/ns/observations#SamplingProcedureType",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedureType",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{6A548A5B-ADE6-4b5a-BFB6-2AB0E53183D4}",
       "ap-definition-en": {
@@ -150,7 +150,7 @@
   "contributors-column": "MijnKolom",
   "contributors-file": "stakeholders.csv",
   "diagram": "Air&Water-Core",
-  "documentcommit": "16612adfe5a8ed0645d793eb41192b1b64507520",
+  "documentcommit": "962d57acb419115144fcda10ace3f3f7cbbfe54a",
   "dummy": "002",
   "eap": "OSLO-AirAndWater-Core-AP.EAP",
   "editors": [],
@@ -2805,7 +2805,7 @@
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/contributor",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{59FE0737-85DD-43d7-83EA-A6F4609AAE48}",
       "ap-definition-en": {
         "en": "An entity responsible for making contributions to the resource."
@@ -2829,12 +2829,13 @@
         "EA-Guid": "{59FE0737-85DD-43d7-83EA-A6F4609AAE48}",
         "EA-Name": "contributor",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "Agent",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
         },
         "RawTags": [
           {
@@ -2905,14 +2906,21 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "contributor",
-      "range": [],
+      "range": [
+        {
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
+        }
+      ],
       "usage": {
         "en": "The guidelines for using names of persons or organizations as creators also apply to contributors. Typically, the name of a Contributor should be used to indicate the entity."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/creator",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{966CD8CB-791D-4fbe-99DB-B90BB2A99F9B}",
       "ap-definition-en": {
         "en": "An entity primarily responsible for making the resource."
@@ -2936,12 +2944,13 @@
         "EA-Guid": "{966CD8CB-791D-4fbe-99DB-B90BB2A99F9B}",
         "EA-Name": "creator",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "Agent",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
         },
         "RawTags": [
           {
@@ -3012,14 +3021,21 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "creator",
-      "range": [],
+      "range": [
+        {
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
+        }
+      ],
       "usage": {
         "en": "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/description",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{E973BA41-8103-48cb-8A69-91C9912CDE29}",
       "ap-definition-en": {
         "en": "An account of the resource."
@@ -3043,12 +3059,12 @@
         "EA-Guid": "{E973BA41-8103-48cb-8A69-91C9912CDE29}",
         "EA-Name": "description",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "LangString",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
+          "EA-Name": "LangString",
           "EA-Package": "",
-          "uri": "null"
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -3119,14 +3135,20 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "description",
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "LangString",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
       "usage": {
         "en": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/identifier",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{2D528FB7-ED52-4936-B2F4-B6D8866DD2BC}",
       "ap-definition-en": {
         "en": "An unambiguous reference to the resource within a given context."
@@ -3150,12 +3172,13 @@
         "EA-Guid": "{2D528FB7-ED52-4936-B2F4-B6D8866DD2BC}",
         "EA-Name": "identifier",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "Identifier",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-GUID": "{6E8BBD23-C95A-40d4-9F84-738036EFB595}",
+          "EA-Name": "Identifier",
+          "EA-Package": "FIWARE",
+          "uri": "http://fixme.com#Identifier"
         },
         "RawTags": [
           {
@@ -3226,14 +3249,21 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "identifier",
-      "range": [],
+      "range": [
+        {
+          "EA-GUID": "{6E8BBD23-C95A-40d4-9F84-738036EFB595}",
+          "EA-Name": "Identifier",
+          "EA-Package": "FIWARE",
+          "uri": "http://fixme.com#Identifier"
+        }
+      ],
       "usage": {
         "en": "Recommended practice is to identify the resource by means of a string conforming to an identification system."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/publisher",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{7E5C298F-1CC8-4e5b-98CD-C2D5CEFAD71B}",
       "ap-definition-en": {
         "en": "An entity responsible for making the resource available."
@@ -3257,12 +3287,13 @@
         "EA-Guid": "{7E5C298F-1CC8-4e5b-98CD-C2D5CEFAD71B}",
         "EA-Name": "publisher",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "Agent",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
         },
         "RawTags": [
           {
@@ -3333,14 +3364,21 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "publisher",
-      "range": [],
+      "range": [
+        {
+          "EA-GUID": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generic",
+          "uri": "http://purl.org/dc/terms/Agent"
+        }
+      ],
       "usage": {
         "en": "Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/rights",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{8ABE2B7B-49F0-4afd-89F1-80FE919A17D7}",
       "ap-definition-en": {
         "en": "Information about rights held in and over the resource."
@@ -3364,12 +3402,12 @@
         "EA-Guid": "{8ABE2B7B-49F0-4afd-89F1-80FE919A17D7}",
         "EA-Name": "rights",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "URI",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
+          "EA-Name": "URI",
           "EA-Package": "",
-          "uri": "null"
+          "uri": "http://www.w3.org/2001/XMLSchema#anyURI"
         },
         "RawTags": [
           {
@@ -3440,14 +3478,20 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "rights",
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "URI",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+        }
+      ],
       "usage": {
         "en": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/subject",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{A8BE15A1-1567-4d76-8F1D-5F6D5B870057}",
       "ap-definition-en": {
         "en": "The topic of the resource."
@@ -3471,12 +3515,12 @@
         "EA-Guid": "{A8BE15A1-1567-4d76-8F1D-5F6D5B870057}",
         "EA-Name": "subject",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "LangString",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
+          "EA-Name": "LangString",
           "EA-Package": "",
-          "uri": "null"
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -3547,14 +3591,20 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "subject",
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "LangString",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
       "usage": {
         "en": "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."
       }
     },
     {
       "@id": "http://purl.org/dc/elements/1.1/title",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{E0E88FF4-7057-498c-B0A9-09BB9CAC4A5D}",
       "ap-definition-en": {
         "en": "A name given to the resource."
@@ -3578,12 +3628,12 @@
         "EA-Guid": "{E0E88FF4-7057-498c-B0A9-09BB9CAC4A5D}",
         "EA-Name": "title",
         "EA-Package": "OM",
-        "EA-Range": "int",
+        "EA-Range": "LangString",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
+          "EA-Name": "LangString",
           "EA-Package": "",
-          "uri": "null"
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -3647,7 +3697,13 @@
       "maxCardinality": "1",
       "minCardinality": "0",
       "name": "title",
-      "range": []
+      "range": [
+        {
+          "EA-Name": "LangString",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
@@ -3893,6 +3949,129 @@
       ],
       "usage": {
         "en": "Use http://www.opengis.net/ont/geosparql#wktLiteral as datatype."
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#notation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{2945C5BF-1B78-41d4-8669-B5F5C8363121}",
+      "ap-definition-en": {
+        "en": "String used to uniquely identify the object."
+      },
+      "ap-label-en": {
+        "en": "identifier"
+      },
+      "ap-usageNote-en": {
+        "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
+      },
+      "codelist": [],
+      "definition": {
+        "en": "String used to uniquely identify the object."
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{CA2B6870-DBEF-4fe9-BDFA-5287BBD575E0}",
+        "EA-Guid": "{2945C5BF-1B78-41d4-8669-B5F5C8363121}",
+        "EA-Name": "identificator",
+        "EA-Package": "OSLO-Generic",
+        "EA-Range": "Literal",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        "RawTags": [
+          {
+            "key": "ap-label-nl",
+            "note": "null",
+            "value": "identifier"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/2004/02/skos/core#notation"
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "note": "null",
+            "value": "he string part of the literal is the actual identifier, the type part refers to the identification system and its version."
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "identifier"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": "null",
+            "value": "String used to uniquely identify the object."
+          },
+          {
+            "key": "ap-definition-en",
+            "note": "null",
+            "value": "String used to uniquely identify the object."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "identifier"
+          },
+          {
+            "key": "ap-usageNote-en",
+            "note": "null",
+            "value": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
+          },
+          {
+            "key": "ap-label-en",
+            "note": "null",
+            "value": "identifier"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "String used to uniquely identify the object."
+        },
+        "ap-label-en": {
+          "en": "identifier"
+        },
+        "ap-usageNote-en": {
+          "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
+        },
+        "definition": {
+          "en": "String used to uniquely identify the object."
+        },
+        "label": {
+          "en": "identifier"
+        },
+        "usage": {
+          "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "identifier"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "identifier",
+      "range": [
+        {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ],
+      "usage": {
+        "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
       }
     },
     {
@@ -6692,151 +6871,6 @@
     {
       "@id": "http://www.w3.org/ns/sosa/usedProcedure",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
-      "ap-definition-en": {
-        "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
-      },
-      "ap-label-en": {
-        "en": "usedProcedure"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
-      },
-      "domain": [
-        {
-          "EA-Name": "Observation",
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
-        }
-      ],
-      "extra": {
-        "DestRoleTags": [
-          {
-            "key": "ap-definition-en",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-definition-nl",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-nl",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "uri",
-            "note": "http://www.w3.org/ns/sosa/usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-label-en",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-nl",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-label-nl",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          }
-        ],
-        "EA-Domain": "Observation",
-        "EA-Domain-Guid": "{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
-        "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
-        "EA-Name": "usedProcedure",
-        "EA-Package": "",
-        "EA-Range": "ObservationProcedure",
-        "EA-Type": "connector",
-        "RangeData": {
-          "EA-GUID": "{A91CF6BA-5B7C-4dea-8195-626628241F75}",
-          "EA-Name": "ObservationProcedure",
-          "EA-Package": "SOSA",
-          "uri": "http://www.w3.org/ns/sosa/om#ObservationProcedure"
-        },
-        "RawTags": [
-          {
-            "key": "ap-definition-en",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-definition-nl",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-nl",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "uri",
-            "note": "http://www.w3.org/ns/sosa/usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-label-en",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-nl",
-            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
-            "value": "NOTE"
-          },
-          {
-            "key": "ap-label-nl",
-            "note": "usedProcedure",
-            "value": "NOTE"
-          }
-        ],
-        "Scope": "NOTHING",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
-        },
-        "ap-label-en": {
-          "en": "usedProcedure"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
-        },
-        "derived": "false",
-        "destRole": "usedProcedure",
-        "label": {
-          "en": "usedProcedure"
-        },
-        "sourceRole": "null",
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "UNKNOWN",
-      "label": {
-        "en": "usedProcedure"
-      },
-      "maxCardinality": "*",
-      "minCardinality": "0",
-      "name": "usedProcedure",
-      "range": [
-        {
-          "EA-GUID": "{A91CF6BA-5B7C-4dea-8195-626628241F75}",
-          "EA-Name": "ObservationProcedure",
-          "EA-Package": "SOSA",
-          "uri": "http://www.w3.org/ns/sosa/om#ObservationProcedure"
-        }
-      ]
-    },
-    {
-      "@id": "http://www.w3.org/ns/sosa/usedProcedure",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{89F01903-909B-4dc9-A729-B83BD71D0AB2}",
       "ap-definition-en": {
         "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
@@ -6976,6 +7010,151 @@
           "EA-Name": "SamplingProcedure",
           "EA-Package": "SOSA",
           "uri": "http://www.w3.org/ns/sosa/om#SamplingProcedure"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/ns/sosa/usedProcedure",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
+      "ap-definition-en": {
+        "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+      },
+      "ap-label-en": {
+        "en": "usedProcedure"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+      },
+      "domain": [
+        {
+          "EA-Name": "Observation",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "ap-definition-en",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-nl",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/sosa/usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-label-en",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-nl",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-label-nl",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "Observation",
+        "EA-Domain-Guid": "{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
+        "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
+        "EA-Name": "usedProcedure",
+        "EA-Package": "",
+        "EA-Range": "ObservationProcedure",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{A91CF6BA-5B7C-4dea-8195-626628241F75}",
+          "EA-Name": "ObservationProcedure",
+          "EA-Package": "SOSA",
+          "uri": "http://www.w3.org/ns/sosa/om#ObservationProcedure"
+        },
+        "RawTags": [
+          {
+            "key": "ap-definition-en",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-nl",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/sosa/usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-label-en",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-nl",
+            "note": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.",
+            "value": "NOTE"
+          },
+          {
+            "key": "ap-label-nl",
+            "note": "usedProcedure",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+        },
+        "ap-label-en": {
+          "en": "usedProcedure"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+        },
+        "derived": "false",
+        "destRole": "usedProcedure",
+        "label": {
+          "en": "usedProcedure"
+        },
+        "sourceRole": "null",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "UNKNOWN",
+      "label": {
+        "en": "usedProcedure"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "usedProcedure",
+      "range": [
+        {
+          "EA-GUID": "{A91CF6BA-5B7C-4dea-8195-626628241F75}",
+          "EA-Name": "ObservationProcedure",
+          "EA-Package": "SOSA",
+          "uri": "http://www.w3.org/ns/sosa/om#ObservationProcedure"
         }
       ]
     },
@@ -9610,7 +9789,7 @@
         "en": "TODO"
       },
       "definition": {
-        "en": "TODO"
+        "en": "Represents instances of any type."
       },
       "extra": {
         "EA-Guid": "{D62D3FF2-8CA1-4591-B578-B069FEA3E10A}",
@@ -9623,12 +9802,12 @@
           {
             "key": "ap-definition-nl",
             "note": "null",
-            "value": "TODO"
+            "value": "Represents instances of any type."
           },
           {
             "key": "ap-usageNote-nl",
             "note": "null",
-            "value": "TODO"
+            "value": "To be substituted by a suitable concrete class, datatype..."
           },
           {
             "key": "label-nl",
@@ -9649,14 +9828,14 @@
         "ap-label-en": "",
         "ap-usageNote-en": "",
         "definition": {
-          "en": "TODO"
+          "en": "Represents instances of any type."
         },
         "label": {
           "en": "Any"
         },
         "parentclasses": "",
         "usage": {
-          "en": "TODO"
+          "en": "To be substituted by a suitable concrete class, datatype..."
         }
       },
       "inpackage": "OTHER_PACKAGE",
@@ -9665,7 +9844,7 @@
       },
       "name": "Any",
       "usage": {
-        "en": "TODO"
+        "en": "To be substituted by a suitable concrete class, datatype..."
       }
     },
     {
@@ -11020,6 +11199,77 @@
       "name": "Repeatability"
     },
     {
+      "@id": "http://purl.org/dc/terms/Agent",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+      "ap-definition-en": {
+        "en": "Someone or something that can act or has the power to act."
+      },
+      "ap-label-en": {
+        "en": "Agent"
+      },
+      "definition": {
+        "en": "Someone or something that can act or has the power to act."
+      },
+      "extra": {
+        "EA-Guid": "{C9C17C85-EA67-44a4-B489-0C82BC4FCF92}",
+        "EA-Name": "Agent",
+        "EA-Package": "OSLO-Generic",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "ap-definition-nl",
+            "note": "null",
+            "value": "Someone or something that can act or has the power to act."
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "Agent"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/Agent"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Agent"
+          },
+          {
+            "key": "ap-definition-en",
+            "note": "null",
+            "value": "Someone or something that can act or has the power to act."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Someone or something that can act or has the power to act."
+        },
+        "ap-label-en": {
+          "en": "Agent"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Someone or something that can act or has the power to act."
+        },
+        "label": {
+          "en": "Agent"
+        },
+        "parentclasses": "",
+        "usage": ""
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Agent"
+      },
+      "name": "Agent"
+    },
+    {
       "@id": "http://purl.org/linked-data/cube#Slice",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{80360177-69A4-4be0-A35A-1697EF396B57}",
@@ -11106,6 +11356,62 @@
         "en": "Slice"
       },
       "name": "Slice"
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#Identifier",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{CA2B6870-DBEF-4fe9-BDFA-5287BBD575E0}",
+      "ap-definition-en": {
+        "en": "TODO"
+      },
+      "definition": {
+        "en": "Information used to uniquely identify an object."
+      },
+      "extra": {
+        "EA-Guid": "{CA2B6870-DBEF-4fe9-BDFA-5287BBD575E0}",
+        "EA-Name": "Identifier",
+        "EA-Package": "OSLO-Generic",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "DATATYPE",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "Identifier"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": "null",
+            "value": "Information used to uniquely identify an object."
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/adms#Identifier"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "TODO"
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Information used to uniquely identify an object."
+        },
+        "label": {
+          "en": "Identifier"
+        },
+        "parentclasses": "",
+        "usage": ""
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Identifier"
+      },
+      "name": "Identifier"
     },
     {
       "@id": "http://www.w3.org/ns/locn#Geometry",
@@ -15437,10 +15743,10 @@
       {
         "key": "baseURI",
         "note": "null",
-        "value": "https://purl.eu/ns/observations#"
+        "value": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#"
       }
     ],
-    "baseURI": "https://purl.eu/ns/observations#",
+    "baseURI": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#",
     "issued": "TODO",
     "license": "TODO"
   },
@@ -15456,7 +15762,7 @@
   "name": "OSLO-airAndWater-Core-ap",
   "properties": [
     {
-      "@id": "https://purl.eu/ns/observations#ObservationCollection.metadata",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{37952B3A-8945-4b83-AF71-F6CBFD4D88EE}",
       "ap-definition-en": {
@@ -15611,7 +15917,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/observations#ObservationCollection.parameter",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{7ADE7517-E478-43ea-A885-122E5210D6BF}",
       "ap-definition-en": {
@@ -15721,7 +16027,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/observations#ObservationProcedure.specification",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{2B24233F-5535-479f-99A6-46DE03156A03}",
       "ap-definition-en": {
@@ -15829,7 +16135,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/observations#ObservationProcedure.type",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{9177CF92-B9EB-437a-B3A2-3FCF08348B7F}",
       "ap-definition-en": {
@@ -15860,7 +16166,7 @@
           "EA-GUID": "{E08E5866-B4E9-477f-BAD5-F4C9F54BA6C9}",
           "EA-Name": "ObservationProcedureType",
           "EA-Package": "AirAndWater",
-          "uri": "https://purl.eu/ns/observations#ObservationProcedureType"
+          "uri": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedureType"
         },
         "RawTags": [
           {
@@ -15934,12 +16240,12 @@
           "EA-GUID": "{E08E5866-B4E9-477f-BAD5-F4C9F54BA6C9}",
           "EA-Name": "ObservationProcedureType",
           "EA-Package": "AirAndWater",
-          "uri": "https://purl.eu/ns/observations#ObservationProcedureType"
+          "uri": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedureType"
         }
       ]
     },
     {
-      "@id": "https://purl.eu/ns/observations#SamplingProcedure.specification",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{6DDEF92F-4282-4393-B6EB-EFE06370D5B6}",
       "ap-definition-en": {
@@ -16047,7 +16353,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/observations#SamplingProcedure.type",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{051378E0-45B2-4435-90F5-57A4E656951D}",
       "ap-definition-en": {
@@ -16078,7 +16384,7 @@
           "EA-GUID": "{6A548A5B-ADE6-4b5a-BFB6-2AB0E53183D4}",
           "EA-Name": "SamplingProcedureType",
           "EA-Package": "AirAndWater",
-          "uri": "https://purl.eu/ns/observations#SamplingProcedureType"
+          "uri": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedureType"
         },
         "RawTags": [
           {
@@ -16152,7 +16458,7 @@
           "EA-GUID": "{6A548A5B-ADE6-4b5a-BFB6-2AB0E53183D4}",
           "EA-Name": "SamplingProcedureType",
           "EA-Package": "AirAndWater",
-          "uri": "https://purl.eu/ns/observations#SamplingProcedureType"
+          "uri": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedureType"
         }
       ]
     }
@@ -16164,7 +16470,7 @@
   "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
   "template": "airandwaterCore-ap_en.j2",
   "title": "ODALA Air & Water - Core",
-  "toolchaincommit": "8c4769c964dd182806c2967f9a634c7b0efbde25",
+  "toolchaincommit": "2d555fdacfb55ec3582c4758c8b1203d2d6cb841",
   "translation": [
     {
       "language": "en",
