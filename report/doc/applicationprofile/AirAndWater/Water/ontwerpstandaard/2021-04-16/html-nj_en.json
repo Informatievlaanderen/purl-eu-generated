@@ -11,8 +11,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/48bef7684113dd42ab96689089a79bf87baaa9fa",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/48bef7684113dd42ab96689089a79bf87baaa9fa/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/7c5258005ebb050ff24503bf9f6a69ded7303137",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/7c5258005ebb050ff24503bf9f6a69ded7303137/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -139,7 +139,7 @@
           "label": "Measurement",
           "name": "Measurement",
           "package": "OM",
-          "uri": "http://fixme.com#Measurement",
+          "uri": "https://def.isotc211.org/iso19156/2011/Observation#Measurement",
           "scoped_uri": "#Measurement"
         }
       ],
@@ -241,7 +241,7 @@
           "label": "Measurement",
           "name": "Measurement",
           "package": "OM",
-          "uri": "http://fixme.com#Measurement",
+          "uri": "https://def.isotc211.org/iso19156/2011/Observation#Measurement",
           "scoped_uri": "#Measurement"
         }
       ],
@@ -400,76 +400,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.hasFeatureOfInterest",
-          "name": "hasFeatureOfInterest",
-          "sort": "hasFeatureOfInterest",
-          "label": {
-            "en": "hasFeatureOfInterest"
-          },
-          "description": {
-            "en": "A reference to the Object that is observed bij the Observations in the Collection."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "WaterQualityObservationCollection",
-              "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Feature",
-              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Feature",
-              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-              "range_label": {
-                "en": "Feature"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.phenomenonTime",
-          "name": "phenomenonTime",
-          "sort": "phenomenonTime",
-          "label": {
-            "en": "phenomenonTime"
-          },
-          "description": {
-            "en": "The moment when the result of the Observation in the Collection was applicable."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "WaterQualityObservationCollection",
-              "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TM_Object",
-              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TM_Object",
-              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
-              "range_label": {
-                "en": "TM_Object"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.refWeatherObserved",
           "name": "refWeatherObserved",
           "sort": "refWeatherObserved",
@@ -502,6 +432,41 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+          "name": "hasFeatureOfInterest",
+          "sort": "hasFeatureOfInterest",
+          "label": {
+            "en": "hasFeatureOfInterest"
+          },
+          "description": {
+            "en": "A reference to the Object that is observed bij the Observations in the Collection."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "WaterQualityObservationCollection",
+              "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Feature",
+              "range_uri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Feature",
+              "range_puri": "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "range_label": {
+                "en": "Feature"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -538,6 +503,41 @@
           ],
           "cardinality": "1..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/sosa/phenomenonTime",
+          "name": "phenomenonTime",
+          "sort": "phenomenonTime",
+          "label": {
+            "en": "phenomenonTime"
+          },
+          "description": {
+            "en": "The moment when the result of the Observation in the Collection was applicable."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "WaterQualityObservationCollection",
+              "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "en": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -566,7 +566,7 @@
           "label": "Measurement",
           "name": "Measurement",
           "package": "OM",
-          "uri": "http://fixme.com#Measurement",
+          "uri": "https://def.isotc211.org/iso19156/2011/Observation#Measurement",
           "scoped_uri": "#Measurement"
         }
       ],
@@ -1226,6 +1226,20 @@
       ]
     },
     {
+      "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Process",
+      "name": "Process",
+      "label": {
+        "en": "Process"
+      },
+      "sort": "Process",
+      "description": {
+        "en": "A series of actions or steps leading to some result."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
       "name": "SamplingFeature",
       "label": {
@@ -1319,34 +1333,6 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Procedure",
-      "name": "Procedure",
-      "label": {
-        "en": "Procedure"
-      },
-      "sort": "Procedure",
-      "description": {
-        "en": "An established or official way of doing something."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://fixme.com#Process",
-      "name": "Process",
-      "label": {
-        "en": "Process"
-      },
-      "sort": "Process",
-      "description": {
-        "en": "A series of actions or steps leading to some result."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://fixme.com#WeatherObserved",
       "name": "WeatherObserved",
       "label": {
@@ -1355,6 +1341,20 @@
       "sort": "WeatherObserved",
       "description": {
         "en": "An Observation of weather conditions at a certain place or time."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/sosa/Procedure",
+      "name": "Procedure",
+      "label": {
+        "en": "Procedure"
+      },
+      "sort": "Procedure",
+      "description": {
+        "en": "An established or official way of doing something."
       },
       "usage": {},
       "parents": [],
@@ -1428,14 +1428,14 @@
           "label": "Process",
           "name": "Process",
           "package": "OM",
-          "uri": "http://fixme.com#Process",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Process",
           "scoped_uri": "#Process"
         },
         {
           "label": "Procedure",
           "name": "Procedure",
           "package": "SOSA",
-          "uri": "http://fixme.com#Procedure",
+          "uri": "http://www.w3.org/ns/sosa/Procedure",
           "scoped_uri": "#Procedure"
         }
       ],
@@ -1457,7 +1457,7 @@
           "label": "Process",
           "name": "Process",
           "package": "OM",
-          "uri": "http://fixme.com#Process",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Process",
           "scoped_uri": "#Process"
         },
         {
@@ -1602,36 +1602,6 @@
       "name": {
         "en": "observedProperty",
         "undefined": "observedProperty"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.hasFeatureOfInterest",
-      "name": {
-        "en": "hasFeatureOfInterest",
-        "undefined": "hasFeatureOfInterest"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.phenomenonTime",
-      "name": {
-        "en": "phenomenonTime",
-        "undefined": "phenomenonTime"
       },
       "description": {},
       "domain": [
