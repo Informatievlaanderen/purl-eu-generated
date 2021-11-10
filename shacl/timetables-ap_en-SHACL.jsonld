@@ -1,0 +1,3252 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/timetables-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/timetables-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ArrivalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Common elements, e.g. Notices, Quays, Assignments, Interchanges and Journey Parts, associated with the Arrival part of the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "call part"
+          },
+          "sh:path": "http://fixme.com#callPart"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Day offset from Service Journey start day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day offset"
+          },
+          "sh:path": "http://fixme.com#dayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether alighting is allowed for the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for alighting"
+          },
+          "sh:path": "http://fixme.com#forAlighting"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the use of the Stop is flexible."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is flexible"
+          },
+          "sh:path": "http://fixme.com#isFlexible"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Latest time of Arrival."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "time"
+          },
+          "sh:path": "http://fixme.com#time"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Arrival"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#CallShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Departure",
+          "sh:definition": {
+            "en": "End of the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "ends with"
+          },
+          "sh:path": "http://fixme.com#endsWith"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyFrequency",
+          "sh:definition": {
+            "en": "Frequency information for the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "journey frequency"
+          },
+          "sh:path": "http://fixme.com#journeyFrequency"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#NoticeAssignment",
+          "sh:definition": {
+            "en": "Notice Assignments, footnotes etc., associated with the Call."
+          },
+          "sh:name": {
+            "en": "notice assignment"
+          },
+          "sh:path": "http://fixme.com#noticeAssignment"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplay",
+          "sh:definition": {
+            "en": "The Destination Display that is shown."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "showing"
+          },
+          "sh:path": "http://fixme.com#showing"
+        },
+        {
+          "sh:class": "http://fixme.com#Arrival",
+          "sh:definition": {
+            "en": "Start of the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "starts with"
+          },
+          "sh:path": "http://fixme.com#startsWith"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "The Point in Journey Pattern at which the Call stops."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "stops at"
+          },
+          "sh:path": "http://fixme.com#stopsAt"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:definition": {
+            "en": "The Scheduled Stop Point that the Call visits."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "visiting"
+          },
+          "sh:path": "http://fixme.com#visiting"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Call"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DepartureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Common elements, e.g. Notices, Quays, Assignments, Interchanges and Journey Parts, associated with the Departure part of the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "call part"
+          },
+          "sh:path": "http://fixme.com#callPart"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Day offset from Service Journey start day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day offset"
+          },
+          "sh:path": "http://fixme.com#dayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether boarding is allowed for the Call."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for boarding"
+          },
+          "sh:path": "http://fixme.com#forBoarding"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the use of the Stop is flexible."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is flexible"
+          },
+          "sh:path": "http://fixme.com#isFlexible"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Earliest time of departure."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "time"
+          },
+          "sh:path": "http://fixme.com#time"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Time to wait at the stop after arrival before departure."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "wait time"
+          },
+          "sh:path": "http://fixme.com#waitTime"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Departure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ContactPointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#LineStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#LineString"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "Location of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#location"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Arbitrary alternative identifier for the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "point number"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#pointNumber"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointProjection",
+          "sh:definition": {
+            "en": "Projection for the Point."
+          },
+          "sh:name": {
+            "en": "projection"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#projection"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "As used as a Point in a Journey Pattern."
+          },
+          "sh:name": {
+            "en": "viewed as"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Point"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#LangStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TransportModeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TypeOfLineShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DirectionTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DestinationDisplayVariantTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#RequestMethodTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#StopUseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TimingPointStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TrainSizeTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TypeOfFuelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#FareClassShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DayOfWeekShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#WeekOfMonthShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#HolidayTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#SeasonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#CrowdingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#HeadwayDisplayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The date on which the Identifier was assigned."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "date of issue"
+          },
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The value of this property is the Identifier itself."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The name of the agency responsible for issuing the Identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "issuing authority"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemeAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "The URI of the issuing authority."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "issuing authority URI"
+          },
+          "sh:path": "http://purl.org/dc/terms/creator"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#AdressRepresentationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#GeometryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "Geometry expressed in GML-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "as GML"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "Geometry expressed in WKT-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "as WKT"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#OrganisationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Other name for the Organisation."
+          },
+          "sh:name": {
+            "en": "alternative label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "Information such as mail address, telephone, ... that can be used to contact the Organisation."
+          },
+          "sh:name": {
+            "en": "contact point"
+          },
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name that is the preferred designation of the Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "preferred label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Organisation."
+          },
+          "sh:name": {
+            "en": "organisation type"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#orgType"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/org#Organization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#GeregistreerdeOrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The legal name of the Registered Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal name"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#legalName"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "registration"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#StandardUnitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#AccessibilityAssessmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#AccessibilityAssessment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#AuthorityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Postal address of the Authority."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "address"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#address"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Authority"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#AuthorityOrOperatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#AuthorityOrOperator"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#BookingArrangementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#BookingArrangement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DayTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Length of the Day Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day length"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayLength"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PropertyOfDay",
+          "sh:definition": {
+            "en": "Property of Day that is used to describe the Day Type."
+          },
+          "sh:name": {
+            "en": "described by"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#describedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Day Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Earliest start time of the Day Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "earliest time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#earliestTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Day Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name of the Day Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#shortName"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Timeband",
+          "sh:definition": {
+            "en": "Timeband associated with the Day Type."
+          },
+          "sh:name": {
+            "en": "timeband"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#timeband"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DayTypeAssignmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Whether available on assigned day."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "available"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#available"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Date of the Day Type Assignment."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "date"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#date"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Day Type Assignment."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#OperatingPeriod",
+          "sh:definition": {
+            "en": "Reference to the Operating Period assigned by this Day Type Assignment."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "operating period"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#operatingPeriod"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DayTypeAssignment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DestinationDisplayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Front of vehicle text associated with the Destination Display."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "front text"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#frontText"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Public code (to be presented to the public) associated with the Destination Display."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "public code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Text to display on the side of the vehicle associated with the Destination Display."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "side text"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#sideText"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplayVariant",
+          "sh:definition": {
+            "en": "Variant Display texts for different media."
+          },
+          "sh:name": {
+            "en": "variant"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#variant"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Via",
+          "sh:definition": {
+            "en": "Text to display for Via display."
+          },
+          "sh:name": {
+            "en": "via"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#via"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DestinationDisplay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DestinationDisplayVariantShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Destination Display Variant."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "destination display variant type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplayVariantType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Front of vehicle text associated with the Destination Display Variant."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "front text"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#frontText"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Text to display on the side of the vehicle associated with the Destination Display Variant."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "side text"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#sideText"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Via",
+          "sh:definition": {
+            "en": "Text to show for Via display."
+          },
+          "sh:name": {
+            "en": "via"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#via"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#DestinationDisplayVariant"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#DirectionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "A fixed value e.g. \"outbound\", \"inbound\", \"clockwise\",\"anticlockwise\" associated with this direction."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "direction type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#directionType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Direction",
+          "sh:definition": {
+            "en": "Reference to a Direcition that runs counter to this Direction."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "opposite direction"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#oppositeDirection"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Direction"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#GroupOfLinesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Group of Lines."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Line",
+          "sh:definition": {
+            "en": "The Lines that together make up the Group of Lines."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "composed of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#composedOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Line",
+          "sh:definition": {
+            "en": "The main Line of the Group of Lines."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "main line"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#mainLine"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Transportmode of the Group of Lines."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transportmode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportmode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#GroupOfLines"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#HeadwayIntervalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Maximum Headway Interval."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "maximum headway interval"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#maximumHeadwayInterval"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Minimum Headway Interval."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "minimum headway interval"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#minimumHeadwayInterval"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Scheduled Headway Interval."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "scheduled headway interval"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#scheduledHeadwayInterval"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#HeadwayInterval"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#JourneyFrequencyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Text description to use for frequency, e.g. \"every five minutes\"."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the frequency falls under regulatory agreement or not."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "frequency regulated"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#fequencyRegulated"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#HeadwayInterval",
+          "sh:definition": {
+            "en": "Frequency of theJourney Frequency."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "frequency"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#frequency"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Use to be made of Headway Interval information when displaying to public. Default is 'Display Instead of Passing Times'."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "headway display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#headwayDisplay"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#JourneyFrequency"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#JourneyPartShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#JourneyPart"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#JourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Distance of the Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "distance"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#distance"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplay",
+          "sh:definition": {
+            "en": "Destination Display associated with the Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "destination display reference"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Direction",
+          "sh:definition": {
+            "en": "Direction of the Journey Pattern (often used to distinguish groups of Journey Patterns using the same branches (i.e. Routes) of a Line)."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "direction"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#direction"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "The ordered sequence of Points that together make up the Journey Pattern."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "made up of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Route",
+          "sh:definition": {
+            "en": "Route associated with the Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "route"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#route"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#JourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#LineShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+          "sh:definition": {
+            "en": "The overall accessibility characteristics of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "accessibility assessment"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#accessibilityAssessment"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#AuthorityOrOperator",
+          "sh:definition": {
+            "en": "References to additional Authorities or Operators for the Line."
+          },
+          "sh:name": {
+            "en": "additional operators"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#additionalOperators"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Direction",
+          "sh:definition": {
+            "en": "Allowed directions for the Line."
+          },
+          "sh:name": {
+            "en": "allowed direction"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#allowedDirection"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "Timetable documents associated with the Line, e.g. PDF files."
+          },
+          "sh:name": {
+            "en": "document link"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#documentLink"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Route",
+          "sh:definition": {
+            "en": "The Routes that make up the Line."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "made up of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether real-time data is normally available for the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "monitored"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#monitored"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#NoticeAssignment",
+          "sh:definition": {
+            "en": "Notices assigned to the Line."
+          },
+          "sh:name": {
+            "en": "notice assignment"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#noticeAssignment"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Additional Transport Modes for the Line."
+          },
+          "sh:name": {
+            "en": "other modes"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#otherModes"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Presentation",
+          "sh:definition": {
+            "en": "Preferred presentation attributes to use when rendering the Line on maps, etc."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "presentation"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#presentation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Alternative identifier of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "private code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#privateCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Public identifier of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "public code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#shortName"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Identifier of the primary transport mode of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport mode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#AuthorityOrOperator",
+          "sh:definition": {
+            "en": "Authority or Operator associated with the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport organisation"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportOrganisation"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Submode of the Transport Mode of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport submode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportSubmode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Reference to a Type of Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type of line"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#typeOfLine"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "A URL associated with the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "url"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#url"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Line"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#NetworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#GroupOfLines",
+          "sh:definition": {
+            "en": "The Group of Lines that together make up the Network."
+          },
+          "sh:name": {
+            "en": "made up of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The name of the Network."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#AuthorityOrOperator",
+          "sh:definition": {
+            "en": "Authority or Operator in charge of the Network."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport organisation"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportOrganisation"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Network"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#NoticeAssignmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#NoticeAssignment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#OnwardTimingLinkViewShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:definition": {
+            "en": "Reference to the next Scheduled Stop Point in the Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "links to"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#linksTo"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#OnwardTimingLinkView"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#OperatingDayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Calendar date of the Operating Date."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "calendar date"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#calendarDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Length of the Operating Day."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "day length"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayLength"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Start time of the Operating Day."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "earliest time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#earliestTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Operating Day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#OperatingDay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#OperatingPeriodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Start operating date (inclusive)."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "from date"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#fromDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Operating Period."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "End operating date (inclusive)."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "to date"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#toDate"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#OperatingPeriod"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#OperatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Postal address of the Operator."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "address"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#address"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Reference to the Country."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "Country"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#country"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Primary Transport Mode of the Operator."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "primary mode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#primaryMode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Operator"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PassengerCapacityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Fare class for which the capacity is given, e.g. business, economy, etc."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "fare class"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#fareClass"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Capacity for baby stroller/pushchairs."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "pushchair capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#pushchairCapacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of seated passengers."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "seating capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#seatingcapacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of priority seats."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "special place capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#specialPlaceCapacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of standing passengers."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "standing capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#standingCapacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Maximum number of passengers."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "total capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#totalCapacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of designated wheelchair areas."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "wheelchair place capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#wheelchairPlaceCapacity"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerCapacity"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PassengerStopAssignmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:definition": {
+            "en": "Reference to a Quay within the Stop Place to which the Scheduled Stop Point is assigned."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "quay"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#quay"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PointInJourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Point in Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Order of Point in Journey Pattern within Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "order"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#order"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "Reference to the abstract Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "a view of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#aViewOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+          "sh:definition": {
+            "en": "TimeTabled Passing Time at the Point in Journey Pattern."
+          },
+          "sh:name": {
+            "en": "at"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#at"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the destination display changes at this point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "change of destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#changeOfDestinationDisplay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplay",
+          "sh:definition": {
+            "en": "Destination Display associated with the Point In Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplay"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PointOnRouteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Point on Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Order of Point on Route within Route."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "order"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#order"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#RoutePoint",
+          "sh:definition": {
+            "en": "Reference to the Route Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "a view of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#aViewOf"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PointOnRoute"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PointProjectionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PointProjection"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PresentationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Presentation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#PropertyOfDayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Country of holiday type."
+          },
+          "sh:name": {
+            "en": "country"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#country"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Relative busyness of the day, e.g. quiet, normal, busy, etc."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "crowding"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#crowding"
+        },
+        {
+          "sh:definition": {
+            "en": "For those day types that occur on the same day of the month; a month as a number."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day of month"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayOfMonth"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The day of the week, e.g. Sunday."
+          },
+          "sh:maxCount": "7",
+          "sh:name": {
+            "en": "day of week"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayOfWeek"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#gMonthDay",
+          "sh:definition": {
+            "en": "For those day types that occur on the same day every year, month and day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day of year"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayOfYear"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Property of Day."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of holiday, e.g. Christmas."
+          },
+          "sh:maxCount": "5",
+          "sh:name": {
+            "en": "holiday type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#holidayType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#gMonth",
+          "sh:definition": {
+            "en": "For those day types that occur on the same month every year; a month as a number."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "month of year"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#monthOfYear"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The name of the Property of Day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The season, e.g. winter."
+          },
+          "sh:maxCount": "4",
+          "sh:name": {
+            "en": "season"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#season"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "Day Type the Property of Day is describing."
+          },
+          "sh:name": {
+            "en": "used to describe"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#usedToDescribe"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Week number of the month (1-5)."
+          },
+          "sh:maxCount": "5",
+          "sh:name": {
+            "en": "week of month"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#weekOfMonth"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#PropertyOfDay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#RouteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Distance of the Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "distance"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#distance"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPattern",
+          "sh:definition": {
+            "en": "Journey Pattern that covers the Route."
+          },
+          "sh:name": {
+            "en": "covered by"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#coveredBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Direction",
+          "sh:definition": {
+            "en": "Direction of the Route, e.g. inbound, clockwise, etc."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "direction"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#direction"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Reference to the Direction Type of the Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "directionRef"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#directionType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Route",
+          "sh:definition": {
+            "en": "Inverse Route of the Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "inverse route"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#inverseRoute"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Line",
+          "sh:definition": {
+            "en": "Line the Route is associated with."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "line"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#line"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointOnRoute",
+          "sh:definition": {
+            "en": "Points through which the Route goes."
+          },
+          "sh:minCount": "2",
+          "sh:name": {
+            "en": "through"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#through"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Route"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#RouteLinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#LineString",
+          "sh:definition": {
+            "en": "Linestring specifying the Route Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "linestring"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#linestring"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Route Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Distance of the Route Link."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "distance"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#distance"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#RoutePoint",
+          "sh:definition": {
+            "en": "Route Point at which the Route Link starts."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "from"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#from"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#RoutePoint",
+          "sh:definition": {
+            "en": "Route Point at which the Route Link ends."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "to"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#to"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#RouteLink"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#RoutePointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Route Point is a border crossing (defined for country borders)."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "border crossing"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#borderCrossing"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#RouteLink",
+          "sh:definition": {
+            "en": "Route Link of which the Route Point is the end."
+          },
+          "sh:name": {
+            "en": "end of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#endOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#RouteLink",
+          "sh:definition": {
+            "en": "Route Link of which the Route Point is the start."
+          },
+          "sh:name": {
+            "en": "start of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#startOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointOnRoute",
+          "sh:definition": {
+            "en": "As used as a Point on a Route."
+          },
+          "sh:name": {
+            "en": "viewed as"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#RoutePoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ScheduledStopPointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "Location of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#location"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Timing status of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "timing point status"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#timingPointStatus"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:definition": {
+            "en": "Service Link of which the Schedule Stop Point is the end."
+          },
+          "sh:name": {
+            "en": "end of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#endOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Presentation",
+          "sh:definition": {
+            "en": "Presentation values to use when rendering the Stop Point such as a colour and font."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "presentation"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#presentation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Alternative identifier of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "private code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#privateCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Public code of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "public code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name of the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#shortName"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:definition": {
+            "en": "Service Link of which the Schedule Stop Point is the start."
+          },
+          "sh:name": {
+            "en": "start of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#startOf"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Stop Place."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "stop type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#stopType"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:definition": {
+            "en": "Tariff Zones to which the Scheduled Stop Point belongs."
+          },
+          "sh:name": {
+            "en": "tariff zones"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#tariffZones"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+          "sh:definition": {
+            "en": "As used as a Stop Point in a Journey Pattern."
+          },
+          "sh:name": {
+            "en": "viewed as"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ScheduledStopPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ServiceCalendarShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Inclusive start date for validity of the Service Calendar."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "from"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#fromDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Service Calendar."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#OperatingDay",
+          "sh:definition": {
+            "en": "Operating Day in the Service Calendar."
+          },
+          "sh:name": {
+            "en": "operating day"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#operatingDay"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "en": "Inclusive end date for validity of the Service Calendar."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "to"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#toDate"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#OperatingPeriod",
+          "sh:definition": {
+            "en": "Operating Period within which the Service Calendar is situated."
+          },
+          "sh:name": {
+            "en": "within"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#within"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceCalendar"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ServiceFacilitySetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceFacilitySet"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "Day Type for the Service Journey."
+          },
+          "sh:name": {
+            "en": "day type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departure day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureDayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Time of departure."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departure time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Total length of the Service Journey. Can be computed from individual times. "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "journey duration"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#journeyDuration"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceJourneyPattern",
+          "sh:definition": {
+            "en": "Service Journey Pattern that was followed to make the Service Journey."
+          },
+          "sh:name": {
+            "en": "made using"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^madeUsing"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TrainNumber",
+          "sh:definition": {
+            "en": "Train Numbers - derived through Journey Parts of a Journey - for a multi-part Journey only."
+          },
+          "sh:name": {
+            "en": "train number"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#trainNumber"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceFacilitySet",
+          "sh:definition": {
+            "en": "Facility on the Service Journey."
+          },
+          "sh:name": {
+            "en": "facility"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#facility"
+        },
+        {
+          "sh:definition": {
+            "en": "A group of Flexible Routes which is generally known to the public by a similar name or number and which have common booking arrangements."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flexible line view"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#flexibleLineView"
+        },
+        {
+          "sh:definition": {
+            "en": "Flexible properties of the Service Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flexible service properties"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#flexibleServiceProperties"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:definition": {
+            "en": "Reference to an Operator."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "operator"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#operator"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Requirements for Train Size."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "train size"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#trainSize"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#VehicleType",
+          "sh:definition": {
+            "en": "Reference to the Vehicle Type to use on the Service Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "vehicle type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#vehicleType"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceJourney"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ServiceJourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+          "sh:definition": {
+            "en": "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."
+          },
+          "sh:name": {
+            "en": "made up of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUpOf"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceJourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ServiceLinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "Distance of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "distance"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#distance"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#LineString",
+          "sh:definition": {
+            "en": "Linestring that specifies the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "linestring"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#linestring"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:definition": {
+            "en": "Start of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "from"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#from"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:definition": {
+            "en": "End of the Service Link."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "to"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#to"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceLink"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#StopPlaceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlace"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#StopPointInJourneyPatternShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Order of Stop Point in Journey Pattern within Journey Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "order"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#order"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:definition": {
+            "en": "Reference to the Scheduled Stop Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "a view of"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#aViewOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#BookingArrangement",
+          "sh:definition": {
+            "en": "Booking Arrangement for stop if different from those for Service Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "booking arrangements"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#bookingArrangements"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether Destination Display changes at this point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "change of destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#changeOfDestinationDisplay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DestinationDisplay",
+          "sh:definition": {
+            "en": "Destination Display values to show at this point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "destination display"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#destinationDisplay"
+        },
+        {
+          "sh:definition": {
+            "en": "Flexible properties of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flexible point properties"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#flexiblePointProperties"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whetherthe Stop Point may be used for alighting."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for alighting"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#forAlighting"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whetherthe Stop Point may be used for boarding."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "for boarding"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#forBoarding"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#NoticeAssignment",
+          "sh:definition": {
+            "en": "Notice for the Stop Point in Journey Pattern."
+          },
+          "sh:name": {
+            "en": "notice assignment"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#noticeAssignment"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:definition": {
+            "en": "Next Service Link after Stop Point in Journey Pattern visit."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "onward service link"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#onwardServiceLink"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Method to request stop in this particular service pattern; if none specified, as per stop."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "request method"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#requestMethod"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether stop is a request for stop in this journey. Default if false."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "request stop"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#requestStop"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of use of stop. Default is \"access\"."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "stop use"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#stopUse"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TariffZoneShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#TariffZone"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TimeTabledPassingTimeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of days after the starting time of the journey if not same calendar day. Default is 0 for same day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "arrival day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#arrivalDayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Arrival time at Point in Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "arrivalTime"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#arrivalTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of days after the starting time of the journey if not same calendar day. Default is 0 for same day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departure day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureDayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Departure time at Point in Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departureTime"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureTime"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#HeadwayInterval",
+          "sh:definition": {
+            "en": "Headway interval at Point in Pattern."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "headway"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#headway"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TimebandShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Day offset of end time from start time."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#dayOffset"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Inclusive end time of the Timeband."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "end time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#endTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Inclusive end time of the Timeband."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "start time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#startTime"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Timeband"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#TrainNumberShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility#TrainNumber"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#UicOperatingPeriodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Days of week to which correspond the (up to first seven) bits."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "days of week"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#daysOfWeek"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "String of bits (built of \"0\" and \"1\"), one for each day in the period: whether valid or not valid on the day."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "valid day bits"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#validDayBits"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#UicOperatingPeriod"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#VehicleJourneyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#NoticeAssignment",
+          "sh:definition": {
+            "en": "Notice relevant for the whole Journey."
+          },
+          "sh:name": {
+            "en": "notice assignment"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#noticeAssignment"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPart",
+          "sh:definition": {
+            "en": "Part of the Vehicle Journey."
+          },
+          "sh:name": {
+            "en": "part"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^part"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Transport mode of the Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport mode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Transport submode of the Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transport submode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportSubmode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "en": "Time of departure."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departureTime"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureTime"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPattern",
+          "sh:definition": {
+            "en": "Journey Pattern used to make the Vehicle Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "made using"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#madeUsing"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+          "sh:definition": {
+            "en": "Time Tabled Passing Time at which the Vehicle Journey passes."
+          },
+          "sh:name": {
+            "en": "passed at"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#passedAt"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#DayType",
+          "sh:definition": {
+            "en": "Day Type on which the Vehicle Journey is worked."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "worked on"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#workedOn"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#VehicleJourney"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#VehicleTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PassengerCapacity",
+          "sh:definition": {
+            "en": "Passenger carrying capacity of Vehicle Type by Fare Class."
+          },
+          "sh:name": {
+            "en": "capacity"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#capacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of Vehicle Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Euro class of the Vehicle Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "euro class"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#euroClass"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Vehicle Type has a lift or ramp for wheelchair access."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "has lift or ramp"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#hasLiftOrRamp"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "The height of a Vehicle of the Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "height"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#height"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "The length of a Vehicle of the Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "length"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#length"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Vehicle Type is low floor."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "low floor"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#lowFloor"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Vehicle Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "Name of the Vehicle Type."
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Vehicle Type is self-propelled."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "self propelled"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#selfPropelled"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Fuel of the Vehicle Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type of fuel"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#typeOfFuel"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "The weight of a Vehicle of the Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "weight"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#weight"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:definition": {
+            "en": "The width of a Vehicle of the Type."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "width"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#width"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#VehicleType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#ViaShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Via."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Via"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#NumberShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/timetables-ap_en#QuantitativeValueShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:definition": {
+            "en": "Standarised unit in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "standard unit"
+          },
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The unit in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "unit"
+          },
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:definition": {
+            "en": "Number used to express the quantity of the characteristic."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
+    }
+  ]
+}
