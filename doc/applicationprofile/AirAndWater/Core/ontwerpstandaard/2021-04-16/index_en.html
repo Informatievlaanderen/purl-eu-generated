@@ -7,7 +7,7 @@
 
 <head>
   
-  <title>ODALA Air &amp; Water - Core (Application Profile)</title>
+  <title>OSLO Air &amp; Water - Core</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,12 +47,12 @@
         <div class="layout layout--wide">
           <div class="grid u-hr">
             <div class="col--9-12 col--1-1--s">
-              <h1 class="h1">ODALA Air &amp; Water - Core (Application Profile)</h1>
+              <h1 class="h1">OSLO Air &amp; Water - Core</h1>
 
               <div class="head" role="status" id="status">
               <dl>
               <dt>Status</dt><dd>https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard</dd>
-              <dt>Published at</dt><dd>2021-10-01</dd>
+              <dt>Published at</dt><dd>2021-04-16</dd>
               <dt>This version</dt><dd><a href="https://purl.eu/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/2021-04-16">https://purl.eu/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/2021-04-16</a></dd>
               
               
@@ -67,8 +67,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/68afd8e824524c88fd90bd0f33c757e955cacd9d">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/68afd8e824524c88fd90bd0f33c757e955cacd9d</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/68afd8e824524c88fd90bd0f33c757e955cacd9d/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/68afd8e824524c88fd90bd0f33c757e955cacd9d/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/1c84979881aa01dc8486cbca31328cd075fbb14d">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/tree/1c84979881aa01dc8486cbca31328cd075fbb14d</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/1c84979881aa01dc8486cbca31328cd075fbb14d/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/blob/1c84979881aa01dc8486cbca31328cd075fbb14d/CHANGELOG</a></dd>
               <dt>Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues">https://github.com/Informatievlaanderen/OSLOthema-airAndWater/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html">https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html</a></dd>
 
@@ -92,7 +92,7 @@
             <div class="region" id="introduction">
               <div class="introduction typography">
               
-		<p>This document describes an <strong>application profile</strong>, in this case <strong>ODALA Air &amp; Water - Core (Application Profile)</strong>.
+		<p>This document describes an <strong>application profile</strong>, in this case <strong>OSLO Air &amp; Water - Core</strong>.
 		The application profile specifies a semantic data model covering a set of use cases.
 		The specification consists of terms with their constraints (cardinalities, codelists, usage guidelines).
 		</p>
@@ -103,20 +103,7 @@
             <div class="region region--no-space-top typography" id="summary">
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
                 
-<p>The ODALA Air & Water - Core application profile specifies how Observations should be described in general. It forms the basis for domain-specific application profiles such as <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Air">ODALA Air & Water - Air Quality</a> and <a href="https://purl.eu/doc/applicationprofile/AirAndWater/Water">ODALA Air & Water - Water Quality</a>.</p>
-<p>The profile is based on <a href="https://www.iso.org/standard/32574.html">ISO 19156 Observations and Measurements</a> and on the <a href="https://www.w3.org/TR/vocab-ssn/">OGC/W3C Semantic Sensor Network Ontology</a>.</p>
-<p>From Observations and Measurements, the profile adopts the way an Observation should be described: as an activity performed at a particular time and with a particular Result. It is considered very important to clearly indicate which Object is being observed and which characteristic of that Object.</p>
-<p>Objects are usually not directly observable, usually one observes a part that is considered representative of the whole. This can be a specific place, eg a measuring station (class SpatialSamplingFeature) or a physical sample taken from the Object (class Specimen), eg a water sample.</p>
-<p>According to the nature of the Result of the Observation, different types of Observations are distinguished (Measurement, Count, Classification etc).</p>
-<p>Often there is a need to describe not only the SamplingFeature itself but also the way in which it was created. For that reason, we adopted from the Semantic Sensor Ontology the way in which Sampling is described.</p>
-<p>Sampling is considered as an activity just like Observation, ie an event performed at a specific time with a specific result. That result is the SamplingFeature.</p>
-<p>The SamplingProcedure and Sampler classes additionally allow to describe how and with the help of which tools the SamplingFeature was obtained.</p>
-<p>Similarly, the Semantic Sensor Ontology provides the ObservationProcedure and Sensor classes. The latter may be interpreted broadly as the tool with which the Observation is performed.</p>
-<p>A Sensor is regarded as a specialization of a System and in this way acquires additional characteristics that allow to indicate what the accuracy or range of the Sensor is, for example.</p>
-<p>A System such as a Sensor is mounted on a Platform or more narrowly defined: a Device (which itself is also a System). We use the <a href="https://saref.etsi.org/core/">SAREF Device Model</a> to describe Devices.</p>
-<p>The model also includes a class ObservationCollection to aggregate Observations by common attributes such as the observed Object or observation time. This class comes from an <a href="https://www.w3.org/TR/vocab-ssn-ext/">extension to the Semantic Sensor Ontology</a> and we specialized it with Slice, a class from the <a href="https://www.w3.org/TR/vocab-data-cube/">W3C Data Cube Vocabulary</a>.</p>
-<p>Observations and Measurements also proposes the <a href="https://www.iso.org/standard/53798.html">ISO 19115 Metadata</a> class to further document Observations. We added a number of elements to this class from the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Metadata Initiative</a> such as author, description, etc.</p>
-<p>Finally, the classes SamplingFeatureComplex and ObservationContext are worth mentioning, respectively a class for grouping SamplingFeatures (eg a measurement grid) and a class to describe associations between Observations (eg because one Observation relies on another).</p>
+<p>TO DO</p>
 
             </div>
 
@@ -125,7 +112,7 @@
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
                 
                 <p>
-                  This application profile has the status of https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard published on 2021-10-01.
+                  This application profile has the status of https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard published on 2021-04-16.
 	        </p><p>
 		  Information about the process and the decisions involved in the creation of this specification are consultable at the
 		  <a href="https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html">registry of standards</a>.
@@ -156,8 +143,6 @@
                       <br />
                       |
                       <a href="#Accuracy">Accuracy</a> |
-                      <a href="#Agent">Agent</a> |
-                      <a href="#Any">Any</a> |
                       <a href="#BatteryLifetime">BatteryLifetime</a> |
                       <a href="#CategoryObservation">CategoryObservation</a> |
                       <a href="#ComplexObservation">ComplexObservation</a> |
@@ -169,8 +154,8 @@
                       <a href="#Drift">Drift</a> |
                       <a href="#Feature">Feature</a> |
                       <a href="#Frequency">Frequency</a> |
-                      <a href="#Function">Function</a> |
                       <a href="#GeometryObservation">GeometryObservation</a> |
+                      <a href="#Image">Image</a> |
                       <a href="#Latency">Latency</a> |
                       <a href="#LI_Lineage">LI_Lineage</a> |
                       <a href="#MaintenanceSchedule">MaintenanceSchedule</a> |
@@ -184,8 +169,10 @@
                       <a href="#OperatingPowerRange">OperatingPowerRange</a> |
                       <a href="#OperatingProperty">OperatingProperty</a> |
                       <a href="#OperatingRange">OperatingRange</a> |
+                      <a href="#Place">Place</a> |
                       <a href="#Platform">Platform</a> |
                       <a href="#PointCoverageObservation">PointCoverageObservation</a> |
+                      <a href="#PointOfInterest">PointOfInterest</a> |
                       <a href="#Precision">Precision</a> |
                       <a href="#PreparationStep">PreparationStep</a> |
                       <a href="#Procedure">Procedure</a> |
@@ -194,6 +181,7 @@
                       <a href="#Repeatability">Repeatability</a> |
                       <a href="#Resolution">Resolution</a> |
                       <a href="#ResponseTime">ResponseTime</a> |
+                      <a href="#Result">Result</a> |
                       <a href="#Sampler">Sampler</a> |
                       <a href="#Sampling">Sampling</a> |
                       <a href="#SamplingFeature">SamplingFeature</a> |
@@ -212,7 +200,6 @@
                       <a href="#SystemCapability">SystemCapability</a> |
                       <a href="#SystemLifetime">SystemLifetime</a> |
                       <a href="#SystemProperty">SystemProperty</a> |
-                      <a href="#Task">Task</a> |
                       <a href="#TemporalObservation">TemporalObservation</a> |
                       <a href="#TimeSeriesObservation">TimeSeriesObservation</a> |
                       <a href="#TruthObservation">TruthObservation</a> |
@@ -224,11 +211,10 @@
                     <p> This document describes the usage of the following datatypes for a correct usage of the Application Profile:
                       <br />
                       |
+                      <a href="#AddressRepresentation">AddressRepresentation</a> |
                       <a href="#CI_ResponsibleParty">CI_ResponsibleParty</a> |
                       <a href="#GenericName">GenericName</a> |
                       <a href="#Geometry">Geometry</a> |
-                      <a href="#Identifier">Identifier</a> |
-                      <a href="#Location">Location</a> |
                       <a href="#NamedValue">NamedValue</a> |
                       <a href="#TM_Object">TM_Object</a> |
                     </p>
@@ -268,40 +254,6 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Agent"><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Someone or something that can act or has the power to act.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Any"><a href="http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any" data-placement="right">Any</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Represents instances of any type.</dd>
-                    
-                    <dt>Usage</dt><dd>To be substituted by a suitable concrete class, datatype...</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="BatteryLifetime"><a href="http://www.w3.org/ns/ssn/systems/BatteryLifetime" data-toggle="tooltip" data-content="http://www.w3.org/ns/ssn/systems/BatteryLifetime" data-placement="right">BatteryLifetime</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -325,15 +277,9 @@
               <h3 class="h3" id="CategoryObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation" data-placement="right">CategoryObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of a class an Object belongs to.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the taxon of a Plant. Result is a ScopedName. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -347,15 +293,9 @@
               <h3 class="h3" id="ComplexObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#ComplexObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#ComplexObservation" data-placement="right">ComplexObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of a characteristic of an Object that produces a structured result.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the composition of a SoilSample. Result is a Record. For a more detailed description see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -387,15 +327,9 @@
               <h3 class="h3" id="CountObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#CountObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#CountObservation" data-placement="right">CountObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of some countable characteristic of an Object.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the number of votes in an Election. Result is of type Integer. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -426,10 +360,10 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Device"><a href="https://saref.etsi.org/core/Device" data-toggle="tooltip" data-content="https://saref.etsi.org/core/Device" data-placement="right">Device</a></h3>
+              <h3 class="h3" id="Device"><a href="https://uri.fiware.org/ns/data-models#Device" data-toggle="tooltip" data-content="https://uri.fiware.org/ns/data-models#Device" data-placement="right">Device</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A tangible object designed to perform a particular Task.</dd>
+                    <dt>Description</dt><dd>An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.). A Device is a tangible object which contains some logic and is producer and/or consumer of data. A Device is always assumed to be capable of communicating electronically via a network.</dd>
                     
 		    
 		    <dt>Subclass of<dt><dd>
@@ -440,10 +374,19 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
+                      <a href="#Device%3AbrandName">brandName</a>, 
+                      <a href="#Device%3Acategory">category</a>, 
+                      <a href="#Device%3Adescription">description</a>, 
+                      <a href="#Device%3AdeviceClass">deviceClass</a>, 
+                      <a href="#Device%3Adocumentation">documentation</a>, 
+                      <a href="#Device%3AenergyLimitationClass">energyLimitationClass</a>, 
                       <a href="#Device%3Afunction">function</a>, 
-                      <a href="#Device%3Amanufacturer">manufacturer</a>, 
-                      <a href="#Device%3Amodel">model</a>, 
-                      <a href="#Device%3Atask">task</a>.</dd>
+                      <a href="#Device%3Aimage">image</a>, 
+                      <a href="#Device%3AmanufacturerName">manufacturerName</a>, 
+                      <a href="#Device%3AmodelName">modelName</a>, 
+                      <a href="#Device%3Aname">name</a>, 
+                      <a href="#Device%3AsupportedProtocol">supportedProtocol</a>, 
+                      <a href="#Device%3AsupportedUnits">supportedUnits</a>.</dd>
                     
                   </dl>
                 </div>
@@ -463,82 +406,262 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Device%3Afunction" typeof="rdfs:Property" resource="https://saref.etsi.org/core/hasFunction">
+                      <tr id="Device%3AbrandName" typeof="rdfs:Property" resource="https://schema.org/brand">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/core/hasFunction" data-toggle="tooltip" data-content="https://saref.etsi.org/core/hasFunction" data-placement="right">
+                            <a href="https://schema.org/brand" data-toggle="tooltip" data-content="https://schema.org/brand" data-placement="right">
+                            brandName</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+                            
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3Acategory" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/category">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/category" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/category" data-placement="right">
+                            category</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#DeviceType" data-placement="right">DeviceType</a>
+			    
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Device&#39;s category(ies).</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3Adescription" typeof="rdfs:Property" resource="https://uri.etsi.org/ngsi-ld/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://uri.etsi.org/ngsi-ld/description" data-toggle="tooltip" data-content="https://uri.etsi.org/ngsi-ld/description" data-placement="right">
+                            description</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Device&#39;s description.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3AdeviceClass" typeof="rdfs:Property" resource="http://fixme.com#deviceClass">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#deviceClass" data-toggle="tooltip" data-content="http://fixme.com#deviceClass" data-placement="right">
+                            deviceClass</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#DeviceClasstype" data-placement="right">DeviceClasstype</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Class of constrained device as specified by RFC 7228. If the device is not a constrained device this property shall not be present.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3Adocumentation" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/documentation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/documentation" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/documentation" data-placement="right">
+                            documentation</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">A link to devices documentation.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3AenergyLimitationClass" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/energyLimitationClass">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/energyLimitationClass" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/energyLimitationClass" data-placement="right">
+                            energyLimitationClass</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#EnergyLimitationType" data-placement="right">EnergyLimitationType</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Devices class of energy limitation as per RFC 7228.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3Afunction" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/function">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/function" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/function" data-placement="right">
                             function</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Function" data-placement="right">Function</a>
+			    <a href="#FunctionType" data-placement="right">FunctionType</a>
 			    
                           
                         </td>
-                        <td>1..*</td>
-                        <td property="rdfs:comment">Function that the Device can perform to accomplish a Task.</td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Device%3Amanufacturer" typeof="rdfs:Property" resource="https://saref.etsi.org/core/hasManufacturer">
+                      <tr id="Device%3Aimage" typeof="rdfs:Property" resource="https://schema.org/image">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/core/hasManufacturer" data-toggle="tooltip" data-content="https://saref.etsi.org/core/hasManufacturer" data-placement="right">
-                            manufacturer</a>
+                            <a href="https://schema.org/image" data-toggle="tooltip" data-content="https://schema.org/image" data-placement="right">
+                            image</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
-                            
+			    <a href="#Image" data-placement="right">Image</a>
+			    
                           
                         </td>
                         <td>0..1</td>
-                        <td property="rdfs:comment">Name of the manufacturer of the Device.</td>
+                        <td property="rdfs:comment">An image of the item</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Device%3Amodel" typeof="rdfs:Property" resource="https://saref.etsi.org/core/hasModel">
+                      <tr id="Device%3AmanufacturerName" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/manufacturerName">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/core/hasModel" data-toggle="tooltip" data-content="https://saref.etsi.org/core/hasModel" data-placement="right">
-                            model</a>
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/manufacturerName" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/manufacturerName" data-placement="right">
+                            manufacturerName</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">Name of the model of the Device.</td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Name of the manufacturer.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Device%3Atask" typeof="rdfs:Property" resource="https://saref.etsi.org/core/accomplishes">
+                      <tr id="Device%3AmodelName" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/modelName">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/core/accomplishes" data-toggle="tooltip" data-content="https://saref.etsi.org/core/accomplishes" data-placement="right">
-                            task</a>
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/modelName" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/modelName" data-placement="right">
+                            modelName</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Task" data-placement="right">Task</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+                            
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Name of the model as given by the manufacturer.</td>
+                        <td property="skos:scopeNote">This attribute is different than name which is just a codename usually given by municipalities.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3Aname" typeof="rdfs:Property" resource="https://uri.etsi.org/ngsi-ld/name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://uri.etsi.org/ngsi-ld/name" data-toggle="tooltip" data-content="https://uri.etsi.org/ngsi-ld/name" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+                            
+                          
+                        </td>
+                        <td>1</td>
+                        <td property="rdfs:comment">The name of this item.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3AsupportedProtocol" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/supportedProtocol">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/supportedProtocol" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/supportedProtocol" data-placement="right">
+                            supportedProtocol</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#ProtocolType" data-placement="right">ProtocolType</a>
 			    
                           
                         </td>
-                        <td>1..*</td>
-                        <td property="rdfs:comment">Task that the Device was designed to accomplish.</td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Supported protocol(s) or networks</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Device%3AsupportedUnits" typeof="rdfs:Property" resource="http://fixme.com#supportedUnits">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#supportedUnits" data-toggle="tooltip" data-content="http://fixme.com#supportedUnits" data-placement="right">
+                            supportedUnits</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#UnitType" data-placement="right">UnitType</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">Units of measurement supported by the device. The unit code (text) of measurement given using the [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -553,9 +676,7 @@
               <h3 class="h3" id="DQ_Element"><a href="http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element" data-placement="right">DQ_Element</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Abstract class of all possible tests to assess the quality of a dataset.</dd>
-                    
-                    <dt>Usage</dt><dd>This means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, ThematicAccuracy or TemporalAccuracy.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -624,10 +745,10 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Function"><a href="https://saref.etsi.org/core/Function" data-toggle="tooltip" data-content="https://saref.etsi.org/core/Function" data-placement="right">Function</a></h3>
+              <h3 class="h3" id="GeometryObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#GeometryObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#GeometryObservation" data-placement="right">GeometryObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The functionality necessary to accomplish the Task for which a device is designed.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -640,18 +761,12 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="GeometryObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#GeometryObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#GeometryObservation" data-placement="right">GeometryObservation</a></h3>
+              <h3 class="h3" id="Image"><a href="http://fixme.com#Image" data-toggle="tooltip" data-content="http://fixme.com#Image" data-placement="right">Image</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of the form and/or location of an Object.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the perimeter of a Plot. Result is of type Geometry. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -721,15 +836,9 @@
               <h3 class="h3" id="Measurement"><a href="https://def.isotc211.org/iso19156/2011/Observation#Measurement" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#Measurement" data-placement="right">Measurement</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of some quantifiable characteristic of an Object.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the mass of a Rock. Result is of type Measure. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -805,10 +914,6 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Agent" data-placement="right">Agent</a>
-			    
-                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An entity responsible for making contributions to the resource.</td>
@@ -824,10 +929,6 @@
                           </code>
                         </td>
                         <td>
-                          
-			    
-			    <a href="#Agent" data-placement="right">Agent</a>
-			    
                           
                         </td>
                         <td>0..1</td>
@@ -845,10 +946,6 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
-                            
-                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An account of the resource.</td>
@@ -864,10 +961,6 @@
                           </code>
                         </td>
                         <td>
-                          
-			    
-			    <a href="#Identifier" data-placement="right">Identifier</a>
-			    
                           
                         </td>
                         <td>0..1</td>
@@ -885,10 +978,6 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Agent" data-placement="right">Agent</a>
-			    
-                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">An entity responsible for making the resource available.</td>
@@ -904,10 +993,6 @@
                           </code>
                         </td>
                         <td>
-                          
-			    
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
-                            
                           
                         </td>
                         <td>0..1</td>
@@ -925,10 +1010,6 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
-                            
-                          
                         </td>
                         <td>0..1</td>
                         <td property="rdfs:comment">The topic of the resource.</td>
@@ -944,10 +1025,6 @@
                           </code>
                         </td>
                         <td>
-                          
-			    
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a>
-                            
                           
                         </td>
                         <td>0..1</td>
@@ -1104,10 +1181,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Observation%3AobservedProperty" typeof="rdfs:Property" resource="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty">
+                      <tr id="Observation%3AobservedProperty" typeof="rdfs:Property" resource="http://www.w3.org/ns/sosa/observedProperty">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty" data-placement="right">
+                            <a href="http://www.w3.org/ns/sosa/observedProperty" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/observedProperty" data-placement="right">
                             observedProperty</a>
                           </code>
                         </td>
@@ -1194,7 +1271,7 @@
                         <td>
                           
 			    
-			    <a href="#Any" data-placement="right">Any</a>
+			    <a href="#Result" data-placement="right">Result</a>
 			    
                           
                         </td>
@@ -1271,7 +1348,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="ObservationCollection"><a href="http://www.w3.org/ns/sosa/ObservationCollection" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/ObservationCollection" data-placement="right">ObservationCollection</a></h3>
+              <h3 class="h3" id="ObservationCollection"><a href="https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection" data-placement="right">ObservationCollection</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>A collection of one or more observations, whose members share a common value for one or more properties.</dd>
@@ -1389,10 +1466,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationCollection%3Ametadata" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata">
+                      <tr id="ObservationCollection%3Ametadata" typeof="rdfs:Property" resource="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata" data-placement="right">
+                            <a href="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata" data-placement="right">
                             metadata</a>
                           </code>
                         </td>
@@ -1429,10 +1506,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationCollection%3Aparameter" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter">
+                      <tr id="ObservationCollection%3Aparameter" typeof="rdfs:Property" resource="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter" data-placement="right">
+                            <a href="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter" data-placement="right">
                             parameter</a>
                           </code>
                         </td>
@@ -1547,10 +1624,10 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="ObservationContext%3Aobservation%20(source)" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationContext.observation.source">
+                      <tr id="ObservationContext%3Aobservation%20(source)" typeof="rdfs:Property" resource="http://fixme.com#ObservationContext.observation.source">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationContext.observation.source" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationContext.observation.source" data-placement="right">
+                            <a href="http://fixme.com#ObservationContext.observation.source" data-toggle="tooltip" data-content="http://fixme.com#ObservationContext.observation.source" data-placement="right">
                             Observation (source)</a>
                           </code>
                         </td>
@@ -1567,10 +1644,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationContext%3Aobservation%20(target)" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#ObservationContext.observation.target">
+                      <tr id="ObservationContext%3Aobservation%20(target)" typeof="rdfs:Property" resource="http://fixme.com#ObservationContext.observation.target">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#ObservationContext.observation.target" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#ObservationContext.observation.target" data-placement="right">
+                            <a href="http://fixme.com#ObservationContext.observation.target" data-toggle="tooltip" data-content="http://fixme.com#ObservationContext.observation.target" data-placement="right">
                             Observation (target)</a>
                           </code>
                         </td>
@@ -1614,7 +1691,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="ObservationProcedure"><a href="http://www.w3.org/ns/sosa/om#ObservationProcedure" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/om#ObservationProcedure" data-placement="right">ObservationProcedure</a></h3>
+              <h3 class="h3" id="ObservationProcedure"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure" data-placement="right">ObservationProcedure</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>A workflow, protocol, plan, algorithm, or computational method specifying how to make an observation, create a sample, or make a change to the state of the world (via an actuator). A procedure is re-usable, and might be involved in many observations, samplings or actuations. It explains the steps to be carried out to arrived at reproducible results.</dd>
@@ -1670,10 +1747,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification">
+                      <tr id="ObservationProcedure%3Aspecification" typeof="rdfs:Property" resource="http://fixme.com#specification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification" data-placement="right">
+                            <a href="http://fixme.com#specification" data-toggle="tooltip" data-content="http://fixme.com#specification" data-placement="right">
                             specification</a>
                           </code>
                         </td>
@@ -1685,15 +1762,15 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">Reference to the specification that describes the Procedure that was followed to make the Observation.</td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="ObservationProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type">
+                      <tr id="ObservationProcedure%3Atype" typeof="rdfs:Property" resource="http://fixme.com#type">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type" data-placement="right">
+                            <a href="http://fixme.com#type" data-toggle="tooltip" data-content="http://fixme.com#type" data-placement="right">
                             type</a>
                           </code>
                         </td>
@@ -1705,7 +1782,7 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">General type of the Procedure that was followed to make the Observation.</td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1753,7 +1830,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="OperatingRange"><a href="http://www.w3.org/ns/ssn/systems/OperatingRange" data-toggle="tooltip" data-content="http://www.w3.org/ns/ssn/systems/OperatingRange" data-placement="right">OperatingRange</a></h3>
+              <h3 class="h3" id="OperatingRange"><a href="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMOperatingRange" data-placement="right">OperatingRange</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Describes normal operating properties of a system under some specified conditions. For example, to the power requirements or maintenance schedule of a system under a specified temperature range.</dd>
@@ -1830,7 +1907,23 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Platform"><a href="http://www.w3.org/ns/sosa/Platform" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/Platform" data-placement="right">Platform</a></h3>
+              <h3 class="h3" id="Place"><a href="http://fixme.com#Place" data-toggle="tooltip" data-content="http://fixme.com#Place" data-placement="right">Place</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>TODO</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Platform"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform" data-placement="right">Platform</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>A platform is an entity that hosts other entities, particularly sensors, actuators, samplers and other platforms.</dd>
@@ -1893,15 +1986,25 @@
               <h3 class="h3" id="PointCoverageObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#PointCoverageObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#PointCoverageObservation" data-placement="right">PointCoverageObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation about how some characteristic of an Object varies for different points in space.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the temperature in different MeasuringStations. Result is of type DiscreetTimeInstantCoverage. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
                     
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="PointOfInterest"><a href="http://fixme.com#PointOfInterest" data-toggle="tooltip" data-content="http://fixme.com#PointOfInterest" data-placement="right">PointOfInterest</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>TODO</dd>
+                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -1988,10 +2091,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="PreparationStep%3AsamplingProcess" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#PreparationStep.samplingProces">
+                      <tr id="PreparationStep%3AsamplingProcess" typeof="rdfs:Property" resource="http://fixme.com#PreparationStep.samplingProces">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#PreparationStep.samplingProces" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#PreparationStep.samplingProces" data-placement="right">
+                            <a href="http://fixme.com#PreparationStep.samplingProces" data-toggle="tooltip" data-content="http://fixme.com#PreparationStep.samplingProces" data-placement="right">
                             SamplingProcess</a>
                           </code>
                         </td>
@@ -2008,10 +2111,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="PreparationStep%3Aspecimen" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#PreparationStep.specimen">
+                      <tr id="PreparationStep%3Aspecimen" typeof="rdfs:Property" resource="http://fixme.com#PreparationStep.specimen">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#PreparationStep.specimen" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#PreparationStep.specimen" data-placement="right">
+                            <a href="http://fixme.com#PreparationStep.specimen" data-toggle="tooltip" data-content="http://fixme.com#PreparationStep.specimen" data-placement="right">
                             Specimen</a>
                           </code>
                         </td>
@@ -2055,10 +2158,10 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Procedure"><a href="http://www.w3.org/ns/sosa/Procedure" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/Procedure" data-placement="right">Procedure</a></h3>
+              <h3 class="h3" id="Procedure"><a href="http://fixme.com#Procedure" data-toggle="tooltip" data-content="http://fixme.com#Procedure" data-placement="right">Procedure</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>An established or official way of doing something.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -2071,10 +2174,10 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Process"><a href="http://def.isotc211.org/iso19156/2011/Observation#OM_Process" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Observation#OM_Process" data-placement="right">Process</a></h3>
+              <h3 class="h3" id="Process"><a href="http://fixme.com#Process" data-toggle="tooltip" data-content="http://fixme.com#Process" data-placement="right">Process</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A series of actions or steps leading to some result.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -2193,6 +2296,22 @@
                         <a href="#SystemProperty">SystemProperty</a>
 		   </dd>
                     
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Result"><a href="http://def.isotc211.org/iso19156/2011/Observation#Result" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Observation#Result" data-placement="right">Result</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>The observation result in an estimate of the value of a property determined through a known observation procedure.</dd>
+                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -2599,10 +2718,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="SamplingFeatureComplex%3AsamplingFeature%20(source)" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.source">
+                      <tr id="SamplingFeatureComplex%3AsamplingFeature%20(source)" typeof="rdfs:Property" resource="http://fixme.com#SamplingFeaturecomplex.samplingFeature.source">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.source" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.source" data-placement="right">
+                            <a href="http://fixme.com#SamplingFeaturecomplex.samplingFeature.source" data-toggle="tooltip" data-content="http://fixme.com#SamplingFeaturecomplex.samplingFeature.source" data-placement="right">
                             SamplingFeature (source)</a>
                           </code>
                         </td>
@@ -2619,10 +2738,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="SamplingFeatureComplex%3AsamplingFeature%20(target)" typeof="rdfs:Property" resource="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.target">
+                      <tr id="SamplingFeatureComplex%3AsamplingFeature%20(target)" typeof="rdfs:Property" resource="http://fixme.com#SamplingFeaturecomplex.samplingFeature.target">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.target" data-toggle="tooltip" data-content="https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.target" data-placement="right">
+                            <a href="http://fixme.com#SamplingFeaturecomplex.samplingFeature.target" data-toggle="tooltip" data-content="http://fixme.com#SamplingFeaturecomplex.samplingFeature.target" data-placement="right">
                             SamplingFeature (target)</a>
                           </code>
                         </td>
@@ -2646,7 +2765,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="SamplingProcedure"><a href="http://www.w3.org/ns/sosa/om#SamplingProcedure" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/om#SamplingProcedure" data-placement="right">SamplingProcedure</a></h3>
+              <h3 class="h3" id="SamplingProcedure"><a href="http://www.w3.org/ns/sosa/Procedure" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/Procedure" data-placement="right">SamplingProcedure</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an Actuator). A Procedure is re-usable, and might be involved in many Observations, Samplings, or Actuations. It explains the steps to be carried out to arrive at reproducible Results.</dd>
@@ -2681,10 +2800,10 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="SamplingProcedure%3Aspecification" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification">
+                      <tr id="SamplingProcedure%3Aspecification" typeof="rdfs:Property" resource="http://fixme.com#specification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification" data-placement="right">
+                            <a href="http://fixme.com#specification" data-toggle="tooltip" data-content="http://fixme.com#specification" data-placement="right">
                             specification</a>
                           </code>
                         </td>
@@ -2696,15 +2815,15 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">Reference to the specification that describes the Procedure that was followed the create the Sample.</td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="SamplingProcedure%3Atype" typeof="rdfs:Property" resource="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type">
+                      <tr id="SamplingProcedure%3Atype" typeof="rdfs:Property" resource="http://fixme.com#type">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type" data-toggle="tooltip" data-content="https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type" data-placement="right">
+                            <a href="http://fixme.com#type" data-toggle="tooltip" data-content="http://fixme.com#type" data-placement="right">
                             type</a>
                           </code>
                         </td>
@@ -2716,7 +2835,7 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">General type of the Procedure that was followed to create the Sample.</td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2728,7 +2847,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="SamplingProcess"><a href="http://def.isotc211.org/iso19156/2011/Specimen#SF_Process" data-toggle="tooltip" data-content="http://def.isotc211.org/iso19156/2011/Specimen#SF_Process" data-placement="right">SamplingProcess</a></h3>
+              <h3 class="h3" id="SamplingProcess"><a href="http://fixme.com/#deviceClass" data-toggle="tooltip" data-content="http://fixme.com/#deviceClass" data-placement="right">SamplingProcess</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Way in which the result of the Observation was obtained.</dd>
@@ -2784,7 +2903,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Sensor"><a href="http://www.w3.org/ns/sosa/Sensor" data-toggle="tooltip" data-content="http://www.w3.org/ns/sosa/Sensor" data-placement="right">Sensor</a></h3>
+              <h3 class="h3" id="Sensor"><a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SOSASensor" data-placement="right">Sensor</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Device, agent (including humans), or software (simulation) involved in, or implementing, a procedure. Sensors respond to a stimulus, e.e., a change in the environment, or Input data composed from the Results of prior observations, and generate a result. Sensors can be hosted by platforms.</dd>
@@ -2887,7 +3006,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Slice"><a href="http://purl.org/linked-data/cube#Slice" data-toggle="tooltip" data-content="http://purl.org/linked-data/cube#Slice" data-placement="right">Slice</a></h3>
+              <h3 class="h3" id="Slice"><a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Slice" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Slice" data-placement="right">Slice</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Denotes a subset of a DataSet defined by fixing a subset of the dimensional values, component properties on the Slice.</dd>
@@ -2920,8 +3039,9 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#SpatialSamplingFeature%3Alocation">location</a>, 
-                      <a href="#SpatialSamplingFeature%3Ashape">shape</a>.</dd>
+                      <a href="#SpatialSamplingFeature%3Aaddress">address</a>, 
+                      <a href="#SpatialSamplingFeature%3AareaServed">areaServed</a>, 
+                      <a href="#SpatialSamplingFeature%3ArefPointOfInterest">refPointOfInterest</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2941,42 +3061,62 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="SpatialSamplingFeature%3Alocation" typeof="rdfs:Property" resource="http://www.w3.org/ns/prov#atLocation">
+                      <tr id="SpatialSamplingFeature%3Aaddress" typeof="rdfs:Property" resource="https://schema.org/address">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/prov#atLocation" data-toggle="tooltip" data-content="http://www.w3.org/ns/prov#atLocation" data-placement="right">
-                            location</a>
+                            <a href="https://schema.org/address" data-toggle="tooltip" data-content="https://schema.org/address" data-placement="right">
+                            address</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Location" data-placement="right">Location</a>
+			    <a href="#AddressRepresentation" data-placement="right">AddressRepresentation</a>
 			    
                           
                         </td>
-                        <td>0..*</td>
-                        <td property="rdfs:comment">Location of the SpatialSamplingfeature.</td>
-                        <td property="skos:scopeNote">Can be used in addition to the shape attribute to indicate the position indirectly eg by means of an Address, a GeographicalName, a Place...</td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">The address that is associated with the SpatialSamplingFeature</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="SpatialSamplingFeature%3Ashape" typeof="rdfs:Property" resource="https://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SpatialSamplingFeature.shape">
+                      <tr id="SpatialSamplingFeature%3AareaServed" typeof="rdfs:Property" resource="https://schema.org/areaServed">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SpatialSamplingFeature.shape" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SpatialSamplingFeature.shape" data-placement="right">
-                            shape</a>
+                            <a href="https://schema.org/areaServed" data-toggle="tooltip" data-content="https://schema.org/areaServed" data-placement="right">
+                            areaServed</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Geometry" data-placement="right">Geometry</a>
+			    <a href="#Place" data-placement="right">Place</a>
 			    
                           
                         </td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Description of the shape and location of the SpatialSamplingFeature.</td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">Higher level area to which this sample belongs to. It can be used to group of samples per district, neighbourhood, etc.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="SpatialSamplingFeature%3ArefPointOfInterest" typeof="rdfs:Property" resource="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/refPointOfInterest">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/refPointOfInterest" data-toggle="tooltip" data-content="https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/refPointOfInterest" data-placement="right">
+                            refPointOfInterest</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#PointOfInterest" data-placement="right">PointOfInterest</a>
+			    
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment">A reference to a point of interest (for example an air quality station) associated to this observation.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -3148,7 +3288,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="SurvivalRange"><a href="http://www.w3.org/ns/ssn/systems/SurvivalRange" data-toggle="tooltip" data-content="http://www.w3.org/ns/ssn/systems/SurvivalRange" data-placement="right">SurvivalRange</a></h3>
+              <h3 class="h3" id="SurvivalRange"><a href="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSurvivalRange" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSurvivalRange" data-placement="right">SurvivalRange</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Describes survivalproperties of a system under some specified conditions. For example the lifetime of a system under a specified temperature range.</dd>
@@ -3234,7 +3374,7 @@
                     <dt>Properties</dt>
 		    
                     <dd>For this entity the following properties are defined:
-                      <a href="#System%3AhasOeratingRange">hasOeratingRange</a>, 
+                      <a href="#System%3AhasRange">hasRange</a>, 
                       <a href="#System%3AhasSurvivalRange">hasSurvivalRange</a>, 
                       <a href="#System%3AhasSystemCapability">hasSystemCapability</a>, 
                       <a href="#System%3AisHostedBy">isHostedBy</a>.</dd>
@@ -3257,22 +3397,22 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="System%3AhasOeratingRange" typeof="rdfs:Property" resource="http://www.w3.org/ns/ssn/systems/hasOperatingRange">
+                      <tr id="System%3AhasRange" typeof="rdfs:Property" resource="http://fixme.com#hasRange">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/ssn/systems/hasOperatingRange" data-toggle="tooltip" data-content="http://www.w3.org/ns/ssn/systems/hasOperatingRange" data-placement="right">
-                            hasOeratingRange</a>
+                            <a href="http://fixme.com#hasRange" data-toggle="tooltip" data-content="http://fixme.com#hasRange" data-placement="right">
+                            hasRange</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#OperatingRange" data-placement="right">OperatingRange</a>
+			    <a href="#OperatingProperty" data-placement="right">OperatingProperty</a>
 			    
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">Relation from a System to an OperatingRange describing the normal operating environment of the System.</td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -3344,7 +3484,7 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="SystemCapability"><a href="http://www.w3.org/ns/ssn/systems/SystemCapability" data-toggle="tooltip" data-content="http://www.w3.org/ns/ssn/systems/SystemCapability" data-placement="right">SystemCapability</a></h3>
+              <h3 class="h3" id="SystemCapability"><a href="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSystemCapability" data-toggle="tooltip" data-content="https://www.w3.org/TR/vocab-ssn/#SSNSYSTEMSystemCapability" data-placement="right">SystemCapability</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>Describes normal measurement, actuation, sampling properties such as accuracy, range, precision etc of a system under some specified conditions such as a temperature range. The capabilities specified here are those that affect the promary purpose of the system, while those in operatingrange represent the system&#39;s normal operating environment, including conditions that don&#39;t affect the observation or the actuations.</dd>
@@ -3457,34 +3597,12 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Task"><a href="https://saref.etsi.org/core/Task" data-toggle="tooltip" data-content="https://saref.etsi.org/core/Task" data-placement="right">Task</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The goal for which a device is designed (from a user perspective).</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="TemporalObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#TemporalObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#TemporalObservation" data-placement="right">TemporalObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation of the timeframe in which an Object occurs.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the duration of a Sprint. Result is of type TM_Object. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -3498,15 +3616,9 @@
               <h3 class="h3" id="TimeSeriesObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#TimeseriesObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#TimeseriesObservation" data-placement="right">TimeSeriesObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation about how some characteristic of an Object varies for different points in time.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg the temperature in a MeasurementStation at different times during the day. Result is of type DiscreetTimeInstantCoverage. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -3520,15 +3632,9 @@
               <h3 class="h3" id="TruthObservation"><a href="https://def.isotc211.org/iso19156/2011/Observation#TruthObservation" data-toggle="tooltip" data-content="https://def.isotc211.org/iso19156/2011/Observation#TruthObservation" data-placement="right">TruthObservation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Observation if something is true or false about an Object.</dd>
-                    
-                    <dt>Usage</dt><dd>Eg occurence of Fossiles. Result is of type Boolean. For a more detailed description of this class see ISO 19156.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Observation">Observation</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -3542,6 +3648,24 @@
             
             <div class="region region--no-space-top">
               <h2 class="h2">Datatypes</h2>
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="AddressRepresentation"><a href="http://fixme.com#AddressRepresentation" data-toggle="tooltip" data-content="http://fixme.com#AddressRepresentation" data-placement="right">AddressRepresentation</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>TODO</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>There are no properties defined for this datatype.</dd>
+                    
+                  </dl>
+                </div>
+		
             </div>
             
             <div class="region region--no-space-top">
@@ -3568,9 +3692,7 @@
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Abstract class of all names in a Namespace.</dd>
-                    
-                    <dt>Usage</dt><dd>Subtypes are LocalName and ScopedName. For a more detailed description of this class see ISO 19103.</dd>
+                    <dt>Description</dt><dd>TODO</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -3657,83 +3779,6 @@
                   </table>
                 </div>
                 
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="Identifier"><a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Information used to uniquely identify an object.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#Identifier%3Aidentifier">identifier</a>.</dd>
-                    
-                  </dl>
-                </div>
-		
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-                        <th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="Identifier%3Aidentifier" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2004/02/skos/core#notation" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#notation" data-placement="right">identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-                        <td>0..1</td>
-                        <td property="rdfs:comment">String used to uniquely identify the object.</td>
-                        <td property="skos:scopeNote">The string part of the literal is the actual identifier, the type part refers to the identification system and its version.</td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="Location"><a href="http://www.w3.org/ns/prov#Location" data-toggle="tooltip" data-content="http://www.w3.org/ns/prov#Location" data-placement="right">Location</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Indication of a geographical position, by means of coordinates, a toponym, referral to a place or region or an address.</dd>
-                    
-                    <dt>Usage</dt><dd>To be used if the way geographical positions are described will only be determined upon implementation. If otherwise, direct use of datatypes like Geometry, GeographicalName, Address etc is recommended.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>There are no properties defined for this datatype.</dd>
-                    
-                  </dl>
-                </div>
-		
             </div>
             
             <div class="region region--no-space-top">
