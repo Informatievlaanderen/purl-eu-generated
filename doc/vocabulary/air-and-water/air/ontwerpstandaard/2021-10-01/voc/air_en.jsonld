@@ -1,0 +1,465 @@
+{
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dcterms:mediator": {
+    "foaf:homepage": "https://semic.eu",
+    "foaf:mbox": "mailto: contact@semic.eu",
+    "foaf:name": "Semantic Interoperability Community (SEMIC)"
+  },
+  "@id": "https://purl.eu/ns/air-and-water/air-quality",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "label": {
+    "en": "air",
+    "nl": "air"
+  },
+  "authors": [],
+  "editors": [],
+  "contributors": [],
+  "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+  "issued": "TODO",
+  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
+  "publication-date": "2021-10-01",
+  "classes": [
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirFeature",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Real-world Object related to Air."
+      },
+      "usage": {
+        "en": "It is the featureOfInterest, the Object of which some property is observed to assess AirQuality. This can be the Air in a certain place (eg \"the Air in Brussels\") or an organism that breathes the Air, etc. The AirFeature can be typed via the \"type\" attribute, but  substitution by a typed instance (eg an instance of type \"Animal\" in the example with the organism) is also allowed. In either case, the observedProperty must be a phenomenon related to the Airfeature type. If the AirFeature is not observed directly, but rather indirectly by sampling it, the Airfeature is the sampledObject and the Sample assumes the role of featureOfInterest."
+      },
+      "parents": [
+        "https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "AirPollutantObservation where the concentration in the Air of a harmful or unsuitable substance is expressed as a level."
+      },
+      "usage": {
+        "en": "Basically a Classification of concentration measurements (see AirPollutantObservation) according to certain threshold values. For example if the concentration exceeds a certain number, the AirPollutant concentration could be labeled as \"dangerous\"."
+      },
+      "parents": [
+        "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation",
+        "https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Observation intended to estimate the concentration in the Air of a harmful or unsuitable substance."
+      },
+      "usage": {
+        "en": "By estimating the amount or level at which the substance or substances are present in the Air."
+      },
+      "parents": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "AirPollutantObservation where the concentration in the Air of a harmful or unsuitable substance is expressed as a number."
+      },
+      "usage": {
+        "en": "Actually the Measurement of the amount of the substance in the Air, usually over some averaging period. Result is how much of the substance is found eg in parts-per-million."
+      },
+      "parents": [
+        "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation",
+        "https://def.isotc211.org/iso19156/2011/Observation#Measurement"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Observation intended to estimate the overall quality of the Air, expressed as a single number."
+      },
+      "usage": {
+        "en": "Basically the aggregation of the results of a predetermined set of AirPollutantObservations over an averaging period and of substances that are considered critical for AirQuality. The result is a single number that acts as an indicator for AirQuality."
+      },
+      "parents": [
+        "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation",
+        "https://def.isotc211.org/iso19156/2011/Observation#Measurement"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Observation intended to estimate the overall quality of the Air, expressed as a level."
+      },
+      "usage": {
+        "en": "Basically a Classification of the result of an AirQualityIndexObservation according to certain threshold values. For example if the index exceeds a certain value, the AirQuality could be labeled as \"unhealthy\"."
+      },
+      "parents": [
+        "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation",
+        "https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Observation intended to estimate the overall quality of the Air."
+      },
+      "parents": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A Collection of one or more AirQualityObservations, whose members share a common value for one or more properties."
+      },
+      "parents": [
+        "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
+      ]
+    }
+  ],
+  "externals": [
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirFeature",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection",
+      "@type": "rdfs:Class"
+    }
+  ],
+  "properties": [
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation.airPollutantLevel",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Result of the AirPollutantLevelObservation."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://def.isotc211.org/iso19103/2005/Names#ScopedName"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation.observedProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of polluting substance."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation.airPollutantValue",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Result of the AirPollutantValueObservation."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.airQualityIndex",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Result of the AirQualityIndexObservation."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.reliability",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "TODO"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://fixme.com#Number"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation.airQualityLevel",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Result of the AirQualityLevelObservation."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://def.isotc211.org/iso19103/2005/Names#ScopedName"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection.refWeatherObserved",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "A description of the weather conditions during the Observations in the Collection."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://fixme.com#WeatherObserved"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#Airfeature.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of Airfeature."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/air-and-water/air-quality#AirFeature"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": []
+    }
+  ],
+  "externalproperties": [
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation.airPollutantLevel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation.observedProperty",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation.airPollutantValue",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.airQualityIndex",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.reliability",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation.airQualityLevel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection.refWeatherObserved",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/air-and-water/air-quality#Airfeature.type",
+      "@type": "rdf:Property"
+    }
+  ],
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "void": "http://rdfs.org/ns/void#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "person": "http://www.w3.org/ns/person#",
+    "rec": "http://www.w3.org/2001/02pd/rec54#",
+    "vann": "http://purl.org/vocab/vann/",
+    "sh": "http://w3.org/ns/shacl#",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dcterms:issued"
+    },
+    "authors": {
+      "@type": "person:Person",
+      "@id": "foaf:maker"
+    },
+    "editors": {
+      "@type": "person:Person",
+      "@id": "rec:editor"
+    },
+    "contributors": {
+      "@type": "person:Person",
+      "@id": "dcterms:contributor"
+    },
+    "affiliation": {
+      "@id": "http://schema.org/affiliation"
+    },
+    "classes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "datatypes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "name": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "properties": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "minCardinality": {
+      "@id": "sh:minCount"
+    },
+    "maxCardinality": {
+      "@id": "sh:maxCount"
+    },
+    "generalization": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "externals": {
+      "@id": "rdfs:seeAlso"
+    },
+    "externalproperties": {
+      "@id": "rdfs:seeAlso"
+    },
+    "usage": {
+      "@id": "skos:scopeNote",
+      "@container": "@language"
+    },
+    "parents": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "foaf:homepage": {
+      "@id": "foaf:homepage",
+      "@type": "@id"
+    },
+    "foaf:mbox": {
+      "@id": "foaf:mbox",
+      "@type": "@id"
+    },
+    "equivalent": {
+      "@id": "owl:equivalentClass",
+      "@type": "@id"
+    }
+  }
+}
