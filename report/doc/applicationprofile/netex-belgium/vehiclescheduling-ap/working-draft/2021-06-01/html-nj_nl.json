@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/071060f097d6b3d3aefe438c64a04eeaccad1f79",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/071060f097d6b3d3aefe438c64a04eeaccad1f79/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/4d957d68dcfafb212941aadad67f24227792e8b9",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/4d957d68dcfafb212941aadad67f24227792e8b9/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -69,6 +69,43 @@
       "parents": [],
       "properties": [
         {
+          "uri": "https://purl.eu/ns/mobility#description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Description of the Block.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#endTime",
           "name": "end time",
           "sort": "Enter your translation here",
@@ -81,7 +118,7 @@
             "nl": "Enter your translation here"
           },
           "usage": {
-            "en": "in principle this can be derived from the start time of the last Vehicle Journey and the finishing duration. ",
+            "en": "In principle this can be derived from the start time of the last Vehicle Journey and the finishing duration.",
             "nl": "Enter your translation here"
           },
           "domain": [
@@ -92,16 +129,53 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "Time",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#time",
               "range_label": {
-                "nl": "DateTime"
+                "nl": "Time"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#endTimeDayOffset",
+          "name": "end time day offset",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "end time day offset",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Number of days after journey start time that end time is.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
               }
             }
           ],
@@ -150,6 +224,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#finishingDuration",
+          "name": "finishing duration",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "finishing duration",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time needed to complete the Block.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#including",
           "name": "in",
           "sort": "Enter your translation here",
@@ -188,6 +299,80 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#name",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Block.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#preparationDuration",
+          "name": "preparation duration",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "preparation duration",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time needed to prepare the Block.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#startTime",
           "name": "start time",
           "sort": "Enter your translation here",
@@ -211,16 +396,53 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "Time",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#time",
               "range_label": {
-                "nl": "DateTime"
+                "nl": "Time"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#startTimeDayOffset",
+          "name": "start time day offset",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "start time day offset",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Number of days after journey start time that start time is.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Block",
+              "uri": "https://purl.eu/ns/mobility#Block"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
               }
             }
           ],
@@ -312,7 +534,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "The DayType when the Block was worked on.",
+            "en": "The Day Type when the Block was worked on.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -338,7 +560,272 @@
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#CrewBase",
+      "name": "Crew Base",
+      "label": {
+        "en": "Crew Base",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "TODO",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Description of the Crew Base.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Crew Base.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^privateCode",
+          "name": "private code",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "private code",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Private code of the Crew Base.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^purposeOfGrouping",
+          "name": "purpose of grouping",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "purpose of grouping",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Purpose of grouping of the Crew Base.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^shortName",
+          "name": "short name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "short name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Short name for the Crew Base.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#near",
+          "name": "near",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "near",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Crew Base near the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Garage",
+              "range_uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Garage",
+              "range_label": {
+                "en": "Garage",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#near",
+          "name": "near",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "near",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Crew Base near the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "CrewBase",
+              "uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Garage",
+              "range_uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Garage",
+              "range_label": {
+                "en": "Garage",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -457,7 +944,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -466,7 +953,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -531,7 +1018,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -540,7 +1027,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -568,7 +1055,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -577,7 +1064,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -734,7 +1221,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -743,7 +1230,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -812,7 +1299,84 @@
           "scoped_uri": "#Vehicle Journey"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#deadRunType",
+          "name": "dead run type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "dead run type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of Dead Run.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DeadRun",
+              "uri": "https://purl.eu/ns/mobility#DeadRun"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DeadRunType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Dead Run Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#directionType",
+          "name": "direction type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "direction type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Direction Type of the Dead Run.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DeadRun",
+              "uri": "https://purl.eu/ns/mobility#DeadRun"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DirectionType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Direction Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#DeadRunPattern",
@@ -874,7 +1438,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -883,7 +1447,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -948,7 +1512,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -957,7 +1521,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -1109,8 +1673,528 @@
         "nl": "Enter your translation here"
       },
       "usage": {},
-      "parents": [],
+      "parents": [
+        {
+          "label": "AddressablePlace",
+          "name": "AddressablePlace",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#AddressablePlace",
+          "scoped_uri": "https://purl.eu/ns/mobility#AddressablePlace"
+        }
+      ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^centroid",
+          "name": "centroid",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "centroid",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Centre Point of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Point",
+              "range_label": {
+                "en": "Point",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Description of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^image",
+          "name": "image",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "image",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Image of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^members",
+          "name": "members",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "members",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "List of Points within the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Point",
+              "range_label": {
+                "en": "Point",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^placeType",
+          "name": "place type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "place type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Categorisation of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PlaceType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Place Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^polygon",
+          "name": "polygon",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "polygon",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Polygon of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Polygoon",
+              "range_uri": "http://www.opengis.net/ont/sf#Polygon"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.opengis.net/ont/sf#Polygon",
+              "range_label": {
+                "en": "Polygoon",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^postalAddress",
+          "name": "postal address",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "postal address",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Postal address of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Adresvoorstelling",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^privateCode",
+          "name": "private code",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "private code",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Private code of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^purposeOfGrouping",
+          "name": "purpose of grouping",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "purpose of grouping",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Purpose of grouping of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^roadAddress",
+          "name": "road address",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "road address",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Road address of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Adresvoorstelling",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^short name",
+          "name": "short name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "short name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Short name of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^url",
+          "name": "url",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "url",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "URL of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#contactDetails",
+          "name": "contact details",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "contact details",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Contact details of the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "en": "Contact Info",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility#name",
           "name": "name",
@@ -1132,7 +2216,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -1141,11 +2225,87 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#operatedBy",
+          "name": "operated by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "operated by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Operator that operates the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Operator",
+              "range_uri": "https://purl.eu/ns/mobility#Operator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Operator",
+              "range_label": {
+                "en": "Operator",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#usedBy",
+          "name": "used by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "used by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Operator that uses the Garage.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Garage",
+              "uri": "https://purl.eu/ns/mobility#Garage"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Operator",
+              "range_uri": "https://purl.eu/ns/mobility#Operator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#Operator",
+              "range_label": {
+                "en": "Operator",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -1208,7 +2368,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -1228,11 +2388,11 @@
       "usage": {},
       "parents": [
         {
-          "label": "Mobility Service",
+          "label": "Mobiliteitsdienst",
           "name": "Mobiliteitsdienst",
           "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
         },
         {
           "label": "Group of Entities",
@@ -1282,15 +2442,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#mainLine",
-          "name": "main line",
+          "uri": "https://purl.eu/ns/mobility#mainline",
+          "name": "mainline",
           "sort": "Enter your translation here",
           "label": {
-            "en": "main line",
+            "en": "mainline",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "The main Line of the Group of Lines.",
+            "en": "Main line of the Group of Lines.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1340,7 +2500,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -1349,7 +2509,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -1377,7 +2537,7 @@
           ],
           "range": [
             {
-              "range_label": "TransportMode",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -1386,7 +2546,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Transport Mode",
+                "en": "Transportmode",
                 "nl": "Enter your translation here"
               }
             }
@@ -1414,25 +2574,25 @@
       },
       "parents": [
         {
-          "label": "Route",
-          "name": "Route",
-          "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
-          "scoped_uri": "#Route"
-        },
-        {
-          "label": "Transport Link Sequence",
-          "name": "Transportlinksequentie",
-          "package": "INSPIRE-Transportnetwerk",
-          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie",
-          "scoped_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie"
-        },
-        {
           "label": "Link Sequence",
           "name": "LinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#LinkSequence",
           "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
+        },
+        {
+          "label": "Transportlinksequentie",
+          "name": "Transportlinksequentie",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
+        },
+        {
+          "label": "Route",
+          "name": "Route",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Route",
+          "scoped_uri": "#Route"
         }
       ],
       "properties": [
@@ -1536,7 +2696,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -1545,7 +2705,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -1612,7 +2772,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -1621,7 +2781,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -1683,11 +2843,11 @@
       "usage": {},
       "parents": [
         {
-          "label": "Mobility Service",
+          "label": "Mobiliteitsdienst",
           "name": "Mobiliteitsdienst",
           "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
         }
       ],
       "properties": [
@@ -1700,7 +2860,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "The overall accessibility characteristics of the Line.",
+            "en": "Accessibility assessment of the Line.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1826,7 +2986,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -1835,7 +2995,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -1861,21 +3021,8 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "nl": "URI"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..*",
           "codelist_uri": ""
         },
@@ -1975,7 +3122,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -1984,7 +3131,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -2050,7 +3197,7 @@
           ],
           "range": [
             {
-              "range_label": "TransportMode",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -2059,7 +3206,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Transport Mode",
+                "en": "Transportmode",
                 "nl": "Enter your translation here"
               }
             }
@@ -2200,7 +3347,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -2209,45 +3356,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#transportMode",
-          "name": "transport mode",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "transport mode",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Identifier of the primary transport mode of the Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TransportMode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transport Mode",
-                "nl": "Enter your translation here"
+                "nl": "TaalString"
               }
             }
           ],
@@ -2313,7 +3422,7 @@
           ],
           "range": [
             {
-              "range_label": "TransportMode",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -2322,7 +3431,45 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Transport Mode",
+                "en": "Transportmode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#transportmode",
+          "name": "transportmode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "transportmode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Identifier of the primary transport mode of the Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Transportmode",
                 "nl": "Enter your translation here"
               }
             }
@@ -2377,7 +3524,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "A URL associated with the Line.",
+            "en": "URL associated with the Line.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -2387,21 +3534,8 @@
               "uri": "https://purl.eu/ns/mobility#Line"
             }
           ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "nl": "URI"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -2422,25 +3556,25 @@
       "usage": {},
       "parents": [
         {
-          "label": "Mobility Service",
-          "name": "Mobiliteitsdienst",
-          "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
-        },
-        {
-          "label": "Transport Network",
-          "name": "Transportnetwerk",
-          "package": "INSPIRE-Transportnetwerk",
-          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk",
-          "scoped_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
-        },
-        {
           "label": "Group of Lines",
           "name": "GroupOfLines",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#GroupOfLines",
           "scoped_uri": "#Group of Lines"
+        },
+        {
+          "label": "Mobiliteitsdienst",
+          "name": "Mobiliteitsdienst",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Mobiliteitsdienst",
+          "scoped_uri": "http://fixme.com#Mobiliteitsdienst"
+        },
+        {
+          "label": "Transportnetwerk",
+          "name": "Transportnetwerk",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportnetwerk",
+          "scoped_uri": "http://fixme.com#Transportnetwerk"
         }
       ],
       "properties": [
@@ -2503,7 +3637,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -2512,7 +3646,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -2725,7 +3859,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -2734,7 +3868,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -2816,7 +3950,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -2825,7 +3959,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -2886,9 +4020,9 @@
       "usage": {},
       "parents": [
         {
-          "label": "Organisation",
-          "name": "Organisation",
-          "package": "OSLO-Organisation",
+          "label": "Organisatie",
+          "name": "Organisatie",
+          "package": "OSLO-Organisatie",
           "uri": "http://www.w3.org/ns/org#Organization",
           "scoped_uri": "http://www.w3.org/ns/org#Organization"
         },
@@ -2922,7 +4056,7 @@
           ],
           "range": [
             {
-              "range_label": "AdressRepresentation",
+              "range_label": "Adresvoorstelling",
               "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
@@ -2931,7 +4065,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/ns/locn#Address",
               "range_label": {
-                "en": "Address Representation",
+                "en": "Adresvoorstelling",
                 "nl": "Enter your translation here"
               }
             }
@@ -2960,16 +4094,16 @@
           ],
           "range": [
             {
-              "range_label": "Country",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "nl": "Country"
+                "nl": "String"
               }
             }
           ],
@@ -2997,7 +4131,7 @@
           ],
           "range": [
             {
-              "range_label": "TransportMode",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -3006,7 +4140,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Transport Mode",
+                "en": "Transportmode",
                 "nl": "Enter your translation here"
               }
             }
@@ -3038,7 +4172,331 @@
           "scoped_uri": "https://purl.eu/ns/mobility#ReliefPoint"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility#^allowedForWaitTime",
+          "name": "allowed for wait time",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "allowed for wait time",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Default wait time to use for timing patterns that use the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^category",
+          "name": "category",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "category",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Category of the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^flexible",
+          "name": "flexible",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "flexible",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Parking Point is flexible.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^managedBy",
+          "name": "managed by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "managed by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Crew Base that manages the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CrewBase",
+              "range_uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#CrewBase",
+              "range_label": {
+                "en": "Crew Base",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^name",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^pointNumber",
+          "name": "point number",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "point number",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Arbitrary alternative identifer for the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^projection",
+          "name": "projection",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "projection",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Projection of the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#^timingPointType",
+          "name": "timing point type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "timing point type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of Timing Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimingStatus",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Timing Status",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#location",
+          "name": "location",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "location",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Location of the Parking Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Punt",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_label": {
+                "en": "Punt",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "https://purl.eu/ns/mobility#PassengerCapacity",
@@ -3077,13 +4535,13 @@
           "range": [
             {
               "range_label": "FareClass",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_uri": "https://purl.eu/ns/mobility#FareClass"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "https://purl.eu/ns/mobility#FareClass",
+              "range_puri": "https://purl.eu/ns/mobility#FareClass",
               "range_label": {
                 "nl": "FareClass"
               }
@@ -3093,15 +4551,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#pushchairCapacity",
-          "name": "pushchair capacity",
+          "uri": "https://purl.eu/ns/mobility#pushChairCapacity",
+          "name": "push chair capacity",
           "sort": "Enter your translation here",
           "label": {
-            "en": "pushchair capacity",
+            "en": "push chair capacity",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Capacity for baby stroller/pushchairs.",
+            "en": "Number of push chairs places.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3205,14 +4663,14 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#standingCapacity",
-          "name": "standing capacity",
+          "name": "standingcapacity",
           "sort": "Enter your translation here",
           "label": {
-            "en": "standing capacity",
+            "en": "standingcapacity",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Number of standing passengers.",
+            "en": "Number of standing places.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3249,7 +4707,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Maximum number of passengers.",
+            "en": "Total number of passengers.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3352,16 +4810,16 @@
           ],
           "range": [
             {
-              "range_label": "Point",
-              "range_uri": "https://purl.eu/ns/mobility#Point"
+              "range_label": "Punt",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility#Point",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
               "range_label": {
-                "en": "Point",
+                "en": "Punt",
                 "nl": "Enter your translation here"
               }
             }
@@ -3390,7 +4848,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -3399,7 +4857,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -3462,21 +4920,8 @@
               "uri": "https://purl.eu/ns/mobility#Point"
             }
           ],
-          "range": [
-            {
-              "range_label": "PointProjection",
-              "range_uri": "https://purl.eu/ns/mobility#PointProjection"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://purl.eu/ns/mobility#PointProjection",
-              "range_puri": "https://purl.eu/ns/mobility#PointProjection",
-              "range_label": {
-                "nl": "PointProjection"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..*",
           "codelist_uri": ""
         },
@@ -3535,18 +4980,18 @@
       "usage": {},
       "parents": [
         {
-          "label": "Route Node",
-          "name": "Routeknoop",
-          "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop"
-        },
-        {
           "label": "Point in Link Sequence",
           "name": "PointInLinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
           "scoped_uri": "https://purl.eu/ns/mobility#PointInLinkSequence"
+        },
+        {
+          "label": "Routeknoop",
+          "name": "Routeknoop",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Routeknoop",
+          "scoped_uri": "http://fixme.com#Routeknoop"
         }
       ],
       "properties": [
@@ -3589,6 +5034,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#at",
+          "name": "at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimeTabledPassingTime",
+              "range_uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+              "range_label": {
+                "en": "Time Tabled Passing Time",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#changeOfDestinationDisplay",
           "name": "change of destination display",
           "sort": "Enter your translation here",
@@ -3597,7 +5080,7 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Indicates whether the destination display changes at this point.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3646,7 +5129,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -3655,7 +5138,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -3754,96 +5237,21 @@
       "usage": {},
       "parents": [
         {
-          "label": "Route Node",
-          "name": "Routeknoop",
-          "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop"
-        },
-        {
           "label": "Point in Link Sequence",
           "name": "PointInLinkSequence",
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#PointInLinkSequence",
           "scoped_uri": "https://purl.eu/ns/mobility#PointInLinkSequence"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility#description",
-          "name": "description",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "description",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Description of the Point on Route.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOnRoute",
-              "uri": "https://purl.eu/ns/mobility#PointOnRoute"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LangString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#order",
-          "name": "order",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "order",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Order of Point on Route within Route.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOnRoute",
-              "uri": "https://purl.eu/ns/mobility#PointOnRoute"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Integer"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
+          "label": "Routeknoop",
+          "name": "Routeknoop",
+          "package": "TransportEnAanbod",
+          "uri": "http://fixme.com#Routeknoop",
+          "scoped_uri": "http://fixme.com#Routeknoop"
         }
-      ]
+      ],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility#Presentation",
@@ -3940,10 +5348,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Crowding",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "Crowding"
+                "en": "Crowding",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -4031,21 +5440,8 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [
-            {
-              "range_label": "MonthDay",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonthDay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonthDay",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonthDay",
-              "range_label": {
-                "nl": "MonthDay"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -4070,7 +5466,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -4079,7 +5475,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -4143,21 +5539,8 @@
               "uri": "https://purl.eu/ns/mobility#PropertyOfDay"
             }
           ],
-          "range": [
-            {
-              "range_label": "Month",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonth",
-              "range_label": {
-                "nl": "Month"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -4182,7 +5565,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -4191,7 +5574,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -4336,18 +5719,18 @@
           "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
         },
         {
+          "label": "Transportlinksequentie",
+          "name": "Transportlinksequentie",
+          "package": "INSPIRE-Transportnetwerk",
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
+        },
+        {
           "label": "Route",
           "name": "Route",
           "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "uri": "http://fixme.com#Route",
           "scoped_uri": "#Route"
-        },
-        {
-          "label": "Transport Link Sequence",
-          "name": "Transportlinksequentie",
-          "package": "INSPIRE-Transportnetwerk",
-          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie",
-          "scoped_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie"
         }
       ],
       "properties": [
@@ -4486,7 +5869,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -4495,7 +5878,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -4600,7 +5983,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -4609,11 +5992,49 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#through",
+          "name": "through",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "through",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointOnRoute",
+              "range_uri": "https://purl.eu/ns/mobility#PointOnRoute"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#PointOnRoute",
+              "range_label": {
+                "en": "Point on Route",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "2..*",
           "codelist_uri": ""
         }
       ]
@@ -4691,7 +6112,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -4700,7 +6121,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -4862,118 +6283,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#dayType",
-          "name": "day type",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "day type",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Day Type for the Service Journey.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DayType",
-              "range_uri": "https://purl.eu/ns/mobility#DayType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility#DayType",
-              "range_label": {
-                "en": "Day Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#departureDayOffset",
-          "name": "departure day offset",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "departure day offset",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Day offset if the day of departure time of the Service Journey differs from the current Operating Day.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Integer"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#departureTime",
-          "name": "departure time",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "departure time",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Time of departure.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Time",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#time"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#time",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#time",
-              "range_label": {
-                "nl": "Time"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#facility",
           "name": "facility",
           "sort": "Enter your translation here",
@@ -5056,46 +6365,6 @@
           ],
           "range": [],
           "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#journeyDuration",
-          "name": "journey duration",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "journey duration",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Total length of the Service Journey. Can be computed from individual times. ",
-            "nl": "Enter your translation here"
-          },
-          "usage": {
-            "en": "Add to departure time to obtain the Service Journey arrival time.",
-            "nl": "Enter your translation here"
-          },
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility#ServiceJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Duration",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_label": {
-                "nl": "Duration"
-              }
-            }
-          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -5196,7 +6465,7 @@
           ],
           "range": [
             {
-              "range_label": "TrainSizeType",
+              "range_label": "TrainSizetype",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -5205,7 +6474,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Train Size Type",
+                "en": "Train Sizetype",
                 "nl": "Enter your translation here"
               }
             }
@@ -5268,18 +6537,25 @@
       "usage": {},
       "parents": [
         {
+          "label": "Link Sequence",
+          "name": "LinkSequence",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility#LinkSequence",
+          "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
+        },
+        {
           "label": "Route",
           "name": "Route",
           "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "uri": "http://fixme.com#Route",
           "scoped_uri": "#Route"
         },
         {
-          "label": "Transport Link Sequence",
+          "label": "Transportlinksequentie",
           "name": "Transportlinksequentie",
           "package": "INSPIRE-Transportnetwerk",
-          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie",
-          "scoped_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportlinksequentie"
+          "uri": "http://fixme.com#Transportlinksequentie",
+          "scoped_uri": "http://fixme.com#Transportlinksequentie"
         },
         {
           "label": "Journey Pattern",
@@ -5287,13 +6563,6 @@
           "package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility#JourneyPattern",
           "scoped_uri": "#Journey Pattern"
-        },
-        {
-          "label": "Link Sequence",
-          "name": "LinkSequence",
-          "package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility#LinkSequence",
-          "scoped_uri": "https://purl.eu/ns/mobility#LinkSequence"
         }
       ],
       "properties": []
@@ -5320,11 +6589,11 @@
           "scoped_uri": "https://purl.eu/ns/mobility#PassingTime"
         },
         {
-          "label": "Timetable",
+          "label": "Dienstregeling",
           "name": "Dienstregeling",
           "package": "TransportEnAanbod",
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Dienstregeling",
-          "scoped_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Dienstregeling"
+          "uri": "http://fixme.com#Dienstregeling",
+          "scoped_uri": "http://fixme.com#Dienstregeling"
         }
       ],
       "properties": [
@@ -5495,21 +6764,8 @@
               "uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
             }
           ],
-          "range": [
-            {
-              "range_label": "HeadwayInterval",
-              "range_uri": "https://purl.eu/ns/mobility#HeadwayInterval"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://purl.eu/ns/mobility#HeadwayInterval",
-              "range_puri": "https://purl.eu/ns/mobility#HeadwayInterval",
-              "range_label": {
-                "nl": "HeadwayInterval"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -5788,6 +7044,81 @@
       ],
       "properties": [
         {
+          "uri": "https://purl.eu/ns/mobility#^transportSubmode",
+          "name": "transportsubmode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "transportsubmode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Transport submode of the Vehicle Journey.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Transportmode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#departureDayOffset",
+          "name": "departure day offset",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "departure day offset",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#departureTime",
           "name": "departureTime",
           "sort": "Enter your translation here",
@@ -5863,6 +7194,86 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#journeyDuration",
+          "name": "journey duration",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "journey duration",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Total length of the Vehicle Journey.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Can be computed from individual times. Add to departure time to obtain Journey arrival time.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#journeyPart",
+          "name": "journey part",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "journey part",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Journey Part of a Journey.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Only for a multi-part journey.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "JourneyPart",
+              "range_uri": "https://purl.eu/ns/mobility#JourneyPart"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#JourneyPart",
+              "range_puri": "https://purl.eu/ns/mobility#JourneyPart",
+              "range_label": {
+                "nl": "JourneyPart"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#madeUsing",
           "name": "made using",
           "sort": "Enter your translation here",
@@ -5897,7 +7308,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -5939,6 +7350,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility#passedAt",
+          "name": "passed at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "passed at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time at which the Vehicle Journey passes.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimeTabledPassingTime",
+              "range_uri": "https://purl.eu/ns/mobility#TimeTabledPassingTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+              "range_label": {
+                "en": "Time Tabled Passing Time",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility#transportMode",
           "name": "transport mode",
           "sort": "Enter your translation here",
@@ -5959,7 +7408,7 @@
           ],
           "range": [
             {
-              "range_label": "TransportMode",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -5968,45 +7417,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Transport Mode",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#transportSubmode",
-          "name": "transport submode",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "transport submode",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Transport submode of the Journey.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility#VehicleJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TransportMode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transport Mode",
+                "en": "Transportmode",
                 "nl": "Enter your translation here"
               }
             }
@@ -6128,7 +7539,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -6137,7 +7548,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -6239,7 +7650,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -6248,7 +7659,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -6277,7 +7688,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -6286,7 +7697,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -6352,7 +7763,7 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
+              "range_label": "TaalString",
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
@@ -6361,7 +7772,7 @@
               "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "LangString"
+                "nl": "TaalString"
               }
             }
           ],
@@ -6427,13 +7838,13 @@
           "range": [
             {
               "range_label": "TypeOfFuel",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_uri": "https://purl.eu/ns/mobility#TypeOfFuel"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "https://purl.eu/ns/mobility#TypeOfFuel",
+              "range_puri": "https://purl.eu/ns/mobility#TypeOfFuel",
               "range_label": {
                 "nl": "TypeOfFuel"
               }
@@ -6463,7 +7874,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -6472,7 +7883,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -6501,7 +7912,7 @@
           ],
           "range": [
             {
-              "range_label": "QuantitativeValue",
+              "range_label": "KwantitatieveWaarde",
               "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -6510,7 +7921,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "en": "Quantitative Value",
+                "en": "Kwantitatieve Waarde",
                 "nl": "Enter your translation here"
               }
             }
@@ -6526,14 +7937,14 @@
   "datatypes": [
     {
       "uri": "http://schema.org/ContactPoint",
-      "name": "Contact Point",
+      "name": "Contact Info",
       "label": {
-        "en": "Contact Point",
+        "en": "Contact Info",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Information such as mail adress, telephone, ... that can be used to contact someone or something.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6541,123 +7952,27 @@
         "nl": "Enter your translation here"
       },
       "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://www.opengis.net/ont/sf#Point",
-      "name": "Point",
-      "label": {
-        "en": "Point",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A 0-dimensional geometric object tjat represents a single location in coordinate space. A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m. The boundary of a Point is the empty set.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [
-        {
-          "label": "Geometry",
-          "name": "Geometry",
-          "package": "OSLO-Generic",
-          "uri": "http://www.w3.org/ns/locn#Geometry",
-          "scoped_uri": "#Geometry"
-        }
-      ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#location",
-          "name": "location",
+          "uri": "http://schema.org/email",
+          "name": "email",
           "sort": "Enter your translation here",
           "label": {
-            "en": "location",
+            "en": "email",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Location of the Point.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
-          "usage": {},
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility#Point"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Point",
-              "range_uri": "https://purl.eu/ns/mobility#Point"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility#Point",
-              "range_label": {
-                "en": "Point",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#name",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Name of the Point.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility#Point"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LangString"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#pointNumber",
-          "name": "point number",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "point number",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Arbitrary alternative identifier for the Point.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility#Point"
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
             }
           ],
           "range": [
@@ -6679,81 +7994,338 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#projection",
-          "name": "projection",
+          "uri": "http://schema.org/faxNumber",
+          "name": "fax",
           "sort": "Enter your translation here",
           "label": {
-            "en": "projection",
+            "en": "fax",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Projection for the Point.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
-          "usage": {},
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility#Point"
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
             }
           ],
           "range": [
             {
-              "range_label": "PointProjection",
-              "range_uri": "https://purl.eu/ns/mobility#PointProjection"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://purl.eu/ns/mobility#PointProjection",
-              "range_puri": "https://purl.eu/ns/mobility#PointProjection",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "nl": "PointProjection"
+                "nl": "String"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#viewedAs",
-          "name": "viewed as",
+          "uri": "http://schema.org/hoursAvailable",
+          "name": "beschikbaarheid",
           "sort": "Enter your translation here",
           "label": {
-            "en": "viewed as",
+            "en": "beschikbaarheid",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "As used as a Point in a Journey Pattern.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
-          "usage": {},
+          "usage": {
+            "en": "Bv aanduiding van het seizoen waarin contact kan worden opgenomen. Begin- en einddatum volgens ISO8601 syntax.",
+            "nl": "Enter your translation here"
+          },
           "domain": [
             {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility#Point"
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/openingHours",
+          "name": "openingsuren",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "openingsuren",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Syntax volgens schema.org voor openingsuren. Bv als contact kan worden opgenomen tussen 8 en 20u maandag tot zaterdag en tussen 8 en 18u op zondag wordt dit gecodeerd als Ma-za 08:00-20:00, zo 08:00-18:00.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
             }
           ],
           "range": [
             {
-              "range_label": "PointInJourneyPattern",
-              "range_uri": "https://purl.eu/ns/mobility#PointInJourneyPattern"
+              "range_label": "GetypeerdeString",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "GetypeerdeString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/telephone",
+          "name": "telefoon",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "telefoon",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
+          "name": "aanschrijfvorm",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "aanschrijfvorm",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Bvb De heer/Mevrouw, Excellentie, Dokter...",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#address",
+          "name": "adres",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "adres",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
               "range_label": {
-                "en": "Point in Journey Pattern",
+                "en": "Adresvoorstelling",
                 "nl": "Enter your translation here"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/name",
+          "name": "contactnaam",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "contactnaam",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/page",
+          "name": "website",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "website",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactInfo",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://www.opengis.net/ont/sf#Point",
+      "name": "Punt",
+      "label": {
+        "en": "Punt",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "TODO",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Geometrie",
+          "name": "Geometrie",
+          "package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/ns/locn#Geometry",
+          "scoped_uri": "#Geometrie"
+        }
+      ],
+      "properties": []
     },
     {
       "uri": "http://www.opengis.net/ont/sf#Polygon",
@@ -6764,7 +8336,7 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Oppervlak bestaande uit 1 buitengrens en 0 of meer binnengrenzen. Elke binnengrens vormt een gat in de polygoon.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6773,25 +8345,25 @@
       },
       "parents": [
         {
-          "label": "Geometry",
-          "name": "Geometry",
-          "package": "OSLO-Generic",
+          "label": "Geometrie",
+          "name": "Geometrie",
+          "package": "OSLO-Generiek",
           "uri": "http://www.w3.org/ns/locn#Geometry",
-          "scoped_uri": "#Geometry"
+          "scoped_uri": "#Geometrie"
         }
       ],
       "properties": []
     },
     {
       "uri": "http://www.w3.org/ns/locn#Address",
-      "name": "Address Representation",
+      "name": "Adresvoorstelling",
       "label": {
-        "en": "Address Representation",
+        "en": "Adresvoorstelling",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A spatial object that in a human-readable way identifies a fixed location of a property.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6799,18 +8371,462 @@
         "nl": "Enter your translation here"
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "adresgebied",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "adresgebied",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Bvb de naam vh gehucht waarin het adres ligt.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administratieve eenheid niveau 1",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "administratieve eenheid niveau 1",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administratieve eenheid niveau 2",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "administratieve eenheid niveau 2",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "volledig adres",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "volledig adres",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Vermijdt fouten tgv het opsplitsen ve adres in zijn onderdelen. Geeft de voorgeschreven volgorde vd verschillende onderdelen weer.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locatieaanduiding",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "locatieaanduiding",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorName",
+          "name": "locatienaam",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "locatienaam",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "postbus",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "postbus",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "postcode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "postcode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "postnaam",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "postnaam",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "straatnaam",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "straatnaam",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+          "name": "busnummer",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "busnummer",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+          "name": "huisnummer",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "huisnummer",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+          "name": "gemeentenaam",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "gemeentenaam",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#land",
+          "name": "land",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "land",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": " ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/locn#Geometry",
-      "name": "Geometry",
+      "name": "Geometrie",
       "label": {
-        "en": "Geometry",
+        "en": "Geometrie",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Form and position characteristics of an Object.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6821,14 +8837,14 @@
       "properties": [
         {
           "uri": "http://www.opengis.net/ont/geosparql#asGML",
-          "name": "as GML",
+          "name": "gml",
           "sort": "Enter your translation here",
           "label": {
-            "en": "as GML",
+            "en": "gml",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Geometry expressed in GML-format.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {
@@ -6837,13 +8853,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Geometry",
+              "EA-Name": "Geometrie",
               "uri": "http://www.w3.org/ns/locn#Geometry"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
+              "range_label": "GetypeerdeString",
               "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
@@ -6852,7 +8868,7 @@
               "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "nl": "Literal"
+                "nl": "GetypeerdeString"
               }
             }
           ],
@@ -6861,14 +8877,14 @@
         },
         {
           "uri": "http://www.opengis.net/ont/geosparql#asWKT",
-          "name": "as WKT",
+          "name": "wkt",
           "sort": "Enter your translation here",
           "label": {
-            "en": "as WKT",
+            "en": "wkt",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Geometry expressed in WKT-format.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {
@@ -6877,13 +8893,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Geometry",
+              "EA-Name": "Geometrie",
               "uri": "http://www.w3.org/ns/locn#Geometry"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
+              "range_label": "GetypeerdeString",
               "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
@@ -6892,7 +8908,7 @@
               "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "nl": "Literal"
+                "nl": "GetypeerdeString"
               }
             }
           ],
@@ -6903,14 +8919,14 @@
     },
     {
       "uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
-      "name": "Standard Unit",
+      "name": "Standaard Eenheid",
       "label": {
-        "en": "Standard Unit",
+        "en": "Standaard Eenheid",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Unit as defined by a standardising organisation.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6922,14 +8938,14 @@
     },
     {
       "uri": "https://schema.org/Number",
-      "name": "Number",
+      "name": "Getal",
       "label": {
-        "en": "Number",
+        "en": "Getal",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Designation of a quantity.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6941,14 +8957,14 @@
     },
     {
       "uri": "https://schema.org/QuantitativeValue",
-      "name": "Quantitative Value",
+      "name": "Kwantitatieve Waarde",
       "label": {
-        "en": "Quantitative Value",
+        "en": "Kwantitatieve Waarde",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Designation of the quantity of a certain characteristic of an Object.",
+        "en": "TODO",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -6959,26 +8975,26 @@
       "properties": [
         {
           "uri": "https://schema.org/unitCode",
-          "name": "standard unit",
+          "name": "standaard eenheid",
           "sort": "Enter your translation here",
           "label": {
-            "en": "standard unit",
+            "en": "standaard eenheid",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Standarised unit in which the value is expressed.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {},
           "domain": [
             {
-              "EA-Name": "QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde",
               "uri": "https://schema.org/QuantitativeValue"
             }
           ],
           "range": [
             {
-              "range_label": "StandardUnit",
+              "range_label": "StandaardEenheid",
               "range_uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
             }
           ],
@@ -6987,7 +9003,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
               "range_label": {
-                "en": "Standard Unit",
+                "en": "Standaard Eenheid",
                 "nl": "Enter your translation here"
               }
             }
@@ -6997,14 +9013,14 @@
         },
         {
           "uri": "https://schema.org/unitText",
-          "name": "unit",
+          "name": "eenheid",
           "sort": "Enter your translation here",
           "label": {
-            "en": "unit",
+            "en": "eenheid",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "The unit in which the value is expressed.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {
@@ -7013,7 +9029,7 @@
           },
           "domain": [
             {
-              "EA-Name": "QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde",
               "uri": "https://schema.org/QuantitativeValue"
             }
           ],
@@ -7037,26 +9053,26 @@
         },
         {
           "uri": "https://schema.org/value",
-          "name": "value",
+          "name": "waarde",
           "sort": "Enter your translation here",
           "label": {
-            "en": "value",
+            "en": "waarde",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Number used to express the quantity of the characteristic.",
+            "en": "TODO",
             "nl": "Enter your translation here"
           },
           "usage": {},
           "domain": [
             {
-              "EA-Name": "QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde",
               "uri": "https://schema.org/QuantitativeValue"
             }
           ],
           "range": [
             {
-              "range_label": "Number",
+              "range_label": "Getal",
               "range_uri": "https://schema.org/Number"
             }
           ],
@@ -7065,7 +9081,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://schema.org/Number",
               "range_label": {
-                "en": "Number",
+                "en": "Getal",
                 "nl": "Enter your translation here"
               }
             }

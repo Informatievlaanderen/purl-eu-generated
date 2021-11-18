@@ -40,74 +40,117 @@
   "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ContactPointShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://schema.org/ContactPoint"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ContactInfoShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#Point",
-          "sh:definition": {
-            "en": "Location of the Point."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "location"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#location"
-        },
-        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "Name of the Point."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "name"
+            "en": "aanschrijfvorm"
           },
-          "sh:path": "https://purl.eu/ns/mobility#name"
+          "sh:path": "http://www.w3.org/2006/vcard/ns#honorific-prefix"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "adres"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#address"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "beschikbaarheid"
+          },
+          "sh:path": "http://schema.org/hoursAvailable"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Arbitrary alternative identifier for the Point."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "point number"
+            "en": "contactnaam"
           },
-          "sh:path": "https://purl.eu/ns/mobility#pointNumber"
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#PointProjection",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Projection for the Point."
+            "en": "TODO"
           },
+          "sh:maxCount": "1",
           "sh:name": {
-            "en": "projection"
+            "en": "email"
           },
-          "sh:path": "https://purl.eu/ns/mobility#projection"
+          "sh:path": "http://schema.org/email"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "As used as a Point in a Journey Pattern."
+            "en": "TODO"
           },
+          "sh:maxCount": "1",
           "sh:name": {
-            "en": "viewed as"
+            "en": "fax"
           },
-          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+          "sh:path": "http://schema.org/faxNumber"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "openingsuren"
+          },
+          "sh:path": "http://schema.org/openingHours"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "telefoon"
+          },
+          "sh:path": "http://schema.org/telephone"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "website"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Point"
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
     },
     {
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PolygoonShape",
@@ -124,14 +167,28 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TransportModeShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TrainSizeTypeShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TimingStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TransportmodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TrainSizetypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -187,36 +244,180 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AdressRepresentationShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AdresvoorstellingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "administratieve eenheid niveau 1"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "administratieve eenheid niveau 2"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#adminUnitL2"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "adresgebied"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#addressArea"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "busnummer"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "gemeentenaam"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "huisnummer"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "land"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#land"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "locatieaanduiding"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#locatorDesignator"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "locatienaam"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#locatorName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "postbus"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#poBox"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "postcode"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#postCode"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "postnaam"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#postName"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "straatnaam"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+        },
+        {
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "volledig adres"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#fullAddress"
+        }
+      ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GeometryShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GeometrieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "Geometry expressed in GML-format."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "as GML"
+            "en": "gml"
           },
           "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "Geometry expressed in WKT-format."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "as WKT"
+            "en": "wkt"
           },
           "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
         }
@@ -224,7 +425,7 @@
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#StandardUnitShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#StandaardEenheidShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -250,7 +451,18 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Block."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
           "sh:definition": {
             "en": "Time when the Block ended."
           },
@@ -259,6 +471,17 @@
             "en": "end time"
           },
           "sh:path": "https://purl.eu/ns/mobility#endTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of days after journey start time that end time is."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "end time day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#endTimeDayOffset"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
@@ -273,6 +496,17 @@
           "sh:path": "https://purl.eu/ns/mobility#endedAt"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Time needed to complete the Block."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "finishing duration"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#finishingDuration"
+        },
+        {
           "sh:class": "https://purl.eu/ns/mobility#VehicleJourney",
           "sh:definition": {
             "en": "Block the Vehicle Journey is part of."
@@ -283,7 +517,29 @@
           "sh:path": "https://purl.eu/ns/mobility#including"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Block."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Time needed to prepare the Block."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "preparation duration"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#preparationDuration"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
           "sh:definition": {
             "en": "Time when the Block started."
           },
@@ -292,6 +548,17 @@
             "en": "start time"
           },
           "sh:path": "https://purl.eu/ns/mobility#startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Number of days after journey start time that start time is."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "start time day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#startTimeDayOffset"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#ParkingPoint",
@@ -320,8 +587,9 @@
         {
           "sh:class": "https://purl.eu/ns/mobility#DayType",
           "sh:definition": {
-            "en": "The DayType when the Block was worked on."
+            "en": "The Day Type when the Block was worked on."
           },
+          "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "worked on"
@@ -330,6 +598,88 @@
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#Block"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#CrewBaseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Crew Base."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Crew Base."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Private code of the Crew Base."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "private code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^privateCode"
+        },
+        {
+          "sh:definition": {
+            "en": "Purpose of grouping of the Crew Base."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "purpose of grouping"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^purposeOfGrouping"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name for the Crew Base."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^shortName"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Garage",
+          "sh:definition": {
+            "en": "Crew Base near the Garage."
+          },
+          "sh:name": {
+            "en": "near"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#near"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Garage",
+          "sh:definition": {
+            "en": "Crew Base near the Garage."
+          },
+          "sh:name": {
+            "en": "near"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#near"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#CrewBase"
     },
     {
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayTypeShape",
@@ -472,7 +822,30 @@
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Dead Run."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "dead run type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#deadRunType"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Direction Type of the Dead Run."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "direction type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#directionType"
+        }
+      ],
       "sh:targetClass": "https://purl.eu/ns/mobility#DeadRun"
     },
     {
@@ -569,6 +942,159 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "Centre Point of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "centroid"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^centroid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "Image of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "image"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^image"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:definition": {
+            "en": "List of Points within the Garage."
+          },
+          "sh:name": {
+            "en": "members"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^members"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^name"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Categorisation of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "place type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^placeType"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Polygon",
+          "sh:definition": {
+            "en": "Polygon of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "polygon"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^polygon"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Postal address of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "postal address"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^postalAddress"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Private code of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "private code"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^privateCode"
+        },
+        {
+          "sh:definition": {
+            "en": "Purpose of grouping of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "purpose of grouping"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^purposeOfGrouping"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Road address of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "road address"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^roadAddress"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Short name of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "short name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^short name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "URL of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "url"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^url"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "Contact details of the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "contact details"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#contactDetails"
+        },
+        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "Name of the Garage."
@@ -578,6 +1104,27 @@
             "en": "name"
           },
           "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:definition": {
+            "en": "Operator that operates the Garage."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "operated by"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#operatedBy"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:definition": {
+            "en": "Operator that uses the Garage."
+          },
+          "sh:name": {
+            "en": "used by"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#usedBy"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#Garage"
@@ -593,6 +1140,7 @@
             "en": "The Garage to which the Garage Point belongs."
           },
           "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "belonging to"
           },
@@ -631,13 +1179,13 @@
         {
           "sh:class": "https://purl.eu/ns/mobility#Line",
           "sh:definition": {
-            "en": "The main Line of the Group of Lines."
+            "en": "Main line of the Group of Lines."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "main line"
+            "en": "mainline"
           },
-          "sh:path": "https://purl.eu/ns/mobility#mainLine"
+          "sh:path": "https://purl.eu/ns/mobility#mainline"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -735,7 +1283,7 @@
         {
           "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
           "sh:definition": {
-            "en": "The overall accessibility characteristics of the Line."
+            "en": "Accessibility assessment of the Line."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -775,7 +1323,6 @@
           "sh:path": "https://purl.eu/ns/mobility#description"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
             "en": "Timetable documents associated with the Line, e.g. PDF files."
           },
@@ -883,17 +1430,6 @@
           "sh:path": "https://purl.eu/ns/mobility#shortName"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Identifier of the primary transport mode of the Line."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "transport mode"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#transportMode"
-        },
-        {
           "sh:class": "https://purl.eu/ns/mobility#AuthorityOrOperator",
           "sh:definition": {
             "en": "Authority or Operator associated with the Line."
@@ -918,6 +1454,17 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
+            "en": "Identifier of the primary transport mode of the Line."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transportmode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportmode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
             "en": "Reference to a Type of Line."
           },
           "sh:maxCount": "1",
@@ -927,9 +1474,8 @@
           "sh:path": "https://purl.eu/ns/mobility#typeOfLine"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
-            "en": "A URL associated with the Line."
+            "en": "URL associated with the Line."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -1103,7 +1649,7 @@
           "sh:path": "https://purl.eu/ns/mobility#address"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Reference to the Country."
           },
@@ -1131,7 +1677,108 @@
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ParkingPointShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Default wait time to use for timing patterns that use the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "allowed for wait time"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^allowedForWaitTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Category of the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "category"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^category"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "Indicates whether the Parking Point is flexible."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flexible"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^flexible"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:definition": {
+            "en": "Location of the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#location"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#CrewBase",
+          "sh:definition": {
+            "en": "Crew Base that manages the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "managed by"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^managedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Arbitrary alternative identifer for the Parking Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "point number"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^pointNumber"
+        },
+        {
+          "sh:definition": {
+            "en": "Projection of the Parking Point."
+          },
+          "sh:name": {
+            "en": "projection"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^projection"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of Timing Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "timing point type"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^timingPointType"
+        }
+      ],
       "sh:targetClass": "https://purl.eu/ns/mobility#ParkingPoint"
     },
     {
@@ -1140,7 +1787,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:class": "https://purl.eu/ns/mobility#FareClass",
           "sh:definition": {
             "en": "Fare class for which the capacity is given, e.g. business, economy, etc."
           },
@@ -1153,13 +1800,13 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "Capacity for baby stroller/pushchairs."
+            "en": "Number of push chairs places."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "pushchair capacity"
+            "en": "push chair capacity"
           },
-          "sh:path": "https://purl.eu/ns/mobility#pushchairCapacity"
+          "sh:path": "https://purl.eu/ns/mobility#pushChairCapacity"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
@@ -1186,18 +1833,18 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "Number of standing passengers."
+            "en": "Number of standing places."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "standing capacity"
+            "en": "standingcapacity"
           },
           "sh:path": "https://purl.eu/ns/mobility#standingCapacity"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "Maximum number of passengers."
+            "en": "Total number of passengers."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -1218,6 +1865,68 @@
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#PassengerCapacity"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:definition": {
+            "en": "Location of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#location"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Arbitrary alternative identifier for the Point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "point number"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#pointNumber"
+        },
+        {
+          "sh:definition": {
+            "en": "Projection for the Point."
+          },
+          "sh:name": {
+            "en": "projection"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#projection"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointInJourneyPattern",
+          "sh:definition": {
+            "en": "As used as a Point in a Journey Pattern."
+          },
+          "sh:name": {
+            "en": "viewed as"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Point"
     },
     {
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointInJourneyPatternShape",
@@ -1260,9 +1969,19 @@
           "sh:path": "https://purl.eu/ns/mobility#aViewOf"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "at"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#at"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
           "sh:definition": {
-            "en": "Indicates whether the destination display changes at this point."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -1289,31 +2008,7 @@
       "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PointOnRouteShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "Description of the Point on Route."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "description"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#description"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:definition": {
-            "en": "Order of Point on Route within Route."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "order"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#order"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "https://purl.eu/ns/mobility#PointOnRoute"
     },
     {
@@ -1371,7 +2066,6 @@
           "sh:path": "https://purl.eu/ns/mobility#dayOfWeek"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#gMonthDay",
           "sh:definition": {
             "en": "For those day types that occur on the same day every year, month and day."
           },
@@ -1405,7 +2099,6 @@
           "sh:path": "https://purl.eu/ns/mobility#holidayType"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#gMonth",
           "sh:definition": {
             "en": "For those day types that occur on the same month every year; a month as a number."
           },
@@ -1541,6 +2234,17 @@
             "en": "line"
           },
           "sh:path": "https://purl.eu/ns/mobility#line"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#PointOnRoute",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:minCount": "2",
+          "sh:name": {
+            "en": "through"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#through"
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/mobility#Route"
@@ -1618,49 +2322,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "https://purl.eu/ns/mobility#DayType",
-          "sh:definition": {
-            "en": "Day Type for the Service Journey."
-          },
-          "sh:name": {
-            "en": "day type"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#dayType"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:definition": {
-            "en": "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "departure day offset"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#departureDayOffset"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
-          "sh:definition": {
-            "en": "Time of departure."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "departure time"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#departureTime"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
-          "sh:definition": {
-            "en": "Total length of the Service Journey. Can be computed from individual times. "
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "journey duration"
-          },
-          "sh:path": "https://purl.eu/ns/mobility#journeyDuration"
-        },
         {
           "sh:class": "https://purl.eu/ns/mobility#TrainNumber",
           "sh:definition": {
@@ -1794,7 +2455,6 @@
           "sh:path": "https://purl.eu/ns/mobility#departureTime"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#HeadwayInterval",
           "sh:definition": {
             "en": "Headway interval at Point in Pattern."
           },
@@ -1917,13 +2577,24 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Transport submode of the Journey."
+            "en": "Transport submode of the Vehicle Journey."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "transport submode"
+            "en": "transportsubmode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#transportSubmode"
+          "sh:path": "https://purl.eu/ns/mobility#^transportSubmode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departure day offset"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#departureDayOffset"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
@@ -1948,16 +2619,45 @@
           "sh:path": "https://purl.eu/ns/mobility#in"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Total length of the Vehicle Journey."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "journey duration"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#journeyDuration"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#JourneyPart",
+          "sh:definition": {
+            "en": "Journey Part of a Journey."
+          },
+          "sh:name": {
+            "en": "journey part"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#journeyPart"
+        },
+        {
           "sh:class": "https://purl.eu/ns/mobility#JourneyPattern",
           "sh:definition": {
             "en": "Journey Pattern used to make the Vehicle Journey."
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "made using"
           },
           "sh:path": "https://purl.eu/ns/mobility#madeUsing"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
+          "sh:definition": {
+            "en": "Time at which the Vehicle Journey passes."
+          },
+          "sh:name": {
+            "en": "passed at"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#passedAt"
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#DayType",
@@ -2077,7 +2777,7 @@
           "sh:path": "https://purl.eu/ns/mobility#selfPropelled"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:class": "https://purl.eu/ns/mobility#TypeOfFuel",
           "sh:definition": {
             "en": "Type of Fuel of the Vehicle Type."
           },
@@ -2113,48 +2813,48 @@
       "sh:targetClass": "https://purl.eu/ns/mobility#VehicleType"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#NumberShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GetalShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://schema.org/Number"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#QuantitativeValueShape",
+      "@id": "https://semiceu.github.io/shacl/vehiclescheduling-ap_en#KwantitatieveWaardeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
-          "sh:definition": {
-            "en": "Standarised unit in which the value is expressed."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "standard unit"
-          },
-          "sh:path": "https://schema.org/unitCode"
-        },
-        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "The unit in which the value is expressed."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "unit"
+            "en": "eenheid"
           },
           "sh:path": "https://schema.org/unitText"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "standaard eenheid"
+          },
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
           "sh:class": "https://schema.org/Number",
           "sh:definition": {
-            "en": "Number used to express the quantity of the characteristic."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "value"
+            "en": "waarde"
           },
           "sh:path": "https://schema.org/value"
         }

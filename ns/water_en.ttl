@@ -6,42 +6,42 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
   rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
   skos:scopeNote "These species, also called BioIndicators, are living organisms such as plants, planktons, animals, microbes etc. More specifically, biochemical, physiological, behavioural or population changes are monitored."@en .
 
-<https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
-  rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/Observation#Measurement>,
-    <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
   skos:scopeNote "In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score."@en .
 
-<https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
-  rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/Observation#Measurement>,
-    <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
   skos:scopeNote "Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter."@en .
 
-<https://purl.eu/ns/air-and-water/water-quality#WaterFeature> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#WaterFeature> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
   rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
   skos:scopeNote "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."@en .
 
-<https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
   rdfs:subClassOf <https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection> .
 
-<https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation> a rdfs:Class,
-    owl:Class;
+<https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation> a owl:Class,
+    rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water-quality>;
-  rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/Observation#Measurement>,
-    <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
   skos:scopeNote "These quantities are parameters like temperature, salinity, turbidity, suspended/disolved solids etc."@en .
 
 <https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.bioIndicator> a owl:ObjectProperty,
@@ -114,19 +114,19 @@
     foaf:homepage <https://semic.eu>;
     foaf:name "Semantic Interoperability Community (SEMIC)"
   ];
-  rdfs:seeAlso <https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation>,
-    <https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation>,
-    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation>,
-    <https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.observedProperty>,
+  rdfs:seeAlso <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation>,
+    <https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.chemicalAgentConcentration>,
     <https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.bioticIndex>,
+    <https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation>,
+    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.waterQualityParameterResult>,
+    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection>,
     <https://purl.eu/ns/air-and-water/water-quality#Waterfeature.type>,
     <https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.bioIndicator>,
     <https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.observedProperty>,
     <https://purl.eu/ns/air-and-water/water-quality#WaterFeature>,
+    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.observedProperty>,
+    <https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation>,
     <https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation>,
-    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection>,
-    <https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.waterQualityParameterResult>,
     <https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.refWeatherObserved>,
-    <https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.chemicalAgentConcentration> .
+    <https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.observedProperty>,
+    <https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.observedProperty> .

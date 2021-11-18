@@ -1,7 +1,65 @@
 {
   "@context": {
     "AccessibilityAssessment": "https://purl.eu/ns/mobility#AccessibilityAssessment",
-    "AddressRepresentation": "http://www.w3.org/ns/locn#Address",
+    "Adresvoorstelling": "http://www.w3.org/ns/locn#Address",
+    "Adresvoorstelling.administratieveEenheidNiveau1": {
+      "@id": "http://www.w3.org/ns/locn#adminUnitL1",
+      "@type": ""
+    },
+    "Adresvoorstelling.administratieveEenheidNiveau2": {
+      "@id": "http://www.w3.org/ns/locn#adminUnitL2",
+      "@type": ""
+    },
+    "Adresvoorstelling.adresgebied": {
+      "@id": "http://www.w3.org/ns/locn#addressArea",
+      "@type": ""
+    },
+    "Adresvoorstelling.busnummer": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.gemeentenaam": {
+      "@id": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+      "@type": ""
+    },
+    "Adresvoorstelling.huisnummer": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.land": {
+      "@id": "https://data.vlaanderen.be/ns/adres#land",
+      "@type": ""
+    },
+    "Adresvoorstelling.locatieaanduiding": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/locn#locatorDesignator",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.locatienaam": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/locn#locatorName",
+      "@type": ""
+    },
+    "Adresvoorstelling.postbus": {
+      "@id": "http://www.w3.org/ns/locn#poBox",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.postcode": {
+      "@id": "http://www.w3.org/ns/locn#postCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.postnaam": {
+      "@id": "http://www.w3.org/ns/locn#postName",
+      "@type": ""
+    },
+    "Adresvoorstelling.straatnaam": {
+      "@id": "http://www.w3.org/ns/locn#thoroughfare",
+      "@type": ""
+    },
+    "Adresvoorstelling.volledigAdres": {
+      "@id": "http://www.w3.org/ns/locn#fullAddress",
+      "@type": ""
+    },
     "Arrival": "http://fixme.com#Arrival",
     "Arrival.callPart": {
       "@id": "http://fixme.com#callPart",
@@ -60,7 +118,43 @@
       "@id": "http://fixme.com#visiting",
       "@type": "@id"
     },
-    "ContactPoint": "http://schema.org/ContactPoint",
+    "ContactInfo": "http://schema.org/ContactPoint",
+    "ContactInfo.aanschrijfvorm": {
+      "@id": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "ContactInfo.adres": {
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "@id"
+    },
+    "ContactInfo.beschikbaarheid": {
+      "@id": "http://schema.org/hoursAvailable",
+      "@type": ""
+    },
+    "ContactInfo.contactnaam": {
+      "@id": "http://xmlns.com/foaf/0.1/name",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ContactInfo.email": {
+      "@id": "http://schema.org/email",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ContactInfo.fax": {
+      "@id": "http://schema.org/faxNumber",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ContactInfo.openingsuren": {
+      "@id": "http://schema.org/openingHours",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "ContactInfo.telefoon": {
+      "@id": "http://schema.org/telephone",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ContactInfo.website": {
+      "@id": "http://xmlns.com/foaf/0.1/page",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
     "Crowding": "http://www.w3.org/2004/02/skos/core#Concept",
     "DayOfWeek": "http://www.w3.org/2004/02/skos/core#Concept",
     "DayType": "https://purl.eu/ns/mobility#DayType",
@@ -149,19 +243,14 @@
       "@id": "https://purl.eu/ns/mobility#sideText",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "DestinationDisplay.variant": {
-      "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility#variant",
-      "@type": "@id"
-    },
     "DestinationDisplay.via": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility#via",
       "@type": "@id"
     },
     "DestinationDisplayVariant": "https://purl.eu/ns/mobility#DestinationDisplayVariant",
-    "DestinationDisplayVariant.destinationDisplayVariantType": {
-      "@id": "https://purl.eu/ns/mobility#destinationDisplayVariantType",
+    "DestinationDisplayVariant.destinationVariantDisplayType": {
+      "@id": "https://purl.eu/ns/mobility#destinationVariantDisplayType",
       "@type": "@id"
     },
     "DestinationDisplayVariant.frontText": {
@@ -171,6 +260,11 @@
     "DestinationDisplayVariant.sideText": {
       "@id": "https://purl.eu/ns/mobility#sideText",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "DestinationDisplayVariant.variant": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility#variant",
+      "@type": "@id"
     },
     "DestinationDisplayVariant.via": {
       "@container": "@set",
@@ -189,23 +283,33 @@
     },
     "DirectionType": "http://www.w3.org/2004/02/skos/core#Concept",
     "FareClass": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Geometry": "http://www.w3.org/ns/locn#Geometry",
-    "Geometry.asGml": {
+    "Geometrie": "http://www.w3.org/ns/locn#Geometry",
+    "Geometrie.gml": {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "Geometry.asWkt": {
+    "Geometrie.wkt": {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
+    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "GeregistreerdeOrganisatie.registratie": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
+    "GeregistreerdeOrganisatie.wettelijkeNaam": {
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Getal": "https://schema.org/Number",
     "GroupOfLines": "https://purl.eu/ns/mobility#GroupOfLines",
     "GroupOfLines.composedOf": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility#composedOf",
       "@type": "@id"
     },
-    "GroupOfLines.mainLine": {
-      "@id": "https://purl.eu/ns/mobility#mainLine",
+    "GroupOfLines.mainline": {
+      "@id": "https://purl.eu/ns/mobility#mainline",
       "@type": "@id"
     },
     "GroupOfLines.name": {
@@ -231,22 +335,22 @@
       "@type": "http://www.w3.org/2001/XMLSchema#duration"
     },
     "HolidayType": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Identifier": "http://www.w3.org/ns/adms#Identifier",
-    "Identifier.dateOfIssue": {
-      "@id": "http://purl.org/dc/terms/issued",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "Identifier.identifier": {
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
+    "Identificator.identificator": {
       "@id": "http://www.w3.org/2004/02/skos/core#notation",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "Identifier.issuingAuthority": {
-      "@id": "http://www.w3.org/ns/adms#schemeAgency",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
-    },
-    "Identifier.issuingAuthorityUri": {
+    "Identificator.toegekendDoor": {
       "@id": "http://purl.org/dc/terms/creator",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      "@type": "@id"
+    },
+    "Identificator.toegekendDoorString": {
+      "@id": "http://www.w3.org/ns/adms#schemaAgency",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Identificator.toegekendOp": {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "JourneyFrequency": "https://purl.eu/ns/mobility#JourneyFrequency",
     "JourneyFrequency.description": {
@@ -263,7 +367,7 @@
     },
     "JourneyFrequency.headwayDisplay": {
       "@id": "https://purl.eu/ns/mobility#headwayDisplay",
-      "@type": "@id"
+      "@type": ""
     },
     "JourneyPart": "https://purl.eu/ns/mobility#JourneyPart",
     "JourneyPattern": "https://purl.eu/ns/mobility#JourneyPattern",
@@ -292,7 +396,20 @@
       "@id": "https://purl.eu/ns/mobility#route",
       "@type": "@id"
     },
-    "LanguageString": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "KwantitatieveWaarde": "https://schema.org/QuantitativeValue",
+    "KwantitatieveWaarde.eenheid": {
+      "@id": "https://schema.org/unitText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "KwantitatieveWaarde.standaardEenheid": {
+      "@id": "https://schema.org/unitCode",
+      "@type": "@id"
+    },
+    "KwantitatieveWaarde.waarde": {
+      "@id": "https://schema.org/value",
+      "@type": "@id"
+    },
+    "LijnString": "http://www.opengis.net/ont/sf#LineString",
     "Line": "https://purl.eu/ns/mobility#Line",
     "Line.accessibilityAssessment": {
       "@id": "https://purl.eu/ns/mobility#accessibilityAssessment",
@@ -356,16 +473,16 @@
       "@id": "https://purl.eu/ns/mobility#shortName",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "Line.transportMode": {
-      "@id": "https://purl.eu/ns/mobility#transportMode",
-      "@type": "@id"
-    },
     "Line.transportOrganisation": {
       "@id": "https://purl.eu/ns/mobility#transportOrganisation",
       "@type": "@id"
     },
     "Line.transportSubmode": {
       "@id": "https://purl.eu/ns/mobility#transportSubmode",
+      "@type": "@id"
+    },
+    "Line.transportmode": {
+      "@id": "https://purl.eu/ns/mobility#transportmode",
       "@type": "@id"
     },
     "Line.typeOfLine": {
@@ -376,7 +493,6 @@
       "@id": "https://purl.eu/ns/mobility#url",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
-    "LineString": "http://www.opengis.net/ont/sf#LineString",
     "Network": "https://purl.eu/ns/mobility#Network",
     "Network.madeUpOf": {
       "@container": "@set",
@@ -392,7 +508,6 @@
       "@type": "@id"
     },
     "NoticeAssignment": "https://purl.eu/ns/mobility#NoticeAssignment",
-    "Number": "https://schema.org/Number",
     "OnwardTimingLinkView": "https://purl.eu/ns/mobility#OnwardTimingLinkView",
     "OnwardTimingLinkView.linksTo": {
       "@id": "https://purl.eu/ns/mobility#linksTo",
@@ -435,33 +550,33 @@
     },
     "Operator.country": {
       "@id": "https://purl.eu/ns/mobility#country",
-      "@type": "@id"
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Operator.primaryMode": {
       "@id": "https://purl.eu/ns/mobility#primaryMode",
       "@type": "@id"
     },
-    "Organisation": "http://www.w3.org/ns/org#Organization",
-    "Organisation.alternativeLabel": {
+    "Organisatie": "http://www.w3.org/ns/org#Organization",
+    "Organisatie.alternatieveNaam": {
       "@container": "@set",
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "Organisation.contactPoint": {
+    "Organisatie.beschrijving": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organisatie.contactinfo": {
       "@container": "@set",
       "@id": "http://schema.org/contactPoint",
       "@type": "@id"
     },
-    "Organisation.description": {
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "Organisation.organisationType": {
+    "Organisatie.type": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/regorg#orgType",
       "@type": "@id"
     },
-    "Organisation.preferredLabel": {
+    "Organisatie.voorkeursnaam": {
       "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
@@ -470,8 +585,8 @@
       "@id": "https://purl.eu/ns/mobility#fareClass",
       "@type": "@id"
     },
-    "PassengerCapacity.pushchairCapacity": {
-      "@id": "https://purl.eu/ns/mobility#pushchairCapacity",
+    "PassengerCapacity.pushChairCapacity": {
+      "@id": "https://purl.eu/ns/mobility#pushChairCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.seatingCapacity": {
@@ -495,8 +610,16 @@
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerStopAssignment": "https://purl.eu/ns/mobility#PassengerStopAssignment",
+    "PassengerStopAssignment.geplandeStopplaats": {
+      "@id": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint",
+      "@type": "@id"
+    },
     "PassengerStopAssignment.quay": {
       "@id": "https://purl.eu/ns/mobility#quay",
+      "@type": "@id"
+    },
+    "PassengerStopAssignment.stopplaats": {
+      "@id": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace",
       "@type": "@id"
     },
     "Point": "https://purl.eu/ns/mobility#Point",
@@ -515,7 +638,7 @@
     "Point.projection": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility#projection",
-      "@type": "@id"
+      "@type": ""
     },
     "Point.viewedAs": {
       "@container": "@set",
@@ -561,7 +684,6 @@
       "@id": "https://purl.eu/ns/mobility#order",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
-    "PointProjection": "https://purl.eu/ns/mobility#PointProjection",
     "Presentation": "https://purl.eu/ns/mobility#Presentation",
     "PropertyOfDay": "https://purl.eu/ns/mobility#PropertyOfDay",
     "PropertyOfDay.country": {
@@ -571,7 +693,7 @@
     },
     "PropertyOfDay.crowding": {
       "@id": "https://purl.eu/ns/mobility#crowding",
-      "@type": "@id"
+      "@type": ""
     },
     "PropertyOfDay.dayOfMonth": {
       "@id": "https://purl.eu/ns/mobility#dayOfMonth",
@@ -584,7 +706,7 @@
     },
     "PropertyOfDay.dayOfYear": {
       "@id": "https://purl.eu/ns/mobility#dayOfYear",
-      "@type": "http://www.w3.org/2001/XMLSchema#gMonthDay"
+      "@type": ""
     },
     "PropertyOfDay.description": {
       "@id": "https://purl.eu/ns/mobility#description",
@@ -597,7 +719,7 @@
     },
     "PropertyOfDay.monthOfYear": {
       "@id": "https://purl.eu/ns/mobility#monthOfYear",
-      "@type": "http://www.w3.org/2001/XMLSchema#gMonth"
+      "@type": ""
     },
     "PropertyOfDay.name": {
       "@id": "https://purl.eu/ns/mobility#name",
@@ -618,28 +740,7 @@
       "@id": "https://purl.eu/ns/mobility#weekOfMonth",
       "@type": "@id"
     },
-    "QuantitativeValue": "https://schema.org/QuantitativeValue",
-    "QuantitativeValue.standardUnit": {
-      "@id": "https://schema.org/unitCode",
-      "@type": "@id"
-    },
-    "QuantitativeValue.unit": {
-      "@id": "https://schema.org/unitText",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "QuantitativeValue.value": {
-      "@id": "https://schema.org/value",
-      "@type": "@id"
-    },
-    "RegisteredOrganisation": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-    "RegisteredOrganisation.legalName": {
-      "@id": "http://www.w3.org/ns/regorg#legalName",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "RegisteredOrganisation.registration": {
-      "@id": "http://www.w3.org/ns/regorg#registration",
-      "@type": "@id"
-    },
+    "Punt": "http://www.opengis.net/ont/sf#Point",
     "RequestMethodType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Route": "https://purl.eu/ns/mobility#Route",
     "Route.coveredBy": {
@@ -765,8 +866,8 @@
       "@id": "https://purl.eu/ns/mobility#tariffZones",
       "@type": "@id"
     },
-    "ScheduledStopPoint.timingPointStatus": {
-      "@id": "https://purl.eu/ns/mobility#timingPointStatus",
+    "ScheduledStopPoint.timingpointStatus": {
+      "@id": "https://purl.eu/ns/mobility#^timingpointStatus",
       "@type": "@id"
     },
     "ScheduledStopPoint.viewedAs": {
@@ -802,7 +903,7 @@
     "ServiceJourney": "https://purl.eu/ns/mobility#ServiceJourney",
     "ServiceJourney.dayType": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility#dayType",
+      "@id": "https://purl.eu/ns/mobility#^dayType",
       "@type": "@id"
     },
     "ServiceJourney.departureDayOffset": {
@@ -822,8 +923,8 @@
       "@id": "https://purl.eu/ns/mobility#flexibleLineView",
       "@type": ""
     },
-    "ServiceJourney.flexibleServiceProperties": {
-      "@id": "https://purl.eu/ns/mobility#flexibleServiceProperties",
+    "ServiceJourney.flexibleserviceProperties": {
+      "@id": "https://purl.eu/ns/mobility#flexibleserviceProperties",
       "@type": ""
     },
     "ServiceJourney.journeyDuration": {
@@ -869,7 +970,7 @@
     },
     "ServiceLink.linestring": {
       "@id": "https://purl.eu/ns/mobility#linestring",
-      "@type": "@id"
+      "@type": ""
     },
     "ServiceLink.name": {
       "@id": "https://purl.eu/ns/mobility#name",
@@ -879,7 +980,7 @@
       "@id": "https://purl.eu/ns/mobility#to",
       "@type": "@id"
     },
-    "StandardUnit": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+    "StandaardEenheid": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
     "StopPlace": "https://purl.eu/ns/mobility#StopPlace",
     "StopPlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
     "StopPointInJourneyPattern": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
@@ -937,6 +1038,7 @@
       "@type": "@id"
     },
     "StopUse": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TaalString": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
     "TariffZone": "https://purl.eu/ns/mobility#TariffZone",
     "TimeTabledPassingTime": "https://purl.eu/ns/mobility#TimeTabledPassingTime",
     "TimeTabledPassingTime.arrivalDayOffset": {
@@ -957,7 +1059,7 @@
     },
     "TimeTabledPassingTime.headway": {
       "@id": "https://purl.eu/ns/mobility#headway",
-      "@type": "@id"
+      "@type": ""
     },
     "Timeband": "https://purl.eu/ns/mobility#Timeband",
     "Timeband.dayOffset": {
@@ -972,10 +1074,10 @@
       "@id": "https://purl.eu/ns/mobility#startTime",
       "@type": "http://www.w3.org/2001/XMLSchema#time"
     },
-    "TimingPointStatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TimingpointStatus": "https://purl.eu/ns/mobility#TimingpointStatus",
     "TrainNumber": "https://purl.eu/ns/mobility#TrainNumber",
-    "TrainSizeType": "http://www.w3.org/2004/02/skos/core#Concept",
-    "TransportMode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TrainSizetype": "https://purl.eu/ns/mobility#TrainSizetype",
+    "Transportmode": "https://purl.eu/ns/mobility#Transportmode",
     "TypeOfFuel": "http://www.w3.org/2004/02/skos/core#Concept",
     "TypeOfLine": "http://www.w3.org/2004/02/skos/core#Concept",
     "UicOperatingPeriod": "https://purl.eu/ns/mobility#UicOperatingPeriod",
@@ -1016,7 +1118,7 @@
       "@type": "@id"
     },
     "VehicleJourney.transportSubmode": {
-      "@id": "https://purl.eu/ns/mobility#transportSubmode",
+      "@id": "https://purl.eu/ns/mobility#^transportSubmode",
       "@type": "@id"
     },
     "VehicleJourney.workedOn": {
