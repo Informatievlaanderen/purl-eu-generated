@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <rdf:RDF xmlns:dc='http://purl.org/dc/terms/' xmlns:foaf='http://xmlns.com/foaf/0.1/' xmlns:owl='http://www.w3.org/2002/07/owl#' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#' xmlns:skos='http://www.w3.org/2004/02/skos/core#'>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy>
 <owl:Ontology rdf:about='https://purl.eu/ns/air-and-water/water-quality'>
 <rdfs:label xml:lang='nl'>water</rdfs:label>
@@ -13,7 +13,7 @@
  <dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
 
 <dc:mediator>
-<rdf:Description rdf:nodeID='g47177231526820'>
+<rdf:Description rdf:nodeID='g46961908999880'>
 <foaf:homepage rdf:resource='https://semic.eu' />
 
 <foaf:name>Semantic Interoperability Community (SEMIC)</foaf:name>
@@ -23,171 +23,110 @@
 </dc:mediator>
 
 <rdfs:seeAlso>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+ <rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
 
 <skos:scopeNote xml:lang='en'>These quantities are parameters like temperature, salinity, turbidity, suspended/disolved solids etc.</skos:scopeNote>
 
-</owl:Class>
+</rdfs:Class>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterFeature'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature' />
-
-<skos:scopeNote xml:lang='en'>It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the "type" attribute (value would be "waterbody-canal" for example), but substitution by a typed instance (eg an instance of type "Canal", subclass of a class "Waterbody") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
-
-<skos:scopeNote xml:lang='en'>In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.observedProperty'>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.bioticIndex'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231531140' />
+<rdfs:domain rdf:nodeID='g46961908982260' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231530780' />
+<rdfs:range rdf:nodeID='g46961908981900' />
 
 </owl:ObjectProperty>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.bioIndicator'>
-  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231510900' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:range rdf:nodeID='g47177231510540' />
-
-</owl:ObjectProperty>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.waterQualityParameterResult'>
-  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231528560' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:range rdf:nodeID='g47177231528200' />
-
-</owl:ObjectProperty>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
-
-<skos:scopeNote xml:lang='en'>Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.observedProperty'>
-  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231510040' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:range rdf:nodeID='g47177231509680' />
-
-</owl:ObjectProperty>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
-
-<rdfs:subClassOf rdf:resource='https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection' />
-
-</owl:Class>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.chemicalAgentConcentration'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231507460' />
+<rdfs:domain rdf:nodeID='g46961909005060' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231531640' />
+<rdfs:range rdf:nodeID='g46961909004700' />
 
 </owl:ObjectProperty>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.observedProperty'>
-  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231529420' />
-
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231529060' />
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+ <rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
 
-</owl:ObjectProperty>
+<skos:scopeNote xml:lang='en'>In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score.</skos:scopeNote>
+
+</rdfs:Class>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#Waterfeature.type'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231527700' />
+<rdfs:domain rdf:nodeID='g46961909000760' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231527340' />
+<rdfs:range rdf:nodeID='g46961909000400' />
 
 </owl:ObjectProperty>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.observedProperty'>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.observedProperty'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231508320' />
+<rdfs:domain rdf:nodeID='g46961908983120' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231507960' />
+<rdfs:range rdf:nodeID='g46961908982760' />
 
 </owl:ObjectProperty>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso rdf:resource='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation' />
  <rdfs:seeAlso>
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.bioticIndex'>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:subClassOf rdf:resource='https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection' />
+
+</rdfs:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.observedProperty'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231509180' />
+<rdfs:domain rdf:nodeID='g46961909005920' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231508820' />
+<rdfs:range rdf:nodeID='g46961909005560' />
+
+</owl:ObjectProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation.observedProperty'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g46961909004200' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:range rdf:nodeID='g46961909003840' />
 
 </owl:ObjectProperty>
 
@@ -195,11 +134,72 @@
  <rdfs:seeAlso>
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityObservationCollection.refWeatherObserved'>
   <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
-<rdfs:domain rdf:nodeID='g47177231530280' />
+<rdfs:domain rdf:nodeID='g46961909003340' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
 
-<rdfs:range rdf:nodeID='g47177231529920' />
+<rdfs:range rdf:nodeID='g46961909002980' />
+
+</owl:ObjectProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterFeature'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature' />
+
+<skos:scopeNote xml:lang='en'>It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the "type" attribute (value would be "waterbody-canal" for example), but substitution by a typed instance (eg an instance of type "Canal", subclass of a class "Waterbody") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest.</skos:scopeNote>
+
+</rdfs:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/water-quality#ChemicalAgentConcentrationObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+ <rdfs:subClassOf rdf:resource='http://def.isotc211.org/iso19156/2011/Observation#OM_Observation' />
+
+<skos:scopeNote xml:lang='en'>Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter.</skos:scopeNote>
+
+</rdfs:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.bioIndicator'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g46961908983980' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:range rdf:nodeID='g46961908983620' />
+
+</owl:ObjectProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.waterQualityParameterResult'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g46961909001620' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:range rdf:nodeID='g46961909001260' />
+
+</owl:ObjectProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/air-and-water/water-quality#WaterQualityParameterObservation.observedProperty'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g46961909002480' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/water-quality' />
+
+<rdfs:range rdf:nodeID='g46961909002120' />
 
 </owl:ObjectProperty>
 
@@ -213,6 +213,6 @@
 
 <skos:scopeNote xml:lang='en'>These species, also called BioIndicators, are living organisms such as plants, planktons, animals, microbes etc. More specifically, biochemical, physiological, behavioural or population changes are monitored.</skos:scopeNote>
 
-</owl:Class>
+</rdfs:Class>
 
 </rdf:RDF>
