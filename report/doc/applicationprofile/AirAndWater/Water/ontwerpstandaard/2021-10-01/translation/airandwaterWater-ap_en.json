@@ -270,7 +270,10 @@
         "en": "TM_Object"
       },
       "definition": {
-        "en": "TM_Object is a temporal object."
+        "en": "Abstract temporal class."
+      },
+      "usage": {
+        "en": "In practice, usually takes the form of temporal primitives like Moment or Period (resp represented by a Date/DateTime or two Dates/DateTimes, one for the beginning of the Period, one for the end of the Period). For a more detailed description of this class see ISO 19108."
       }
     },
     {
@@ -280,7 +283,7 @@
         "en": "PropertyType"
       },
       "definition": {
-        "en": "Characteristic of a feature type"
+        "en": "Characteristic common to a class of Objects."
       }
     },
     {
@@ -293,7 +296,7 @@
         "en": "Abstract class of all possible tests to assess the quality of a dataset."
       },
       "usage": {
-        "en": "this means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, thematicAccuracy or TemporalAccuracy."
+        "en": "This means a test to assess Completeness, LogicalConsistency, PositionalAccuracy, ThematicAccuracy or TemporalAccuracy. For a more detailed description see ISO19115."
       }
     },
     {
@@ -304,6 +307,9 @@
       },
       "definition": {
         "en": "Metadata is data that contains information about data."
+      },
+      "usage": {
+        "en": "For a more detailed description see the application profile ODALA Air & Water - Core."
       }
     },
     {
@@ -333,7 +339,10 @@
         "en": "SamplingFeature"
       },
       "definition": {
-        "en": "Feature, such as a station, transect, section or specimen, which is involved in making observations concerning a domain feature"
+        "en": "Part of the Object that one wants to observe and that is representative for that Object."
+      },
+      "usage": {
+        "en": "This part can be physical (a Specimen) or spatial (a SpatialsamplingFeature). One observes a SamplingFeature instead of the actual Object if the latter cannot be observed as a whole (eg because exhaustive observation would be impractical). The SamplingFeature, together with the Process used for observation, forms the so-called observation protocol. ATTENTION: This class is abstract, it must be specialized in accordance with the application domain. For a more detailed description see the application profile ODALA Air & Water -Core."
       }
     },
     {
@@ -390,6 +399,9 @@
       },
       "definition": {
         "en": "Features are abstractions of real-world phenomena."
+      },
+      "usage": {
+        "en": "An equivalent term is Object."
       }
     },
     {
@@ -412,7 +424,10 @@
         "en": "NamedValue"
       },
       "definition": {
-        "en": "The class NamedValue provides for a generic soft-typed parameter value."
+        "en": "Generic soft-typed value."
+      },
+      "usage": {
+        "en": "Essentially a value and the type of the value, given by a name. For example 21degrees temperature (value=21degrees, name=temperature). For a more detailed description of this class see ISO 19156."
       }
     },
     {
@@ -435,7 +450,10 @@
         "en": "ObservationCollection"
       },
       "definition": {
-        "en": "A collection of one or more observations,whose members share a common value for one or more properties."
+        "en": "A collection of one or more observations, whose members share a common value for one or more properties."
+      },
+      "usage": {
+        "en": "For a more detailed description see the application profile ODALA Air & Water - Core."
       }
     },
     {
@@ -445,7 +463,10 @@
         "en": "ObservationProcedure"
       },
       "definition": {
-        "en": "A workflow, protocol, plan, algorithm, or computational method specifying how to make an observation, create a sample, or make a change to the state of the world (via an actuator). A procedure is re-usable, and might be involved in many observations, samplings or actuations. It explains the steps to be carried out to arrived at reproducible results."
+        "en": "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation."
+      },
+      "usage": {
+        "en": "The procedure explains the steps to be carried out to arrive at reproducible results. It is reusable and might be involved in many Observations. For a more detailed description see the apllication profile ODALA Air & Water - Core."
       }
     },
     {
@@ -455,7 +476,10 @@
         "en": "Sensor"
       },
       "definition": {
-        "en": "Device, agent (including humans), or software (simulation) involved in, or implementing, a procedure. Sensors respond to a stimulus, e.e., a change in the environment, or Input data composed from the Results of prior observations, and generate a result. Sensors can be hosted by platforms."
+        "en": "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure to make an Observation."
+      },
+      "usage": {
+        "en": "Sensors respond to a stimulus, eg a change in the environment, or Input data composed from the results of prior Observations, and generate a result. Sensors can be hosted by Platforms. Examples: accelerometers, gyroscopes, barameters, magnetometers etc, typically mounted on a smartphone (which acts as Platform). Other examples include the human eyes. For a more detailed description see the application profile ODALA Air & Water - Core."
       }
     },
     {
@@ -465,7 +489,10 @@
         "en": "System"
       },
       "definition": {
-        "en": "System is a unit of abstraction for pieces of infrastructure that implment Procedures. A system may have components,it's subsystems,which are other Systems."
+        "en": "System is a unit of abstraction for pieces of infrastructure that implement Procedures."
+      },
+      "usage": {
+        "en": "A System may have components, it's subsystems, which are other Systems. Examples of Systems are Sensors, Samplers  For a more detailed description, see the application profile ODALA Air & Water - Core."
       }
     }
   ],
