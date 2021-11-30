@@ -4,16 +4,16 @@
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy>
 <owl:Ontology rdf:about='https://purl.eu/ns/air-and-water/air-quality'>
-<rdfs:label xml:lang='en'>air</rdfs:label>
- <rdfs:label xml:lang='nl'>air</rdfs:label>
+<rdfs:label xml:lang='nl'>air</rdfs:label>
+ <rdfs:label xml:lang='en'>air</rdfs:label>
 
 <dc:issued>TODO</dc:issued>
 
-<dc:license rdf:resource='https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0' />
- <dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
+<dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
+ <dc:license rdf:resource='https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0' />
 
 <dc:mediator>
-<rdf:Description rdf:nodeID='g47365147702780'>
+<rdf:Description rdf:nodeID='g47029963709640'>
 <foaf:homepage rdf:resource='https://semic.eu' />
 
 <foaf:name>Semantic Interoperability Community (SEMIC)</foaf:name>
@@ -23,18 +23,12 @@
 </dc:mediator>
 
 <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation.airPollutantValue'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147683420' />
-
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147683060' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation' />
+ <rdfs:subClassOf>
 <rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
@@ -45,26 +39,21 @@
 
 </rdfs:Class>
 
+</rdfs:subClassOf>
+
+<skos:scopeNote xml:lang='en'>Basically a Classification of concentration measurements (see AirPollutantObservation) according to certain threshold values. For example if the concentration exceeds a certain number, the AirPollutant concentration could be labeled as "dangerous".</skos:scopeNote>
+
+</rdfs:Class>
+
 </rdfs:seeAlso>
  <rdfs:seeAlso rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirFeature' />
  <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation.observedProperty'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147684280' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
-
-<rdfs:range rdf:nodeID='g47365147683920' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation'>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:subClassOf>
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation' />
+ <rdfs:subClassOf>
 <rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
@@ -74,47 +63,58 @@
 </rdfs:Class>
 
 </rdfs:subClassOf>
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+
+<skos:scopeNote xml:lang='en'>Basically a Classification of the result of an AirQualityIndexObservation according to certain threshold values. For example if the index exceeds a certain value, the AirQuality could be labeled as "unhealthy".</skos:scopeNote>
+
+</rdfs:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.reliability'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47029963696760' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
+
+<rdfs:range rdf:nodeID='g47029963696400' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation' />
+ <rdfs:seeAlso>
+<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
+
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+ <rdfs:subClassOf rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation' />
 
 <skos:scopeNote xml:lang='en'>Basically the aggregation of the results of a predetermined set of AirPollutantObservations over an averaging period and of substances that are considered critical for AirQuality. The result is a single number that acts as an indicator for AirQuality.</skos:scopeNote>
 
 </rdfs:Class>
 
 </rdfs:seeAlso>
- <rdfs:seeAlso rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation' />
  <rdfs:seeAlso>
-<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
-
-<rdfs:subClassOf rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation' />
-
-<skos:scopeNote xml:lang='en'>Basically a Classification of concentration measurements (see AirPollutantObservation) according to certain threshold values. For example if the concentration exceeds a certain number, the AirPollutant concentration could be labeled as "dangerous".</skos:scopeNote>
-
-</rdfs:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation.airPollutantLevel'>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation.airQualityLevel'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147685140' />
+<rdfs:domain rdf:nodeID='g47029963695900' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147684780' />
+<rdfs:range rdf:nodeID='g47029963695540' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.reliability'>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.airQualityIndex'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147681700' />
+<rdfs:domain rdf:nodeID='g47029963697620' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147681340' />
+<rdfs:range rdf:nodeID='g47029963697260' />
 
 </rdf:Property>
 
@@ -129,25 +129,14 @@
 </rdfs:Class>
 
 </rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#Airfeature.type'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147703660' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
-
-<rdfs:range rdf:nodeID='g47365147703300' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
+ <rdfs:seeAlso rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation' />
  <rdfs:seeAlso>
 <rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:subClassOf rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+<rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#Measurement' />
+ <rdfs:subClassOf rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation' />
 
 <skos:scopeNote xml:lang='en'>Actually the Measurement of the amount of the substance in the Air, usually over some averaging period. Result is how much of the substance is found eg in parts-per-million.</skos:scopeNote>
 
@@ -155,13 +144,13 @@
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation.airQualityLevel'>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantLevelObservation.airPollutantLevel'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147680840' />
+<rdfs:domain rdf:nodeID='g47029963700200' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147705020' />
+<rdfs:range rdf:nodeID='g47029963699840' />
 
 </rdf:Property>
 
@@ -169,36 +158,47 @@
  <rdfs:seeAlso>
 <rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservationCollection.refWeatherObserved'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147704520' />
+<rdfs:domain rdf:nodeID='g47029963695040' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147704160' />
+<rdfs:range rdf:nodeID='g47029963694680' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdfs:Class rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityLevelObservation'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#Class'></rdf:type>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantObservation.observedProperty'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47029963699340' />
+
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:subClassOf rdf:resource='https://purl.eu/ns/air-and-water/air-quality#AirQualityObservation' />
- <rdfs:subClassOf rdf:resource='https://def.isotc211.org/iso19156/2011/Observation#CategoryObservation' />
+<rdfs:range rdf:nodeID='g47029963698980' />
 
-<skos:scopeNote xml:lang='en'>Basically a Classification of the result of an AirQualityIndexObservation according to certain threshold values. For example if the index exceeds a certain value, the AirQuality could be labeled as "unhealthy".</skos:scopeNote>
-
-</rdfs:Class>
+</rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirQualityIndexObservation.airQualityIndex'>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#AirPollutantValueObservation.airPollutantValue'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47365147682560' />
+<rdfs:domain rdf:nodeID='g47029963698480' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
 
-<rdfs:range rdf:nodeID='g47365147682200' />
+<rdfs:range rdf:nodeID='g47029963698120' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='https://purl.eu/ns/air-and-water/air-quality#Airfeature.type'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47029963694180' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/air-and-water/air-quality' />
+
+<rdfs:range rdf:nodeID='g47029963710160' />
 
 </rdf:Property>
 
