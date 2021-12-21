@@ -230,7 +230,7 @@
           "sh:path": "http://www.w3.org/ns/sosa/phenomenonTime"
         },
         {
-          "sh:class": "http://fixme.com#WeatherObserved",
+          "sh:class": "https://uri.fiware.org/ns/data-models#WeatherObserved",
           "sh:definition": {
             "en": "A description of the weather conditions during the Observations in the Collection."
           },
@@ -270,7 +270,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com#QuantitativeValue",
+          "sh:class": "https://schema.org/QuantitativeValue",
           "sh:definition": {
             "en": "The amount."
           },
@@ -493,67 +493,18 @@
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#QuantitativeValueShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcedureShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://fixme.com#StandardUnit",
-          "sh:definition": {
-            "en": "The standardized unit of measure in which the value is expressed."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "standardUnit"
-          },
-          "sh:path": "https://schema.org/unitCode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "The unit of measure in which the value is expressed."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "unit"
-          },
-          "sh:path": "https://schema.org/unitText"
-        },
-        {
-          "sh:class": "http://fixme.com#Number",
-          "sh:definition": {
-            "en": "Number by which the quantity of the property can be expressed."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "value"
-          },
-          "sh:path": "https://schema.org/value"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#QuantitativeValue"
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/sosa/Procedure"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#StandardUnitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "http://fixme.com#StandardUnit"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#WeatherObservedShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#WeatherObserved"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ProcedureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/ns/sosa/Procedure"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#FeatureShape",
@@ -589,6 +540,55 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#QuantitativeValueShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:definition": {
+            "en": "The standardized unit of measure in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "standardUnit"
+          },
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The unit of measure in which the value is expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "unit"
+          },
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "http://fixme.com#Number",
+          "sh:definition": {
+            "en": "Number by which the quantity of the property can be expressed."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#WeatherObservedShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://uri.fiware.org/ns/data-models#WeatherObserved"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-airAndWater-Air-ap_en#ObservationCollectionShape",
