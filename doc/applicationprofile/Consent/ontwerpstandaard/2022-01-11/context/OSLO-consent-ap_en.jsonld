@@ -1,0 +1,256 @@
+{
+  "@context": {
+    "Consent": "https://w3id.org/GConsent#Consent",
+    "Consent.creationTime": {
+      "@id": "http://fixme.com#creationTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Consent.forPersonalData": {
+      "@container": "@set",
+      "@id": "http://fixme.com#forPersonalData",
+      "@type": "@id"
+    },
+    "Consent.invalidates": {
+      "@container": "@set",
+      "@id": "http://fixme.com#invalidates",
+      "@type": "@id"
+    },
+    "Consent.isConsentForDataSubject": {
+      "@container": "@set",
+      "@id": "https://w3id.org/GConsent#isConsentForDataSubject",
+      "@type": "@id"
+    },
+    "Consent.isInvalidatedBy": {
+      "@container": "@set",
+      "@id": "http://fixme.com#isInvalidatedBy",
+      "@type": "@id"
+    },
+    "Consent.isPreviousConsentFor": {
+      "@container": "@set",
+      "@id": "https://w3id.org/GConsent#isPreviousConsentFor",
+      "@type": "@id"
+    },
+    "Consent.isProvidedByDataSubject": {
+      "@container": "@set",
+      "@id": "https://w3id.org/GConsent#isProvidedByDataSubject",
+      "@type": "@id"
+    },
+    "Consent.isProvidedByDelegation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/GConsent#isProvidedByDelegation",
+      "@type": "@id"
+    },
+    "Consent.isProvidedToController": {
+      "@container": "@set",
+      "@id": "http://fixme.com#isProvidedToController",
+      "@type": "@id"
+    },
+    "Consent.location": {
+      "@id": "http://fixme.com#location",
+      "@type": ""
+    },
+    "Consent.medium": {
+      "@id": "http://fixme.com#medium",
+      "@type": "@id"
+    },
+    "Consent.notice": {
+      "@id": "http://fixme.com#notice",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Consent.status": {
+      "@id": "http://fixme.com#status",
+      "@type": "@id"
+    },
+    "ConsentStatus": "http://fixme.com#ConsentStatus",
+    "Criterion": "http://data.europa.eu/m8g/#Criterion",
+    "DataController": "https://w3id.org/GConsent#DataController",
+    "DataController.canWithdrawConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#canWithdrawConsent",
+      "@type": "@id"
+    },
+    "DataController.hasRelationshipWith": {
+      "@container": "@set",
+      "@id": "http://fixme.com#DataController.hasRelationshipWith",
+      "@type": "@id"
+    },
+    "DataController.identifier": {
+      "@container": "@set",
+      "@id": "http://fixme.com#identifier",
+      "@type": "@id"
+    },
+    "DataController.legalName": {
+      "@id": "http://fixme.com#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "DataController.requestedConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#requestedConsent",
+      "@type": "@id"
+    },
+    "DataController.wasProvidedConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#wasProvidedConsent",
+      "@type": "@id"
+    },
+    "DataProcessor": "https://dpvcg.github.io/dpv/#DataProcessor",
+    "DataProcessor.identifier": {
+      "@container": "@set",
+      "@id": "http://fixme.com#identifier",
+      "@type": "@id"
+    },
+    "DataProcessor.legalName": {
+      "@id": "http://fixme.com#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "DataRetention": "http://fixme.com#DataRetention",
+    "DataRetention.expiryDate": {
+      "@id": "http://fixme.com#expiryDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "DataRetention.expiryTime": {
+      "@id": "http://fixme.com#expiryTime",
+      "@type": ""
+    },
+    "DataRetention.legalBasis": {
+      "@id": "http://fixme.com#legalBasis",
+      "@type": "@id"
+    },
+    "DataRetention.liveData": {
+      "@id": "http://fixme.com#liveData",
+      "@type": ""
+    },
+    "DataRetention.processing": {
+      "@container": "@set",
+      "@id": "https://dpvcg.github.io/dpv/#Processing",
+      "@type": "@id"
+    },
+    "DataRetention.startDate": {
+      "@id": "http://fixme.com#startDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "DataSubject": "https://w3id.org/GConsent#DataSubject",
+    "DataSubject.canCancelConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#canCancelConsent",
+      "@type": "@id"
+    },
+    "DataSubject.hasConsent": {
+      "@id": "https://w3id.org/GConsent#hasConsent",
+      "@type": "@id"
+    },
+    "DataSubject.identifier": {
+      "@container": "@set",
+      "@id": "http://fixme.com#identifier",
+      "@type": "@id"
+    },
+    "DataSubject.legalName": {
+      "@id": "http://fixme.com#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "DataSubject.providedConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#providedConsent",
+      "@type": "@id"
+    },
+    "Delegation": "https://w3id.org/GConsent#Delegation",
+    "Delegation.isConsentDelegationFor": {
+      "@id": "http://fixme.com#isConsentDelegationFor",
+      "@type": "@id"
+    },
+    "Delegation.providedConsent": {
+      "@container": "@set",
+      "@id": "http://fixme.com#providedConsent",
+      "@type": "@id"
+    },
+    "Document": "http://xmlns.com/foaf/spec/#term_Document",
+    "EvidenceType": "http://data.europa.eu/m8g/EvidenceType",
+    "Expiry": "http://fixme.com#Expiry",
+    "Expiry.expiryCadance": {
+      "@id": "http://fixme.com#expiryCadance",
+      "@type": ""
+    },
+    "Expiry.expiryDate": {
+      "@id": "http://fixme.com#expiryDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Expiry.expiryFrequency": {
+      "@container": "@set",
+      "@id": "http://fixme.com#expiryFrequency",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Expiry.expiryTime": {
+      "@id": "http://fixme.com#expiryTime",
+      "@type": ""
+    },
+    "GivenConsent": "https://w3id.org/GConsent#GivenConsent",
+    "Identifier": "http://fixme.com#Identifier",
+    "InformationRequired": "http://data.europa.eu/m8g/InformationRequirement",
+    "LegalBasis": "https://dpvcg.github.io/dpv/#LegalBasis",
+    "LegalBasis.oSlo: :isLegalBasisFor": {
+      "@container": "@set",
+      "@id": "http://fixme.com#oSLO::isLegalBasisFor",
+      "@type": "@id"
+    },
+    "Medium": "http://fixme.com#Medium",
+    "MinorDataSubject": "https://w3id.org/GConsent#MinorDataSubject",
+    "PersonalData": "https://w3id.org/GConsent#PersonalData",
+    "PersonalData.isPersonalDataForConsent": {
+      "@id": "https://w3id.org/GConsent#isPersonalDataForConsent",
+      "@type": "@id"
+    },
+    "PersonalData.isRetrievedFrom": {
+      "@id": "http://fixme.com#isRetrievedFrom",
+      "@type": "@id"
+    },
+    "PersonalDataCategory": "http://fixme.com#PersonalDataCategory",
+    "PersonalDataHandling": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+    "PersonalDataHandling.involvesDataController": {
+      "@id": "http://fixme.com#involvesDataController",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.legalBasis": {
+      "@id": "http://fixme.com#legalBasis",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.liveData": {
+      "@id": "http://fixme.com#liveData",
+      "@type": ""
+    },
+    "PersonalDataHandling.measure": {
+      "@container": "@set",
+      "@id": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.personalDataCategory": {
+      "@id": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.personalDataType": {
+      "@id": "http://fixme.com#personalDataType",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.processing": {
+      "@container": "@set",
+      "@id": "https://dpvcg.github.io/dpv/#Processing",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.purpose": {
+      "@id": "https://dpvcg.github.io/dpv/#Purpose",
+      "@type": "@id"
+    },
+    "PersonalDataHandling.right": {
+      "@id": "https://dpvcg.github.io/dpv/#Right",
+      "@type": ""
+    },
+    "PersonalDataHandling.risk": {
+      "@id": "https://dpvcg.github.io/dpv/#Risk",
+      "@type": ""
+    },
+    "PersonalDataType": "http://fixme.com#PersonalDataType",
+    "Processing": "http://fixme.com#Processing",
+    "Purpose": "http://fixme.com#Purpose",
+    "TechnicalOrganisationalMeasure": "http://fixme.com#TechnicalOrganisationalMeasure",
+    "ThirdParty": "https://w3id.org/GConsent#ThirdParty"
+  }
+}

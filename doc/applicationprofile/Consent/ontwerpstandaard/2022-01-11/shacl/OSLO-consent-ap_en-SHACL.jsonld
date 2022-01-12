@@ -1,0 +1,756 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/OSLO-consent-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ConsentStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#ConsentStatus"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataRetentionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The data on which the data retention stops"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "expiry date"
+          },
+          "sh:path": "http://fixme.com#expiryDate"
+        },
+        {
+          "sh:definition": {
+            "en": "The duration of the data retention, starting from the start date"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "expiry time"
+          },
+          "sh:path": "http://fixme.com#expiryTime"
+        },
+        {
+          "sh:class": "http://fixme.com#LegalBasis",
+          "sh:definition": {
+            "en": "The legal basis that substantiates the data retention"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal basis"
+          },
+          "sh:path": "http://fixme.com#legalBasis"
+        },
+        {
+          "sh:definition": {
+            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "live data"
+          },
+          "sh:path": "http://fixme.com#liveData"
+        },
+        {
+          "sh:class": "http://fixme.com#Processing",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:name": {
+            "en": "processing"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#Processing"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The moment in time when the data retention starts"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "start date"
+          },
+          "sh:path": "http://fixme.com#startDate"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#DataRetention"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ExpiryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "The time between moments in time when the data may be retreived for processing"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "expiry cadance"
+          },
+          "sh:path": "http://fixme.com#expiryCadance"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The moment in time up to which the data may be processed"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "expiry date"
+          },
+          "sh:path": "http://fixme.com#expiryDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "The number of times the data may be processed"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "expiry frequency"
+          },
+          "sh:path": "http://fixme.com#expiryFrequency"
+        },
+        {
+          "sh:definition": {
+            "en": "The duration during which the data may be processed"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "expiry time"
+          },
+          "sh:path": "http://fixme.com#expiryTime"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Expiry"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "sh:definition": {
+            "en": "The legal basis under which the data handling takes place"
+          },
+          "sh:name": {
+            "en": "oSLO: :is legal basis for"
+          },
+          "sh:path": "http://fixme.com#oSLO::isLegalBasisFor"
+        }
+      ],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#LegalBasis"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Medium"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#PersonalDataType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#CriterionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/#Criterion"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#EvidenceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/EvidenceType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#informationRequiredShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/InformationRequirement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataCategoryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#PersonalDataCategory"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Processing"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PurposeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Purpose"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#TechnicalOrganisationalMeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#TechnicalOrganisationalMeasure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/spec/#term_Document"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataProcessorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://fixme.com#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal name"
+          },
+          "sh:path": "http://fixme.com#legalName"
+        }
+      ],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#DataProcessor"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataHandlingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#ThirdParty",
+          "sh:definition": {
+            "en": "Stating if the data handling involves a data controller or not"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "involves data controller"
+          },
+          "sh:path": "http://fixme.com#involvesDataController"
+        },
+        {
+          "sh:class": "http://fixme.com#LegalBasis",
+          "sh:definition": {
+            "en": "The legal basisses defined under GDPR legislation"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal basis"
+          },
+          "sh:path": "http://fixme.com#legalBasis"
+        },
+        {
+          "sh:definition": {
+            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "live data"
+          },
+          "sh:path": "http://fixme.com#liveData"
+        },
+        {
+          "sh:class": "http://fixme.com#TechnicalOrganisationalMeasure",
+          "sh:name": {
+            "en": "measure"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure"
+        },
+        {
+          "sh:class": "http://fixme.com#PersonalDataCategory",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "personal data category"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#PersonalDataCategory"
+        },
+        {
+          "sh:class": "http://fixme.com#PersonalDataType",
+          "sh:definition": {
+            "en": "A type of personal data"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "personal data type"
+          },
+          "sh:path": "http://fixme.com#personalDataType"
+        },
+        {
+          "sh:class": "http://fixme.com#Processing",
+          "sh:name": {
+            "en": "processing"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#Processing"
+        },
+        {
+          "sh:class": "http://fixme.com#Purpose",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "purpose"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#Purpose"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "right"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#Right"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "risk"
+          },
+          "sh:path": "https://dpvcg.github.io/dpv/#Risk"
+        }
+      ],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ConsentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The moment in time in which this specific version of the consent was created"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "creation time"
+          },
+          "sh:path": "http://fixme.com#creationTime"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#PersonalData",
+          "sh:definition": {
+            "en": "The personal data for which the consent was given"
+          },
+          "sh:name": {
+            "en": "for personal data"
+          },
+          "sh:path": "http://fixme.com#forPersonalData"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "A newer version of a consent invalidates a previous version of the consent"
+          },
+          "sh:name": {
+            "en": "invalidates"
+          },
+          "sh:path": "http://fixme.com#invalidates"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataSubject",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "is consent for data subject"
+          },
+          "sh:path": "https://w3id.org/GConsent#isConsentForDataSubject"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "A previous version of the consent is invalidated by a newer version of the consent"
+          },
+          "sh:name": {
+            "en": "is invalidated by"
+          },
+          "sh:path": "http://fixme.com#isInvalidatedBy"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:name": {
+            "en": "is previous consent for"
+          },
+          "sh:path": "https://w3id.org/GConsent#isPreviousConsentFor"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataSubject",
+          "sh:name": {
+            "en": "is provided by data subject"
+          },
+          "sh:path": "https://w3id.org/GConsent#isProvidedByDataSubject"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Delegation",
+          "sh:name": {
+            "en": "is provided by delegation"
+          },
+          "sh:path": "https://w3id.org/GConsent#isProvidedByDelegation"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataController",
+          "sh:definition": {
+            "en": "The consent that is provided to the data controller"
+          },
+          "sh:name": {
+            "en": "is provided to controller"
+          },
+          "sh:path": "http://fixme.com#isProvidedToController"
+        },
+        {
+          "sh:definition": {
+            "en": "The location where this specific version of the consent was created"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "http://fixme.com#location"
+        },
+        {
+          "sh:class": "http://fixme.com#Medium",
+          "sh:definition": {
+            "en": "The way this specific version of the consent was created"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "medium"
+          },
+          "sh:path": "http://fixme.com#medium"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Additional note added to the consent"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "notice"
+          },
+          "sh:path": "http://fixme.com#notice"
+        },
+        {
+          "sh:class": "http://fixme.com#ConsentStatus",
+          "sh:definition": {
+            "en": "Represents the status of consent for the data subject."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "http://fixme.com#status"
+        }
+      ],
+      "sh:targetClass": "https://w3id.org/GConsent#Consent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataControllerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "Refering to the possibility for a data controller to withdraw the consent"
+          },
+          "sh:name": {
+            "en": "can withdraw consent"
+          },
+          "sh:path": "http://fixme.com#canWithdrawConsent"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataSubject",
+          "sh:definition": {
+            "en": "The relationship between the data subject and data controller"
+          },
+          "sh:name": {
+            "en": "has relationship with"
+          },
+          "sh:path": "http://fixme.com#DataController.hasRelationshipWith"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataSubject",
+          "sh:definition": {
+            "en": "The relationship between the data subject and data controller"
+          },
+          "sh:name": {
+            "en": "has relationship with"
+          },
+          "sh:path": "http://fixme.com#DataController.hasRelationshipWith"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://fixme.com#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal name"
+          },
+          "sh:path": "http://fixme.com#legalName"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "The data controller is the agent which requested consent"
+          },
+          "sh:name": {
+            "en": "requested consent"
+          },
+          "sh:path": "http://fixme.com#requestedConsent"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "The consent was provided to the data controller"
+          },
+          "sh:name": {
+            "en": "was provided consent"
+          },
+          "sh:path": "http://fixme.com#wasProvidedConsent"
+        }
+      ],
+      "sh:targetClass": "https://w3id.org/GConsent#DataController"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataSubjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "Refering to the possibility for a data subject to cancel a previously given consent"
+          },
+          "sh:name": {
+            "en": "can cancel consent"
+          },
+          "sh:path": "http://fixme.com#canCancelConsent"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "has consent"
+          },
+          "sh:path": "https://w3id.org/GConsent#hasConsent"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://fixme.com#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "TO DO"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "legal name"
+          },
+          "sh:path": "http://fixme.com#legalName"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:definition": {
+            "en": "The data subject is the entity which provided the consent"
+          },
+          "sh:name": {
+            "en": "provided consent"
+          },
+          "sh:path": "http://fixme.com#providedConsent"
+        }
+      ],
+      "sh:targetClass": "https://w3id.org/GConsent#DataSubject"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DelegationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#DataSubject",
+          "sh:definition": {
+            "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is consent delegation for"
+          },
+          "sh:path": "http://fixme.com#isConsentDelegationFor"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:path": "http://fixme.com#providedConsent"
+        }
+      ],
+      "sh:targetClass": "https://w3id.org/GConsent#Delegation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#GivenConsentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://w3id.org/GConsent#GivenConsent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#MinorDataSubjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://w3id.org/GConsent#MinorDataSubject"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#Consent",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "is personal data for consent"
+          },
+          "sh:path": "https://w3id.org/GConsent#isPersonalDataForConsent"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataController",
+          "sh:definition": {
+            "en": "The personal data is retreived from the data controller"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "is retrieved from"
+          },
+          "sh:path": "http://fixme.com#isRetrievedFrom"
+        }
+      ],
+      "sh:targetClass": "https://w3id.org/GConsent#PersonalData"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ThirdPartyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://w3id.org/GConsent#ThirdParty"
+    }
+  ]
+}
