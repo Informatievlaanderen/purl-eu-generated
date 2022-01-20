@@ -44,7 +44,7 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/consent#ConsentStatus"
+      "sh:targetClass": "http://fixme.com#ConsentStatus"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataRetentionShape",
@@ -60,7 +60,7 @@
           "sh:name": {
             "en": "expiry date"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryDate"
+          "sh:path": "http://fixme.com#expiryDate"
         },
         {
           "sh:definition": {
@@ -70,10 +70,14 @@
           "sh:name": {
             "en": "expiry time"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryTime"
+          "sh:path": "http://fixme.com#expiryTime"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#LegalBasis",
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:path": "http://fixme.com#inHumanReadableForm"
+        },
+        {
+          "sh:class": "https://dpvcg.github.io/dpv/#LegalBasis",
           "sh:definition": {
             "en": "The legal basis that substantiates the data retention"
           },
@@ -82,9 +86,10 @@
           "sh:name": {
             "en": "legal basis"
           },
-          "sh:path": "https://purl.eu/ns/consent#legalBasis"
+          "sh:path": "http://fixme.com#legalBasis"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
           "sh:definition": {
             "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
           },
@@ -93,10 +98,10 @@
           "sh:name": {
             "en": "live data"
           },
-          "sh:path": "https://purl.eu/ns/consent#liveData"
+          "sh:path": "http://fixme.com#liveData"
         },
         {
-          "sh:class": "http://fixme.com#Processing",
+          "sh:class": "http://fixme.com#ProcessingType",
           "sh:definition": {
             "en": "TO DO"
           },
@@ -115,10 +120,10 @@
           "sh:name": {
             "en": "start date"
           },
-          "sh:path": "https://purl.eu/ns/consent#startDate"
+          "sh:path": "http://fixme.com#startDate"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/consent#DataRetention"
+      "sh:targetClass": "http://fixme.com#DataRetention"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ExpiryShape",
@@ -133,7 +138,7 @@
           "sh:name": {
             "en": "expiry cadance"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryCadance"
+          "sh:path": "http://fixme.com#expiryCadance"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -144,7 +149,7 @@
           "sh:name": {
             "en": "expiry date"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryDate"
+          "sh:path": "http://fixme.com#expiryDate"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
@@ -155,7 +160,7 @@
           "sh:name": {
             "en": "expiry frequency"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryFrequency"
+          "sh:path": "http://fixme.com#expiryFrequency"
         },
         {
           "sh:definition": {
@@ -165,49 +170,36 @@
           "sh:name": {
             "en": "expiry time"
           },
-          "sh:path": "https://purl.eu/ns/consent#expiryTime"
+          "sh:path": "http://fixme.com#expiryTime"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/consent#Expiry"
+      "sh:targetClass": "http://fixme.com#Expiry"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#IdentifierShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/consent#Identifier"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#FilterShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-          "sh:definition": {
-            "en": "The legal basis under which the data handling takes place"
-          },
-          "sh:name": {
-            "en": "oSLO: :is legal basis for"
-          },
-          "sh:path": "http://fixme.com#oSLO::isLegalBasisFor"
+          "sh:maxCount": "1",
+          "sh:path": "http://fixme.com#period"
         }
       ],
-      "sh:targetClass": "https://dpvcg.github.io/dpv/#LegalBasis"
+      "sh:targetClass": "http://fixme.com#Filter"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/consent#Medium"
+      "sh:targetClass": "http://fixme.com#LegalBasisType"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataTypeShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/consent#PersonalDataType"
+      "sh:targetClass": "http://fixme.com#MediumType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#CriterionShape",
@@ -224,11 +216,18 @@
       "sh:targetClass": "http://data.europa.eu/m8g/EvidenceType"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#InformationRequirementShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#informationRequiredShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://data.europa.eu/m8g/InformationRequirement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Agent"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataCategoryShape",
@@ -238,18 +237,106 @@
       "sh:targetClass": "http://fixme.com#PersonalDataCategory"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingShape",
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
+      "sh:targetClass": "http://fixme.com#PersonalDataType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://w3id.org/GConsent#ThirdParty",
+          "sh:definition": {
+            "en": "ThirdParty that is involved in the processing of the data."
+          },
+          "sh:path": "http://fixme.com#involvesThirdParty"
+        },
+        {
+          "sh:class": "http://fixme.com#ProcessingType",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
       "sh:targetClass": "http://fixme.com#Processing"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#ProcessingType"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PurposeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#PurposeType",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
       "sh:targetClass": "http://fixme.com#Purpose"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PurposeTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#PurposeType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#RegisteredPersonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "De volledige naam vd persoon, doorgaans de combinatie van voornamen en achternaam."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "volledige naam"
+          },
+          "sh:path": "http://fixme.com#^fullName"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "Identificatiecode vd persoon ih register."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "registratie"
+          },
+          "sh:path": "http://fixme.com#registration"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#RegisteredPerson"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#RightShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Right"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#RiskShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Risk"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#TechnicalOrganisationalMeasureShape",
@@ -257,6 +344,97 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#TechnicalOrganisationalMeasure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Tijdstip waarop de identificator werd uitgegeven."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "toegekend op"
+          },
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "sh:class": "http://fixme.com#Agent",
+          "sh:definition": {
+            "en": "Link naar de agent die de identificator heeft uitgegeven."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "toegekend door"
+          },
+          "sh:path": "http://purl.org/dc/terms/creator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Naam vd agent die de identificator heeft toegekend."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "toegekend door (String)"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemaAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "String gebruikt om het object uniek te identificeren. "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identificator"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Location"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#RegisteredOrganisationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Wettelijk geregistreerde naam vd organisatie."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "wettelijke naam"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#legalName"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "Identificator dat de organisatie verkreeg bij registratie."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "registratie"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#DocumentShape",
@@ -271,7 +449,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/consent#Identifier",
+          "sh:class": "http://fixme.com#Identifier",
           "sh:definition": {
             "en": "TO DO"
           },
@@ -297,35 +475,40 @@
       "sh:targetClass": "https://dpvcg.github.io/dpv/#DataProcessor"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#LegalBasisType",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#LegalBasis"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataHandlingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://w3id.org/GConsent#ThirdParty",
-          "sh:definition": {
-            "en": "Stating if the data handling involves a data controller or not"
-          },
+          "sh:class": "https://dpvcg.github.io/dpv/#LegalBasis",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "involves data controller"
-          },
-          "sh:path": "http://fixme.com#involvesDataController"
+          "sh:path": "http://fixme.com#hasLegalBasis"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#LegalBasis",
-          "sh:definition": {
-            "en": "The legal basisses defined under GDPR legislation"
-          },
+          "sh:class": "https://dpvcg.github.io/dpv/#LegalBasis",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "legal basis"
-          },
-          "sh:path": "http://fixme.com#legalBasis"
+          "sh:path": "http://fixme.com#hasLegalBasis"
         },
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:path": "http://fixme.com#inHumanReadableForm"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
           "sh:definition": {
             "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
           },
@@ -338,9 +521,6 @@
         },
         {
           "sh:class": "http://fixme.com#TechnicalOrganisationalMeasure",
-          "sh:definition": {
-            "en": "TO DO"
-          },
           "sh:name": {
             "en": "measure"
           },
@@ -348,9 +528,6 @@
         },
         {
           "sh:class": "http://fixme.com#PersonalDataCategory",
-          "sh:definition": {
-            "en": "TO DO"
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -359,7 +536,7 @@
           "sh:path": "https://dpvcg.github.io/dpv/#PersonalDataCategory"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#PersonalDataType",
+          "sh:class": "http://fixme.com#PersonalDataType",
           "sh:definition": {
             "en": "A type of personal data"
           },
@@ -371,31 +548,7 @@
           "sh:path": "http://fixme.com#personalDataType"
         },
         {
-          "sh:class": "http://fixme.com#Processing",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:name": {
-            "en": "processing"
-          },
-          "sh:path": "https://dpvcg.github.io/dpv/#Processing"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/consent#Purpose",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "purpose"
-          },
-          "sh:path": "https://dpvcg.github.io/dpv/#Purpose"
-        },
-        {
-          "sh:definition": {
-            "en": "TO DO"
-          },
+          "sh:class": "http://fixme.com#Right",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -404,9 +557,7 @@
           "sh:path": "https://dpvcg.github.io/dpv/#Right"
         },
         {
-          "sh:definition": {
-            "en": "TO DO"
-          },
+          "sh:class": "http://fixme.com#Risk",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -445,6 +596,10 @@
           "sh:path": "http://fixme.com#forPersonalData"
         },
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:path": "http://fixme.com#inHumanReadableForm"
+        },
+        {
           "sh:class": "https://w3id.org/GConsent#Consent",
           "sh:definition": {
             "en": "A newer version of a consent invalidates a previous version of the consent"
@@ -456,9 +611,7 @@
         },
         {
           "sh:class": "https://w3id.org/GConsent#DataSubject",
-          "sh:definition": {
-            "en": "TO DO"
-          },
+          "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "is consent for data subject"
@@ -477,9 +630,6 @@
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
-          "sh:definition": {
-            "en": "TO DO"
-          },
           "sh:name": {
             "en": "is previous consent for"
           },
@@ -487,9 +637,8 @@
         },
         {
           "sh:class": "https://w3id.org/GConsent#DataSubject",
-          "sh:definition": {
-            "en": "TO DO"
-          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "is provided by data subject"
           },
@@ -497,25 +646,28 @@
         },
         {
           "sh:class": "https://w3id.org/GConsent#Delegation",
-          "sh:definition": {
-            "en": "TO DO"
-          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "is provided by delegation"
           },
           "sh:path": "https://w3id.org/GConsent#isProvidedByDelegation"
         },
         {
-          "sh:class": "https://w3id.org/GConsent#DataController",
-          "sh:definition": {
-            "en": "The consent that is provided to the data controller"
-          },
+          "sh:class": "https://w3id.org/GConsent#Delegation",
           "sh:name": {
-            "en": "is provided to controller"
+            "en": "is provided to"
           },
+          "sh:path": "https://w3id.org/GConsent#isProvidedTo"
+        },
+        {
+          "sh:class": "https://w3id.org/GConsent#DataController",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:path": "http://fixme.com#isProvidedToController"
         },
         {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
           "sh:definition": {
             "en": "The location where this specific version of the consent was created"
           },
@@ -527,7 +679,7 @@
           "sh:path": "http://fixme.com#location"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#Medium",
+          "sh:class": "http://fixme.com#MediumType",
           "sh:definition": {
             "en": "The way this specific version of the consent was created"
           },
@@ -551,7 +703,7 @@
           "sh:path": "http://fixme.com#notice"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#ConsentStatus",
+          "sh:class": "http://fixme.com#ConsentStatus",
           "sh:definition": {
             "en": "Represents the status of consent for the data subject."
           },
@@ -579,59 +731,6 @@
             "en": "can withdraw consent"
           },
           "sh:path": "http://fixme.com#canWithdrawConsent"
-        },
-        {
-          "sh:class": "https://w3id.org/GConsent#DataSubject",
-          "sh:definition": {
-            "en": "The relationship between the data subject and data controller"
-          },
-          "sh:name": {
-            "en": "has relationship with"
-          },
-          "sh:path": "http://fixme.com#DataController.hasRelationshipWith"
-        },
-        {
-          "sh:class": "https://w3id.org/GConsent#DataSubject",
-          "sh:definition": {
-            "en": "The relationship between the data subject and data controller"
-          },
-          "sh:name": {
-            "en": "has relationship with"
-          },
-          "sh:path": "http://fixme.com#DataController.hasRelationshipWith"
-        },
-        {
-          "sh:class": "https://purl.eu/ns/consent#Identifier",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://fixme.com#identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "legal name"
-          },
-          "sh:path": "http://fixme.com#legalName"
-        },
-        {
-          "sh:class": "https://w3id.org/GConsent#Consent",
-          "sh:definition": {
-            "en": "The data controller is the agent which requested consent"
-          },
-          "sh:name": {
-            "en": "requested consent"
-          },
-          "sh:path": "http://fixme.com#requestedConsent"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -666,35 +765,18 @@
           "sh:definition": {
             "en": "TO DO"
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "has consent"
           },
           "sh:path": "https://w3id.org/GConsent#hasConsent"
         },
         {
-          "sh:class": "https://purl.eu/ns/consent#Identifier",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://fixme.com#identifier"
+          "sh:class": "https://w3id.org/GConsent#DataController",
+          "sh:path": "http://fixme.com#hasRelationshipWith"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "TO DO"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "legal name"
-          },
-          "sh:path": "http://fixme.com#legalName"
+          "sh:class": "https://w3id.org/GConsent#DataController",
+          "sh:path": "http://fixme.com#hasRelationshipWith"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -715,6 +797,12 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://fixme.com#Agent",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#hasConsentGivenByDelegate"
+        },
+        {
           "sh:class": "https://w3id.org/GConsent#DataSubject",
           "sh:definition": {
             "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
@@ -727,9 +815,6 @@
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
-          "sh:definition": {
-            "en": "TO DO"
-          },
           "sh:path": "http://fixme.com#providedConsent"
         }
       ],
@@ -755,6 +840,10 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:path": "http://fixme.com#inHumanReadableForm"
+        },
+        {
           "sh:class": "https://w3id.org/GConsent#Consent",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -762,18 +851,6 @@
             "en": "is personal data for consent"
           },
           "sh:path": "https://w3id.org/GConsent#isPersonalDataForConsent"
-        },
-        {
-          "sh:class": "https://w3id.org/GConsent#DataController",
-          "sh:definition": {
-            "en": "The personal data is retreived from the data controller"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "is retrieved from"
-          },
-          "sh:path": "http://fixme.com#isRetrievedFrom"
         }
       ],
       "sh:targetClass": "https://w3id.org/GConsent#PersonalData"
