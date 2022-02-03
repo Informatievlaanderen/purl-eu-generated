@@ -10,8 +10,6 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataRetentionShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ExpiryShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#FilterShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisTypeShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#CriterionShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#EvidenceTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#informationRequiredShape>,
@@ -31,12 +29,14 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataHandlingShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RightShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RiskShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#AgentShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ConsentShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataControllerShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataSubjectShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#DelegationShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#GivenConsentShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#MinorDataSubjectShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingShape>,
@@ -72,6 +72,7 @@
     shacl:path <http://fixme.com#invalidates>
   ], [
     shacl:class <https://w3id.org/GConsent#DataSubject>;
+    shacl:definition "Links a consent instance with the data subject it is associated with."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "is consent for data subject"@en;
@@ -83,6 +84,7 @@
     shacl:path <http://fixme.com#isInvalidatedBy>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
+    shacl:definition "Denotes that this consent instance is the previous consent for the specified consent instance."@en;
     shacl:name "is previous consent for"@en;
     shacl:path <https://w3id.org/GConsent#isPreviousConsentFor>
   ], [
@@ -93,12 +95,14 @@
     shacl:path <https://w3id.org/GConsent#isProvidedByDataSubject>
   ], [
     shacl:class <https://w3id.org/GConsent#Delegation>;
+    shacl:definition "Specifies the delegation that provided this consent."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "is provided by delegation"@en;
     shacl:path <https://w3id.org/GConsent#isProvidedByDelegation>
   ], [
     shacl:class <https://w3id.org/GConsent#Delegation>;
+    shacl:definition "Indicates the Person or Data Controller the consent was provided to."@en;
     shacl:name "is provided to"@en;
     shacl:path <https://w3id.org/GConsent#isProvidedTo>
   ], [
@@ -116,7 +120,7 @@
     shacl:name "location"@en;
     shacl:path <http://fixme.com#location>
   ], [
-    shacl:class <https://purl.eu/ns/consent#MediumType>;
+    shacl:class <https://w3id.org/GConsent#Medium>;
     shacl:definition "The way this specific version of the consent was created"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -166,13 +170,13 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://fixme.com#Identifier>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Unique method to prove the identify of the Data Processor."@en;
     shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path <http://fixme.com#identifier>
   ], [
     shacl:datatype rdf:langString;
-    shacl:definition "TO DO"@en;
+    shacl:definition "The legal name under which the Data Processor is registered."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "legal name"@en;
@@ -187,35 +191,35 @@
     shacl:definition "The data on which the data retention stops"@en;
     shacl:maxCount 1;
     shacl:name "expiry date"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryDate>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.expiryDate>
   ], [
     shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:definition "The duration of the data retention, starting from the start date"@en;
     shacl:maxCount 1;
     shacl:name "expiry time"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryTime>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.expiryTime>
   ], [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Indicates that the information w.r.t. the Data Retention is shown in a human readable form."@en;
     shacl:name "in human readable form"@en;
-    shacl:path <https://purl.eu/ns/consent#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.inHumanReadableForm>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#LegalBasis>;
     shacl:definition "The legal basis that substantiates the data retention"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "legal basis"@en;
-    shacl:path <https://purl.eu/ns/consent#legalBasis>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.legalBasis>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "live data"@en;
-    shacl:path <https://purl.eu/ns/consent#liveData>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.liveData>
   ], [
     shacl:class <http://fixme.com#ProcessingType>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Processing specifies what is happening to/with the data."@en;
     shacl:name "processing"@en;
     shacl:path <https://dpvcg.github.io/dpv/#Processing>
   ], [
@@ -224,7 +228,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "start date"@en;
-    shacl:path <https://purl.eu/ns/consent#startDate>
+    shacl:path <https://purl.eu/ns/consent#DataRetention.startDate>
   ];
   shacl:targetClass <https://purl.eu/ns/consent#DataRetention> .
 
@@ -237,17 +241,9 @@
     shacl:path <http://fixme.com#canCancelConsent>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Links a data subject to their consent."@en;
     shacl:name "has consent"@en;
     shacl:path <https://w3id.org/GConsent#hasConsent>
-  ], [
-    shacl:class <https://w3id.org/GConsent#DataController>;
-    shacl:name "has relationship with"@en;
-    shacl:path <http://fixme.com#hasRelationshipWith>
-  ], [
-    shacl:class <https://w3id.org/GConsent#DataController>;
-    shacl:name "has relationship with"@en;
-    shacl:path <http://fixme.com#hasRelationshipWith>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "The data subject is the entity which provided the consent"@en;
@@ -292,25 +288,25 @@
     shacl:definition "The time between moments in time when the data may be retreived for processing"@en;
     shacl:maxCount 1;
     shacl:name "expiry cadance"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryCadance>
+    shacl:path <https://purl.eu/ns/consent#Expiry.expiryCadance>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "The moment in time up to which the data may be processed"@en;
     shacl:maxCount 1;
     shacl:name "expiry date"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryDate>
+    shacl:path <https://purl.eu/ns/consent#Expiry.expiryDate>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "The number of times the data may be processed"@en;
     shacl:minCount 1;
     shacl:name "expiry frequency"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryFrequency>
+    shacl:path <https://purl.eu/ns/consent#Expiry.expiryFrequency>
   ], [
     shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:definition "The duration during which the data may be processed"@en;
     shacl:maxCount 1;
     shacl:name "expiry time"@en;
-    shacl:path <https://purl.eu/ns/consent#expiryTime>
+    shacl:path <https://purl.eu/ns/consent#Expiry.expiryTime>
   ];
   shacl:targetClass <https://purl.eu/ns/consent#Expiry> .
 
@@ -318,10 +314,10 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "A period of time."@en;
     shacl:maxCount 1;
     shacl:name "period"@en;
-    shacl:path <https://purl.eu/ns/consent#period>
+    shacl:path <https://purl.eu/ns/consent#Filter.period>
   ];
   shacl:targetClass <https://purl.eu/ns/consent#Filter> .
 
@@ -335,22 +331,21 @@
     shacl:datatype xsd:dateTime;
     shacl:definition "TO DO"@en;
     shacl:maxCount 1;
-    shacl:name "TO DO"@en;
+    shacl:name "attributed at"@en;
     shacl:path dc:issued
   ], [
     shacl:class <https://purl.eu/dc/terms/Agent>;
     shacl:definition "TO DO"@en;
     shacl:maxCount 1;
-    shacl:name "TO DO"@en;
+    shacl:name "attributed by"@en;
     shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "Naam vd agent die de identificator heeft toegekend."@en;
     shacl:maxCount 1;
+    shacl:name "attributed by as string"@en;
     shacl:path <http://www.w3.org/ns/adms#schemaAgency>
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "String gebruikt om het object uniek te identificeren."@en;
     shacl:maxCount 1;
     shacl:name "identifier"@en;
     shacl:path skos:notation
@@ -361,10 +356,10 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://dpvcg.github.io/dpv/#PersonalDataHandling>;
-    shacl:name "OSLO::isLegalBasisFor"@en;
+    shacl:name "oSLO:is legal basis for"@en;
     shacl:path <http://fixme.com#oSLO:isLegalBasisFor>
   ], [
-    shacl:class <https://purl.eu/ns/consent#LegalBasisType>;
+    shacl:class <https://dpvcg.github.io/dpv/#dfn-legalbasis>;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
@@ -374,7 +369,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/consent#LegalBasisType> .
+  shacl:targetClass <https://dpvcg.github.io/dpv/#dfn-legalbasis> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -382,7 +377,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#MediumTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/consent#MediumType> .
+  shacl:targetClass <https://w3id.org/GConsent#Medium> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#MinorDataSubjectShape> a shacl:NodeShape;
   shacl:closed false;
@@ -392,13 +387,13 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:dateTime;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Time instant at which the Period was terminated."@en;
     shacl:maxCount 1;
     shacl:name "end"@en;
     shacl:path <http://data.europa.eu/m8g/endTime>
   ], [
     shacl:datatype xsd:dateTime;
-    shacl:definition "TO DO"@en;
+    shacl:definition "Time instant at which the Period was initiated."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "start"@en;
@@ -430,10 +425,12 @@
     shacl:path <http://fixme.com#liveData>
   ], [
     shacl:class <http://fixme.com#TechnicalOrganisationalMeasure>;
+    shacl:definition "Technical measures required/followed when processing data of the declared category"@en;
     shacl:name "measure"@en;
     shacl:path <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>
   ], [
     shacl:class <http://fixme.com#PersonalDataCategory>;
+    shacl:definition "A category of personal data"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "personal data category"@en;
@@ -447,12 +444,14 @@
     shacl:path <http://fixme.com#personalDataType>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#Right>;
+    shacl:definition "The right(s) applicable, provided, or expected."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "right"@en;
     shacl:path <https://dpvcg.github.io/dpv/#Right>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#Risk>;
+    shacl:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "risk"@en;
@@ -468,6 +467,7 @@
     shacl:path <http://fixme.com#inHumanReadableForm>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
+    shacl:definition "Links personal data with the consent it is associated with."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "is personal data for consent"@en;
@@ -483,7 +483,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://w3id.org/GConsent#ThirdParty>;
-    shacl:definition "ThirdParty that is involved in the processing of the data."@en;
+    shacl:definition "Indicates wheter a ThirdParty in involved in processing the data or not."@en;
     shacl:name "involves third party"@en;
     shacl:path <http://fixme.com#involvesThirdParty>
   ], [
@@ -518,14 +518,14 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdf:langString;
-    shacl:definition "Wettelijk geregistreerde naam vd organisatie."@en;
+    shacl:definition "The legal name of the organisation."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "legal name"@en;
     shacl:path <http://www.w3.org/ns/regorg#legalName>
   ], [
     shacl:class <http://fixme.com#Identifier>;
-    shacl:definition "Identificator dat de organisatie verkreeg bij registratie."@en;
+    shacl:definition "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registration"@en;
@@ -537,17 +537,18 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
-    shacl:definition "De volledige naam vd persoon, doorgaans de combinatie van voornamen en achternaam."@en;
+    shacl:definition "The full name of the person, in a general a combination of the first and last name."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "^fullName"@en
+    shacl:name "full name"@en;
+    shacl:path <https://data.vlaanderen.be/ns/persoon#volledigeNaam>
   ], [
     shacl:class <http://fixme.com#Identifier>;
-    shacl:definition "Identificatiecode vd persoon ih register."@en;
+    shacl:definition "Identification code of the person in the register."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registration"@en;
-    shacl:path <http://fixme.com#registration>
+    shacl:path <https://data.vlaanderen.be/ns/persoon#registratie>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon> .
 
