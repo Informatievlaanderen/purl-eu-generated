@@ -69,7 +69,7 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "A newer version of a consent invalidates a previous version of the consent"@en;
     shacl:name "invalidates"@en;
-    shacl:path <http://fixme.com#invalidates>
+    shacl:path <https://purl.eu/ns/consent#Consent.invalidates>
   ], [
     shacl:class <https://w3id.org/GConsent#DataSubject>;
     shacl:definition "Links a consent instance with the data subject it is associated with."@en;
@@ -81,7 +81,7 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "A previous version of the consent is invalidated by a newer version of the consent"@en;
     shacl:name "is invalidated by"@en;
-    shacl:path <http://fixme.com#isInvalidatedBy>
+    shacl:path <https://purl.eu/ns/consent#Consent.isInvalidatedBy>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Denotes that this consent instance is the previous consent for the specified consent instance."@en;
@@ -133,7 +133,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "notice"@en;
-    shacl:path <http://fixme.com#notice>
+    shacl:path <https://purl.eu/ns/consent#Consent.notice>
   ], [
     shacl:class <https://purl.eu/ns/consent#ConsentStatus>;
     shacl:definition "Represents the status of consent for the data subject."@en;
@@ -158,12 +158,12 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Refering to the possibility for a data controller to withdraw the consent"@en;
     shacl:name "can withdraw consent"@en;
-    shacl:path <http://fixme.com#canWithdrawConsent>
+    shacl:path <https://purl.eu/ns/consent#DataController.canWithdrawConsent>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "The consent was provided to the data controller"@en;
     shacl:name "was provided consent"@en;
-    shacl:path <http://fixme.com#wasProvidedConsent>
+    shacl:path <https://purl.eu/ns/consent#DataController.wasProvidedConsent>
   ];
   shacl:targetClass <https://w3id.org/GConsent#DataController> .
 
@@ -174,14 +174,14 @@
     shacl:definition "Unique method to prove the identify of the Data Processor."@en;
     shacl:minCount 1;
     shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path <https://purl.eu/ns/consent#DataProcessor.identifier>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "The legal name under which the Data Processor is registered."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "legal name"@en;
-    shacl:path <http://fixme.com#legalName>
+    shacl:path <https://purl.eu/ns/consent#DataProcessor.legalName>
   ];
   shacl:targetClass <https://dpvcg.github.io/dpv/#DataProcessor> .
 
@@ -239,7 +239,7 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Refering to the possibility for a data subject to cancel a previously given consent"@en;
     shacl:name "can cancel consent"@en;
-    shacl:path <http://fixme.com#canCancelConsent>
+    shacl:path <https://purl.eu/ns/consent#DataSubject.canCancelConsent>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Links a data subject to their consent."@en;
@@ -260,12 +260,13 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "has consent given by delegate"@en;
-    shacl:path <http://fixme.com#hasConsentGivenByDelegate>
+    shacl:path <https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate>
   ], [
     shacl:class <https://w3id.org/GConsent#DataSubject>;
     shacl:definition "The delegation is a consent delegation for someone to give consent in name of the data subject"@en;
     shacl:maxCount 1;
-    shacl:name "is consent delegation for"@en
+    shacl:name "is consent delegation for"@en;
+    shacl:path <https://purl.eu/ns/consent#Delegation.isConsentDelegationFor>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "TODO"@en;
@@ -426,7 +427,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "live data"@en;
-    shacl:path <http://fixme.com#liveData>
+    shacl:path <https://purl.eu/ns/consent#PersonalDataHandling.liveData>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>;
     shacl:definition "Technical measures required/followed when processing data of the declared category"@en;
@@ -445,7 +446,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "personal data type"@en;
-    shacl:path <http://fixme.com#personalDataType>
+    shacl:path <https://purl.eu/ns/consent#PersonalDataHandling.personalDataType>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#Right>;
     shacl:definition "The right(s) applicable, provided, or expected."@en;
@@ -495,7 +496,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://purl.eu/ns/consent#Processing.type>
   ];
   shacl:targetClass <https://w3id.org/GConsent#Processing> .
 
@@ -507,11 +508,10 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://fixme.com#PurposeType>;
-    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://purl.eu/ns/consent#Purpose.type>
   ];
   shacl:targetClass <https://w3id.org/GConsent#Purpose> .
 
