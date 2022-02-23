@@ -14,11 +14,9 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#EvidenceTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#informationRequiredShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PeriodOfTimeShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataCategoryShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ProcessingTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PurposeTypeShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#TechnicalOrganisationalMeasureShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LocationShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RegisteredOrganisationShape>,
@@ -26,9 +24,11 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RegisteredPersonShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#DataProcessorShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataCategoryShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataHandlingShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RightShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#RiskShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_en#TechnicalOrganisationalMeasureShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#LegalBasisTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#AgentShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ConsentShape>,
@@ -63,9 +63,8 @@
     shacl:path <https://w3id.org/GConsent#forPersonalData>
   ], [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "TO DO"@en;
     shacl:name "in human readable form"@en;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#Consent.inHumanReadableForm>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "A newer version of a consent invalidates a previous version of the consent"@en;
@@ -90,7 +89,7 @@
     shacl:path <https://w3id.org/GConsent#isPreviousConsentFor>
   ], [
     shacl:class <https://w3id.org/GConsent#DataSubject>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "is provided by data subject"@en;
@@ -136,6 +135,7 @@
     shacl:name "notice"@en;
     shacl:path <http://fixme.com#notice>
   ], [
+    shacl:class <https://purl.eu/ns/consent#ConsentStatus>;
     shacl:definition "Represents the status of consent for the data subject."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -249,7 +249,7 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "The data subject is the entity which provided the consent"@en;
     shacl:name "provided consent"@en;
-    shacl:path <http://fixme.com#providedConsent>
+    shacl:path <https://w3id.org/GConsent#providedConsent>
   ];
   shacl:targetClass <https://w3id.org/GConsent#DataSubject> .
 
@@ -257,7 +257,6 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://purl.eu/dc/terms/Agent>;
-    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "has consent given by delegate"@en;
@@ -266,13 +265,11 @@
     shacl:class <https://w3id.org/GConsent#DataSubject>;
     shacl:definition "The delegation is a consent delegation for someone to give consent in name of the data subject"@en;
     shacl:maxCount 1;
-    shacl:name "is consent delegation for"@en;
-    shacl:path <http://fixme.com#isConsentDelegationFor>
+    shacl:name "is consent delegation for"@en
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
-    shacl:definition "TO DO"@en;
-    shacl:name "provided consent"@en;
-    shacl:path <http://fixme.com#providedConsent>
+    shacl:definition "TODO"@en;
+    shacl:name "provided consent"@en
   ];
   shacl:targetClass <https://w3id.org/GConsent#Delegation> .
 
@@ -361,16 +358,15 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://dpvcg.github.io/dpv/#PersonalDataHandling>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "TODO"@en;
     shacl:name "oSLO:is legal basis for"@en;
-    shacl:path <http://fixme.com#oSLO:isLegalBasisFor>
+    shacl:path <https://purl.eu/ns/consent#LegalBasis.isLegalBasisFor>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#dfn-legalbasis>;
-    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://purl.eu/ns/consent#LegalBasis.type>
   ];
   shacl:targetClass <https://dpvcg.github.io/dpv/#LegalBasis> .
 
@@ -410,21 +406,20 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataCategoryShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#PersonalDataCategory> .
+  shacl:targetClass <https://dpvcg.github.io/dpv/#PersonalDataCategory> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#PersonalDataHandlingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class <https://dpvcg.github.io/dpv/#LegalBasis>;
-    shacl:definition "TO DO"@en;
+    shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:name "has legal basis"@en;
     shacl:path <https://dpvcg.github.io/dpv/#hasLegalBasis>
   ], [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "TO DO"@en;
     shacl:name "in human readable form"@en;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"@en;
@@ -433,12 +428,12 @@
     shacl:name "live data"@en;
     shacl:path <http://fixme.com#liveData>
   ], [
-    shacl:class <http://fixme.com#TechnicalOrganisationalMeasure>;
+    shacl:class <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>;
     shacl:definition "Technical measures required/followed when processing data of the declared category"@en;
     shacl:name "measure"@en;
     shacl:path <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>
   ], [
-    shacl:class <http://fixme.com#PersonalDataCategory>;
+    shacl:class <https://dpvcg.github.io/dpv/#PersonalDataCategory>;
     shacl:definition "A category of personal data"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -472,9 +467,8 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "TO DO"@en;
     shacl:name "in human readable form"@en;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#PersonalData.inHumanReadableForm>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Links personal data with the consent it is associated with."@en;
@@ -495,10 +489,9 @@
     shacl:class <https://w3id.org/GConsent#ThirdParty>;
     shacl:definition "Indicates wheter a ThirdParty in involved in processing the data or not."@en;
     shacl:name "involves third party"@en;
-    shacl:path <http://fixme.com#involvesThirdParty>
+    shacl:path <https://w3id.org/GConsent#involvesThirdParty>
   ], [
     shacl:class <http://fixme.com#ProcessingType>;
-    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
@@ -574,7 +567,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#TechnicalOrganisationalMeasureShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#TechnicalOrganisationalMeasure> .
+  shacl:targetClass <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_en#ThirdPartyShape> a shacl:NodeShape;
   shacl:closed false;

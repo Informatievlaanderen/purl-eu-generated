@@ -256,13 +256,6 @@
       "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataCategoryShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#PersonalDataCategory"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -282,13 +275,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#PurposeType"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#TechnicalOrganisationalMeasureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#TechnicalOrganisationalMeasure"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#IdentifierShape",
@@ -464,22 +450,26 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#oSLO:isLegalBasisFor"
+          "sh:path": "https://purl.eu/ns/consent#LegalBasis.isLegalBasisFor"
         },
         {
           "sh:class": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#type"
+          "sh:path": "https://purl.eu/ns/consent#LegalBasis.type"
         }
       ],
       "sh:targetClass": "https://dpvcg.github.io/dpv/#LegalBasis"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataCategoryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#PersonalDataCategory"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataHandlingShape",
@@ -499,13 +489,10 @@
         },
         {
           "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#inHumanReadableForm"
+          "sh:path": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -520,7 +507,7 @@
           "sh:path": "http://fixme.com#liveData"
         },
         {
-          "sh:class": "http://fixme.com#TechnicalOrganisationalMeasure",
+          "sh:class": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -530,7 +517,7 @@
           "sh:path": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure"
         },
         {
-          "sh:class": "http://fixme.com#PersonalDataCategory",
+          "sh:class": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -595,6 +582,13 @@
       "sh:targetClass": "https://dpvcg.github.io/dpv/#Risk"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#TechnicalOrganisationalMeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_nl#LegalBasisTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -637,13 +631,10 @@
         },
         {
           "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#inHumanReadableForm"
+          "sh:path": "https://purl.eu/ns/consent#Consent.inHumanReadableForm"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -770,6 +761,7 @@
           "sh:path": "http://fixme.com#notice"
         },
         {
+          "sh:class": "https://purl.eu/ns/consent#ConsentStatus",
           "sh:definition": {
             "nl": "Enter your translation here"
           },
@@ -844,7 +836,7 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#providedConsent"
+          "sh:path": "https://w3id.org/GConsent#providedConsent"
         }
       ],
       "sh:targetClass": "https://w3id.org/GConsent#DataSubject"
@@ -856,9 +848,6 @@
       "sh:property": [
         {
           "sh:class": "https://purl.eu/dc/terms/Agent",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -875,7 +864,7 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#isConsentDelegationFor"
+          "sh:path": "TODO"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -885,7 +874,7 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#providedConsent"
+          "sh:path": "TODO"
         }
       ],
       "sh:targetClass": "https://w3id.org/GConsent#Delegation"
@@ -918,13 +907,10 @@
       "sh:property": [
         {
           "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#inHumanReadableForm"
+          "sh:path": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -954,13 +940,10 @@
           "sh:name": {
             "nl": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#involvesThirdParty"
+          "sh:path": "https://w3id.org/GConsent#involvesThirdParty"
         },
         {
           "sh:class": "http://fixme.com#ProcessingType",
-          "sh:definition": {
-            "nl": "Enter your translation here"
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {

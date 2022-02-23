@@ -14,11 +14,9 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#EvidenceTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#informationRequiredShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PeriodOfTimeShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataCategoryShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#ProcessingTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PurposeTypeShape>,
-    <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#TechnicalOrganisationalMeasureShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#IdentifierShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#LocationShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#RegisteredOrganisationShape>,
@@ -26,9 +24,11 @@
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#RegisteredPersonShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#DataProcessorShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#LegalBasisShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataCategoryShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataHandlingShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#RightShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#RiskShape>,
+    <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#TechnicalOrganisationalMeasureShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#LegalBasisTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#AgentShape>,
     <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#ConsentShape>,
@@ -63,9 +63,8 @@
     shacl:path <https://w3id.org/GConsent#forPersonalData>
   ], [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#Consent.inHumanReadableForm>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Enter your translation here"@nl;
@@ -136,6 +135,7 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <http://fixme.com#notice>
   ], [
+    shacl:class <https://purl.eu/ns/consent#ConsentStatus>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -249,7 +249,7 @@
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#providedConsent>
+    shacl:path <https://w3id.org/GConsent#providedConsent>
   ];
   shacl:targetClass <https://w3id.org/GConsent#DataSubject> .
 
@@ -257,7 +257,6 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://purl.eu/dc/terms/Agent>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
@@ -266,13 +265,11 @@
     shacl:class <https://w3id.org/GConsent#DataSubject>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#isConsentDelegationFor>
+    shacl:name "Enter your translation here"@nl
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Enter your translation here"@nl;
-    shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#providedConsent>
+    shacl:name "Enter your translation here"@nl
   ];
   shacl:targetClass <https://w3id.org/GConsent#Delegation> .
 
@@ -363,14 +360,13 @@
     shacl:class <https://dpvcg.github.io/dpv/#PersonalDataHandling>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#oSLO:isLegalBasisFor>
+    shacl:path <https://purl.eu/ns/consent#LegalBasis.isLegalBasisFor>
   ], [
     shacl:class <https://dpvcg.github.io/dpv/#dfn-legalbasis>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://purl.eu/ns/consent#LegalBasis.type>
   ];
   shacl:targetClass <https://dpvcg.github.io/dpv/#LegalBasis> .
 
@@ -410,7 +406,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataCategoryShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#PersonalDataCategory> .
+  shacl:targetClass <https://dpvcg.github.io/dpv/#PersonalDataCategory> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#PersonalDataHandlingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -422,9 +418,8 @@
     shacl:path <https://dpvcg.github.io/dpv/#hasLegalBasis>
   ], [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Enter your translation here"@nl;
@@ -433,12 +428,12 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <http://fixme.com#liveData>
   ], [
-    shacl:class <http://fixme.com#TechnicalOrganisationalMeasure>;
+    shacl:class <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
     shacl:path <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure>
   ], [
-    shacl:class <http://fixme.com#PersonalDataCategory>;
+    shacl:class <https://dpvcg.github.io/dpv/#PersonalDataCategory>;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -472,9 +467,8 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://xmlns.com/foaf/spec/#term_Document>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#inHumanReadableForm>
+    shacl:path <https://purl.eu/ns/consent#PersonalData.inHumanReadableForm>
   ], [
     shacl:class <https://w3id.org/GConsent#Consent>;
     shacl:definition "Enter your translation here"@nl;
@@ -495,10 +489,9 @@
     shacl:class <https://w3id.org/GConsent#ThirdParty>;
     shacl:definition "Enter your translation here"@nl;
     shacl:name "Enter your translation here"@nl;
-    shacl:path <http://fixme.com#involvesThirdParty>
+    shacl:path <https://w3id.org/GConsent#involvesThirdParty>
   ], [
     shacl:class <http://fixme.com#ProcessingType>;
-    shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@nl;
@@ -574,7 +567,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#TechnicalOrganisationalMeasureShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#TechnicalOrganisationalMeasure> .
+  shacl:targetClass <https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure> .
 
 <https://semiceu.github.io/shacl/OSLO-consent-ap_nl#ThirdPartyShape> a shacl:NodeShape;
   shacl:closed false;
