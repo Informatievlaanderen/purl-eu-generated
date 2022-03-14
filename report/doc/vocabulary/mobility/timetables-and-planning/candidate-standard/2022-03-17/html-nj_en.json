@@ -10,8 +10,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/fe2c0b18602ced5613ed5522a524fbb5df7d241e",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/fe2c0b18602ced5613ed5522a524fbb5df7d241e/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/5d43ce3ef092eb8a5207d01a81f68a7142bc222c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/5d43ce3ef092eb8a5207d01a81f68a7142bc222c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://purl.eu",
     "usesVocs": [],
@@ -2556,25 +2556,6 @@
       },
       "sort": "a view of",
       "description": {
-        "en": "Reference to the Scheduled Stop Point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility#aViewOf",
-      "name": "a view of",
-      "label": {
-        "en": "a view of"
-      },
-      "sort": "a view of",
-      "description": {
         "en": "Reference to the Route Point."
       },
       "usage": {},
@@ -2602,6 +2583,25 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility#Point"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#aViewOf",
+      "name": "a view of",
+      "label": {
+        "en": "a view of"
+      },
+      "sort": "a view of",
+      "description": {
+        "en": "Reference to the Scheduled Stop Point."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
       ],
       "parents": []
     },
@@ -4146,14 +4146,14 @@
       },
       "sort": "end of",
       "description": {
-        "en": "Route Link of which the Route Point is the end."
+        "en": "Service Link of which the Schedule Stop Point is the end."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#RoutePoint"
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#RouteLink"
+        "https://purl.eu/ns/mobility#ServiceLink"
       ],
       "parents": []
     },
@@ -4165,14 +4165,14 @@
       },
       "sort": "end of",
       "description": {
-        "en": "Service Link of which the Schedule Stop Point is the end."
+        "en": "Route Link of which the Route Point is the end."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility#RoutePoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#ServiceLink"
+        "https://purl.eu/ns/mobility#RouteLink"
       ],
       "parents": []
     },
@@ -4621,14 +4621,14 @@
       },
       "sort": "from",
       "description": {
-        "en": "Start of the Service Link."
+        "en": "Route Point at which the Route Link starts."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#ServiceLink"
+        "https://purl.eu/ns/mobility#RouteLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility#RoutePoint"
       ],
       "parents": []
     },
@@ -4640,14 +4640,14 @@
       },
       "sort": "from",
       "description": {
-        "en": "Route Point at which the Route Link starts."
+        "en": "Start of the Service Link."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#RouteLink"
+        "https://purl.eu/ns/mobility#ServiceLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#RoutePoint"
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
       ],
       "parents": []
     },
@@ -5360,14 +5360,14 @@
       },
       "sort": "made up of",
       "description": {
-        "en": "The ordered sequence of Points that together make up the Journey Pattern."
+        "en": "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#JourneyPattern"
+        "https://purl.eu/ns/mobility#ServiceJourneyPattern"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#PointInJourneyPattern"
+        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
       ],
       "parents": []
     },
@@ -5379,14 +5379,14 @@
       },
       "sort": "made up of",
       "description": {
-        "en": "The Group of Lines that together make up the Network."
+        "en": "The ordered sequence of Points that together make up the Journey Pattern."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#Network"
+        "https://purl.eu/ns/mobility#JourneyPattern"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#GroupOfLines"
+        "https://purl.eu/ns/mobility#PointInJourneyPattern"
       ],
       "parents": []
     },
@@ -5417,14 +5417,14 @@
       },
       "sort": "made up of",
       "description": {
-        "en": "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."
+        "en": "The Group of Lines that together make up the Network."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#ServiceJourneyPattern"
+        "https://purl.eu/ns/mobility#Network"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+        "https://purl.eu/ns/mobility#GroupOfLines"
       ],
       "parents": []
     },
@@ -6844,7 +6844,7 @@
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#TopographicPlace"
+        "https://purl.eu/ns/mobility#PointOfInterest"
       ],
       "range": [
         "https://purl.eu/ns/mobility#StopPlace"
@@ -6863,10 +6863,29 @@
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#PointOfInterest"
+        "https://purl.eu/ns/mobility#TopographicPlace"
       ],
       "range": [
         "https://purl.eu/ns/mobility#StopPlace"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#serves",
+      "name": "serves",
+      "label": {
+        "en": "serves"
+      },
+      "sort": "serves",
+      "description": {
+        "en": "TODO"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility#PointOfInterest"
       ],
       "parents": []
     },
@@ -6886,25 +6905,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility#TopographicPlace"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility#serves",
-      "name": "serves",
-      "label": {
-        "en": "serves"
-      },
-      "sort": "serves",
-      "description": {
-        "en": "TODO"
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility#PointOfInterest"
       ],
       "parents": []
     },
@@ -7106,14 +7106,14 @@
       },
       "sort": "start of",
       "description": {
-        "en": "Service Link of which the Schedule Stop Point is the start."
+        "en": "Route Link of which the Route Point is the start."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility#RoutePoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#ServiceLink"
+        "https://purl.eu/ns/mobility#RouteLink"
       ],
       "parents": []
     },
@@ -7125,14 +7125,14 @@
       },
       "sort": "start of",
       "description": {
-        "en": "Route Link of which the Route Point is the start."
+        "en": "Service Link of which the Schedule Stop Point is the start."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#RoutePoint"
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#RouteLink"
+        "https://purl.eu/ns/mobility#ServiceLink"
       ],
       "parents": []
     },
@@ -7488,14 +7488,14 @@
       },
       "sort": "to",
       "description": {
-        "en": "Route Point at which the Route Link ends."
+        "en": "End of the Service Link."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#RouteLink"
+        "https://purl.eu/ns/mobility#ServiceLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#RoutePoint"
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
       ],
       "parents": []
     },
@@ -7507,14 +7507,14 @@
       },
       "sort": "to",
       "description": {
-        "en": "End of the Service Link."
+        "en": "Route Point at which the Route Link ends."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility#ServiceLink"
+        "https://purl.eu/ns/mobility#RouteLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility#RoutePoint"
       ],
       "parents": []
     },
@@ -8001,25 +8001,6 @@
       },
       "sort": "viewed as",
       "description": {
-        "en": "As used as a Stop Point in a Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility#ScheduledStopPoint"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility#viewedAs",
-      "name": "viewed as",
-      "label": {
-        "en": "viewed as"
-      },
-      "sort": "viewed as",
-      "description": {
         "en": "As used as a Point on a Route."
       },
       "usage": {},
@@ -8047,6 +8028,25 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility#PointInJourneyPattern"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#viewedAs",
+      "name": "viewed as",
+      "label": {
+        "en": "viewed as"
+      },
+      "sort": "viewed as",
+      "description": {
+        "en": "As used as a Stop Point in a Journey Pattern."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility#ScheduledStopPoint"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
       ],
       "parents": []
     },
