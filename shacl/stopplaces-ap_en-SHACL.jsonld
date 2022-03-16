@@ -40,58 +40,6 @@
   "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PointShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.opengis.net/ont/sf#Point",
-          "sh:definition": {
-            "en": "Location of the Route Point."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "location"
-          },
-          "sh:path": "http://fixme.com#location"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "Name of the Route Point."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "name"
-          },
-          "sh:path": "http://fixme.com#name"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "point number"
-          },
-          "sh:path": "http://fixme.com#pointNumber"
-        },
-        {
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:name": {
-            "en": "projection"
-          },
-          "sh:path": "http://fixme.com#projection"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#Point"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PuntShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -104,6 +52,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceTypeShape",
@@ -141,6 +96,13 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightyTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuayTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -163,6 +125,13 @@
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LightingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -513,7 +482,7 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#AccessibilityAssessment"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#CountryShape",
@@ -521,7 +490,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
           "sh:definition": {
             "en": "Centre Point of the Country."
           },
@@ -530,7 +499,7 @@
           "sh:name": {
             "en": "centroid"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^centroid"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.centroid"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -541,17 +510,17 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^description"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.description"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
           "sh:definition": {
             "en": "List of Points within the Country."
           },
           "sh:name": {
             "en": "members"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^members"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.members"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -562,7 +531,7 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^name"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.name"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -572,7 +541,7 @@
           "sh:name": {
             "en": "place type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^placeType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.placeType"
         },
         {
           "sh:class": "http://www.opengis.net/ont/sf#Polygon",
@@ -583,7 +552,7 @@
           "sh:name": {
             "en": "polygon"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^polygon"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.polygon"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -594,7 +563,7 @@
           "sh:name": {
             "en": "private code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^privateCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.privateCode"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -605,7 +574,7 @@
           "sh:name": {
             "en": "short name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^shortName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.shortName"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -615,17 +584,17 @@
           "sh:name": {
             "en": "alternative name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#alternativeName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Country.alternativeName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Stop Place that is located in the Country."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "location of"
           },
-          "sh:path": "https://purl.eu/ns/mobility#locationOf"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#locationOf"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -636,10 +605,10 @@
           "sh:name": {
             "en": "UIC code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#uicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#uicCode"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Country"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Country"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GroupOfStopPlacesShape",
@@ -655,7 +624,7 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^description"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -666,7 +635,7 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^name"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -677,9 +646,10 @@
           "sh:name": {
             "en": "private code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^privateCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.privateCode"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Code",
           "sh:definition": {
             "en": "Purpose of grouping the Stop Places."
           },
@@ -687,7 +657,7 @@
           "sh:name": {
             "en": "purpose of grouping"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^purposeOfGrouping"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.purposeOfGrouping"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -698,20 +668,20 @@
           "sh:name": {
             "en": "short name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^shortName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.shortName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Stop Place that is a member of the Group of Stop Places."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "member"
           },
-          "sh:path": "https://purl.eu/ns/mobility#member"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#member"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Transport mode of the Group of Stop Places."
           },
@@ -719,10 +689,10 @@
           "sh:name": {
             "en": "transport mode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#GroupOfStopPlaces"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LevelShape",
@@ -730,7 +700,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
           "sh:definition": {
             "en": "Accessibility of the Level."
           },
@@ -738,7 +708,7 @@
           "sh:name": {
             "en": "accessibility"
           },
-          "sh:path": "https://purl.eu/ns/mobility#accessibility"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#accessibility"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -749,7 +719,7 @@
           "sh:name": {
             "en": "all areas wheelchair"
           },
-          "sh:path": "https://purl.eu/ns/mobility#allAreasWheelchair"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#allAreasWheelchair"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -760,7 +730,7 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "https://purl.eu/ns/mobility#description"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Level.description"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -771,7 +741,7 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#name"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Level.name"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -782,7 +752,7 @@
           "sh:name": {
             "en": "public code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Level.publicCode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -793,7 +763,7 @@
           "sh:name": {
             "en": "public use"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicUse"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#publicUse"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -804,20 +774,20 @@
           "sh:name": {
             "en": "short name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#shortName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Level.shortName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Site",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
           "sh:definition": {
             "en": "Site of the Level."
           },
           "sh:name": {
             "en": "site"
           },
-          "sh:path": "https://purl.eu/ns/mobility#site"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#site"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Level"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#LocaleShape",
@@ -832,7 +802,7 @@
           "sh:name": {
             "en": "default language"
           },
-          "sh:path": "https://purl.eu/ns/mobility#defaultLanguage"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#defaultLanguage"
         },
         {
           "sh:definition": {
@@ -841,7 +811,7 @@
           "sh:name": {
             "en": "language"
           },
-          "sh:path": "https://purl.eu/ns/mobility#language"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#language"
         },
         {
           "sh:definition": {
@@ -851,7 +821,7 @@
           "sh:name": {
             "en": "summer time zone offset"
           },
-          "sh:path": "https://purl.eu/ns/mobility#summerTimeZoneOffset"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#summerTimeZoneOffset"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -862,7 +832,7 @@
           "sh:name": {
             "en": "time zone"
           },
-          "sh:path": "https://purl.eu/ns/mobility#timeZone"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#timeZone"
         },
         {
           "sh:definition": {
@@ -872,10 +842,10 @@
           "sh:name": {
             "en": "time zone offset"
           },
-          "sh:path": "https://purl.eu/ns/mobility#timeZoneOffset"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#timeZoneOffset"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Locale"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Locale"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#OperatorShape",
@@ -891,7 +861,7 @@
           "sh:name": {
             "en": "address"
           },
-          "sh:path": "https://purl.eu/ns/mobility#address"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.address"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -900,12 +870,12 @@
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Country"
+            "en": "country"
           },
-          "sh:path": "https://purl.eu/ns/mobility#country"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.country"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Primary Transport Mode of the Operator."
           },
@@ -913,10 +883,10 @@
           "sh:name": {
             "en": "primary mode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#primaryMode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Operator"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PassengerStopAssignmentShape",
@@ -924,7 +894,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#ScheduledStopPoint",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
           "sh:definition": {
             "en": "Referentie naar verbonden klasse."
           },
@@ -933,10 +903,10 @@
           "sh:name": {
             "en": "Geplande Stopplaats"
           },
-          "sh:path": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
             "en": "Referentie naar verbonden klasse."
           },
@@ -945,10 +915,10 @@
           "sh:name": {
             "en": "Stopplaats"
           },
-          "sh:path": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Quay",
           "sh:definition": {
             "en": "Reference to a Quay within the Stop Place to which the Scheduled Stop Point is assigned."
           },
@@ -956,10 +926,10 @@
           "sh:name": {
             "en": "quay"
           },
-          "sh:path": "https://purl.eu/ns/mobility#quay"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#quay"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PointOfInterestShape",
@@ -967,37 +937,37 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
             "en": "Additional Topographic Places associated with the Point of Interest."
           },
           "sh:name": {
             "en": "additional topographic place"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^additionalTopographicPlace"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#additionalTopographicPlace"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#SiteEntrance",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance",
           "sh:definition": {
             "en": "Entrance to the Point of Interest."
           },
           "sh:name": {
             "en": "entrance"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^entrance"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#^entrance"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
           "sh:definition": {
             "en": "Level of the Point of Interest."
           },
           "sh:name": {
             "en": "level"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^level"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.level"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Locale",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
           "sh:definition": {
             "en": "Locale setting time zone, default language, etc., for the Point of Interest."
           },
@@ -1005,10 +975,10 @@
           "sh:name": {
             "en": "locale"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^locale"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.locale"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
           "sh:definition": {
             "en": "Reference to the Operator of the Point of Interest."
           },
@@ -1016,10 +986,10 @@
           "sh:name": {
             "en": "organisation"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^organisation"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.organisation"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Site",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
           "sh:definition": {
             "en": "Parent Site which contains the Point of Interest."
           },
@@ -1027,10 +997,10 @@
           "sh:name": {
             "en": "parent site"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^parentSite"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.parentSite"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
             "en": "Reference to a Topographic Place with which the Point of Interest is associated."
           },
@@ -1038,46 +1008,47 @@
           "sh:name": {
             "en": "topographic place"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^topographicPlace"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.topographicPlace"
         },
         {
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Code",
           "sh:definition": {
             "en": "Classification of the Point of Interest."
           },
           "sh:name": {
             "en": "classification"
           },
-          "sh:path": "https://purl.eu/ns/mobility#classification"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#classification"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
             "en": "Topographic Places near the Point of Interest."
           },
           "sh:name": {
             "en": "near topographic place"
           },
-          "sh:path": "https://purl.eu/ns/mobility#nearTopographicPlace"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Stop Place that serves the Point of Interest."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "served by"
           },
-          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.servedBy"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PointOfInterest"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#PresentationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Presentation"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Presentation"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#QuayShape",
@@ -1092,10 +1063,10 @@
           "sh:name": {
             "en": "access mode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^accessMode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessMode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
           "sh:definition": {
             "en": "Accessibility of the Quay."
           },
@@ -1103,7 +1074,7 @@
           "sh:name": {
             "en": "accessibility assessment"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^accessibilityAssessment"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessibilityAssessment"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1113,7 +1084,7 @@
           "sh:name": {
             "en": "alternative name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^alternativeName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.alternativeName"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1124,7 +1095,7 @@
           "sh:name": {
             "en": "covered"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^covered"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.covered"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1135,7 +1106,7 @@
           "sh:name": {
             "en": "cross road"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^crossRoad"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.crossRoad"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1146,7 +1117,7 @@
           "sh:name": {
             "en": "gated"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^gated"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.gated"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1157,7 +1128,7 @@
           "sh:name": {
             "en": "label"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^label"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.label"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1168,10 +1139,10 @@
           "sh:name": {
             "en": "landmark"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^landmark"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.landmark"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
           "sh:definition": {
             "en": "Level of the Quay."
           },
@@ -1179,7 +1150,7 @@
           "sh:name": {
             "en": "level"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^level"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.level"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1190,7 +1161,7 @@
           "sh:name": {
             "en": "lighting"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^lighting"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.lighting"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -1201,7 +1172,7 @@
           "sh:name": {
             "en": "compass bearing"
           },
-          "sh:path": "https://purl.eu/ns/mobility#compassBearing"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#compassBearing"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1212,7 +1183,7 @@
           "sh:name": {
             "en": "plate code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#plateCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#plateCode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1223,18 +1194,18 @@
           "sh:name": {
             "en": "public code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.publicCode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Quay",
           "sh:definition": {
-            "en": "Sub Quay."
+            "en": "Quay of the Quay."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "quay"
           },
-          "sh:path": "https://purl.eu/ns/mobility#quay"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#quay"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1245,10 +1216,10 @@
           "sh:name": {
             "en": "quay type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#quayType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#quayType"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Quay"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#ScheduledStopPointShape",
@@ -1265,7 +1236,7 @@
           "sh:name": {
             "en": "location"
           },
-          "sh:path": "https://purl.eu/ns/mobility#location"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1277,18 +1248,18 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#name"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TimingpointStatus",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus",
           "sh:definition": {
-            "en": "Timing compliance status of the Point."
+            "en": "Timing status of the Scheduled Stop Point."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "timingpoint status"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^timingpointStatus"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#^timingpointStatus"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1299,20 +1270,20 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "https://purl.eu/ns/mobility#description"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink",
           "sh:definition": {
             "en": "Service Link for which the Scheduled Stop Point is the end."
           },
           "sh:name": {
             "en": "end of"
           },
-          "sh:path": "https://purl.eu/ns/mobility#endOf"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#endOf"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Presentation",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Presentation",
           "sh:definition": {
             "en": "Presentation values to use when rendering the Stop Point such as a colour and font."
           },
@@ -1320,7 +1291,7 @@
           "sh:name": {
             "en": "presentation"
           },
-          "sh:path": "https://purl.eu/ns/mobility#presentation"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.presentation"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1331,7 +1302,7 @@
           "sh:name": {
             "en": "private code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#privateCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.privateCode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1342,7 +1313,7 @@
           "sh:name": {
             "en": "public code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.publicCode"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1353,17 +1324,27 @@
           "sh:name": {
             "en": "short name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#shortName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.shortName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#ServiceLink",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink",
           "sh:definition": {
             "en": "Service Link for which the Scheduled Stop Point is the start."
           },
           "sh:name": {
             "en": "start of"
           },
-          "sh:path": "https://purl.eu/ns/mobility#startOf"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#startOf"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+          "sh:definition": {
+            "en": "Stop place."
+          },
+          "sh:name": {
+            "en": "stop place"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlace"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1374,37 +1355,37 @@
           "sh:name": {
             "en": "stop type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#stopType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#stopType"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone",
           "sh:definition": {
             "en": "Tariff Zones to which the Scheduled Stop Point belongs."
           },
           "sh:name": {
             "en": "tariff zones"
           },
-          "sh:path": "https://purl.eu/ns/mobility#tariffZones"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#tariffZones"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPointInJourneyPattern",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern",
           "sh:definition": {
             "en": "Stop Point in Journey Pattern that refers to the Scheduled Stop Point."
           },
           "sh:name": {
             "en": "viewed as"
           },
-          "sh:path": "https://purl.eu/ns/mobility#viewedAs"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.scheduledStopPoint"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#ServiceLinkShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#ServiceLink"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#SiteEntranceShape",
@@ -1419,10 +1400,10 @@
           "sh:name": {
             "en": "access mode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^accessMode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
           "sh:definition": {
             "en": "Accessibility assessment of the Site Entrance."
           },
@@ -1430,7 +1411,7 @@
           "sh:name": {
             "en": "accessibility assessment"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^accessibilityAssessment"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1440,7 +1421,7 @@
           "sh:name": {
             "en": "alternative name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^alternativeName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1451,7 +1432,7 @@
           "sh:name": {
             "en": "covered"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^covered"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1462,7 +1443,7 @@
           "sh:name": {
             "en": "cross road"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^crossRoad"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1473,7 +1454,7 @@
           "sh:name": {
             "en": "gated"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^gated"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1484,10 +1465,10 @@
           "sh:name": {
             "en": "landmark"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^landmark"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
           "sh:definition": {
             "en": "Level of the Site Entrance."
           },
@@ -1495,7 +1476,7 @@
           "sh:name": {
             "en": "level"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^level"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1506,7 +1487,7 @@
           "sh:name": {
             "en": "lighting"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^lighting"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1517,7 +1498,7 @@
           "sh:name": {
             "en": "dropped kerb outside"
           },
-          "sh:path": "https://purl.eu/ns/mobility#droppedKerbOutside"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1528,7 +1509,7 @@
           "sh:name": {
             "en": "entrance type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#entranceType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -1539,7 +1520,7 @@
           "sh:name": {
             "en": "height"
           },
-          "sh:path": "https://purl.eu/ns/mobility#height"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1550,7 +1531,7 @@
           "sh:name": {
             "en": "is entry"
           },
-          "sh:path": "https://purl.eu/ns/mobility#isEntry"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#isEntry"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1561,7 +1542,7 @@
           "sh:name": {
             "en": "is exit"
           },
-          "sh:path": "https://purl.eu/ns/mobility#isExit"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#isExit"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1572,7 +1553,7 @@
           "sh:name": {
             "en": "is external"
           },
-          "sh:path": "https://purl.eu/ns/mobility#isExternal"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#isExternal"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1583,7 +1564,7 @@
           "sh:name": {
             "en": "label"
           },
-          "sh:path": "https://purl.eu/ns/mobility#label"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1594,7 +1575,7 @@
           "sh:name": {
             "en": "public code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -1605,10 +1586,10 @@
           "sh:name": {
             "en": "width"
           },
-          "sh:path": "https://purl.eu/ns/mobility#width"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#SiteEntrance"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceShape",
@@ -1623,10 +1604,10 @@
           "sh:name": {
             "en": "access modes"
           },
-          "sh:path": "https://purl.eu/ns/mobility#accessModes"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#accessModes"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#AccessibilityAssessment",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
           "sh:definition": {
             "en": "The overall accessibility characteristics of the Stop Place."
           },
@@ -1634,7 +1615,7 @@
           "sh:name": {
             "en": "accessability assessment"
           },
-          "sh:path": "https://purl.eu/ns/mobility#accessabilityAssessment"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1644,7 +1625,7 @@
           "sh:name": {
             "en": "alternative name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#alternativeName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName"
         },
         {
           "sh:class": "http://www.opengis.net/ont/sf#Point",
@@ -1655,7 +1636,7 @@
           "sh:name": {
             "en": "centroid"
           },
-          "sh:path": "https://purl.eu/ns/mobility#centroid"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.centroid"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1666,7 +1647,7 @@
           "sh:name": {
             "en": "covered"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^covered"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.covered"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1677,7 +1658,7 @@
           "sh:name": {
             "en": "cross road"
           },
-          "sh:path": "https://purl.eu/ns/mobility#crossRoad"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.crossRoad"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1688,18 +1669,18 @@
           "sh:name": {
             "en": "gated"
           },
-          "sh:path": "https://purl.eu/ns/mobility#gated"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.gated"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
-            "en": "URI of the image associated with the Stop Place."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "image"
+            "en": "afbeelding"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^image"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#image"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1710,17 +1691,17 @@
           "sh:name": {
             "en": "landmark"
           },
-          "sh:path": "https://purl.eu/ns/mobility#landmark"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.landmark"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Level",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
           "sh:definition": {
             "en": "Levels for the Stop Place."
           },
           "sh:name": {
             "en": "level"
           },
-          "sh:path": "https://purl.eu/ns/mobility#level"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.level"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1731,10 +1712,10 @@
           "sh:name": {
             "en": "lighting"
           },
-          "sh:path": "https://purl.eu/ns/mobility#lighting"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.lighting"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Locale",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
           "sh:definition": {
             "en": "Locale setting the time zone, default language, etc., for the Stop Place."
           },
@@ -1742,10 +1723,10 @@
           "sh:name": {
             "en": "locale"
           },
-          "sh:path": "https://purl.eu/ns/mobility#locale"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.locale"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Country",
           "sh:definition": {
             "en": "Country where the Stop Place is located."
           },
@@ -1754,10 +1735,10 @@
           "sh:name": {
             "en": "located in"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^locatedIn"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#^locatedIn"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Operator",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
           "sh:definition": {
             "en": "Reference to the Operator of the Stop Place."
           },
@@ -1765,10 +1746,10 @@
           "sh:name": {
             "en": "organisation"
           },
-          "sh:path": "https://purl.eu/ns/mobility#organisation"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.organisation"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Site",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
           "sh:definition": {
             "en": "Parent Site which contains this Stop Place."
           },
@@ -1776,7 +1757,7 @@
           "sh:name": {
             "en": "parent site"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^parentSite"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1787,7 +1768,7 @@
           "sh:name": {
             "en": "place type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#placeType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.placeType"
         },
         {
           "sh:class": "http://www.opengis.net/ont/sf#Polygon",
@@ -1798,7 +1779,7 @@
           "sh:name": {
             "en": "polygon"
           },
-          "sh:path": "https://purl.eu/ns/mobility#polygon"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.polygon"
         },
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
@@ -1809,7 +1790,7 @@
           "sh:name": {
             "en": "postal address"
           },
-          "sh:path": "https://purl.eu/ns/mobility#postalAddress"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.postalAddress"
         },
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
@@ -1820,18 +1801,18 @@
           "sh:name": {
             "en": "road address"
           },
-          "sh:path": "https://purl.eu/ns/mobility#roadAddress"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.roadAddress"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
-            "en": "URL with information of the Stop Place."
+            "en": "Default URL for the Stop Place."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "url"
           },
-          "sh:path": "https://purl.eu/ns/mobility#url"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.url"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1842,58 +1823,58 @@
           "sh:name": {
             "en": "border crossing"
           },
-          "sh:path": "https://purl.eu/ns/mobility#borderCrossing"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#borderCrossing"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Quay",
           "sh:definition": {
-            "en": "The Quays contained in the Stop Place, that is platforms, jetties, bays, taxi ranks, and other points of physical access to Vehicles."
+            "en": "Quays in the Topographic Place."
           },
           "sh:name": {
             "en": "containing"
           },
-          "sh:path": "https://purl.eu/ns/mobility#containing"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#containing"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlaceEntrance",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance",
           "sh:definition": {
-            "en": "Entrance of the Stop Place."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "entered through"
           },
-          "sh:path": "https://purl.eu/ns/mobility#enteredThrough"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#enteredThrough"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
-            "en": "Stop Place that is the main terminus of the Topographic Place."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "for"
           },
-          "sh:path": "https://purl.eu/ns/mobility#for"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#for"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
-            "en": "Topographic Place in the Stop Place."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "in"
           },
-          "sh:path": "https://purl.eu/ns/mobility#in"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.in"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "The other transportmodes available at the Stop Place."
+            "en": "TODO"
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "other transportmode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#otherTransportmode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#otherTransportmode"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1904,27 +1885,37 @@
           "sh:name": {
             "en": "public code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.publicCode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#PointOfInterest",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
           "sh:definition": {
-            "en": "Point of Interest that is served by the Stop Place."
+            "en": "Scheduled Stop Point."
+          },
+          "sh:name": {
+            "en": "scheduled stop point"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
+          "sh:definition": {
+            "en": "TODO"
           },
           "sh:name": {
             "en": "serves"
           },
-          "sh:path": "https://purl.eu/ns/mobility#serves"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#serves"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest",
           "sh:definition": {
-            "en": "Topographic Place which the Stop Place serves."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "serves"
           },
-          "sh:path": "https://purl.eu/ns/mobility#serves"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#serves"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1936,10 +1927,10 @@
           "sh:name": {
             "en": "stop place type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#stopPlaceType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceType"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlaceWeightyType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Type of expected Interchange at the Stop Place."
           },
@@ -1947,10 +1938,10 @@
           "sh:name": {
             "en": "stop place weight"
           },
-          "sh:path": "https://purl.eu/ns/mobility#stopPlaceWeight"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceWeight"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Submode associated with the Stop Place."
           },
@@ -1958,20 +1949,20 @@
           "sh:name": {
             "en": "submode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#submode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#submode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TariffZone",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone",
           "sh:definition": {
             "en": "Tariff zone associated with the Stop Place."
           },
           "sh:name": {
             "en": "tariff zone"
           },
-          "sh:path": "https://purl.eu/ns/mobility#tariffZone"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#tariffZone"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Transportmode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "The main transport mode of the Stop Place."
           },
@@ -1979,7 +1970,7 @@
           "sh:name": {
             "en": "transport mode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1990,38 +1981,31 @@
           "sh:name": {
             "en": "weighting"
           },
-          "sh:path": "https://purl.eu/ns/mobility#weighting"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#weighting"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#PassengerStopAssignment.stopPlace"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceEntranceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceEntrance"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPlaceWeightyTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlaceWeightyType"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#StopPointInJourneyPatternShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#StopPointInJourneyPattern"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TariffZoneShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#TariffZone"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceShape",
@@ -2029,7 +2013,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
           "sh:definition": {
             "en": "Centre Point of the Topographic Place."
           },
@@ -2038,7 +2022,7 @@
           "sh:name": {
             "en": "centroid"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^centroid"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.centroid"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -2049,17 +2033,17 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^description"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.description"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Point",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
           "sh:definition": {
             "en": "List of Points within the Topographic Place."
           },
           "sh:name": {
             "en": "members"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^members"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.members"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -2070,7 +2054,7 @@
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^name"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -2080,7 +2064,7 @@
           "sh:name": {
             "en": "place type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^placeType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.placeType"
         },
         {
           "sh:class": "http://www.opengis.net/ont/sf#Polygon",
@@ -2091,7 +2075,7 @@
           "sh:name": {
             "en": "polygon"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^polygon"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.polygon"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -2102,7 +2086,7 @@
           "sh:name": {
             "en": "private code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^privateCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.privateCode"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -2113,30 +2097,30 @@
           "sh:name": {
             "en": "short name"
           },
-          "sh:path": "https://purl.eu/ns/mobility#^shortName"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.shortName"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Stop Place contained in the Topographic Place."
+            "en": "Stop Place in the Topographic Place."
           },
           "sh:name": {
             "en": "contained"
           },
-          "sh:path": "https://purl.eu/ns/mobility#contained"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#contained"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
             "en": "Reference to other Topographic Places within which the Topographic Place is contained."
           },
           "sh:name": {
             "en": "contained in"
           },
-          "sh:path": "https://purl.eu/ns/mobility#containedIn"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#containedIn"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Country",
           "sh:definition": {
             "en": "Country where the Topographic Place is situated."
           },
@@ -2144,7 +2128,7 @@
           "sh:name": {
             "en": "country"
           },
-          "sh:path": "https://purl.eu/ns/mobility#country"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.country"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -2155,30 +2139,30 @@
           "sh:name": {
             "en": "ISO code"
           },
-          "sh:path": "https://purl.eu/ns/mobility#isoCode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#isoCode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Topographic Place for which the Stop Place is the main terminus."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "main terminus"
           },
-          "sh:path": "https://purl.eu/ns/mobility#mainTerminus"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#mainTerminus"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#Country",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#Country",
           "sh:definition": {
             "en": "For Topographic Places that span borders, references to additional Country or Countries that Place lies in."
           },
           "sh:name": {
             "en": "other country"
           },
-          "sh:path": "https://purl.eu/ns/mobility#otherCountry"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#otherCountry"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
           "sh:definition": {
             "en": "Reference to a parent Topographic Place that contains the Topographic Place."
           },
@@ -2186,7 +2170,7 @@
           "sh:name": {
             "en": "parent topographic place"
           },
-          "sh:path": "https://purl.eu/ns/mobility#parentTopographicPlace"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#parentTopographicPlace"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -2197,20 +2181,20 @@
           "sh:name": {
             "en": "postcode"
           },
-          "sh:path": "https://purl.eu/ns/mobility#postcode"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.postcode"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:class": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
           "sh:definition": {
-            "en": "Stop Place that serves the Topographic Place."
+            "en": "TODO"
           },
           "sh:name": {
             "en": "served by"
           },
-          "sh:path": "https://purl.eu/ns/mobility#servedBy"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.servedBy"
         },
         {
-          "sh:class": "https://purl.eu/ns/mobility#TopographicPlaceType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Categorisation of the Topographic Place."
           },
@@ -2218,24 +2202,10 @@
           "sh:name": {
             "en": "topographic place type"
           },
-          "sh:path": "https://purl.eu/ns/mobility#topographicPlaceType"
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType"
         }
       ],
-      "sh:targetClass": "https://purl.eu/ns/mobility#TopographicPlace"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TopographicPlaceTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#TopographicPlaceType"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#TransportmodeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://purl.eu/ns/mobility#Transportmode"
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
     },
     {
       "@id": "https://semiceu.github.io/shacl/stopplaces-ap_en#GetalShape",
