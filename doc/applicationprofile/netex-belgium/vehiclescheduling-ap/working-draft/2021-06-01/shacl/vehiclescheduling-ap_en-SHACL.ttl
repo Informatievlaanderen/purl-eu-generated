@@ -8,25 +8,7 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/vehiclescheduling-ap_en> <https://semiceu.github.io/shacl/vehiclescheduling-ap_enshapes> <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ContactInfoShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PuntShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PolygoonShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DirectionTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TimingStatusShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TransportmodeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TrainSizetypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PlaceTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayOfWeekShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#HolidayTypeShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#SeasonShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#CrowdingShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#WeekOfMonthShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TypeOfLineShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AdresvoorstellingShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GeometrieShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#StandaardEenheidShape>,
-    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AccessibilityAssessmentShape>,
+<https://semiceu.github.io/shacl/vehiclescheduling-ap_en> <https://semiceu.github.io/shacl/vehiclescheduling-ap_enshapes> <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AccessibilityAssessmentShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AuthorityOrOperatorShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#BlockShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#CrewBaseShape>,
@@ -64,6 +46,24 @@
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#UicOperatingPeriodShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleJourneyShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#VehicleTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#ContactInfoShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PuntShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PolygoonShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DirectionTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DeadRunTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TimingStatusShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TransportmodeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TrainSizetypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#PlaceTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#DayOfWeekShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#HolidayTypeShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#SeasonShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#CrowdingShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#WeekOfMonthShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#TypeOfLineShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#AdresvoorstellingShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GeometrieShape>,
+    <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#StandaardEenheidShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#GetalShape>,
     <https://semiceu.github.io/shacl/vehiclescheduling-ap_en#KwantitatieveWaardeShape> .
 
@@ -303,36 +303,32 @@
     shacl:datatype rdf:langString;
     shacl:definition "Description of the Crew Base."@en;
     shacl:maxCount 1;
-    shacl:name "description"@en
+    shacl:name "description"@en;
+    shacl:path <https://purl.eu/ns/mobility#description>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Name of the Crew Base."@en;
     shacl:maxCount 1;
-    shacl:name "name"@en
+    shacl:name "name"@en;
+    shacl:path <https://purl.eu/ns/mobility#name>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Private code of the Crew Base."@en;
     shacl:maxCount 1;
-    shacl:name "private code"@en
+    shacl:name "private code"@en;
+    shacl:path <https://purl.eu/ns/mobility#privateCode>
   ], [
+    shacl:class <https://purl.eu/ns/mobility#Code>;
     shacl:definition "Purpose of grouping of the Crew Base."@en;
     shacl:maxCount 1;
-    shacl:name "purpose of grouping"@en
+    shacl:name "purpose of grouping"@en;
+    shacl:path <https://purl.eu/ns/mobility#purposeOfGrouping>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Short name for the Crew Base."@en;
     shacl:maxCount 1;
-    shacl:name "short name"@en
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Garage>;
-    shacl:definition "Crew Base near the Garage."@en;
-    shacl:name "near"@en;
-    shacl:path <https://purl.eu/ns/mobility#near>
-  ], [
-    shacl:class <https://purl.eu/ns/mobility#Garage>;
-    shacl:definition "Crew Base near the Garage."@en;
-    shacl:name "near"@en;
-    shacl:path <https://purl.eu/ns/mobility#near>
+    shacl:name "short name"@en;
+    shacl:path <https://purl.eu/ns/mobility#shortName>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility#CrewBase> .
 
@@ -579,11 +575,10 @@
     shacl:name "contact details"@en;
     shacl:path <https://purl.eu/ns/mobility#contactDetails>
   ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Name of the Garage."@en;
-    shacl:maxCount 1;
-    shacl:name "name"@en;
-    shacl:path <https://purl.eu/ns/mobility#name>
+    shacl:class <https://purl.eu/ns/mobility#CrewBase>;
+    shacl:definition "Crew Base near the Garage."@en;
+    shacl:name "crew base"@en;
+    shacl:path <https://purl.eu/ns/mobility#crewBase>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Operator>;
     shacl:definition "Operator that operates the Garage."@en;
@@ -966,7 +961,8 @@
     shacl:definition "Crew Base that manages the Parking Point."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "managed by"@en
+    shacl:name "managed by"@en;
+    shacl:path <https://purl.eu/ns/mobility#managedBy>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Name of the Parking Point."@en;
@@ -1251,7 +1247,7 @@
     shacl:path <https://purl.eu/ns/mobility#line>
   ], [
     shacl:class <https://purl.eu/ns/mobility#PointOnRoute>;
-    shacl:definition "TODO"@en;
+    shacl:definition "Points through which the Route goes."@en;
     shacl:minCount 2;
     shacl:name "through"@en;
     shacl:path <https://purl.eu/ns/mobility#through>
@@ -1268,7 +1264,7 @@
     shacl:datatype xsd:date;
     shacl:definition "Inclusive start date for validity of the Service Calendar."@en;
     shacl:maxCount 1;
-    shacl:name "from"@en;
+    shacl:name "from date"@en;
     shacl:path <https://purl.eu/ns/mobility#fromDate>
   ], [
     shacl:datatype rdf:langString;
@@ -1285,7 +1281,7 @@
     shacl:datatype xsd:date;
     shacl:definition "Inclusive end date for validity of the Service Calendar."@en;
     shacl:maxCount 1;
-    shacl:name "to"@en;
+    shacl:name "to date"@en;
     shacl:path <https://purl.eu/ns/mobility#toDate>
   ], [
     shacl:class <https://purl.eu/ns/mobility#OperatingPeriod>;

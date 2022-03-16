@@ -1,8 +1,9 @@
 {
   "metadata": {
     "title": "NeTEx Belgium: Vehicle Scheduling (application profile)",
-    "uri": "http://fixme.com",
+    "uri": "https://purl.eu/ns/mobility",
     "issued": "2021-06-01",
+    "baseURI": "https://purl.eu/ns/mobility#",
     "filename": "vehiclescheduling-ap",
     "navigation": {
       "self": "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/working-draft/2021-06-01"
@@ -10,8 +11,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/faa22bf56acfa0c7ae0c5d6a2548fba24f726d64",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/faa22bf56acfa0c7ae0c5d6a2548fba24f726d64/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/d44f3df8c21448582b2015270241f57975a5caba",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/d44f3df8c21448582b2015270241f57975a5caba/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -538,7 +539,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility#^description",
+          "uri": "https://purl.eu/ns/mobility#description",
           "name": "description",
           "sort": "description",
           "label": {
@@ -573,7 +574,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#^name",
+          "uri": "https://purl.eu/ns/mobility#name",
           "name": "name",
           "sort": "name",
           "label": {
@@ -608,7 +609,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#^privateCode",
+          "uri": "https://purl.eu/ns/mobility#privateCode",
           "name": "private code",
           "sort": "private code",
           "label": {
@@ -643,7 +644,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#^purposeOfGrouping",
+          "uri": "https://purl.eu/ns/mobility#purposeOfGrouping",
           "name": "purpose of grouping",
           "sort": "purpose of grouping",
           "label": {
@@ -659,13 +660,26 @@
               "uri": "https://purl.eu/ns/mobility#CrewBase"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "https://purl.eu/ns/mobility#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://purl.eu/ns/mobility#Code",
+              "range_puri": "https://purl.eu/ns/mobility#Code",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#^shortName",
+          "uri": "https://purl.eu/ns/mobility#shortName",
           "name": "short name",
           "sort": "short name",
           "label": {
@@ -697,76 +711,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#near",
-          "name": "near",
-          "sort": "near",
-          "label": {
-            "en": "near"
-          },
-          "description": {
-            "en": "Crew Base near the Garage."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "CrewBase",
-              "uri": "https://purl.eu/ns/mobility#CrewBase"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Garage",
-              "range_uri": "https://purl.eu/ns/mobility#Garage"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Garage",
-              "range_puri": "https://purl.eu/ns/mobility#Garage",
-              "range_label": {
-                "en": "Garage"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility#near",
-          "name": "near",
-          "sort": "near",
-          "label": {
-            "en": "near"
-          },
-          "description": {
-            "en": "Crew Base near the Garage."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "CrewBase",
-              "uri": "https://purl.eu/ns/mobility#CrewBase"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Garage",
-              "range_uri": "https://purl.eu/ns/mobility#Garage"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Garage",
-              "range_puri": "https://purl.eu/ns/mobility#Garage",
-              "range_label": {
-                "en": "Garage"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -2042,14 +1986,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#name",
-          "name": "name",
-          "sort": "name",
+          "uri": "https://purl.eu/ns/mobility#crewBase",
+          "name": "crew base",
+          "sort": "crew base",
           "label": {
-            "en": "name"
+            "en": "crew base"
           },
           "description": {
-            "en": "Name of the Garage."
+            "en": "Crew Base near the Garage."
           },
           "usage": {},
           "domain": [
@@ -2060,20 +2004,20 @@
           ],
           "range": [
             {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "CrewBase",
+              "range_uri": "https://purl.eu/ns/mobility#CrewBase"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#Crew Base",
+              "range_puri": "https://purl.eu/ns/mobility#CrewBase",
               "range_label": {
-                "en": "TaalString"
+                "en": "Crew Base"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -3984,41 +3928,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility#^managedBy",
-          "name": "managed by",
-          "sort": "managed by",
-          "label": {
-            "en": "managed by"
-          },
-          "description": {
-            "en": "Crew Base that manages the Parking Point."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ParkingPoint",
-              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CrewBase",
-              "range_uri": "https://purl.eu/ns/mobility#CrewBase"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Crew Base",
-              "range_puri": "https://purl.eu/ns/mobility#CrewBase",
-              "range_label": {
-                "en": "Crew Base"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility#^name",
           "name": "name",
           "sort": "name",
@@ -4174,6 +4083,41 @@
               "range_puri": "http://www.opengis.net/ont/sf#Point",
               "range_label": {
                 "en": "Punt"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility#managedBy",
+          "name": "managed by",
+          "sort": "managed by",
+          "label": {
+            "en": "managed by"
+          },
+          "description": {
+            "en": "Crew Base that manages the Parking Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ParkingPoint",
+              "uri": "https://purl.eu/ns/mobility#ParkingPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CrewBase",
+              "range_uri": "https://purl.eu/ns/mobility#CrewBase"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Crew Base",
+              "range_puri": "https://purl.eu/ns/mobility#CrewBase",
+              "range_label": {
+                "en": "Crew Base"
               }
             }
           ],
@@ -5586,7 +5530,7 @@
             "en": "through"
           },
           "description": {
-            "en": "TODO"
+            "en": "Points through which the Route goes."
           },
           "usage": {},
           "domain": [
@@ -5630,10 +5574,10 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/mobility#fromDate",
-          "name": "from",
-          "sort": "from",
+          "name": "from date",
+          "sort": "from date",
           "label": {
-            "en": "from"
+            "en": "from date"
           },
           "description": {
             "en": "Inclusive start date for validity of the Service Calendar."
@@ -5735,10 +5679,10 @@
         },
         {
           "uri": "https://purl.eu/ns/mobility#toDate",
-          "name": "to",
-          "sort": "to",
+          "name": "to date",
+          "sort": "to date",
           "label": {
-            "en": "to"
+            "en": "to date"
           },
           "description": {
             "en": "Inclusive end date for validity of the Service Calendar."
@@ -7375,7 +7319,1373 @@
       ]
     }
   ],
-  "properties": [],
+  "properties": [
+    {
+      "uri": "https://purl.eu/ns/mobility#^centroid",
+      "name": {
+        "en": "centroid",
+        "undefined": "centroid"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^members",
+      "name": {
+        "en": "members",
+        "undefined": "members"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^placeType",
+      "name": {
+        "en": "place type",
+        "undefined": "place type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^polygon",
+      "name": {
+        "en": "polygon",
+        "undefined": "polygon"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^postalAddress",
+      "name": {
+        "en": "postal address",
+        "undefined": "postal address"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^roadAddress",
+      "name": {
+        "en": "road address",
+        "undefined": "road address"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^timingPointType",
+      "name": {
+        "en": "timing point type",
+        "undefined": "timing point type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#^transportSubmode",
+      "name": {
+        "en": "transportsubmode",
+        "undefined": "transportsubmode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#aViewOf",
+      "name": {
+        "en": "a view of",
+        "undefined": "a view of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#accessibilityAssessment",
+      "name": {
+        "en": "accessibility assessment",
+        "undefined": "accessibility assessment"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#additionalOperators",
+      "name": {
+        "en": "additional operators",
+        "undefined": "additional operators"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#address",
+      "name": {
+        "en": "address",
+        "undefined": "address"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#allowedDirection",
+      "name": {
+        "en": "allowed direction",
+        "undefined": "allowed direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#at",
+      "name": {
+        "en": "at",
+        "undefined": "at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#belongingTo",
+      "name": {
+        "en": "belonging to",
+        "undefined": "belonging to"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#capacity",
+      "name": {
+        "en": "capacity",
+        "undefined": "capacity"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#composedOf",
+      "name": {
+        "en": "composed of",
+        "undefined": "composed of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#contactDetails",
+      "name": {
+        "en": "contact details",
+        "undefined": "contact details"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#coveredBy",
+      "name": {
+        "en": "covered by",
+        "undefined": "covered by"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#crewBase",
+      "name": {
+        "en": "crew base",
+        "undefined": "crew base"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#crowding",
+      "name": {
+        "en": "crowding",
+        "undefined": "crowding"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#dayOfWeek",
+      "name": {
+        "en": "day of week",
+        "undefined": "day of week"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#deadRunType",
+      "name": {
+        "en": "dead run type",
+        "undefined": "dead run type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#describedBy",
+      "name": {
+        "en": "described by",
+        "undefined": "described by"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#destinationDisplay",
+      "name": {
+        "en": "destination display",
+        "undefined": "destination display"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#destinationDisplay",
+      "name": {
+        "en": "destination display reference",
+        "undefined": "destination display reference"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#direction",
+      "name": {
+        "en": "direction",
+        "undefined": "direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#direction",
+      "name": {
+        "en": "direction",
+        "undefined": "direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#directionType",
+      "name": {
+        "en": "direction type",
+        "undefined": "direction type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#directionType",
+      "name": {
+        "en": "directionRef",
+        "undefined": "directionRef"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#directionType",
+      "name": {
+        "en": "direction type",
+        "undefined": "direction type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#distance",
+      "name": {
+        "en": "distance",
+        "undefined": "distance"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#distance",
+      "name": {
+        "en": "distance",
+        "undefined": "distance"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#endedAt",
+      "name": {
+        "en": "ended at",
+        "undefined": "ended at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#facility",
+      "name": {
+        "en": "facility",
+        "undefined": "facility"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#fareClass",
+      "name": {
+        "en": "fare class",
+        "undefined": "fare class"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#height",
+      "name": {
+        "en": "height",
+        "undefined": "height"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#holidayType",
+      "name": {
+        "en": "holiday type",
+        "undefined": "holiday type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#in",
+      "name": {
+        "en": "including",
+        "undefined": "including"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#including",
+      "name": {
+        "en": "in",
+        "undefined": "in"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#inverseRoute",
+      "name": {
+        "en": "inverse route",
+        "undefined": "inverse route"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#journeyPart",
+      "name": {
+        "en": "journey part",
+        "undefined": "journey part"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#length",
+      "name": {
+        "en": "length",
+        "undefined": "length"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#line",
+      "name": {
+        "en": "line",
+        "undefined": "line"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#location",
+      "name": {
+        "en": "location",
+        "undefined": "location"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#location",
+      "name": {
+        "en": "location",
+        "undefined": "location"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#madeUpOf",
+      "name": {
+        "en": "made up of",
+        "undefined": "made up of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#madeUpOf",
+      "name": {
+        "en": "made up of",
+        "undefined": "made up of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#madeUpOf",
+      "name": {
+        "en": "made up of",
+        "undefined": "made up of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#madeUsing",
+      "name": {
+        "en": "made using",
+        "undefined": "made using"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#mainline",
+      "name": {
+        "en": "mainline",
+        "undefined": "mainline"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#managedBy",
+      "name": {
+        "en": "managed by",
+        "undefined": "managed by"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#noticeAssignment",
+      "name": {
+        "en": "notice assignment",
+        "undefined": "notice assignment"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#noticeAssignment",
+      "name": {
+        "en": "notice assignment",
+        "undefined": "notice assignment"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#operatedBy",
+      "name": {
+        "en": "operated by",
+        "undefined": "operated by"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#operatingDay",
+      "name": {
+        "en": "operating day",
+        "undefined": "operating day"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#operatingPeriod",
+      "name": {
+        "en": "operating period",
+        "undefined": "operating period"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#operator",
+      "name": {
+        "en": "operator",
+        "undefined": "operator"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#oppositeDirection",
+      "name": {
+        "en": "opposite direction",
+        "undefined": "opposite direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#otherModes",
+      "name": {
+        "en": "other modes",
+        "undefined": "other modes"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#passedAt",
+      "name": {
+        "en": "passed at",
+        "undefined": "passed at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#presentation",
+      "name": {
+        "en": "presentation",
+        "undefined": "presentation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#primaryMode",
+      "name": {
+        "en": "primary mode",
+        "undefined": "primary mode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#purposeOfGrouping",
+      "name": {
+        "en": "purpose of grouping",
+        "undefined": "purpose of grouping"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#route",
+      "name": {
+        "en": "route",
+        "undefined": "route"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#season",
+      "name": {
+        "en": "season",
+        "undefined": "season"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#startedAt",
+      "name": {
+        "en": "started at",
+        "undefined": "started at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#through",
+      "name": {
+        "en": "through",
+        "undefined": "through"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#timeband",
+      "name": {
+        "en": "timeband",
+        "undefined": "timeband"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#trainNumber",
+      "name": {
+        "en": "train number",
+        "undefined": "train number"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#trainSize",
+      "name": {
+        "en": "train size",
+        "undefined": "train size"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportMode",
+      "name": {
+        "en": "transport mode",
+        "undefined": "transport mode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportOrganisation",
+      "name": {
+        "en": "transport organisation",
+        "undefined": "transport organisation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportOrganisation",
+      "name": {
+        "en": "transport organisation",
+        "undefined": "transport organisation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportSubmode",
+      "name": {
+        "en": "transport submode",
+        "undefined": "transport submode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportmode",
+      "name": {
+        "en": "transportmode",
+        "undefined": "transportmode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#transportmode",
+      "name": {
+        "en": "transportmode",
+        "undefined": "transportmode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#typeOfFuel",
+      "name": {
+        "en": "type of fuel",
+        "undefined": "type of fuel"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#typeOfLine",
+      "name": {
+        "en": "type of line",
+        "undefined": "type of line"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#usedBy",
+      "name": {
+        "en": "used by",
+        "undefined": "used by"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#usedToDescribe",
+      "name": {
+        "en": "used to describe",
+        "undefined": "used to describe"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#using",
+      "name": {
+        "en": "using",
+        "undefined": "using"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#vehicleType",
+      "name": {
+        "en": "vehicle type",
+        "undefined": "vehicle type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#via",
+      "name": {
+        "en": "via",
+        "undefined": "via"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#viewedAs",
+      "name": {
+        "en": "viewed as",
+        "undefined": "viewed as"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#weekOfMonth",
+      "name": {
+        "en": "week of month",
+        "undefined": "week of month"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#weight",
+      "name": {
+        "en": "weight",
+        "undefined": "weight"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#width",
+      "name": {
+        "en": "width",
+        "undefined": "width"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#within",
+      "name": {
+        "en": "within",
+        "undefined": "within"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#workedOn",
+      "name": {
+        "en": "worked on",
+        "undefined": "worked on"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility#workedOn",
+      "name": {
+        "en": "worked on",
+        "undefined": "worked on"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    }
+  ],
   "contributors": [],
   "datatypes": [
     {
