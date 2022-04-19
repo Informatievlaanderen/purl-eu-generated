@@ -177,6 +177,10 @@
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence>,
     <http://fixme.com#Routeknoop> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> a owl:Class,
     rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -293,6 +297,10 @@
     <http://fixme.com#Dienstregeling> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> a owl:Class,
     rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
@@ -864,18 +872,6 @@
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#Point.name> a owl:DatatypeProperty,
     rdf:Property;
   rdfs:domain [];
@@ -1237,6 +1233,48 @@
   skos:scopeNote "A translation has yet to be added"@nl .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime> a owl:DatatypeProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime> a owl:DatatypeProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting> a owl:DatatypeProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding> a owl:DatatypeProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line> a owl:ObjectProperty,
     rdf:Property;
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1728,12 +1766,6 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime> a owl:DatatypeProperty,
     rdf:Property;
   rdfs:domain [];
@@ -1864,9 +1896,11 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear> a rdf:Property;
+<https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear> a owl:DatatypeProperty,
+    rdf:Property;
   rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#dayType> a owl:ObjectProperty,
     rdf:Property;
@@ -1889,18 +1923,6 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#departureDayOffset> a owl:DatatypeProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#departureStop> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#departureTime> a owl:DatatypeProperty,
     rdf:Property;
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1949,6 +1971,12 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#entrance> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#entranceType> a owl:ObjectProperty,
     rdf:Property;
   rdfs:domain [];
@@ -1985,6 +2013,12 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#flexible> a owl:DatatypeProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#flexibleLineView> a rdf:Property;
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
@@ -1994,18 +2028,6 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#for> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#forAlighting> a owl:DatatypeProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#forBoarding> a owl:DatatypeProperty,
     rdf:Property;
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2138,6 +2160,12 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#managedBy> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval> a owl:DatatypeProperty,
     rdf:Property;
   rdfs:domain [];
@@ -2162,9 +2190,11 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear> a rdf:Property;
+<https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear> a owl:DatatypeProperty,
+    rdf:Property;
   rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace> a owl:ObjectProperty,
     rdf:Property;
@@ -2430,6 +2460,16 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range [] .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#timingPointType> a rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range [] .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType> a rdf:Property;
   rdfs:domain [];
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
@@ -2589,6 +2629,7 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Point>,
     <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence>,
     <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>,
     <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Presentation>,
@@ -2611,6 +2652,7 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#TariffZone>,
     <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint>,
     <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>,
     <https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber>,
     <https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod>,
@@ -2708,8 +2750,6 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.name>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.pointNumber>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.projection>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber>,
     <https://purl.eu/ns/mobility/timetables-and-planning#Point.projection>,
@@ -2771,6 +2811,13 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.distance>,
     <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.from>,
@@ -2851,7 +2898,6 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection>,
     <https://purl.eu/ns/mobility/timetables-and-planning#allowedForWaitTime>,
     <https://purl.eu/ns/mobility/timetables-and-planning#arrivalDayOffset>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop>,
     <https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime>,
     <https://purl.eu/ns/mobility/timetables-and-planning#at>,
     <https://purl.eu/ns/mobility/timetables-and-planning#available>,
@@ -2880,8 +2926,6 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#deadRunType>,
     <https://purl.eu/ns/mobility/timetables-and-planning#defaultLanguage>,
     <https://purl.eu/ns/mobility/timetables-and-planning#departureDayOffset>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#departureStop>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#departureTime>,
     <https://purl.eu/ns/mobility/timetables-and-planning#describedBy>,
     <https://purl.eu/ns/mobility/timetables-and-planning#destinationVariantDisplayType>,
     <https://purl.eu/ns/mobility/timetables-and-planning#documentLink>,
@@ -2889,17 +2933,17 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#endTimeDayOffset>,
     <https://purl.eu/ns/mobility/timetables-and-planning#endedAt>,
     <https://purl.eu/ns/mobility/timetables-and-planning#enteredThrough>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#entrance>,
     <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>,
     <https://purl.eu/ns/mobility/timetables-and-planning#euroClass>,
     <https://purl.eu/ns/mobility/timetables-and-planning#facility>,
     <https://purl.eu/ns/mobility/timetables-and-planning#fareClass>,
     <https://purl.eu/ns/mobility/timetables-and-planning#fequencyRegulated>,
     <https://purl.eu/ns/mobility/timetables-and-planning#finishingDuration>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#flexible>,
     <https://purl.eu/ns/mobility/timetables-and-planning#flexibleLineView>,
     <https://purl.eu/ns/mobility/timetables-and-planning#flexiblePointProperties>,
     <https://purl.eu/ns/mobility/timetables-and-planning#for>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#forAlighting>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#forBoarding>,
     <https://purl.eu/ns/mobility/timetables-and-planning#frequency>,
     <https://purl.eu/ns/mobility/timetables-and-planning#hasLiftOrRamp>,
     <https://purl.eu/ns/mobility/timetables-and-planning#headway>,
@@ -2922,6 +2966,7 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#lowFloor>,
     <https://purl.eu/ns/mobility/timetables-and-planning#mainTerminus>,
     <https://purl.eu/ns/mobility/timetables-and-planning#mainline>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#managedBy>,
     <https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval>,
     <https://purl.eu/ns/mobility/timetables-and-planning#member>,
     <https://purl.eu/ns/mobility/timetables-and-planning#minimumHeadwayInterval>,
@@ -2971,6 +3016,8 @@
     <https://purl.eu/ns/mobility/timetables-and-planning#timeZone>,
     <https://purl.eu/ns/mobility/timetables-and-planning#timeZoneOffset>,
     <https://purl.eu/ns/mobility/timetables-and-planning#timeband>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#timingPointType>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus>,
     <https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType>,
     <https://purl.eu/ns/mobility/timetables-and-planning#totalCapacity>,
     <https://purl.eu/ns/mobility/timetables-and-planning#trainNumber>,

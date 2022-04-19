@@ -357,6 +357,14 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -574,6 +582,14 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "nl": "A translation has yet to be added"
@@ -818,6 +834,11 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest",
       "@type": "rdfs:Class"
     },
@@ -924,6 +945,11 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint",
       "@type": "rdfs:Class"
     },
     {
@@ -2608,36 +2634,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-        }
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.name",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -3733,6 +3729,132 @@
       "range": [
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
         }
       ],
       "generalization": []
@@ -5088,110 +5210,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^entrance",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^flexible",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^image",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^managedBy",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^timingPointType",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
-        }
-      ],
-      "range": [],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^timingpointStatus",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus"
-        }
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#accessModes",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -5318,24 +5336,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -5349,24 +5349,6 @@
       "range": [
         {
           "uri": "http://www.w3.org/2001/XMLSchema#time"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
         }
       ],
       "generalization": []
@@ -5765,7 +5747,7 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "nl": "A translation has yet to be added"
       },
@@ -5774,7 +5756,11 @@
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#gMonthDay"
+        }
+      ],
       "generalization": []
     },
     {
@@ -5855,42 +5841,6 @@
       "range": [
         {
           "uri": "http://www.w3.org/2001/XMLSchema#integer"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#departureStop",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#departureTime",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
         }
       ],
       "generalization": []
@@ -6025,6 +5975,24 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#entrance",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -6133,6 +6101,24 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#flexible",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#flexibleLineView",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
@@ -6174,42 +6160,6 @@
       "range": [
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#forAlighting",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#forBoarding",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
         }
       ],
       "generalization": []
@@ -6305,6 +6255,24 @@
       "domain": [
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
         }
       ],
       "range": [
@@ -6494,24 +6462,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#line",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "A translation has yet to be added"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-        }
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#locatedIn",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -6638,6 +6588,24 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#managedBy",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -6711,7 +6679,7 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "nl": "A translation has yet to be added"
       },
@@ -6720,7 +6688,11 @@
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#gMonth"
+        }
+      ],
       "generalization": []
     },
     {
@@ -7225,7 +7197,7 @@
       ],
       "range": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
         }
       ],
       "generalization": []
@@ -7243,7 +7215,7 @@
       ],
       "range": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
         }
       ],
       "generalization": []
@@ -7556,6 +7528,38 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingPointType",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        }
+      ],
+      "range": [],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "A translation has yet to be added"
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
@@ -7814,12 +7818,12 @@
       },
       "domain": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
         }
       ],
       "range": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
         }
       ],
       "generalization": []
@@ -8396,16 +8400,6 @@
     },
     {
       "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.name",
       "@type": "rdf:Property"
     },
@@ -8707,6 +8701,41 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line",
       "@type": "rdf:Property"
     },
     {
@@ -9081,36 +9110,6 @@
     },
     {
       "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^entrance",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^flexible",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^image",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^managedBy",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^timingPointType",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^timingpointStatus",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#accessModes",
       "@type": "rdf:Property"
     },
@@ -9142,16 +9141,6 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalDayOffset",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime",
       "@type": "rdf:Property"
     },
     {
@@ -9301,16 +9290,6 @@
     },
     {
       "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#departureStop",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#departureTime",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
       "@type": "rdf:Property"
     },
@@ -9346,6 +9325,11 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#entrance",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType",
       "@type": "rdf:Property"
     },
@@ -9376,6 +9360,11 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#flexible",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#flexibleLineView",
       "@type": "rdf:Property"
     },
@@ -9387,16 +9376,6 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#for",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#forAlighting",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#forBoarding",
       "@type": "rdf:Property"
     },
     {
@@ -9422,6 +9401,11 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
       "@type": "rdf:Property"
     },
     {
@@ -9481,11 +9465,6 @@
     },
     {
       "name": null,
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#line",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#locatedIn",
       "@type": "rdf:Property"
     },
@@ -9517,6 +9496,11 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#mainline",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#managedBy",
       "@type": "rdf:Property"
     },
     {
@@ -9772,6 +9756,16 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timeband",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingPointType",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus",
       "@type": "rdf:Property"
     },
     {
