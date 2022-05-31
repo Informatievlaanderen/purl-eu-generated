@@ -52,6 +52,16 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:definition": {
+            "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
+          },
+          "sh:name": {
+            "en": "data retention policy document"
+          },
+          "sh:path": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
             "en": "The date on which the data retention stops"
@@ -72,16 +82,6 @@
             "en": "expiry time"
           },
           "sh:path": "https://purl.eu/ns/consent#DataRetention.expiryTime"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:definition": {
-            "en": "Indicates that the information w.r.t. the Data Retention is shown in a human readable form."
-          },
-          "sh:name": {
-            "en": "in human readable form"
-          },
-          "sh:path": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm"
         },
         {
           "sh:class": "https://dpvcg.github.io/dpv/#LegalBasis",
@@ -202,6 +202,13 @@
         }
       ],
       "sh:targetClass": "https://purl.eu/ns/consent#Filter"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#LiveDataShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/consent#LiveData"
     },
     {
       "@id": "https://semiceu.github.io/shacl/OSLO-consent-ap_en#CriterionShape",
@@ -445,7 +452,7 @@
         {
           "sh:class": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
           "sh:definition": {
-            "en": "TODO"
+            "en": "The legal basis under which the data handling takes place"
           },
           "sh:name": {
             "en": "oSLO:is legal basis for"
@@ -454,6 +461,9 @@
         },
         {
           "sh:class": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
+          "sh:definition": {
+            "en": "The type of legal basis."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -477,9 +487,19 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:definition": {
+            "en": "An human readable document explaining how the personal data will be handled."
+          },
+          "sh:name": {
+            "en": "data handling document"
+          },
+          "sh:path": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm"
+        },
+        {
           "sh:class": "https://dpvcg.github.io/dpv/#LegalBasis",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Indicates that the handling of personal data has a legal basis."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -488,14 +508,7 @@
           "sh:path": "https://dpvcg.github.io/dpv/#hasLegalBasis"
         },
         {
-          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:name": {
-            "en": "in human readable form"
-          },
-          "sh:path": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:class": "https://purl.eu/ns/consent#LiveData",
           "sh:definition": {
             "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
           },
@@ -608,6 +621,16 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:definition": {
+            "en": "An human readable document is provided of the consent."
+          },
+          "sh:name": {
+            "en": "consent document"
+          },
+          "sh:path": "https://purl.eu/ns/consent#Consent.inHumanReadableForm"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
             "en": "The moment in time in which this specific version of the consent was created"
@@ -628,13 +651,6 @@
             "en": "for personal data"
           },
           "sh:path": "https://w3id.org/GConsent#forPersonalData"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:name": {
-            "en": "in human readable form"
-          },
-          "sh:path": "https://purl.eu/ns/consent#Consent.inHumanReadableForm"
         },
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
@@ -663,6 +679,7 @@
           "sh:definition": {
             "en": "A previous version of the consent is invalidated by a newer version of the consent"
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "en": "is invalidated by"
           },
@@ -673,6 +690,7 @@
           "sh:definition": {
             "en": "Denotes that this consent instance is the previous consent for the specified consent instance."
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "en": "is previous consent for"
           },
@@ -681,7 +699,7 @@
         {
           "sh:class": "https://w3id.org/GConsent#DataSubject",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Indicates that the consent is given by the data subject."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -707,6 +725,8 @@
           "sh:definition": {
             "en": "Indicates the Person or Data Controller the consent was provided to."
           },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "is provided to"
           },
@@ -848,6 +868,9 @@
       "sh:property": [
         {
           "sh:class": "https://purl.eu/dc/terms/Agent",
+          "sh:definition": {
+            "en": "The delegation has been provided by a certain delegate."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -869,7 +892,7 @@
         {
           "sh:class": "https://w3id.org/GConsent#Consent",
           "sh:definition": {
-            "en": "TODO"
+            "en": "The entity which provided the consent is the one to whom the consent has been delegated."
           },
           "sh:name": {
             "en": "provided consent"
@@ -906,13 +929,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
-          "sh:name": {
-            "en": "in human readable form"
-          },
-          "sh:path": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm"
-        },
-        {
           "sh:class": "https://w3id.org/GConsent#Consent",
           "sh:definition": {
             "en": "Links personal data with the consent it is associated with."
@@ -923,6 +939,16 @@
             "en": "is personal data for consent"
           },
           "sh:path": "https://w3id.org/GConsent#isPersonalDataForConsent"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/spec/#term_Document",
+          "sh:definition": {
+            "en": "An human readable document is provided explaining what personal data which is part of the consent."
+          },
+          "sh:name": {
+            "en": "personal data document"
+          },
+          "sh:path": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm"
         }
       ],
       "sh:targetClass": "https://w3id.org/GConsent#PersonalData"
@@ -944,6 +970,9 @@
         },
         {
           "sh:class": "http://fixme.com#ProcessingType",
+          "sh:definition": {
+            "en": "The type of processing."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -961,6 +990,9 @@
       "sh:property": [
         {
           "sh:class": "http://fixme.com#PurposeType",
+          "sh:definition": {
+            "en": "The type of purpose."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {

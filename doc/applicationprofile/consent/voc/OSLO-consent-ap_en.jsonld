@@ -56,6 +56,11 @@
         "en": "A filter added to the personal data to further limit the specifications of the personal data."
       },
       "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#LiveData",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "parents": []
     }
   ],
   "externals": [
@@ -78,12 +83,20 @@
       "name": null,
       "@id": "https://purl.eu/ns/consent#Filter",
       "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/consent#LiveData",
+      "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
       "@id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "An human readable document is provided of the consent."
+      },
       "domain": [
         {
           "uri": "https://w3id.org/GConsent#Consent"
@@ -190,7 +203,7 @@
       "@id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "Indicates that the information w.r.t. the Data Retention is shown in a human readable form."
+        "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
       },
       "domain": [
         {
@@ -261,6 +274,9 @@
     {
       "@id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The delegation has been provided by a certain delegate."
+      },
       "domain": [
         {
           "uri": "https://w3id.org/GConsent#Delegation"
@@ -366,6 +382,9 @@
     {
       "@id": "https://purl.eu/ns/consent#LegalBasis.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The type of legal basis."
+      },
       "domain": [
         {
           "uri": "https://dpvcg.github.io/dpv/#LegalBasis"
@@ -381,6 +400,9 @@
     {
       "@id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "An human readable document is provided explaining what personal data which is part of the consent."
+      },
       "domain": [
         {
           "uri": "https://w3id.org/GConsent#PersonalData"
@@ -396,6 +418,9 @@
     {
       "@id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "An human readable document explaining how the personal data will be handled."
+      },
       "domain": [
         {
           "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
@@ -410,7 +435,7 @@
     },
     {
       "@id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
       },
@@ -421,7 +446,7 @@
       ],
       "range": [
         {
-          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
+          "uri": "https://purl.eu/ns/consent#LiveData"
         }
       ],
       "generalization": []
@@ -447,6 +472,9 @@
     {
       "@id": "https://purl.eu/ns/consent#Processing.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The type of processing."
+      },
       "domain": [
         {
           "uri": "https://w3id.org/GConsent#Processing"
@@ -462,6 +490,9 @@
     {
       "@id": "https://purl.eu/ns/consent#Purpose.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The type of purpose."
+      },
       "domain": [
         {
           "uri": "https://w3id.org/GConsent#Purpose"
