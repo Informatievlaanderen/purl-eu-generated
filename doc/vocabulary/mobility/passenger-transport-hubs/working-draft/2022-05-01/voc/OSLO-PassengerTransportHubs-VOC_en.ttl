@@ -1,0 +1,144 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
+  skos:scopeNote "E.g. servers, cables, modems."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#HoppinColumn> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil>;
+  skos:scopeNote """Intended to indicate that a Transport hub is a Hoppin point and/or to inform about the transport possibilities offered there.
+More info can be found in the implementation model: https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/"""@en .
+
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>;
+  skos:scopeNote "Hoppin is the name under which the Flemish government indicates transport hubs for passenger transport that meet fixed (quality) requirements. Important aspects are recognisability (application of the Hoppin house style), accessibility (for all users irrespective of disability, age, etc.), minimum equipment (e.g. bicycle sheds, information supports, etc.), alignment with mobility plans, etc."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#InformationCarrier> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
+  skos:scopeNote "Bedoeld als communicatiemiddel, doorgaans gebruikt in openbare ruimtes om voorbijgangers te informeren. Zowel statische dragers zoals informatieborden met een stadsplan als dynamische systemen met bvb de vertrektijden van openbaar vervoer zijn mogelijk."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
+  skos:scopeNote "This recognition implies that a Transport Node is formally designated as a Transport Node. Typically, this is done by the government to give the node an official character (recognisable for the user, meets imposed quality requirements...)."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  skos:scopeNote "Examples for passenger transport are train stations, underground stations, bus stations, airports, ferry terminals, car parks... For freight transport it concerns typically airports, seaports, transhipment terminals. Transport nodes are typically intermodal, e.g. travellers combine the (shared) bicycle with the train for their trip, but intramodal transfers (e.g. from one bus line to another) are also important. Concretely, a Transport interchange includes infrastructure (stations, car parks, charging infrastructure... ), (mobility) services (public transport lines, shared bicycles, shops... ) and nodes in transport networks (public transport stops, car sharing points... )."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportRegion> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf dc:Location .
+
+<https://purl.eu/ns/mobility/transporthubs#VirtualNode> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop>;
+  skos:scopeNote "The place where a Trip is started usually does not coincide with an existing Transport node, for example it is the home of the Traveller located between two intersections. To still enter the network to start his Trip, the Traveller creates a Virtual Node on the link between these intersections. Virtual Nodes are important for a correct estimation of the travel time e.g. for route planning because the distance between the Virtual Node and the next real Transport Node must be added. Also important for example in free-floating partial transport where the position of the partial step does not necessarily coincide with that of an existing Transport Node."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#accessibility> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#brand> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [];
+  skos:scopeNote "Example: Hoppinpoint, Mobipoint,..."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#location> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#registration> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#roadAuthority> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#specification> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs> a owl:Ontology;
+  rdfs:label "OSLO-PassengerTransportHubs-VOC"@en,
+    "OSLO-PassengerTransportHubs-VOC"@nl;
+  dc:contributor [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://medewerkerwebsiteurl>;
+      foaf:name "MedewerkerAffiliatie"
+    ];
+    foaf:firstName "MedewerkerVoornaam";
+    foaf:lastName "MedewerkerNaam"
+  ];
+  dc:issued "TODO";
+  dc:license "https://creativecommons.org/licenses/by/4.0/",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:mediator [
+    foaf:homepage <https://semic.eu>;
+    foaf:name "Semantic Interoperability Community (SEMIC)"
+  ];
+  rdfs:seeAlso <https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure>,
+    <https://purl.eu/ns/mobility/transporthubs#HoppinColumn>,
+    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint>,
+    <https://purl.eu/ns/mobility/transporthubs#InformationCarrier>,
+    <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>,
+    <https://purl.eu/ns/mobility/transporthubs#TransportHub>,
+    <https://purl.eu/ns/mobility/transporthubs#TransportRegion>,
+    <https://purl.eu/ns/mobility/transporthubs#VirtualNode>,
+    <https://purl.eu/ns/mobility/transporthubs#accessibility>,
+    <https://purl.eu/ns/mobility/transporthubs#brand>,
+    <https://purl.eu/ns/mobility/transporthubs#location>,
+    <https://purl.eu/ns/mobility/transporthubs#registration>,
+    <https://purl.eu/ns/mobility/transporthubs#roadAuthority>,
+    <https://purl.eu/ns/mobility/transporthubs#specification>;
+  <http://www.w3.org/2001/02pd/rec54#editor> [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://editorwebsiteurl>;
+      foaf:name "EditorAffiliatie"
+    ];
+    foaf:firstName "EditorVoornaam";
+    foaf:lastName "EditorNaam"
+  ];
+  foaf:maker [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://auteurwebsiteurl>;
+      foaf:name "AuteurAffiliatie"
+    ];
+    foaf:firstName "AuteurVoornaam";
+    foaf:lastName "AuteurNaam"
+  ] .

@@ -1,0 +1,2687 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#DataExchangeInfrastructureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinColumnShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Name of the hoppinpoint that refers to a clear and recognisable place name."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "columnName"
+          },
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Unique identification number given to each column and included in the Passenger Transport Hub database."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "columnNumber"
+          },
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The different modes of transport available are shown on the corresponding map."
+          },
+          "sh:name": {
+            "en": "displayedTransportationModeOnMap"
+          },
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#HoppinColumn"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "The classification of the Hoppinpoint"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "classification"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.classificatie"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The status of the Hoppinpoint"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.status"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationCarrierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#InformationCarrier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RegisteredTransportHubShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "The registration of the registered Passenger Transport Hub."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "registration"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#registration"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "en": "The specification of the registered Passenger Transport Hub."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "specification"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#specification"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "The accessibility of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "accessibility"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#accessibility"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The brand of the Passenger Transport Hub."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "brand"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#brand"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The classification of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "classification"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.classificatie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:definition": {
+            "en": "The infrastructure element of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "infrastructureElement"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "en": "The location of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#location"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The name of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "en": "The road authority of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "roadAuthority"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/transporthubs#roadAuthority"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+          "sh:definition": {
+            "en": "The mobility services connected to the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "service"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst",
+          "sh:definition": {
+            "en": "The additional services connected to the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "service"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The status of the Passenger Transport Hub."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.status"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:definition": {
+            "en": "The transport object of the Passenger Transport Hub."
+          },
+          "sh:name": {
+            "en": "transportObject"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#TransportHub"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportRegionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:definition": {
+            "en": "Geometry of the place or area."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^geometry"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the town or area."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^locationName"
+          },
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#TransportRegion"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VirtualNodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility/transporthubs#VirtualNode"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PeriodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "End of the time period."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "endTime"
+          },
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Start of the time period."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "startTime"
+          },
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PublicOrganisationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "Administrative area covering the Public Organisation."
+          },
+          "sh:name": {
+            "en": "operatingArea"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ServiceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/dcmitype/Service"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PlaceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:definition": {
+            "en": "Geometry of the place or area."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "geometry"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the town or area."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "locationName"
+          },
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#FormalFrameworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the formal framework."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the formal framework."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "The geographical scope of the formal framework."
+          },
+          "sh:name": {
+            "en": "territorialApplication"
+          },
+          "sh:path": "http://data.europa.eu/m8g/territorialApplication"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#FormalFramework"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AutomatedParkingGarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#AutomatedParkingGarage"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#BicycleParkingStationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#BicycleParkingStation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#CapacityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Indicates the maximal value of the capacity."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "maximum"
+          },
+          "sh:path": "http://schema.mobivoc.org/#maximumValue"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Indicates the capacity of a resource."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "total"
+          },
+          "sh:path": "http://schema.mobivoc.org/#totalCapacity"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype",
+          "sh:definition": {
+            "en": "Displays the vehicle types to which the capacity is linked."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "vehicletype"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#Capacity"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ChargerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Means of transport that is electrically powered."
+          },
+          "sh:name": {
+            "en": "meansOfTransport"
+          },
+          "sh:path": "http://schema.mobivoc.org/#ElectricVehicle"
+        },
+        {
+          "sh:class": "http://schema.mobivoc.org/#Plug",
+          "sh:definition": {
+            "en": "Part of the charger used to form the connection with the electric vehicles."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "plug"
+          },
+          "sh:path": "http://schema.mobivoc.org/#plug"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of charger."
+          },
+          "sh:name": {
+            "en": "plugType"
+          },
+          "sh:path": "http://schema.mobivoc.org/#PlugType"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#Charger"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingFacilityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.mobivoc.org/#Capacity",
+          "sh:definition": {
+            "en": "The capacity of the parking facility."
+          },
+          "sh:name": {
+            "en": "^capacity"
+          },
+          "sh:path": "http://schema.mobivoc.org/#Capacity"
+        },
+        {
+          "sh:definition": {
+            "en": "The opening hours of the parking facility."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^openingHours"
+          },
+          "sh:path": "http://schema.mobivoc.org/#http://schema.org/OpeningHoursSpecification"
+        },
+        {
+          "sh:class": "http://schema.mobivoc.org/#ParkingFacilityEntrance",
+          "sh:definition": {
+            "en": "The entrance of the parking facility."
+          },
+          "sh:name": {
+            "en": "entrance"
+          },
+          "sh:path": "http://schema.mobivoc.org/#entrance"
+        },
+        {
+          "sh:class": "http://schema.mobivoc.org/#ParkingFacilityExit",
+          "sh:definition": {
+            "en": "The exit of the parking facility."
+          },
+          "sh:name": {
+            "en": "exit"
+          },
+          "sh:path": "http://schema.mobivoc.org/#exit"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The features of the parking facility."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "feature"
+          },
+          "sh:path": "http://schema.mobivoc.org/#ParkingFacilityFeature"
+        },
+        {
+          "sh:class": "http://schema.mobivoc.org/#parkingSpace",
+          "sh:definition": {
+            "en": "The parking space of the parking facility."
+          },
+          "sh:name": {
+            "en": "ParkingSpace"
+          },
+          "sh:path": "http://schema.mobivoc.org/#parkingSpace"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingFacility"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingGarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingGarage"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingLotShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingLot"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#UndergroundParkingGarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#UndergroundParkingGarage"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingSpaceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The features of the car park"
+          },
+          "sh:name": {
+            "en": "feature"
+          },
+          "sh:path": "http://schema.mobivoc.org/#ParkingFacilityFeature"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#parkingSpace"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ContactInformationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PolygonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#GeographicalNameShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#LanguageStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#BrandTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#MeansOfTransportShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessModeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#StoppingPlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportmodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationColumnTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportNodeTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ChargerTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#MobilityServiceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InfrastructureElementTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RouteTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PlugTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportModeOnMapShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityLevelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityComponentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#SignShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PersonTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ActuatorTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingFacilityFeatureTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingSpaceFeatureTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AdditionalServiceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AddressRepresentationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Officially assigned alphanumeric code added to the house number to distinguish several building units, standing places, moorings or parcels sharing the same house number."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "boxNumber"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Country where the address is located in."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "country"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#land"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Alphanumeric code officially assigned to building units, moorings, standing places or parcels."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "houseNumber"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Municipality name of the address."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "municipalityName"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Code designating the geographical area that groups addresses for postal purposes."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "zipCode"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#postCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Street name of the address."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "streetName"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#GeometryShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Geometry expressed in gml-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "asGML"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:definition": {
+            "en": "Geometry expressed in wkt-format."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "asWKT"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Location"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationColumnShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of information column"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AdditionalServiceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "Accessibility of the additional service."
+          },
+          "sh:name": {
+            "en": "accessibility"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.toegankelijkheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider",
+          "sh:definition": {
+            "en": "Availability of the additional service."
+          },
+          "sh:name": {
+            "en": "availability"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:definition": {
+            "en": "Infrastructure element on which the additional service is offered."
+          },
+          "sh:name": {
+            "en": "availableAtInfrastructureElement"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarOpInfrastructuurelement"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:definition": {
+            "en": "Transport object on which the additional service is offered."
+          },
+          "sh:name": {
+            "en": "availableOnTransportObject"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarOpTransportobject"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the additional service."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider",
+          "sh:definition": {
+            "en": "The provider of the additional service."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "provider"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#aanbieder"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
+          "sh:definition": {
+            "en": "The Passenger Transport Hub at which the additional service is offered."
+          },
+          "sh:name": {
+            "en": "transportNode"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.vervoersknoop"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the additional service."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Part of the service or infrastructure to which Accessibility relates."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "component"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#component"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Level of accessibility."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "level"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#level"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the accessibility"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AvailabilityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Hours on which something is available"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "openingHours"
+          },
+          "sh:path": "https://schema.org/hoursAvailable"
+        },
+        {
+          "sh:class": "https://schema.org/hoursAvailable",
+          "sh:definition": {
+            "en": "Period in which something is available."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "period"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid.periode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of user to which the availability applies."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "user"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#person"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Timetable",
+          "sh:definition": {
+            "en": "Schedule of times when something is offered."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "timetable"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#timetable"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Availability"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ExecutorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "Information such as e-mail, telephone... which allows the executor to be contacted."
+          },
+          "sh:name": {
+            "en": "^contactInformation"
+          },
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name by which the performer is preferably identified."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^preferredLabel"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "The registration of the executor."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^registration"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Executor"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#LicenseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:definition": {
+            "en": "Period for which the Licence is valid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "period"
+          },
+          "sh:path": "http://purl.org/dc/terms/date"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "Area or Place in which the Licence is valid."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "territorialApplication"
+          },
+          "sh:path": "http://data.europa.eu/m8g/territorialApplication"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "en": "Public organisation responsible for traffic management or the planning, control or management of a particular transport network or mode of transport, or both, that falls under its territorial competence."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "transportAuthority"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transportAuthority"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#License"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#MobilityServiceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "Accessibility of the Mobility Service."
+          },
+          "sh:name": {
+            "en": "accessibility"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.toegankelijkheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Propulsion of the means of transport with or for which the Mobility Service is usually organised."
+          },
+          "sh:name": {
+            "en": "actuator"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#actuator"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Availability",
+          "sh:definition": {
+            "en": "Availability of the Mobility Service."
+          },
+          "sh:name": {
+            "en": "availability"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.beschikbaarheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:definition": {
+            "en": "Infrastructure element on which the Mobility Service is available"
+          },
+          "sh:name": {
+            "en": "AvailableAtInfrastructureElement"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Mobiliteitsdienst.beschikbaarOpInfrastructuurelement"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:definition": {
+            "en": "Transport object on which the Mobility Service is offered."
+          },
+          "sh:name": {
+            "en": "availableAt"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+          "sh:definition": {
+            "en": "More specific Mobility Services that make up the Mobility Service."
+          },
+          "sh:name": {
+            "en": "includes"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#omvat"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#License",
+          "sh:definition": {
+            "en": "Licence under which the Mobility Service is offered."
+          },
+          "sh:name": {
+            "en": "license"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#license"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Means of transport by which or for which the Mobility Service is usually organised."
+          },
+          "sh:name": {
+            "en": "meansOfTransport"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Mobility Service."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:definition": {
+            "en": "Formal Framework within which the Mobility Service is offered."
+          },
+          "sh:name": {
+            "en": "offeredWithin"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#offeredWithin"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Executor",
+          "sh:definition": {
+            "en": "Executor of the Mobility Service."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "performedBy"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#performedBy"
+        },
+        {
+          "sh:class": "https://schema.org/PriceSpecification",
+          "sh:definition": {
+            "en": "Price plan of the Mobility Service."
+          },
+          "sh:name": {
+            "en": "priceSpecification"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#priceSpecification"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider",
+          "sh:definition": {
+            "en": "The Mobility Service provider."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "provider"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#provider"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:definition": {
+            "en": "Resource available to the Mobility Service."
+          },
+          "sh:name": {
+            "en": "resource"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#resource"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "Area or Place within which the Mobility Service is offered."
+          },
+          "sh:name": {
+            "en": "spatialCoverage"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
+          "sh:definition": {
+            "en": "The transport node to which the Mobility Service is linked."
+          },
+          "sh:name": {
+            "en": "transportNode"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the Mobility Service."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ProviderShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "Information such as email, telephone... which allows the Organisation to be contacted."
+          },
+          "sh:name": {
+            "en": "^contactInformation"
+          },
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name preferred by the Organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^preferredLabel"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "Identifier obtained by the organisation upon registration."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^registration"
+          },
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Engine of the means of transport."
+          },
+          "sh:name": {
+            "en": "actuator"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#actuator"
+        },
+        {
+          "sh:definition": {
+            "en": "Identifier of the Resource."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "en": "Location of the Resource."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#location"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of means of transport of the Resource."
+          },
+          "sh:name": {
+            "en": "meansOfTransport"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "State of a Resource."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#status"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the Resource."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RouteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "en": "Location where the Route ends."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "arrivalPoint"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#arrivalPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Time at which the Route ends."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "arrivalTime"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.aankomsttijdstip"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RoutePlanner",
+          "sh:definition": {
+            "en": "Method of calculating the route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "calculatedWith"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#calculatedWith"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteSegment",
+          "sh:definition": {
+            "en": "Sequence of Route Segments that make up the Route."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "consistsOf"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.bestaatUit"
+        },
+        {
+          "sh:class": "https://schema.org/MonetaryAmount",
+          "sh:definition": {
+            "en": "Cost price of the route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "costPrice"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#costPrice"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "en": "Location where the Route starts."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "departurePoint"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#departurePoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Time when the Route starts."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "departureTime"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.vertrektijdstip"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteDescription",
+          "sh:definition": {
+            "en": "Description of the Route."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "routedescription"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#routeDescription"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Time in which the Route is traveled."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "travelTime"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#travelTime"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the Route"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RouteDescriptionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteDescription"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RouteNodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:definition": {
+            "en": "Location of the Route node."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "geometry"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+          "sh:definition": {
+            "en": "Mobility service used by the Traveller in the Route node."
+          },
+          "sh:name": {
+            "en": "realisedBy"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedBy"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:definition": {
+            "en": "Resource of the Mobility Service that the traveller has used in the Route node."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "realisedWith"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedWith"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+          "sh:definition": {
+            "en": "Route node to which it will be switched."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transfer"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transfer"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the Route node"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer.routeNode.target"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RoutePlannerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Name of the Route planner"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RoutePlanner"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RouteSegmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Propulsion of the means of transport by which the route segment was covered."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "actuator"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#actuator"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+          "sh:definition": {
+            "en": "Node where the route segment ends."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "arrivalNode"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstknoop"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+          "sh:definition": {
+            "en": "Node where the Route Segment starts."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "departureNode"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekknoop"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/netwerk#GerichteLink",
+          "sh:definition": {
+            "en": "Sequence of Directed Links that make up the Route Segment."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "link"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.link"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Type of means of transport the route segment was covered with."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "meansOfTransport"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.vervoermiddel"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+          "sh:definition": {
+            "en": "Mobility Service which the Traveller has used in travelling the Route Segment."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "realisedBy"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedBy"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:definition": {
+            "en": "Resource of the Mobility Service used by the Traveller when travelling the Route Segment."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "realisedWith"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.gerealiseerdMet"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteSegment"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TimetableShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Timetable"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransferShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+          "sh:definition": {
+            "en": "Referentie naar verbonden klasse."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "TransportNode (source)"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer.routeNode.source"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+          "sh:definition": {
+            "en": "Referentie naar verbonden klasse."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "TransportNode (target)"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer.routeNode.target"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Propulsion of the means of transport by which the Transfer is made."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "actuator"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#actuator"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Means of transport by which the Transfer is made."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "meansOfTransport"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.vervoermiddel"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#TransportConnection",
+          "sh:definition": {
+            "en": "Transport object with which the Route connection coincides."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "RealisedAt"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedOn"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Time in which the changeover takes place."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transferTime"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transferTime"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportConnectionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "Identifier of the Transport connection"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^identifier"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#Identifier"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:definition": {
+            "en": "Network elements connected by the Connection."
+          },
+          "sh:minCount": "2",
+          "sh:name": {
+            "en": "connects"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/netwerk#verbindt"
+        },
+        {
+          "sh:definition": {
+            "en": "Nature of the Transport connection"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#TransportConnection"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TravelerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Traveler",
+          "sh:definition": {
+            "en": "Traveller who accompanies the Traveller on the Journey."
+          },
+          "sh:name": {
+            "en": "isFellowTravelerOf"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isFellowTravelerOf"
+        },
+        {
+          "sh:definition": {
+            "en": "Name of the Traveler which differs from his actual name."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "pseudonym"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#pseudonym"
+        },
+        {
+          "sh:class": "https://schema.org/Trip",
+          "sh:definition": {
+            "en": "Trip that a Traveller undertakes or wants to undertake."
+          },
+          "sh:name": {
+            "en": "undertakes"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#undertakes"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Traveler"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#DirectedLinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Indicates whether the direction of the link corresponds to its positive or negative direction."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "direction"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/netwerk#richting"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/netwerk#GerichteLink"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#NodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/netwerk#Knoop"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#NetworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/netwerk#Netwerk"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#NetworkElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/netwerk#Netwerkelement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein#Element"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#BusShelterShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Bushok"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#BicycleParkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#StopPostShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Haltepaal"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InfrastructureElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:definition": {
+            "en": "The geometry corresponding to the infrastructure element."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^geometry"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:definition": {
+            "en": "The period during which the current version of the infrastructure element is in use."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^validityPeriod"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#VersieVolgensGeldigeTijd"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "The overall accessibility characteristics of the infrastructure element."
+          },
+          "sh:name": {
+            "en": "accessibility"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "The identifier of the infrastructure element."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#Identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of infrastructure element."
+          },
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#StreetFurnitureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Straatmeubilair"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportNodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:definition": {
+            "en": "Location of the Transport node."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^geometry"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "Identifier of the Transport node."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^identifier"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/netwerk#identificator"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the Transport Node"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportNetworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Transport network."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "^geographicalName"
+          },
+          "sh:path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Nature of the transport network according to the mode of transport."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "Accessibility of the Transport object."
+          },
+          "sh:name": {
+            "en": "accessibility"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Availability",
+          "sh:definition": {
+            "en": "Availability of the Transport object."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "availability"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.beschikbaarheid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Transport object."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "geographicalName"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#geografischeNaam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:definition": {
+            "en": "The infrastructure elements connected to the transport object."
+          },
+          "sh:name": {
+            "en": "infrastructureElement"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+          "sh:definition": {
+            "en": "The mobility services connected to the transport object."
+          },
+          "sh:name": {
+            "en": "service"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst",
+          "sh:definition": {
+            "en": "The additional services associated with the transport object"
+          },
+          "sh:name": {
+            "en": "service"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk",
+          "sh:definition": {
+            "en": "Transport network to which the transport object belongs."
+          },
+          "sh:name": {
+            "en": "transportNetwork"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
+          "sh:definition": {
+            "en": "The transport nodes to which this transport object belongs."
+          },
+          "sh:name": {
+            "en": "transportNode"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#QuayShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:path": "http://fixme.com#publicCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Use to identify the platform to the public."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "publicCode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:definition": {
+            "en": "The platform belonging to the stop"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "platform"
+          },
+          "sh:path": "https://purl.eu/ns/mobility/timetables-and-planning#quay"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:definition": {
+            "en": "The stopping point as a larger entity to which the platform belongs."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "stopPlace"
+          },
+          "sh:path": "http://fixme.com#stopPlace"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#Quay"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#StopPlaceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Access modes by which the stopping point can be accessed."
+          },
+          "sh:name": {
+            "en": "^accessModes"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#accessModes"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+          "sh:definition": {
+            "en": "The overall accessibility characteristics of the stopping point."
+          },
+          "sh:name": {
+            "en": "^accessibility"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:definition": {
+            "en": "Centre of the stopping point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^centroid"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#centroid"
+        },
+        {
+          "sh:class": "http://fixme.com#Site",
+          "sh:definition": {
+            "en": "Parent site containing this stop."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^parentSite"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#^parentSite"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Categorisation of the stopping point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^placeType"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#placeType"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Polygon",
+          "sh:definition": {
+            "en": "Polygon associated with the stopping point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^polygon"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#polygon"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Address of a numbered building on a named road."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "^roadAdress"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#roadAddress"
+        },
+        {
+          "sh:class": "https://purl.eu/ns/mobility#Quay",
+          "sh:definition": {
+            "en": "The platform as part of the stopping point."
+          },
+          "sh:name": {
+            "en": "includes"
+          },
+          "sh:path": "TODO"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Code used to identify a stopping point to the public as an alternative to a name."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "publicCode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#publicCode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of stopping point"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "stopPlaceType"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#stopPlaceType"
+        },
+        {
+          "sh:definition": {
+            "en": "The main transport mode of the stopping point."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "transportMode"
+          },
+          "sh:path": "https://purl.eu/ns/mobility#transportMode"
+        }
+      ],
+      "sh:targetClass": "https://purl.eu/ns/mobility#StopPlace"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#SiteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://purl.eu/ns/mobility/timetables-and-planning#site"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#CivicStructureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/CivicStructure"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#MonetaryAmountShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/MonetaryAmount"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PriceSpecificationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Description of the Price specification."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "Name of the Price specfication"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/PriceSpecification"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TripShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Sequence of Locations to be visited during the Trip."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "arrivalTime"
+          },
+          "sh:path": "https://schema.org/arrivalTime"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:definition": {
+            "en": "Route which the Passenger chooses from the possible Routes."
+          },
+          "sh:name": {
+            "en": "chosenRoute"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#chosenRoute"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "Time at which the Trip ends or at which the Passenger would like it to end."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "departureTime"
+          },
+          "sh:path": "https://schema.org/departureTime"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:definition": {
+            "en": "Route finally implemented to realise the Trip."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "executedRoute"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#executedRoute"
+        },
+        {
+          "sh:class": "https://schema.org/Trip",
+          "sh:definition": {
+            "en": "Part of a complete Trip that can also be considered a Trip in itself."
+          },
+          "sh:name": {
+            "en": "partOfTrip"
+          },
+          "sh:path": "http://schema.org/partOfTrip"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "en": "Sequence of Locations to be visited during the Trip."
+          },
+          "sh:minCount": "2",
+          "sh:name": {
+            "en": "itinerary"
+          },
+          "sh:path": "http://schema.org/itinerary"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:definition": {
+            "en": "Routes that can be followed to perform the Trip."
+          },
+          "sh:name": {
+            "en": "possibleRoute"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#possibleRoute"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/Trip"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#OpeningHoursSpecificationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/hoursAvailable"
+    }
+  ]
+}
