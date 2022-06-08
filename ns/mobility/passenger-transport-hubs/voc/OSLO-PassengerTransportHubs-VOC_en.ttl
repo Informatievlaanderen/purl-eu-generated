@@ -26,6 +26,10 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>;
   skos:scopeNote "Hoppin is the name under which the Flemish government indicates transport hubs for passenger transport that meet fixed (quality) requirements. Important aspects are recognisability (application of the Hoppin house style), accessibility (for all users irrespective of disability, age, etc.), minimum equipment (e.g. bicycle sheds, information supports, etc.), alignment with mobility plans, etc."@en .
 
+<https://purl.eu/ns/mobility/transporthubs#HoppinpointType> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs> .
+
 <https://purl.eu/ns/mobility/transporthubs#InformationCarrier> a owl:Class,
     rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
@@ -48,11 +52,39 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
   rdfs:subClassOf dc:Location .
 
+<https://purl.eu/ns/mobility/transporthubs#VehicleType> a owl:Class,
+    rdfs:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs> .
+
 <https://purl.eu/ns/mobility/transporthubs#VirtualNode> a owl:Class,
     rdfs:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
   rdfs:subClassOf <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop>;
   skos:scopeNote "The place where a Trip is started usually does not coincide with an existing Transport node, for example it is the home of the Traveller located between two intersections. To still enter the network to start his Trip, the Traveller creates a Virtual Node on the link between these intersections. Virtual Nodes are important for a correct estimation of the travel time e.g. for route planning because the distance between the Virtual Node and the next real Transport Node must be added. Also important for example in free-floating partial transport where the position of the partial step does not necessarily coincide with that of an existing Transport Node."@en .
+
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub.classification> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub.status> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
 
 <https://purl.eu/ns/mobility/transporthubs#accessibility> a owl:ObjectProperty,
     rdf:Property;
@@ -91,6 +123,12 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
   rdfs:range [] .
 
+<https://purl.eu/ns/mobility/transporthubs#vehicleType> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:domain [];
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range [] .
+
 <https://purl.eu/ns/mobility/transporthubs> a owl:Ontology;
   rdfs:label "OSLO-PassengerTransportHubs-VOC"@en,
     "OSLO-PassengerTransportHubs-VOC"@nl;
@@ -113,17 +151,24 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:seeAlso <https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure>,
     <https://purl.eu/ns/mobility/transporthubs#HoppinColumn>,
     <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint>,
+    <https://purl.eu/ns/mobility/transporthubs#HoppinpointType>,
     <https://purl.eu/ns/mobility/transporthubs#InformationCarrier>,
     <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>,
     <https://purl.eu/ns/mobility/transporthubs#TransportHub>,
     <https://purl.eu/ns/mobility/transporthubs#TransportRegion>,
+    <https://purl.eu/ns/mobility/transporthubs#VehicleType>,
     <https://purl.eu/ns/mobility/transporthubs#VirtualNode>,
+    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification>,
+    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status>,
+    <https://purl.eu/ns/mobility/transporthubs#TransportHub.classification>,
+    <https://purl.eu/ns/mobility/transporthubs#TransportHub.status>,
     <https://purl.eu/ns/mobility/transporthubs#accessibility>,
     <https://purl.eu/ns/mobility/transporthubs#brand>,
     <https://purl.eu/ns/mobility/transporthubs#location>,
     <https://purl.eu/ns/mobility/transporthubs#registration>,
     <https://purl.eu/ns/mobility/transporthubs#roadAuthority>,
-    <https://purl.eu/ns/mobility/transporthubs#specification>;
+    <https://purl.eu/ns/mobility/transporthubs#specification>,
+    <https://purl.eu/ns/mobility/transporthubs#vehicleType>;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
     schema:affiliation [

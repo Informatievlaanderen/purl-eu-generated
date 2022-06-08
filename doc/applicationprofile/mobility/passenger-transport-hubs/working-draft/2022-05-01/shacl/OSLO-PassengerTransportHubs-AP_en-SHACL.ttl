@@ -13,10 +13,12 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en> <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_enshapes> <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#DataExchangeInfrastructureShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinColumnShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationCarrierShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RegisteredTransportHubShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportRegionShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VirtualNodeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PeriodShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PublicOrganisationShape>,
@@ -89,7 +91,6 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransferShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportConnectionShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TravelerShape>,
-    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#DirectedLinkShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#NodeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#NetworkShape>,
@@ -263,6 +264,7 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AvailabilityShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype rdfs:Literal;
     shacl:definition "Hours on which something is available"@en;
     shacl:maxCount 1;
     shacl:name "openingHours"@en;
@@ -319,11 +321,11 @@
     shacl:name "total"@en;
     shacl:path <http://schema.mobivoc.org/#totalCapacity>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype>;
+    shacl:class <https://purl.eu/ns/mobility/transporthubs#VehicleType>;
     shacl:definition "Displays the vehicle types to which the capacity is linked."@en;
     shacl:maxCount 1;
     shacl:name "vehicletype"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#vehicleType>
   ];
   shacl:targetClass <http://schema.mobivoc.org/#Capacity> .
 
@@ -434,11 +436,13 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#GeometryShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype rdfs:Literal;
     shacl:definition "Geometry expressed in gml-format."@en;
     shacl:maxCount 1;
     shacl:name "asGML"@en;
     shacl:path <http://www.opengis.net/ont/geosparql#asGML>
   ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "Geometry expressed in wkt-format."@en;
     shacl:maxCount 1;
     shacl:name "asWKT"@en;
@@ -473,22 +477,27 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://purl.eu/ns/mobility/transporthubs#HoppinpointType>;
     shacl:definition "The classification of the Hoppinpoint"@en;
     shacl:maxCount 1;
     shacl:name "classification"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.classificatie>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The status of the Hoppinpoint"@en;
     shacl:maxCount 1;
     shacl:name "status"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.status>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint> .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointStatusShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#HoppinpointType> .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
@@ -611,7 +620,7 @@
     shacl:class <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
     shacl:definition "Infrastructure element on which the Mobility Service is available"@en;
     shacl:name "AvailableAtInfrastructureElement"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Mobiliteitsdienst.beschikbaarOpInfrastructuurelement>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#MobilityService.availableAtInfrastructureElement>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/transportnetwerk#Transportobject>;
     shacl:definition "Transport object on which the Mobility Service is offered."@en;
@@ -676,7 +685,7 @@
     shacl:class <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
     shacl:definition "The transport node to which the Mobility Service is linked."@en;
     shacl:name "transportNode"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#TransportHub>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Nature of the Mobility Service."@en;
@@ -722,6 +731,7 @@
     shacl:name "^capacity"@en;
     shacl:path <http://schema.mobivoc.org/#Capacity>
   ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "The opening hours of the parking facility."@en;
     shacl:maxCount 1;
     shacl:name "^openingHours"@en;
@@ -895,7 +905,7 @@
     shacl:class <https://purl.eu/ns/mobility#Quay>;
     shacl:definition "The platform belonging to the stop"@en;
     shacl:maxCount 1;
-    shacl:name "platform"@en;
+    shacl:name "quay"@en;
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#quay>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
@@ -933,6 +943,7 @@
     shacl:name "actuator"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#actuator>
   ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "Identifier of the Resource."@en;
     shacl:maxCount 1;
     shacl:name "identifier"@en;
@@ -1326,7 +1337,7 @@
     shacl:class skos:Concept;
     shacl:definition "The classification of the Passenger Transport Hub."@en;
     shacl:name "classification"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.classificatie>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#TransportHub.classification>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
     shacl:definition "The infrastructure element of the Passenger Transport Hub."@en;
@@ -1356,13 +1367,13 @@
     shacl:class <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst>;
     shacl:definition "The additional services connected to the Passenger Transport Hub."@en;
     shacl:name "service"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#AdditionalService>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The status of the Passenger Transport Hub."@en;
     shacl:maxCount 1;
     shacl:name "status"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.status>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#TransportHub.status>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/transportnetwerk#Transportobject>;
     shacl:definition "The transport object of the Passenger Transport Hub."@en;
@@ -1464,7 +1475,7 @@
     shacl:class <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst>;
     shacl:definition "The additional services associated with the transport object"@en;
     shacl:name "service"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#AdditionalService>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk>;
     shacl:definition "Transport network to which the transport object belongs."@en;
@@ -1474,7 +1485,7 @@
     shacl:class <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
     shacl:definition "The transport nodes to which this transport object belongs."@en;
     shacl:name "transportNode"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt>
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#TransportHub>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/transportnetwerk#Transportobject> .
 
@@ -1511,6 +1522,7 @@
     shacl:name "isFellowTravelerOf"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isFellowTravelerOf>
   ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Pseudonym>;
     shacl:definition "Name of the Traveler which differs from his actual name."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -1574,7 +1586,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype> .
+  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#VehicleType> .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VirtualNodeShape> a shacl:NodeShape;
   shacl:closed false;

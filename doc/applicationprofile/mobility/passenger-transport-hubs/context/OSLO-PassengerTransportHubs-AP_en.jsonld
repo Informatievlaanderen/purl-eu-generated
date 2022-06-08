@@ -88,7 +88,7 @@
     "Availability": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Availability",
     "Availability.openingHours": {
       "@id": "https://schema.org/hoursAvailable",
-      "@type": ""
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "Availability.period": {
       "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid.periode",
@@ -116,7 +116,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "Capacity.vehicletype": {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#vehicleType",
       "@type": "@id"
     },
     "Charger": "http://schema.mobivoc.org/#Charger",
@@ -177,11 +177,11 @@
     "Geometry": "http://www.w3.org/ns/locn#Geometry",
     "Geometry.asGml": {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
-      "@type": ""
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "Geometry.asWkt": {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
-      "@type": ""
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "HoppinColumn": "https://purl.eu/ns/mobility/transporthubs#HoppinColumn",
     "HoppinColumn.columnName": {
@@ -199,14 +199,15 @@
     },
     "Hoppinpoint": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint",
     "Hoppinpoint.classification": {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.classificatie",
-      "@type": ""
+      "@id": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification",
+      "@type": "@id"
     },
     "Hoppinpoint.status": {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Hoppinpunt.status",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status",
       "@type": "@id"
     },
     "HoppinpointStatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "HoppinpointType": "https://purl.eu/ns/mobility/transporthubs#HoppinpointType",
     "Identifier": "http://www.w3.org/ns/adms#Identifier",
     "InformationCarrier": "https://purl.eu/ns/mobility/transporthubs#InformationCarrier",
     "InformationColumn": "https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil",
@@ -287,7 +288,7 @@
     },
     "MobilityService.availableAtInfrastructureElement": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Mobiliteitsdienst.beschikbaarOpInfrastructuurelement",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#MobilityService.availableAtInfrastructureElement",
       "@type": "@id"
     },
     "MobilityService.includes": {
@@ -340,7 +341,7 @@
     },
     "MobilityService.transportNode": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
       "@type": "@id"
     },
     "MobilityService.type": {
@@ -362,7 +363,7 @@
     },
     "ParkingFacility.^openingHours": {
       "@id": "http://schema.mobivoc.org/#http://schema.org/OpeningHoursSpecification",
-      "@type": ""
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "ParkingFacility.entrance": {
       "@container": "@set",
@@ -405,7 +406,7 @@
     },
     "PassengerTransportHub.classification": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.classificatie",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub.classification",
       "@type": "@id"
     },
     "PassengerTransportHub.infrastructureElement": {
@@ -430,11 +431,11 @@
     },
     "PassengerTransportHub.service": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#AdditionalService",
       "@type": "@id"
     },
     "PassengerTransportHub.status": {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt.status",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub.status",
       "@type": "@id"
     },
     "PassengerTransportHub.transportObject": {
@@ -454,19 +455,6 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "PlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Platform": "https://purl.eu/ns/mobility#Quay",
-    "Platform.platform": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#quay",
-      "@type": "@id"
-    },
-    "Platform.publicCode": {
-      "@id": "https://purl.eu/ns/mobility#publicCode",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Platform.stopPlace": {
-      "@id": "http://fixme.com#stopPlace",
-      "@type": "@id"
-    },
     "PlugType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Point": "http://www.opengis.net/ont/sf#Point",
     "Polygon": "http://www.opengis.net/ont/sf#Polygon",
@@ -499,6 +487,19 @@
       "@id": "http://purl.org/dc/terms/spatial",
       "@type": "@id"
     },
+    "Quay": "https://purl.eu/ns/mobility#Quay",
+    "Quay.publicCode": {
+      "@id": "https://purl.eu/ns/mobility#publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Quay.quay": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#quay",
+      "@type": "@id"
+    },
+    "Quay.stopPlace": {
+      "@id": "http://fixme.com#stopPlace",
+      "@type": "@id"
+    },
     "RegisteredPassengerTransportHub": "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub",
     "RegisteredPassengerTransportHub.registration": {
       "@id": "https://purl.eu/ns/mobility/transporthubs#registration",
@@ -516,7 +517,7 @@
     },
     "Resource.identifier": {
       "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#identifier",
-      "@type": ""
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "Resource.location": {
       "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#location",
@@ -773,7 +774,7 @@
     },
     "TransportObject.service": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#AanvullendeDienst",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#AdditionalService",
       "@type": "@id"
     },
     "TransportObject.transportNetwork": {
@@ -783,7 +784,7 @@
     },
     "TransportObject.transportNode": {
       "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#Vervoersknooppunt",
+      "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
       "@type": "@id"
     },
     "TransportRegion": "https://purl.eu/ns/mobility/transporthubs#TransportRegion",
@@ -804,7 +805,7 @@
     },
     "Traveler.pseudonym": {
       "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#pseudonym",
-      "@type": ""
+      "@type": "@id"
     },
     "Traveler.undertakes": {
       "@container": "@set",
@@ -846,7 +847,7 @@
     },
     "UndergroundParking": "http://schema.mobivoc.org/#UndergroundParkingGarage",
     "UserType": "http://www.w3.org/2004/02/skos/core#Concept",
-    "VehicleType": "https://data.vlaanderen.be/ns/mobiliteit/vervoersknooppunten#voertuigtype",
+    "VehicleType": "https://purl.eu/ns/mobility/transporthubs#VehicleType",
     "VirtualNode": "https://purl.eu/ns/mobility/transporthubs#VirtualNode"
   }
 }
