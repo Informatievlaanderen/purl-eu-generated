@@ -13,7 +13,6 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en> <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_enshapes> <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#DataExchangeInfrastructureShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinColumnShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape>,
-    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationCarrierShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RegisteredTransportHubShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubShape>,
@@ -69,6 +68,7 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingFacilityFeatureTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ParkingSpaceFeatureTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AdditionalServiceTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#GeometryShape>,
@@ -477,7 +477,7 @@
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://purl.eu/ns/mobility/transporthubs#HoppinpointType>;
+    shacl:class skos:Concept;
     shacl:definition "The classification of the Hoppinpoint"@en;
     shacl:maxCount 1;
     shacl:name "classification"@en;
@@ -497,7 +497,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#HoppinpointType> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
@@ -633,7 +633,7 @@
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#omvat>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#License>;
-    shacl:definition "Licence under which the Mobility Service is offered."@en;
+    shacl:definition "License under which the Mobility Service is offered."@en;
     shacl:name "license"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#license>
   ], [
@@ -996,6 +996,7 @@
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService>;
     shacl:definition "Mobility service used by the Traveller in the Route node."@en;
+    shacl:maxCount 1;
     shacl:name "realisedBy"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedBy>
   ], [
@@ -1284,7 +1285,7 @@
     shacl:definition "Transport object with which the Route connection coincides."@en;
     shacl:maxCount 1;
     shacl:name "RealisedAt"@en;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedOn>
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedAt>
   ], [
     shacl:datatype xsd:duration;
     shacl:definition "Time in which the changeover takes place."@en;
