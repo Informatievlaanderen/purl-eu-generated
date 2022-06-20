@@ -1,163 +1,195 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure> a owl:Class,
-    rdfs:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
-  skos:scopeNote "E.g. servers, cables, modems."@en .
+skos:Concept a rdfs:Class;
+  rdfs:label "PassengerTransportHubType"@en,
+    "BrandType"@en,
+    "PassengerTransportHubStatus"@en,
+    "HoppinpointStatus"@en,
+    "InformationColumnType"@en,
+    "ChargerType"@en,
+    "MobilityServiceType"@en,
+    "InfrastructureElementType"@en,
+    "PlugType"@en,
+    "TransportModeOnMap"@en,
+    "ParkingFacilityFeatureType"@en,
+    "ParkingSpaceFeatureType"@en,
+    "AdditionalServiceType"@en,
+    "HoppinpointType"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#HoppinColumn> a owl:Class,
-    rdfs:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil>;
-  skos:scopeNote """Intended to indicate that a Transport hub is a Hoppin point and/or to inform about the transport possibilities offered there.
-More info can be found in the implementation model: https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/"""@en .
+<https://data.vlaanderen.be/ns/dienst#AanvullendeDienst> a rdfs:Class;
+  rdfs:label "AdditionalService"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "E.g. servers, cables, modems."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>;
-  skos:scopeNote "Hoppin is the name under which the Flemish government indicates transport hubs for passenger transport that meet fixed (quality) requirements. Important aspects are recognisability (application of the Hoppin house style), accessibility (for all users irrespective of disability, age, etc.), minimum equipment (e.g. bicycle sheds, information supports, etc.), alignment with mobility plans, etc."@en .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement> .
 
-<https://purl.eu/ns/mobility/transporthubs#InformationCarrier> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#HoppinColumn> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> """Intended to indicate that a Transport hub is a Hoppin point and/or to inform about the transport possibilities offered there.
+More info can be found in the implementation model: https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/"""@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement>;
-  skos:scopeNote "Bedoeld als communicatiemiddel, doorgaans gebruikt in openbare ruimtes om voorbijgangers te informeren. Zowel statische dragers zoals informatieborden met een stadsplan als dynamische systemen met bvb de vertrektijden van openbaar vervoer zijn mogelijk."@en .
+  rdfs:subClassOf <https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil> .
 
-<https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
-  skos:scopeNote "This recognition implies that a Transport Node is formally designated as a Transport Node. Typically, this is done by the government to give the node an official character (recognisable for the user, meets imposed quality requirements...)."@en .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#ResourceReport> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  skos:scopeNote "E.g. a seat on a train,a shared bicycle at a station,a parking space in a car park."@en .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#TransportHub> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#InformationCarrier> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Bedoeld als communicatiemiddel, doorgaans gebruikt in openbare ruimtes om voorbijgangers te informeren. Zowel statische dragers zoals informatieborden met een stadsplan als dynamische systemen met bvb de vertrektijden van openbaar vervoer zijn mogelijk."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  skos:scopeNote "Examples for passenger transport are train stations, underground stations, bus stations, airports, ferry terminals, car parks... For freight transport it concerns typically airports, seaports, transhipment terminals. Transport nodes are typically intermodal, e.g. travellers combine the (shared) bicycle with the train for their trip, but intramodal transfers (e.g. from one bus line to another) are also important. Concretely, a Transport interchange includes infrastructure (stations, car parks, charging infrastructure... ), (mobility) services (public transport lines, shared bicycles, shops... ) and nodes in transport networks (public transport stops, car sharing points... )."@en .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement> .
 
-<https://purl.eu/ns/mobility/transporthubs#TransportRegion> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Especially relevant if the resource is a vehicle."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub.classification> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub.status> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportRegion> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
   rdfs:subClassOf dc:Location .
 
-<https://purl.eu/ns/mobility/transporthubs#VirtualNode> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/mobility/transporthubs#VirtualNode> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "The place where a Trip is started usually does not coincide with an existing Transport node, for example it is the home of the Traveller located between two intersections. To still enter the network to start his Trip, the Traveller creates a Virtual Node on the link between these intersections. Virtual Nodes are important for a correct estimation of the travel time e.g. for route planning because the distance between the Virtual Node and the next real Transport Node must be added. Also important for example in free-floating partial transport where the position of the partial step does not necessarily coincide with that of an existing Transport Node."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop>;
-  skos:scopeNote "The place where a Trip is started usually does not coincide with an existing Transport node, for example it is the home of the Traveller located between two intersections. To still enter the network to start his Trip, the Traveller creates a Virtual Node on the link between these intersections. Virtual Nodes are important for a correct estimation of the travel time e.g. for route planning because the distance between the Virtual Node and the next real Transport Node must be added. Also important for example in free-floating partial transport where the position of the partial step does not necessarily coincide with that of an existing Transport Node."@en .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop> .
 
-<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#accessibility> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility> .
 
-<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#actuator> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#brand> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Example: Hoppinpoint, Mobipoint,..."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [];
-  skos:scopeNote "Especially relevant if the resource is a vehicle."@en .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#TransportHub.classification> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#location> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "This could be the real-time location of the vehicle, e.g. in free-floating part transport."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>,
+    <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range prov:Location .
 
-<https://purl.eu/ns/mobility/transporthubs#TransportHub.status> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#number> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range xsd:integer .
 
-<https://purl.eu/ns/mobility/transporthubs#accessibility> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#registration> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range <http://www.w3.org/ns/adms#Identifier> .
 
-<https://purl.eu/ns/mobility/transporthubs#actuator> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#roadAuthority> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range dc:Agent .
 
-<https://purl.eu/ns/mobility/transporthubs#brand> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#service> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [];
-  skos:scopeNote "Example: Hoppinpoint, Mobipoint,..."@en .
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService> .
 
-<https://purl.eu/ns/mobility/transporthubs#location> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [], [];
+<https://purl.eu/ns/mobility/transporthubs#specification> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [], [];
-  skos:scopeNote "This could be the real-time location of the vehicle, e.g. in free-floating part transport."@en .
+  rdfs:range foaf:Document .
 
-<https://purl.eu/ns/mobility/transporthubs#number> a owl:DatatypeProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#status> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "E.g. reserved, inactive, available. Determines whether a resource can be used."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/transporthubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#registration> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/mobility/transporthubs#vehicleType> a owl:ObjectProperty;
+  rdfs:domain <http://schema.mobivoc.org/#Capacity>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/transporthubs#roadAuthority> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+dc:title a rdf:Property;
+  rdfs:label "name"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#service> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+dc:type a rdf:Property;
+  rdfs:label "type"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#specification> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+rdfs:label a rdf:Property;
+  rdfs:label "^locationName"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#status> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [];
-  skos:scopeNote "E.g. reserved, inactive, available. Determines whether a resource can be used."@en .
+<http://www.w3.org/ns/locn#geometry> a rdf:Property;
+  rdfs:label "^geometry"@en .
 
-<https://purl.eu/ns/mobility/transporthubs#vehicleType> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarheid> a rdf:Property;
+  rdfs:label "availability"@en .
+
+<https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.toegankelijkheid> a rdf:Property;
+  rdfs:label "accessibility"@en .
+
+<https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.vervoersknoop> a rdf:Property;
+  rdfs:label "transportNode"@en .
+
+<https://data.vlaanderen.be/ns/dienst#aanbieder> a rdf:Property;
+  rdfs:label "provider"@en .
+
+<https://purl.eu/ns/mobility/transporthubs#AdditionalService> a rdf:Property;
+  rdfs:label "service"@en .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart> a rdf:Property;
+  rdfs:label "displayedTransportationModeOnMap"@en .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam> a rdf:Property;
+  rdfs:label "columnName"@en .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer> a rdf:Property;
+  rdfs:label "columnNumber"@en .
+
+<https://purl.eu/ns/mobility/transporthubs#Hoppinpoint> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Hoppin is the name under which the Flemish government indicates transport hubs for passenger transport that meet fixed (quality) requirements. Important aspects are recognisability (application of the Hoppin house style), accessibility (for all users irrespective of disability, age, etc.), minimum equipment (e.g. bicycle sheds, information supports, etc.), alignment with mobility plans, etc."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
-  rdfs:range [] .
+  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> .
+
+<https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "This recognition implies that a Transport Node is formally designated as a Transport Node. Typically, this is done by the government to give the node an official character (recognisable for the user, meets imposed quality requirements...)."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#TransportHub> .
+
+<https://purl.eu/ns/mobility/transporthubs#ResourceReport> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "E.g. a seat on a train,a shared bicycle at a station,a parking space in a car park."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs> .
+
+<https://purl.eu/ns/mobility/transporthubs#TransportHub> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Examples for passenger transport are train stations, underground stations, bus stations, airports, ferry terminals, car parks... For freight transport it concerns typically airports, seaports, transhipment terminals. Transport nodes are typically intermodal, e.g. travellers combine the (shared) bicycle with the train for their trip, but intramodal transfers (e.g. from one bus line to another) are also important. Concretely, a Transport interchange includes infrastructure (stations, car parks, charging infrastructure... ), (mobility) services (public transport lines, shared bicycles, shops... ) and nodes in transport networks (public transport stops, car sharing points... )."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/transporthubs> .
 
 <https://purl.eu/ns/mobility/transporthubs> a owl:Ontology;
   rdfs:label "OSLO-PassengerTransportHubs-VOC"@en,
@@ -165,91 +197,12 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   dc:contributor [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://idlab.technology/>;
-      foaf:name "IMEC-Ugent"
+      foaf:homepage <https://www.inter.vlaanderen/>;
+      foaf:name "Inter"
     ];
-    foaf:firstName "Jiao";
-    foaf:lastName "Long"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken>;
-      foaf:name "DMOW"
-    ];
-    foaf:firstName "Bart";
-    foaf:lastName "Baeyens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.hasselt.be/nl>;
-      foaf:name "Stad Hasselt"
-    ];
-    foaf:firstName "Yannick";
-    foaf:lastName "Fabbro"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust>;
-      foaf:name "Agentschap voor Maritieme Dienstverlening en Kust"
-    ];
-    foaf:firstName "Thomas";
-    foaf:lastName "Gerets"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.imec-int.com/en>;
-      foaf:name "IMEC"
-    ];
-    foaf:firstName "Filip";
-    foaf:lastName "Gosselé"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust>;
-      foaf:name "Agentschap voor Maritieme Dienstverlening en Kust"
-    ];
-    foaf:firstName "Valeria";
-    foaf:lastName "Ignatenko"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.imec-int.com/en>;
-      foaf:name "IMEC"
-    ];
-    foaf:firstName "Jan";
-    foaf:lastName "Deprez"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken>;
-      foaf:name "DMOW"
-    ];
-    foaf:firstName "Els";
-    foaf:lastName "Maesen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://atos.net/en/>;
-      foaf:name "ATOS"
-    ];
-    foaf:firstName "Patrick";
-    foaf:lastName "Michels"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://atos.net/en/>;
-      foaf:name "ATOS"
-    ];
-    foaf:firstName "Clara";
-    foaf:lastName "Pezuela"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.mycsn.be/over-ons/>;
-      foaf:name "MyCSN"
-    ];
-    foaf:firstName "Simon";
-    foaf:lastName "Rosseel"
+    foaf:firstName "Marcel";
+    foaf:lastName "Wijnker";
+    foaf:mbox <mailto:marcel.wijnker@inter.vlaanderen>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -257,96 +210,139 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
       foaf:name "Smart Region Limburg"
     ];
     foaf:firstName "Geert";
-    foaf:lastName "Thoelen"
+    foaf:lastName "Thoelen";
+    foaf:mbox <mailto:Geert.Thoelen@s-lim.be>
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://www.inter.vlaanderen/>;
-      foaf:name "Inter"
+      foaf:homepage <https://www.mycsn.be/over-ons/>;
+      foaf:name "MyCSN"
     ];
-    foaf:firstName "Marcel";
-    foaf:lastName "Wijnker"
+    foaf:firstName "Simon";
+    foaf:lastName "Rosseel";
+    foaf:mbox <mailto:Simon.Rosseel@mycsn.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://atos.net/en/>;
+      foaf:name "ATOS"
+    ];
+    foaf:firstName "Clara";
+    foaf:lastName "Pezuela";
+    foaf:mbox <mailto:clara.pezuela@atos.net>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://atos.net/en/>;
+      foaf:name "ATOS"
+    ];
+    foaf:firstName "Patrick";
+    foaf:lastName "Michels";
+    foaf:mbox <mailto:patrick.michels@atos.net>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken>;
+      foaf:name "DMOW"
+    ];
+    foaf:firstName "Els";
+    foaf:lastName "Maesen";
+    foaf:mbox <mailto:elsmaesen@uncapped.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://idlab.technology/>;
+      foaf:name "IMEC-Ugent"
+    ];
+    foaf:firstName "Jiao";
+    foaf:lastName "Long";
+    foaf:mbox <mailto:Jiao.Long@UGent.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust>;
+      foaf:name "Agentschap voor Maritieme Dienstverlening en Kust"
+    ];
+    foaf:firstName "Valeria";
+    foaf:lastName "Ignatenko";
+    foaf:mbox <mailto:valeria.ignatenko@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "IMEC"
+    ];
+    foaf:firstName "Filip";
+    foaf:lastName "Gosselé";
+    foaf:mbox <mailto:filip.gossele@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust>;
+      foaf:name "Agentschap voor Maritieme Dienstverlening en Kust"
+    ];
+    foaf:firstName "Thomas";
+    foaf:lastName "Gerets";
+    foaf:mbox <mailto:thomas.gerets@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.hasselt.be/nl>;
+      foaf:name "Stad Hasselt"
+    ];
+    foaf:firstName "Yannick";
+    foaf:lastName "Fabbro";
+    foaf:mbox <mailto:Yannick.Fabbro@hasselt.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "IMEC"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Deprez";
+    foaf:mbox <mailto:jan.deprez@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken>;
+      foaf:name "DMOW"
+    ];
+    foaf:firstName "Bart";
+    foaf:lastName "Baeyens";
+    foaf:mbox <mailto:bart.baeyens@mow.vlaanderen.be>
   ];
   dc:issued "TODO";
-  dc:license "https://creativecommons.org/licenses/by/4.0/",
+  dc:license "https://creativecommons.org/publicdomain/zero/1.0/",
     <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
   dc:mediator [
-    foaf:homepage <https://semic.eu>;
-    foaf:name "Semantic Interoperability Community (SEMIC)"
+    foaf:homepage <https://purl.eu>;
+    foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
+    foaf:name "Purl.eu"
   ];
-  rdfs:seeAlso <https://purl.eu/ns/mobility/transporthubs#DataExchangeInfrastructure>,
-    <https://purl.eu/ns/mobility/transporthubs#HoppinColumn>,
-    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint>,
-    <https://purl.eu/ns/mobility/transporthubs#InformationCarrier>,
-    <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub>,
-    <https://purl.eu/ns/mobility/transporthubs#ResourceReport>,
-    <https://purl.eu/ns/mobility/transporthubs#TransportHub>,
-    <https://purl.eu/ns/mobility/transporthubs#TransportRegion>,
-    <https://purl.eu/ns/mobility/transporthubs#VirtualNode>,
-    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification>,
-    <https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status>,
-    <https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel>,
-    <https://purl.eu/ns/mobility/transporthubs#TransportHub.classification>,
-    <https://purl.eu/ns/mobility/transporthubs#TransportHub.status>,
-    <https://purl.eu/ns/mobility/transporthubs#accessibility>,
-    <https://purl.eu/ns/mobility/transporthubs#actuator>,
-    <https://purl.eu/ns/mobility/transporthubs#brand>,
-    <https://purl.eu/ns/mobility/transporthubs#location>,
-    <https://purl.eu/ns/mobility/transporthubs#number>,
-    <https://purl.eu/ns/mobility/transporthubs#registration>,
-    <https://purl.eu/ns/mobility/transporthubs#roadAuthority>,
-    <https://purl.eu/ns/mobility/transporthubs#service>,
-    <https://purl.eu/ns/mobility/transporthubs#specification>,
-    <https://purl.eu/ns/mobility/transporthubs#status>,
-    <https://purl.eu/ns/mobility/transporthubs#vehicleType>;
+  rdfs:seeAlso skos:Concept,
+    <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst>,
+    <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer>,
+    <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam>,
+    <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart>,
+    <https://purl.eu/ns/mobility/transporthubs#AdditionalService>,
+    <https://data.vlaanderen.be/ns/dienst#aanbieder>,
+    <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.vervoersknoop>,
+    <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.toegankelijkheid>,
+    <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarheid>,
+    <http://www.w3.org/ns/locn#geometry>,
+    rdfs:label,
+    dc:type,
+    dc:title;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
     schema:affiliation [
       foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
       foaf:name "Digitaal Vlaanderen"
     ];
-    foaf:firstName "Alexis";
-    foaf:lastName "Driesen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Michael";
-    foaf:lastName "Mampaey"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Joeri";
-    foaf:lastName "Moreno"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Arne";
-    foaf:lastName "Scheldeman"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Geert";
-    foaf:lastName "Thijs"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Bert";
-    foaf:lastName "Van Nuffelen"
+    foaf:firstName "Laurens";
+    foaf:lastName "Vercauteren";
+    foaf:mbox <mailto:laurens.vercauteren@vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -354,30 +350,79 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
       foaf:name "IMEC-UGent"
     ];
     foaf:firstName "Brecht";
-    foaf:lastName "Van de Vyvere"
+    foaf:lastName "Van de Vyvere";
+    foaf:mbox <mailto:brecht.vandevyvere@ugent.be>
   ], [
     a foaf:Person;
     schema:affiliation [
       foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
       foaf:name "Digitaal Vlaanderen"
     ];
-    foaf:firstName "Laurens";
-    foaf:lastName "Vercauteren"
+    foaf:firstName "Bert";
+    foaf:lastName "Van Nuffelen";
+    foaf:mbox <mailto:bert.vannuffelen@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Thijs";
+    foaf:mbox <mailto:geert.thijs@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Arne";
+    foaf:lastName "Scheldeman";
+    foaf:mbox <mailto:arne.scheldeman@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Joeri";
+    foaf:lastName "Moreno";
+    foaf:mbox <mailto:joeri.moreno@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Michael";
+    foaf:lastName "Mampaey";
+    foaf:mbox <mailto:michael.mampaey@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Alexis";
+    foaf:lastName "Driesen";
+    foaf:mbox <mailto:alexis.driesen@vlaanderen.be>
   ];
   foaf:maker [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Tom";
-    foaf:lastName "Callens"
-  ], [
     a foaf:Person;
     schema:affiliation [
       foaf:homepage <https://wegenenverkeer.be/>;
       foaf:name "Agentschap Wegen en Verkeer"
     ];
     foaf:firstName "Joris";
-    foaf:lastName "Cornu"
+    foaf:lastName "Cornu";
+    foaf:mbox <mailto:joris.cornu@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Tom";
+    foaf:lastName "Callens";
+    foaf:mbox <mailto:tom.callens@vlaanderen.be>
   ] .

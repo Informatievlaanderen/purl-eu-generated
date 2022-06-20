@@ -3,43 +3,13 @@
   "classes": [],
   "properties": [
     {
-      "EA-Guid": "{37952B3A-8945-4b83-AF71-F6CBFD4D88EE}",
-      "name": "metadata",
-      "label": {
-        "en": "metadata"
-      },
-      "definition": {
-        "en": "Metadata that the members of the collection have in common."
-      }
-    },
-    {
-      "EA-Guid": "{7ADE7517-E478-43ea-A885-122E5210D6BF}",
-      "name": "parameter",
-      "label": {
-        "en": "parameter"
-      },
-      "definition": {
-        "en": "A parameter from the Observation that the Observations in the collection have in common."
-      }
-    },
-    {
-      "EA-Guid": "{2B24233F-5535-479f-99A6-46DE03156A03}",
-      "name": "specification",
-      "label": {
-        "en": "specification"
-      },
-      "definition": {
-        "en": "Reference to the specification that describes the Procedure that was followed to make the Observation."
-      }
-    },
-    {
-      "EA-Guid": "{9177CF92-B9EB-437a-B3A2-3FCF08348B7F}",
+      "EA-Guid": "{051378E0-45B2-4435-90F5-57A4E656951D}",
       "name": "type",
       "label": {
         "en": "type"
       },
       "definition": {
-        "en": "General type of the Procedure that was followed to make the Observation."
+        "en": "General type of the Procedure that was followed to create the Sample."
       }
     },
     {
@@ -53,13 +23,43 @@
       }
     },
     {
-      "EA-Guid": "{051378E0-45B2-4435-90F5-57A4E656951D}",
+      "EA-Guid": "{9177CF92-B9EB-437a-B3A2-3FCF08348B7F}",
       "name": "type",
       "label": {
         "en": "type"
       },
       "definition": {
-        "en": "General type of the Procedure that was followed to create the Sample."
+        "en": "General type of the Procedure that was followed to make the Observation."
+      }
+    },
+    {
+      "EA-Guid": "{2B24233F-5535-479f-99A6-46DE03156A03}",
+      "name": "specification",
+      "label": {
+        "en": "specification"
+      },
+      "definition": {
+        "en": "Reference to the specification that describes the Procedure that was followed to make the Observation."
+      }
+    },
+    {
+      "EA-Guid": "{7ADE7517-E478-43ea-A885-122E5210D6BF}",
+      "name": "parameter",
+      "label": {
+        "en": "parameter"
+      },
+      "definition": {
+        "en": "A parameter from the Observation that the Observations in the collection have in common."
+      }
+    },
+    {
+      "EA-Guid": "{37952B3A-8945-4b83-AF71-F6CBFD4D88EE}",
+      "name": "metadata",
+      "label": {
+        "en": "metadata"
+      },
+      "definition": {
+        "en": "Metadata that the members of the collection have in common."
       }
     }
   ],
@@ -846,741 +846,131 @@
   ],
   "externalproperties": [
     {
-      "EA-Guid": "{A4F4F7CA-855F-4bec-BCCF-5798AC1F08B9}",
-      "name": "featureOfInterest",
+      "EA-Guid": "{1B44CA1D-2019-4696-BA04-F42E5F95721F}",
+      "name": "model",
       "label": {
-        "en": "featureOfInterest"
+        "en": "model"
       },
       "definition": {
-        "en": "Object that is observed."
-      },
-      "usage": {
-        "en": "Can be the Feature itself or a proxy, viz a SamplingFeature. REMARK: Sometimes the actual FeatureOfInterest is only determined after observing the proxy."
+        "en": "Name of the model of the Device."
       }
     },
     {
-      "EA-Guid": "{5F6C9DB1-B192-447e-93C8-18D66AE7E267}",
-      "name": "metadata",
+      "EA-Guid": "{9B2B7E42-EC54-49e4-8FFA-E8BBF2D62053}",
+      "name": "manufacturer",
       "label": {
-        "en": "metadata"
+        "en": "manufacturer"
       },
       "definition": {
-        "en": "Link to the Metadata of the Observation."
+        "en": "Name of the manufacturer of the Device."
       }
     },
     {
-      "EA-Guid": "{35AA6304-42F6-486d-9A25-84243CBAADB8}",
-      "name": "observedProperty",
+      "EA-Guid": "{BF78220A-A9B3-4063-B6B2-F35BF98CB61C}",
+      "name": "function",
       "label": {
-        "en": "observedProperty"
+        "en": "function"
       },
       "definition": {
-        "en": "Characteristic that one observes of the featureOfInterest."
-      },
-      "usage": {
-        "en": "Sometimes the way in which the values of the property are obtained is indirect, ie one measures for practical reasons another property that is a proxy for the property one really wants to observe. And if that proxy is not a property of the featureOfInterest, then the Observation takes place on a proxy of the Object. For example, to find out the vegetation in an area, we measure the color reflection of the earth's surface. CONSTRAINT: The observedProperty must be an actual attribute of the observedObject."
+        "en": "Function that the Device can perform to accomplish a Task."
       }
     },
     {
-      "EA-Guid": "{2200D0B7-76FC-408f-BE2C-CB712006900D}",
-      "name": "parameter",
+      "EA-Guid": "{B9B91971-F7AF-4c74-94E8-B1B0D2AAA91D}",
+      "name": "task",
       "label": {
-        "en": "parameter"
+        "en": "task"
       },
       "definition": {
-        "en": "Any data related to the Observation as an activity."
-      },
-      "usage": {
-        "en": "This is not about properties of the featureOfInterest (these are already described by the observedProperty) or parameters associated with the observation process (like an instrument setting). This is rather about, for example, environmental parameters that can influence the result and are important for correctly interpreting the result. An example is the depth in a well at which the water quality was measured or the ambient temperature when humidity was measured."
+        "en": "Task that the Device was designed to accomplish."
       }
     },
     {
-      "EA-Guid": "{ED04E378-FFA5-4c07-B164-E584C1424EAD}",
-      "name": "phenomenonTime",
+      "EA-Guid": "Derived:{D1B956DC-9FF0-482c-B1A6-8E8CF94B9843}->{D6E729CD-ABC4-4da6-B86A-B73DA109E09B}",
+      "name": "samplingFeature (target)",
       "label": {
-        "en": "phenomenonTime"
+        "en": "SamplingFeature (target)"
       },
       "definition": {
-        "en": "The moment when the result of the Observation was applicable."
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "Typically the moment when observed or sampled. If the Observation is temporal and the moment at which something takes place is registered, then this is also the phenomenon time."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{4B1F5DDE-DB97-41cc-8E18-D398DA4CA4E6}",
-      "name": "resultQuality",
+      "EA-Guid": "Derived:{D1B956DC-9FF0-482c-B1A6-8E8CF94B9843}->{D6E729CD-ABC4-4da6-B86A-B73DA109E09B}",
+      "name": "samplingFeature (source)",
       "label": {
-        "en": "resultQuality"
+        "en": "SamplingFeature (source)"
       },
       "definition": {
-        "en": "The extent to which the result of the Observation meets the requirements or expectatrions."
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "This concerns data that are specific to the Observation and complementary to the description of the procedure followed during the Observation (analysis method and aloke, see Process class), which in itself says something about the quality of the result."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{BADD7125-AF08-4b13-BE14-65115E254FF9}",
-      "name": "resultTime",
+      "EA-Guid": "Derived:{A086CF8E-ED48-4fd4-B55B-FA8ED929D8D3}->{2685213E-9772-4716-A54F-9F8F61284B93}",
+      "name": "specimen",
       "label": {
-        "en": "resultTime"
+        "en": "Specimen"
       },
       "definition": {
-        "en": "Time when the result of the Observation was obtained."
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "Is equal to the phenomenonTime for some Observations, but can also be different, eg when performing an analysis on a Specimen that was taken earlier (and usually elsewhere) or with Sensor measurements that were processed later. Also useful for separating repeated Observations eg on the same Specimen. If the result is a prediction, then the phenomonTime is the moment at which it should apply."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{FF9E4AFD-A5C0-4c57-9465-E1D0DAA2DCEF}",
-      "name": "result",
+      "EA-Guid": "Derived:{A086CF8E-ED48-4fd4-B55B-FA8ED929D8D3}->{DD9BD443-D71F-4de5-A4EB-AB67D8FDD9C3}",
+      "name": "samplingProces",
       "label": {
-        "en": "result"
+        "en": "SamplingProces"
       },
       "definition": {
-        "en": "The value of the observedProperty as a result of the Observation."
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "The result can be of any type as any Property of any type of Object can be observed. CONSTRAINT: The type of the result of the Observation must match the observedProperty and the value obtained must be within the range of the observedProperty."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{64F22006-DFD5-42ac-899D-B3F92864E622}",
-      "name": "relatedObservation",
+      "EA-Guid": "Derived:{C68FE5B1-51F8-477c-81AD-4D9CB090D27D}->{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
+      "name": "observation (target)",
       "label": {
-        "en": "relatedObservation"
+        "en": "Observation (target)"
       },
       "definition": {
-        "en": "Observations of which the results are related in one way or another"
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "It is about a relation that is important to understand the result of an individual Observation, eg a biotic relation (animal A is a predator and is present because animal B occurs as prey). Such relationships require to be explicitly described (as opposed to relationships as the coincidence of results of Observations in space and time, which are allowed to remain implicit). Also useful for relationships where the output of Observation A is the input for Observation B."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{66B41F48-0A03-4d1b-9D9C-C2EC924E30EA}",
-      "name": "role",
+      "EA-Guid": "Derived:{C68FE5B1-51F8-477c-81AD-4D9CB090D27D}->{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
+      "name": "observation (source)",
       "label": {
-        "en": "role"
+        "en": "Observation (source)"
       },
       "definition": {
-        "en": "Nature of the relationship between the two Observations."
+        "en": "Referentie naar verbonden klasse."
       },
       "usage": {
-        "en": "Role that Observation A fulfills relative to Observation B, eg B processes the result of A or B is dependant on the result of A."
+        "en": ""
       }
     },
     {
-      "EA-Guid": "{D489C812-4AFD-4fb2-9786-E84316699DE8}",
-      "name": "processOperator",
+      "EA-Guid": "{AFACC1AE-1C61-4454-B5A8-9789AC619230}",
+      "name": "shape",
       "label": {
-        "en": "processOperator"
+        "en": "shape"
       },
       "definition": {
-        "en": "Operator of the process involved in the PreparationStep."
-      }
-    },
-    {
-      "EA-Guid": "{52F944DA-7A2C-4bbe-A1B8-0625A784EBA1}",
-      "name": "time",
-      "label": {
-        "en": "time"
-      },
-      "definition": {
-        "en": "The time that the PreparationStep was applied to the Specimen."
-      },
-      "usage": {
-        "en": "Supports ordering of preparation steps."
-      }
-    },
-    {
-      "EA-Guid": "{2D4C0DE4-FF15-4161-9633-483F87FFF913}",
-      "name": "lineage",
-      "label": {
-        "en": "lineage"
-      },
-      "definition": {
-        "en": "Reference to the Lineage of the SamplingFeature."
-      },
-      "usage": {
-        "en": "Describes the provenance and history of a SamplingFeature. Eg the handling of a Specimen or how a SpatialSamplingFeature was surveyed."
-      }
-    },
-    {
-      "EA-Guid": "{29B73193-D7C4-418a-885F-0CA6823C5D20}",
-      "name": "parameter",
-      "label": {
-        "en": "parameter"
-      },
-      "definition": {
-        "en": "Any data related to the SamplingFeature."
-      },
-      "usage": {
-        "en": "Eg something that describes a certain aspect of the Sampling (eg the altitude a areal photo was taken) or some important environmental parameter (eg the waterlevel a a borehole)."
-      }
-    },
-    {
-      "EA-Guid": "{8C063C9D-9775-478e-97F8-DEC5FD5A077E}",
-      "name": "sampledFeature",
-      "label": {
-        "en": "sampledFeature"
-      },
-      "definition": {
-        "en": "Reference to the Object to be sampled."
-      },
-      "usage": {
-        "en": "Eg a profile samples a watercolumn or atmospheric column, a monitoring well samples the water in a aquifer, a tissue sample samples a part of an organism."
-      }
-    },
-    {
-      "EA-Guid": "{CFFD1A93-D0EB-4e3d-8DC1-0784F83B228F}",
-      "name": "relatedSamplingFeature",
-      "label": {
-        "en": "relatedSamplingFeature"
-      },
-      "definition": {
-        "en": "Other SamplingFeature with which the SamplingObject is associated."
-      },
-      "usage": {
-        "en": "Eg SamplingPoints along a SamplingCurve or Samples taken a a SamplingPoint or subSamples (Samples of a Sample)."
-      }
-    },
-    {
-      "EA-Guid": "{1B8F07E0-B7AF-45ee-8EAF-623984090295}",
-      "name": "role",
-      "label": {
-        "en": "role"
-      },
-      "definition": {
-        "en": "Nature of the relationship."
-      }
-    },
-    {
-      "EA-Guid": "{E0DF99AE-15AC-42df-BAC4-050CF2424734}",
-      "name": "materialClass",
-      "label": {
-        "en": "materialClass"
-      },
-      "definition": {
-        "en": "Basic classification of the material type of the specimen."
-      }
-    },
-    {
-      "EA-Guid": "{D2EC0B4A-BFF6-4d05-A46F-2BE6E15D1430}",
-      "name": "processingDetails",
-      "label": {
-        "en": "processingDetails"
-      },
-      "definition": {
-        "en": "Details on how the specimen was processed."
-      }
-    },
-    {
-      "EA-Guid": "{16336ED1-3D00-483c-A0F6-25350963474A}",
-      "name": "samplingLocation",
-      "label": {
-        "en": "samplingLocation"
-      },
-      "definition": {
-        "en": "Location from where the specimen was obtained."
-      }
-    },
-    {
-      "EA-Guid": "{21649E4B-D72B-448c-ADC2-0523592A4821}",
-      "name": "samplingMethod",
-      "label": {
-        "en": "samplingMethod"
-      },
-      "definition": {
-        "en": "Method used to obtain the specimen from its sampledFeature."
-      }
-    },
-    {
-      "EA-Guid": "{D60D1E9C-90A1-4702-A7FA-BAF0DD69EABF}",
-      "name": "samplingTime",
-      "label": {
-        "en": "samplingTime"
-      },
-      "definition": {
-        "en": "Time when the specimen was retrieved from the sampledFeature."
-      }
-    },
-    {
-      "EA-Guid": "{59FE0737-85DD-43d7-83EA-A6F4609AAE48}",
-      "name": "contributor",
-      "label": {
-        "en": "contributor"
-      },
-      "definition": {
-        "en": "An entity responsible for making contributions to the resource."
-      },
-      "usage": {
-        "en": "The guidelines for using names of persons or organizations as creators also apply to contributors. Typically, the name of a Contributor should be used to indicate the entity."
-      }
-    },
-    {
-      "EA-Guid": "{966CD8CB-791D-4fbe-99DB-B90BB2A99F9B}",
-      "name": "creator",
-      "label": {
-        "en": "creator"
-      },
-      "definition": {
-        "en": "An entity primarily responsible for making the resource."
-      },
-      "usage": {
-        "en": "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."
-      }
-    },
-    {
-      "EA-Guid": "{E973BA41-8103-48cb-8A69-91C9912CDE29}",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "definition": {
-        "en": "An account of the resource."
-      },
-      "usage": {
-        "en": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."
-      }
-    },
-    {
-      "EA-Guid": "{2D528FB7-ED52-4936-B2F4-B6D8866DD2BC}",
-      "name": "identifier",
-      "label": {
-        "en": "identifier"
-      },
-      "definition": {
-        "en": "An unambiguous reference to the resource within a given context."
-      },
-      "usage": {
-        "en": "Recommended practice is to identify the resource by means of a string conforming to an identification system."
-      }
-    },
-    {
-      "EA-Guid": "{7E5C298F-1CC8-4e5b-98CD-C2D5CEFAD71B}",
-      "name": "publisher",
-      "label": {
-        "en": "publisher"
-      },
-      "definition": {
-        "en": "An entity responsible for making the resource available."
-      },
-      "usage": {
-        "en": "Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."
-      }
-    },
-    {
-      "EA-Guid": "{8ABE2B7B-49F0-4afd-89F1-80FE919A17D7}",
-      "name": "rights",
-      "label": {
-        "en": "rights"
-      },
-      "definition": {
-        "en": "Information about rights held in and over the resource."
-      },
-      "usage": {
-        "en": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."
-      }
-    },
-    {
-      "EA-Guid": "{A8BE15A1-1567-4d76-8F1D-5F6D5B870057}",
-      "name": "subject",
-      "label": {
-        "en": "subject"
-      },
-      "definition": {
-        "en": "The topic of the resource."
-      },
-      "usage": {
-        "en": "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."
-      }
-    },
-    {
-      "EA-Guid": "{E0E88FF4-7057-498c-B0A9-09BB9CAC4A5D}",
-      "name": "title",
-      "label": {
-        "en": "title"
-      },
-      "definition": {
-        "en": "A name given to the resource."
-      }
-    },
-    {
-      "EA-Guid": "{1DD1582E-2C66-4ddd-B423-13BF448BC8DB}",
-      "name": "asGML",
-      "label": {
-        "en": "asGML"
-      },
-      "definition": {
-        "en": "Geometry expressed in GML format."
-      },
-      "usage": {
-        "en": "Use http://www.opengis.net/ont/geosparql#gmlLiteral as datatype."
-      }
-    },
-    {
-      "EA-Guid": "{0168F2D4-85D9-463d-99ED-B251331D3CA7}",
-      "name": "asWKT",
-      "label": {
-        "en": "asWKT"
-      },
-      "definition": {
-        "en": "Geometry expressed in WKT format"
-      },
-      "usage": {
-        "en": "Use http://www.opengis.net/ont/geosparql#wktLiteral as datatype."
-      }
-    },
-    {
-      "EA-Guid": "{2945C5BF-1B78-41d4-8669-B5F5C8363121}",
-      "name": "identifier",
-      "label": {
-        "en": "identifier"
-      },
-      "definition": {
-        "en": "String used to uniquely identify the object."
-      },
-      "usage": {
-        "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
-      }
-    },
-    {
-      "EA-Guid": "{AAEA59A8-2CD9-4c44-94F5-A196A746E49A}",
-      "name": "location",
-      "label": {
-        "en": "location"
-      },
-      "definition": {
-        "en": "Location of the SpatialSamplingfeature."
-      },
-      "usage": {
-        "en": "Can be used in addition to the shape attribute to indicate the position indirectly eg by means of an Address, a GeographicalName, a Place..."
-      }
-    },
-    {
-      "EA-Guid": "{1A0F7AA9-38DB-4bb2-8650-C525199EBEA3}",
-      "name": "hasFeatureOfInterest",
-      "label": {
-        "en": "hasFeatureOfInterest"
-      },
-      "definition": {
-        "en": "Object that is sampled."
-      }
-    },
-    {
-      "EA-Guid": "{F9ED1620-613E-40ed-B260-F022544017F0}",
-      "name": "hasFeatureOfInterest",
-      "label": {
-        "en": "hasFeatureOfInterest"
-      },
-      "definition": {
-        "en": "The Feature that the Observations in the collection have in common as featureOfInterest."
-      }
-    },
-    {
-      "EA-Guid": "{18E5C180-6814-4627-82E3-350A4DBDACE8}",
-      "name": "hasMember",
-      "label": {
-        "en": "hasMember"
-      },
-      "definition": {
-        "en": "Observation that belongs to the collection."
-      }
-    },
-    {
-      "EA-Guid": "{5C5CE909-7029-44b3-832F-3AC993A185DB}",
-      "name": "hasResult",
-      "label": {
-        "en": "hasResult"
-      },
-      "definition": {
-        "en": "The Sample as a result of the Sampling."
-      }
-    },
-    {
-      "EA-Guid": "{18CE982C-8917-4073-8146-32D5C0CC37BF}",
-      "name": "hasSimpleResult",
-      "label": {
-        "en": "hasSimpleResult"
-      },
-      "definition": {
-        "en": "The simple value of an Observation."
-      }
-    },
-    {
-      "EA-Guid": "{80617C66-771B-4fe4-9910-55777E3DB3CB}",
-      "name": "hasUltimateFeatureOfInterest",
-      "label": {
-        "en": "hasUltimateFeatureOfInterest"
-      },
-      "definition": {
-        "en": "Link to the ultimate featureOfInterest of an Observation. This is useful when the proximate featureOfInterest is a Sample of the ultimateFeatureOfInterest, directly or transitively."
-      }
-    },
-    {
-      "EA-Guid": "{5D213780-67B7-43a1-859E-9D19581F375E}",
-      "name": "hasUltimateFeatureOfInterest",
-      "label": {
-        "en": "hasUltimateFeatureOfInterest"
-      },
-      "definition": {
-        "en": "The Feature that the Observations in the collection have in common as ultimateFeatureOfInterest."
-      }
-    },
-    {
-      "EA-Guid": "{CC9E57FC-0978-443d-BD27-4915A4B661D3}",
-      "name": "hosts",
-      "label": {
-        "en": "hosts"
-      },
-      "definition": {
-        "en": "System that is hosted by the Platform.."
-      },
-      "usage": {
-        "en": "Eg a Sensor, a Sampler."
-      }
-    },
-    {
-      "EA-Guid": "{CC9E57FC-0978-443d-BD27-4915A4B661D3}",
-      "name": "isHostedBy",
-      "label": {
-        "en": "isHostedBy"
-      },
-      "definition": {
-        "en": "Platform on which the System is mounted on or hosted by."
-      }
-    },
-    {
-      "EA-Guid": "{F0FD8FC4-F1AB-4619-8DEC-ADFE1D2D68AF}",
-      "name": "isObservedBy",
-      "label": {
-        "en": "isObservedBy"
-      },
-      "definition": {
-        "en": "Relation between a PropertyType and the Sensor able to observe it."
-      }
-    },
-    {
-      "EA-Guid": "{5C5CE909-7029-44b3-832F-3AC993A185DB}",
-      "name": "isResultOf",
-      "label": {
-        "en": "isResultOf"
-      },
-      "definition": {
-        "en": "Reference to the act of Sampling that produced the SamplingFeature."
-      }
-    },
-    {
-      "EA-Guid": "{B8914160-9654-4d6d-9C34-642FCDDB642F}",
-      "name": "madeBySampler",
-      "label": {
-        "en": "madeBySampler"
-      },
-      "definition": {
-        "en": "The Sampler with which the sample was obtained."
-      }
-    },
-    {
-      "EA-Guid": "{0D82E527-E678-473d-A1D4-EBFF12AC8925}",
-      "name": "madeBySensor",
-      "label": {
-        "en": "madeBySensor"
-      },
-      "definition": {
-        "en": "Relation between an Observation and the Sensor which made the Observations."
-      }
-    },
-    {
-      "EA-Guid": "{AC62025C-BB3B-49d6-8858-C3C6E9A2E459}",
-      "name": "madeBySensor",
-      "label": {
-        "en": "madeBySensor"
-      },
-      "definition": {
-        "en": "The Sensor by which the Observations in the collection were made."
-      }
-    },
-    {
-      "EA-Guid": "{0D82E527-E678-473d-A1D4-EBFF12AC8925}",
-      "name": "madeObservation",
-      "label": {
-        "en": "madeObservation"
-      },
-      "definition": {
-        "en": "Observation made by the Sensor."
-      }
-    },
-    {
-      "EA-Guid": "{B8914160-9654-4d6d-9C34-642FCDDB642F}",
-      "name": "madeSampling",
-      "label": {
-        "en": "madeSampling"
-      },
-      "definition": {
-        "en": "Sampling act it performed with the Sampler."
-      }
-    },
-    {
-      "EA-Guid": "{F11276BC-14C7-4b72-9B8F-70310672FC38}",
-      "name": "observedProperty",
-      "label": {
-        "en": "observedProperty"
-      },
-      "definition": {
-        "en": "The property that was observed by the Observations in the collection."
-      }
-    },
-    {
-      "EA-Guid": "{F0FD8FC4-F1AB-4619-8DEC-ADFE1D2D68AF}",
-      "name": "observes",
-      "label": {
-        "en": "observes"
-      },
-      "definition": {
-        "en": "Type of Property that the Sensor is capable of sensing."
-      }
-    },
-    {
-      "EA-Guid": "{7ABBF6E3-9D43-4d27-B0BD-10318A5FAB5B}",
-      "name": "phenomenonTime",
-      "label": {
-        "en": "phenomenonTime"
-      },
-      "definition": {
-        "en": "The phenomenonTime of the Observation that the Obser(vations in the collection have in common."
-      }
-    },
-    {
-      "EA-Guid": "{071638E7-2A2C-470f-B5F5-88FD5EE100DA}",
-      "name": "resultTime",
-      "label": {
-        "en": "resultTime"
-      },
-      "definition": {
-        "en": "The resultTime of the Observation that the Observations in the collection have in common."
-      }
-    },
-    {
-      "EA-Guid": "{29706BE3-1E1D-457b-A4FA-426211475E13}",
-      "name": "resultTime",
-      "label": {
-        "en": "resultTime"
-      },
-      "definition": {
-        "en": "Time when the Sample was obtained."
-      }
-    },
-    {
-      "EA-Guid": "{89F01903-909B-4dc9-A729-B83BD71D0AB2}",
-      "name": "usedProcedure",
-      "label": {
-        "en": "usedProcedure"
-      },
-      "definition": {
-        "en": "Reference to the Procedure by which the result of the Sampling is obtained."
-      }
-    },
-    {
-      "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
-      "name": "usedProcedure",
-      "label": {
-        "en": "usedProcedure"
-      },
-      "definition": {
-        "en": "Reference to the Procedure by which the result of the Observation is obtained."
-      }
-    },
-    {
-      "EA-Guid": "{98EB12E5-C9A4-434d-82BA-D86338F021A2}",
-      "name": "usedProcedure",
-      "label": {
-        "en": "usedProcedure"
-      },
-      "definition": {
-        "en": "The usedProcedure of the Observations in the collection."
-      }
-    },
-    {
-      "EA-Guid": "{B54F0498-5919-4962-9033-92A9DDC7AA63}",
-      "name": "implementedBy",
-      "label": {
-        "en": "implementedBy"
-      },
-      "definition": {
-        "en": "Sensor that implements the Procedure in some executable way."
-      }
-    },
-    {
-      "EA-Guid": "{B54F0498-5919-4962-9033-92A9DDC7AA63}",
-      "name": "implements",
-      "label": {
-        "en": "implements"
-      },
-      "definition": {
-        "en": "ObservationProcedure that is implemented by the Sensor."
-      }
-    },
-    {
-      "EA-Guid": "{3B98DB69-1409-477f-ABA6-EF8399E15293}",
-      "name": "hasOperatingProperty",
-      "label": {
-        "en": "hasOperatingProperty"
-      },
-      "definition": {
-        "en": "Property of the System that defines its OperatingRange."
-      }
-    },
-    {
-      "EA-Guid": "{7B76B80C-5740-4fad-9E5B-C36A83359334}",
-      "name": "hasOperatingRange",
-      "label": {
-        "en": "hasOperatingRange"
-      },
-      "definition": {
-        "en": "OperatingRange of the System."
-      }
-    },
-    {
-      "EA-Guid": "{E4650529-051C-46bc-B079-7CFE3C22EB24}",
-      "name": "hasSurvivalProperty",
-      "label": {
-        "en": "hasSurvivalProperty"
-      },
-      "definition": {
-        "en": "Property of the System that defines its survival."
-      }
-    },
-    {
-      "EA-Guid": "{500AE507-4AF8-427f-9BD8-4FE3F6C24B7D}",
-      "name": "hasSurvivalRange",
-      "label": {
-        "en": "hasSurvivalRange"
-      },
-      "definition": {
-        "en": "SurvivalRange of the System."
-      }
-    },
-    {
-      "EA-Guid": "{DC85B2E8-5F86-4ad6-9446-236FAB117286}",
-      "name": "hasSystemCapability",
-      "label": {
-        "en": "hasSystemCapability"
-      },
-      "definition": {
-        "en": "Capability of the System."
-      }
-    },
-    {
-      "EA-Guid": "{B57924A4-3F31-4aa6-8BF8-C5E96B0947D2}",
-      "name": "hasSystemProperty",
-      "label": {
-        "en": "hasSystemProperty"
-      },
-      "definition": {
-        "en": "Property of the System that defines its capability."
+        "en": "Description of the shape and location of the SpatialSamplingFeature."
       }
     },
     {
@@ -1614,131 +1004,741 @@
       }
     },
     {
-      "EA-Guid": "{AFACC1AE-1C61-4454-B5A8-9789AC619230}",
-      "name": "shape",
+      "EA-Guid": "{B57924A4-3F31-4aa6-8BF8-C5E96B0947D2}",
+      "name": "hasSystemProperty",
       "label": {
-        "en": "shape"
+        "en": "hasSystemProperty"
       },
       "definition": {
-        "en": "Description of the shape and location of the SpatialSamplingFeature."
+        "en": "Property of the System that defines its capability."
       }
     },
     {
-      "EA-Guid": "Derived:{C68FE5B1-51F8-477c-81AD-4D9CB090D27D}->{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
-      "name": "observation (source)",
+      "EA-Guid": "{DC85B2E8-5F86-4ad6-9446-236FAB117286}",
+      "name": "hasSystemCapability",
       "label": {
-        "en": "Observation (source)"
+        "en": "hasSystemCapability"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "Capability of the System."
+      }
+    },
+    {
+      "EA-Guid": "{500AE507-4AF8-427f-9BD8-4FE3F6C24B7D}",
+      "name": "hasSurvivalRange",
+      "label": {
+        "en": "hasSurvivalRange"
+      },
+      "definition": {
+        "en": "SurvivalRange of the System."
+      }
+    },
+    {
+      "EA-Guid": "{E4650529-051C-46bc-B079-7CFE3C22EB24}",
+      "name": "hasSurvivalProperty",
+      "label": {
+        "en": "hasSurvivalProperty"
+      },
+      "definition": {
+        "en": "Property of the System that defines its survival."
+      }
+    },
+    {
+      "EA-Guid": "{7B76B80C-5740-4fad-9E5B-C36A83359334}",
+      "name": "hasOperatingRange",
+      "label": {
+        "en": "hasOperatingRange"
+      },
+      "definition": {
+        "en": "OperatingRange of the System."
+      }
+    },
+    {
+      "EA-Guid": "{3B98DB69-1409-477f-ABA6-EF8399E15293}",
+      "name": "hasOperatingProperty",
+      "label": {
+        "en": "hasOperatingProperty"
+      },
+      "definition": {
+        "en": "Property of the System that defines its OperatingRange."
+      }
+    },
+    {
+      "EA-Guid": "{B54F0498-5919-4962-9033-92A9DDC7AA63}",
+      "name": "implements",
+      "label": {
+        "en": "implements"
+      },
+      "definition": {
+        "en": "ObservationProcedure that is implemented by the Sensor."
+      }
+    },
+    {
+      "EA-Guid": "{B54F0498-5919-4962-9033-92A9DDC7AA63}",
+      "name": "implementedBy",
+      "label": {
+        "en": "implementedBy"
+      },
+      "definition": {
+        "en": "Sensor that implements the Procedure in some executable way."
+      }
+    },
+    {
+      "EA-Guid": "{89F01903-909B-4dc9-A729-B83BD71D0AB2}",
+      "name": "usedProcedure",
+      "label": {
+        "en": "usedProcedure"
+      },
+      "definition": {
+        "en": "Reference to the Procedure by which the result of the Sampling is obtained."
+      }
+    },
+    {
+      "EA-Guid": "{C263A0AC-F6F8-46fd-90D3-C6232F6CEAFC}",
+      "name": "usedProcedure",
+      "label": {
+        "en": "usedProcedure"
+      },
+      "definition": {
+        "en": "Reference to the Procedure by which the result of the Observation is obtained."
+      }
+    },
+    {
+      "EA-Guid": "{98EB12E5-C9A4-434d-82BA-D86338F021A2}",
+      "name": "usedProcedure",
+      "label": {
+        "en": "usedProcedure"
+      },
+      "definition": {
+        "en": "The usedProcedure of the Observations in the collection."
+      }
+    },
+    {
+      "EA-Guid": "{071638E7-2A2C-470f-B5F5-88FD5EE100DA}",
+      "name": "resultTime",
+      "label": {
+        "en": "resultTime"
+      },
+      "definition": {
+        "en": "The resultTime of the Observation that the Observations in the collection have in common."
+      }
+    },
+    {
+      "EA-Guid": "{29706BE3-1E1D-457b-A4FA-426211475E13}",
+      "name": "resultTime",
+      "label": {
+        "en": "resultTime"
+      },
+      "definition": {
+        "en": "Time when the Sample was obtained."
+      }
+    },
+    {
+      "EA-Guid": "{7ABBF6E3-9D43-4d27-B0BD-10318A5FAB5B}",
+      "name": "phenomenonTime",
+      "label": {
+        "en": "phenomenonTime"
+      },
+      "definition": {
+        "en": "The phenomenonTime of the Observation that the Obser(vations in the collection have in common."
+      }
+    },
+    {
+      "EA-Guid": "{F0FD8FC4-F1AB-4619-8DEC-ADFE1D2D68AF}",
+      "name": "observes",
+      "label": {
+        "en": "observes"
+      },
+      "definition": {
+        "en": "Type of Property that the Sensor is capable of sensing."
+      }
+    },
+    {
+      "EA-Guid": "{F11276BC-14C7-4b72-9B8F-70310672FC38}",
+      "name": "observedProperty",
+      "label": {
+        "en": "observedProperty"
+      },
+      "definition": {
+        "en": "The property that was observed by the Observations in the collection."
+      }
+    },
+    {
+      "EA-Guid": "{B8914160-9654-4d6d-9C34-642FCDDB642F}",
+      "name": "madeSampling",
+      "label": {
+        "en": "madeSampling"
+      },
+      "definition": {
+        "en": "Sampling act it performed with the Sampler."
+      }
+    },
+    {
+      "EA-Guid": "{0D82E527-E678-473d-A1D4-EBFF12AC8925}",
+      "name": "madeObservation",
+      "label": {
+        "en": "madeObservation"
+      },
+      "definition": {
+        "en": "Observation made by the Sensor."
+      }
+    },
+    {
+      "EA-Guid": "{0D82E527-E678-473d-A1D4-EBFF12AC8925}",
+      "name": "madeBySensor",
+      "label": {
+        "en": "madeBySensor"
+      },
+      "definition": {
+        "en": "Relation between an Observation and the Sensor which made the Observations."
+      }
+    },
+    {
+      "EA-Guid": "{AC62025C-BB3B-49d6-8858-C3C6E9A2E459}",
+      "name": "madeBySensor",
+      "label": {
+        "en": "madeBySensor"
+      },
+      "definition": {
+        "en": "The Sensor by which the Observations in the collection were made."
+      }
+    },
+    {
+      "EA-Guid": "{B8914160-9654-4d6d-9C34-642FCDDB642F}",
+      "name": "madeBySampler",
+      "label": {
+        "en": "madeBySampler"
+      },
+      "definition": {
+        "en": "The Sampler with which the sample was obtained."
+      }
+    },
+    {
+      "EA-Guid": "{5C5CE909-7029-44b3-832F-3AC993A185DB}",
+      "name": "isResultOf",
+      "label": {
+        "en": "isResultOf"
+      },
+      "definition": {
+        "en": "Reference to the act of Sampling that produced the SamplingFeature."
+      }
+    },
+    {
+      "EA-Guid": "{F0FD8FC4-F1AB-4619-8DEC-ADFE1D2D68AF}",
+      "name": "isObservedBy",
+      "label": {
+        "en": "isObservedBy"
+      },
+      "definition": {
+        "en": "Relation between a PropertyType and the Sensor able to observe it."
+      }
+    },
+    {
+      "EA-Guid": "{CC9E57FC-0978-443d-BD27-4915A4B661D3}",
+      "name": "isHostedBy",
+      "label": {
+        "en": "isHostedBy"
+      },
+      "definition": {
+        "en": "Platform on which the System is mounted on or hosted by."
+      }
+    },
+    {
+      "EA-Guid": "{CC9E57FC-0978-443d-BD27-4915A4B661D3}",
+      "name": "hosts",
+      "label": {
+        "en": "hosts"
+      },
+      "definition": {
+        "en": "System that is hosted by the Platform.."
       },
       "usage": {
-        "en": ""
+        "en": "Eg a Sensor, a Sampler."
       }
     },
     {
-      "EA-Guid": "Derived:{C68FE5B1-51F8-477c-81AD-4D9CB090D27D}->{6CFFB8DF-79C9-44e1-AACD-62F79D16E0A7}",
-      "name": "observation (target)",
+      "EA-Guid": "{80617C66-771B-4fe4-9910-55777E3DB3CB}",
+      "name": "hasUltimateFeatureOfInterest",
       "label": {
-        "en": "Observation (target)"
+        "en": "hasUltimateFeatureOfInterest"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "Link to the ultimate featureOfInterest of an Observation. This is useful when the proximate featureOfInterest is a Sample of the ultimateFeatureOfInterest, directly or transitively."
+      }
+    },
+    {
+      "EA-Guid": "{5D213780-67B7-43a1-859E-9D19581F375E}",
+      "name": "hasUltimateFeatureOfInterest",
+      "label": {
+        "en": "hasUltimateFeatureOfInterest"
+      },
+      "definition": {
+        "en": "The Feature that the Observations in the collection have in common as ultimateFeatureOfInterest."
+      }
+    },
+    {
+      "EA-Guid": "{18CE982C-8917-4073-8146-32D5C0CC37BF}",
+      "name": "hasSimpleResult",
+      "label": {
+        "en": "hasSimpleResult"
+      },
+      "definition": {
+        "en": "The simple value of an Observation."
+      }
+    },
+    {
+      "EA-Guid": "{5C5CE909-7029-44b3-832F-3AC993A185DB}",
+      "name": "hasResult",
+      "label": {
+        "en": "hasResult"
+      },
+      "definition": {
+        "en": "The Sample as a result of the Sampling."
+      }
+    },
+    {
+      "EA-Guid": "{18E5C180-6814-4627-82E3-350A4DBDACE8}",
+      "name": "hasMember",
+      "label": {
+        "en": "hasMember"
+      },
+      "definition": {
+        "en": "Observation that belongs to the collection."
+      }
+    },
+    {
+      "EA-Guid": "{1A0F7AA9-38DB-4bb2-8650-C525199EBEA3}",
+      "name": "hasFeatureOfInterest",
+      "label": {
+        "en": "hasFeatureOfInterest"
+      },
+      "definition": {
+        "en": "Object that is sampled."
+      }
+    },
+    {
+      "EA-Guid": "{F9ED1620-613E-40ed-B260-F022544017F0}",
+      "name": "hasFeatureOfInterest",
+      "label": {
+        "en": "hasFeatureOfInterest"
+      },
+      "definition": {
+        "en": "The Feature that the Observations in the collection have in common as featureOfInterest."
+      }
+    },
+    {
+      "EA-Guid": "{AAEA59A8-2CD9-4c44-94F5-A196A746E49A}",
+      "name": "location",
+      "label": {
+        "en": "location"
+      },
+      "definition": {
+        "en": "Location of the SpatialSamplingfeature."
       },
       "usage": {
-        "en": ""
+        "en": "Can be used in addition to the shape attribute to indicate the position indirectly eg by means of an Address, a GeographicalName, a Place..."
       }
     },
     {
-      "EA-Guid": "Derived:{A086CF8E-ED48-4fd4-B55B-FA8ED929D8D3}->{DD9BD443-D71F-4de5-A4EB-AB67D8FDD9C3}",
-      "name": "samplingProces",
+      "EA-Guid": "{2945C5BF-1B78-41d4-8669-B5F5C8363121}",
+      "name": "identifier",
       "label": {
-        "en": "SamplingProces"
+        "en": "identifier"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "String used to uniquely identify the object."
       },
       "usage": {
-        "en": ""
+        "en": "The string part of the literal is the actual identifier, the type part refers to the identification system and its version."
       }
     },
     {
-      "EA-Guid": "Derived:{A086CF8E-ED48-4fd4-B55B-FA8ED929D8D3}->{2685213E-9772-4716-A54F-9F8F61284B93}",
-      "name": "specimen",
+      "EA-Guid": "{0168F2D4-85D9-463d-99ED-B251331D3CA7}",
+      "name": "asWKT",
       "label": {
-        "en": "Specimen"
+        "en": "asWKT"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "Geometry expressed in WKT format"
       },
       "usage": {
-        "en": ""
+        "en": "Use http://www.opengis.net/ont/geosparql#wktLiteral as datatype."
       }
     },
     {
-      "EA-Guid": "Derived:{D1B956DC-9FF0-482c-B1A6-8E8CF94B9843}->{D6E729CD-ABC4-4da6-B86A-B73DA109E09B}",
-      "name": "samplingFeature (source)",
+      "EA-Guid": "{1DD1582E-2C66-4ddd-B423-13BF448BC8DB}",
+      "name": "asGML",
       "label": {
-        "en": "SamplingFeature (source)"
+        "en": "asGML"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "Geometry expressed in GML format."
       },
       "usage": {
-        "en": ""
+        "en": "Use http://www.opengis.net/ont/geosparql#gmlLiteral as datatype."
       }
     },
     {
-      "EA-Guid": "Derived:{D1B956DC-9FF0-482c-B1A6-8E8CF94B9843}->{D6E729CD-ABC4-4da6-B86A-B73DA109E09B}",
-      "name": "samplingFeature (target)",
+      "EA-Guid": "{E0E88FF4-7057-498c-B0A9-09BB9CAC4A5D}",
+      "name": "title",
       "label": {
-        "en": "SamplingFeature (target)"
+        "en": "title"
       },
       "definition": {
-        "en": "Referentie naar verbonden klasse."
+        "en": "A name given to the resource."
+      }
+    },
+    {
+      "EA-Guid": "{A8BE15A1-1567-4d76-8F1D-5F6D5B870057}",
+      "name": "subject",
+      "label": {
+        "en": "subject"
+      },
+      "definition": {
+        "en": "The topic of the resource."
       },
       "usage": {
-        "en": ""
+        "en": "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."
       }
     },
     {
-      "EA-Guid": "{B9B91971-F7AF-4c74-94E8-B1B0D2AAA91D}",
-      "name": "task",
+      "EA-Guid": "{8ABE2B7B-49F0-4afd-89F1-80FE919A17D7}",
+      "name": "rights",
       "label": {
-        "en": "task"
+        "en": "rights"
       },
       "definition": {
-        "en": "Task that the Device was designed to accomplish."
+        "en": "Information about rights held in and over the resource."
+      },
+      "usage": {
+        "en": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."
       }
     },
     {
-      "EA-Guid": "{BF78220A-A9B3-4063-B6B2-F35BF98CB61C}",
-      "name": "function",
+      "EA-Guid": "{7E5C298F-1CC8-4e5b-98CD-C2D5CEFAD71B}",
+      "name": "publisher",
       "label": {
-        "en": "function"
+        "en": "publisher"
       },
       "definition": {
-        "en": "Function that the Device can perform to accomplish a Task."
+        "en": "An entity responsible for making the resource available."
+      },
+      "usage": {
+        "en": "Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."
       }
     },
     {
-      "EA-Guid": "{9B2B7E42-EC54-49e4-8FFA-E8BBF2D62053}",
-      "name": "manufacturer",
+      "EA-Guid": "{2D528FB7-ED52-4936-B2F4-B6D8866DD2BC}",
+      "name": "identifier",
       "label": {
-        "en": "manufacturer"
+        "en": "identifier"
       },
       "definition": {
-        "en": "Name of the manufacturer of the Device."
+        "en": "An unambiguous reference to the resource within a given context."
+      },
+      "usage": {
+        "en": "Recommended practice is to identify the resource by means of a string conforming to an identification system."
       }
     },
     {
-      "EA-Guid": "{1B44CA1D-2019-4696-BA04-F42E5F95721F}",
-      "name": "model",
+      "EA-Guid": "{E973BA41-8103-48cb-8A69-91C9912CDE29}",
+      "name": "description",
       "label": {
-        "en": "model"
+        "en": "description"
       },
       "definition": {
-        "en": "Name of the model of the Device."
+        "en": "An account of the resource."
+      },
+      "usage": {
+        "en": "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."
+      }
+    },
+    {
+      "EA-Guid": "{966CD8CB-791D-4fbe-99DB-B90BB2A99F9B}",
+      "name": "creator",
+      "label": {
+        "en": "creator"
+      },
+      "definition": {
+        "en": "An entity primarily responsible for making the resource."
+      },
+      "usage": {
+        "en": "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."
+      }
+    },
+    {
+      "EA-Guid": "{59FE0737-85DD-43d7-83EA-A6F4609AAE48}",
+      "name": "contributor",
+      "label": {
+        "en": "contributor"
+      },
+      "definition": {
+        "en": "An entity responsible for making contributions to the resource."
+      },
+      "usage": {
+        "en": "The guidelines for using names of persons or organizations as creators also apply to contributors. Typically, the name of a Contributor should be used to indicate the entity."
+      }
+    },
+    {
+      "EA-Guid": "{D60D1E9C-90A1-4702-A7FA-BAF0DD69EABF}",
+      "name": "samplingTime",
+      "label": {
+        "en": "samplingTime"
+      },
+      "definition": {
+        "en": "Time when the specimen was retrieved from the sampledFeature."
+      }
+    },
+    {
+      "EA-Guid": "{21649E4B-D72B-448c-ADC2-0523592A4821}",
+      "name": "samplingMethod",
+      "label": {
+        "en": "samplingMethod"
+      },
+      "definition": {
+        "en": "Method used to obtain the specimen from its sampledFeature."
+      }
+    },
+    {
+      "EA-Guid": "{16336ED1-3D00-483c-A0F6-25350963474A}",
+      "name": "samplingLocation",
+      "label": {
+        "en": "samplingLocation"
+      },
+      "definition": {
+        "en": "Location from where the specimen was obtained."
+      }
+    },
+    {
+      "EA-Guid": "{D2EC0B4A-BFF6-4d05-A46F-2BE6E15D1430}",
+      "name": "processingDetails",
+      "label": {
+        "en": "processingDetails"
+      },
+      "definition": {
+        "en": "Details on how the specimen was processed."
+      }
+    },
+    {
+      "EA-Guid": "{E0DF99AE-15AC-42df-BAC4-050CF2424734}",
+      "name": "materialClass",
+      "label": {
+        "en": "materialClass"
+      },
+      "definition": {
+        "en": "Basic classification of the material type of the specimen."
+      }
+    },
+    {
+      "EA-Guid": "{1B8F07E0-B7AF-45ee-8EAF-623984090295}",
+      "name": "role",
+      "label": {
+        "en": "role"
+      },
+      "definition": {
+        "en": "Nature of the relationship."
+      }
+    },
+    {
+      "EA-Guid": "{CFFD1A93-D0EB-4e3d-8DC1-0784F83B228F}",
+      "name": "relatedSamplingFeature",
+      "label": {
+        "en": "relatedSamplingFeature"
+      },
+      "definition": {
+        "en": "Other SamplingFeature with which the SamplingObject is associated."
+      },
+      "usage": {
+        "en": "Eg SamplingPoints along a SamplingCurve or Samples taken a a SamplingPoint or subSamples (Samples of a Sample)."
+      }
+    },
+    {
+      "EA-Guid": "{8C063C9D-9775-478e-97F8-DEC5FD5A077E}",
+      "name": "sampledFeature",
+      "label": {
+        "en": "sampledFeature"
+      },
+      "definition": {
+        "en": "Reference to the Object to be sampled."
+      },
+      "usage": {
+        "en": "Eg a profile samples a watercolumn or atmospheric column, a monitoring well samples the water in a aquifer, a tissue sample samples a part of an organism."
+      }
+    },
+    {
+      "EA-Guid": "{29B73193-D7C4-418a-885F-0CA6823C5D20}",
+      "name": "parameter",
+      "label": {
+        "en": "parameter"
+      },
+      "definition": {
+        "en": "Any data related to the SamplingFeature."
+      },
+      "usage": {
+        "en": "Eg something that describes a certain aspect of the Sampling (eg the altitude a areal photo was taken) or some important environmental parameter (eg the waterlevel a a borehole)."
+      }
+    },
+    {
+      "EA-Guid": "{2D4C0DE4-FF15-4161-9633-483F87FFF913}",
+      "name": "lineage",
+      "label": {
+        "en": "lineage"
+      },
+      "definition": {
+        "en": "Reference to the Lineage of the SamplingFeature."
+      },
+      "usage": {
+        "en": "Describes the provenance and history of a SamplingFeature. Eg the handling of a Specimen or how a SpatialSamplingFeature was surveyed."
+      }
+    },
+    {
+      "EA-Guid": "{52F944DA-7A2C-4bbe-A1B8-0625A784EBA1}",
+      "name": "time",
+      "label": {
+        "en": "time"
+      },
+      "definition": {
+        "en": "The time that the PreparationStep was applied to the Specimen."
+      },
+      "usage": {
+        "en": "Supports ordering of preparation steps."
+      }
+    },
+    {
+      "EA-Guid": "{D489C812-4AFD-4fb2-9786-E84316699DE8}",
+      "name": "processOperator",
+      "label": {
+        "en": "processOperator"
+      },
+      "definition": {
+        "en": "Operator of the process involved in the PreparationStep."
+      }
+    },
+    {
+      "EA-Guid": "{66B41F48-0A03-4d1b-9D9C-C2EC924E30EA}",
+      "name": "role",
+      "label": {
+        "en": "role"
+      },
+      "definition": {
+        "en": "Nature of the relationship between the two Observations."
+      },
+      "usage": {
+        "en": "Role that Observation A fulfills relative to Observation B, eg B processes the result of A or B is dependant on the result of A."
+      }
+    },
+    {
+      "EA-Guid": "{64F22006-DFD5-42ac-899D-B3F92864E622}",
+      "name": "relatedObservation",
+      "label": {
+        "en": "relatedObservation"
+      },
+      "definition": {
+        "en": "Observations of which the results are related in one way or another"
+      },
+      "usage": {
+        "en": "It is about a relation that is important to understand the result of an individual Observation, eg a biotic relation (animal A is a predator and is present because animal B occurs as prey). Such relationships require to be explicitly described (as opposed to relationships as the coincidence of results of Observations in space and time, which are allowed to remain implicit). Also useful for relationships where the output of Observation A is the input for Observation B."
+      }
+    },
+    {
+      "EA-Guid": "{FF9E4AFD-A5C0-4c57-9465-E1D0DAA2DCEF}",
+      "name": "result",
+      "label": {
+        "en": "result"
+      },
+      "definition": {
+        "en": "The value of the observedProperty as a result of the Observation."
+      },
+      "usage": {
+        "en": "The result can be of any type as any Property of any type of Object can be observed. CONSTRAINT: The type of the result of the Observation must match the observedProperty and the value obtained must be within the range of the observedProperty."
+      }
+    },
+    {
+      "EA-Guid": "{BADD7125-AF08-4b13-BE14-65115E254FF9}",
+      "name": "resultTime",
+      "label": {
+        "en": "resultTime"
+      },
+      "definition": {
+        "en": "Time when the result of the Observation was obtained."
+      },
+      "usage": {
+        "en": "Is equal to the phenomenonTime for some Observations, but can also be different, eg when performing an analysis on a Specimen that was taken earlier (and usually elsewhere) or with Sensor measurements that were processed later. Also useful for separating repeated Observations eg on the same Specimen. If the result is a prediction, then the phenomonTime is the moment at which it should apply."
+      }
+    },
+    {
+      "EA-Guid": "{4B1F5DDE-DB97-41cc-8E18-D398DA4CA4E6}",
+      "name": "resultQuality",
+      "label": {
+        "en": "resultQuality"
+      },
+      "definition": {
+        "en": "The extent to which the result of the Observation meets the requirements or expectatrions."
+      },
+      "usage": {
+        "en": "This concerns data that are specific to the Observation and complementary to the description of the procedure followed during the Observation (analysis method and aloke, see Process class), which in itself says something about the quality of the result."
+      }
+    },
+    {
+      "EA-Guid": "{ED04E378-FFA5-4c07-B164-E584C1424EAD}",
+      "name": "phenomenonTime",
+      "label": {
+        "en": "phenomenonTime"
+      },
+      "definition": {
+        "en": "The moment when the result of the Observation was applicable."
+      },
+      "usage": {
+        "en": "Typically the moment when observed or sampled. If the Observation is temporal and the moment at which something takes place is registered, then this is also the phenomenon time."
+      }
+    },
+    {
+      "EA-Guid": "{2200D0B7-76FC-408f-BE2C-CB712006900D}",
+      "name": "parameter",
+      "label": {
+        "en": "parameter"
+      },
+      "definition": {
+        "en": "Any data related to the Observation as an activity."
+      },
+      "usage": {
+        "en": "This is not about properties of the featureOfInterest (these are already described by the observedProperty) or parameters associated with the observation process (like an instrument setting). This is rather about, for example, environmental parameters that can influence the result and are important for correctly interpreting the result. An example is the depth in a well at which the water quality was measured or the ambient temperature when humidity was measured."
+      }
+    },
+    {
+      "EA-Guid": "{35AA6304-42F6-486d-9A25-84243CBAADB8}",
+      "name": "observedProperty",
+      "label": {
+        "en": "observedProperty"
+      },
+      "definition": {
+        "en": "Characteristic that one observes of the featureOfInterest."
+      },
+      "usage": {
+        "en": "Sometimes the way in which the values of the property are obtained is indirect, ie one measures for practical reasons another property that is a proxy for the property one really wants to observe. And if that proxy is not a property of the featureOfInterest, then the Observation takes place on a proxy of the Object. For example, to find out the vegetation in an area, we measure the color reflection of the earth's surface. CONSTRAINT: The observedProperty must be an actual attribute of the observedObject."
+      }
+    },
+    {
+      "EA-Guid": "{5F6C9DB1-B192-447e-93C8-18D66AE7E267}",
+      "name": "metadata",
+      "label": {
+        "en": "metadata"
+      },
+      "definition": {
+        "en": "Link to the Metadata of the Observation."
+      }
+    },
+    {
+      "EA-Guid": "{A4F4F7CA-855F-4bec-BCCF-5798AC1F08B9}",
+      "name": "featureOfInterest",
+      "label": {
+        "en": "featureOfInterest"
+      },
+      "definition": {
+        "en": "Object that is observed."
+      },
+      "usage": {
+        "en": "Can be the Feature itself or a proxy, viz a SamplingFeature. REMARK: Sometimes the actual FeatureOfInterest is only determined after observing the proxy."
       }
     }
   ]

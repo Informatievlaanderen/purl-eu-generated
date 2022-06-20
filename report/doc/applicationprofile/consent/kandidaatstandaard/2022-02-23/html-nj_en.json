@@ -6,13 +6,15 @@
     "baseURI": "https://purl.eu/ns/consent#",
     "filename": "OSLO-consent-ap",
     "navigation": {
-      "self": "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-02-23"
+      "self": "https://purl.eu//doc/applicationprofile/consent/kandidaatstandaard/2022-02-23"
     },
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    "documenttype": "ap",
+    "documentconfig": {},
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-consent/tree/422b7919310e0eff08897fb109a1fceebed77505",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-consent/blob/422b7919310e0eff08897fb109a1fceebed77505/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-consent/tree/23ec3b1f1c12103162aa6167fe49bb53ed705ccc",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-consent/blob/23ec3b1f1c12103162aa6167fe49bb53ed705ccc/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-consent/issues",
     "standaardregisterurl": "https://purl.eu",
     "usesVocs": [],
@@ -33,14 +35,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/consent#DataRetention.expiryDate",
-          "name": "expiry date",
-          "sort": "expiry date",
+          "uri": "https://purl.eu/ns/consent#DataRetention.startDate",
+          "name": "start date",
+          "sort": "start date",
           "label": {
-            "en": "expiry date"
+            "en": "start date"
           },
           "description": {
-            "en": "The date on which the data retention stops"
+            "en": "The moment in time when the data retention starts"
           },
           "usage": {},
           "domain": [
@@ -61,111 +63,6 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-          "name": "expiry time",
-          "sort": "expiry time",
-          "label": {
-            "en": "expiry time"
-          },
-          "description": {
-            "en": "The duration of the data retention, starting from the start date"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DataRetention",
-              "uri": "https://purl.eu/ns/consent#DataRetention"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PeriodOfTime",
-              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Period Of Time",
-              "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
-              "range_label": {
-                "en": "Period Of Time"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-          "name": "data retention policy document",
-          "sort": "data retention policy document",
-          "label": {
-            "en": "data retention policy document"
-          },
-          "description": {
-            "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DataRetention",
-              "uri": "https://purl.eu/ns/consent#DataRetention"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Document",
-              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Document",
-              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
-              "range_label": {
-                "en": "Document"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-          "name": "legal basis",
-          "sort": "legal basis",
-          "label": {
-            "en": "legal basis"
-          },
-          "description": {
-            "en": "The legal basis that substantiates the data retention"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DataRetention",
-              "uri": "https://purl.eu/ns/consent#DataRetention"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LegalBasis",
-              "range_uri": "https://dpvcg.github.io/dpv/#LegalBasis"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Legal Basis",
-              "range_puri": "https://dpvcg.github.io/dpv/#LegalBasis",
-              "range_label": {
-                "en": "Legal Basis"
               }
             }
           ],
@@ -208,14 +105,119 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/consent#DataRetention.startDate",
-          "name": "start date",
-          "sort": "start date",
+          "uri": "https://purl.eu/ns/consent#DataRetention.legalBasis",
+          "name": "legal basis",
+          "sort": "legal basis",
           "label": {
-            "en": "start date"
+            "en": "legal basis"
           },
           "description": {
-            "en": "The moment in time when the data retention starts"
+            "en": "The legal basis that substantiates the data retention"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DataRetention",
+              "uri": "https://purl.eu/ns/consent#DataRetention"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalBasis",
+              "range_uri": "https://dpvcg.github.io/dpv/#LegalBasis"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Legal Basis",
+              "range_puri": "https://dpvcg.github.io/dpv/#LegalBasis",
+              "range_label": {
+                "en": "Legal Basis"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
+          "name": "in human readable form",
+          "sort": "in human readable form",
+          "label": {
+            "en": "in human readable form"
+          },
+          "description": {
+            "en": "Indicates that the information w.r.t. the Data Retention is shown in a human readable form."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DataRetention",
+              "uri": "https://purl.eu/ns/consent#DataRetention"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Document",
+              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
+              "range_label": {
+                "en": "Document"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#DataRetention.expiryTime",
+          "name": "expiry time",
+          "sort": "expiry time",
+          "label": {
+            "en": "expiry time"
+          },
+          "description": {
+            "en": "The duration of the data retention, starting from the start date"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DataRetention",
+              "uri": "https://purl.eu/ns/consent#DataRetention"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PeriodOfTime",
+              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Period Of Time",
+              "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
+              "range_label": {
+                "en": "Period Of Time"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#DataRetention.expiryDate",
+          "name": "expiry date",
+          "sort": "expiry date",
+          "label": {
+            "en": "expiry date"
+          },
+          "description": {
+            "en": "The date on which the data retention stops"
           },
           "usage": {},
           "domain": [
@@ -239,7 +241,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -301,14 +303,14 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-          "name": "expiry cadance",
-          "sort": "expiry cadance",
+          "uri": "https://purl.eu/ns/consent#Expiry.expiryTime",
+          "name": "expiry time",
+          "sort": "expiry time",
           "label": {
-            "en": "expiry cadance"
+            "en": "expiry time"
           },
           "description": {
-            "en": "The time between moments in time when the data may be retreived for processing"
+            "en": "The duration during which the data may be processed"
           },
           "usage": {},
           "domain": [
@@ -329,41 +331,6 @@
               "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
               "range_label": {
                 "en": "Period Of Time"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/consent#Expiry.expiryDate",
-          "name": "expiry date",
-          "sort": "expiry date",
-          "label": {
-            "en": "expiry date"
-          },
-          "description": {
-            "en": "The moment in time up to which the data may be processed"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Expiry",
-              "uri": "https://purl.eu/ns/consent#Expiry"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
               }
             }
           ],
@@ -406,14 +373,49 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/consent#Expiry.expiryTime",
-          "name": "expiry time",
-          "sort": "expiry time",
+          "uri": "https://purl.eu/ns/consent#Expiry.expiryDate",
+          "name": "expiry date",
+          "sort": "expiry date",
           "label": {
-            "en": "expiry time"
+            "en": "expiry date"
           },
           "description": {
-            "en": "The duration during which the data may be processed"
+            "en": "The moment in time up to which the data may be processed"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Expiry",
+              "uri": "https://purl.eu/ns/consent#Expiry"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#Expiry.expiryCadance",
+          "name": "expiry cadance",
+          "sort": "expiry cadance",
+          "label": {
+            "en": "expiry cadance"
+          },
+          "description": {
+            "en": "The time between moments in time when the data may be retreived for processing"
           },
           "usage": {},
           "domain": [
@@ -569,41 +571,6 @@
       ],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/regorg#legalName",
-          "name": "legal name",
-          "sort": "legal name",
-          "label": {
-            "en": "legal name"
-          },
-          "description": {
-            "en": "The legal name of the organisation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "RegisteredOrganisation",
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LangString"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.w3.org/ns/regorg#registration",
           "name": "registration",
           "sort": "registration",
@@ -632,6 +599,41 @@
               "range_puri": "http://fixme.com#Identifier",
               "range_label": {
                 "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/regorg#legalName",
+          "name": "legal name",
+          "sort": "legal name",
+          "label": {
+            "en": "legal name"
+          },
+          "description": {
+            "en": "The legal name of the organisation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RegisteredOrganisation",
+              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
               }
             }
           ],
@@ -683,41 +685,6 @@
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#registratie",
-          "name": "registration",
-          "sort": "registration",
-          "label": {
-            "en": "registration"
-          },
-          "description": {
-            "en": "Identification code of the person in the register."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "RegisteredPerson",
-              "uri": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identifier",
-              "range_uri": "http://fixme.com#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identifier",
-              "range_puri": "http://fixme.com#Identifier",
-              "range_label": {
-                "en": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://data.vlaanderen.be/ns/persoon#volledigeNaam",
           "name": "full name",
           "sort": "full name",
@@ -751,6 +718,41 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#registratie",
+          "name": "registration",
+          "sort": "registration",
+          "label": {
+            "en": "registration"
+          },
+          "description": {
+            "en": "Identification code of the person in the register."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RegisteredPerson",
+              "uri": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://fixme.com#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://fixme.com#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -777,41 +779,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataProcessor.identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "Unique method to prove the identify of the Data Processor."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DataProcessor",
-              "uri": "https://dpvcg.github.io/dpv/#DataProcessor"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identifier",
-              "range_uri": "http://fixme.com#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identifier",
-              "range_puri": "http://fixme.com#Identifier",
-              "range_label": {
-                "en": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/consent#DataProcessor.legalName",
           "name": "legal name",
@@ -846,6 +813,41 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#DataProcessor.identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "Unique method to prove the identify of the Data Processor."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DataProcessor",
+              "uri": "https://dpvcg.github.io/dpv/#DataProcessor"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://fixme.com#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://fixme.com#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -869,9 +871,7 @@
           "label": {
             "en": "type"
           },
-          "description": {
-            "en": "The type of legal basis."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -905,7 +905,7 @@
             "en": "oSLO:is legal basis for"
           },
           "description": {
-            "en": "The legal basis under which the data handling takes place"
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
@@ -948,76 +948,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
-          "name": "data handling document",
-          "sort": "data handling document",
-          "label": {
-            "en": "data handling document"
-          },
-          "description": {
-            "en": "An human readable document explaining how the personal data will be handled."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PersonalDataHandling",
-              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Document",
-              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Document",
-              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
-              "range_label": {
-                "en": "Document"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-          "name": "live data",
-          "sort": "live data",
-          "label": {
-            "en": "live data"
-          },
-          "description": {
-            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PersonalDataHandling",
-              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LiveData",
-              "range_uri": "https://purl.eu/ns/consent#LiveData"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#LiveData",
-              "range_puri": "https://purl.eu/ns/consent#LiveData",
-              "range_label": {
-                "en": "LiveData"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
           "name": "personal data type",
           "sort": "personal data type",
@@ -1053,14 +983,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
-          "name": "personal data category",
-          "sort": "personal data category",
+          "uri": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
+          "name": "live data",
+          "sort": "live data",
           "label": {
-            "en": "personal data category"
+            "en": "live data"
           },
           "description": {
-            "en": "A category of personal data"
+            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
           },
           "usage": {},
           "domain": [
@@ -1071,16 +1001,154 @@
           ],
           "range": [
             {
-              "range_label": "PersonalDataCategory",
-              "range_uri": "https://dpvcg.github.io/dpv/#PersonalDataCategory"
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Personal Data Category",
-              "range_puri": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
               "range_label": {
-                "en": "Personal Data Category"
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
+          "name": "in human readable form",
+          "sort": "in human readable form",
+          "label": {
+            "en": "in human readable form"
+          },
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PersonalDataHandling",
+              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Document",
+              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
+              "range_label": {
+                "en": "Document"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://dpvcg.github.io/dpv/#hasLegalBasis",
+          "name": "has legal basis",
+          "sort": "has legal basis",
+          "label": {
+            "en": "has legal basis"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PersonalDataHandling",
+              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalBasis",
+              "range_uri": "https://dpvcg.github.io/dpv/#LegalBasis"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Legal Basis",
+              "range_puri": "https://dpvcg.github.io/dpv/#LegalBasis",
+              "range_label": {
+                "en": "Legal Basis"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
+          "name": "measure",
+          "sort": "measure",
+          "label": {
+            "en": "measure"
+          },
+          "description": {
+            "en": "Technical measures required/followed when processing data of the declared category"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PersonalDataHandling",
+              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TechnicalOrganisationalMeasure",
+              "range_uri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Technical Organisational Measure",
+              "range_puri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
+              "range_label": {
+                "en": "Technical Organisational Measure"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://dpvcg.github.io/dpv/#Risk",
+          "name": "risk",
+          "sort": "risk",
+          "label": {
+            "en": "risk"
+          },
+          "description": {
+            "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PersonalDataHandling",
+              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Risk",
+              "range_uri": "https://dpvcg.github.io/dpv/#Risk"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Risk",
+              "range_puri": "https://dpvcg.github.io/dpv/#Risk",
+              "range_label": {
+                "en": "Risk"
               }
             }
           ],
@@ -1123,14 +1191,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://dpvcg.github.io/dpv/#Risk",
-          "name": "risk",
-          "sort": "risk",
+          "uri": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
+          "name": "personal data category",
+          "sort": "personal data category",
           "label": {
-            "en": "risk"
+            "en": "personal data category"
           },
           "description": {
-            "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
+            "en": "A category of personal data"
           },
           "usage": {},
           "domain": [
@@ -1141,90 +1209,20 @@
           ],
           "range": [
             {
-              "range_label": "Risk",
-              "range_uri": "https://dpvcg.github.io/dpv/#Risk"
+              "range_label": "PersonalDataCategory",
+              "range_uri": "https://dpvcg.github.io/dpv/#PersonalDataCategory"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Risk",
-              "range_puri": "https://dpvcg.github.io/dpv/#Risk",
+              "range_uri": "#Personal Data Category",
+              "range_puri": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
               "range_label": {
-                "en": "Risk"
+                "en": "Personal Data Category"
               }
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
-          "name": "measure",
-          "sort": "measure",
-          "label": {
-            "en": "measure"
-          },
-          "description": {
-            "en": "Technical measures required/followed when processing data of the declared category"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PersonalDataHandling",
-              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TechnicalOrganisationalMeasure",
-              "range_uri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Technical Organisational Measure",
-              "range_puri": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
-              "range_label": {
-                "en": "Technical Organisational Measure"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://dpvcg.github.io/dpv/#hasLegalBasis",
-          "name": "has legal basis",
-          "sort": "has legal basis",
-          "label": {
-            "en": "has legal basis"
-          },
-          "description": {
-            "en": "Indicates that the handling of personal data has a legal basis."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PersonalDataHandling",
-              "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LegalBasis",
-              "range_uri": "https://dpvcg.github.io/dpv/#LegalBasis"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Legal Basis",
-              "range_puri": "https://dpvcg.github.io/dpv/#LegalBasis",
-              "range_label": {
-                "en": "Legal Basis"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1293,41 +1291,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
-          "name": "consent document",
-          "sort": "consent document",
-          "label": {
-            "en": "consent document"
-          },
-          "description": {
-            "en": "An human readable document is provided of the consent."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Document",
-              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Document",
-              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
-              "range_label": {
-                "en": "Document"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/consent#Consent.notice",
           "name": "notice",
           "sort": "notice",
@@ -1363,15 +1326,13 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/consent#Consent.invalidates",
-          "name": "invalidates",
-          "sort": "invalidates",
+          "uri": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
+          "name": "in human readable form",
+          "sort": "in human readable form",
           "label": {
-            "en": "invalidates"
+            "en": "in human readable form"
           },
-          "description": {
-            "en": "A newer version of a consent invalidates a previous version of the consent"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1381,16 +1342,16 @@
           ],
           "range": [
             {
-              "range_label": "Consent",
-              "range_uri": "https://w3id.org/GConsent#Consent"
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/spec/#term_Document"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Consent",
-              "range_puri": "https://w3id.org/GConsent#Consent",
+              "range_uri": "#Document",
+              "range_puri": "http://xmlns.com/foaf/spec/#term_Document",
               "range_label": {
-                "en": "Consent"
+                "en": "Document"
               }
             }
           ],
@@ -1398,14 +1359,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/consent#Consent.isInvalidatedBy",
-          "name": "is invalidated by",
-          "sort": "is invalidated by",
+          "uri": "https://w3id.org/GConsent#isProvidedToController",
+          "name": "is provided to controller",
+          "sort": "is provided to controller",
           "label": {
-            "en": "is invalidated by"
+            "en": "is provided to controller"
           },
           "description": {
-            "en": "A previous version of the consent is invalidated by a newer version of the consent"
+            "en": "The consent that is provided to the data controller"
           },
           "usage": {},
           "domain": [
@@ -1416,53 +1377,16 @@
           ],
           "range": [
             {
-              "range_label": "Consent",
-              "range_uri": "https://w3id.org/GConsent#Consent"
+              "range_label": "DataController",
+              "range_uri": "https://w3id.org/GConsent#DataController"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Consent",
-              "range_puri": "https://w3id.org/GConsent#Consent",
+              "range_uri": "#Data Controller",
+              "range_puri": "https://w3id.org/GConsent#DataController",
               "range_label": {
-                "en": "Consent"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/GConsent#atLocation",
-          "name": "location",
-          "sort": "location",
-          "label": {
-            "en": "location"
-          },
-          "description": {
-            "en": "The location where this specific version of the consent was created"
-          },
-          "usage": {
-            "en": "Similar use as for CreationTime"
-          },
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://www.w3.org/ns/prov#Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Location",
-              "range_puri": "http://www.w3.org/ns/prov#Location",
-              "range_label": {
-                "en": "Location"
+                "en": "Data Controller"
               }
             }
           ],
@@ -1470,51 +1394,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#atTime",
-          "name": "creation time",
-          "sort": "creation time",
+          "uri": "https://w3id.org/GConsent#isProvidedTo",
+          "name": "is provided to",
+          "sort": "is provided to",
           "label": {
-            "en": "creation time"
+            "en": "is provided to"
           },
           "description": {
-            "en": "The moment in time in which this specific version of the consent was created"
-          },
-          "usage": {
-            "en": "This moment changes whenever the status of the consent is being updated. For example, when a data controller requests a consent a consent will be made with the creation time being equal with the moment of the request. When later on the data subject gives consent a new consent will be made with a new status (e.g. explicitlyGiven) and the creation time of this consent will be equal to the moment in which the data subject has granted consent."
-          },
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/GConsent#forPersonalData",
-          "name": "for personal data",
-          "sort": "for personal data",
-          "label": {
-            "en": "for personal data"
-          },
-          "description": {
-            "en": "The personal data for which the consent was given"
+            "en": "Indicates the Person or Data Controller the consent was provided to."
           },
           "usage": {},
           "domain": [
@@ -1525,68 +1412,31 @@
           ],
           "range": [
             {
-              "range_label": "PersonalData",
-              "range_uri": "https://w3id.org/GConsent#PersonalData"
+              "range_label": "Delegation",
+              "range_uri": "https://w3id.org/GConsent#Delegation"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Personal Data",
-              "range_puri": "https://w3id.org/GConsent#PersonalData",
+              "range_uri": "#Delegation",
+              "range_puri": "https://w3id.org/GConsent#Delegation",
               "range_label": {
-                "en": "Personal Data"
+                "en": "Delegation"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#hasStatus",
-          "name": "status",
-          "sort": "status",
+          "uri": "https://w3id.org/GConsent#isProvidedByDelegation",
+          "name": "is provided by delegation",
+          "sort": "is provided by delegation",
           "label": {
-            "en": "status"
+            "en": "is provided by delegation"
           },
           "description": {
-            "en": "Represents the status of consent for the data subject."
-          },
-          "usage": {
-            "en": "This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
-          },
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ConsentStatus",
-              "range_uri": "https://purl.eu/ns/consent#ConsentStatus"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Consent Status",
-              "range_puri": "https://purl.eu/ns/consent#ConsentStatus",
-              "range_label": {
-                "en": "Consent Status"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/GConsent#inMedium",
-          "name": "medium",
-          "sort": "medium",
-          "label": {
-            "en": "medium"
-          },
-          "description": {
-            "en": "The way this specific version of the consent was created"
+            "en": "Specifies the delegation that provided this consent."
           },
           "usage": {},
           "domain": [
@@ -1597,16 +1447,16 @@
           ],
           "range": [
             {
-              "range_label": "MediumType",
-              "range_uri": "https://w3id.org/GConsent#Medium"
+              "range_label": "Delegation",
+              "range_uri": "https://w3id.org/GConsent#Delegation"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Medium Type",
-              "range_puri": "https://w3id.org/GConsent#Medium",
+              "range_uri": "#Delegation",
+              "range_puri": "https://w3id.org/GConsent#Delegation",
               "range_label": {
-                "en": "Medium Type"
+                "en": "Delegation"
               }
             }
           ],
@@ -1614,14 +1464,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#isConsentForDataSubject",
-          "name": "is consent for data subject",
-          "sort": "is consent for data subject",
+          "uri": "https://w3id.org/GConsent#isProvidedByDataSubject",
+          "name": "is provided by data subject",
+          "sort": "is provided by data subject",
           "label": {
-            "en": "is consent for data subject"
+            "en": "is provided by data subject"
           },
           "description": {
-            "en": "Links a consent instance with the data subject it is associated with."
+            "en": "TODO"
           },
           "usage": {},
           "domain": [
@@ -1680,18 +1530,18 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#isProvidedByDataSubject",
-          "name": "is provided by data subject",
-          "sort": "is provided by data subject",
+          "uri": "https://w3id.org/GConsent#isConsentForDataSubject",
+          "name": "is consent for data subject",
+          "sort": "is consent for data subject",
           "label": {
-            "en": "is provided by data subject"
+            "en": "is consent for data subject"
           },
           "description": {
-            "en": "Indicates that the consent is given by the data subject."
+            "en": "Links a consent instance with the data subject it is associated with."
           },
           "usage": {},
           "domain": [
@@ -1719,14 +1569,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#isProvidedByDelegation",
-          "name": "is provided by delegation",
-          "sort": "is provided by delegation",
+          "uri": "https://w3id.org/GConsent#inMedium",
+          "name": "medium",
+          "sort": "medium",
           "label": {
-            "en": "is provided by delegation"
+            "en": "medium"
           },
           "description": {
-            "en": "Specifies the delegation that provided this consent."
+            "en": "The way this specific version of the consent was created"
           },
           "usage": {},
           "domain": [
@@ -1737,16 +1587,16 @@
           ],
           "range": [
             {
-              "range_label": "Delegation",
-              "range_uri": "https://w3id.org/GConsent#Delegation"
+              "range_label": "MediumType",
+              "range_uri": "https://w3id.org/GConsent#Medium"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Delegation",
-              "range_puri": "https://w3id.org/GConsent#Delegation",
+              "range_uri": "#Medium Type",
+              "range_puri": "https://w3id.org/GConsent#Medium",
               "range_label": {
-                "en": "Delegation"
+                "en": "Medium Type"
               }
             }
           ],
@@ -1754,107 +1604,166 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#isProvidedTo",
-          "name": "is provided to",
-          "sort": "is provided to",
+          "uri": "https://w3id.org/GConsent#hasStatus",
+          "name": "status",
+          "sort": "status",
           "label": {
-            "en": "is provided to"
+            "en": "status"
           },
           "description": {
-            "en": "Indicates the Person or Data Controller the consent was provided to."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Delegation",
-              "range_uri": "https://w3id.org/GConsent#Delegation"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Delegation",
-              "range_puri": "https://w3id.org/GConsent#Delegation",
-              "range_label": {
-                "en": "Delegation"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/GConsent#isProvidedToController",
-          "name": "is provided to controller",
-          "sort": "is provided to controller",
-          "label": {
-            "en": "is provided to controller"
-          },
-          "description": {
-            "en": "The consent that is provided to the data controller"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Consent",
-              "uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DataController",
-              "range_uri": "https://w3id.org/GConsent#DataController"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Data Controller",
-              "range_puri": "https://w3id.org/GConsent#DataController",
-              "range_label": {
-                "en": "Data Controller"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://w3id.org/GConsent#DataController",
-      "name": "Data Controller",
-      "label": {
-        "en": "Data Controller"
-      },
-      "sort": "Data Controller",
-      "description": {
-        "en": "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataController.canWithdrawConsent",
-          "name": "can withdraw consent",
-          "sort": "can withdraw consent",
-          "label": {
-            "en": "can withdraw consent"
-          },
-          "description": {
-            "en": "Refering to the possibility for a data controller to withdraw the consent"
+            "en": "Represents the status of consent for the data subject."
           },
           "usage": {
-            "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
+            "en": "This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
           },
           "domain": [
             {
-              "EA-Name": "DataController",
-              "uri": "https://w3id.org/GConsent#DataController"
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ConsentStatus",
+              "range_uri": "https://purl.eu/ns/consent#ConsentStatus"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Consent Status",
+              "range_puri": "https://purl.eu/ns/consent#ConsentStatus",
+              "range_label": {
+                "en": "Consent Status"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://w3id.org/GConsent#forPersonalData",
+          "name": "for personal data",
+          "sort": "for personal data",
+          "label": {
+            "en": "for personal data"
+          },
+          "description": {
+            "en": "The personal data for which the consent was given"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PersonalData",
+              "range_uri": "https://w3id.org/GConsent#PersonalData"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Personal Data",
+              "range_puri": "https://w3id.org/GConsent#PersonalData",
+              "range_label": {
+                "en": "Personal Data"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://w3id.org/GConsent#atTime",
+          "name": "creation time",
+          "sort": "creation time",
+          "label": {
+            "en": "creation time"
+          },
+          "description": {
+            "en": "The moment in time in which this specific version of the consent was created"
+          },
+          "usage": {
+            "en": "This moment changes whenever the status of the consent is being updated. For example, when a data controller requests a consent a consent will be made with the creation time being equal with the moment of the request. When later on the data subject gives consent a new consent will be made with a new status (e.g. explicitlyGiven) and the creation time of this consent will be equal to the moment in which the data subject has granted consent."
+          },
+          "domain": [
+            {
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://w3id.org/GConsent#atLocation",
+          "name": "location",
+          "sort": "location",
+          "label": {
+            "en": "location"
+          },
+          "description": {
+            "en": "The location where this specific version of the consent was created"
+          },
+          "usage": {
+            "en": "Similar use as for CreationTime"
+          },
+          "domain": [
+            {
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://www.w3.org/ns/prov#Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://www.w3.org/ns/prov#Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#Consent.isInvalidatedBy",
+          "name": "is invalidated by",
+          "sort": "is invalidated by",
+          "label": {
+            "en": "is invalidated by"
+          },
+          "description": {
+            "en": "A previous version of the consent is invalidated by a newer version of the consent"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
             }
           ],
           "range": [
@@ -1872,9 +1781,59 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "",
           "codelist_uri": ""
         },
+        {
+          "uri": "https://purl.eu/ns/consent#Consent.invalidates",
+          "name": "invalidates",
+          "sort": "invalidates",
+          "label": {
+            "en": "invalidates"
+          },
+          "description": {
+            "en": "A newer version of a consent invalidates a previous version of the consent"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Consent",
+              "uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Consent",
+              "range_uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Consent",
+              "range_puri": "https://w3id.org/GConsent#Consent",
+              "range_label": {
+                "en": "Consent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://w3id.org/GConsent#DataController",
+      "name": "Data Controller",
+      "label": {
+        "en": "Data Controller"
+      },
+      "sort": "Data Controller",
+      "description": {
+        "en": "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
         {
           "uri": "https://purl.eu/ns/consent#DataController.wasProvidedConsent",
           "name": "was provided consent",
@@ -1909,6 +1868,43 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/consent#DataController.canWithdrawConsent",
+          "name": "can withdraw consent",
+          "sort": "can withdraw consent",
+          "label": {
+            "en": "can withdraw consent"
+          },
+          "description": {
+            "en": "Refering to the possibility for a data controller to withdraw the consent"
+          },
+          "usage": {
+            "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
+          },
+          "domain": [
+            {
+              "EA-Name": "DataController",
+              "uri": "https://w3id.org/GConsent#DataController"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Consent",
+              "range_uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Consent",
+              "range_puri": "https://w3id.org/GConsent#Consent",
+              "range_label": {
+                "en": "Consent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1926,14 +1922,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/consent#DataSubject.canCancelConsent",
-          "name": "can cancel consent",
-          "sort": "can cancel consent",
+          "uri": "https://w3id.org/GConsent#providedConsent",
+          "name": "provided consent",
+          "sort": "provided consent",
           "label": {
-            "en": "can cancel consent"
+            "en": "provided consent"
           },
           "description": {
-            "en": "Refering to the possibility for a data subject to cancel a previously given consent"
+            "en": "The data subject is the entity which provided the consent"
           },
           "usage": {},
           "domain": [
@@ -1996,14 +1992,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/GConsent#providedConsent",
-          "name": "provided consent",
-          "sort": "provided consent",
+          "uri": "https://purl.eu/ns/consent#DataSubject.canCancelConsent",
+          "name": "can cancel consent",
+          "sort": "can cancel consent",
           "label": {
-            "en": "provided consent"
+            "en": "can cancel consent"
           },
           "description": {
-            "en": "The data subject is the entity which provided the consent"
+            "en": "Refering to the possibility for a data subject to cancel a previously given consent"
           },
           "usage": {},
           "domain": [
@@ -2052,9 +2048,7 @@
           "label": {
             "en": "has consent given by delegate"
           },
-          "description": {
-            "en": "The delegation has been provided by a certain delegate."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2078,41 +2072,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "TODO",
-          "name": "provided consent",
-          "sort": "provided consent",
-          "label": {
-            "en": "provided consent"
-          },
-          "description": {
-            "en": "The entity which provided the consent is the one to whom the consent has been delegated."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Delegation",
-              "uri": "https://w3id.org/GConsent#Delegation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Consent",
-              "range_uri": "https://w3id.org/GConsent#Consent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Consent",
-              "range_puri": "https://w3id.org/GConsent#Consent",
-              "range_label": {
-                "en": "Consent"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -2148,6 +2107,41 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "TODO",
+          "name": "provided consent",
+          "sort": "provided consent",
+          "label": {
+            "en": "provided consent"
+          },
+          "description": {
+            "en": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Delegation",
+              "uri": "https://w3id.org/GConsent#Delegation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Consent",
+              "range_uri": "https://w3id.org/GConsent#Consent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Consent",
+              "range_puri": "https://w3id.org/GConsent#Consent",
+              "range_label": {
+                "en": "Consent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -2211,14 +2205,12 @@
       "properties": [
         {
           "uri": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
-          "name": "personal data document",
-          "sort": "personal data document",
+          "name": "in human readable form",
+          "sort": "in human readable form",
           "label": {
-            "en": "personal data document"
+            "en": "in human readable form"
           },
-          "description": {
-            "en": "An human readable document is provided explaining what personal data which is part of the consent."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2301,9 +2293,7 @@
           "label": {
             "en": "type"
           },
-          "description": {
-            "en": "The type of processing."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2388,9 +2378,7 @@
           "label": {
             "en": "type"
           },
-          "description": {
-            "en": "The type of purpose."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2435,205 +2423,10 @@
   ],
   "properties": [
     {
-      "uri": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
-      "name": {
-        "en": "consent document",
-        "undefined": "consent document"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#DataProcessor.identifier",
-      "name": {
-        "en": "identifier",
-        "undefined": "identifier"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-      "name": {
-        "en": "expiry time",
-        "undefined": "expiry time"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-      "name": {
-        "en": "data retention policy document",
-        "undefined": "data retention policy document"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-      "name": {
-        "en": "legal basis",
-        "undefined": "legal basis"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
-      "name": {
-        "en": "has consent given by delegate",
-        "undefined": "has consent given by delegate"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-      "name": {
-        "en": "expiry cadance",
-        "undefined": "expiry cadance"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#Expiry.expiryTime",
-      "name": {
-        "en": "expiry time",
-        "undefined": "expiry time"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#Filter.period",
-      "name": {
-        "en": "period",
-        "undefined": "period"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#LegalBasis.type",
+      "uri": "https://purl.eu/ns/consent#Purpose.type",
       "name": {
         "en": "type",
         "undefined": "type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
-      "name": {
-        "en": "personal data document",
-        "undefined": "personal data document"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
-      "name": {
-        "en": "data handling document",
-        "undefined": "data handling document"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-      "name": {
-        "en": "live data",
-        "undefined": "live data"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
-      "name": {
-        "en": "personal data type",
-        "undefined": "personal data type"
       },
       "description": {},
       "domain": [
@@ -2660,10 +2453,190 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/consent#Purpose.type",
+      "uri": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
+      "name": {
+        "en": "personal data type",
+        "undefined": "personal data type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
+      "name": {
+        "en": "in human readable form",
+        "undefined": "in human readable form"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
+      "name": {
+        "en": "in human readable form",
+        "undefined": "in human readable form"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#LegalBasis.type",
       "name": {
         "en": "type",
         "undefined": "type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#Filter.period",
+      "name": {
+        "en": "period",
+        "undefined": "period"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#Expiry.expiryTime",
+      "name": {
+        "en": "expiry time",
+        "undefined": "expiry time"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#Expiry.expiryCadance",
+      "name": {
+        "en": "expiry cadance",
+        "undefined": "expiry cadance"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
+      "name": {
+        "en": "has consent given by delegate",
+        "undefined": "has consent given by delegate"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#DataRetention.legalBasis",
+      "name": {
+        "en": "legal basis",
+        "undefined": "legal basis"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
+      "name": {
+        "en": "in human readable form",
+        "undefined": "in human readable form"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#DataRetention.expiryTime",
+      "name": {
+        "en": "expiry time",
+        "undefined": "expiry time"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#DataProcessor.identifier",
+      "name": {
+        "en": "identifier",
+        "undefined": "identifier"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
+      "name": {
+        "en": "in human readable form",
+        "undefined": "in human readable form"
       },
       "description": {},
       "domain": [
@@ -2690,41 +2663,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/endTime",
-          "name": "end",
-          "sort": "end",
-          "label": {
-            "en": "end"
-          },
-          "description": {
-            "en": "Time instant at which the Period was terminated."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PeriodOfTime",
-              "uri": "http://data.europa.eu/m8g/PeriodOfTime"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://data.europa.eu/m8g/startTime",
           "name": "start",
@@ -2759,6 +2697,41 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/endTime",
+          "name": "end",
+          "sort": "end",
+          "label": {
+            "en": "end"
+          },
+          "description": {
+            "en": "Time instant at which the Period was terminated."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PeriodOfTime",
+              "uri": "http://data.europa.eu/m8g/PeriodOfTime"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -2778,14 +2751,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "attributed by",
-          "sort": "attributed by",
+          "uri": "http://www.w3.org/ns/adms#schemaAgency",
+          "name": "attributed by as string",
+          "sort": "attributed by as string",
           "label": {
-            "en": "attributed by"
+            "en": "attributed by as string"
           },
           "description": {
-            "en": "Link to the Agent that issued the identifier."
+            "en": "Name of the Agent that issued the identifier."
           },
           "usage": {},
           "domain": [
@@ -2796,51 +2769,16 @@
           ],
           "range": [
             {
-              "range_label": "Agent",
-              "range_uri": "https://purl.eu/dc/terms/Agent"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Agent",
-              "range_puri": "https://purl.eu/dc/terms/Agent",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/issued",
-          "name": "attributed at",
-          "sort": "attributed at",
-          "label": {
-            "en": "attributed at"
-          },
-          "description": {
-            "en": "The date on which the identifier was issued."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
+                "en": "String"
               }
             }
           ],
@@ -2885,14 +2823,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/adms#schemaAgency",
-          "name": "attributed by as string",
-          "sort": "attributed by as string",
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "attributed at",
+          "sort": "attributed at",
           "label": {
-            "en": "attributed by as string"
+            "en": "attributed at"
           },
           "description": {
-            "en": "Name of the Agent that issued the identifier."
+            "en": "The date on which the identifier was issued."
           },
           "usage": {},
           "domain": [
@@ -2903,16 +2841,51 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "String"
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "attributed by",
+          "sort": "attributed by",
+          "label": {
+            "en": "attributed by"
+          },
+          "description": {
+            "en": "Link to the Agent that issued the identifier."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "https://purl.eu/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "https://purl.eu/dc/terms/Agent",
+              "range_label": {
+                "en": "Agent"
               }
             }
           ],

@@ -5,9 +5,11 @@
     "issued": "2020-01-31",
     "filename": "OSLO-PassengerTransportHubs-VOC",
     "navigation": {
-      "self": "https://purl.eu/doc/vocabulary/mobility/passenger-transport-hubs/working-draft/2022-05-01"
+      "self": "https://purl.eu//doc/vocabulary/mobility/passenger-transport-hubs/working-draft/2022-05-01"
     },
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    "documenttype": "voc",
+    "documentconfig": {},
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
     "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/1bd571e54d45147cc50dbc64e695d8a2ca175ec8",
@@ -177,18 +179,18 @@
   ],
   "properties": [
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification",
-      "name": "classification",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#vehicleType",
+      "name": "vehicletype",
       "label": {
-        "en": "classification"
+        "en": "vehicletype"
       },
-      "sort": "classification",
+      "sort": "vehicletype",
       "description": {
-        "en": "The classification of the Hoppinpoint"
+        "en": "Displays the vehicle types to which the capacity is linked."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
+        "http://schema.mobivoc.org/#Capacity"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -196,36 +198,17 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#status",
       "name": "status",
       "label": {
         "en": "status"
       },
       "sort": "status",
       "description": {
-        "en": "The status of the Hoppinpoint"
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel",
-      "name": "meansOfTransport",
-      "label": {
-        "en": "meansOfTransport"
-      },
-      "sort": "meansOfTransport",
-      "description": {
-        "en": "The type of means of transport of the Resource."
+        "en": "State of a Resource."
       },
       "usage": {
-        "en": "Especially relevant if the resource is a vehicle."
+        "en": "E.g. reserved, inactive, available. Determines whether a resource can be used."
       },
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
@@ -236,99 +219,97 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#TransportHub.classification",
-      "name": "classification",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#specification",
+      "name": "specification",
       "label": {
-        "en": "classification"
+        "en": "specification"
       },
-      "sort": "classification",
+      "sort": "specification",
       "description": {
-        "en": "The classification of the Passenger Transport Hub."
+        "en": "The specification of the registered Passenger Transport Hub."
       },
       "usage": {},
       "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
+        "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://xmlns.com/foaf/0.1/Document"
       ],
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#TransportHub.status",
-      "name": "status",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#service",
+      "name": "service",
       "label": {
-        "en": "status"
+        "en": "service"
       },
-      "sort": "status",
+      "sort": "service",
       "description": {
-        "en": "The status of the Passenger Transport Hub."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#accessibility",
-      "name": "accessibility",
-      "label": {
-        "en": "accessibility"
-      },
-      "sort": "accessibility",
-      "description": {
-        "en": "The accessibility of the Passenger Transport Hub."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#actuator",
-      "name": "actuator",
-      "label": {
-        "en": "actuator"
-      },
-      "sort": "actuator",
-      "description": {
-        "en": "Engine of the means of transport."
+        "en": "The services connected to the Passenger Transport Hub."
       },
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
       ],
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#brand",
-      "name": "brand",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#roadAuthority",
+      "name": "roadAuthority",
       "label": {
-        "en": "brand"
+        "en": "roadAuthority"
       },
-      "sort": "brand",
+      "sort": "roadAuthority",
       "description": {
-        "en": "The brand of the Passenger Transport Hub."
+        "en": "The road authority of the Passenger Transport Hub."
       },
-      "usage": {
-        "en": "Example: Hoppinpoint, Mobipoint,..."
-      },
+      "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#TransportHub"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#registration",
+      "name": "registration",
+      "label": {
+        "en": "registration"
+      },
+      "sort": "registration",
+      "description": {
+        "en": "The registration of the registered Passenger Transport Hub."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub"
+      ],
+      "range": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#number",
+      "name": "number",
+      "label": {
+        "en": "number"
+      },
+      "sort": "number",
+      "description": {
+        "en": "The number of resources."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
       ],
       "parents": []
     },
@@ -373,112 +354,114 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#number",
-      "name": "number",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#brand",
+      "name": "brand",
       "label": {
-        "en": "number"
+        "en": "brand"
       },
-      "sort": "number",
+      "sort": "brand",
       "description": {
-        "en": "The number of resources."
+        "en": "The brand of the Passenger Transport Hub."
+      },
+      "usage": {
+        "en": "Example: Hoppinpoint, Mobipoint,..."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#actuator",
+      "name": "actuator",
+      "label": {
+        "en": "actuator"
+      },
+      "sort": "actuator",
+      "description": {
+        "en": "Engine of the means of transport."
       },
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
       ],
       "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#registration",
-      "name": "registration",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#accessibility",
+      "name": "accessibility",
       "label": {
-        "en": "registration"
+        "en": "accessibility"
       },
-      "sort": "registration",
+      "sort": "accessibility",
       "description": {
-        "en": "The registration of the registered Passenger Transport Hub."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub"
-      ],
-      "range": [
-        "http://www.w3.org/ns/adms#Identifier"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#roadAuthority",
-      "name": "roadAuthority",
-      "label": {
-        "en": "roadAuthority"
-      },
-      "sort": "roadAuthority",
-      "description": {
-        "en": "The road authority of the Passenger Transport Hub."
+        "en": "The accessibility of the Passenger Transport Hub."
       },
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#TransportHub"
       ],
       "range": [
-        "http://purl.org/dc/terms/Agent"
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
       ],
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#service",
-      "name": "service",
-      "label": {
-        "en": "service"
-      },
-      "sort": "service",
-      "description": {
-        "en": "The services connected to the Passenger Transport Hub."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#specification",
-      "name": "specification",
-      "label": {
-        "en": "specification"
-      },
-      "sort": "specification",
-      "description": {
-        "en": "The specification of the registered Passenger Transport Hub."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub"
-      ],
-      "range": [
-        "http://xmlns.com/foaf/0.1/Document"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#status",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#TransportHub.status",
       "name": "status",
       "label": {
         "en": "status"
       },
       "sort": "status",
       "description": {
-        "en": "State of a Resource."
+        "en": "The status of the Passenger Transport Hub."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#TransportHub.classification",
+      "name": "classification",
+      "label": {
+        "en": "classification"
+      },
+      "sort": "classification",
+      "description": {
+        "en": "The classification of the Passenger Transport Hub."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#TransportHub"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel",
+      "name": "meansOfTransport",
+      "label": {
+        "en": "meansOfTransport"
+      },
+      "sort": "meansOfTransport",
+      "description": {
+        "en": "The type of means of transport of the Resource."
       },
       "usage": {
-        "en": "E.g. reserved, inactive, available. Determines whether a resource can be used."
+        "en": "Especially relevant if the resource is a vehicle."
       },
       "domain": [
         "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
@@ -489,18 +472,37 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#vehicleType",
-      "name": "vehicletype",
+      "uri": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status",
+      "name": "status",
       "label": {
-        "en": "vehicletype"
+        "en": "status"
       },
-      "sort": "vehicletype",
+      "sort": "status",
       "description": {
-        "en": "Displays the vehicle types to which the capacity is linked."
+        "en": "The status of the Hoppinpoint"
       },
       "usage": {},
       "domain": [
-        "http://schema.mobivoc.org/#Capacity"
+        "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.classification",
+      "name": "classification",
+      "label": {
+        "en": "classification"
+      },
+      "sort": "classification",
+      "description": {
+        "en": "The classification of the Hoppinpoint"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -509,16 +511,6 @@
     }
   ],
   "contributors": [
-    {
-      "role": "A",
-      "first_name": "Tom",
-      "last_name": "Callens",
-      "affiliation": {
-        "name": "Digitaal Vlaanderen",
-        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
-      },
-      "email": "tom.callens@vlaanderen.be"
-    },
     {
       "role": "A",
       "first_name": "Joris",
@@ -530,64 +522,24 @@
       "email": "joris.cornu@mow.vlaanderen.be"
     },
     {
-      "role": "E",
-      "first_name": "Alexis",
-      "last_name": "Driesen",
+      "role": "A",
+      "first_name": "Tom",
+      "last_name": "Callens",
       "affiliation": {
         "name": "Digitaal Vlaanderen",
         "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
       },
-      "email": "alexis.driesen@vlaanderen.be"
+      "email": "tom.callens@vlaanderen.be"
     },
     {
       "role": "E",
-      "first_name": "Michael",
-      "last_name": "Mampaey",
+      "first_name": "Laurens",
+      "last_name": "Vercauteren",
       "affiliation": {
         "name": "Digitaal Vlaanderen",
         "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
       },
-      "email": "michael.mampaey@vlaanderen.be"
-    },
-    {
-      "role": "E",
-      "first_name": "Joeri",
-      "last_name": "Moreno",
-      "affiliation": {
-        "name": "Digitaal Vlaanderen",
-        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
-      },
-      "email": "joeri.moreno@vlaanderen.be"
-    },
-    {
-      "role": "E",
-      "first_name": "Arne",
-      "last_name": "Scheldeman",
-      "affiliation": {
-        "name": "Digitaal Vlaanderen",
-        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
-      },
-      "email": "arne.scheldeman@vlaanderen.be"
-    },
-    {
-      "role": "E",
-      "first_name": "Geert",
-      "last_name": "Thijs",
-      "affiliation": {
-        "name": "Digitaal Vlaanderen",
-        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
-      },
-      "email": "geert.thijs@vlaanderen.be"
-    },
-    {
-      "role": "E",
-      "first_name": "Bert",
-      "last_name": "Van Nuffelen",
-      "affiliation": {
-        "name": "Digitaal Vlaanderen",
-        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
-      },
-      "email": "bert.vannuffelen@vlaanderen.be"
+      "email": "laurens.vercauteren@vlaanderen.be"
     },
     {
       "role": "E",
@@ -601,123 +553,73 @@
     },
     {
       "role": "E",
-      "first_name": "Laurens",
-      "last_name": "Vercauteren",
+      "first_name": "Bert",
+      "last_name": "Van Nuffelen",
       "affiliation": {
         "name": "Digitaal Vlaanderen",
         "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
       },
-      "email": "laurens.vercauteren@vlaanderen.be"
+      "email": "bert.vannuffelen@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Geert",
+      "last_name": "Thijs",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen",
+        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
+      },
+      "email": "geert.thijs@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Arne",
+      "last_name": "Scheldeman",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen",
+        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
+      },
+      "email": "arne.scheldeman@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Joeri",
+      "last_name": "Moreno",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen",
+        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
+      },
+      "email": "joeri.moreno@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Michael",
+      "last_name": "Mampaey",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen",
+        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
+      },
+      "email": "michael.mampaey@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Alexis",
+      "last_name": "Driesen",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen",
+        "website": "https://www.vlaanderen.be/digitaal-vlaanderen"
+      },
+      "email": "alexis.driesen@vlaanderen.be"
     },
     {
       "role": "C",
-      "first_name": "Jiao",
-      "last_name": "Long",
+      "first_name": "Marcel",
+      "last_name": "Wijnker",
       "affiliation": {
-        "name": "IMEC-Ugent",
-        "website": "https://idlab.technology/"
+        "name": "Inter",
+        "website": "https://www.inter.vlaanderen/"
       },
-      "email": "Jiao.Long@UGent.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Bart",
-      "last_name": "Baeyens",
-      "affiliation": {
-        "name": "DMOW",
-        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken"
-      },
-      "email": "bart.baeyens@mow.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Yannick",
-      "last_name": "Fabbro",
-      "affiliation": {
-        "name": "Stad Hasselt",
-        "website": "https://www.hasselt.be/nl"
-      },
-      "email": "Yannick.Fabbro@hasselt.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Thomas",
-      "last_name": "Gerets",
-      "affiliation": {
-        "name": "Agentschap voor Maritieme Dienstverlening en Kust",
-        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust"
-      },
-      "email": "thomas.gerets@mow.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Filip",
-      "last_name": "Gosselé",
-      "affiliation": {
-        "name": "IMEC",
-        "website": "https://www.imec-int.com/en"
-      },
-      "email": "filip.gossele@imec.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Valeria",
-      "last_name": "Ignatenko",
-      "affiliation": {
-        "name": "Agentschap voor Maritieme Dienstverlening en Kust",
-        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust"
-      },
-      "email": "valeria.ignatenko@mow.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Jan",
-      "last_name": "Deprez",
-      "affiliation": {
-        "name": "IMEC",
-        "website": "https://www.imec-int.com/en"
-      },
-      "email": "jan.deprez@imec.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Els",
-      "last_name": "Maesen",
-      "affiliation": {
-        "name": "DMOW",
-        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken"
-      },
-      "email": "elsmaesen@uncapped.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Patrick",
-      "last_name": "Michels",
-      "affiliation": {
-        "name": "ATOS",
-        "website": "https://atos.net/en/"
-      },
-      "email": "patrick.michels@atos.net"
-    },
-    {
-      "role": "C",
-      "first_name": "Clara",
-      "last_name": "Pezuela",
-      "affiliation": {
-        "name": "ATOS",
-        "website": "https://atos.net/en/"
-      },
-      "email": "clara.pezuela@atos.net"
-    },
-    {
-      "role": "C",
-      "first_name": "Simon",
-      "last_name": "Rosseel",
-      "affiliation": {
-        "name": "MyCSN",
-        "website": "https://www.mycsn.be/over-ons/"
-      },
-      "email": "Simon.Rosseel@mycsn.be"
+      "email": "marcel.wijnker@inter.vlaanderen"
     },
     {
       "role": "C",
@@ -731,13 +633,113 @@
     },
     {
       "role": "C",
-      "first_name": "Marcel",
-      "last_name": "Wijnker",
+      "first_name": "Simon",
+      "last_name": "Rosseel",
       "affiliation": {
-        "name": "Inter",
-        "website": "https://www.inter.vlaanderen/"
+        "name": "MyCSN",
+        "website": "https://www.mycsn.be/over-ons/"
       },
-      "email": "marcel.wijnker@inter.vlaanderen"
+      "email": "Simon.Rosseel@mycsn.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Clara",
+      "last_name": "Pezuela",
+      "affiliation": {
+        "name": "ATOS",
+        "website": "https://atos.net/en/"
+      },
+      "email": "clara.pezuela@atos.net"
+    },
+    {
+      "role": "C",
+      "first_name": "Patrick",
+      "last_name": "Michels",
+      "affiliation": {
+        "name": "ATOS",
+        "website": "https://atos.net/en/"
+      },
+      "email": "patrick.michels@atos.net"
+    },
+    {
+      "role": "C",
+      "first_name": "Els",
+      "last_name": "Maesen",
+      "affiliation": {
+        "name": "DMOW",
+        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken"
+      },
+      "email": "elsmaesen@uncapped.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Jiao",
+      "last_name": "Long",
+      "affiliation": {
+        "name": "IMEC-Ugent",
+        "website": "https://idlab.technology/"
+      },
+      "email": "Jiao.Long@UGent.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Valeria",
+      "last_name": "Ignatenko",
+      "affiliation": {
+        "name": "Agentschap voor Maritieme Dienstverlening en Kust",
+        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust"
+      },
+      "email": "valeria.ignatenko@mow.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Filip",
+      "last_name": "Gosselé",
+      "affiliation": {
+        "name": "IMEC",
+        "website": "https://www.imec-int.com/en"
+      },
+      "email": "filip.gossele@imec.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Thomas",
+      "last_name": "Gerets",
+      "affiliation": {
+        "name": "Agentschap voor Maritieme Dienstverlening en Kust",
+        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/agentschap-voor-maritieme-dienstverlening-en-kust"
+      },
+      "email": "thomas.gerets@mow.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Yannick",
+      "last_name": "Fabbro",
+      "affiliation": {
+        "name": "Stad Hasselt",
+        "website": "https://www.hasselt.be/nl"
+      },
+      "email": "Yannick.Fabbro@hasselt.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Jan",
+      "last_name": "Deprez",
+      "affiliation": {
+        "name": "IMEC",
+        "website": "https://www.imec-int.com/en"
+      },
+      "email": "jan.deprez@imec.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Bart",
+      "last_name": "Baeyens",
+      "affiliation": {
+        "name": "DMOW",
+        "website": "https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-mobiliteit-en-openbare-werken/departement-mobiliteit-en-openbare-werken"
+      },
+      "email": "bart.baeyens@mow.vlaanderen.be"
     }
   ],
   "external_terms": [
@@ -980,32 +982,96 @@
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/title",
-      "name": "name",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer",
+      "name": "columnNumber",
       "label": {
-        "en": "name"
+        "en": "columnNumber"
       },
       "description": {
-        "en": "The name of the Passenger Transport Hub."
+        "en": "Unique identification number given to each column and included in the Passenger Transport Hub database."
       },
       "usage": {},
-      "sort": "name",
+      "sort": "columnNumber",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/title",
-      "name": "name",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam",
+      "name": "columnName",
       "label": {
-        "en": "name"
+        "en": "columnName"
       },
       "description": {
-        "en": "Name of the additional service."
+        "en": "Name of the hoppinpoint that refers to a clear and recognisable place name."
       },
       "usage": {},
-      "sort": "name",
+      "sort": "columnName",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart",
+      "name": "displayedTransportationModeOnMap",
+      "label": {
+        "en": "displayedTransportationModeOnMap"
+      },
+      "description": {
+        "en": "The different modes of transport available are shown on the corresponding map."
+      },
+      "usage": {},
+      "sort": "displayedTransportationModeOnMap",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/transporthubs#AdditionalService",
+      "name": "service",
+      "label": {
+        "en": "service"
+      },
+      "description": {
+        "en": "The additional services connected to the Passenger Transport Hub."
+      },
+      "usage": {},
+      "sort": "service",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/locn#geometry",
+      "name": "^geometry",
+      "label": {
+        "en": "^geometry"
+      },
+      "description": {
+        "en": "Geometry of the place or area."
+      },
+      "usage": {},
+      "sort": "^geometry",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+      "name": "^locationName",
+      "label": {
+        "en": "^locationName"
+      },
+      "description": {
+        "en": "Name of the town or area."
+      },
+      "usage": {},
+      "sort": "^locationName",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -1046,96 +1112,32 @@
       "show": true
     },
     {
-      "uri": "http://www.w3.org/2000/01/rdf-schema#label",
-      "name": "^locationName",
+      "uri": "http://purl.org/dc/terms/title",
+      "name": "name",
       "label": {
-        "en": "^locationName"
+        "en": "name"
       },
       "description": {
-        "en": "Name of the town or area."
+        "en": "The name of the Passenger Transport Hub."
       },
       "usage": {},
-      "sort": "^locationName",
+      "sort": "name",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/locn#geometry",
-      "name": "^geometry",
+      "uri": "http://purl.org/dc/terms/title",
+      "name": "name",
       "label": {
-        "en": "^geometry"
+        "en": "name"
       },
       "description": {
-        "en": "Geometry of the place or area."
+        "en": "Name of the additional service."
       },
       "usage": {},
-      "sort": "^geometry",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/transporthubs#AdditionalService",
-      "name": "service",
-      "label": {
-        "en": "service"
-      },
-      "description": {
-        "en": "The additional services connected to the Passenger Transport Hub."
-      },
-      "usage": {},
-      "sort": "service",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart",
-      "name": "displayedTransportationModeOnMap",
-      "label": {
-        "en": "displayedTransportationModeOnMap"
-      },
-      "description": {
-        "en": "The different modes of transport available are shown on the corresponding map."
-      },
-      "usage": {},
-      "sort": "displayedTransportationModeOnMap",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam",
-      "name": "columnName",
-      "label": {
-        "en": "columnName"
-      },
-      "description": {
-        "en": "Name of the hoppinpoint that refers to a clear and recognisable place name."
-      },
-      "usage": {},
-      "sort": "columnName",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer",
-      "name": "columnNumber",
-      "label": {
-        "en": "columnNumber"
-      },
-      "description": {
-        "en": "Unique identification number given to each column and included in the Passenger Transport Hub database."
-      },
-      "usage": {},
-      "sort": "columnNumber",
+      "sort": "name",
       "inscope": true,
       "indvl": false,
       "inpackage": false,

@@ -1,9 +1,9 @@
 {
-  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dcterms:license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "dcterms:mediator": {
-    "foaf:homepage": "https://semic.eu",
-    "foaf:mbox": "mailto: contact@semic.eu",
-    "foaf:name": "Semantic Interoperability Community (SEMIC)"
+    "foaf:homepage": "https://purl.eu",
+    "foaf:mbox": "mailto:digitaal.vlaanderen@vlaanderen.be",
+    "foaf:name": "Purl.eu"
   },
   "@id": "https://purl.eu/ns/consent",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
@@ -55,398 +55,44 @@
         "en": "A filter added to the personal data to further limit the specifications of the personal data."
       },
       "parents": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#LiveData",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "parents": []
     }
   ],
   "externals": [
     {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#ConsentStatus",
+      "name": {
+        "en": "Legal Basis Type"
+      },
+      "@id": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
       "@type": "rdfs:Class"
     },
     {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Expiry",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Filter",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#LiveData",
+      "name": {
+        "en": "Medium Type"
+      },
+      "@id": "https://w3id.org/GConsent#Medium",
       "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
-      "@id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
+      "@id": "https://purl.eu/ns/consent#Purpose.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "An human readable document is provided of the consent."
-      },
       "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#Consent"
-        }
+        "https://w3id.org/GConsent#Purpose"
       ],
       "range": [
-        {
-          "uri": "http://xmlns.com/foaf/spec/#term_Document"
-        }
+        "http://fixme.com#PurposeType"
       ],
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/consent#Consent.notice",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Additional note added to the consent"
-      },
-      "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#Consent"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataProcessor.identifier",
+      "@id": "https://purl.eu/ns/consent#Processing.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Unique method to prove the identify of the Data Processor."
-      },
       "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#DataProcessor"
-        }
+        "https://w3id.org/GConsent#Processing"
       ],
       "range": [
-        {
-          "uri": "http://fixme.com#Identifier"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataProcessor.legalName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The legal name under which the Data Processor is registered."
-      },
-      "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#DataProcessor"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.expiryDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The date on which the data retention stops"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The duration of the data retention, starting from the start date"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/PeriodOfTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://xmlns.com/foaf/spec/#term_Document"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The legal basis that substantiates the data retention"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#LegalBasis"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.liveData",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#boolean"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#DataRetention.startDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The moment in time when the data retention starts"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#DataRetention"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The delegation has been provided by a certain delegate."
-      },
-      "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#Delegation"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/dc/terms/Agent"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The time between moments in time when the data may be retreived for processing"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#Expiry"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/PeriodOfTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The moment in time up to which the data may be processed"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#Expiry"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryFrequency",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The number of times the data may be processed"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#Expiry"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#integer"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryTime",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The duration during which the data may be processed"
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#Expiry"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/PeriodOfTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#Filter.period",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "A period of time."
-      },
-      "domain": [
-        {
-          "uri": "https://purl.eu/ns/consent#Filter"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/PeriodOfTime"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#LegalBasis.type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The type of legal basis."
-      },
-      "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#LegalBasis"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#dfn-legalbasis"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "An human readable document is provided explaining what personal data which is part of the consent."
-      },
-      "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#PersonalData"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://xmlns.com/foaf/spec/#term_Document"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "An human readable document explaining how the personal data will be handled."
-      },
-      "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-        }
-      ],
-      "range": [
-        {
-          "uri": "http://xmlns.com/foaf/spec/#term_Document"
-        }
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-        }
-      ],
-      "range": [
-        {
-          "uri": "https://purl.eu/ns/consent#LiveData"
-        }
+        "http://fixme.com#ProcessingType"
       ],
       "generalization": []
     },
@@ -457,172 +103,290 @@
         "en": "A type of personal data"
       },
       "domain": [
-        {
-          "uri": "https://dpvcg.github.io/dpv/#PersonalDataHandling"
-        }
+        "https://dpvcg.github.io/dpv/#PersonalDataHandling"
       ],
       "range": [
-        {
-          "uri": "http://fixme.com#PersonalDataType"
-        }
+        "http://fixme.com#PersonalDataType"
       ],
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/consent#Processing.type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "en": "The type of processing."
+        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
       },
       "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#Processing"
-        }
+        "https://dpvcg.github.io/dpv/#PersonalDataHandling"
       ],
       "range": [
-        {
-          "uri": "http://fixme.com#ProcessingType"
-        }
+        "http://www.w3.org/2001/XMLSchema#boolean"
       ],
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/consent#Purpose.type",
+      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The type of purpose."
-      },
       "domain": [
-        {
-          "uri": "https://w3id.org/GConsent#Purpose"
-        }
+        "https://dpvcg.github.io/dpv/#PersonalDataHandling"
       ],
       "range": [
-        {
-          "uri": "http://fixme.com#PurposeType"
-        }
+        "http://xmlns.com/foaf/spec/#term_Document"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://w3id.org/GConsent#PersonalData"
+      ],
+      "range": [
+        "http://xmlns.com/foaf/spec/#term_Document"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#LegalBasis.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://dpvcg.github.io/dpv/#LegalBasis"
+      ],
+      "range": [
+        "https://dpvcg.github.io/dpv/#dfn-legalbasis"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Filter.period",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "A period of time."
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#Filter"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Expiry.expiryTime",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The duration during which the data may be processed"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#Expiry"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Expiry.expiryFrequency",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The number of times the data may be processed"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#Expiry"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Expiry.expiryDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The moment in time up to which the data may be processed"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#Expiry"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Expiry.expiryCadance",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The time between moments in time when the data may be retreived for processing"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#Expiry"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://w3id.org/GConsent#Delegation"
+      ],
+      "range": [
+        "https://purl.eu/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.startDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The moment in time when the data retention starts"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.liveData",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.legalBasis",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The legal basis that substantiates the data retention"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "https://dpvcg.github.io/dpv/#LegalBasis"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Indicates that the information w.r.t. the Data Retention is shown in a human readable form."
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "http://xmlns.com/foaf/spec/#term_Document"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.expiryTime",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The duration of the data retention, starting from the start date"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataRetention.expiryDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The date on which the data retention stops"
+      },
+      "domain": [
+        "https://purl.eu/ns/consent#DataRetention"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataProcessor.legalName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The legal name under which the Data Processor is registered."
+      },
+      "domain": [
+        "https://dpvcg.github.io/dpv/#DataProcessor"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#DataProcessor.identifier",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Unique method to prove the identify of the Data Processor."
+      },
+      "domain": [
+        "https://dpvcg.github.io/dpv/#DataProcessor"
+      ],
+      "range": [
+        "http://fixme.com#Identifier"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Consent.notice",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Additional note added to the consent"
+      },
+      "domain": [
+        "https://w3id.org/GConsent#Consent"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://w3id.org/GConsent#Consent"
+      ],
+      "range": [
+        "http://xmlns.com/foaf/spec/#term_Document"
       ],
       "generalization": []
     }
   ],
   "externalproperties": [
     {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Consent.notice",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataProcessor.identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataProcessor.legalName",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.expiryDate",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.liveData",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#DataRetention.startDate",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryDate",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryFrequency",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Expiry.expiryTime",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Filter.period",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#LegalBasis.type",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Processing.type",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/consent#Purpose.type",
+      "name": {
+        "en": "processing"
+      },
+      "@id": "https://dpvcg.github.io/dpv/#Processing",
       "@type": "rdf:Property"
     }
   ],
   "@context": {
+    "vlaanderen": "http://data.vlaanderen.be/ns/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "void": "http://rdfs.org/ns/void#",
     "dcterms": "http://purl.org/dc/terms/",
@@ -712,7 +476,7 @@
       "@id": "rdfs:seeAlso"
     },
     "usage": {
-      "@id": "skos:scopeNote",
+      "@id": "vann:usageNote",
       "@container": "@language"
     },
     "parents": {

@@ -7,103 +7,95 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation> a owl:Class,
-    rdfs:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
-  skos:scopeNote "These species, also called BioIndicators, are living organisms such as plants, planktons, animals, microbes etc. More specifically, biochemical, physiological, behavioural or population changes are monitored."@en .
+skos:Concept a rdfs:Class .
 
-<https://purl.eu/ns/air-and-water/water#BioticIndexObservation> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.bioIndicator> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#BioIndicatorObservation>;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
-    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
-  skos:scopeNote "In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score."@en .
+  rdfs:range <http://fixme.com#Result> .
 
-<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.observedProperty> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#BioIndicatorObservation>;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
-    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
-  skos:scopeNote "Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter."@en .
+  rdfs:range skos:Concept .
 
-<https://purl.eu/ns/air-and-water/water#WaterFeature> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/air-and-water/water#BioticIndexObservation.bioticIndex> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#BioticIndexObservation>;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
-  skos:scopeNote "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."@en .
+  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
 
-<https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/air-and-water/water#BioticIndexObservation.observedProperty> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#BioticIndexObservation>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.chemicalAgentConcentration> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
+
+<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.observedProperty> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection.refWeatherObserved> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range <http://fixme.com#WeatherObserved> .
+
+<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.observedProperty> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.waterQualityParameterResult> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
+
+<https://purl.eu/ns/air-and-water/water#Waterfeature.type> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/air-and-water/water#WaterFeature>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:range skos:Concept .
+
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> a rdf:Property;
+  rdfs:label "hasFeatureOfInterest"@en .
+
+<http://www.w3.org/ns/sosa/phenomenonTime> a rdf:Property;
+  rdfs:label "phenomenonTime"@en .
+
+<https://purl.eu/ns/air-and-water/water#WaterFeature> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:subClassOf <https://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
+
+<https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
   rdfs:subClassOf <https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection> .
 
-<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation> a owl:Class,
-    rdfs:Class;
+<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "These species, also called BioIndicators, are living organisms such as plants, planktons, animals, microbes etc. More specifically, biochemical, physiological, behavioural or population changes are monitored."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation> .
+
+<https://purl.eu/ns/air-and-water/water#BioticIndexObservation> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
   rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
-    <https://def.isotc211.org/iso19156/2011/Observation#Measurement>;
-  skos:scopeNote "These quantities are parameters like temperature, salinity, turbidity, suspended/disolved solids etc."@en .
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement> .
 
-<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.bioIndicator> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Actually the Measurement of the amount of the substance in the Water, usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement> .
 
-<https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.observedProperty> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
+<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "These quantities are parameters like temperature, salinity, turbidity, suspended/disolved solids etc."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#BioticIndexObservation.bioticIndex> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#BioticIndexObservation.observedProperty> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.chemicalAgentConcentration> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.observedProperty> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection.refWeatherObserved> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.observedProperty> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.waterQualityParameterResult> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
-
-<https://purl.eu/ns/air-and-water/water#Waterfeature.type> a owl:ObjectProperty,
-    rdf:Property;
-  rdfs:domain [];
-  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/water>;
-  rdfs:range [] .
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
+    <https://def.isotc211.org/iso19156/2011/Observation#Measurement> .
 
 <https://purl.eu/ns/air-and-water/water> a owl:Ontology;
   rdfs:label "water"@en,
@@ -111,243 +103,11 @@
   dc:contributor [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://en.vmm.be/>;
-      foaf:name "Vlaamse Milieumaatschappij"
+      foaf:homepage <https://www.wvi.be/>;
+      foaf:name "West-Vlaamse Intercommunales"
     ];
-    foaf:firstName "Jurgen";
-    foaf:lastName "Meirlaen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.altis.swiss/>;
-      foaf:name "Altis Swiss"
-    ];
-    foaf:firstName "Olivier";
-    foaf:lastName "Bernard"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <http://www.pwc.be/>;
-      foaf:name "PwC Belgium"
-    ];
-    foaf:firstName "Dries";
-    foaf:lastName "Catteceur"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.imec-int.com/en>;
-      foaf:name "Imec vzw"
-    ];
-    foaf:firstName "Pieter";
-    foaf:lastName "Colpaert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Annelies";
-    foaf:lastName "De Craene"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://sirus.be/>;
-      foaf:name "Sirus NV"
-    ];
-    foaf:firstName "Gert";
-    foaf:lastName "De Tant"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.imec-int.com/en>;
-      foaf:name "Imec vzw"
-    ];
-    foaf:firstName "Harm";
-    foaf:lastName "Delva"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://oascities.org/>;
-      foaf:name "OASC"
-    ];
-    foaf:firstName "Vincent";
-    foaf:lastName "Demortier"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://en.vmm.be/>;
-      foaf:name "Vlaamse Milieumaatschappij"
-    ];
-    foaf:firstName "Geert";
-    foaf:lastName "Devriese"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vliz.be/>;
-      foaf:name "Vlaams Instituut voor de Zee"
-    ];
-    foaf:firstName "Elien";
-    foaf:lastName "Dewitte"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.bdo.be/nl-be/home>;
-      foaf:name "BDO Belgium"
-    ];
-    foaf:firstName "Eric";
-    foaf:lastName "Duchesne"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.heidelberg.de/english/Home.html>;
-      foaf:name "Heidelberg"
-    ];
-    foaf:firstName "Benjamin";
-    foaf:lastName "Gaertner"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.smartcitieslab.org/>;
-      foaf:name "Smart Cities Lab"
-    ];
-    foaf:firstName "Olaf-Gerd";
-    foaf:lastName "Gemein"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.altis.swiss/>;
-      foaf:name "Altis Swiss"
-    ];
-    foaf:firstName "Laurent";
-    foaf:lastName "Horvath"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://en.vmm.be/>;
-      foaf:name "Vlaamse Milieumaatschappij"
-    ];
-    foaf:firstName "Frank";
-    foaf:lastName "Lavens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.fiware.org/about-us/>;
-      foaf:name "FIWARE"
-    ];
-    foaf:firstName "Fernando";
-    foaf:lastName "Lopez"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.proximus.be/en/id_personal/personal.html>;
-      foaf:name "Proximus"
-    ];
-    foaf:firstName "Peter";
-    foaf:lastName "Braem"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaamsewaterweg.be/>;
-      foaf:name "De Vlaamse Waterweg"
-    ];
-    foaf:firstName "Niels";
-    foaf:lastName "Melotte"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.imec-int.com/en>;
-      foaf:name "Imec vzw"
-    ];
-    foaf:firstName "Philippe";
-    foaf:lastName "Michiels"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://en.vmm.be/>;
-      foaf:name "Vlaamse Milieumaatschappij"
-    ];
-    foaf:firstName "Katleen";
-    foaf:lastName "Miserez"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://hostabee.com/en/eng-homepage/>;
-      foaf:name "Hostabee"
-    ];
-    foaf:firstName "Maxime";
-    foaf:lastName "Mularz"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.altis.swiss/>;
-      foaf:name "Altis Swiss"
-    ];
-    foaf:firstName "Bernard";
-    foaf:lastName "Olivier"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://vito.be/en>;
-      foaf:name "VITO Belgium"
-    ];
-    foaf:firstName "Frank";
-    foaf:lastName "Sleeuwaert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://omgeving.vlaanderen.be/>;
-      foaf:name "Departement Omgeving"
-    ];
-    foaf:firstName "Marleen";
-    foaf:lastName "Van Damme"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://omgeving.vlaanderen.be/>;
-      foaf:name "Departement Omgeving"
-    ];
-    foaf:firstName "Geert";
-    foaf:lastName "Van Haute"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://fluves.com/>;
-      foaf:name "Fluves"
-    ];
-    foaf:firstName "Stijn";
-    foaf:lastName "Van Hoey"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Dwight";
-    foaf:lastName "Van Lancker"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Ziggy";
-    foaf:lastName "Van Lishout"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vliz.be/>;
-      foaf:name "Vlaams Instituut voor de Zee"
-    ];
-    foaf:firstName "Laurian";
-    foaf:lastName "Van Maldeghem"
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Bert";
-    foaf:lastName "Van Nuffelen"
+    foaf:firstName "Brecht";
+    foaf:lastName "Zwaenepoel"
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -359,43 +119,291 @@
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://www.wvi.be/>;
-      foaf:name "West-Vlaamse Intercommunales"
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
     ];
-    foaf:firstName "Brecht";
-    foaf:lastName "Zwaenepoel"
-  ];
-  dc:issued "TODO";
-  dc:license "https://creativecommons.org/licenses/by/4.0/",
-    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
-  dc:mediator [
-    foaf:homepage <https://semic.eu>;
-    foaf:name "Semantic Interoperability Community (SEMIC)"
-  ];
-  rdfs:seeAlso <https://purl.eu/ns/air-and-water/water#BioIndicatorObservation>,
-    <https://purl.eu/ns/air-and-water/water#BioticIndexObservation>,
-    <https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation>,
-    <https://purl.eu/ns/air-and-water/water#WaterFeature>,
-    <https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection>,
-    <https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation>,
-    <https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.bioIndicator>,
-    <https://purl.eu/ns/air-and-water/water#BioIndicatorObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water#BioticIndexObservation.bioticIndex>,
-    <https://purl.eu/ns/air-and-water/water#BioticIndexObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.chemicalAgentConcentration>,
-    <https://purl.eu/ns/air-and-water/water#ChemicalAgentConcentrationObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water#WaterQualityObservationCollection.refWeatherObserved>,
-    <https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.observedProperty>,
-    <https://purl.eu/ns/air-and-water/water#WaterQualityParameterObservation.waterQualityParameterResult>,
-    <https://purl.eu/ns/air-and-water/water#Waterfeature.type>;
-  <http://www.w3.org/2001/02pd/rec54#editor> [
+    foaf:firstName "Bert";
+    foaf:lastName "Van Nuffelen";
+    foaf:mbox <mailto:bert.vannuffelen@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vliz.be/>;
+      foaf:name "Vlaams Instituut voor de Zee"
+    ];
+    foaf:firstName "Laurian";
+    foaf:lastName "Van Maldeghem";
+    foaf:mbox <mailto:laurian.van.maldeghe@vliz.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Ziggy";
+    foaf:lastName "Van Lishout";
+    foaf:mbox <mailto:ziggy.vanlishout@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Dwight";
+    foaf:lastName "Van Lancker";
+    foaf:mbox <mailto:dwight.vanlancker@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://fluves.com/>;
+      foaf:name "Fluves"
+    ];
+    foaf:firstName "Stijn";
+    foaf:lastName "Van Hoey";
+    foaf:mbox <mailto:stijn@fluves.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://omgeving.vlaanderen.be/>;
+      foaf:name "Departement Omgeving"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Van Haute";
+    foaf:mbox <mailto:geert.vanhaute@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://omgeving.vlaanderen.be/>;
+      foaf:name "Departement Omgeving"
+    ];
+    foaf:firstName "Marleen";
+    foaf:lastName "Van Damme";
+    foaf:mbox <mailto:marleen.vandamme@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://vito.be/en>;
+      foaf:name "VITO Belgium"
+    ];
+    foaf:firstName "Frank";
+    foaf:lastName "Sleeuwaert";
+    foaf:mbox <mailto:frank.sleeuwaert@vito.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Bernard";
+    foaf:lastName "Olivier";
+    foaf:mbox <mailto:olivier.bernard@altis.swiss>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://hostabee.com/en/eng-homepage/>;
+      foaf:name "Hostabee"
+    ];
+    foaf:firstName "Maxime";
+    foaf:lastName "Mularz";
+    foaf:mbox <mailto:maxime.mularz@hostabee.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Katleen";
+    foaf:lastName "Miserez";
+    foaf:mbox <mailto:k.miserez@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Philippe";
+    foaf:lastName "Michiels";
+    foaf:mbox <mailto:philippe.michiels.ext@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaamsewaterweg.be/>;
+      foaf:name "De Vlaamse Waterweg"
+    ];
+    foaf:firstName "Niels";
+    foaf:lastName "Melotte";
+    foaf:mbox <mailto:niels.melotte@bdo.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Jurgen";
+    foaf:lastName "Meirlaen";
+    foaf:mbox <mailto:j.meirlaen@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.fiware.org/about-us/>;
+      foaf:name "FIWARE"
+    ];
+    foaf:firstName "Fernando";
+    foaf:lastName "Lopez";
+    foaf:mbox <mailto:fernando.lopez@fiware.org>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Frank";
+    foaf:lastName "Lavens";
+    foaf:mbox <mailto:f.lavens@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Laurent";
+    foaf:lastName "Horvath";
+    foaf:mbox <mailto:laurent.horvath@altis.swiss>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.smartcitieslab.org/>;
+      foaf:name "Smart Cities Lab"
+    ];
+    foaf:firstName "Olaf-Gerd";
+    foaf:lastName "Gemein"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.heidelberg.de/english/Home.html>;
+      foaf:name "Heidelberg"
+    ];
+    foaf:firstName "Benjamin";
+    foaf:lastName "Gaertner";
+    foaf:mbox <mailto:Benjamin.Gaertner@Heidelberg.de>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.bdo.be/nl-be/home>;
+      foaf:name "BDO Belgium"
+    ];
+    foaf:firstName "Eric";
+    foaf:lastName "Duchesne"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vliz.be/>;
+      foaf:name "Vlaams Instituut voor de Zee"
+    ];
+    foaf:firstName "Elien";
+    foaf:lastName "Dewitte"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Devriese";
+    foaf:mbox <mailto:g.devriese@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://oascities.org/>;
+      foaf:name "OASC"
+    ];
+    foaf:firstName "Vincent";
+    foaf:lastName "Demortier";
+    foaf:mbox <mailto:vincent.demortier@oasc.fr>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Harm";
+    foaf:lastName "Delva";
+    foaf:mbox <mailto:harm.delva@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://sirus.be/>;
+      foaf:name "Sirus NV"
+    ];
+    foaf:firstName "Gert";
+    foaf:lastName "De Tant";
+    foaf:mbox <mailto:gert.detant@sirus.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Annelies";
+    foaf:lastName "De Craene";
+    foaf:mbox <mailto:annelies.decraene@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Pieter";
+    foaf:lastName "Colpaert";
+    foaf:mbox <mailto:Pieter.Colpaert@imec.be>
+  ], [
     a foaf:Person;
     schema:affiliation [
       foaf:homepage <http://www.pwc.be/>;
       foaf:name "PwC Belgium"
     ];
-    foaf:firstName "Michiel";
-    foaf:lastName "De Keyzer"
+    foaf:firstName "Dries";
+    foaf:lastName "Catteceur";
+    foaf:mbox <mailto:dries.catteceur@pwc.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.proximus.be/en/id_personal/personal.html>;
+      foaf:name "Proximus"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Braem";
+    foaf:mbox <mailto:peter.braem@proximus.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Olivier";
+    foaf:lastName "Bernard";
+    foaf:mbox <mailto:olivier.bernard@altis.swiss>
+  ];
+  dc:issued "TODO";
+  dc:license "https://creativecommons.org/publicdomain/zero/1.0/",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:mediator [
+    foaf:homepage <https://purl.eu>;
+    foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
+    foaf:name "Purl.eu"
+  ];
+  rdfs:seeAlso skos:Concept,
+    <http://www.w3.org/ns/sosa/phenomenonTime>,
+    <http://www.w3.org/ns/sosa/hasFeatureOfInterest>;
+  <http://www.w3.org/2001/02pd/rec54#editor> [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Thijs";
+    foaf:mbox <mailto:geert.thijs@vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -403,13 +411,15 @@
       foaf:name "PwC Belgium"
     ];
     foaf:firstName "Kevin";
-    foaf:lastName "Haleydt"
+    foaf:lastName "Haleydt";
+    foaf:mbox <mailto:kevin.haleydt@pwc.com>
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Digitaal Vlaanderen"
+      foaf:homepage <http://www.pwc.be/>;
+      foaf:name "PwC Belgium"
     ];
-    foaf:firstName "Geert";
-    foaf:lastName "Thijs"
+    foaf:firstName "Michiel";
+    foaf:lastName "De Keyzer";
+    foaf:mbox <mailto:michiel.de.keyzer@pwc.com>
   ] .
