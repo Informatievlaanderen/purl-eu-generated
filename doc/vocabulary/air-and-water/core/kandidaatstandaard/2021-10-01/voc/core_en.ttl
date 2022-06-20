@@ -1,0 +1,365 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:Concept a rdfs:Class .
+
+<https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata> a owl:ObjectProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/ObservationCollection>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range <http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata> .
+
+<https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter> a owl:ObjectProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/ObservationCollection>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range <https://def.isotc211.org/iso19156/2011/Observation#NamedValue> .
+
+<https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification> a owl:DatatypeProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/om#ObservationProcedure>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/air-and-water/core#ObservationProcedure.type> a owl:ObjectProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/om#ObservationProcedure>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification> a owl:DatatypeProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/om#SamplingProcedure>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/air-and-water/core#SamplingProcedure.type> a owl:ObjectProperty;
+  rdfs:domain <http://www.w3.org/ns/sosa/om#SamplingProcedure>;
+  rdfs:isDefinedBy <https://purl.eu/ns/air-and-water/core>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/air-and-water/core> a owl:Ontology;
+  rdfs:label "core"@en,
+    "core"@nl;
+  dc:contributor [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.wvi.be/>;
+      foaf:name "West-Vlaamse Intercommunales"
+    ];
+    foaf:firstName "Brecht";
+    foaf:lastName "Zwaenepoel"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.uni-kiel.de/en/>;
+      foaf:name "Kiel University"
+    ];
+    foaf:firstName "Jesper";
+    foaf:lastName "Zedlitz"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Bert";
+    foaf:lastName "Van Nuffelen";
+    foaf:mbox <mailto:bert.vannuffelen@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vliz.be/>;
+      foaf:name "Vlaams Instituut voor de Zee"
+    ];
+    foaf:firstName "Laurian";
+    foaf:lastName "Van Maldeghem";
+    foaf:mbox <mailto:laurian.van.maldeghe@vliz.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Ziggy";
+    foaf:lastName "Van Lishout";
+    foaf:mbox <mailto:ziggy.vanlishout@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Dwight";
+    foaf:lastName "Van Lancker";
+    foaf:mbox <mailto:dwight.vanlancker@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://fluves.com/>;
+      foaf:name "Fluves"
+    ];
+    foaf:firstName "Stijn";
+    foaf:lastName "Van Hoey";
+    foaf:mbox <mailto:stijn@fluves.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://omgeving.vlaanderen.be/>;
+      foaf:name "Departement Omgeving"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Van Haute";
+    foaf:mbox <mailto:geert.vanhaute@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://omgeving.vlaanderen.be/>;
+      foaf:name "Departement Omgeving"
+    ];
+    foaf:firstName "Marleen";
+    foaf:lastName "Van Damme";
+    foaf:mbox <mailto:marleen.vandamme@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://vito.be/en>;
+      foaf:name "VITO Belgium"
+    ];
+    foaf:firstName "Frank";
+    foaf:lastName "Sleeuwaert";
+    foaf:mbox <mailto:frank.sleeuwaert@vito.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Bernard";
+    foaf:lastName "Olivier";
+    foaf:mbox <mailto:olivier.bernard@altis.swiss>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://hostabee.com/en/eng-homepage/>;
+      foaf:name "Hostabee"
+    ];
+    foaf:firstName "Maxime";
+    foaf:lastName "Mularz";
+    foaf:mbox <mailto:maxime.mularz@hostabee.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Katleen";
+    foaf:lastName "Miserez";
+    foaf:mbox <mailto:k.miserez@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Philippe";
+    foaf:lastName "Michiels";
+    foaf:mbox <mailto:philippe.michiels.ext@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaamsewaterweg.be/>;
+      foaf:name "De Vlaamse Waterweg"
+    ];
+    foaf:firstName "Niels";
+    foaf:lastName "Melotte";
+    foaf:mbox <mailto:niels.melotte@bdo.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Jurgen";
+    foaf:lastName "Meirlaen";
+    foaf:mbox <mailto:j.meirlaen@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.fiware.org/about-us/>;
+      foaf:name "FIWARE"
+    ];
+    foaf:firstName "Fernando";
+    foaf:lastName "Lopez";
+    foaf:mbox <mailto:fernando.lopez@fiware.org>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Frank";
+    foaf:lastName "Lavens";
+    foaf:mbox <mailto:f.lavens@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Laurent";
+    foaf:lastName "Horvath";
+    foaf:mbox <mailto:laurent.horvath@altis.swiss>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.smartcitieslab.org/>;
+      foaf:name "Smart Cities Lab"
+    ];
+    foaf:firstName "Olaf-Gerd";
+    foaf:lastName "Gemein"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.heidelberg.de/english/Home.html>;
+      foaf:name "Heidelberg"
+    ];
+    foaf:firstName "Benjamin";
+    foaf:lastName "Gaertner";
+    foaf:mbox <mailto:Benjamin.Gaertner@Heidelberg.de>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.bdo.be/nl-be/home>;
+      foaf:name "BDO Belgium"
+    ];
+    foaf:firstName "Eric";
+    foaf:lastName "Duchesne"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vliz.be/>;
+      foaf:name "Vlaams Instituut voor de Zee"
+    ];
+    foaf:firstName "Elien";
+    foaf:lastName "Dewitte"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://en.vmm.be/>;
+      foaf:name "Vlaamse Milieumaatschappij"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Devriese";
+    foaf:mbox <mailto:g.devriese@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://oascities.org/>;
+      foaf:name "OASC"
+    ];
+    foaf:firstName "Vincent";
+    foaf:lastName "Demortier";
+    foaf:mbox <mailto:vincent.demortier@oasc.fr>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Harm";
+    foaf:lastName "Delva";
+    foaf:mbox <mailto:harm.delva@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://sirus.be/>;
+      foaf:name "Sirus NV"
+    ];
+    foaf:firstName "Gert";
+    foaf:lastName "De Tant";
+    foaf:mbox <mailto:gert.detant@sirus.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Annelies";
+    foaf:lastName "De Craene";
+    foaf:mbox <mailto:annelies.decraene@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.imec-int.com/en>;
+      foaf:name "Imec vzw"
+    ];
+    foaf:firstName "Pieter";
+    foaf:lastName "Colpaert";
+    foaf:mbox <mailto:Pieter.Colpaert@imec.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://www.pwc.be/>;
+      foaf:name "PwC Belgium"
+    ];
+    foaf:firstName "Dries";
+    foaf:lastName "Catteceur";
+    foaf:mbox <mailto:dries.catteceur@pwc.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.proximus.be/en/id_personal/personal.html>;
+      foaf:name "Proximus"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Braem";
+    foaf:mbox <mailto:peter.braem@proximus.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.altis.swiss/>;
+      foaf:name "Altis Swiss"
+    ];
+    foaf:firstName "Olivier";
+    foaf:lastName "Bernard";
+    foaf:mbox <mailto:olivier.bernard@altis.swiss>
+  ];
+  dc:issued "TODO";
+  dc:license "https://creativecommons.org/publicdomain/zero/1.0/",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:mediator [
+    foaf:homepage <https://purl.eu>;
+    foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
+    foaf:name "Purl.eu"
+  ];
+  rdfs:seeAlso skos:Concept;
+  <http://www.w3.org/2001/02pd/rec54#editor> [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Digitaal Vlaanderen"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Thijs";
+    foaf:mbox <mailto:geert.thijs@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://www.pwc.be/>;
+      foaf:name "PwC Belgium"
+    ];
+    foaf:firstName "Kevin";
+    foaf:lastName "Haleydt";
+    foaf:mbox <mailto:kevin.haleydt@pwc.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://www.pwc.be/>;
+      foaf:name "PwC Belgium"
+    ];
+    foaf:firstName "Michiel";
+    foaf:lastName "De Keyzer";
+    foaf:mbox <mailto:michiel.de.keyzer@pwc.com>
+  ] .
