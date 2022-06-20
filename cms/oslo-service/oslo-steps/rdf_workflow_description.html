@@ -71,10 +71,10 @@
                 <pre class="background">
                     <code>
                         @prefix​ o-steps​ : &lt;​<a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>&gt;​ .
-                        @prefix​ xl​ : &lt;​<a href="http​://www.w3.org/2008/05/skos-xl#">http​://www.w3.org/2008/05/skos-xl#</a>&gt;​ .
-                        @prefix​ state​ : &lt;<a href="https​://fast.ilabt.imec.be/api/v5/states#">https​://fast.ilabt.imec.be/api/v5/states#</a>&gt;​ .
-                        @prefix​ step​ : &lt;​<a href="https​://fast.ilabt.imec.be/api/v5/steps#">https​://fast.ilabt.imec.be/api/v5/steps#</a>&gt;​ .
-                        
+                        @prefix​ xl​ : &lt;​<a href="http://www.w3.org/2008/05/skos-xl#">http://www.w3.org/2008/05/skos-xl#</a>&gt;​ .
+                        @prefix​ state​ : &lt;<a href="https://fast.ilabt.imec.be/api/v5/states#">https://fast.ilabt.imec.be/api/v5/states#</a>&gt;​ .
+                        @prefix​ step​ : &lt;​<a href="https://fast.ilabt.imec.be/api/v5/steps#">https://fast.ilabt.imec.be/api/v5/steps#</a>&gt;​ .
+
                         <span class="code_comment"># Journey level steps: collect address changed data, and declare it</span>
 
                         step​ :collectAddressChangeData a ​ o-steps​ :JourneyLevelStep ;
@@ -92,17 +92,17 @@
                             o-steps​ :producesState ​ state​ :addressChangeDeclared .
 
                         <span class="code_comment"># Container level steps: provide personal data, new address, and contact info</span>
-                        
+
                         step​ :providePersonalData a ​ o-steps​ :ContainerLevelStep ;
                             o-steps​ :hasDescription [ ​ xl​ :literalForm ​ "Verstrek persoonlijke gegevens"​ @nl​ ] ;
                             o-steps​ :requiresState ​ o-steps​ :emptyState ;
                             o-steps​ :producesState ​ state​ :citizenNationalNumber .
-                        
+
                             step​ :provideNewAddress a ​ o-steps​ :ContainerLevelStep ;
                             o-steps​ :hasDescription [ ​ xl​ :literalForm ​ "Nieuw adres"​ @nl​ ] ;
                             o-steps​ :requiresState ​ o-steps​ :emptyState ;
                             o-steps​ :producesState ​ state​ :streetname, ​ state​ :postcode, ​ state​ :streetNumber.
-                        
+
                         step​ :provideContactInfo a ​ o-steps​ :ContainerLevelStep ;
                             o-steps​ :hasDescription [ ​ xl​ :literalForm ​ "Contactgegevens"​ @nl​ ] ;
                             o-steps​ :requiresState ​ o-steps​ :emptyState ;
@@ -144,44 +144,44 @@
                 <pre class="background">
                     <code>
                         @prefix​ o-steps​ : &lt;​<a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>&gt;​ .
-                        @prefix​ xl​ : &lt;​<a href="http​://www.w3.org/2008/05/skos-xl#">http​://www.w3.org/2008/05/skos-xl#</a>&gt;​ .
-                        @prefix​ state​ : &lt;<a href="https​://fast.ilabt.imec.be/api/v5/states#">https​://fast.ilabt.imec.be/api/v5/states#</a>&gt;​ .
-                        @prefix​ step​ : &lt;​<a href="https​://fast.ilabt.imec.be/api/v5/steps#">https​://fast.ilabt.imec.be/api/v5/steps#</a>&gt;​ .
+                        @prefix​ xl​ : &lt;​<a href="http://www.w3.org/2008/05/skos-xl#">http://www.w3.org/2008/05/skos-xl#</a>&gt;​ .
+                        @prefix​ state​ : &lt;<a href="https://fast.ilabt.imec.be/api/v5/states#">https://fast.ilabt.imec.be/api/v5/states#</a>&gt;​ .
+                        @prefix​ step​ : &lt;​<a href="https://fast.ilabt.imec.be/api/v5/steps#">https://fast.ilabt.imec.be/api/v5/steps#</a>&gt;​ .
 
                         state​ :citizenEmailAddress a ​ o-steps​ :State ;
                             rdfs​ :label ​ "Inwoner email address"​ @nl​ ;
                             o-steps​ :hasStateShape ​ shape​ :emailAddressShape .
-                        
+
                         state​ :streetname a ​ o-steps​ :State ;
                             rdfs​ :label ​ "Straat"​ @nl​ ;
                             o-steps​ :hasStateShape ​ shape​ :citizenNewAddressStreetShape .
-                        
+
                         state​ :postcode a ​ o-steps​ :State ;
                             rdfs​ :label ​ "Postcode"​ @nl​ ;
                             o-steps​ :hasStateShape ​ shape​ :citizenNewAddressPostCodeShape .
-                        
+
                         state​ :streetNumber a ​ o-steps​ :State ;
                             rdfs​ :label ​ "Huisnumer"​ @nl​ ;
                             o-steps​ :hasStateShape ​ shape​ :citizenNewAddressStreetNumberShape .
-                        
+
                         state​ :citizenNationalNumber a ​ o-steps​ :State;
                             rdfs​ :label ​ "Inwoner Rijksregisternummer"​ @nl​ ;
                             o-steps​ :hasStateShape ​ shape​ :nationalNumberBelgiumShape .
                     </code>
                 </pre>
                 <figcaption>
-                    Listing 2: a snippet of OSLO-STEPS state descriptions for changing your address                
+                    Listing 2: a snippet of OSLO-STEPS state descriptions for changing your address
                 </figcaption>
             </figure>
             <figure class="listing">
                 <pre class="background">
                     <code>\
                         @prefix​ o-steps​ : &lt;​<a href="https://fast.ilabt.imec.be/ns/oslo-steps#">https://fast.ilabt.imec.be/ns/oslo-steps#</a>&gt;​ .
-                        @prefix rdfs​ : &lt;<a href="​http​://www.w3.org/2000/01/rdf-schema#">http​://www.w3.org/2000/01/rdf-schema#</a>&gt;​ .
-                        @prefix ex​ : &lt;<a href="​http​://example.org/ns/example#">http​://example.org/ns/example#</a>&gt;​ .
-                        @prefix locn​ : &lt;​<a href="http​://www.w3.org/ns/locn#">http​://www.w3.org/ns/locn#</a>&gt;​ .
+                        @prefix rdfs​ : &lt;<a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>&gt;​ .
+                        @prefix ex​ : &lt;<a href="http://example.org/ns/example#">http://example.org/ns/example#</a>&gt;​ .
+                        @prefix locn​ : &lt;​<a href="http://www.w3.org/ns/locn#">http://www.w3.org/ns/locn#</a>&gt;​ .
 
-                        @prefix​ ​ shape​ : &lt;​<a href="https​://fast.ilabt.imec.be/api/v5/shapes#">https​://fast.ilabt.imec.be/api/v5/shapes#</a>&gt;​ .
+                        @prefix​ ​ shape​ : &lt;​<a href="https://fast.ilabt.imec.be/api/v5/shapes#">https://fast.ilabt.imec.be/api/v5/shapes#</a>&gt;​ .
 
                         <span class="code_comment"># Shapes</span>
                         <span class="code_comment">## E-mail</span>
@@ -227,7 +227,7 @@
                             sh​ :minLength ​ 4 ​ ; ​ sh​ :maxLength ​ 4 ​ ;
                             sh​ :datatype ​ xsd​ :string ;
                             sh​ :maxCount ​ 1 ​ ; ​ sh​ :minCount ​ 1 ​ .
-                        
+
                         <span class="code_comment">## Street number</span>
 
                         shape​ :citizenNewAddressStreetNumberShape a ​ o-steps​ :StateShape ;
@@ -243,9 +243,9 @@
                             sh​ :minLength ​ 1 ​ ; ​ sh​ :maxLength ​ 5 ​ ;
                             sh​ :datatype ​ xsd​ :string ;
                             sh​ :maxCount ​ 1 ​ ; ​ sh​ :minCount ​ 1 ​ .
-                            
+
                         <span class="code_comment">## National number</span>
-                        
+
                         shape​ :nationalNumberBelgiumShape a ​ o-steps​ :StateShape ;
                             rdfs​ :label ​ "Householder national number"​ @en​ ;
                             rdfs​ :comment ​ "User with valid Belgian national number"​ @en​ ;
@@ -263,7 +263,7 @@
                     </code>
                 </pre>
                 <figcaption>
-                    Listing 3: a snippet of OSLO-STEPS shape descriptions for changing your address                
+                    Listing 3: a snippet of OSLO-STEPS shape descriptions for changing your address
                 </figcaption>
             </figure>
             <p>
@@ -372,13 +372,13 @@
                         element translates into a <strong>step:provideEmail</strong> step, and produces the
                         <strong>state:citizenEmailAddress</strong> state. As such, we can go over the entire online
                         form to identify each individual form element and associate a step and which state it
-                        produces to it.                        
+                        produces to it.
                     </p>
                     <br/>
                     <p>
                         Where feasible, existing steps should be reused as much as possible. It is highly
                         likely that the <strong>step:provideEmail</strong> step and associated state will be reusable
-                        across forms. As such, it is beneficial to reuse this step and state.            
+                        across forms. As such, it is beneficial to reuse this step and state.
                     </p>
                     <br/>
                     <p>
@@ -386,7 +386,7 @@
                         granularity for steps is not a hard requirement: it is possible to, e.g., group the
                         <strong>state:citizenFirstName</strong> and <strong>state:citizenLastName</strong> states into a single
                         step:provideFullName step. More on grouping in Section 2.2.3
-                                           
+
                     </p>
                 </div>
                 <div class="h4_alinea">
@@ -449,7 +449,7 @@
                         deteriorates user experience (see Section 2.1), we introduce step levels (journey,
                         container, and component). As such, workflow composition becomes a multi-process
                         system: as long as you are not dealing with component level steps, you first invoke
-                        the SWP to calculate the subpaths in a lower level. When starting with a journey level step, 
+                        the SWP to calculate the subpaths in a lower level. When starting with a journey level step,
                         first you ask the subpath consisting of container level steps, then you ask
                         the subpath consisting of component level steps.
                     </p>
@@ -473,7 +473,7 @@
                             change can be requested, the structure of a citizen’s personal information needs to
                             be derived based on the prior relevant container level steps. Without deriving this
                             structure and using it as input for the subpath computation, the SWP cannot
-                            calculate any subpath because the required inputs are not discoverable.                            
+                            calculate any subpath because the required inputs are not discoverable.
                         </p>
                         <br/>
                         <p>
@@ -483,7 +483,7 @@
                             described limits. For example, when a container level step has a cost of 200 for a
                             specific cost type such as Duration, it is ensured that the sum of all subpath steps
                             remains lower than 200. By reusing these costs when calculating the subpaths, we
-                            make sure each subpath’s execution cost is also within the limits of the original step.                                                     
+                            make sure each subpath’s execution cost is also within the limits of the original step.
                         </p>
                         <br/>
                         <p>
@@ -491,7 +491,7 @@
                             calculate the subpath for each step based on the preselected higher-level steps, the
                             subgoal, the input data structure, and the user-specific profile information. This
                             process is the same for subpath calculation of both journey and container level
-                            steps.                                                                                
+                            steps.
                         </p>
                     </div>
                 </div>
@@ -508,9 +508,9 @@
                         <p>
                             Based on the input data structure and step description, we can derive a subset of
                             relevant steps before we calculate the actual path. For example, if we can derive that
-                            a procedure does not request any data about a citizen’s pets, we can ignore all steps that handle pet data. 
+                            a procedure does not request any data about a citizen’s pets, we can ignore all steps that handle pet data.
                             This lowers the number of steps that are taken into account
-                            during path calculation and lowers computation time for the SWP.                          
+                            during path calculation and lowers computation time for the SWP.
                         </p>
                         <br/>
                         <p>
@@ -530,7 +530,7 @@
                             the environment is modified (e.g., moving between cities). In these types of use
                             cases, each step only needs to be completed once. By making sure each step is
                             only taken into account once, we lower the number of relevant steps for each path
-                            calculation and lower computation time for the SWP.                      
+                            calculation and lower computation time for the SWP.
                         </p>
                         <br/>
                         <p>
@@ -546,7 +546,7 @@
                             name” and “fill in last name then first name” are two different workflows, whereas “fill
                             in first name and last name” is only one workflow. The combinatorial explosion
                             decreases performance of the SWP, e.g., five independent steps result in 120
-                            alternative workflows.                                            
+                            alternative workflows.
                         </p>
                         <br/>
                         <p>
@@ -554,7 +554,7 @@
                             each other (i.e., when their required input states do not overlap), and if so, return
                             these steps in an unordered instead of ordered list. As such, five independent steps
                             result in a single workflow (or subpath). As such, we provide meaningful options
-                            whilst guaranteeing performance.                            
+                            whilst guaranteeing performance.
                         </p>
                     </div>
                 </div>
@@ -577,14 +577,14 @@
                     Section 2 details some best practices on how to manually create well-structured
                     OSLO-STEPS descriptions to be used by the SWP. Separate from the fact that the
                     SWP successfully handled the given use cases, some general performance
-                    enhancements emerged.                    
+                    enhancements emerged.
                 </p>
                 <br/>
                 <p>
                     First, the usage of step levels increases performance and user experiences, and
                     allows for more advanced configuration of the UX. In this project, three levels of
                     steps seemed sufficient and was implemented using a preprocessing step. However,
-                    when needed, more advanced nesting could be designed.                    
+                    when needed, more advanced nesting could be designed.
                 </p>
                 <br/>
                 <p>
@@ -593,7 +593,7 @@
                     on only relevant steps, limiting each step to be executed only once, and disallowing
                     permutations all greatly reduced the amount of (equivalent) workflow alternatives,
                     and improved performance. As such, additional preprocessing steps to further filter
-                    the set of irrelevant options could be proven to be beneficial.                                        
+                    the set of irrelevant options could be proven to be beneficial.
                 </p>
                 <br/>
                 <p>
@@ -603,7 +603,7 @@
                     calculating the (sub)paths. As such, these preprocessing steps need not influence
                     the processing time when a user asks for a personalized workflow, as they can be
                     implemented to only influence the update time when the OSLO-STEPS descriptions
-                    change.                   
+                    change.
                 </p>
             </div>
         </div>
@@ -654,7 +654,7 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
-    
+
     .equal-height {
         height: 100%;
         justify-content: normal;
@@ -757,8 +757,8 @@
         height: fit-content;
     }
 
-    pre.background { 
-        background-color: #ECF0F1; 
+    pre.background {
+        background-color: #ECF0F1;
         height:auto;
     }
 
