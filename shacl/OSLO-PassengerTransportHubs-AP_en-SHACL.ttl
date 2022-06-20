@@ -15,9 +15,9 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#HoppinpointShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#InformationCarrierShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#RegisteredTransportHubShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceReportShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportHubShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportRegionShape>,
-    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VirtualNodeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PeriodShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PublicOrganisationShape>,
@@ -59,6 +59,7 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#PlugTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportModeOnMapShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#TransportTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityLevelShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#AccessibilityComponentShape>,
@@ -321,7 +322,7 @@
     shacl:name "total"@en;
     shacl:path <http://schema.mobivoc.org/#totalCapacity>
   ], [
-    shacl:class <https://purl.eu/ns/mobility/transporthubs#VehicleType>;
+    shacl:class skos:Concept;
     shacl:definition "Displays the vehicle types to which the capacity is linked."@en;
     shacl:maxCount 1;
     shacl:name "vehicletype"@en;
@@ -931,6 +932,44 @@
     shacl:path <https://purl.eu/ns/mobility/transporthubs#specification>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> .
+
+<https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceReportShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Engine of the means of transport."@en;
+    shacl:name "actuator"@en;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#actuator>
+  ], [
+    shacl:class prov:Location;
+    shacl:definition "Location of the Resource."@en;
+    shacl:name "location"@en;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#location>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "The type of means of transport of the Resource."@en;
+    shacl:name "meansOfTransport"@en;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel>
+  ], [
+    shacl:datatype xsd:integer;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#number>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService>;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#service>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "State of a Resource."@en;
+    shacl:name "status"@en;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#status>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Nature of the Resource."@en;
+    shacl:name "type"@en;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#ResourceReport> .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#ResourceShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1586,7 +1625,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VehicleTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#VehicleType> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_en#VirtualNodeShape> a shacl:NodeShape;
   shacl:closed false;

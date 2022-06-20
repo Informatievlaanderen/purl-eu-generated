@@ -15,9 +15,9 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#HoppinpointShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#InformationCarrierShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#RegisteredTransportHubShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#ResourceReportShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#TransportHubShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#TransportRegionShape>,
-    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#VirtualNodeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#PeriodShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#PublicOrganisationShape>,
@@ -59,6 +59,7 @@
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#PlugTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#TransportModeOnMapShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#TransportTypeShape>,
+    <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#VehicleTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#AccessibilityLevelShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#AccessibilityTypeShape>,
     <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#AccessibilityComponentShape>,
@@ -321,7 +322,7 @@
     shacl:name "Enter your translation here"@nl;
     shacl:path <http://schema.mobivoc.org/#totalCapacity>
   ], [
-    shacl:class <https://purl.eu/ns/mobility/transporthubs#VehicleType>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@nl;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@nl;
@@ -931,6 +932,44 @@
     shacl:path <https://purl.eu/ns/mobility/transporthubs#specification>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#RegisteredTransportHub> .
+
+<https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#ResourceReportShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#actuator>
+  ], [
+    shacl:class prov:Location;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#location>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel>
+  ], [
+    shacl:datatype xsd:integer;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#number>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService>;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#service>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path <https://purl.eu/ns/mobility/transporthubs#status>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@nl;
+    shacl:name "Enter your translation here"@nl;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#ResourceReport> .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#ResourceShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1586,7 +1625,7 @@
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#VehicleTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/mobility/transporthubs#VehicleType> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/OSLO-PassengerTransportHubs-AP_nl#VirtualNodeShape> a shacl:NodeShape;
   shacl:closed false;

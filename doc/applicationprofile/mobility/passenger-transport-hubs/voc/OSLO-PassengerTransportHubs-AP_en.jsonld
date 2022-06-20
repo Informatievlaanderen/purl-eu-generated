@@ -319,6 +319,17 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#ResourceReport",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Means that the Mobility Service can offer to the Traveller to make the trip."
+      },
+      "usage": {
+        "en": "E.g. a seat on a train,a shared bicycle at a station,a parking space in a car park."
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -338,14 +349,6 @@
       "parents": [
         "http://purl.org/dc/terms/Location"
       ]
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/transporthubs#VehicleType",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Displays the vehicle types to which the capacity is linked."
-      },
-      "parents": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/transporthubs#VirtualNode",
@@ -389,17 +392,17 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#ResourceReport",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#TransportHub",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#TransportRegion",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "https://purl.eu/ns/mobility/transporthubs#VehicleType",
       "@type": "rdfs:Class"
     },
     {
@@ -436,6 +439,27 @@
       "domain": [
         {
           "uri": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The type of means of transport of the Resource."
+      },
+      "usage": {
+        "en": "Especially relevant if the resource is a vehicle."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
         }
       ],
       "range": [
@@ -500,6 +524,24 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#actuator",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Engine of the means of transport."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/transporthubs#brand",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -534,6 +576,42 @@
       "range": [
         {
           "uri": "http://www.w3.org/ns/prov#Location"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#location",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Location of the Resource."
+      },
+      "usage": {
+        "en": "This could be the real-time location of the vehicle, e.g. in free-floating part transport."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/ns/prov#Location"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#number",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2001/XMLSchema#integer"
         }
       ],
       "generalization": []
@@ -575,6 +653,21 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#service",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/transporthubs#specification",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -593,6 +686,27 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/transporthubs#status",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "State of a Resource."
+      },
+      "usage": {
+        "en": "E.g. reserved, inactive, available. Determines whether a resource can be used."
+      },
+      "domain": [
+        {
+          "uri": "https://purl.eu/ns/mobility/transporthubs#ResourceReport"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/transporthubs#vehicleType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -605,7 +719,7 @@
       ],
       "range": [
         {
-          "uri": "https://purl.eu/ns/mobility/transporthubs#VehicleType"
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         }
       ],
       "generalization": []
@@ -620,6 +734,11 @@
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#Hoppinpoint.status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#Mobiliteitsdienst.vervoermiddel",
       "@type": "rdf:Property"
     },
     {
@@ -639,12 +758,27 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#actuator",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#brand",
       "@type": "rdf:Property"
     },
     {
       "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#location",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#location",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#number",
       "@type": "rdf:Property"
     },
     {
@@ -659,7 +793,17 @@
     },
     {
       "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#service",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
       "@id": "https://purl.eu/ns/mobility/transporthubs#specification",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://purl.eu/ns/mobility/transporthubs#status",
       "@type": "rdf:Property"
     },
     {
