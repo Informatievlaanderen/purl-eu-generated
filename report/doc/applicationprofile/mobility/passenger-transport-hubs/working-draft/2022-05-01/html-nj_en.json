@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/8996ba2fd10328fb486e529533120d8d46c4ac8d",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/8996ba2fd10328fb486e529533120d8d46c4ac8d/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/c2a0c125b359056022b5e3ac17d798bceaf906ab",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/c2a0c125b359056022b5e3ac17d798bceaf906ab/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/issues",
     "standaardregisterurl": "https://purl.eu",
     "usesVocs": [],
@@ -353,7 +353,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#registration",
+          "uri": "http://www.w3.org/ns/adms#identifier",
           "name": "registration",
           "sort": "registration",
           "label": {
@@ -885,7 +885,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService",
+          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#service",
           "name": "service",
           "sort": "service",
           "label": {
@@ -990,7 +990,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#dienst",
           "name": "service",
           "sort": "service",
           "label": {
@@ -1312,10 +1312,10 @@
         },
         {
           "uri": "http://www.w3.org/2000/01/rdf-schema#label",
-          "name": "locationName",
-          "sort": "locationName",
+          "name": "placeName",
+          "sort": "placeName",
           "label": {
-            "en": "locationName"
+            "en": "placeName"
           },
           "description": {
             "en": "Name of the town or area."
@@ -1544,6 +1544,41 @@
       ],
       "properties": [
         {
+          "uri": "http://schema.mobivoc.org/#plugType",
+          "name": "plugType",
+          "sort": "plugType",
+          "label": {
+            "en": "plugType"
+          },
+          "description": {
+            "en": "The type of charger."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Charger",
+              "uri": "http://schema.mobivoc.org/#Charger"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ChargerType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ChargerType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "ChargerType"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://schema.mobivoc.org/#plug",
           "name": "plug",
           "sort": "plug",
@@ -1576,41 +1611,6 @@
             }
           ],
           "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.mobivoc.org/#PlugType",
-          "name": "plugType",
-          "sort": "plugType",
-          "label": {
-            "en": "plugType"
-          },
-          "description": {
-            "en": "The type of charger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Charger",
-              "uri": "http://schema.mobivoc.org/#Charger"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ChargerType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ChargerType",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "ChargerType"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1749,6 +1749,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://schema.mobivoc.org/#feature",
+          "name": "feature",
+          "sort": "feature",
+          "label": {
+            "en": "feature"
+          },
+          "description": {
+            "en": "The features of the parking facility."
+          },
+          "usage": {
+            "en": "E.g. kiss-and-ride zone, loading and unloading zone"
+          },
+          "domain": [
+            {
+              "EA-Name": "ParkingFacility",
+              "uri": "http://schema.mobivoc.org/#ParkingFacility"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ParkingFacilityFeatureType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ParkingFacilityFeatureType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "ParkingFacilityFeatureType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://schema.mobivoc.org/#exit",
           "name": "exit",
           "sort": "exit",
@@ -1852,43 +1889,6 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.mobivoc.org/#ParkingFacilityFeature",
-          "name": "feature",
-          "sort": "feature",
-          "label": {
-            "en": "feature"
-          },
-          "description": {
-            "en": "The features of the parking facility."
-          },
-          "usage": {
-            "en": "E.g. kiss-and-ride zone, loading and unloading zone"
-          },
-          "domain": [
-            {
-              "EA-Name": "ParkingFacility",
-              "uri": "http://schema.mobivoc.org/#ParkingFacility"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ParkingFacilityFeatureType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ParkingFacilityFeatureType",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "ParkingFacilityFeatureType"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -1980,7 +1980,7 @@
       ],
       "properties": [
         {
-          "uri": "http://schema.mobivoc.org/#ParkingFacilityFeature",
+          "uri": "http://schema.mobivoc.org/#feature",
           "name": "feature",
           "sort": "feature",
           "label": {
@@ -2662,7 +2662,7 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub",
+          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportNode",
           "name": "transportNode",
           "sort": "transportNode",
           "label": {
@@ -2697,11 +2697,11 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#MobilityService.AvailableAtInfrastructureElement",
+          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#MobilityService.availableAtInfrastructureElement",
           "name": "availableAtInfrastructureElement",
-          "sort": "AvailableAtInfrastructureElement",
+          "sort": "availableAtInfrastructureElement",
           "label": {
-            "en": "AvailableAtInfrastructureElement"
+            "en": "availableAtInfrastructureElement"
           },
           "description": {
             "en": "Infrastructure element on which the Mobility Service is available"
@@ -4816,7 +4816,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/adms#Identifier",
+          "uri": "http://www.w3.org/ns/adms#identifier",
           "name": "identifier",
           "sort": "identifier",
           "label": {
@@ -5281,7 +5281,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/adms#Identifier",
+          "uri": "http://www.w3.org/ns/adms#identifier",
           "name": "identifier",
           "sort": "identifier",
           "label": {
@@ -5527,7 +5527,7 @@
       ],
       "properties": [
         {
-          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#geografischeNaam",
           "name": "geographicalName",
           "sort": "geographicalName",
           "label": {
@@ -5620,6 +5620,41 @@
       ],
       "properties": [
         {
+          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#service",
+          "name": "service",
+          "sort": "service",
+          "label": {
+            "en": "service"
+          },
+          "description": {
+            "en": "The additional services associated with the transport object"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TransportObject",
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AdditionalService",
+              "range_uri": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AdditionalService",
+              "range_puri": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst",
+              "range_label": {
+                "en": "AdditionalService"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub",
           "name": "transportNode",
           "sort": "transportNode",
@@ -5648,41 +5683,6 @@
               "range_puri": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub",
               "range_label": {
                 "en": "TransportHub"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService",
-          "name": "service",
-          "sort": "service",
-          "label": {
-            "en": "service"
-          },
-          "description": {
-            "en": "The additional services associated with the transport object"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TransportObject",
-              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AdditionalService",
-              "range_uri": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AdditionalService",
-              "range_puri": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst",
-              "range_label": {
-                "en": "AdditionalService"
               }
             }
           ],
@@ -5795,6 +5795,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#dienst",
+          "name": "service",
+          "sort": "service",
+          "label": {
+            "en": "service"
+          },
+          "description": {
+            "en": "The mobility services connected to the transport object."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TransportObject",
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "MobilityService",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#MobilityService",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+              "range_label": {
+                "en": "MobilityService"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid",
           "name": "accessibility",
           "sort": "accessibility",
@@ -5866,41 +5901,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
-          "name": "service",
-          "sort": "service",
-          "label": {
-            "en": "service"
-          },
-          "description": {
-            "en": "The mobility services connected to the transport object."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TransportObject",
-              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "MobilityService",
-              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#MobilityService",
-              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
-              "range_label": {
-                "en": "MobilityService"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -6061,6 +6061,41 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+          "name": "containing",
+          "sort": "containing",
+          "label": {
+            "en": "containing"
+          },
+          "description": {
+            "en": "The platform as part of the stopping point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Quay",
+              "range_uri": "https://purl.eu/ns/mobility#Quay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Quay",
+              "range_puri": "https://purl.eu/ns/mobility#Quay",
+              "range_label": {
+                "en": "Quay"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility#transportMode",
           "name": "transportMode",
@@ -6405,41 +6440,6 @@
               "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
               "range_label": {
                 "en": "Accessibility"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "TODO",
-          "name": "includes",
-          "sort": "includes",
-          "label": {
-            "en": "includes"
-          },
-          "description": {
-            "en": "The platform as part of the stopping point."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Quay",
-              "range_uri": "https://purl.eu/ns/mobility#Quay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Quay",
-              "range_puri": "https://purl.eu/ns/mobility#Quay",
-              "range_label": {
-                "en": "Quay"
               }
             }
           ],
@@ -6906,21 +6906,6 @@
       "name": {
         "en": "roadAuthority",
         "undefined": "roadAuthority"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#registration",
-      "name": {
-        "en": "registration",
-        "undefined": "registration"
       },
       "description": {},
       "domain": [
@@ -7822,10 +7807,10 @@
         },
         {
           "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "zipCode",
-          "sort": "zipCode",
+          "name": "postCode",
+          "sort": "postCode",
           "label": {
-            "en": "zipCode"
+            "en": "postCode"
           },
           "description": {
             "en": "Code designating the geographical area that groups addresses for postal purposes."

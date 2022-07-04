@@ -106,20 +106,10 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range xsd:integer .
 
-<https://purl.eu/ns/mobility/passenger-transport-hubs#registration> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <http://www.w3.org/ns/adms#Identifier> .
-
 <https://purl.eu/ns/mobility/passenger-transport-hubs#roadAuthority> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range dc:Agent .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#service> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#specification> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub>;
@@ -146,6 +136,9 @@ dc:type a rdf:Property;
 rdfs:label a rdf:Property;
   rdfs:label "locationName"@en .
 
+<http://www.w3.org/ns/adms#identifier> a rdf:Property;
+  rdfs:label "registration"@en .
+
 <http://www.w3.org/ns/locn#geometry> a rdf:Property;
   rdfs:label "geometry"@en .
 
@@ -161,8 +154,12 @@ rdfs:label a rdf:Property;
 <https://data.vlaanderen.be/ns/dienst#aanbieder> a rdf:Property;
   rdfs:label "provider"@en .
 
-<https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService> a rdf:Property;
-  rdfs:label "service"@en .
+<https://purl.eu/ns/mobility/passenger-transport-hubs#service> a owl:ObjectProperty,
+    rdf:Property;
+  rdfs:label "service"@en;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart> a rdf:Property;
   rdfs:label "displayedTransportationModeOnMap"@en .
@@ -325,12 +322,13 @@ rdfs:label a rdf:Property;
     <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer>,
     <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam>,
     <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart>,
-    <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>,
+    <https://purl.eu/ns/mobility/passenger-transport-hubs#service>,
     <https://data.vlaanderen.be/ns/dienst#aanbieder>,
     <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.vervoersknoop>,
     <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.toegankelijkheid>,
     <https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarheid>,
     <http://www.w3.org/ns/locn#geometry>,
+    <http://www.w3.org/ns/adms#identifier>,
     rdfs:label,
     dc:type,
     dc:title;
