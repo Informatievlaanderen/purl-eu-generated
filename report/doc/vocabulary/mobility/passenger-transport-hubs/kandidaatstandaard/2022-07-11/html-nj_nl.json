@@ -13,14 +13,54 @@
     "documentconfig": {},
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/09f588f047cdaba22e49ffc5ceb27abd0237802c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/09f588f047cdaba22e49ffc5ceb27abd0237802c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/issues",
     "standaardregisterurl": "https://purl.eu",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService",
+      "name": "AdditionalService",
+      "label": {
+        "en": "AdditionalService",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Service that complements or supports other Services.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "E.g. Newspaper shop, Postal service or Restaurant in a Station. Services that are supplemented or supported by this are e.g. Mobility Services.",
+        "nl": "Enter your translation here"
+      },
+      "equivalent": [],
+      "parents": [
+        "https://purl.eu/ns/mobility/transporthubs#Service"
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger",
+      "name": "Charger",
+      "label": {
+        "en": "Charger",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "An object that provides electrical energy for charging electric vehicles.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "equivalent": [],
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+        "http://fixme.com#CivicStructure"
+      ]
+    },
     {
       "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#DataExchangeInfrastructure",
       "name": "DataExchangeInfrastructure",
@@ -135,7 +175,7 @@
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "A summary of resources connected to mobility services based on defined filters by the person requesting the report.",
+        "en": "Report of how many Resources with similar characteristics of availability, type, service, location etc are present at a certain point in time.",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -207,9 +247,9 @@
   "properties": [
     {
       "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#vehicleType",
-      "name": "vehicletype",
+      "name": "vehicleType",
       "label": {
-        "en": "vehicletype",
+        "en": "vehicleType",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
@@ -223,6 +263,27 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportNetwork",
+      "name": "transportNetwork",
+      "label": {
+        "en": "transportNetwork",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Transport network to which the transport object belongs.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
       ],
       "parents": []
     },
@@ -314,6 +375,48 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#provider",
+      "name": "provider",
+      "label": {
+        "en": "provider",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The provider of the additional service.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion",
+      "name": "actuator",
+      "label": {
+        "en": "actuator",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Engine of the means of transport.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#number",
       "name": "number",
       "label": {
@@ -331,51 +434,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#location",
-      "name": "location",
-      "label": {
-        "en": "location",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "The location of the Passenger Transport Hub.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub"
-      ],
-      "range": [
-        "http://www.w3.org/ns/prov#Location"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#location",
-      "name": "location",
-      "label": {
-        "en": "location",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "Location of the Resource.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": "This could be the real-time location of the vehicle, e.g. in free-floating part transport.",
-        "nl": "Enter your translation here"
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
-      ],
-      "range": [
-        "http://www.w3.org/ns/prov#Location"
       ],
       "parents": []
     },
@@ -404,23 +462,26 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#actuator",
-      "name": "actuator",
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#availability",
+      "name": "availability",
       "label": {
-        "en": "actuator",
+        "en": "availability",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
       "description": {
-        "en": "Engine of the means of transport.",
+        "en": "Availability of the additional service.",
         "nl": "Enter your translation here"
       },
-      "usage": {},
+      "usage": {
+        "en": "E.g. timetable or opening hours.",
+        "nl": "Enter your translation here"
+      },
       "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider"
       ],
       "parents": []
     },
@@ -439,6 +500,30 @@
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#accessibility",
+      "name": "accessibility",
+      "label": {
+        "en": "accessibility",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Accessibility of the additional service.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "E.g. whether the Mobility Service is accessible to persons with disabilities.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
       ],
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
@@ -488,6 +573,27 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#Stopplace.accessibility",
+      "name": "accessibility",
+      "label": {
+        "en": "accessibility",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The overall accessibility characteristics of the stopping point.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility#StopPlace"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel",
       "name": "meansOfTransport",
       "label": {
@@ -508,6 +614,27 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#InfrastructureElement.accessibility",
+      "name": "accessibility",
+      "label": {
+        "en": "accessibility",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The overall accessibility characteristics of the infrastructure element.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
       ],
       "parents": []
     },
@@ -547,6 +674,27 @@
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/passenger-transport-hubs#Hoppinpoint"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport",
+      "name": "meansOfTransport",
+      "label": {
+        "en": "meansOfTransport",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Means of transport that is electrically powered.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1061,6 +1209,24 @@
       "show": true
     },
     {
+      "uri": " http://purl.org/dc/terms/spatial",
+      "name": "location",
+      "label": {
+        "en": "location",
+        "nl": "Enter your translation here"
+      },
+      "description": {
+        "en": "The location of the Passenger Transport Hub.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "sort": "Enter your translation here",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
       "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer",
       "name": "columnNumber",
       "label": {
@@ -1115,7 +1281,25 @@
       "show": true
     },
     {
-      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#service",
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub",
+      "name": "transportHub",
+      "label": {
+        "en": "transportHub",
+        "nl": "Enter your translation here"
+      },
+      "description": {
+        "en": "The Passenger Transport Hub at which the additional service is offered.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "sort": "Enter your translation here",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/passenger-transport-hubs#additionalService",
       "name": "service",
       "label": {
         "en": "service",
@@ -1255,6 +1439,27 @@
         "nl": "Enter your translation here"
       },
       "usage": {},
+      "sort": "Enter your translation here",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://purl.org/dc/terms/spatial",
+      "name": "location",
+      "label": {
+        "en": "location",
+        "nl": "Enter your translation here"
+      },
+      "description": {
+        "en": "Location of the Resource.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This could be the real-time location of the vehicle, e.g. in free-floating part transport.",
+        "nl": "Enter your translation here"
+      },
       "sort": "Enter your translation here",
       "inscope": true,
       "indvl": false,

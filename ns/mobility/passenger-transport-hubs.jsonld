@@ -256,6 +256,30 @@
   "publication-date": "2022-07-11",
   "classes": [
     {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Service that complements or supports other Services."
+      },
+      "usage": {
+        "en": "E.g. Newspaper shop, Postal service or Restaurant in a Station. Services that are supplemented or supported by this are e.g. Mobility Services."
+      },
+      "parents": [
+        "https://purl.eu/ns/mobility/transporthubs#Service"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "An object that provides electrical energy for charging electric vehicles."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+        "http://fixme.com#CivicStructure"
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#DataExchangeInfrastructure",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -324,7 +348,7 @@
       "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "A summary of resources connected to mobility services based on defined filters by the person requesting the report."
+        "en": "Report of how many Resources with similar characteristics of availability, type, service, location etc are present at a certain point in time."
       },
       "usage": {
         "en": "E.g. The number of available bikes at the trainstation."
@@ -464,13 +488,6 @@
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "AdditionalService"
-      },
-      "@id": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst",
-      "@type": "rdfs:Class"
     }
   ],
   "properties": [
@@ -485,6 +502,20 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportNetwork",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Transport network to which the transport object belongs."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
       ],
       "generalization": []
     },
@@ -548,6 +579,34 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#provider",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The provider of the additional service."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Engine of the means of transport."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#number",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -558,37 +617,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#location",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The location of the Passenger Transport Hub."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub"
-      ],
-      "range": [
-        "http://www.w3.org/ns/prov#Location"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#location",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Location of the Resource."
-      },
-      "usage": {
-        "en": "This could be the real-time location of the vehicle, e.g. in free-floating part transport."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
-      ],
-      "range": [
-        "http://www.w3.org/ns/prov#Location"
       ],
       "generalization": []
     },
@@ -610,16 +638,19 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#actuator",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#availability",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "Engine of the means of transport."
+        "en": "Availability of the additional service."
+      },
+      "usage": {
+        "en": "E.g. timetable or opening hours."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport"
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider"
       ],
       "generalization": []
     },
@@ -631,6 +662,23 @@
       },
       "domain": [
         "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#accessibility",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Accessibility of the additional service."
+      },
+      "usage": {
+        "en": "E.g. whether the Mobility Service is accessible to persons with disabilities."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService"
       ],
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
@@ -666,6 +714,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Stopplace.accessibility",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The overall accessibility characteristics of the stopping point."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility#StopPlace"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -679,6 +741,20 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#InfrastructureElement.accessibility",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The overall accessibility characteristics of the infrastructure element."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility"
       ],
       "generalization": []
     },
@@ -709,9 +785,30 @@
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Means of transport that is electrically powered."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
     }
   ],
   "externalproperties": [
+    {
+      "name": {
+        "en": "location"
+      },
+      "@id": " http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property"
+    },
     {
       "name": {
         "en": "columnNumber"
@@ -735,37 +832,16 @@
     },
     {
       "name": {
+        "en": "transportHub"
+      },
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
         "en": "service"
       },
-      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#service",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "en": "provider"
-      },
-      "@id": "https://data.vlaanderen.be/ns/dienst#aanbieder",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "en": "transportNode"
-      },
-      "@id": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.vervoersknoop",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "en": "accessibility"
-      },
-      "@id": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.toegankelijkheid",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "en": "availability"
-      },
-      "@id": "https://data.vlaanderen.be/ns/dienst#AanvullendeDienst.beschikbaarheid",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#additionalService",
       "@type": "rdf:Property"
     },
     {
@@ -815,6 +891,18 @@
         "en": "title"
       },
       "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "location"
+      },
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/elements/1.1/date",
       "@type": "rdf:Property"
     }
   ],

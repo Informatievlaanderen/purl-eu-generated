@@ -385,8 +385,8 @@
                 </div>
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499">https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/b04e03aeed6abd4bb5b5a28edf86fc4dc2617499/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/09f588f047cdaba22e49ffc5ceb27abd0237802c">https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/tree/09f588f047cdaba22e49ffc5ceb27abd0237802c</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/09f588f047cdaba22e49ffc5ceb27abd0237802c/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/blob/09f588f047cdaba22e49ffc5ceb27abd0237802c/CHANGELOG</a></dd>
               <dt id="feedbackurl">Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/issues">https://github.com/Informatievlaanderen/OSLOthema-passengerTransportHubs/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://purl.eu">https://purl.eu</a></dd>
 
@@ -480,6 +480,10 @@ The vocabulary OSLO-PassengerTransportHubs defines terms used to exchange data c
                                         <p>
                                             |
                                             
+                                            <a href="#AdditionalService" rel="class">AdditionalService</a> |
+                                            
+                                            <a href="#Charger" rel="class">Charger</a> |
+                                            
                                             <a href="#DataExchangeInfrastructure" rel="class">DataExchangeInfrastructure</a> |
                                             
                                             <a href="#HoppinColumn" rel="class">HoppinColumn</a> |
@@ -512,7 +516,15 @@ The vocabulary OSLO-PassengerTransportHubs defines terms used to exchange data c
                                             
                                             <a href="#accessibility" rel="property">accessibility</a> |
                                             
-                                            <a href="#actuator" rel="property">actuator</a> |
+                                            <a href="#accessibility" rel="property">accessibility</a> |
+                                            
+                                            <a href="#Stopplace.accessibility" rel="property">accessibility</a> |
+                                            
+                                            <a href="#InfrastructureElement.accessibility" rel="property">accessibility</a> |
+                                            
+                                            <a href="#propulsion" rel="property">actuator</a> |
+                                            
+                                            <a href="#availability" rel="property">availability</a> |
                                             
                                             <a href="#brand" rel="property">brand</a> |
                                             
@@ -520,13 +532,13 @@ The vocabulary OSLO-PassengerTransportHubs defines terms used to exchange data c
                                             
                                             <a href="#Hoppinpoint.classification" rel="property">classification</a> |
                                             
-                                            <a href="#location" rel="property">location</a> |
-                                            
-                                            <a href="#location" rel="property">location</a> |
-                                            
                                             <a href="#Mobiliteitsdienst.vervoermiddel" rel="property">meansOfTransport</a> |
                                             
+                                            <a href="#Charger.meansOfTransport" rel="property">meansOfTransport</a> |
+                                            
                                             <a href="#number" rel="property">number</a> |
+                                            
+                                            <a href="#provider" rel="property">provider</a> |
                                             
                                             <a href="#roadAuthority" rel="property">roadAuthority</a> |
                                             
@@ -540,7 +552,9 @@ The vocabulary OSLO-PassengerTransportHubs defines terms used to exchange data c
                                             
                                             <a href="#Hoppinpoint.status" rel="property">status</a> |
                                             
-                                            <a href="#vehicleType" rel="property">vehicletype</a> |
+                                            <a href="#transportNetwork" rel="property">transportNetwork</a> |
+                                            
+                                            <a href="#vehicleType" rel="property">vehicleType</a> |
                                             
                                         </p>
                                     </div>
@@ -556,6 +570,93 @@ The vocabulary OSLO-PassengerTransportHubs defines terms used to exchange data c
                                 
                                 <div class="region region--no-space-top">
                                     <p>This section gives a formal definition of every class.</p>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="AdditionalService">Class <em>AdditionalService</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Class</td>
+                                          </tr>
+<!-- The Naam of the property/class is not relevant as it is already in the title of the table
+                                          
+                                          <tr>
+                                            <th>Naam</th>
+                                            <td><code>AdditionalService</code></td>
+                                          </tr>
+                                          
+-->
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService</code></td>
+                                          </tr>
+                                          
+										  <tr>
+                                            <th>Specialisation of</th>
+											<td><ul>
+					      
+                                              <li><code>https://purl.eu/ns/mobility/transporthubs#Service</code></li>
+											
+                                            </ul></td>
+										  </tr>
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>Service that complements or supports other Services.</td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>
+                                              <p>Usage</p>
+                                            </th>
+                                            <td>E.g. Newspaper shop, Postal service or Restaurant in a Station. Services that are supplemented or supported by this are e.g. Mobility Services.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="Charger">Class <em>Charger</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Class</td>
+                                          </tr>
+<!-- The Naam of the property/class is not relevant as it is already in the title of the table
+                                          
+                                          <tr>
+                                            <th>Naam</th>
+                                            <td><code>Charger</code></td>
+                                          </tr>
+                                          
+-->
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#Charger</code></td>
+                                          </tr>
+                                          
+										  <tr>
+                                            <th>Specialisation of</th>
+											<td><ul>
+					      
+                                              <li><code>http://fixme.com#CivicStructure</code></li>
+											
+                                              <li><code>https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement</code></li>
+											
+                                            </ul></td>
+										  </tr>
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>An object that provides electrical energy for charging electric vehicles.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
                                 </div>
                                 
                                 <div class="region region--no-space-top">
@@ -812,7 +913,7 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                           
                                           <tr>
                                             <th>Definition</th>
-                                            <td>A summary of resources connected to mobility services based on defined filters by the person requesting the report.</td>
+                                            <td>Report of how many Resources with similar characteristics of availability, type, service, location etc are present at a certain point in time.</td>
                                           </tr>
                                           
                                           <tr>
@@ -1007,7 +1108,7 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                 </div>
                                 
                                 <div class="region region--no-space-top">
-                                    <h3 class="h3"  id="actuator">Property <em>actuator</em></h3>
+                                    <h3 class="h3"  id="accessibility">Property <em>accessibility</em></h3>
                                     <table class="definition">
                                         <tbody>
                                           <tr>
@@ -1016,7 +1117,138 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                           </tr>
                                           <tr>
                                             <th>URI</th>
-                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#actuator</code></td>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#accessibility</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>Accessibility of the additional service.</td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Usage</th>
+                                            <td>E.g. whether the Mobility Service is accessible to persons with disabilities.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="Stopplace.accessibility">Property <em>accessibility</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#Stopplace.accessibility</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://purl.eu/ns/mobility#StopPlace
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>The overall accessibility characteristics of the stopping point.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="InfrastructureElement.accessibility">Property <em>accessibility</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#InfrastructureElement.accessibility</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>The overall accessibility characteristics of the infrastructure element.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="propulsion">Property <em>actuator</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion</code></td>
                                           </tr>
                                           
                                           <tr>
@@ -1042,6 +1274,53 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                           <tr>
                                             <th>Definition</th>
                                             <td>Engine of the means of transport.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="availability">Property <em>availability</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#availability</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>Availability of the additional service.</td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Usage</th>
+                                            <td>E.g. timetable or opening hours.</td>
                                           </tr>
                                           
                                         </tbody>
@@ -1180,95 +1459,6 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                 </div>
                                 
                                 <div class="region region--no-space-top">
-                                    <h3 class="h3"  id="location">Property <em>location</em></h3>
-                                    <table class="definition">
-                                        <tbody>
-                                          <tr>
-                                            <th>Type</th>
-                                            <td>Property</td>
-                                          </tr>
-                                          <tr>
-                                            <th>URI</th>
-                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#location</code></td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <th>Domain</th>
-                                            <td><code>
-                                                
-                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub
-                                                
-                                            </code></td>
-                                          </tr>
-                                          
-                                          
-                                          <tr>
-                                            <th>Range</th>
-                                            <td><code>
-                                                
-                                                  http://www.w3.org/ns/prov#Location
-                                                
-                                            </code></td>
-                                          </tr>
-                                          
-                                          
-                                          <tr>
-                                            <th>Definition</th>
-                                            <td>The location of the Passenger Transport Hub.</td>
-                                          </tr>
-                                          
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                                <div class="region region--no-space-top">
-                                    <h3 class="h3"  id="location">Property <em>location</em></h3>
-                                    <table class="definition">
-                                        <tbody>
-                                          <tr>
-                                            <th>Type</th>
-                                            <td>Property</td>
-                                          </tr>
-                                          <tr>
-                                            <th>URI</th>
-                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#location</code></td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <th>Domain</th>
-                                            <td><code>
-                                                
-                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport
-                                                
-                                            </code></td>
-                                          </tr>
-                                          
-                                          
-                                          <tr>
-                                            <th>Range</th>
-                                            <td><code>
-                                                
-                                                  http://www.w3.org/ns/prov#Location
-                                                
-                                            </code></td>
-                                          </tr>
-                                          
-                                          
-                                          <tr>
-                                            <th>Definition</th>
-                                            <td>Location of the Resource.</td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <th>Usage</th>
-                                            <td>This could be the real-time location of the vehicle, e.g. in free-floating part transport.</td>
-                                          </tr>
-                                          
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                                <div class="region region--no-space-top">
                                     <h3 class="h3"  id="Mobiliteitsdienst.vervoermiddel">Property <em>meansOfTransport</em></h3>
                                     <table class="definition">
                                         <tbody>
@@ -1316,6 +1506,48 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                 </div>
                                 
                                 <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="Charger.meansOfTransport">Property <em>meansOfTransport</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#Charger
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  http://www.w3.org/2004/02/skos/core#Concept
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>Means of transport that is electrically powered.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
                                     <h3 class="h3"  id="number">Property <em>number</em></h3>
                                     <table class="definition">
                                         <tbody>
@@ -1351,6 +1583,48 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                           <tr>
                                             <th>Definition</th>
                                             <td>The number of resources</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="provider">Property <em>provider</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#provider</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>The provider of the additional service.</td>
                                           </tr>
                                           
                                         </tbody>
@@ -1615,7 +1889,49 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                 </div>
                                 
                                 <div class="region region--no-space-top">
-                                    <h3 class="h3"  id="vehicleType">Property <em>vehicletype</em></h3>
+                                    <h3 class="h3"  id="transportNetwork">Property <em>transportNetwork</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+                                          <tr>
+                                            <th>Type</th>
+                                            <td>Property</td>
+                                          </tr>
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#transportNetwork</code></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Domain</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/transportnetwerk#Transportobject
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Range</th>
+                                            <td><code>
+                                                
+                                                  https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk
+                                                
+                                            </code></td>
+                                          </tr>
+                                          
+                                          
+                                          <tr>
+                                            <th>Definition</th>
+                                            <td>Transport network to which the transport object belongs.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h3"  id="vehicleType">Property <em>vehicleType</em></h3>
                                     <table class="definition">
                                         <tbody>
                                           <tr>
@@ -1873,6 +2189,43 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                 </div>
                                 
                                 <div class="region region--no-space-top">
+                                    <h3 class="h4" id="location"><em>location</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code> http://purl.org/dc/terms/spatial</code></td>
+                                          </tr>
+					 
+                                          
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h4" id="location"><em>location</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>http://purl.org/dc/terms/spatial</code></td>
+                                          </tr>
+					 
+                                          
+                                          <tr>
+                                            <th>Gebruik</th>
+                                            <td>This could be the real-time location of the vehicle, e.g. in free-floating part transport.</td>
+                                          </tr>
+                                          
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
                                     <h3 class="h4" id="locationName"><em>locationName</em></h3>
                                     <table class="definition">
                                         <tbody>
@@ -2017,7 +2370,7 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
 
                                           <tr>
                                             <th>URI</th>
-                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#service</code></td>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#additionalService</code></td>
                                           </tr>
 					 
                                           
@@ -2050,6 +2403,22 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
                                           <tr>
                                             <th>URI</th>
                                             <td><code>http://purl.org/dc/terms/title</code></td>
+                                          </tr>
+					 
+                                          
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="region region--no-space-top">
+                                    <h3 class="h4" id="transportHub"><em>transportHub</em></h3>
+                                    <table class="definition">
+                                        <tbody>
+
+                                          <tr>
+                                            <th>URI</th>
+                                            <td><code>https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub</code></td>
                                           </tr>
 					 
                                           
