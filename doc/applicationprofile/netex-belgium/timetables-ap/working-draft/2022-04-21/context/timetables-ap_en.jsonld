@@ -1,6 +1,5 @@
 {
   "@context": {
-    "Aanvraagmethode": "http://www.w3.org/2004/02/skos/core#Concept",
     "AccessibilityAssessment": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
     "Adresvoorstelling": "http://www.w3.org/ns/locn#Address",
     "Adresvoorstelling.administratieveEenheidNiveau1": {
@@ -67,7 +66,6 @@
       "@type": "@id"
     },
     "AuthorityOrOperator": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator",
-    "BestemmingsdisplayvariantType": "http://www.w3.org/2004/02/skos/core#Concept",
     "BookingArrangement": "https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement",
     "ContactInfo": "http://schema.org/ContactPoint",
     "ContactInfo.aanschrijfvorm": {
@@ -106,7 +104,8 @@
       "@id": "http://xmlns.com/foaf/0.1/page",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
-    "DagVanDeWeek": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Crowding": "http://www.w3.org/2004/02/skos/core#Concept",
+    "DayOfWeek": "http://www.w3.org/2004/02/skos/core#Concept",
     "DayType": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
     "DayType.dayLength": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.dayLength",
@@ -196,6 +195,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.via",
       "@type": "@id"
     },
+    "DestinationDisplayVariantType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Direction": "https://purl.eu/ns/mobility/timetables-and-planning#Direction",
     "Direction.directionType": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.directionType",
@@ -205,7 +205,8 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection",
       "@type": "@id"
     },
-    "Drukte": "http://www.w3.org/2004/02/skos/core#Concept",
+    "DirectionType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "FareClass": "http://www.w3.org/2004/02/skos/core#Concept",
     "Geometrie": "http://www.w3.org/ns/locn#Geometry",
     "Geometrie.gml": {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
@@ -214,15 +215,6 @@
     "Geometrie.wkt": {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
-    },
-    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-    "GeregistreerdeOrganisatie.registratie": {
-      "@id": "http://www.w3.org/ns/regorg#registration",
-      "@type": "@id"
-    },
-    "GeregistreerdeOrganisatie.wettelijkeNaam": {
-      "@id": "http://www.w3.org/ns/regorg#legalName",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Getal": "https://schema.org/Number",
     "GroupOfLines": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines",
@@ -243,6 +235,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.transportmode",
       "@type": "@id"
     },
+    "HeadwayDisplay": "http://www.w3.org/2004/02/skos/core#Concept",
     "HeadwayInterval": "https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval",
     "HeadwayInterval.maximumHeadwayInterval": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval",
@@ -256,6 +249,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledHeadwayInterval",
       "@type": "http://www.w3.org/2001/XMLSchema#duration"
     },
+    "HolidayType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Identificator": "http://www.w3.org/ns/adms#Identifier",
     "Identificator.identificator": {
       "@id": "http://www.w3.org/2004/02/skos/core#notation",
@@ -473,13 +467,9 @@
       "@type": "@id"
     },
     "Organisatie": "http://www.w3.org/ns/org#Organization",
-    "Organisatie.alternatieveNaam": {
+    "Organisatie.alternativeName": {
       "@container": "@set",
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "Organisatie.beschrijving": {
-      "@id": "http://purl.org/dc/terms/description",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Organisatie.contactinfo": {
@@ -487,14 +477,18 @@
       "@id": "http://schema.org/contactPoint",
       "@type": "@id"
     },
+    "Organisatie.description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organisatie.preferredName": {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
     "Organisatie.type": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/regorg#orgType",
       "@type": "@id"
-    },
-    "Organisatie.voorkeursnaam": {
-      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "PassengerCapacity": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity",
     "PassengerCapacity.fareClass": {
@@ -526,16 +520,8 @@
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerStopAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment",
-    "PassengerStopAssignment.geplandStoppunt": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
-      "@type": "@id"
-    },
     "PassengerStopAssignment.quay": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#quay",
-      "@type": "@id"
-    },
-    "PassengerStopAssignment.stopplaats": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
       "@type": "@id"
     },
     "Point": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
@@ -657,7 +643,16 @@
       "@type": "@id"
     },
     "Punt": "http://www.opengis.net/ont/sf#Point",
-    "RichtingType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "RegisteredOrganization": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "RegisteredOrganization.legalName": {
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "RegisteredOrganization.registration": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
+    "RequestMethodType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Route": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
     "Route.coveredBy": {
       "@container": "@set",
@@ -791,7 +786,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
       "@type": "@id"
     },
-    "Seizoen": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Season": "http://www.w3.org/2004/02/skos/core#Concept",
     "ServiceCalendar": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar",
     "ServiceCalendar.fromDate": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.fromDate",
@@ -923,6 +918,7 @@
     },
     "StandaardEenheid": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
     "StopPlace": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+    "StopPlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
     "StopPointInJourneyPattern": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern",
     "StopPointInJourneyPattern.aViewOf": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf",
@@ -977,12 +973,9 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopUse",
       "@type": "@id"
     },
-    "Stopgebruik": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Stopplaatstype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "StopUse": "http://www.w3.org/2004/02/skos/core#Concept",
     "TaalString": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-    "Tariefklasse": "http://www.w3.org/2004/02/skos/core#Concept",
     "TariffZone": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone",
-    "Tijdspuntstatus": "http://www.w3.org/2004/02/skos/core#Concept",
     "TimeTabledPassingTime": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
     "TimeTabledPassingTime.arrivalDayOffset": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalDayOffset",
@@ -1017,11 +1010,12 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband.startTime",
       "@type": "http://www.w3.org/2001/XMLSchema#time"
     },
+    "TimingpointStatus": "http://www.w3.org/2004/02/skos/core#Concept",
     "TrainNumber": "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber",
-    "Transportmodus": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Treingrootte": "http://www.w3.org/2004/02/skos/core#Concept",
-    "TypeBrandstof": "http://www.w3.org/2004/02/skos/core#Concept",
-    "TypeLijn": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TrainSizetype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Transportmode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TypeOfFuel": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TypeOfLine": "http://www.w3.org/2004/02/skos/core#Concept",
     "UicOperatingPeriod": "https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod",
     "UicOperatingPeriod.daysOfWeek": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#daysOfWeek",
@@ -1031,7 +1025,6 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#validDayBits",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Vakantietype": "http://www.w3.org/2004/02/skos/core#Concept",
     "VehicleJourney": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney",
     "VehicleJourney.departureTime": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime",
@@ -1124,7 +1117,6 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Via.name",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "VolgtijdDisplay": "http://www.w3.org/2004/02/skos/core#Concept",
-    "WeekVanDeMaand": "http://www.w3.org/2004/02/skos/core#Concept"
+    "WeekOfMonth": "http://www.w3.org/2004/02/skos/core#Concept"
   }
 }
