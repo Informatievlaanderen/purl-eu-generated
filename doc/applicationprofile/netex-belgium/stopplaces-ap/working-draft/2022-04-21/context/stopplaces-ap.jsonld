@@ -122,15 +122,6 @@
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-    "GeregistreerdeOrganisatie.registratie": {
-      "@id": "http://www.w3.org/ns/regorg#registration",
-      "@type": "@id"
-    },
-    "GeregistreerdeOrganisatie.wettelijkeNaam": {
-      "@id": "http://www.w3.org/ns/regorg#legalName",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
     "Getal": "https://schema.org/Number",
     "GroupOfStopPlaces": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces",
     "GroupOfStopPlaces.description": {
@@ -263,42 +254,34 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
       "@type": "@id"
     },
-    "Organisatie": "http://www.w3.org/ns/org#Organization",
-    "Organisatie.alternatieveNaam": {
+    "OrganisatieType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Organization": "http://www.w3.org/ns/org#Organization",
+    "Organization.alternativeName": {
       "@container": "@set",
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "Organisatie.beschrijving": {
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "Organisatie.contactinfo": {
+    "Organization.contactinfo": {
       "@container": "@set",
       "@id": "http://schema.org/contactPoint",
       "@type": "@id"
     },
-    "Organisatie.type": {
+    "Organization.description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organization.preferredName": {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organization.type": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/regorg#orgType",
       "@type": "@id"
     },
-    "Organisatie.voorkeursnaam": {
-      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "OrganisatieType": "http://www.w3.org/2004/02/skos/core#Concept",
     "PassengerStopAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment",
-    "PassengerStopAssignment.geplandStoppunt": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
-      "@type": "@id"
-    },
     "PassengerStopAssignment.quay": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#quay",
-      "@type": "@id"
-    },
-    "PassengerStopAssignment.stopplaats": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
       "@type": "@id"
     },
     "PlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -416,6 +399,15 @@
       "@type": "@id"
     },
     "QuayType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "RegisteredOrganization": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "RegisteredOrganization.legalName": {
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "RegisteredOrganization.registratie": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
     "ScheduledStopPoint": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
     "ScheduledStopPoint.description": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description",
@@ -453,11 +445,6 @@
     "ScheduledStopPoint.startOf": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startOf",
-      "@type": "@id"
-    },
-    "ScheduledStopPoint.stopPlace": {
-      "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlace",
       "@type": "@id"
     },
     "ScheduledStopPoint.stopType": {
@@ -565,10 +552,6 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment",
       "@type": "@id"
     },
-    "StopPlace.afbeelding": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
     "StopPlace.alternativeName": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName",
@@ -608,6 +591,10 @@
     "StopPlace.gated": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.gated",
       "@type": "@id"
+    },
+    "StopPlace.image": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "StopPlace.in": {
       "@container": "@set",
@@ -665,11 +652,6 @@
     },
     "StopPlace.roadAddress": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.roadAddress",
-      "@type": "@id"
-    },
-    "StopPlace.scheduledStopPoint": {
-      "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
       "@type": "@id"
     },
     "StopPlace.serves": {
