@@ -2,26 +2,6 @@
   "@context": {
     "AccessibilityAssessment": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
     "Address": "https://fixme.com",
-    "Address.busnummer": {
-      "@id": "http://fixme.com#busnummer",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Address.huisnummer": {
-      "@id": "http://fixme.com#huisnummer",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Address.officieelToegekend": {
-      "@id": "http://fixme.com#officieelToegekend",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "Address.positie": {
-      "@id": "http://fixme.com#positie",
-      "@type": "@id"
-    },
-    "Address.status": {
-      "@id": "http://fixme.com#Adres.status",
-      "@type": "@id"
-    },
     "AddressRepresentation": "http://www.w3.org/ns/locn#Address",
     "AddressRepresentation.administrativeUnitName": {
       "@id": "http://fixme.com#administrativeUnitName",
@@ -37,7 +17,7 @@
     },
     "AddressRepresentation.fullAddress": {
       "@id": "http://www.w3.org/ns/locn#fullAddress",
-      "@type": ""
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "AddressRepresentation.houseNumber": {
       "@id": "https://fixme.com",
@@ -70,7 +50,7 @@
     },
     "AddressRepresentation.thoroughfare": {
       "@id": "http://www.w3.org/ns/locn#thoroughfare",
-      "@type": ""
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Authority": "https://purl.eu/ns/mobility/timetables-and-planning#Authority",
     "Authority.address": {
@@ -80,15 +60,11 @@
     "AuthorityOrOperator": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator",
     "BookingArrangement": "https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement",
     "ContactInfo": "http://schema.org/ContactPoint",
-    "ContactInfo.aanschrijfvorm": {
-      "@id": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "ContactInfo.adres": {
+    "ContactInfo.address": {
       "@id": "http://www.w3.org/ns/locn#address",
-      "@type": ""
+      "@type": "@id"
     },
-    "ContactInfo.beschikbaarheid": {
+    "ContactInfo.availability": {
       "@id": "http://schema.org/hoursAvailable",
       "@type": ""
     },
@@ -100,15 +76,15 @@
       "@id": "http://schema.org/email",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "ContactInfo.fax": {
-      "@id": "http://schema.org/faxNumber",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    "ContactInfo.honorific": {
+      "@id": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "ContactInfo.openingsuren": {
+    "ContactInfo.openingHours": {
       "@id": "http://schema.org/openingHours",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "ContactInfo.telefoon": {
+    "ContactInfo.phone": {
       "@id": "http://schema.org/telephone",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
@@ -219,12 +195,12 @@
     },
     "DirectionType": "http://www.w3.org/2004/02/skos/core#Concept",
     "FareClass": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Geometrie": "http://www.w3.org/ns/locn#Geometry",
-    "Geometrie.gml": {
+    "Geometry": "http://www.w3.org/ns/locn#Geometry",
+    "Geometry.gml": {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "Geometrie.wkt": {
+    "Geometry.wkt": {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
@@ -469,7 +445,7 @@
     "Organization.alternativeName": {
       "@container": "@set",
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-      "@type": ""
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Organization.contactinfo": {
       "@container": "@set",
@@ -478,11 +454,11 @@
     },
     "Organization.description": {
       "@id": "http://purl.org/dc/terms/description",
-      "@type": ""
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Organization.preferredName": {
       "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "@type": ""
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "Organization.type": {
       "@container": "@set",
@@ -634,16 +610,16 @@
       "@type": "@id"
     },
     "Punt": "http://www.opengis.net/ont/sf#Point",
-    "Quantitative": "https://schema.org/QuantitativeValue",
-    "Quantitative.standaardEenheid": {
+    "QuantitativeValue": "https://schema.org/QuantitativeValue",
+    "QuantitativeValue.standaardEenheid": {
       "@id": "https://schema.org/unitCode",
       "@type": "@id"
     },
-    "Quantitative.unit": {
+    "QuantitativeValue.unit": {
       "@id": "https://schema.org/unitText",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Quantitative.value": {
+    "QuantitativeValue.value": {
       "@id": "https://schema.org/value",
       "@type": "@id"
     },
