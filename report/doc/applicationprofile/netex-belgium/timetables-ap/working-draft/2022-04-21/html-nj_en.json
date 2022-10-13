@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/29120d66a20a812f6e2f3e32d9b1c386a916abf2",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/29120d66a20a812f6e2f3e32d9b1c386a916abf2/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/b362310b17d593fbce7352fa77e27bf95b0c65ac",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/b362310b17d593fbce7352fa77e27bf95b0c65ac/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -2958,16 +2958,16 @@
           ],
           "range": [
             {
-              "range_label": "Punt",
-              "range_uri": "http://www.opengis.net/ont/sf#Point"
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Punt",
-              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_uri": "#Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
               "range_label": {
-                "en": "Punt"
+                "en": "Point"
               }
             }
           ],
@@ -5001,16 +5001,16 @@
           ],
           "range": [
             {
-              "range_label": "Punt",
-              "range_uri": "http://www.opengis.net/ont/sf#Point"
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Punt",
-              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_uri": "#Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
               "range_label": {
-                "en": "Punt"
+                "en": "Point"
               }
             }
           ],
@@ -6399,28 +6399,6 @@
               }
             }
           ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#flexiblePointProperties",
-          "name": "flexible point properties",
-          "sort": "flexible point properties",
-          "label": {
-            "en": "flexible point properties"
-          },
-          "description": {
-            "en": "Flexible properties of the Point."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPointInJourneyPattern",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -7959,6 +7937,30 @@
       "properties": []
     },
     {
+      "uri": "http://www.w3.org/ns/org#FormalOrganization",
+      "name": "Formal Organization",
+      "label": {
+        "en": "Formal Organization"
+      },
+      "sort": "Formal Organization",
+      "description": {
+        "en": "A recognized organization, recognized in a broad sense or more specifically in a legal sense, with associated rights and obligations."
+      },
+      "usage": {
+        "en": "Eg a company, a non-profit organization, a government body, a church community."
+      },
+      "parents": [
+        {
+          "label": "Organization",
+          "name": "Organization",
+          "package": "ORG",
+          "uri": "http://www.w3.org/ns/org#Organization",
+          "scoped_uri": "#Organization"
+        }
+      ],
+      "properties": []
+    },
+    {
       "uri": "http://www.w3.org/ns/org#Organization",
       "name": "Organization",
       "label": {
@@ -8169,18 +8171,11 @@
       },
       "parents": [
         {
-          "label": "Formele Organisatie",
-          "name": "FormeleOrganisatie",
+          "label": "Formal Organization",
+          "name": "FormalOrganization",
           "package": "ORG",
           "uri": "http://www.w3.org/ns/org#FormalOrganization",
-          "scoped_uri": "http://www.w3.org/ns/org#FormalOrganization"
-        },
-        {
-          "label": "Organization",
-          "name": "Organization",
-          "package": "ORG",
-          "uri": "http://www.w3.org/ns/org#Organization",
-          "scoped_uri": "#Organization"
+          "scoped_uri": "#Formal Organization"
         }
       ],
       "properties": [
@@ -10854,13 +10849,13 @@
     },
     {
       "uri": "http://www.opengis.net/ont/sf#Point",
-      "name": "Punt",
+      "name": "Point",
       "label": {
-        "en": "Punt"
+        "en": "Point"
       },
-      "sort": "Punt",
+      "sort": "Point",
       "description": {
-        "en": "TODO"
+        "en": "A 0-dimensional geometric object that represents a particular location in a coordinate space. Has an x ??coordinate and a y coordinate. Can also have a z coordinate (height) and an m coordinate (distance along a curve)."
       },
       "usage": {},
       "parents": [
@@ -10872,7 +10867,148 @@
           "scoped_uri": "#Geometry"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#location",
+          "name": "location",
+          "sort": "location",
+          "label": {
+            "en": "location"
+          },
+          "description": {
+            "en": "Location of the Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
+              "range_label": {
+                "en": "Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
+          "name": "viewed as",
+          "sort": "viewed as",
+          "label": {
+            "en": "viewed as"
+          },
+          "description": {
+            "en": "As used as a Point in a Journey Pattern."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point in Journey Pattern",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern",
+              "range_label": {
+                "en": "Point in Journey Pattern"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber",
+          "name": "point number",
+          "sort": "point number",
+          "label": {
+            "en": "point number"
+          },
+          "description": {
+            "en": "Arbitrary alternative identifier for the Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Point."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",

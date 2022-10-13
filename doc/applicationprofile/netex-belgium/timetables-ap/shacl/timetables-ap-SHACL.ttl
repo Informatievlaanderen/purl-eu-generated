@@ -62,7 +62,6 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ContactInfoShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#LineStringShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PuntShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TransportmodeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TypeOfLineShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DirectionTypeShape>,
@@ -84,6 +83,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AddressRepresentationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#GeometryShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#FormalOrganizationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OrganizationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganizationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AddressShape>,
@@ -1420,6 +1420,10 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#FareClassShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#FormalOrganizationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass org:FormalOrganization .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#GeometryShape> a shacl:NodeShape;
   shacl:closed false;
@@ -3873,7 +3877,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/d82948363ece975e24bbfe87c66ff0dff5794823>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/e1a8236ba27f43c77b1f155d22f48c2c4e69ba81>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/e709ed2c4b3e15bab1284ecc2e8ca7358b3608a9>;
-  shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+  shacl:targetClass <http://www.opengis.net/ont/sf#Point> .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/01c3c3497694003701a01ddbcebfd43f55a0ef29> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Point%3Apoint%20number";
   shacl:description "Arbitrary alternative identifier for the Point."@en;
@@ -3940,11 +3944,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/a7760ef34c8bc85460f186072f4aaefd62ae6213> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Point%3Alocation";
-  shacl:class <http://www.opengis.net/ont/sf#Point>;
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
   shacl:description "Location of the Point."@en;
   shacl:name "location"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#location>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van location moet van het type <http://www.opengis.net/ont/sf#Point> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van location moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Point> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/b20560987ee1a10b4a30ec3e1a5dca625637e811> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Point%3Apoint%20number";
@@ -4327,10 +4331,6 @@
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#dayOfMonth>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor day of month"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PuntShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://www.opengis.net/ont/sf#Point> .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -5152,11 +5152,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/a7760ef34c8bc85460f186072f4aaefd62ae6213> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Alocation";
-  shacl:class <http://www.opengis.net/ont/sf#Point>;
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
   shacl:description "Location of the Scheduled Stop Point."@en;
   shacl:name "location"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van location moet van het type <http://www.opengis.net/ont/sf#Point> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van location moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Point> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b4d2d3e7febf04346c14b475f6c4597d3b0062d5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20status";
@@ -6106,7 +6106,6 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/1247f659b021e8ee2eee1a1c27d07942b4b6249a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/163bf8623a8ce81285e94ece3e5ed5bf8bbdc102>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/182b482621bcbcb88d84b78ddb07b4b5346ae63c>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/1d1cae6ab28e0025b35329ef0f8c95d50df7d885>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/26deed59d1eee195df0b7601a04230d5f2686319>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/31e3232b5098f1bd6c59c8b79f6c2fa5da60d9db>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/347096d39de4bcd54b41468aae2aabd0070999a9>,
@@ -6193,14 +6192,6 @@
   shacl:name "a view of"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor a view of"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/1d1cae6ab28e0025b35329ef0f8c95d50df7d885> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPattern%3Aflexible%20point%20properties";
-  shacl:description "Flexible properties of the Point."@en;
-  shacl:maxCount 1;
-  shacl:name "flexible point properties"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#flexiblePointProperties>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor flexible point properties"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape/26deed59d1eee195df0b7601a04230d5f2686319> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPattern%3Afor%20alighting";
