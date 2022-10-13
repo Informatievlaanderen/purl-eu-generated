@@ -424,7 +424,7 @@
       "name": "Service Journey Link",
       "EA-Guid": "{6FB184C0-E366-45db-95FD-A8607D6A0041}",
       "definition": {
-        "en": "The connection between two consecutive Scheduled Stop Points in a Service Journey Link. Each Service Journey Link has a particular departure and arrival time. Service Journey Links allow Routeplanners to calculate shortest Routes more easily since a Journey is executed at a specific time (on a specific Day Type).",
+        "en": "The connection between two successive Scheduled Stop Points in a Service Joutney. Since a Journey is always valid for a specific time (on a specific Day Type), each Service Journey Link has a specific departure and arrival time. Service Journey Links allow Route Planners to more easily calculate the shortest Routes.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -1231,18 +1231,6 @@
       }
     },
     {
-      "name": "flexible line view",
-      "EA-Guid": "{F49B543D-BCAD-4e49-86F3-A598AB100AFA}",
-      "definition": {
-        "en": "A group of Flexible Routes which is generally known to the public by a similar name or number and which have common booking arrangements.",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "flexible line view",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
       "name": "frequency regulated",
       "EA-Guid": "{1CF81E27-5F4C-4282-8C33-7656A269BFAB}",
       "definition": {
@@ -1970,7 +1958,7 @@
       "name": "arrival time",
       "EA-Guid": "{B5A16A26-7500-4baf-B02E-8A75F29CE427}",
       "definition": {
-        "en": "Arrival time.",
+        "en": "Time when the Link arrives.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -3081,6 +3069,22 @@
   ],
   "externals": [
     {
+      "name": "Standard Unit",
+      "EA-Guid": "{B7213FC1-4314-4500-8A40-94A0ABB87ED5}",
+      "definition": {
+        "en": "Unit established by a standardizing organization.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "Standard Unit",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Datatype can be a URI or a TypedString. In the first case, reference is made to units published on the web, preferably those from qudt, eg http://qudt.org/vocab/unit/M for meter. In the case of a TypedString, preference is given to the UCUM codes, eg \"km/h\"^^http://w3id.org/lindt/custom_datatypes#ucumunit.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
       "name": "Contact Info",
       "EA-Guid": "{7EDA299E-BD0F-4377-AC68-9FE02C226B6C}",
       "definition": {
@@ -3097,14 +3101,14 @@
       }
     },
     {
-      "name": "Lijn String",
+      "name": "Line String",
       "EA-Guid": "{B91115DA-52AE-475c-A80E-2E27A993329F}",
       "definition": {
-        "en": "TODO",
+        "en": "Curve with linear interpolation between the points. Each successive pair of points forms a line segment. The Line String has at least two points.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "Lijn String",
+        "en": "Line String",
         "nl": "Enter your translation here"
       },
       "usage": {
@@ -3285,18 +3289,18 @@
       }
     },
     {
-      "name": "Adresvoorstelling",
+      "name": "Address Representation",
       "EA-Guid": "{AD0DDFB6-A28C-4009-836B-A53F2D7CD562}",
       "definition": {
-        "en": "TODO",
+        "en": "More readable representation of a structured Address with only the basic or combined data, intended for the use of an address as an attribute of another object or as a label.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "Adresvoorstelling",
+        "en": "Address Representation",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Bv als attribuut ve persoon of gebouw... De adresvoorstelling heeft niet enkel betrekking op Belgische adressen, ze kan gebruikt worden om buitenlandse adressen weer te geven (waar mogelijk andere adresaanduidingen dan huisnummer of busnummer worden gebruikt of waar adrescomponenten zoals adresgebieden voorkomen).",
+        "en": "Eg as an attribute of a person or building or as a label on a letter or a map.",
         "nl": "Enter your translation here"
       }
     },
@@ -3336,7 +3340,7 @@
       "name": "Registered Organization",
       "EA-Guid": "{D25382DE-69D2-48c8-9BE4-21214EC03514}",
       "definition": {
-        "en": "TODO",
+        "en": "Organization with a legal status established by registration. This is more specific than a Formal Organization where this status can also be obtained in another way.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -3344,85 +3348,85 @@
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "In België moeten oa volgende organisaties zich registreren: vennootschap (nv,bvba etc),eenmanszaak,overheidsorgaan,stichting Bij registratie krijgt de organisatie een ondernemingsnummer en worden zijn gegevens ingevoerd in de KBO.",
+        "en": "In Belgium, like in many other countries, the following kinds Organizations must register: company, sole proprietorship, government body, foundation Upon registration, the Organization receives a company number and its details are entered in a central registry called Crossrads Bank for Enterprises (CBE). More details on this class in the <a href=\"https://www.w3.org/TR/vocab-regorg/\">Registered Organization Vocabulary</a>.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "Standaard Eenheid",
-      "EA-Guid": "{B7213FC1-4314-4500-8A40-94A0ABB87ED5}",
+      "name": "Address",
+      "EA-Guid": "{448CEF7B-244F-4853-A69E-26784E29C6AC}",
       "definition": {
-        "en": "TODO",
+        "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "Standaard Eenheid",
+        "en": "Address",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Datatype kan een URI zijn of een GetypeerdeString. In het eerste geval wordt verwezen naar op het web gepubliceerde eenheden, bij voorkeur deze van qudt, bv http://qudt.org/vocab/unit/M voor meter. In het geval van een  GetypeerdeString gaat de voorkeur naar de UCUM-codes, bv \"km/h\"^^http://w3id.org/lindt/custom_datatypes#ucumunit.",
+        "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ex.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "Getal",
+      "name": "Number",
       "EA-Guid": "{44A073D0-9823-43e7-89B6-9E7C33658A12}",
       "definition": {
-        "en": "TODO",
+        "en": "Indication of a quantity.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "Getal",
+        "en": "Number",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "In praktijk de primitieve datatypes waarmee een hoeveelheid kan worden aangeduid,zie xsd datatypes float,double,decimal,integer etc.",
+        "en": "In practice the primitive data types with which a quantity can be indicated, see xsd data types Float, Double, Decimal, Integer etc.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "Kwantitatieve Waarde",
+      "name": "Quantitative ",
       "EA-Guid": "{0CDF1614-1065-4806-A2C3-0ECECD9433E0}",
       "definition": {
-        "en": "TODO",
+        "en": "Indication of the quantity of a particular characteristic of an object.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "Kwantitatieve Waarde",
+        "en": "Quantitative ",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Bv de hoogte van een object,het gewicht,de temperatuur etc. Het gaat om een kenmerk dat numeriek uitgedrukt kan worden en in een bepaalde eenheid. Kwalitatieve aanduidingen zoals hoog,laag ed vallen hier dus niet onder.",
+        "en": "For example, the height of an object, the weight, the temperature, etc. It concerns a characteristic that can be expressed numerically and in a certain unit. Qualitative indications such as high, low, etc. are therefore not included.",
         "nl": "Enter your translation here"
       }
     }
   ],
   "externalproperties": [
     {
-      "name": "waarde",
+      "name": "value",
       "EA-Guid": "{A84F9AF5-C490-46ed-93CA-A964328C6D71}",
       "definition": {
-        "en": "TODO",
+        "en": "Number by which the quantity of the characteristic can be expressed.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "waarde",
+        "en": "value",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "eenheid",
+      "name": "unit",
       "EA-Guid": "{A77C5709-BB20-4a35-BDF4-827B6BFA342B}",
       "definition": {
-        "en": "TODO",
+        "en": "The unit in which the value is expressed",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "eenheid",
+        "en": "unit",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Te gebruiken als geen standaard eenheid gekend is.",
+        "en": "To be used if no standard unit is known.",
         "nl": "Enter your translation here"
       }
     },
@@ -3430,7 +3434,7 @@
       "name": "standaard eenheid",
       "EA-Guid": "{E6A0A199-AB97-4273-98B1-AF49197F9402}",
       "definition": {
-        "en": "TODO",
+        "en": "The standardized unit in which the value is expressed.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -3439,66 +3443,34 @@
       }
     },
     {
-      "name": "land",
-      "EA-Guid": "{AF62F2EF-9C9C-4470-A38B-E1573496F435}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "land",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "gemeentenaam",
-      "EA-Guid": "{15169048-6FCF-4e25-9111-24E100669DC9}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "gemeentenaam",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "huisnummer",
+      "name": "house number",
       "EA-Guid": "{1BE5D310-A819-44c1-A59D-60A7CDD1F4CB}",
       "definition": {
-        "en": "TODO",
+        "en": "Alphanumeric code officially assigned to building units, berths, pitches or plots.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "huisnummer",
+        "en": "house number",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen.",
+        "en": "Specialization of locatorIndicator intended for Belgian addresses.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "busnummer",
+      "name": "bus number",
       "EA-Guid": "{7523622A-84F8-4d6f-B43C-8D1F69D782CC}",
       "definition": {
-        "en": "TODO",
+        "en": "Officially assigned alphanumeric code that is added to the house number to distinguish multiple building units, pitches, berths or lots that have the same house number.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "busnummer",
+        "en": "bus number",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen.",
+        "en": "Specialization of locatorIndicator intended for Belgian addresses.",
         "nl": "Enter your translation here"
       }
     },
@@ -3538,7 +3510,7 @@
       "name": "registration",
       "EA-Guid": "{0FCD818A-7913-4601-85C7-16503BD4884E}",
       "definition": {
-        "en": "TODO",
+        "en": "Identifier obtained by the organization upon registration.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -3546,7 +3518,7 @@
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "In de KBO is dit het ondernemingsnummer.",
+        "en": "In the CBE this would be the enterprisenumber.",
         "nl": "Enter your translation here"
       }
     },
@@ -3570,7 +3542,7 @@
       "name": "legal name",
       "EA-Guid": "{36FE51EC-21EB-49b5-A730-E1F6DCAEA2A1}",
       "definition": {
-        "en": "TODO",
+        "en": "Legally registered name of the organization.",
         "nl": "Enter your translation here"
       },
       "label": {
@@ -3578,39 +3550,35 @@
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": "Evt in verschillende talen.",
+        "en": "Possibly in different languages.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "straatnaam",
+      "name": "thoroughfare",
       "EA-Guid": "{2BF2B3D0-9E10-4092-AD77-6F37D44CB314}",
       "definition": {
-        "en": "TODO",
+        "en": "An address component that represents the name of a passage or way through from one location to another.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "straatnaam",
+        "en": "thoroughfare",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": " ",
+        "en": "A thoroughfare is not necessarily a road, it might be a waterway or some other feature.",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "postnaam",
+      "name": "post name",
       "EA-Guid": "{C8926E8E-0B29-40e8-986A-FE7BDE559120}",
       "definition": {
-        "en": "TODO",
+        "en": "Name identifying the geographic area that groups addresses for postal purposes.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "postnaam",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
+        "en": "post name",
         "nl": "Enter your translation here"
       }
     },
@@ -3618,15 +3586,11 @@
       "name": "postcode",
       "EA-Guid": "{D69680B4-4497-45ee-B361-3F1DE9F5FF3F}",
       "definition": {
-        "en": "TODO",
+        "en": "Code identifying the geographic area that groups addresses for postal purposes.",
         "nl": "Enter your translation here"
       },
       "label": {
         "en": "postcode",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
         "nl": "Enter your translation here"
       }
     },
@@ -3634,111 +3598,39 @@
       "name": "postbus",
       "EA-Guid": "{740B39CC-4028-4fa4-918D-27696E4412CB}",
       "definition": {
-        "en": "TODO",
+        "en": "The Post Office Box number.",
         "nl": "Enter your translation here"
       },
       "label": {
         "en": "postbus",
         "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
       }
     },
     {
-      "name": "locatienaam",
-      "EA-Guid": "{45574A51-9C5B-454b-BDD7-78FE9EDFB151}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "locatienaam",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "locatieaanduiding",
+      "name": "locator designator",
       "EA-Guid": "{320EE4E4-7C5B-42ce-9E38-F15A4614FB70}",
       "definition": {
-        "en": "TODO",
+        "en": "A number or a sequence of characters that uniquely identifies the location within the relevant scope.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "locatieaanduiding",
+        "en": "locator designator",
         "nl": "Enter your translation here"
       },
       "usage": {
-        "en": " ",
+        "en": "The full identification of the locator could include one or more locator designators. The scope is eg the street for a housenumber or the housenumber for a busnumber. ",
         "nl": "Enter your translation here"
       }
     },
     {
-      "name": "volledig adres",
+      "name": "full address",
       "EA-Guid": "{79057909-60B4-44d4-8FCF-E80D774B98AE}",
       "definition": {
-        "en": "TODO",
+        "en": "The complete address written as a string, with or without formatting.",
         "nl": "Enter your translation here"
       },
       "label": {
-        "en": "volledig adres",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": "Vermijdt fouten tgv het opsplitsen ve adres in zijn onderdelen. Geeft de voorgeschreven volgorde vd verschillende onderdelen weer.",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "administratieve eenheid niveau 2",
-      "EA-Guid": "{CFED195A-3F4D-4828-9281-5C515C5449CC}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "administratieve eenheid niveau 2",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "administratieve eenheid niveau 1",
-      "EA-Guid": "{3A003AC5-6877-4cec-AAFA-47C9CBB07EED}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "administratieve eenheid niveau 1",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": " ",
-        "nl": "Enter your translation here"
-      }
-    },
-    {
-      "name": "adresgebied",
-      "EA-Guid": "{47FC94FE-67C3-46cb-8E92-384C7342FAE1}",
-      "definition": {
-        "en": "TODO",
-        "nl": "Enter your translation here"
-      },
-      "label": {
-        "en": "adresgebied",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": "Bvb de naam vh gehucht waarin het adres ligt.",
+        "en": "full address",
         "nl": "Enter your translation here"
       }
     },
@@ -3995,6 +3887,138 @@
       },
       "label": {
         "en": "toegekend door",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": " ",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "refers to",
+      "EA-Guid": "{C40C927E-853A-41e1-98C2-653CECD86ECB}",
+      "definition": {
+        "en": "Address from which the address representation is derived.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "refers to",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This is only possible for Belgian addresses, as Address here means a Belgian Address.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "positie",
+      "EA-Guid": "{31425680-C3A7-4b6e-9071-47F535642C61}",
+      "definition": {
+        "en": "Positie van een karakeristiek punt dat de positie van het adres vertegenwoordigt volgens een bepaalde specificatie en inclusief informatie over de herkomst van de positie.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "positie",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Moet een punt zijn.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "officieel toegekend",
+      "EA-Guid": "{BB043D26-877A-4a99-ADEC-83BD972A8EF7}",
+      "definition": {
+        "en": "Geeft aan of het adres officieel door de adresbeheerder is toegekend.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "officieel toegekend",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Een adres is niet-officieel wanneer het bestaan ervan niet gekend was vanuit de administratieve procedures, maar pas nadat nadat het feitelijk is vastgesteld op het terrein.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "municipality name",
+      "EA-Guid": "{15169048-6FCF-4e25-9111-24E100669DC9}",
+      "definition": {
+        "en": "Municipality name of the Address.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "municipality name",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "huisnummer",
+      "EA-Guid": "{98451365-2E21-47c6-B12E-10293946A0DE}",
+      "definition": {
+        "en": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "huisnummer",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": " ",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "country",
+      "EA-Guid": "{AF62F2EF-9C9C-4470-A38B-E1573496F435}",
+      "definition": {
+        "en": "Country in which the Address is located.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "country",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "busnummer",
+      "EA-Guid": "{A298C41B-1D65-4cec-A3BF-9FCA20982B2C}",
+      "definition": {
+        "en": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "busnummer",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": " ",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "administrative unit name",
+      "EA-Guid": "{BDC9D4DE-F7E4-4a11-8231-581E06EFBFE3}",
+      "definition": {
+        "en": "Name of the adminstrative unit of the Address.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "administrative unit name",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "name": "status",
+      "EA-Guid": "{BFD245BD-B361-4571-90CC-7A2EBE690ACD}",
+      "definition": {
+        "en": "Actuele toestand van het adres.",
+        "nl": "Enter your translation here"
+      },
+      "label": {
+        "en": "status",
         "nl": "Enter your translation here"
       },
       "usage": {
