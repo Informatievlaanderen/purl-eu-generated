@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/1c965b8e785f783d986659bb1d6c67a07d3f0d92",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/1c965b8e785f783d986659bb1d6c67a07d3f0d92/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/29120d66a20a812f6e2f3e32d9b1c386a916abf2",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/29120d66a20a812f6e2f3e32d9b1c386a916abf2/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -7945,6 +7945,20 @@
       ]
     },
     {
+      "uri": "http://purl.org/dc/terms/Agent",
+      "name": "Agent",
+      "label": {
+        "en": "Agent"
+      },
+      "sort": "Agent",
+      "description": {
+        "en": "Someone who or something that can act or produce an effect."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://www.w3.org/ns/org#Organization",
       "name": "Organization",
       "label": {
@@ -8189,21 +8203,8 @@
               "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
             }
           ],
-          "range": [
-            {
-              "range_label": "Identificator",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identificator",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "en": "Identificator"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -10636,6 +10637,198 @@
       ]
     },
     {
+      "uri": "http://schema.org/OpeningHoursSpecification",
+      "name": "Opening Hours Specification",
+      "label": {
+        "en": "Opening Hours Specification"
+      },
+      "sort": "Opening Hours Specification",
+      "description": {
+        "en": "Information about the opening hours of the place or service."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://schema.org/validThrough",
+          "name": "valid to",
+          "sort": "valid to",
+          "label": {
+            "en": "valid to"
+          },
+          "description": {
+            "en": "Date until which the specified opening hours apply."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/validFrom",
+          "name": "valid from",
+          "sort": "valid from",
+          "label": {
+            "en": "valid from"
+          },
+          "description": {
+            "en": "Date from which the specified opening hours apply."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/opens",
+          "name": "open",
+          "sort": "open",
+          "label": {
+            "en": "open"
+          },
+          "description": {
+            "en": "Opening hours of the place or service on the specified day of the week."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Time",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_label": {
+                "en": "Time"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/dayOfWeek",
+          "name": "day of the week",
+          "sort": "day of the week",
+          "label": {
+            "en": "day of the week"
+          },
+          "description": {
+            "en": "Day of the week for which the opening hours are valid."
+          },
+          "usage": {
+            "en": "See <a href=\"https://schema.org/DayOfWeek\">DayOfWeek</a> for list of possible values."
+          },
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/closes",
+          "name": "closed",
+          "sort": "closed",
+          "label": {
+            "en": "closed"
+          },
+          "description": {
+            "en": "Closing time of the place or service on the specified day of the week."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Time",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#time",
+              "range_label": {
+                "en": "Time"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.opengis.net/ont/sf#LineString",
       "name": "Line String",
       "label": {
@@ -10652,7 +10845,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "locn",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -10674,7 +10867,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "locn",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -10683,35 +10876,33 @@
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",
-      "name": "Identificator",
+      "name": "Identifier",
       "label": {
-        "en": "Identificator"
+        "en": "Identifier"
       },
-      "sort": "Identificator",
+      "sort": "Identifier",
       "description": {
-        "en": "TODO"
+        "en": "Information used to uniquely identify an object."
       },
       "usage": {
-        "en": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem."
+        "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system."
       },
       "parents": [],
       "properties": [
         {
           "uri": "http://www.w3.org/ns/adms#schemaAgency",
-          "name": "toegekend door string",
-          "sort": "toegekend door string",
+          "name": "creator name",
+          "sort": "creator name",
           "label": {
-            "en": "toegekend door string"
+            "en": "creator name"
           },
           "description": {
-            "en": "TODO"
+            "en": "Name of the agent who assigned the identifier."
           },
-          "usage": {
-            "en": " "
-          },
+          "usage": {},
           "domain": [
             {
-              "EA-Name": "Identificator",
+              "EA-Name": "Identifier",
               "uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
@@ -10735,20 +10926,20 @@
         },
         {
           "uri": "http://www.w3.org/2004/02/skos/core#notation",
-          "name": "identificator",
-          "sort": "identificator",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "identificator"
+            "en": "identifier"
           },
           "description": {
-            "en": "TODO"
+            "en": "String used to uniquely identify the object."
           },
           "usage": {
-            "en": "Type vd string slaat op het identificatiesysteem (incl de versie ervan), de string zelf op de eigenlijke identificator."
+            "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier."
           },
           "domain": [
             {
-              "EA-Name": "Identificator",
+              "EA-Name": "Identifier",
               "uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
@@ -10772,20 +10963,18 @@
         },
         {
           "uri": "http://purl.org/dc/terms/issued",
-          "name": "toegekend op",
-          "sort": "toegekend op",
+          "name": "issued",
+          "sort": "issued",
           "label": {
-            "en": "toegekend op"
+            "en": "issued"
           },
           "description": {
-            "en": "TODO"
+            "en": "Time when the identifier was issued."
           },
-          "usage": {
-            "en": " "
-          },
+          "usage": {},
           "domain": [
             {
-              "EA-Name": "Identificator",
+              "EA-Name": "Identifier",
               "uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
@@ -10809,20 +10998,18 @@
         },
         {
           "uri": "http://purl.org/dc/terms/creator",
-          "name": "toegekend door",
-          "sort": "toegekend door",
+          "name": "creator",
+          "sort": "creator",
           "label": {
-            "en": "toegekend door"
+            "en": "creator"
           },
           "description": {
-            "en": "TODO"
+            "en": "Link to the agent who issued the identifier."
           },
-          "usage": {
-            "en": " "
-          },
+          "usage": {},
           "domain": [
             {
-              "EA-Name": "Identificator",
+              "EA-Name": "Identifier",
               "uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
@@ -10834,7 +11021,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://purl.org/dc/terms/Agent",
+              "range_uri": "#Agent",
               "range_puri": "http://purl.org/dc/terms/Agent",
               "range_label": {
                 "en": "Agent"

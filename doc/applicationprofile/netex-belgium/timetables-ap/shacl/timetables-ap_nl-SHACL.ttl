@@ -58,7 +58,9 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ViaShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StandardUnitShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AgentShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ContactInfoShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#LineStringShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PuntShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TransportmodeShape>,
@@ -79,7 +81,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#CrowdingShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#HeadwayDisplayShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OrganizationTypeShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AddressRepresentationShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#GeometryShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OrganizationShape>,
@@ -180,6 +182,10 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://fixme.com> .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AgentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Agent .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AuthorityOrOperatorShape> a shacl:NodeShape;
   shacl:closed false;
@@ -720,48 +726,48 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape> a shacl:NodeShape;
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/199ea77e4bb49c0826ccf19746c292123a50ed37>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4>;
+  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/199ea77e4bb49c0826ccf19746c292123a50ed37>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4>;
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identificator%3AEnter%20your%20translation%20here";
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identifier%3AEnter%20your%20translation%20here";
   shacl:description "Enter your translation here"@nl;
   shacl:maxCount 1;
   shacl:name "Enter your translation here"@nl;
-  shacl:path skos:notation,
-    dc:creator,
+  shacl:path dc:creator,
     <http://www.w3.org/ns/adms#schemaAgency>,
+    skos:notation,
     dc:issued;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/199ea77e4bb49c0826ccf19746c292123a50ed37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identificator%3AEnter%20your%20translation%20here";
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/199ea77e4bb49c0826ccf19746c292123a50ed37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identifier%3AEnter%20your%20translation%20here";
   shacl:description "Enter your translation here"@nl;
   shacl:name "Enter your translation here"@nl;
-  shacl:nodekind "sh:Literal",
-    "sh:BlankNodeOrIRI";
-  shacl:path skos:notation,
-    dc:creator,
+  shacl:nodekind "sh:BlankNodeOrIRI",
+    "sh:Literal";
+  shacl:path dc:creator,
     <http://www.w3.org/ns/adms#schemaAgency>,
+    skos:notation,
     dc:issued;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een rdfs:Resource (URI of blank node)"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een rdfs:Resource (URI of blank node)"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentificatorShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identificator%3AEnter%20your%20translation%20here";
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#IdentifierShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Identifier%3AEnter%20your%20translation%20here";
   shacl:class dc:Agent;
-  shacl:datatype rdfs:Literal,
-    xsd:string,
+  shacl:datatype xsd:string,
+    rdfs:Literal,
     xsd:dateTime;
   shacl:description "Enter your translation here"@nl;
   shacl:name "Enter your translation here"@nl;
-  shacl:path skos:notation,
-    dc:creator,
+  shacl:path dc:creator,
     <http://www.w3.org/ns/adms#schemaAgency>,
+    skos:notation,
     dc:issued;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://purl.org/dc/terms/Agent> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#dateTime> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://purl.org/dc/terms/Agent> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#dateTime> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#JourneyFrequencyShape> a shacl:NodeShape;
@@ -1069,6 +1075,51 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#NumberShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass schemas:Number .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/199ea77e4bb49c0826ccf19746c292123a50ed37>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4>;
+  shacl:targetClass schema:OpeningHoursSpecification .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/143b59e100bd9b8ec5b6ccc4d1dba91b068510ff> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecification%3AEnter%20your%20translation%20here";
+  shacl:description "Enter your translation here"@nl;
+  shacl:maxCount 1;
+  shacl:name "Enter your translation here"@nl;
+  shacl:path schema:closes,
+    schema:dayOfWeek,
+    schema:opens,
+    schema:validFrom,
+    schema:validThrough;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "Maximaal 1 waarden toegelaten voor Enter your translation here"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/199ea77e4bb49c0826ccf19746c292123a50ed37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecification%3AEnter%20your%20translation%20here";
+  shacl:description "Enter your translation here"@nl;
+  shacl:name "Enter your translation here"@nl;
+  shacl:nodekind "sh:Literal";
+  shacl:path schema:closes,
+    schema:dayOfWeek,
+    schema:opens,
+    schema:validFrom,
+    schema:validThrough;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecification%3AEnter%20your%20translation%20here";
+  shacl:datatype xsd:time,
+    xsd:anyURI,
+    xsd:dateTime;
+  shacl:description "Enter your translation here"@nl;
+  shacl:name "Enter your translation here"@nl;
+  shacl:path schema:closes,
+    schema:dayOfWeek,
+    schema:opens,
+    schema:validFrom,
+    schema:validThrough;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#time> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#anyURI> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#time> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#dateTime> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/2001/XMLSchema#dateTime> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OperatingDayShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1664,21 +1715,17 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganizationShape/199ea77e4bb49c0826ccf19746c292123a50ed37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganization%3AEnter%20your%20translation%20here";
   shacl:description "Enter your translation here"@nl;
   shacl:name "Enter your translation here"@nl;
-  shacl:nodekind "sh:Literal",
-    "sh:BlankNodeOrIRI";
-  shacl:path <http://www.w3.org/ns/regorg#legalName>,
-    <http://www.w3.org/ns/regorg#registration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een rdfs:Resource (URI of blank node)"];
+  shacl:nodekind "sh:Literal";
+  shacl:path <http://www.w3.org/ns/regorg#legalName>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De verwachte waarde voor Enter your translation here is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganizationShape/91864a2c91c92773f84bc21c6d1b60e01000a4c4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganization%3AEnter%20your%20translation%20here";
-  shacl:class <http://www.w3.org/ns/adms#Identifier>;
   shacl:datatype rdf:langString;
   shacl:description "Enter your translation here"@nl;
   shacl:name "Enter your translation here"@nl;
-  shacl:path <http://www.w3.org/ns/regorg#legalName>,
-    <http://www.w3.org/ns/regorg#registration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/ns/adms#Identifier> zijn."];
+  shacl:path <http://www.w3.org/ns/regorg#legalName>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21nl> "De range van Enter your translation here moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganizationShape/c7e86dc592f997f75588842d41f7a8cd43116afa> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RegisteredOrganization%3AEnter%20your%20translation%20here";
