@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/b77d387fb22c6c3049f2cb635bd96036207fffcb",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/b77d387fb22c6c3049f2cb635bd96036207fffcb/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/cff18bdd31d1765b3332cd6facad969dfd3b2ea1",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/cff18bdd31d1765b3332cd6facad969dfd3b2ea1/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -183,15 +183,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
-          "name": "described by",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#definedBy",
+          "name": "defined by",
           "sort": "Enter your translation here",
           "label": {
-            "en": "described by",
+            "en": "defined by",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Property of Day that is used to describe the Day Type.",
+            "en": "ervice Calendar that defines the Day Type Assignment.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -203,16 +203,16 @@
           ],
           "range": [
             {
-              "range_label": "PropertyOfDay",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+              "range_label": "ServiceCalendar",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar",
               "range_label": {
-                "en": "Property of Day",
+                "en": "Service Calendar",
                 "nl": "Enter your translation here"
               }
             }
@@ -369,6 +369,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.describedBy",
+          "name": "described by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "described by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Property of Day that is used to describe the Day Type.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DayType",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PropertyOfDay",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay",
+              "range_label": {
+                "en": "Property of Day",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.dayLength",
           "name": "day length",
           "sort": "Enter your translation here",
@@ -423,7 +461,85 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#operatingPeriod",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DaytypeAssignment.available",
+          "name": "available",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "available",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Whether available on assigned day.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DayTypeAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.serviceCalendar",
+          "name": "dienstkalender",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "Dienstkalender",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Referentie naar verbonden klasse.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "DayTypeAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ServiceCalendar",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar",
+              "range_label": {
+                "en": "Service Calendar",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.operatingPeriod",
           "name": "operating period",
           "sort": "Enter your translation here",
           "label": {
@@ -454,80 +570,6 @@
               "range_label": {
                 "en": "Operating Period",
                 "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#date",
-          "name": "date",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "date",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Date of the Day Type Assignment.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Date",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_label": {
-                "nl": "Date"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#available",
-          "name": "available",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "available",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Whether available on assigned day.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DayTypeAssignment",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
               }
             }
           ],
@@ -570,6 +612,84 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.dayType",
+          "name": "dagtype",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "Dagtype",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Referentie naar verbonden klasse.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "DayTypeAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
+              "range_label": {
+                "en": "Day Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.date",
+          "name": "date",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "date",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Date of the Day Type Assignment.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DayTypeAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -588,44 +708,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#variant",
-          "name": "variant",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "variant",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Variant of the Destination Display.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DestinationDisplay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DestinationDisplayVariant",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant",
-              "range_label": {
-                "en": "Destination Display Variant",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.via",
           "name": "via",
@@ -657,6 +739,44 @@
               "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Via",
               "range_label": {
                 "en": "Via",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.variant",
+          "name": "variant",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "variant",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Variant of the Destination Display.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DestinationDisplay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DestinationDisplayVariant",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant",
+              "range_label": {
+                "en": "Destination Display Variant",
                 "nl": "Enter your translation here"
               }
             }
@@ -793,44 +913,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#destinationVariantDisplayType",
-          "name": "destination variant display type",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "destination variant display type",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Type of the Destination Variant Display.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DestinationDisplayVariant",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DestinationDisplayVariantType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "DestinationDisplayVariantType",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.via",
           "name": "via",
           "sort": "Enter your translation here",
@@ -941,6 +1023,44 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.destinationDisplayVariantType",
+          "name": "destination variant display type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "destination variant display type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of the Destination Display Variant.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DestinationDisplayVariant",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DestinationDisplayVariantType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "DestinationDisplayVariantType",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -960,7 +1080,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.oppositeDirection",
           "name": "opposite direction",
           "sort": "Enter your translation here",
           "label": {
@@ -1038,6 +1158,22 @@
       ]
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities",
+      "name": "Group of Entities",
+      "label": {
+        "en": "Group of Entities",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A set of Entities grouped together according to a purpose of grouping, e.g. grouping of stops known to the public by a common name.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines",
       "name": "Group of Lines",
       "label": {
@@ -1060,82 +1196,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#mainline",
-          "name": "mainline",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "mainline",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "The main Line of a Group of Lines.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfLines",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Line",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
-              "range_label": {
-                "en": "Line",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#composedOf",
-          "name": "composed of",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "composed of",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "The Lines that together make up the Group of Lines.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfLines",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Line",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
-              "range_label": {
-                "en": "Line",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.transportmode",
           "name": "transportmode",
@@ -1210,8 +1270,100 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.mainLine",
+          "name": "mainline",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "mainline",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The main Line of a Group of Lines.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfLines",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Line",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
+              "range_label": {
+                "en": "Line",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.composedOf",
+          "name": "composed of",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "composed of",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Lines that together make up the Group of Lines.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfLines",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Line",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
+              "range_label": {
+                "en": "Line",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Journey",
+      "name": "Journey",
+      "label": {
+        "en": "Journey",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Travel from one place to another.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart",
@@ -1252,44 +1404,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#route",
-          "name": "route",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "route",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Route associated with the Journey Pattern.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "JourneyPattern",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Route",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
-              "range_label": {
-                "en": "Route",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.name",
           "name": "name",
@@ -1481,6 +1595,44 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "JourneyPattern.route",
+          "name": "route",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "route",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Route associated with the Journey Pattern.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "JourneyPattern",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Route",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
+              "range_label": {
+                "en": "Route",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1499,232 +1651,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#typeOfLine",
-          "name": "type of line",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "type of line",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Reference to a Type of Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TypeOfLine",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Type Of Line",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#otherModes",
-          "name": "other modes",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "other modes",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Additional Transport Modes for the Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Transportmode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transportmode",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#monitored",
-          "name": "monitored",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "monitored",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether real-time data is normally available for the Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#documentLink",
-          "name": "document link",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "document link",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Timetable documents associated with the Line, e.g. PDF files.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "nl": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection",
-          "name": "allowed direction",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "allowed direction",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Allowed directions for the Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Direction",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction",
-              "range_label": {
-                "en": "Direction",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperators",
-          "name": "additional operators",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "additional operators",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "References to additional Authorities or Operators for the Line.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Line",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AuthorityOrOperator",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator",
-              "range_label": {
-                "en": "Authority or Operator",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.url",
           "name": "url",
@@ -1756,6 +1682,44 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
               "range_label": {
                 "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.typeOfline",
+          "name": "type of line",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type of line",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Reference to a Type of Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TypeOfLine",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Type Of Line",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -2026,6 +1990,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.otherModes",
+          "name": "other modes",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "other modes",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Additional Transport Modes for the Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Transportmode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.noticeAssignment",
           "name": "notice assignment",
           "sort": "Enter your translation here",
@@ -2101,6 +2103,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.monitored",
+          "name": "monitored",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "monitored",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether real-time data is normally available for the Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.madeUpOf",
           "name": "made up of",
           "sort": "Enter your translation here",
@@ -2139,6 +2178,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.documentLink",
+          "name": "document link",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "document link",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Timetable documents associated with the Line, e.g. PDF files.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.description",
           "name": "description",
           "sort": "Enter your translation here",
@@ -2173,6 +2249,82 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.allowedDirection",
+          "name": "allowed direction",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "allowed direction",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Allowed directions for the Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Direction",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction",
+              "range_label": {
+                "en": "Direction",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.additionalOperators",
+          "name": "additional operators",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "additional operators",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "References to additional Authorities or Operators for the Line.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Line",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AuthorityOrOperator",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator",
+              "range_label": {
+                "en": "Authority or Operator",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -2214,6 +2366,38 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Link",
+      "name": "Link",
+      "label": {
+        "en": "Link",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Oriented spatial object of dimension 1 with view to the overall description of a Network, describing a connection between two Points.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
+      "name": "Link Sequence",
+      "label": {
+        "en": "Link Sequence",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Link Sequence describes a path through a Network, such as a bus route. It can consist of an ordered set of Points in Sequence (referencing Points of a particular type) or Links in Sequence (referencing Links of a particular type).\r\n",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Network",
@@ -2388,43 +2572,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#calendarDate",
-          "name": "calendar date",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "calendar date",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Calendar date of the Operating Date.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "OperatingDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Date",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_label": {
-                "nl": "Date"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.name",
           "name": "name",
           "sort": "Enter your translation here",
@@ -2529,6 +2676,43 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
               "range_label": {
                 "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.calendarDate",
+          "name": "calendar date",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "calendar date",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Calendar date of the Operating Date.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OperatingDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
               }
             }
           ],
@@ -2696,7 +2880,7 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.primaryMode",
           "name": "primary mode",
           "sort": "Enter your translation here",
           "label": {
@@ -2826,7 +3010,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#wheelchairPlaceCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.wheelChairCapacity",
           "name": "wheelchair place capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -2863,7 +3047,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#totalCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.totalCapacity",
           "name": "total capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -2900,7 +3084,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#standingCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.standingCapacity",
           "name": "standing capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -2937,7 +3121,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#specialPlaceCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.specialPlaceCapacity",
           "name": "special place capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -2974,7 +3158,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#seatingCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.seatingCapacity",
           "name": "seating capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -3011,7 +3195,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#pushChairCapacity",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.pushChairCapacity",
           "name": "push chair capacity",
           "sort": "Enter your translation here",
           "label": {
@@ -3048,7 +3232,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#fareClass",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.fareClass",
           "name": "fare class",
           "sort": "Enter your translation here",
           "label": {
@@ -3107,6 +3291,22 @@
       "properties": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime",
+      "name": "Passing Time",
+      "label": {
+        "en": "Passing Time",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Passing Time associates a time with a Point in Journey Pattern.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
       "name": "Point (Class)",
       "label": {
@@ -3121,44 +3321,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#location",
-          "name": "location",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "location",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Location of the Point.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Point (Datatype)",
-              "range_uri": "http://www.opengis.net/ont/sf#Point"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.opengis.net/ont/sf#Point",
-              "range_label": {
-                "en": "Point",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
           "name": "viewed as",
@@ -3270,6 +3432,44 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.location",
+          "name": "location",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "location",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Location of the Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
+              "range_label": {
+                "en": "Point (Datatype",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -3296,44 +3496,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#at",
-          "name": "at",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "at",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "TimeTabled Passing Time at the Point in Journey Pattern.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointInJourneyPattern",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TimeTabledPassingTime",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
-              "range_label": {
-                "en": "Time Tabled Passing Time",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order",
           "name": "order",
@@ -3484,6 +3646,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.at",
+          "name": "at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "TimeTabled Passing Time at the Point in Journey Pattern.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointInJourneyPattern",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TimeTabledPassingTime",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
+              "range_label": {
+                "en": "Time Tabled Passing Time",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf",
           "name": "a view of",
           "sort": "Enter your translation here",
@@ -3513,7 +3713,7 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
               "range_label": {
-                "en": "Point (Class)",
+                "en": "Point (Datatype",
                 "nl": "Enter your translation here"
               }
             }
@@ -3522,6 +3722,22 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
+      "name": "Point in Link Sequence",
+      "label": {
+        "en": "Point in Link Sequence",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Point in a Link Sequence indicating its order in that particular Link Sequence.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute",
@@ -3692,195 +3908,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#weekOfMonth",
-          "name": "week of month",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "week of month",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Week number of the month (1-5).",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "WeekOfMonth",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "WeekOfMonth",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..5",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#usedToDescribe",
-          "name": "used to describe",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "used to describe",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Day Type the Property of Day is describing.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DayType",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
-              "range_label": {
-                "en": "Day Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#season",
-          "name": "season",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "season",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "The season, e.g. winter.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Season",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Season",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..4",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear",
-          "name": "month of year",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "month of year",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "For those day types that occur on the same month every year; a month as a number.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Month",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonth",
-              "range_label": {
-                "nl": "Month"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
-          "name": "holiday type",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "holiday type",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "The type of holiday, e.g. Christmas.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PropertyOfDay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "HolidayType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "HolidayType",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..5",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear",
           "name": "day of year",
           "sort": "Enter your translation here",
@@ -3918,15 +3945,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek",
-          "name": "day of week",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.weekOfMonth",
+          "name": "week of month",
           "sort": "Enter your translation here",
           "label": {
-            "en": "day of week",
+            "en": "week of month",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "The day of the week, e.g. Sunday.",
+            "en": "Week number of the month (1-5).",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3938,7 +3965,7 @@
           ],
           "range": [
             {
-              "range_label": "DayOfWeek",
+              "range_label": "WeekOfMonth",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -3947,24 +3974,24 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "DayOfWeek",
+                "en": "WeekOfMonth",
                 "nl": "Enter your translation here"
               }
             }
           ],
-          "cardinality": "0..7",
+          "cardinality": "0..5",
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfMonth",
-          "name": "day of month",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.usedToDescribe",
+          "name": "used to describe",
           "sort": "Enter your translation here",
           "label": {
-            "en": "day of month",
+            "en": "used to describe",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "For those day types that occur on the same day of the month; a month as a number.",
+            "en": "Day Type the Property of Day is describing.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -3976,32 +4003,33 @@
           ],
           "range": [
             {
-              "range_label": "Day",
-              "range_uri": "https://www.w3.org/2001/XMLSchema#gday"
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://www.w3.org/2001/XMLSchema#gday",
-              "range_puri": "https://www.w3.org/2001/XMLSchema#gday",
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
               "range_label": {
-                "nl": "Day"
+                "en": "Day Type",
+                "nl": "Enter your translation here"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#crowding",
-          "name": "crowding",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.season",
+          "name": "season",
           "sort": "Enter your translation here",
           "label": {
-            "en": "crowding",
+            "en": "season",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Relative busyness of the day, e.g. quiet, normal, busy, etc.",
+            "en": "The season, e.g. winter.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -4013,7 +4041,7 @@
           ],
           "range": [
             {
-              "range_label": "Crowding",
+              "range_label": "Season",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -4022,12 +4050,12 @@
               "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Crowding",
+                "en": "Season",
                 "nl": "Enter your translation here"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..4",
           "codelist_uri": ""
         },
         {
@@ -4068,6 +4096,81 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.monthOfYear",
+          "name": "month of year",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "month of year",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "For those day types that occur on the same month every year; a month as a number.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Month",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#gMonth",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#gMonth",
+              "range_label": {
+                "nl": "Month"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.holidayType",
+          "name": "holiday type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "holiday type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The type of holiday, e.g. Christmas.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "HolidayType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "HolidayType",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..5",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description",
           "name": "description",
           "sort": "Enter your translation here",
@@ -4102,6 +4205,119 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.dayOfWeek",
+          "name": "day of week",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "day of week",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The day of the week, e.g. Sunday.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayOfWeek",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "DayOfWeek",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..7",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.dayOfMonth",
+          "name": "day of month",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "day of month",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "For those day types that occur on the same day of the month; a month as a number.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Day",
+              "range_uri": "https://www.w3.org/2001/XMLSchema#gday"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://www.w3.org/2001/XMLSchema#gday",
+              "range_puri": "https://www.w3.org/2001/XMLSchema#gday",
+              "range_label": {
+                "nl": "Day"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.crowding",
+          "name": "crowding",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "crowding",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Relative busyness of the day, e.g. quiet, normal, busy, etc.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PropertyOfDay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Crowding",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Crowding",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -4167,120 +4383,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#through",
-          "name": "through",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "through",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Points through which the Route goes.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Route",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PointOnRoute",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute",
-              "range_label": {
-                "en": "Point on Route",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "2..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#line",
-          "name": "line",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "line",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Line the Route is associated with.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Route",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Line",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
-              "range_label": {
-                "en": "Line",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#inverseRoute",
-          "name": "inverse route",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "inverse route",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Inverse Route of the Route.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Route",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Route",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
-              "range_label": {
-                "en": "Route",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#coveredBy",
           "name": "covered by",
           "sort": "Enter your translation here",
@@ -4319,6 +4421,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.through",
+          "name": "through",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "through",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Points through which the Route goes.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointOnRoute",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute",
+              "range_label": {
+                "en": "Point on Route",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "2..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.name",
           "name": "name",
           "sort": "Enter your translation here",
@@ -4349,6 +4489,82 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.line",
+          "name": "line",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "line",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Line the Route is associated with.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Line",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
+              "range_label": {
+                "en": "Line",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.inverseRoute",
+          "name": "inverse route",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "inverse route",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Inverse Route of the Route.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Route",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Route",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
+              "range_label": {
+                "en": "Route",
+                "nl": "Enter your translation here"
               }
             }
           ],
@@ -4709,43 +4925,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#borderCrossing",
-          "name": "border crossing",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "border crossing",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Route Point is a border crossing (defined for country borders).",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "RoutePoint",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.viewedAs",
           "name": "viewed as",
           "sort": "Enter your translation here",
@@ -4858,6 +5037,43 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.borderCrossing",
+          "name": "border crossing",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "border crossing",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Route Point is a border crossing (defined for country borders).",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RoutePoint",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -4892,7 +5108,45 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
+          "name": "viewed as",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "viewed as",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "As used as a Stop Point in a Journey Pattern.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern",
+              "range_label": {
+                "en": "Stop Point in Journey Pattern",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.timingpointStatus",
           "name": "timingpoint status",
           "sort": "Enter your translation here",
           "label": {
@@ -4930,7 +5184,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#tariffZones",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.tariffZones",
           "name": "tariff zones",
           "sort": "Enter your translation here",
           "label": {
@@ -4968,7 +5222,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#stopType",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.stopType",
           "name": "stop type",
           "sort": "Enter your translation here",
           "label": {
@@ -5003,44 +5257,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
-          "name": "viewed as",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "viewed as",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "As used as a Stop Point in a Journey Pattern.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ScheduledStopPoint",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "StopPointInJourneyPattern",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern",
-              "range_label": {
-                "en": "Stop Point in Journey Pattern",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -5288,16 +5504,16 @@
           ],
           "range": [
             {
-              "range_label": "Point (Datatype)",
-              "range_uri": "http://www.opengis.net/ont/sf#Point"
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
               "range_label": {
-                "en": "Point",
+                "en": "Point (Datatype",
                 "nl": "Enter your translation here"
               }
             }
@@ -5398,7 +5614,45 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#within",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#specifiedBy",
+          "name": "specified by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "specified by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Day Type Assignment specifying the Day Type.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceCalendar",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
+              "range_label": {
+                "en": "Day Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.within",
           "name": "within",
           "sort": "Enter your translation here",
           "label": {
@@ -5428,44 +5682,6 @@
               "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod",
               "range_label": {
                 "en": "Operating Period",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#operatingDay",
-          "name": "operating day",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "operating day",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Operating Day in the Service Calendar.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceCalendar",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OperatingDay",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay",
-              "range_label": {
-                "en": "Operating Day",
                 "nl": "Enter your translation here"
               }
             }
@@ -5508,6 +5724,44 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.operatingDay",
+          "name": "operating day",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "operating day",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Operating Day in the Service Calendar.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ServiceCalendar",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OperatingDay",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay",
+              "range_label": {
+                "en": "Operating Day",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -6571,6 +6825,22 @@
       ]
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
+      "name": "Site",
+      "label": {
+        "en": "Site",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A type of Place, such as a Stop Place, Point of Interest or Address, to which passengers may wish to travel.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
       "name": "Stop Place",
       "label": {
@@ -7430,6 +7700,22 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint",
+      "name": "Timing point",
+      "label": {
+        "en": "Timing point",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Point against which the timing information necessary to build schedules may be recorded.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber",
@@ -8780,153 +9066,9 @@
       },
       "parents": [],
       "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#GroupOfEntities",
-      "name": "Group of Entities",
-      "label": {
-        "en": "Group of Entities",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A set of Entities grouped together according to a purpose of grouping, e.g. grouping of stops known to the public by a common name.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#Journey",
-      "name": "Journey",
-      "label": {
-        "en": "Journey",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "Travel from one place to another.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#Link",
-      "name": "Link",
-      "label": {
-        "en": "Link",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "Oriented spatial object of dimension 1 with view to the overall description of a Network, describing a connection between two Points.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#LinkSequence",
-      "name": "Link Sequence",
-      "label": {
-        "en": "Link Sequence",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A Link Sequence describes a path through a Network, such as a bus route. It can consist of an ordered set of Points in Sequence (referencing Points of a particular type) or Links in Sequence (referencing Links of a particular type).\r\n",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#PassingTime",
-      "name": "Passing Time",
-      "label": {
-        "en": "Passing Time",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A Passing Time associates a time with a Point in Journey Pattern.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#PointInLinkSequence",
-      "name": "Point in Link Sequence",
-      "label": {
-        "en": "Point in Link Sequence",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A Point in a Link Sequence indicating its order in that particular Link Sequence.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#Site",
-      "name": "Site",
-      "label": {
-        "en": "Site",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A type of Place, such as a Stop Place, Point of Interest or Address, to which passengers may wish to travel.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetable-and-planning#TimingPoint",
-      "name": "Timing point",
-      "label": {
-        "en": "Timing point",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "A Point against which the timing information necessary to build schedules may be recorded.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
     }
   ],
   "properties": [
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#within",
-      "name": {
-        "en": "within",
-        "nl": "Enter your translation here",
-        "undefined": "within"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#weight",
       "name": {
@@ -8944,75 +9086,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#weekOfMonth",
-      "name": {
-        "en": "week of month",
-        "nl": "Enter your translation here",
-        "undefined": "week of month"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#vehicleType",
       "name": {
         "en": "vehicle type",
         "nl": "Enter your translation here",
         "undefined": "vehicle type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#variant",
-      "name": {
-        "en": "variant",
-        "nl": "Enter your translation here",
-        "undefined": "variant"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#usedToDescribe",
-      "name": {
-        "en": "used to describe",
-        "nl": "Enter your translation here",
-        "undefined": "used to describe"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#typeOfLine",
-      "name": {
-        "en": "type of line",
-        "nl": "Enter your translation here",
-        "undefined": "type of line"
       },
       "description": {},
       "domain": [
@@ -9088,59 +9166,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus",
-      "name": {
-        "en": "timingpoint status",
-        "nl": "Enter your translation here",
-        "undefined": "timingpoint status"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#timeband",
       "name": {
         "en": "timeband",
         "nl": "Enter your translation here",
         "undefined": "timeband"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#through",
-      "name": {
-        "en": "through",
-        "nl": "Enter your translation here",
-        "undefined": "through"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#tariffZones",
-      "name": {
-        "en": "tariff zones",
-        "nl": "Enter your translation here",
-        "undefined": "tariff zones"
       },
       "description": {},
       "domain": [
@@ -9168,43 +9198,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#stopType",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#specifiedBy",
       "name": {
-        "en": "stop type",
+        "en": "specified by",
         "nl": "Enter your translation here",
-        "undefined": "stop type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#season",
-      "name": {
-        "en": "season",
-        "nl": "Enter your translation here",
-        "undefined": "season"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#route",
-      "name": {
-        "en": "route",
-        "nl": "Enter your translation here",
-        "undefined": "route"
+        "undefined": "specified by"
       },
       "description": {},
       "domain": [
@@ -9232,59 +9230,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
-      "name": {
-        "en": "primary mode",
-        "nl": "Enter your translation here",
-        "undefined": "primary mode"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#passedAt",
       "name": {
         "en": "passed at",
         "nl": "Enter your translation here",
         "undefined": "passed at"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#otherModes",
-      "name": {
-        "en": "other modes",
-        "nl": "Enter your translation here",
-        "undefined": "other modes"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection",
-      "name": {
-        "en": "opposite direction",
-        "nl": "Enter your translation here",
-        "undefined": "opposite direction"
       },
       "description": {},
       "domain": [
@@ -9312,38 +9262,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#operatingPeriod",
-      "name": {
-        "en": "operating period",
-        "nl": "Enter your translation here",
-        "undefined": "operating period"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#operatingDay",
-      "name": {
-        "en": "operating day",
-        "nl": "Enter your translation here",
-        "undefined": "operating day"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#onwardServiceLink",
       "name": {
         "en": "onward service link",
@@ -9360,91 +9278,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#mainline",
-      "name": {
-        "en": "mainline",
-        "nl": "Enter your translation here",
-        "undefined": "mainline"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#location",
-      "name": {
-        "en": "location",
-        "nl": "Enter your translation here",
-        "undefined": "location"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#line",
-      "name": {
-        "en": "line",
-        "nl": "Enter your translation here",
-        "undefined": "line"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#length",
       "name": {
         "en": "length",
         "nl": "Enter your translation here",
         "undefined": "length"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#inverseRoute",
-      "name": {
-        "en": "inverse route",
-        "nl": "Enter your translation here",
-        "undefined": "inverse route"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
-      "name": {
-        "en": "holiday type",
-        "nl": "Enter your translation here",
-        "undefined": "holiday type"
       },
       "description": {},
       "domain": [
@@ -9504,22 +9342,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#fareClass",
-      "name": {
-        "en": "fare class",
-        "nl": "Enter your translation here",
-        "undefined": "fare class"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#facility",
       "name": {
         "en": "facility",
@@ -9536,27 +9358,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#destinationVariantDisplayType",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#definedBy",
       "name": {
-        "en": "destination variant display type",
+        "en": "defined by",
         "nl": "Enter your translation here",
-        "undefined": "destination variant display type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
-      "name": {
-        "en": "described by",
-        "nl": "Enter your translation here",
-        "undefined": "described by"
+        "undefined": "defined by"
       },
       "description": {},
       "domain": [
@@ -9584,59 +9390,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek",
-      "name": {
-        "en": "day of week",
-        "nl": "Enter your translation here",
-        "undefined": "day of week"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#crowding",
-      "name": {
-        "en": "crowding",
-        "nl": "Enter your translation here",
-        "undefined": "crowding"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#coveredBy",
       "name": {
         "en": "covered by",
         "nl": "Enter your translation here",
         "undefined": "covered by"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#composedOf",
-      "name": {
-        "en": "composed of",
-        "nl": "Enter your translation here",
-        "undefined": "composed of"
       },
       "description": {},
       "domain": [
@@ -9669,54 +9427,6 @@
         "en": "booking arrangements",
         "nl": "Enter your translation here",
         "undefined": "booking arrangements"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#at",
-      "name": {
-        "en": "at",
-        "nl": "Enter your translation here",
-        "undefined": "at"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection",
-      "name": {
-        "en": "allowed direction",
-        "nl": "Enter your translation here",
-        "undefined": "allowed direction"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperators",
-      "name": {
-        "en": "additional operators",
-        "nl": "Enter your translation here",
-        "undefined": "additional operators"
       },
       "description": {},
       "domain": [
@@ -10032,11 +9742,91 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.within",
+      "name": {
+        "en": "within",
+        "nl": "Enter your translation here",
+        "undefined": "within"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.operatingDay",
+      "name": {
+        "en": "operating day",
+        "nl": "Enter your translation here",
+        "undefined": "operating day"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
       "name": {
         "en": "viewed as",
         "nl": "Enter your translation here",
         "undefined": "viewed as"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.timingpointStatus",
+      "name": {
+        "en": "timingpoint status",
+        "nl": "Enter your translation here",
+        "undefined": "timingpoint status"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.tariffZones",
+      "name": {
+        "en": "tariff zones",
+        "nl": "Enter your translation here",
+        "undefined": "tariff zones"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.stopType",
+      "name": {
+        "en": "stop type",
+        "nl": "Enter your translation here",
+        "undefined": "stop type"
       },
       "description": {},
       "domain": [
@@ -10224,6 +10014,54 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.through",
+      "name": {
+        "en": "through",
+        "nl": "Enter your translation here",
+        "undefined": "through"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.line",
+      "name": {
+        "en": "line",
+        "nl": "Enter your translation here",
+        "undefined": "line"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.inverseRoute",
+      "name": {
+        "en": "inverse route",
+        "nl": "Enter your translation here",
+        "undefined": "inverse route"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route.distance",
       "name": {
         "en": "distance",
@@ -10272,6 +10110,102 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.weekOfMonth",
+      "name": {
+        "en": "week of month",
+        "nl": "Enter your translation here",
+        "undefined": "week of month"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.usedToDescribe",
+      "name": {
+        "en": "used to describe",
+        "nl": "Enter your translation here",
+        "undefined": "used to describe"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.season",
+      "name": {
+        "en": "season",
+        "nl": "Enter your translation here",
+        "undefined": "season"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.holidayType",
+      "name": {
+        "en": "holiday type",
+        "nl": "Enter your translation here",
+        "undefined": "holiday type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.dayOfWeek",
+      "name": {
+        "en": "day of week",
+        "nl": "Enter your translation here",
+        "undefined": "day of week"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.crowding",
+      "name": {
+        "en": "crowding",
+        "nl": "Enter your translation here",
+        "undefined": "crowding"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf",
       "name": {
         "en": "a view of",
@@ -10304,6 +10238,22 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.at",
+      "name": {
+        "en": "at",
+        "nl": "Enter your translation here",
+        "undefined": "at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf",
       "name": {
         "en": "a view of",
@@ -10325,6 +10275,54 @@
         "en": "viewed as",
         "nl": "Enter your translation here",
         "undefined": "viewed as"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.location",
+      "name": {
+        "en": "location",
+        "nl": "Enter your translation here",
+        "undefined": "location"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.fareClass",
+      "name": {
+        "en": "fare class",
+        "nl": "Enter your translation here",
+        "undefined": "fare class"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.primaryMode",
+      "name": {
+        "en": "primary mode",
+        "nl": "Enter your translation here",
+        "undefined": "primary mode"
       },
       "description": {},
       "domain": [
@@ -10373,6 +10371,22 @@
         "en": "made up of",
         "nl": "Enter your translation here",
         "undefined": "made up of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.typeOfline",
+      "name": {
+        "en": "type of line",
+        "nl": "Enter your translation here",
+        "undefined": "type of line"
       },
       "description": {},
       "domain": [
@@ -10448,6 +10462,22 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.otherModes",
+      "name": {
+        "en": "other modes",
+        "nl": "Enter your translation here",
+        "undefined": "other modes"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.noticeAssignment",
       "name": {
         "en": "notice assignment",
@@ -10469,6 +10499,38 @@
         "en": "made up of",
         "nl": "Enter your translation here",
         "undefined": "made up of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.allowedDirection",
+      "name": {
+        "en": "allowed direction",
+        "nl": "Enter your translation here",
+        "undefined": "allowed direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line.additionalOperators",
+      "name": {
+        "en": "additional operators",
+        "nl": "Enter your translation here",
+        "undefined": "additional operators"
       },
       "description": {},
       "domain": [
@@ -10576,6 +10638,54 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.mainLine",
+      "name": {
+        "en": "mainline",
+        "nl": "Enter your translation here",
+        "undefined": "mainline"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.composedOf",
+      "name": {
+        "en": "composed of",
+        "nl": "Enter your translation here",
+        "undefined": "composed of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.oppositeDirection",
+      "name": {
+        "en": "opposite direction",
+        "nl": "Enter your translation here",
+        "undefined": "opposite direction"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.directionType",
       "name": {
         "en": "direction type",
@@ -10608,11 +10718,107 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.destinationDisplayVariantType",
+      "name": {
+        "en": "destination variant display type",
+        "nl": "Enter your translation here",
+        "undefined": "destination variant display type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.via",
       "name": {
         "en": "via",
         "nl": "Enter your translation here",
         "undefined": "via"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.variant",
+      "name": {
+        "en": "variant",
+        "nl": "Enter your translation here",
+        "undefined": "variant"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.serviceCalendar",
+      "name": {
+        "en": "Dienstkalender",
+        "nl": "Enter your translation here",
+        "undefined": "dienstkalender"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.operatingPeriod",
+      "name": {
+        "en": "operating period",
+        "nl": "Enter your translation here",
+        "undefined": "operating period"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.dayType",
+      "name": {
+        "en": "Dagtype",
+        "nl": "Enter your translation here",
+        "undefined": "dagtype"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.describedBy",
+      "name": {
+        "en": "described by",
+        "nl": "Enter your translation here",
+        "undefined": "described by"
       },
       "description": {},
       "domain": [
@@ -11686,9 +11892,9 @@
     },
     {
       "uri": "http://www.opengis.net/ont/sf#Point",
-      "name": "Point",
+      "name": "Point (Datatype",
       "label": {
-        "en": "Point",
+        "en": "Point (Datatype",
         "nl": "Enter your translation here"
       },
       "sort": "Enter your translation here",
@@ -11706,7 +11912,158 @@
           "scoped_uri": "#Geometry"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
+          "name": "viewed as",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "viewed as",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "As used as a Point in a Journey Pattern.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PointInJourneyPattern",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern",
+              "range_label": {
+                "en": "Point in Journey Pattern",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber",
+          "name": "point number",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "point number",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Arbitrary alternative identifier for the Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.name",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.location",
+          "name": "location",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "location",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Location of the Point.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Point",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
+              "range_label": {
+                "en": "Point (Datatype",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",

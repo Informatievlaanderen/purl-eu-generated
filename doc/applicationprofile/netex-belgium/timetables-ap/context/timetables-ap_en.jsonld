@@ -100,9 +100,14 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.dayLength",
       "@type": "http://www.w3.org/2001/XMLSchema#duration"
     },
+    "DayType.definedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#definedBy",
+      "@type": "@id"
+    },
     "DayType.describedBy": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.describedBy",
       "@type": "@id"
     },
     "DayType.description": {
@@ -128,19 +133,27 @@
     },
     "DayTypeAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment",
     "DayTypeAssignment.available": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#available",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DaytypeAssignment.available",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
+    "DayTypeAssignment.dagtype": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.dayType",
+      "@type": "@id"
+    },
     "DayTypeAssignment.date": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#date",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.date",
       "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "DayTypeAssignment.dienstkalender": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.serviceCalendar",
+      "@type": "@id"
     },
     "DayTypeAssignment.name": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.name",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "DayTypeAssignment.operatingPeriod": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operatingPeriod",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.operatingPeriod",
       "@type": "@id"
     },
     "DestinationDisplay": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay",
@@ -158,7 +171,7 @@
     },
     "DestinationDisplay.variant": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#variant",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.variant",
       "@type": "@id"
     },
     "DestinationDisplay.via": {
@@ -168,7 +181,7 @@
     },
     "DestinationDisplayVariant": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant",
     "DestinationDisplayVariant.destinationVariantDisplayType": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationVariantDisplayType",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.destinationDisplayVariantType",
       "@type": "@id"
     },
     "DestinationDisplayVariant.frontText": {
@@ -191,7 +204,7 @@
       "@type": "@id"
     },
     "Direction.oppositeDirection": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.oppositeDirection",
       "@type": "@id"
     },
     "DirectionType": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -206,15 +219,15 @@
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
-    "GroupOfEntities": "https://purl.eu/ns/mobility/timetable-and-planning#GroupOfEntities",
+    "GroupOfEntities": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities",
     "GroupOfLines": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines",
     "GroupOfLines.composedOf": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#composedOf",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.composedOf",
       "@type": "@id"
     },
     "GroupOfLines.mainline": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#mainline",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.mainLine",
       "@type": "@id"
     },
     "GroupOfLines.name": {
@@ -257,7 +270,7 @@
       "@id": "http://purl.org/dc/terms/issued",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "Journey": "https://purl.eu/ns/mobility/timetable-and-planning#Journey",
+    "Journey": "https://purl.eu/ns/mobility/timetables-and-planning#Journey",
     "JourneyFrequency": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency",
     "JourneyFrequency.description": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency.description",
@@ -299,7 +312,7 @@
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     "JourneyPattern.route": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#route",
+      "@id": "JourneyPattern.route",
       "@type": "@id"
     },
     "Line": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
@@ -309,12 +322,12 @@
     },
     "Line.additionalOperators": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperators",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.additionalOperators",
       "@type": "@id"
     },
     "Line.allowedDirection": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.allowedDirection",
       "@type": "@id"
     },
     "Line.description": {
@@ -323,7 +336,7 @@
     },
     "Line.documentLink": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#documentLink",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.documentLink",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "Line.madeUpOf": {
@@ -332,7 +345,7 @@
       "@type": "@id"
     },
     "Line.monitored": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#monitored",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.monitored",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "Line.name": {
@@ -346,7 +359,7 @@
     },
     "Line.otherModes": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#otherModes",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.otherModes",
       "@type": "@id"
     },
     "Line.presentation": {
@@ -378,7 +391,7 @@
       "@type": "@id"
     },
     "Line.typeOfLine": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#typeOfLine",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.typeOfline",
       "@type": "@id"
     },
     "Line.url": {
@@ -386,8 +399,8 @@
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "LineString": "http://www.opengis.net/ont/sf#LineString",
-    "Link": "https://purl.eu/ns/mobility/timetable-and-planning#Link",
-    "LinkSequence": "https://purl.eu/ns/mobility/timetable-and-planning#LinkSequence",
+    "Link": "https://purl.eu/ns/mobility/timetables-and-planning#Link",
+    "LinkSequence": "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
     "Network": "https://purl.eu/ns/mobility/timetables-and-planning#Network",
     "Network.madeUpOf": {
       "@container": "@set",
@@ -427,7 +440,7 @@
     },
     "OperatingDay": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay",
     "OperatingDay.calendarDate": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#calendarDate",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.calendarDate",
       "@type": "http://www.w3.org/2001/XMLSchema#date"
     },
     "OperatingDay.dayLength": {
@@ -465,7 +478,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Operator.primaryMode": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.primaryMode",
       "@type": "@id"
     },
     "Organization": "http://www.w3.org/ns/org#Organization",
@@ -495,50 +508,50 @@
     "OrganizationType": "http://www.w3.org/2004/02/skos/core#Concept",
     "PassengerCapacity": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity",
     "PassengerCapacity.fareClass": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#fareClass",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.fareClass",
       "@type": "@id"
     },
     "PassengerCapacity.pushChairCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#pushChairCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.pushChairCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.seatingCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#seatingCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.seatingCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.specialPlaceCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#specialPlaceCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.specialPlaceCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.standingCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#standingCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.standingCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.totalCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#totalCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.totalCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerCapacity.wheelchairPlaceCapacity": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#wheelchairPlaceCapacity",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.wheelChairCapacity",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "PassengerStopAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment",
-    "PassingTime": "https://purl.eu/ns/mobility/timetable-and-planning#PassingTime",
-    "Point": "http://www.opengis.net/ont/sf#Point",
+    "PassingTime": "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime",
     "Point (class)": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
-    "Point (class).location": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#location",
+    "Point (datatype": "http://www.opengis.net/ont/sf#Point",
+    "Point (datatype.location": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.location",
       "@type": "@id"
     },
-    "Point (class).name": {
+    "Point (datatype.name": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.name",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
-    "Point (class).pointNumber": {
+    "Point (datatype.pointNumber": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Point (class).viewedAs": {
+    "Point (datatype.viewedAs": {
       "@container": "@set",
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
       "@type": "@id"
@@ -550,7 +563,7 @@
     },
     "PointInJourneyPattern.at": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#at",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.at",
       "@type": "@id"
     },
     "PointInJourneyPattern.changeOfDestinationDisplay": {
@@ -569,7 +582,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
-    "PointInLinkSequence": "https://purl.eu/ns/mobility/timetable-and-planning#PointInLinkSequence",
+    "PointInLinkSequence": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
     "PointOnRoute": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute",
     "PointOnRoute.aViewOf": {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf",
@@ -591,16 +604,16 @@
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "PropertyOfDay.crowding": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#crowding",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.crowding",
       "@type": "@id"
     },
     "PropertyOfDay.dayOfMonth": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfMonth",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.dayOfMonth",
       "@type": "https://www.w3.org/2001/XMLSchema#gday"
     },
     "PropertyOfDay.dayOfWeek": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.dayOfWeek",
       "@type": "@id"
     },
     "PropertyOfDay.dayOfYear": {
@@ -613,11 +626,11 @@
     },
     "PropertyOfDay.holidayType": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.holidayType",
       "@type": "@id"
     },
     "PropertyOfDay.monthOfYear": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.monthOfYear",
       "@type": "http://www.w3.org/2001/XMLSchema#gMonth"
     },
     "PropertyOfDay.name": {
@@ -626,17 +639,17 @@
     },
     "PropertyOfDay.season": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#season",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.season",
       "@type": "@id"
     },
     "PropertyOfDay.usedToDescribe": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#usedToDescribe",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.usedToDescribe",
       "@type": "@id"
     },
     "PropertyOfDay.weekOfMonth": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#weekOfMonth",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.weekOfMonth",
       "@type": "@id"
     },
     "QuantitativeValue": "https://schema.org/QuantitativeValue",
@@ -681,11 +694,11 @@
       "@type": "@id"
     },
     "Route.inverseRoute": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#inverseRoute",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.inverseRoute",
       "@type": "@id"
     },
     "Route.line": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#line",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.line",
       "@type": "@id"
     },
     "Route.name": {
@@ -694,7 +707,7 @@
     },
     "Route.through": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#through",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.through",
       "@type": "@id"
     },
     "RouteLink": "https://purl.eu/ns/mobility/timetables-and-planning#RouteLink",
@@ -720,7 +733,7 @@
     },
     "RoutePoint": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint",
     "RoutePoint.borderCrossing": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#borderCrossing",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.borderCrossing",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "RoutePoint.endOf": {
@@ -778,16 +791,16 @@
       "@type": "@id"
     },
     "ScheduledStopPoint.stopType": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopType",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.stopType",
       "@type": "@id"
     },
     "ScheduledStopPoint.tariffZones": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#tariffZones",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.tariffZones",
       "@type": "@id"
     },
     "ScheduledStopPoint.timingpointStatus": {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.timingpointStatus",
       "@type": "@id"
     },
     "ScheduledStopPoint.viewedAs": {
@@ -807,7 +820,12 @@
     },
     "ServiceCalendar.operatingDay": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operatingDay",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.operatingDay",
+      "@type": "@id"
+    },
+    "ServiceCalendar.specifiedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#specifiedBy",
       "@type": "@id"
     },
     "ServiceCalendar.toDate": {
@@ -816,7 +834,7 @@
     },
     "ServiceCalendar.within": {
       "@container": "@set",
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#within",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.within",
       "@type": "@id"
     },
     "ServiceFacilitySet": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet",
@@ -920,7 +938,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.to",
       "@type": "@id"
     },
-    "Site": "https://purl.eu/ns/mobility/timetable-and-planning#Site",
+    "Site": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
     "StandardUnit": "http://fixme.com#StandardUnit",
     "StopPlace": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
     "StopPlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1010,7 +1028,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband.startTime",
       "@type": "http://www.w3.org/2001/XMLSchema#time"
     },
-    "TimingPoint": "https://purl.eu/ns/mobility/timetable-and-planning#TimingPoint",
+    "TimingPoint": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint",
     "TimingpointStatus": "http://www.w3.org/2004/02/skos/core#Concept",
     "TrainNumber": "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber",
     "TrainSizetype": "http://www.w3.org/2004/02/skos/core#Concept",
