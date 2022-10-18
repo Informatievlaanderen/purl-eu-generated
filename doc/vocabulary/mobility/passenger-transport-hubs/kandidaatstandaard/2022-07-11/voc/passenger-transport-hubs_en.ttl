@@ -24,6 +24,23 @@ skos:Concept a rdfs:Class;
     "AdditionalServiceType"@en,
     "HoppinpointType"@en .
 
+<https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.accessibility> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "E.g. whether the Mobility Service is accessible to persons with disabilities."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility> .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.availability> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "E.g. timetable or opening hours."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider> .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.provider> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider> .
+
 <https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#Charger>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
@@ -60,9 +77,36 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility> .
 
-<https://purl.eu/ns/mobility/passenger-transport-hubs#Mobiliteitsdienst.vervoermiddel> a owl:ObjectProperty;
+<https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub.specification> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range foaf:Document .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.meansOfTransport> a owl:ObjectProperty;
   <http://purl.org/vocab/vann/usageNote> "Especially relevant if the resource is a vehicle."@en;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.service> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService> .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.status> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "E.g. reserved, inactive, available. Determines whether a resource can be used."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.accessibility> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility> .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.brand> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Example: Hoppinpoint, Mobipoint,..."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range skos:Concept .
 
@@ -70,6 +114,11 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.roadAuthority> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
+  rdfs:range dc:Agent .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.status> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
@@ -85,57 +134,12 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:subClassOf <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop> .
 
-<https://purl.eu/ns/mobility/passenger-transport-hubs#accessibility> a owl:ObjectProperty;
-  <http://purl.org/vocab/vann/usageNote> "E.g. whether the Mobility Service is accessible to persons with disabilities."@en;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>,
-    <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility> .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#availability> a owl:ObjectProperty;
-  <http://purl.org/vocab/vann/usageNote> "E.g. timetable or opening hours."@en;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider> .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#brand> a owl:ObjectProperty;
-  <http://purl.org/vocab/vann/usageNote> "Example: Hoppinpoint, Mobipoint,..."@en;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range skos:Concept .
-
 <https://purl.eu/ns/mobility/passenger-transport-hubs#number> a owl:DatatypeProperty;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range xsd:integer .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range skos:Concept .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#provider> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider> .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#roadAuthority> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range dc:Agent .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#service> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService> .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#specification> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
-  rdfs:range foaf:Document .
-
-<https://purl.eu/ns/mobility/passenger-transport-hubs#status> a owl:ObjectProperty;
-  <http://purl.org/vocab/vann/usageNote> "E.g. reserved, inactive, available. Determines whether a resource can be used."@en;
   rdfs:domain <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range skos:Concept .
@@ -150,7 +154,8 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:range skos:Concept .
 
-dc11:date a rdf:Property .
+dc11:date a rdf:Property;
+  rdfs:label "reportTime"@en .
 
 dc:spatial a rdf:Property;
   rdfs:label "location"@en .
@@ -176,7 +181,7 @@ rdfs:label a rdf:Property;
     <http://fixme.com#CivicStructure> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#additionalService> a rdf:Property;
-  rdfs:label "service"@en .
+  rdfs:label "additionalService"@en .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub> a rdf:Property;
   rdfs:label "transportHub"@en .
@@ -196,7 +201,7 @@ rdfs:label a rdf:Property;
   rdfs:subClassOf <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub> a owl:Class;
-  <http://purl.org/vocab/vann/usageNote> "This recognition implies that a Transport Node is formally designated as a Transport Node. Typically, this is done by the government to give the node an official character (recognisable for the user, meets imposed quality requirements...)."@en;
+  <http://purl.org/vocab/vann/usageNote> "This recognition implies that a Registered Transport Hub is formally designated as a Transport Hub. Typically, this is done by the government to give the hub an official character (recognisable for the user, meets imposed quality requirements...)."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub> .
 
@@ -206,11 +211,11 @@ rdfs:label a rdf:Property;
   rdfs:subClassOf <https://purl.eu/ns/mobility/transporthubs#Service> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport> a owl:Class;
-  <http://purl.org/vocab/vann/usageNote> "E.g. The number of available bikes at the trainstation."@en;
+  <http://purl.org/vocab/vann/usageNote> "E.g. The number of available bikes in a particular train station."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub> a owl:Class;
-  <http://purl.org/vocab/vann/usageNote> "Examples for passenger transport are train stations, underground stations, bus stations, airports, ferry terminals, car parks... For freight transport it concerns typically airports, seaports, transhipment terminals. Transport nodes are typically intermodal, e.g. travellers combine the (shared) bicycle with the train for their trip, but intramodal transfers (e.g. from one bus line to another) are also important. Concretely, a Transport interchange includes infrastructure (stations, car parks, charging infrastructure... ), (mobility) services (public transport lines, shared bicycles, shops... ) and nodes in transport networks (public transport stops, car sharing points... )."@en;
+  <http://purl.org/vocab/vann/usageNote> "Examples for passenger transport are train stations, underground stations, bus stations, airports, ferry terminals, car parks... For freight transport it concerns typically airports, seaports, transhipment terminals. Transport hubs are typically intermodal, e.g. travellers combine the (shared) bicycle with the train for their trip, but intramodal transfers (e.g. from one bus line to another) are also important. Concretely, a Transport hub includes infrastructure (stations, car parks, charging infrastructure... ), (mobility) services (public transport lines, shared bicycles, shops... ) and nodes in transport networks (public transport stops, car sharing points... )."@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/passenger-transport-hubs> .
 
 <https://purl.eu/ns/mobility/passenger-transport-hubs> a owl:Ontology;
