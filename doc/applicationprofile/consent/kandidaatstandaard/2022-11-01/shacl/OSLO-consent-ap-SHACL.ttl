@@ -1,4 +1,5 @@
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,17 +7,17 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01> rdfs:member <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationTypeShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LiveDataTypeShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#MediumTypeShape>,
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01> rdfs:member <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#MediumTypeShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#AgentShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentStatusShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectTypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationTypeShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationalMeasureShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataTypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#TechnicalMeasureShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingTypeShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeTypeShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#TechnicalMeasureShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LiveDataTypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataTypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentStatusShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectTypeShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IdentifierShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LocationShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredOrganisationShape>,
@@ -26,7 +27,7 @@
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataControllerShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataProcessorShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectShape>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#EntityShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#FrequencyShape>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LegalBasisShape>,
@@ -43,7 +44,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#AgentShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#Agent> .
+  shacl:targetClass dc:Agent .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentNoticeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -120,7 +121,7 @@
   shacl:description "TODO"@en;
   shacl:name "has Location"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasFrequency>;
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasLocation>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Location is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -173,18 +174,18 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/5748b46f9a6199e892eac9fb741eb1c36132432e> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ahas%20Consent%20Status";
-  shacl:class <http://fixme.com#ConsentStatus>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "has Consent Status"@en;
   shacl:path <https://w3id.org/dpv/dpv-owl#hasConsentStatus>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Consent Status moet van het type <http://fixme.com#ConsentStatus> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Consent Status moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/5957c267fe10674efd15847a002f1be9cd3063c9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ahas%20Location";
   shacl:description "TODO"@en;
   shacl:maxCount 1;
   shacl:name "has Location"@en;
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasFrequency>;
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasLocation>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor has Location"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -192,7 +193,7 @@
   shacl:class prov:Location;
   shacl:description "TODO"@en;
   shacl:name "has Location"@en;
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasFrequency>;
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasLocation>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Location moet van het type <http://www.w3.org/ns/prov#Location> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -231,16 +232,16 @@
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/8b11479951e27b84b45ca190ce08d9f5d05ce9cf> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ahas%20Duration";
   shacl:description "TODO"@en;
   shacl:name "has Duration"@en;
-  shacl:nodekind "sh:Literal";
+  shacl:nodekind "sh:BlankNodeOrIRI";
   shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Duration is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Duration is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/a8ad98e01bacb3299ded49673cef7f94189fd6db> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ahas%20Location";
   shacl:description "TODO"@en;
   shacl:minCount 1;
   shacl:name "has Location"@en;
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasFrequency>;
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasLocation>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Minimaal 1 waarden verwacht voor has Location"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -261,11 +262,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/abf9cff903da0a3a3e140b5186a25e396de40fc0> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ahas%20Duration";
-  shacl:datatype xsd:duration;
+  shacl:class <https://w3id.org/dpv/dpv-owl#Duration>;
   shacl:description "TODO"@en;
   shacl:name "has Duration"@en;
   shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Duration moet van het type <http://www.w3.org/2001/XMLSchema#duration> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Duration moet van het type <https://w3id.org/dpv/dpv-owl#Duration> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape/ae9b14999c0b6384ae387bfdfb5d773aba1882b2> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent%3Ain%20Medium";
@@ -334,7 +335,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentStatusShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#ConsentStatus> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataControllerShape> a shacl:NodeShape;
   shacl:closed false;
@@ -355,64 +356,64 @@
   shacl:description "TODO"@en;
   shacl:maxCount 1;
   shacl:name "type"@en;
-  shacl:path <https://purl.eu/ns/consent#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubject%3Atype";
-  shacl:class <http://fixme.com#DataSubjectType>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "type"@en;
-  shacl:path <https://purl.eu/ns/consent#type>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://fixme.com#DataSubjectType> zijn."];
+  shacl:path dc11:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubject%3Atype";
   shacl:description "TODO"@en;
   shacl:name "type"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/consent#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataSubjectTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#DataSubjectType> .
+  shacl:targetClass skos:Concept .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape> a shacl:NodeShape;
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:property <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/236f0210baaf149903750c43bbe7012c21debb2a>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/322371a77364a50f049d46180f6192532eea26dc>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/4f381639bb6e021939f65b4f41409d1edaeade9b>;
+  shacl:property <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/236f0210baaf149903750c43bbe7012c21debb2a>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/322371a77364a50f049d46180f6192532eea26dc>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/4f381639bb6e021939f65b4f41409d1edaeade9b>;
   shacl:targetClass <https://w3id.org/dpv/dpv-owl#Duration> .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/236f0210baaf149903750c43bbe7012c21debb2a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration%3Atype";
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/236f0210baaf149903750c43bbe7012c21debb2a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2%3Atype";
   shacl:description "TODO"@en;
   shacl:maxCount 1;
   shacl:name "type"@en;
-  shacl:path <http://fixme.com#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration%3Atype";
-  shacl:class <https://purl.eu/ns/consent#DurationType>;
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2%3Atype";
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "type"@en;
-  shacl:path <http://fixme.com#type>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <https://purl.eu/ns/consent#DurationType> zijn."];
+  shacl:path dc11:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration%3Atype";
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2Shape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration2%3Atype";
   shacl:description "TODO"@en;
   shacl:name "type"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <http://fixme.com#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/consent#DurationType> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#EntityShape> a shacl:NodeShape;
   shacl:closed false;
@@ -489,11 +490,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IdentifierShape/436eb9a84734dff3ac6cb372858ef4e789436411> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier%3Aattributed%20by";
-  shacl:class <http://fixme.com#Agent>;
+  shacl:class dc:Agent;
   shacl:description "Link to the Agent that issued the identifier."@en;
   shacl:name "attributed by"@en;
   shacl:path dc:creator;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van attributed by moet van het type <http://fixme.com#Agent> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van attributed by moet van het type <http://purl.org/dc/terms/Agent> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IdentifierShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier%3Aidentifier";
@@ -598,7 +599,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LiveDataTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://purl.eu/ns/consent#LiveDataType> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LocationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -610,7 +611,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationalMeasureShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#OrganisationalMeasure> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -622,17 +623,18 @@
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/2be250bc73dfa4ecd3176b85a76e60f458dd174a>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/2f2270a84d8b88d958276b4bfe8704ad4177506a>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/342ea882d93e268102974827d6a0c31446ca71bb>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/35d287ab350abd25699cbbf1ed72a83e32a6f3d3>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/3d1f0d3c82ddaa7537739ab008e3bb667d437827>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/40fb88846dd93aaab1c8a9c8c698c209c6cd8511>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/41efd1dbeb8bfad878013c269ae886a321cab748>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/554a79311dc5c2d05847d39fead34ec8b4cf11f4>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/59e62cf586edeafe1517df128cf88b48c5d651a2>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/63e0fbeabb585c9fbb6051b90f42de7a8b100958>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/64370cec679a39bdfc35470d040ef9c954bfbb11>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/82072bc524ca60bbd6545412abb06a6cf9f6bb3b>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/8fdfcdc1c08568901d88254a7843300f72593b60>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/9c31cdd28a7a4fd2d61ca2fe84e63e4731986ce2>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/a7c5dce9f323f3e8c9d91e95544807ce6eb4927e>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/b59f0c51010e416940b9c0d709cee6acc2d6933c>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/bae330f7c641c391d371a566879ce348bf3e9335>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/bd5cb3b6a735e4c31da2358ccf7b7408d1527366>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/c5312cfde121bbac507000c0d526646a1c1e4324>,
@@ -640,7 +642,6 @@
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/cd80b95439e5d0689e3b671497e084a5e916cd15>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/e40bdc633e65a3200ada56004e3a46123be78e00>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/ef904f35812743b1d62e8d005b17762238dd7ab2>,
-    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/f2fbd5fee6975e4ffcbe28817f3dad8d44c759ea>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/fa5d2c9dc5186eb8d311c35f6115bf39a395c579>,
     <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/feb58889fd6a1ec8fe1d9b7e782296023f37a6dd>;
   shacl:targetClass <https://w3id.org/dpv/dpv-owl#PersonalDataHandlin> .
@@ -709,14 +710,6 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Processing moet van het type <https://w3id.org/dpv/dpv-owl#Processing> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/35d287ab350abd25699cbbf1ed72a83e32a6f3d3> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Recipiernt";
-  shacl:description "TODO"@en;
-  shacl:name "has Recipiernt"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasRecipient>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Recipiernt is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/3d1f0d3c82ddaa7537739ab008e3bb667d437827> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Data%20Processor";
   shacl:class <https://w3id.org/dpv/dpv-owl#DataProcessor>;
   shacl:description "TODO"@en;
@@ -765,6 +758,14 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Processing is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/64370cec679a39bdfc35470d040ef9c954bfbb11> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Recipient";
+  shacl:class <https://w3id.org/dpv/dpv-owl#Recipient>;
+  shacl:description "TODO"@en;
+  shacl:name "has Recipient"@en;
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasRecipient>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Recipient moet van het type <https://w3id.org/dpv/dpv-owl#Recipient> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/82072bc524ca60bbd6545412abb06a6cf9f6bb3b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Technical%20Organisational%20Measure";
   shacl:class <http://fixme.com#TechnicalOrganisationalMeasure>;
   shacl:description "TODO"@en;
@@ -795,6 +796,14 @@
   shacl:nodekind "sh:BlankNodeOrIRI";
   shacl:path <https://w3id.org/dpv/dpv-owl#hasRight>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Right is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/b59f0c51010e416940b9c0d709cee6acc2d6933c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Recipient";
+  shacl:description "TODO"@en;
+  shacl:name "has Recipient"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://w3id.org/dpv/dpv-owl#hasRecipient>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Recipient is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/bae330f7c641c391d371a566879ce348bf3e9335> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Legal%20Basis";
@@ -853,14 +862,6 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor has Data Controller"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/f2fbd5fee6975e4ffcbe28817f3dad8d44c759ea> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Recipiernt";
-  shacl:class <https://w3id.org/dpv/dpv-owl#Recipient>;
-  shacl:description "TODO"@en;
-  shacl:name "has Recipiernt"@en;
-  shacl:path <https://w3id.org/dpv/dpv-owl#hasRecipient>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Recipiernt moet van het type <https://w3id.org/dpv/dpv-owl#Recipient> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandlingShape/fa5d2c9dc5186eb8d311c35f6115bf39a395c579> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataHandling%3Ahas%20Data%20Controller";
   shacl:class <https://w3id.org/dpv/dpv-owl#DataController>;
   shacl:description "TODO"@en;
@@ -898,27 +899,27 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataShape/184f340cb76aff3add1915356379c6cfd4db1d2d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalData%3Alive%20Data";
-  shacl:class <https://purl.eu/ns/consent#LiveDataType>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "live Data"@en;
   shacl:path <http://fixme.com#liveData>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van live Data moet van het type <https://purl.eu/ns/consent#LiveDataType> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van live Data moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataShape/236f0210baaf149903750c43bbe7012c21debb2a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalData%3Atype";
   shacl:description "TODO"@en;
   shacl:maxCount 1;
   shacl:name "type"@en;
-  shacl:path <http://fixme.com#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalData%3Atype";
-  shacl:class <http://fixme.com#PersonalDataType>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "type"@en;
-  shacl:path <http://fixme.com#type>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://fixme.com#PersonalDataType> zijn."];
+  shacl:path dc11:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataShape/3e90f27ade75128b0dd273ec7537ddd4ce161a2c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalData%3Alive%20Data";
@@ -933,7 +934,7 @@
   shacl:description "TODO"@en;
   shacl:name "type"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <http://fixme.com#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -941,7 +942,7 @@
   shacl:description "TODO"@en;
   shacl:minCount 1;
   shacl:name "type"@en;
-  shacl:path <http://fixme.com#type>;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Minimaal 1 waarden verwacht voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -955,7 +956,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonalDataTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#PersonalDataType> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -992,10 +993,10 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Processing%3Atype";
-  shacl:class <http://fixme.com#ProcessingType>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "type"@en;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://fixme.com#ProcessingType> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Processing%3Atype";
@@ -1022,7 +1023,7 @@
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#ProcessingType> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1036,20 +1037,23 @@
   shacl:description "TODO"@en;
   shacl:maxCount 1;
   shacl:name "type"@en;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Maximaal 1 waarden toegelaten voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Purpose%3Atype";
-  shacl:class <http://fixme.com#PurposeType>;
+  shacl:class skos:Concept;
   shacl:description "TODO"@en;
   shacl:name "type"@en;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://fixme.com#PurposeType> zijn."];
+  shacl:path dc11:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Purpose%3Atype";
   shacl:description "TODO"@en;
   shacl:name "type"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1057,12 +1061,13 @@
   shacl:description "TODO"@en;
   shacl:minCount 1;
   shacl:name "type"@en;
+  shacl:path dc11:type;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "Minimaal 1 waarden verwacht voor type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#PurposeType> .
+  shacl:targetClass skos:Concept .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RecipientShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1260,9 +1265,9 @@
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDurationShape/8b11479951e27b84b45ca190ce08d9f5d05ce9cf> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDuration%3Ahas%20Duration";
   shacl:description "TODO"@en;
   shacl:name "has Duration"@en;
-  shacl:nodekind "sh:Literal";
+  shacl:nodekind "sh:BlankNodeOrIRI";
   shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Duration is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De verwachte waarde voor has Duration is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDurationShape/a8af7083b3824cc27f808bc43e547c52974f4bdc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDuration%3Ahas%20Duration";
@@ -1274,13 +1279,13 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDurationShape/abf9cff903da0a3a3e140b5186a25e396de40fc0> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageDuration%3Ahas%20Duration";
-  shacl:datatype xsd:duration;
+  shacl:class <https://w3id.org/dpv/dpv-owl#Duration>;
   shacl:description "TODO"@en;
   shacl:name "has Duration"@en;
   shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Duration moet van het type <http://www.w3.org/2001/XMLSchema#duration> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01en> "De range van has Duration moet van het type <https://w3id.org/dpv/dpv-owl#Duration> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#TechnicalMeasureShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#TechnicalMeasure> .
+  shacl:targetClass skos:Concept .
