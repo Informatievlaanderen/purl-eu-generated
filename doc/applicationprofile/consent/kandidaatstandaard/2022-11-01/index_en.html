@@ -67,8 +67,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-consent/tree/1faf0d517c411c686aa6bdb87ad7ae9a7a0881f2">https://github.com/Informatievlaanderen/OSLOthema-consent/tree/1faf0d517c411c686aa6bdb87ad7ae9a7a0881f2</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-consent/blob/1faf0d517c411c686aa6bdb87ad7ae9a7a0881f2/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-consent/blob/1faf0d517c411c686aa6bdb87ad7ae9a7a0881f2/CHANGELOG</a></dd>
+              <dt>Source</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-consent/tree/352e8f7ea1aaa76d229da9b9dc5c1265f18bd6c9">https://github.com/Informatievlaanderen/OSLOthema-consent/tree/352e8f7ea1aaa76d229da9b9dc5c1265f18bd6c9</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-consent/blob/352e8f7ea1aaa76d229da9b9dc5c1265f18bd6c9/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-consent/blob/352e8f7ea1aaa76d229da9b9dc5c1265f18bd6c9/CHANGELOG</a></dd>
               <dt>Feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-consent/issues">https://github.com/Informatievlaanderen/OSLOthema-consent/issues</a></dd>
               <dt>Registry of standards</dt><dd><a href="https://purl.eu">https://purl.eu</a></dd>
 
@@ -103,26 +103,16 @@
             <div class="region region--no-space-top typography" id="summary">
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
                 
-<p>
-The application profile Consent shows how terms out of the accompagnied vocabularium should be 
-used to exchange and processing of personal data of a person who gave consent to do so.
-</p>
-<p>
-This application profile is part of the TRAPEZE project. A project financed by the European Commission, 
-that delivers a platform as a solution for organisations and citizens with some concrete objectives on security 
-and privacy. It aims to bring stakeholders together under a common framework to provide citizens with the tools 
-and know-how to manage their security and privacy. It wants to support consent mechanisms and checking that data 
-is used in the right way. The aim is to restore citizens' trust in the digital economy by implementing log 
-integrity, non-repudiation and building data lineage and transparency by design. Concrete applications that must 
-prove their usefulness are worked out for three domains: government, telecom and the financial sector.
-</p>
-<p>
-Digital Flanders is working together with Solid who is working on the use of Pods to give citizens back their 
-ownership of their personal data. In the light of this collaboration we tried to model consent for the use of personal 
-data semantically. The model maximized the reuse and conformance to related international standars, such as DPV, 
-GConsent, CCCEV, OSLO Generic etc.
-</p>
-<p>Link to Consent vocabulary: <a href="https://purl.eu/ns/consent">https://purl.eu/ns/consent</a></p>
+<p>This application profile explains how terminology about consent should be used. By consent we mean the consent that is required from a person to process his personal data.</p>
+<p>Almost all the necessary terms come from an existing ontology about processing personal data, namely the <a href=” https://www.w3id.org/dpv”>Data Privacy Ontology</a> (DPV). Some additional terms were also defined as can be seen in the vocabulary associated with this application profile. </p>
+<p>Although DPV is broader and also considers other legal bases, it pays special attention to consent given the importance of this concept when exchanging personal data. </p>
+<p>The terminology in DPV is largely based on that in the GDPR but would allow for other similar legislation. See <a href=” https://www.w3id.org/dpv/dpv-gdpr”>DPV-GDPR</a> for further restriction to GDPR concepts. </p>
+<p>This profile was developed as part of <a href=” https://trapeze-project.eu/”>TRAPEZE</a>, a project financed by the European Commission to provide citizens with tools to manage their security and privacy. This concurs with the objective of the <a href=” https://solidproject.org/”>Solid</a> project to which Digital Flanders contributes and which aims to give citizens back the ownership of their personal data. Hence the need to semantically model consent. </p>
+<p>The application profile combines two versions of DPV: the <a href=”https://www.w3id.org/dpv/dpv-owl”>OWL-version for classes, attributes and associations and the <a href=” https://www.w3id.org/dpv/dpv-skos”>SKOS-version</a> for enumerations. </p>
+<p>The central class is, of course, Consent. </p>
+<p>Consent is requested by a DataController for the Processing of PersonalData of a DataSubject. </p>
+<p>For the Consent to be given, the DataSubject needs to be informed by a ConsentNotice of the Purpose and the kind of Processing that is involved. Consent can have a limited Duration. </p>
+<p>The model involves a class PersonalDataHandling to group all aspects of the processing of the data for which the DataSubject should give his Consent. Apart from the kind of PersonalData, the Purpose and type of Processing and the DataProcessor and/or possible Recipient, the Risks involved and the Rights of the DataSubject can be documented, as well as the Technical or Organizational Measures that were taken to ensure the data privacy and security. </p>   
 
             </div>
 
@@ -161,8 +151,6 @@ GConsent, CCCEV, OSLO Generic etc.
                     <p>This document describes the usage of the following entities for a correct usage of the Application Profile:
                       <br />
                       |
-                      <a href="#"></a> |
-                      <a href="#"></a> |
                       <a href="#Agent">Agent</a> |
                       <a href="#Consent">Consent</a> |
                       <a href="#ConsentNotice">ConsentNotice</a> |
@@ -172,6 +160,8 @@ GConsent, CCCEV, OSLO Generic etc.
                       <a href="#Entity">Entity</a> |
                       <a href="#LegalBasis">LegalBasis</a> |
                       <a href="#LegalEntity">LegalEntity</a> |
+                      <a href="#Organisation">Organisation</a> |
+                      <a href="#Person">Person</a> |
                       <a href="#PersonalData">PersonalData</a> |
                       <a href="#PersonalDataHandling">PersonalDataHandling</a> |
                       <a href="#Processing">Processing</a> |
@@ -208,38 +198,6 @@ GConsent, CCCEV, OSLO Generic etc.
             </div>
             <div class="region region--no-space-top">
               <h2 class="h2">Entities</h2>
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id=""><a href="http://fixme.com#Organisation" data-toggle="tooltip" data-content="http://fixme.com#Organisation" data-placement="right"></a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd></dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id=""><a href="http://fixme.com#Person" data-toggle="tooltip" data-content="http://fixme.com#Person" data-placement="right"></a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd></dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
             </div>
             
               <div class="region region--no-space-top">
@@ -660,7 +618,7 @@ GConsent, CCCEV, OSLO Generic etc.
                   <dl>
                     <dt>Description</dt><dd>The legal basis used to justify the Processing of the PersonalData.</dd>
                     
-                    <dt>Usage</dt><dd>REMARK: DPV is based on the GDPR which is a European law but it allows to specify other laws or jurisdictions if applicable. This possibility is omitted for this application profile which is therefore only applicable in a European context. Also, this profile focusses on one kind of Legal Basis, namely Consent. REMARK: DPV provides the possiblity to use LegalBasis as a category, eg the LegalBasis of PersonalDataHandling123 is Consent.</dd>
+                    <dt>Usage</dt><dd>REMARK: This profile focusses on one kind of Legal Basis, namely Consent. REMARK: DPV provides the possiblity to use LegalBasis as a category, eg the LegalBasis of PersonalDataHandling123 is Consent.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -725,6 +683,38 @@ GConsent, CCCEV, OSLO Generic etc.
                         <a href="#Entity">Entity</a>
 		   </dd>
                     
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Organisation"><a href="http://www.w3.org/ns/org#Organization" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#Organization" data-placement="right">Organisation</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd></dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Person"><a href="http://www.w3.org/ns/person#Person" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#Person" data-placement="right">Person</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd></dd>
+                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
