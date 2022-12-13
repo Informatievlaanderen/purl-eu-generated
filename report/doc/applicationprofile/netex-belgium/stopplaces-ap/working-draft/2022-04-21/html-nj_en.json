@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/d1dc92fa13fd953387e238d26fad854fcb503938",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/d1dc92fa13fd953387e238d26fad854fcb503938/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/401826ba9ffbbfd59d4a0d7b6402ab8ea2ac98fb",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/401826ba9ffbbfd59d4a0d7b6402ab8ea2ac98fb/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -725,41 +725,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#site",
-          "name": "site",
-          "sort": "site",
-          "label": {
-            "en": "site"
-          },
-          "description": {
-            "en": "Site of the Level."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Level",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Site",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Site",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
-              "range_label": {
-                "en": "Site"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#publicUse",
           "name": "public use",
           "sort": "public use",
@@ -1330,6 +1295,80 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
+          "name": "stopplaats",
+          "sort": "Stopplaats",
+          "label": {
+            "en": "Stopplaats"
+          },
+          "description": {
+            "en": "Referentie naar verbonden klasse."
+          },
+          "usage": {
+            "en": ""
+          },
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
+          "name": "gepland Stoppunt",
+          "sort": "Gepland Stoppunt",
+          "label": {
+            "en": "Gepland Stoppunt"
+          },
+          "description": {
+            "en": "Referentie naar verbonden klasse."
+          },
+          "usage": {
+            "en": ""
+          },
+          "domain": [
+            {
+              "EA-Name": "PassengerStopAssignment",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1537,7 +1576,7 @@
             "en": "served by"
           },
           "description": {
-            "en": "TODO"
+            "en": "Point of Interest served by the Stop Place."
           },
           "usage": {},
           "domain": [
@@ -2443,6 +2482,41 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlace",
+          "name": "stop place",
+          "sort": "stop place",
+          "label": {
+            "en": "stop place"
+          },
+          "description": {
+            "en": "Stop place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ScheduledStopPoint",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StopPlace",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stop Place",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+              "range_label": {
+                "en": "Stop Place"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -3493,7 +3567,7 @@
             "en": "weighting"
           },
           "description": {
-            "en": "Default relative weighting to be used for the Stop Place."
+            "en": "Relative weight of the Stop Place with respect to interchange possibilities."
           },
           "usage": {},
           "domain": [
@@ -3598,7 +3672,7 @@
             "en": "submode"
           },
           "description": {
-            "en": "Submode associated with the Stop Place."
+            "en": "Subordinate transport mode in the Stop place."
           },
           "usage": {},
           "domain": [
@@ -3633,10 +3707,10 @@
             "en": "stop place weight"
           },
           "description": {
-            "en": "Type of expected Interchange at the Stop Place."
+            "en": "Type of possible Interchange at the Stop Place."
           },
           "usage": {
-            "en": "For use in journey planner."
+            "en": "Useful for route planners."
           },
           "domain": [
             {
@@ -3646,7 +3720,7 @@
           ],
           "range": [
             {
-              "range_label": "StopPlaceWeightyType",
+              "range_label": "StopPlaceWeightType",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -3768,6 +3842,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
+          "name": "scheduled stop point",
+          "sort": "scheduled stop point",
+          "label": {
+            "en": "scheduled stop point"
+          },
+          "description": {
+            "en": "Scheduled Stop Point associated with the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ScheduledStopPoint",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scheduled Stop Point",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
+              "range_label": {
+                "en": "Scheduled Stop Point"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#otherTransportmode",
           "name": "other transportmode",
           "sort": "other transportmode",
@@ -3775,7 +3884,7 @@
             "en": "other transportmode"
           },
           "description": {
-            "en": "TODO"
+            "en": "Other transportmode available at the Stop Place."
           },
           "usage": {},
           "domain": [
@@ -4195,7 +4304,7 @@
             "en": "polygon"
           },
           "description": {
-            "en": "Polygon associated with the Stop Place."
+            "en": "Polygon describing the spatial extent of the Stop Place."
           },
           "usage": {},
           "domain": [
@@ -4216,41 +4325,6 @@
               "range_puri": "http://www.opengis.net/ont/sf#Polygon",
               "range_label": {
                 "en": "Polygon"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.placeType",
-          "name": "place type",
-          "sort": "place type",
-          "label": {
-            "en": "place type"
-          },
-          "description": {
-            "en": "Categorisation of Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PlaceType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Place Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Place Type"
               }
             }
           ],
@@ -4405,7 +4479,7 @@
             "en": "level"
           },
           "description": {
-            "en": "Levels for the Stop Place."
+            "en": "Floor of the Stop Place."
           },
           "usage": {},
           "domain": [
@@ -4440,7 +4514,7 @@
             "en": "landmark"
           },
           "description": {
-            "en": "Name of a nearby Landmark."
+            "en": "Name of a nearby landmark."
           },
           "usage": {
             "en": "Mainly relevant for bus modes."
@@ -5916,6 +5990,21 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlace",
+      "name": {
+        "en": "stop place",
+        "undefined": "stop place"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#startOf",
       "name": {
         "en": "start of",
@@ -5931,21 +6020,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#site",
-      "name": {
-        "en": "site",
-        "undefined": "site"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#serves",
       "name": {
         "en": "serves",
@@ -5965,6 +6039,21 @@
       "name": {
         "en": "serves",
         "undefined": "serves"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
+      "name": {
+        "en": "scheduled stop point",
+        "undefined": "scheduled stop point"
       },
       "description": {},
       "domain": [
@@ -6471,21 +6560,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.placeType",
-      "name": {
-        "en": "place type",
-        "undefined": "place type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite",
       "name": {
         "en": "parent site",
@@ -6955,6 +7029,36 @@
       "name": {
         "en": "level",
         "undefined": "level"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace",
+      "name": {
+        "en": "Stopplaats",
+        "undefined": "stopplaats"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint",
+      "name": {
+        "en": "Gepland Stoppunt",
+        "undefined": "gepland Stoppunt"
       },
       "description": {},
       "domain": [
