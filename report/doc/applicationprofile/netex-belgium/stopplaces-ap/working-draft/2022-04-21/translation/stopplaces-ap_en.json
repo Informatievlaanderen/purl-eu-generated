@@ -78,7 +78,7 @@
         "en": "Point of Interest"
       },
       "definition": {
-        "en": "A named grouping of Lines under which a Transport network is known."
+        "en": "A type of Place to or through which passengers may wish to navigate as part of their journey and which is modelled in detail by route planners."
       }
     },
     {
@@ -386,16 +386,6 @@
       }
     },
     {
-      "EA-Guid": "{B3D24D5D-9F62-4a54-89BB-2A3B0AC8BBEB}",
-      "name": "serves",
-      "label": {
-        "en": "serves"
-      },
-      "definition": {
-        "en": "TODO"
-      }
-    },
-    {
       "EA-Guid": "{4F787CDC-8EF8-4324-B48D-7CF37024B90E}",
       "name": "serves",
       "label": {
@@ -403,6 +393,16 @@
       },
       "definition": {
         "en": "Topographic Place served by the Stop Place."
+      }
+    },
+    {
+      "EA-Guid": "{B3D24D5D-9F62-4a54-89BB-2A3B0AC8BBEB}",
+      "name": "serves",
+      "label": {
+        "en": "serves"
+      },
+      "definition": {
+        "en": "TODO"
       }
     },
     {
@@ -426,19 +426,6 @@
       }
     },
     {
-      "EA-Guid": "{1346CB2A-9860-4e06-83C2-D350DC7B2BA7}",
-      "name": "quay",
-      "label": {
-        "en": "quay"
-      },
-      "definition": {
-        "en": "Quay of the Quay."
-      },
-      "usage": {
-        "en": "A Quay may contain other sub Quays. A child Quay shall be physically contained within its parent Quay. This allows one to represent composite platforms with two or more sides or named sections. One can thus journey plan to any level of detail."
-      }
-    },
-    {
       "EA-Guid": "{6D721B2C-DD52-4706-849F-740BF09CE8F7}",
       "name": "quay",
       "label": {
@@ -446,6 +433,19 @@
       },
       "definition": {
         "en": "Reference to a Quay within the Stop Place to which the Scheduled Stop Point is assigned."
+      }
+    },
+    {
+      "EA-Guid": "{1346CB2A-9860-4e06-83C2-D350DC7B2BA7}",
+      "name": "parent quay",
+      "label": {
+        "en": "parent quay"
+      },
+      "definition": {
+        "en": "Reference to parent of Quay that wholly contains it."
+      },
+      "usage": {
+        "en": "This allows to represent composite platforms with two or more sides or named sections. Allows routeplanning to a higher level of detail."
       }
     },
     {
@@ -536,26 +536,6 @@
       },
       "definition": {
         "en": "Stop Place which is the main terminus of the Topographic Place."
-      }
-    },
-    {
-      "EA-Guid": "{0AE14595-78C0-4a4e-9D0F-848BF559FA60}",
-      "name": "location of",
-      "label": {
-        "en": "location of"
-      },
-      "definition": {
-        "en": "Stop Place located in the Country."
-      }
-    },
-    {
-      "EA-Guid": "{0AE14595-78C0-4a4e-9D0F-848BF559FA60}",
-      "name": "located in",
-      "label": {
-        "en": "located in"
-      },
-      "definition": {
-        "en": "Country where the Stop Place is located."
       }
     },
     {
@@ -789,13 +769,13 @@
       }
     },
     {
-      "EA-Guid": "{F505BF12-F70E-4d48-885B-9F37A15F0066}",
-      "name": "short name",
+      "EA-Guid": "{DDEE0BA3-4096-4e55-AD83-5893D8D68D67}",
+      "name": "located in",
       "label": {
-        "en": "short name"
+        "en": "located in"
       },
       "definition": {
-        "en": "Short name for the Topographic Place."
+        "en": "Country where the Stop Place is located."
       }
     },
     {
@@ -806,16 +786,6 @@
       },
       "definition": {
         "en": "Stop Place serving the Topographic Place."
-      }
-    },
-    {
-      "EA-Guid": "{D2125BA2-2E43-41bf-B296-D0171BA4E259}",
-      "name": "private code",
-      "label": {
-        "en": "private code"
-      },
-      "definition": {
-        "en": "Alternative identifier of the Topographic Place."
       }
     },
     {
@@ -866,16 +836,6 @@
       },
       "definition": {
         "en": "List of Points within the Topographic Place."
-      }
-    },
-    {
-      "EA-Guid": "{32EF89E9-7E5D-46d9-99A5-E17C29D090CA}",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "definition": {
-        "en": "Description of the Topographic Place."
       }
     },
     {
@@ -1360,7 +1320,10 @@
         "en": "cross road"
       },
       "definition": {
-        "en": "Name of nearest cross road or crossing street on which site is and which can be used to locate the Quay."
+        "en": "Name of nearest cross road or crossing street which can be used to locate the Quay."
+      },
+      "usage": {
+        "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
       }
     },
     {
@@ -1600,46 +1563,6 @@
       }
     },
     {
-      "EA-Guid": "{D96DF996-5D91-42e1-86F1-0A5E7242B2B7}",
-      "name": "short name",
-      "label": {
-        "en": "short name"
-      },
-      "definition": {
-        "en": "Short name of the Country."
-      }
-    },
-    {
-      "EA-Guid": "{2924F62F-4FF5-499f-9AB8-FBFA4B5A0D45}",
-      "name": "private code",
-      "label": {
-        "en": "private code"
-      },
-      "definition": {
-        "en": "Private code of the Country."
-      }
-    },
-    {
-      "EA-Guid": "{F3AE873A-8973-43ac-B735-0CFAB2E621A0}",
-      "name": "polygon",
-      "label": {
-        "en": "polygon"
-      },
-      "definition": {
-        "en": "Polygon associated with the Country."
-      }
-    },
-    {
-      "EA-Guid": "{F580EB2A-42E4-4e44-88D7-9971C2DA907C}",
-      "name": "place type",
-      "label": {
-        "en": "place type"
-      },
-      "definition": {
-        "en": "Categorisation of the Country."
-      }
-    },
-    {
       "EA-Guid": "{47E3341E-2142-44db-B566-46AD598FD9CE}",
       "name": "name",
       "label": {
@@ -1647,36 +1570,6 @@
       },
       "definition": {
         "en": "Name of the Country."
-      }
-    },
-    {
-      "EA-Guid": "{43A7DE9C-C915-4dd3-880E-D8184DF05FD7}",
-      "name": "members",
-      "label": {
-        "en": "members"
-      },
-      "definition": {
-        "en": "List of Points within the Country."
-      }
-    },
-    {
-      "EA-Guid": "{F8D65F56-9740-493d-B820-6B890E8FCE76}",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "definition": {
-        "en": "Description of the Country."
-      }
-    },
-    {
-      "EA-Guid": "{CB6DCEF5-8392-4dac-AF78-8E8E97870BAD}",
-      "name": "centroid",
-      "label": {
-        "en": "centroid"
-      },
-      "definition": {
-        "en": "Centre Point of the Country."
       }
     },
     {
@@ -1691,6 +1584,36 @@
     }
   ],
   "externals": [
+    {
+      "EA-Guid": "{2551B7FC-C766-4e0a-B792-0CFA93C09573}",
+      "name": "Place",
+      "label": {
+        "en": "Place"
+      },
+      "definition": {
+        "en": "Topographically significant location that a transport model may wish to describe."
+      }
+    },
+    {
+      "EA-Guid": "{8970FBAE-1A85-4a30-BEAD-A02A4331E254}",
+      "name": "Site Component",
+      "label": {
+        "en": "Site Component"
+      },
+      "definition": {
+        "en": "A component of a Site describing a part of its structure. Shares common properties for equipment, management, accessibility and other features."
+      }
+    },
+    {
+      "EA-Guid": "{BC150D2A-2110-48ad-957B-E569AE7058C4}",
+      "name": "Stop Place Space",
+      "label": {
+        "en": "Stop Place Space"
+      },
+      "definition": {
+        "en": "TODO"
+      }
+    },
     {
       "EA-Guid": "{38FA8555-95E2-419c-9C4E-229CB5297DFF}",
       "name": "Punt",
