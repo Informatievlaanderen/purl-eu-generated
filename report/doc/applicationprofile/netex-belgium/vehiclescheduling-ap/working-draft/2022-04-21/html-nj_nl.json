@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/4c5316db00dc8f80a92afd42935f0a0bb85d1c3d",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/4c5316db00dc8f80a92afd42935f0a0bb85d1c3d/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/f4741a0069f3124df42acbdbe8f584037928f632",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/f4741a0069f3124df42acbdbe8f584037928f632/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -4999,30 +4999,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#projection",
-          "name": "projection",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "projection",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Projection for the Point.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Point",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#pointNumber",
           "name": "point number",
           "sort": "Enter your translation here",
@@ -8526,8 +8502,22 @@
               "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -8572,6 +8562,25 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://fixme.com",
+      "name": "Address",
+      "label": {
+        "en": "Address",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": []
     }
   ],
   "properties": [
@@ -10824,6 +10833,177 @@
       "properties": []
     },
     {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": "Identifier",
+      "label": {
+        "en": "Identifier",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Information used to uniquely identify an object.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/adms#schemaAgency",
+          "name": "creator name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "creator name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the agent who assigned the identifier.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "String used to uniquely identify the object.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "issued",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "issued",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Time when the identifier was issued.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "creator",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "creator",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Link to the agent who issued the identifier.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/locn#Address",
       "name": "Address Representation",
       "label": {
@@ -11179,10 +11359,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://fixme.com",
+              "range_uri": "#Enter your translation here",
               "range_puri": "https://fixme.com",
               "range_label": {
-                "nl": "Address"
+                "en": "Address",
+                "nl": "Enter your translation here"
               }
             }
           ],

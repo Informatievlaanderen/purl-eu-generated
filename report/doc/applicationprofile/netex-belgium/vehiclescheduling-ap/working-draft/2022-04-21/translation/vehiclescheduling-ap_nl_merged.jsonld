@@ -3552,8 +3552,8 @@
   "contributors-column": "Dienstregeling",
   "contributors-file": "stakeholders.csv",
   "diagram": "VehicleScheduling",
-  "documentcommit": "4c5316db00dc8f80a92afd42935f0a0bb85d1c3d",
-  "dummy": "geert-21",
+  "documentcommit": "f4741a0069f3124df42acbdbe8f584037928f632",
+  "dummy": "geert-22",
   "eap": "OSLO-DienstregelingEnPlanning-VehicleScheduling-AP.EAP",
   "editors": [
     {
@@ -4361,7 +4361,7 @@
     },
     {
       "@id": "http://www.w3.org/ns/regorg#registration",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{8F3C4A01-440B-48c3-9342-74B753954F00}",
       "ap-definition-en": {
         "en": "Identifier obtained by the organization upon registration."
@@ -4392,9 +4392,10 @@
         "EA-Range": "Identifier",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-GUID": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+          "EA-Name": "Identifier",
+          "EA-Package": "ADMS",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
         },
         "RawTags": [
           {
@@ -4463,7 +4464,14 @@
       "maxCardinality": "1",
       "minCardinality": "1",
       "name": "registration",
-      "range": [],
+      "range": [
+        {
+          "EA-GUID": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+          "EA-Name": "Identifier",
+          "EA-Package": "ADMS",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
       "usage": {
         "en": "In the CBE this would be the enterprisenumber.",
         "nl": "Enter your translation here"
@@ -5426,6 +5434,106 @@
       ]
     },
     {
+      "@id": "http://www.w3.org/ns/adms#schemaAgency",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{AB76AF60-D61F-45ca-847D-53460D56DD81}",
+      "ap-definition-en": {
+        "en": "Name of the agent who assigned the identifier."
+      },
+      "ap-label-en": {
+        "en": "creator name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Name of the agent who assigned the identifier.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+        "EA-Guid": "{AB76AF60-D61F-45ca-847D-53460D56DD81}",
+        "EA-Name": "creatorName",
+        "EA-Package": "ADMS",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/adms#schemaAgency"
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "schema agentschap"
+          },
+          {
+            "key": "ap-label-nl",
+            "note": "null",
+            "value": "toegekend door (String)"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "Naam vd agent die de identificator heeft toegekend."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "creator name"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Name of the agent who assigned the identifier."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Name of the agent who assigned the identifier."
+        },
+        "ap-label-en": {
+          "en": "creator name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Name of the agent who assigned the identifier."
+        },
+        "label": {
+          "en": "creator name"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "creator name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "creator name",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
       "@id": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{8483FCBC-6F3F-4716-863E-61CA8AF7010B}",
@@ -5649,6 +5757,127 @@
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ]
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#notation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{B4CF97AC-A7FE-4e1e-B328-D8423902ED97}",
+      "ap-definition-en": {
+        "en": "String used to uniquely identify the object."
+      },
+      "ap-label-en": {
+        "en": "identifier"
+      },
+      "ap-usageNote-en": {
+        "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier."
+      },
+      "codelist": [],
+      "definition": {
+        "en": "String used to uniquely identify the object.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+        "EA-Guid": "{B4CF97AC-A7FE-4e1e-B328-D8423902ED97}",
+        "EA-Name": "identifier",
+        "EA-Package": "ADMS",
+        "EA-Range": "Literal",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        "RawTags": [
+          {
+            "key": "ap-label-nl",
+            "note": "null",
+            "value": "identificator"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/2004/02/skos/core#notation"
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "note": " ",
+            "value": "Type vd string slaat op het identificatiesysteem (incl de versie ervan), de string zelf op de eigenlijke identificator."
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "notatie"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "String gebruikt om het object uniek te identificeren."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "identifier"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "String used to uniquely identify the object."
+          },
+          {
+            "key": "ap-usageNote-en",
+            "note": "null",
+            "value": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "String used to uniquely identify the object."
+        },
+        "ap-label-en": {
+          "en": "identifier"
+        },
+        "ap-usageNote-en": {
+          "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier."
+        },
+        "definition": {
+          "en": "String used to uniquely identify the object."
+        },
+        "label": {
+          "en": "identifier"
+        },
+        "usage": {
+          "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "identifier",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "identifier",
+      "range": [
+        {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ],
+      "usage": {
+        "en": "Type of the string refers to the identification system (including its version), the string itself to the actual identifier.",
+        "nl": "Enter your translation here"
+      }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
@@ -6547,6 +6776,106 @@
       ]
     },
     {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{AA3D9387-BC27-4a33-A86D-94A2CB86B86A}",
+      "ap-definition-en": {
+        "en": "Time when the identifier was issued."
+      },
+      "ap-label-en": {
+        "en": "issued"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Time when the identifier was issued.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+        "EA-Guid": "{AA3D9387-BC27-4a33-A86D-94A2CB86B86A}",
+        "EA-Name": "issued",
+        "EA-Package": "ADMS",
+        "EA-Range": "DateTime",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "DateTime",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/issued"
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "uitgegeven"
+          },
+          {
+            "key": "ap-label-nl",
+            "note": "null",
+            "value": "toegekend op"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "Tijdstip waarop de identificator werd uitgegeven."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "issued"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Time when the identifier was issued."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Time when the identifier was issued."
+        },
+        "ap-label-en": {
+          "en": "issued"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Time when the identifier was issued."
+        },
+        "label": {
+          "en": "issued"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "issued",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "issued",
+      "range": [
+        {
+          "EA-Name": "DateTime",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ]
+    },
+    {
       "@id": "http://purl.org/dc/terms/description",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{90093215-A8E6-4634-BC10-97BE9B7D9D85}",
@@ -6640,6 +6969,108 @@
           "EA-Name": "LanguageString",
           "EA-Package": "OSLO-Generiek",
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
+    },
+    {
+      "@id": "http://purl.org/dc/terms/creator",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{6264A7A0-61B6-4a65-8DA2-EF54376E8661}",
+      "ap-definition-en": {
+        "en": "Link to the agent who issued the identifier."
+      },
+      "ap-label-en": {
+        "en": "creator"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Link to the agent who issued the identifier.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+        "EA-Guid": "{6264A7A0-61B6-4a65-8DA2-EF54376E8661}",
+        "EA-Name": "creator",
+        "EA-Package": "ADMS",
+        "EA-Range": "Agent",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{6644496C-777E-48c6-A966-CC77888D0AD6}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Agent"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/creator"
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "maker"
+          },
+          {
+            "key": "ap-label-nl",
+            "note": "null",
+            "value": "toegekend door"
+          },
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "Link naar de agent die de identificator heeft uitgegeven."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "creator"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Link to the agent who issued the identifier."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Link to the agent who issued the identifier."
+        },
+        "ap-label-en": {
+          "en": "creator"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Link to the agent who issued the identifier."
+        },
+        "label": {
+          "en": "creator"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "creator",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "creator",
+      "range": [
+        {
+          "EA-GUID": "{6644496C-777E-48c6-A966-CC77888D0AD6}",
+          "EA-Name": "Agent",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Agent"
         }
       ]
     },
@@ -8565,6 +8996,100 @@
       "name": "Type Brandstof"
     },
     {
+      "@id": "http://www.w3.org/ns/adms#Identifier",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+      "ap-definition-en": {
+        "en": "Information used to uniquely identify an object."
+      },
+      "ap-label-en": {
+        "en": "Identifier"
+      },
+      "ap-usageNote-en": {
+        "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system."
+      },
+      "definition": {
+        "en": "Information used to uniquely identify an object.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{7A4E6D7E-4E3E-45f1-BF8F-F7C68523708D}",
+        "EA-Name": "Identifier",
+        "EA-Package": "ADMS",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "DATATYPE",
+        "RawTags": [
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "Informatie gebruikt om een object uniek te identificeren."
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "note": " ",
+            "value": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem."
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "Identificator"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/adms#Identifier"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Identifier"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Information used to uniquely identify an object."
+          },
+          {
+            "key": "ap-usageNote-en",
+            "note": "null",
+            "value": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Information used to uniquely identify an object."
+        },
+        "ap-label-en": {
+          "en": "Identifier"
+        },
+        "ap-usageNote-en": {
+          "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system."
+        },
+        "definition": {
+          "en": "Information used to uniquely identify an object."
+        },
+        "label": {
+          "en": "Identifier"
+        },
+        "parentclasses": "",
+        "usage": {
+          "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Identifier",
+        "nl": "Enter your translation here"
+      },
+      "name": "Identifier",
+      "usage": {
+        "en": "The basic principle here is that this string is assigned by an organization and that this is done according to a well-defined system.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
       "@id": "http://www.w3.org/ns/locn#Address",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{F4BB01E0-7464-4bf8-9F16-F8EABEEF0A92}",
@@ -9050,6 +9575,105 @@
       "name": "Registered Organization",
       "usage": {
         "en": "In Belgium, like in many other countries, the following kinds Organizations must register: company, sole proprietorship, government body, foundation Upon registration, the Organization receives a company number and its details are entered in a central registry called Crossrads Bank for Enterprises (CBE). More details on this class in the <a href=\"https://www.w3.org/TR/vocab-regorg/\">Registered Organization Vocabulary</a>.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{0820B2ED-D367-4bb0-902F-18F5D3EC4CD6}",
+      "ap-definition-en": {
+        "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code."
+      },
+      "ap-label-en": {
+        "en": "Address"
+      },
+      "ap-usageNote-en": {
+        "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>."
+      },
+      "definition": {
+        "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{0820B2ED-D367-4bb0-902F-18F5D3EC4CD6}",
+        "EA-Name": "Address",
+        "EA-Package": "BestAdd",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "ap-definition-nl",
+            "note": " ",
+            "value": "Informatie die toelaat om op een gestructureerde en unieke manier te verwijzen naar een gebouweenheid,een ligplaats,een standplaats of een perceel op basis van een gemeentenaam,een straatnaam,een huisnummer en eventueel een busnummer en een postcode."
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "note": "De definitie heeft betrekking op Belgische adressen. In andere landen kan een adres eventueel verwijzen naar andere geografisch objecten (niet gebouweenheid of perceel) of bestaan uit andere aanduidingen (verschillend van huisnummer en busnummer) of uit andere componenten dan straatnaam, gemeentenaam of postcode. Alternatieve adresaanduidingen dan huisnummer of busnummer (bv ingangaanduiding, trapaanduiding, verdiepaanduiding...) of een gebouwnaam of kamernaam ed zijn mogelijk dmv een associatie met adresuitbreiding. Uitwisseling van buitenlandse adressen moet gebeuren mbv het object adresvoorstelling.",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-nl",
+            "note": "Informatie die toelaat om in België op een gestructureerde en unieke manier te verwijzen naar een \"gebouweenheid\", \"gebouw\", een ligplaats, een standplaats of een perceel op basis van de naam van de gemeente, de straatnaam en het huisnummer eventueel aangevuld met een busnummer en met een postcode.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-nl",
+            "note": "x",
+            "value": "Adres"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Address"
+          },
+          {
+            "key": "ap-definition-en",
+            "note": "null",
+            "value": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code."
+          },
+          {
+            "key": "ap-usageNote-en",
+            "note": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>.",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "https://fixme.com"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code."
+        },
+        "ap-label-en": {
+          "en": "Address"
+        },
+        "ap-usageNote-en": {
+          "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>."
+        },
+        "definition": {
+          "en": "Information that makes it possible to refer in a structured and unique way to a building unit, a berth, a location or a plot on the basis of a municipality name, a street name, a house number and possibly a bus number and a postal code."
+        },
+        "label": {
+          "en": "Address"
+        },
+        "parentclasses": "",
+        "usage": {
+          "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Address",
+        "nl": "Enter your translation here"
+      },
+      "name": "Address",
+      "usage": {
+        "en": "The definition refers to Belgian Addresses. In other countries, an Address may refer to other geographical objects (not a building unit or parcel) or may consist of other designations (different from house number and bus number) or of components other than street name, municipality name or postal code. Foreign addresses can be exchanged using the Address Representation object. More detail on this class in the <a href=\"https://inspire.ec.europa.eu/id/document/tg/ad\">INSPRE Address specification</a>.",
         "nl": "Enter your translation here"
       }
     },
@@ -14570,90 +15194,6 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#projection",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "EA-Guid": "{7C905297-CFC1-4f79-85A6-327FC3D431F3}",
-      "ap-definition-en": {
-        "en": "Projection for the Point."
-      },
-      "ap-label-en": {
-        "en": "projection"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "Projection for the Point.",
-        "nl": "Enter your translation here"
-      },
-      "domain": [
-        {
-          "EA-Name": "Point",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-        }
-      ],
-      "extra": {
-        "EA-Domain": "Point",
-        "EA-Domain-Guid": "{26D5DAB9-4B77-476e-B3B2-46441002A3C8}",
-        "EA-Guid": "{7C905297-CFC1-4f79-85A6-327FC3D431F3}",
-        "EA-Name": "projection",
-        "EA-Package": "TimetablesAndPlanning",
-        "EA-Range": "null",
-        "EA-Type": "attribute",
-        "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
-        },
-        "RawTags": [
-          {
-            "key": "definition-en",
-            "note": "null",
-            "value": "Projection for the Point."
-          },
-          {
-            "key": "label-en",
-            "note": "null",
-            "value": "projection"
-          },
-          {
-            "key": "label-nl",
-            "note": "null",
-            "value": "projectie"
-          },
-          {
-            "key": "definition-nl",
-            "note": "null",
-            "value": "Projectie voor het punt."
-          }
-        ],
-        "Scope": "FULL_DEFINITON",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "Projection for the Point."
-        },
-        "ap-label-en": {
-          "en": "projection"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "Projection for the Point."
-        },
-        "label": {
-          "en": "projection"
-        },
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "ACTIVE_PACKAGE",
-      "label": {
-        "en": "projection",
-        "nl": "Enter your translation here"
-      },
-      "maxCardinality": "*",
-      "minCardinality": "0",
-      "name": "projection",
-      "range": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#privateCode",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{5C5B88C4-3ECA-41d0-B4D3-0D37D38BA62F}",
@@ -19156,22 +19696,22 @@
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{51B3E41C-26E8-4f42-A808-F2A4ADC5FE9F}",
+      "EA-Guid": "{4AB4AA3F-2548-4c10-997D-04A8D4887079}",
       "ap-definition-en": {
-        "en": "The Group of Lines that together make up the Network."
+        "en": "The Routes that make up the Line."
       },
       "ap-label-en": {
         "en": "made up of"
       },
       "codelist": [],
       "definition": {
-        "en": "The Group of Lines that together make up the Network.",
+        "en": "The Routes that make up the Line.",
         "nl": "Enter your translation here"
       },
       "domain": [
         {
-          "EA-Name": "Network",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Network"
+          "EA-Name": "Line",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
         }
       ],
       "extra": {
@@ -19188,27 +19728,27 @@
           },
           {
             "key": "definition-nl",
-            "note": "De groep van lijnen die samen het netwerk vormen.",
+            "note": "De routes die de lijn vormen.",
             "value": "NOTE"
           },
           {
             "key": "definition-en",
-            "note": "The Group of Lines that together make up the Network.",
+            "note": "The Routes that make up the Line.",
             "value": "NOTE"
           }
         ],
-        "EA-Domain": "Network",
-        "EA-Domain-Guid": "{6F6926FA-EFCB-4597-AFDC-1F1D318A5482}",
-        "EA-Guid": "{51B3E41C-26E8-4f42-A808-F2A4ADC5FE9F}",
+        "EA-Domain": "Line",
+        "EA-Domain-Guid": "{D37BFABC-5966-4d16-89FC-5B4FA5F2DD66}",
+        "EA-Guid": "{4AB4AA3F-2548-4c10-997D-04A8D4887079}",
         "EA-Name": "madeUpOf",
         "EA-Package": "",
-        "EA-Range": "GroupOfLines",
+        "EA-Range": "Route",
         "EA-Type": "connector",
         "RangeData": {
-          "EA-GUID": "{155B734B-568D-43df-9C4B-545626759369}",
-          "EA-Name": "GroupOfLines",
+          "EA-GUID": "{275B190A-A05F-4f64-A7A2-ECCDCEB35F5F}",
+          "EA-Name": "Route",
           "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
         },
         "RawTags": [
           {
@@ -19223,33 +19763,33 @@
           },
           {
             "key": "definition-nl",
-            "note": "De groep van lijnen die samen het netwerk vormen.",
+            "note": "De routes die de lijn vormen.",
             "value": "NOTE"
           },
           {
             "key": "definition-en",
-            "note": "The Group of Lines that together make up the Network.",
+            "note": "The Routes that make up the Line.",
             "value": "NOTE"
           }
         ],
         "Scope": "FULL_DEFINITON",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "The Group of Lines that together make up the Network."
+          "en": "The Routes that make up the Line."
         },
         "ap-label-en": {
           "en": "made up of"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "The Group of Lines that together make up the Network."
+          "en": "The Routes that make up the Line."
         },
         "derived": "false",
         "destRole": "madeUpOf",
         "label": {
           "en": "made up of"
         },
-        "sourceRole": "null",
+        "sourceRole": "line",
         "usage": ""
       },
       "generalization": [],
@@ -19259,14 +19799,14 @@
         "nl": "Enter your translation here"
       },
       "maxCardinality": "*",
-      "minCardinality": "0",
+      "minCardinality": "1",
       "name": "made up of",
       "range": [
         {
-          "EA-GUID": "{155B734B-568D-43df-9C4B-545626759369}",
-          "EA-Name": "GroupOfLines",
+          "EA-GUID": "{275B190A-A05F-4f64-A7A2-ECCDCEB35F5F}",
+          "EA-Name": "Route",
           "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
         }
       ]
     },
@@ -19390,22 +19930,22 @@
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{4AB4AA3F-2548-4c10-997D-04A8D4887079}",
+      "EA-Guid": "{51B3E41C-26E8-4f42-A808-F2A4ADC5FE9F}",
       "ap-definition-en": {
-        "en": "The Routes that make up the Line."
+        "en": "The Group of Lines that together make up the Network."
       },
       "ap-label-en": {
         "en": "made up of"
       },
       "codelist": [],
       "definition": {
-        "en": "The Routes that make up the Line.",
+        "en": "The Group of Lines that together make up the Network.",
         "nl": "Enter your translation here"
       },
       "domain": [
         {
-          "EA-Name": "Line",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Line"
+          "EA-Name": "Network",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Network"
         }
       ],
       "extra": {
@@ -19422,27 +19962,27 @@
           },
           {
             "key": "definition-nl",
-            "note": "De routes die de lijn vormen.",
+            "note": "De groep van lijnen die samen het netwerk vormen.",
             "value": "NOTE"
           },
           {
             "key": "definition-en",
-            "note": "The Routes that make up the Line.",
+            "note": "The Group of Lines that together make up the Network.",
             "value": "NOTE"
           }
         ],
-        "EA-Domain": "Line",
-        "EA-Domain-Guid": "{D37BFABC-5966-4d16-89FC-5B4FA5F2DD66}",
-        "EA-Guid": "{4AB4AA3F-2548-4c10-997D-04A8D4887079}",
+        "EA-Domain": "Network",
+        "EA-Domain-Guid": "{6F6926FA-EFCB-4597-AFDC-1F1D318A5482}",
+        "EA-Guid": "{51B3E41C-26E8-4f42-A808-F2A4ADC5FE9F}",
         "EA-Name": "madeUpOf",
         "EA-Package": "",
-        "EA-Range": "Route",
+        "EA-Range": "GroupOfLines",
         "EA-Type": "connector",
         "RangeData": {
-          "EA-GUID": "{275B190A-A05F-4f64-A7A2-ECCDCEB35F5F}",
-          "EA-Name": "Route",
+          "EA-GUID": "{155B734B-568D-43df-9C4B-545626759369}",
+          "EA-Name": "GroupOfLines",
           "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
         },
         "RawTags": [
           {
@@ -19457,33 +19997,33 @@
           },
           {
             "key": "definition-nl",
-            "note": "De routes die de lijn vormen.",
+            "note": "De groep van lijnen die samen het netwerk vormen.",
             "value": "NOTE"
           },
           {
             "key": "definition-en",
-            "note": "The Routes that make up the Line.",
+            "note": "The Group of Lines that together make up the Network.",
             "value": "NOTE"
           }
         ],
         "Scope": "FULL_DEFINITON",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "The Routes that make up the Line."
+          "en": "The Group of Lines that together make up the Network."
         },
         "ap-label-en": {
           "en": "made up of"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "The Routes that make up the Line."
+          "en": "The Group of Lines that together make up the Network."
         },
         "derived": "false",
         "destRole": "madeUpOf",
         "label": {
           "en": "made up of"
         },
-        "sourceRole": "line",
+        "sourceRole": "null",
         "usage": ""
       },
       "generalization": [],
@@ -19493,14 +20033,14 @@
         "nl": "Enter your translation here"
       },
       "maxCardinality": "*",
-      "minCardinality": "1",
+      "minCardinality": "0",
       "name": "made up of",
       "range": [
         {
-          "EA-GUID": "{275B190A-A05F-4f64-A7A2-ECCDCEB35F5F}",
-          "EA-Name": "Route",
+          "EA-GUID": "{155B734B-568D-43df-9C4B-545626759369}",
+          "EA-Name": "GroupOfLines",
           "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Route"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
         }
       ]
     },
@@ -28138,7 +28678,7 @@
   "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
   "template": "vehiclescheduling-ap_nl.j2",
   "title": "OSLO Mobiliteit - Dienstregeling en Planning: Planning (applicatieprofiel)",
-  "toolchaincommit": "95e01b513c52030c12106f61105b1d4d0b2cf8f8",
+  "toolchaincommit": "dd6c16242865d4489a8c0058a0ca83b5d02c09d1",
   "translation": [
     {
       "language": "en",
