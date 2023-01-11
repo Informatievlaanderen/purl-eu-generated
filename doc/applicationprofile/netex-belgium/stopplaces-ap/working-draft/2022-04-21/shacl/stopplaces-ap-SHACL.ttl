@@ -42,7 +42,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#PlaceTypeShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#AccessModesShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#AccessModeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#InterchangeUseTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceWeightTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#QuayTypeShape>,
@@ -63,7 +63,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#QuantitativeValueShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StandardUnitShape> .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#AccessModesShape> a shacl:NodeShape;
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#AccessModeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
@@ -3557,9 +3557,10 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>,
     <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>;
   shacl:description "Topographic Place served by the Stop Place."@en,
-    "TODO"@en;
+    "Point of Interest served by the Stop Place."@en;
   shacl:name "serves"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#serves>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopgraphicPlace.serves>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.serves>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van serves moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> zijn."], [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van serves moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3805,10 +3806,11 @@
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/5f399a5753a431dd7625105d795a07c68c41c7ee> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aserves";
   shacl:description "Topographic Place served by the Stop Place."@en,
-    "TODO"@en;
+    "Point of Interest served by the Stop Place."@en;
   shacl:name "serves"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#serves>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopgraphicPlace.serves>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.serves>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor serves is een rdfs:Resource (URI of blank node)"], [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor serves is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4310,8 +4312,7 @@
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/01f0f40fec8ddcf9e5bec76d2cf3e23c083a3b9f>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/1246ac37e3752cc0e7595b9bf0d525f90c6c43e9>,
+  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/1246ac37e3752cc0e7595b9bf0d525f90c6c43e9>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/21fd2e018915cd010aee64c9aa451a414a1ad052>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/37246edbcb4a7afcd798b2cb2c36c3c01062c58d>,
@@ -4345,20 +4346,13 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/c60ba44e9b96fea7675161d2210bb09037d6b987>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/caa9d15ad38096046fd527702c7620800aea178b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/cf2f2882b8b46a220733d42de1dbc5d5035a7e6e>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d1b848aaa9218dcd827e88c2a604aa9509e598fc>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d707bf4483e8b7dbc9461e0cf754b9ed5edc60d3>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d875a34c2a5b0d03bcfe904f1f9b83872f37ed3b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/ded3aa51da1e8c00f144d68a6631b30a6fd28ca0>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/e43363a40306619f14d81eba3616cb846e82bc19>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/f9b83925800b2f9f221c089f1a6fa43e40c3249c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/fb5b4e6b4829e6be689acac0196c4cc57490547b>;
   shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/01f0f40fec8ddcf9e5bec76d2cf3e23c083a3b9f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Amembers";
-  shacl:description "List of Points within the Topographic Place."@en;
-  shacl:name "members"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.members>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor members is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/1246ac37e3752cc0e7595b9bf0d525f90c6c43e9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3AISO%20code";
   shacl:datatype xsd:string;
@@ -4632,12 +4626,28 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor topographic place type"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d1b848aaa9218dcd827e88c2a604aa9509e598fc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Amember";
+  shacl:description "List of Points within the Topographic Place."@en;
+  shacl:name "member"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.member>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor member is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d707bf4483e8b7dbc9461e0cf754b9ed5edc60d3> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Acontained";
   shacl:description "Stop Place located in the Topographic Place."@en;
   shacl:name "contained"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#contained>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor contained is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/d875a34c2a5b0d03bcfe904f1f9b83872f37ed3b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Amember";
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
+  shacl:description "List of Points within the Topographic Place."@en;
+  shacl:name "member"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.member>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van member moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Point> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/ded3aa51da1e8c00f144d68a6631b30a6fd28ca0> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Atopographic%20place%20type";
@@ -4654,14 +4664,6 @@
   shacl:name "centroid"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.centroid>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van centroid moet van het type <http://www.opengis.net/ont/sf#Point> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/f9b83925800b2f9f221c089f1a6fa43e40c3249c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Amembers";
-  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
-  shacl:description "List of Points within the Topographic Place."@en;
-  shacl:name "members"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.members>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van members moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Point> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/fb5b4e6b4829e6be689acac0196c4cc57490547b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Apolygon";
