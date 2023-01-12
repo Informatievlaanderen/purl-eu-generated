@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/cc01acbc17c8dc850e55b9f95f466f0e71e0aa45",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/cc01acbc17c8dc850e55b9f95f466f0e71e0aa45/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/34f73f0a1e71a472f0c3ea3ba419a4c3b1fccf4a",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/34f73f0a1e71a472f0c3ea3ba419a4c3b1fccf4a/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -6073,41 +6073,6 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#vehicleType",
-          "name": "vehicle type",
-          "sort": "vehicle type",
-          "label": {
-            "en": "vehicle type"
-          },
-          "description": {
-            "en": "Reference to the Vehicle Type to use on the Service Journey."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ServiceJourney",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "VehicleType",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Vehicle Type",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType",
-              "range_label": {
-                "en": "Vehicle Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#trainSize",
           "name": "train size",
           "sort": "train size",
@@ -6731,14 +6696,14 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#workedOn",
-          "name": "worked on",
-          "sort": "worked on",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#vehicleType",
+          "name": "vehicle type",
+          "sort": "vehicle type",
           "label": {
-            "en": "worked on"
+            "en": "vehicle type"
           },
           "description": {
-            "en": "Day Type on which the Vehicle Journey is worked."
+            "en": "Reference to the Vehicle Type to use on the Service Journey."
           },
           "usage": {},
           "domain": [
@@ -6749,20 +6714,20 @@
           ],
           "range": [
             {
-              "range_label": "DayType",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
+              "range_label": "VehicleType",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Day Type",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
+              "range_uri": "#Vehicle Type",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType",
               "range_label": {
-                "en": "Day Type"
+                "en": "Vehicle Type"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -6829,6 +6794,43 @@
               "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
               "range_label": {
                 "en": "Time Tabled Passing Time"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#part",
+          "name": "part",
+          "sort": "part",
+          "label": {
+            "en": "part"
+          },
+          "description": {
+            "en": "Journey Part of a Journey."
+          },
+          "usage": {
+            "en": "Only for a multi-part journey."
+          },
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "JourneyPart",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Journey Part",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart",
+              "range_label": {
+                "en": "Journey Part"
               }
             }
           ],
@@ -7048,6 +7050,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayType",
+          "name": "worked on",
+          "sort": "worked on",
+          "label": {
+            "en": "worked on"
+          },
+          "description": {
+            "en": "Day Type on which the Vehicle Journey is worked."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "VehicleJourney",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DayType",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Day Type",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
+              "range_label": {
+                "en": "Day Type"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^transportSubmode",
           "name": "transportsubmode",
           "sort": "transportsubmode",
@@ -7080,43 +7117,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^part",
-          "name": "part",
-          "sort": "part",
-          "label": {
-            "en": "part"
-          },
-          "description": {
-            "en": "Journey Part of a Journey."
-          },
-          "usage": {
-            "en": "Only for a multi-part journey."
-          },
-          "domain": [
-            {
-              "EA-Name": "VehicleJourney",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "JourneyPart",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Journey Part",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart",
-              "range_label": {
-                "en": "Journey Part"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -7959,21 +7959,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#workedOn",
-      "name": {
-        "en": "worked on",
-        "undefined": "worked on"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#within",
       "name": {
         "en": "within",
@@ -8503,6 +8488,21 @@
       "name": {
         "en": "passed at",
         "undefined": "passed at"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#part",
+      "name": {
+        "en": "part",
+        "undefined": "part"
       },
       "description": {},
       "domain": [
@@ -9114,6 +9114,21 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayType",
+      "name": {
+        "en": "worked on",
+        "undefined": "worked on"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek",
       "name": {
         "en": "day of week",
@@ -9358,21 +9373,6 @@
       "name": {
         "en": "transportsubmode",
         "undefined": "transportsubmode"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^part",
-      "name": {
-        "en": "part",
-        "undefined": "part"
       },
       "description": {},
       "domain": [
