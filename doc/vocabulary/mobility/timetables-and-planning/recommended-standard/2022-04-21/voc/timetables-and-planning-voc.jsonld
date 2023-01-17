@@ -73,7 +73,7 @@
         "en": "A jurisdictional geographic boundary."
       },
       "parents": [
-        "http://purl.org/dc/terms/Location"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Place"
       ]
     },
     {
@@ -182,7 +182,6 @@
         "en": "Group of Lines can be used to define several kinds of PT networks and sub-networks: what is usually called a public transport network is in fact only a specific GroupOfLines and a Line may belong to several of them."
       },
       "parents": [
-        "http://fixme.com#Mobiliteitsdienst",
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities"
       ]
     },
@@ -216,7 +215,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "A part of a Vehicle Journey created according to a specific functional purpose, for instance in situations when vehicle coupling or separating occurs."
+        "en": "A part of a Vehicle Journey created according to a specific functional purpose, for instance in situations when vehicle coupling or separation occurs."
       },
       "parents": []
     },
@@ -230,9 +229,7 @@
         "en": "Abstract class."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
-        "http://fixme.com#Transportlinksequentie",
-        "http://fixme.com#Route"
+        "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence"
       ]
     },
     {
@@ -249,9 +246,23 @@
       "definition": {
         "en": "A grouping of Routes that is generally known to the public by a similar name or number."
       },
-      "parents": [
-        "http://fixme.com#Mobiliteitsdienst"
-      ]
+      "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Link",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Oriented spatial object of dimension 1 with view to the overall description of a Network, describing a connection between two Points."
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A Link Sequence describes a path through a Network, such as a bus route. It can consist of an ordered set of Points in Sequence (referencing Points of a particular type) or Links in Sequence (referencing Links of a particular type).\r\n"
+      },
+      "parents": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
@@ -268,9 +279,7 @@
         "en": "A named grouping of Lines under which a Transport network is known."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines",
-        "http://fixme.com#Mobiliteitsdienst",
-        "http://fixme.com#Transportnetwerk"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines"
       ]
     },
     {
@@ -338,6 +347,22 @@
       "parents": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A Passing Time associates a time with a Point in Journey Pattern."
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Place",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Topographically significant location that a transport model may wish to describe."
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -352,8 +377,7 @@
         "en": "Each Point in Journey Pattern specifies the visit of a Service to a specific Point in a particular order within the pattern."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
-        "http://fixme.com#Routeknoop"
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ]
     },
     {
@@ -381,8 +405,7 @@
         "en": "A Point on Route indicates the sequence of a Route Point within a Route. This intermediate object is required to allow a Route to go several times through the same RoutePoint."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
-        "http://fixme.com#Routeknoop"
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ]
     },
     {
@@ -408,9 +431,16 @@
         "en": "A  place such as a platform, bus stop, stance or quay side where passengers have access to public transport vehicles, taxi, cars or other means of transportation."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement",
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace"
       ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A Timing Point where a relief is possible, i.e. a driver may take on or hand over a vehicle. The vehicle may sometimes be left unattended."
+      },
+      "parents": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
@@ -419,9 +449,7 @@
         "en": "Ordered list of located Points defining one single path through the road (or rail) Network. A Route may pass through the same Point more than once."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
-        "http://fixme.com#Transportlinksequentie",
-        "http://fixme.com#Route"
+        "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence"
       ]
     },
     {
@@ -431,8 +459,7 @@
         "en": "An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Link",
-        "http://fixme.com#Transportlink"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Link"
       ]
     },
     {
@@ -442,8 +469,7 @@
         "en": "A Point used to define the shape of a Route through the Network. The same Point may be used in different Routes using a Point on Route."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point",
-        "http://fixme.com#Transportknoop"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
       ]
     },
     {
@@ -453,7 +479,6 @@
         "en": "A Point where passengers can board or alight from vehicles."
       },
       "parents": [
-        "http://fixme.com#Transportknoop",
         "https://purl.eu/ns/mobility/timetables-and-planning#Point",
         "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint"
       ]
@@ -488,7 +513,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "The connection between two consecutive Scheduled Stop Points in a Service Journey Link. Each Service Journey Link has a particular departure and arrival time. Service Journey Links allow Routeplanners to calculate shortest Routes more easily since a Journey is executed at a specific time (on a specific Day Type)."
+        "en": "The connection between two successive Scheduled Stop Points in a Service Journey. Since a Journey is always valid for a specific time (on a specific Day Type), each Service Journey Link has a specific departure and arrival time. Service Journey Links allow Route Planners to more easily calculate the shortest Routes."
       },
       "parents": []
     },
@@ -500,8 +525,6 @@
       },
       "parents": [
         "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
-        "http://fixme.com#Route",
-        "http://fixme.com#Transportlinksequentie",
         "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
       ]
     },
@@ -512,9 +535,24 @@
         "en": "Link between an ordered pair of Scheduled Stop Points."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Link",
-        "http://fixme.com#Transportlink"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Link"
       ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A type of Place, such as a Stop Place, Point of Interest or Address, to which passengers may wish to travel."
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A component of a Site describing a part of its structure. Shares common properties for equipment, management, accessibility and other features."
+      },
+      "parents": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance",
@@ -546,9 +584,16 @@
         "en": "Physical entrance or exit to/from a Stop Place for a passenger."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement",
         "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
       ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Space that is part of a Stop Place, like a Quay or a Stop Place Entrance."
+      },
+      "parents": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern",
@@ -557,8 +602,7 @@
         "en": "Each Point inJourney Pattern specifies the visit of a Service to a specific Scheduled Stop Point in a particular order within the pattern."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
-        "http://fixme.com#Routeknoop"
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ]
     },
     {
@@ -576,8 +620,7 @@
         "en": "The PassingTimes that are the result of the scheduling process and to be published in a timetable are called TimeTabledPassingTimes. \n\nThe TimeTabledPassingTimes are normally generated a long time before the day of operation and are valid over a long period of time (e.g. summer, winter timetable)"
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime",
-        "http://fixme.com#Dienstregeling"
+        "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime"
       ]
     },
     {
@@ -592,7 +635,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "Timing point."
+        "en": "A Point against which the timing information necessary to build schedules may be recorded."
       },
       "parents": []
     },
@@ -603,7 +646,7 @@
         "en": "A geographical settlement which provides topographical context when searching for or presenting travel information, for example as the origin or destination of a trip."
       },
       "parents": [
-        "http://purl.org/dc/terms/Location"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Place"
       ]
     },
     {
@@ -1227,7 +1270,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
       ],
       "generalization": []
     },
@@ -1241,7 +1284,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
       ],
       "generalization": []
     },
