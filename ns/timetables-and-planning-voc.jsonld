@@ -153,7 +153,7 @@
       "parents": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Facility used for parking and maintaining vehicles."
@@ -169,7 +169,7 @@
         "en": "Parking Point in a Garage."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ]
     },
     {
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A grouping of Stop Places which will be commonly referenced for a specific purpose (stops inside an airport, main stops of a city, etc.)."
@@ -326,7 +326,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A Relief Point where vehicles may stay unattended for a long time."
@@ -478,7 +478,7 @@
       ]
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A Point where passengers can board or alight from vehicles."
@@ -866,7 +866,7 @@
         "en": "Operator that uses the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
@@ -992,7 +992,7 @@
         "en": "Timing status of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus"
@@ -1006,7 +1006,7 @@
         "en": "Type of Timing Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [],
       "generalization": []
@@ -1122,7 +1122,7 @@
         "en": "Type of Stop Place."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1170,7 +1170,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#Block"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "generalization": []
     },
@@ -1576,7 +1576,7 @@
         "en": "Operator that operates the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
@@ -1657,20 +1657,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#member",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Stopping Place that is a member of the Group of StoppingPlaces"
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -1691,7 +1677,7 @@
         "en": "Crew Base that manages the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
@@ -1761,7 +1747,7 @@
         "en": "Location of the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.opengis.net/ont/sf#Point"
@@ -2002,7 +1988,7 @@
         "en": "Indicates whether the Parking Point is flexible."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
@@ -2134,7 +2120,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#Block"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "generalization": []
     },
@@ -2355,7 +2341,7 @@
         "en": "Crew Base near the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
@@ -2425,7 +2411,7 @@
         "en": "Contact details of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://schema.org/ContactPoint"
@@ -2481,7 +2467,7 @@
         "en": "Category of the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -2540,7 +2526,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "generalization": []
     },
@@ -2607,7 +2593,7 @@
         "en": "Default wait time to use for timing patterns that use the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#duration"
@@ -3230,7 +3216,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "generalization": []
     },
@@ -3746,7 +3732,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "generalization": []
     },
@@ -3788,7 +3774,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "generalization": []
     },
@@ -3886,7 +3872,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "generalization": []
     },
@@ -3914,7 +3900,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "generalization": []
     },
@@ -4026,7 +4012,7 @@
         "en": "As used as a Stop Point in a Journey Pattern."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
@@ -4040,7 +4026,7 @@
         "en": "Tariff Zones to which the Scheduled Stop Point belongs."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
@@ -4054,7 +4040,7 @@
         "en": "Service Link of which the Schedule Stop Point is the start."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink"
@@ -4068,7 +4054,7 @@
         "en": "Short name of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -4082,7 +4068,7 @@
         "en": "Public code of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -4099,7 +4085,7 @@
         "en": "Can be used to associate with legacy systems."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -4113,7 +4099,7 @@
         "en": "Presentation values to use when rendering the Stop Point such as a colour and font."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Presentation"
@@ -4127,7 +4113,7 @@
         "en": "Name of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -4141,7 +4127,7 @@
         "en": "Location of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.opengis.net/ont/sf#Point"
@@ -4155,7 +4141,7 @@
         "en": "Service Link of which the Schedule Stop Point is the end."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink"
@@ -4169,7 +4155,7 @@
         "en": "Description of the Scheduled Stop Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -4813,7 +4799,7 @@
         "en": "Arbitrary alternative identifer for the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -4827,7 +4813,7 @@
         "en": "Name of the Parking Point."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+        "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5334,7 +5320,7 @@
         "en": "Transport mode of the Group of Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
@@ -5348,7 +5334,7 @@
         "en": "Short name for the Group of Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5362,7 +5348,7 @@
         "en": "Purpose of grouping the Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Code"
@@ -5376,7 +5362,7 @@
         "en": "Private code associated with the Group of Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -5390,10 +5376,24 @@
         "en": "Name of the Group of Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.member",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Stopping Place that is a member of the Group of StoppingPlaces"
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
       ],
       "generalization": []
     },
@@ -5404,7 +5404,7 @@
         "en": "Description of the Group of Stop Places."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5446,7 +5446,7 @@
         "en": "URL of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#anyURI"
@@ -5460,7 +5460,7 @@
         "en": "Short name of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5474,7 +5474,7 @@
         "en": "Road address of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/ns/locn#Address"
@@ -5488,7 +5488,7 @@
         "en": "Purpose of grouping of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Code"
@@ -5502,7 +5502,7 @@
         "en": "Private code of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -5516,7 +5516,7 @@
         "en": "Postal address of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/ns/locn#Address"
@@ -5530,7 +5530,7 @@
         "en": "Polygon of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.opengis.net/ont/sf#Polygon"
@@ -5544,7 +5544,7 @@
         "en": "Categorisation of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#PlaceType"
@@ -5558,7 +5558,7 @@
         "en": "Name of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5572,7 +5572,7 @@
         "en": "List of Points within the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
@@ -5586,7 +5586,7 @@
         "en": "Image of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#anyURI"
@@ -5600,7 +5600,7 @@
         "en": "Description of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5614,7 +5614,7 @@
         "en": "Centre Point of the Garage."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
