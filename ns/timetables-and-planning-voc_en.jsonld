@@ -67,6 +67,11 @@
       "parents": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Code",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Country",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -701,6 +706,13 @@
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Headway Display"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
     }
   ],
   "properties": [
@@ -911,20 +923,6 @@
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Transport mode of the Group of Stop Places."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
@@ -1662,7 +1660,7 @@
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#member",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "TODO"
+        "en": "Stopping Place that is a member of the Group of StoppingPlaces"
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
@@ -1743,20 +1741,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#locationOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "TODO"
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Country"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#location",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1766,7 +1750,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+        "http://www.opengis.net/ont/sf#Point"
       ],
       "generalization": []
     },
@@ -1780,21 +1764,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#locatedIn",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "TODO"
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Country"
+        "http://www.opengis.net/ont/sf#Point"
       ],
       "generalization": []
     },
@@ -1942,20 +1912,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Image of the Garage."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#anyURI"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1971,26 +1927,30 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#headwayDisplay",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Use to be made of Headway Interval information when displaying to public. Default is 'Display Instead of Passing Times'."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
       "generalization": []
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#headway",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Headway interval at Point in Pattern."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime"
       ],
-      "range": [],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval"
+      ],
       "generalization": []
     },
     {
@@ -2720,6 +2680,20 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
       ],
       "range": [],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^locatedIn",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Country where the Stop Place is located."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Country"
+      ],
       "generalization": []
     },
     {
@@ -4170,7 +4144,7 @@
         "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
       ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+        "http://www.opengis.net/ont/sf#Point"
       ],
       "generalization": []
     },
@@ -5354,6 +5328,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportMode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Transport mode of the Group of Stop Places."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.shortName",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -5369,14 +5357,16 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.purposeOfGrouping",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Purpose of grouping the Stop Places."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode"
       ],
-      "range": [],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
+      ],
       "generalization": []
     },
     {
@@ -5493,14 +5483,16 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.purposeOfGrouping",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Purpose of grouping of the Garage."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
       ],
-      "range": [],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
+      ],
       "generalization": []
     },
     {
@@ -5584,6 +5576,20 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Image of the Garage."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Garage.image"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#anyURI"
       ],
       "generalization": []
     },
