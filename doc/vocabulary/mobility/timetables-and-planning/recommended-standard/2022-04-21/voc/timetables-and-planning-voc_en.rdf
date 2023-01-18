@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <rdf:RDF xmlns:dc='http://purl.org/dc/terms/' xmlns:foaf='http://xmlns.com/foaf/0.1/' xmlns:ns0='http://purl.org/vocab/vann/' xmlns:org='http://www.w3.org/ns/org#' xmlns:owl='http://www.w3.org/2002/07/owl#' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#' xmlns:schema='http://schema.org/' xmlns:schemas='https://schema.org/' xmlns:skos='http://www.w3.org/2004/02/skos/core#' xmlns:xsd='http://www.w3.org/2001/XMLSchema#'>
-<rdfs:Class rdf:about='http://www.w3.org/2004/02/skos/core#Concept'>
-<rdfs:label xml:lang='en'>Dead Run Type</rdfs:label>
- <rdfs:label xml:lang='en'>Headway Display</rdfs:label>
-
-</rdfs:Class>
-
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#Authority.address'>
 <rdfs:domain>
 <owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#Authority'>
@@ -30,8 +24,6 @@
 </rdf:Description>
 
 </dc:mediator>
-
-<rdfs:seeAlso rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
 
 </owl:Ontology>
 
@@ -569,13 +561,7 @@
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range>
-<owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#Code'>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
-
-</owl:Class>
-
-</rdfs:range>
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#Code' />
 
 </owl:ObjectProperty>
 
@@ -1134,7 +1120,7 @@ descriptive information.</ns0:usageNote>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.name'>
 <rdfs:domain>
-<owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location'>
+<owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint'>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
 <rdfs:subClassOf>
@@ -1156,7 +1142,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.pointNumber'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1643,13 +1629,8 @@ descriptive information.</ns0:usageNote>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description'>
 <rdfs:domain>
-<owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
-
+<owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint'>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
-
-<rdfs:range rdf:resource='http://www.opengis.net/ont/sf#Point' />
 
 <rdfs:subClassOf rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#Point' />
  <rdfs:subClassOf>
@@ -1671,7 +1652,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.endOf'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1687,8 +1668,17 @@ descriptive information.</ns0:usageNote>
 
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location'>
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
+
+<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
+
+<rdfs:range rdf:resource='http://www.opengis.net/ont/sf#Point' />
+
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1697,7 +1687,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.presentation'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1708,7 +1698,7 @@ descriptive information.</ns0:usageNote>
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.privateCode'>
 <ns0:usageNote xml:lang='en'>Can be used to associate with legacy systems.</ns0:usageNote>
 
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1717,7 +1707,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.publicCode'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1726,7 +1716,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.shortName'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1735,7 +1725,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.startOf'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1744,7 +1734,7 @@ descriptive information.</ns0:usageNote>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.tariffZone'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1759,7 +1749,7 @@ descriptive information.</ns0:usageNote>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -1874,7 +1864,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 </owl:ObjectProperty>
 
@@ -1892,7 +1882,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 </owl:ObjectProperty>
 
@@ -1955,7 +1945,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 </owl:ObjectProperty>
 
@@ -1982,7 +1972,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 </owl:ObjectProperty>
 
@@ -2330,7 +2320,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 </owl:ObjectProperty>
 
@@ -2747,7 +2737,7 @@ descriptive information.</ns0:usageNote>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#allowedForWaitTime'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -2796,7 +2786,7 @@ descriptive information.</ns0:usageNote>
 <owl:Class rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint'>
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:subClassOf rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:subClassOf rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 </owl:Class>
 
@@ -2848,7 +2838,7 @@ descriptive information.</ns0:usageNote>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#category'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -3087,7 +3077,7 @@ descriptive information.</ns0:usageNote>
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 </owl:ObjectProperty>
 
@@ -3178,7 +3168,7 @@ descriptive information.</ns0:usageNote>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#flexible'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -3340,7 +3330,7 @@ descriptive information.</ns0:usageNote>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#location'>
 <rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#Point' />
- <rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+ <rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -3376,7 +3366,7 @@ descriptive information.</ns0:usageNote>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#managedBy'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -3715,7 +3705,7 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
-<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:range rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 </owl:ObjectProperty>
 
@@ -3740,7 +3730,7 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#stopType'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
@@ -3816,14 +3806,14 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 </owl:ObjectProperty>
 
 <rdf:Property rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#timingPointType'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
 </rdf:Property>
 
 <owl:ObjectProperty rdf:about='https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location' />
+<rdfs:domain rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint' />
 
 <rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/mobility/timetables-and-planning' />
 
