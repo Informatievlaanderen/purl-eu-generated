@@ -29,6 +29,14 @@
       "parents": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Place that has an Address."
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Authority",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -1151,6 +1159,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlace",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Stop Place that is scheduled."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startedAt",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1273,6 +1295,20 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Scheduled Stop Point."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
       ],
       "generalization": []
     },
@@ -1490,7 +1526,7 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#otherModes",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#otherMode",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Additional Transport Modes for the Line."
@@ -1930,6 +1966,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#frequencyRegulated",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Indicates whether the frequency falls under regulatory agreement or not."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#frequency",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1982,20 +2032,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#duration"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#fequencyRegulated",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Indicates whether the frequency falls under regulatory agreement or not."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
       ],
       "generalization": []
     },
@@ -2143,17 +2179,15 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationVariantDisplayType",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplayVariantType",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
         "en": "Type of the Destination Variant Display."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
       ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
+      "range": [],
       "generalization": []
     },
     {
@@ -2493,6 +2527,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#c",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The height of a Vehicle of the Type."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType"
+      ],
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#bookingArrangements",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -2633,7 +2681,7 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperators",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperator",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "References to additional Authorities or Operators for the Line."
@@ -2717,20 +2765,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.height",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The height of a Vehicle of the Type."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType"
-      ],
-      "range": [
-        "https://schema.org/QuantitativeValue"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.description",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -2741,20 +2775,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.workedOn",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Day Type on which the Vehicle Journey is worked."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
       ],
       "generalization": []
     },
@@ -2870,6 +2890,20 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#time"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Day Type on which the Vehicle Journey is worked."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
       ],
       "generalization": []
     },
@@ -6092,20 +6126,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.workedOn",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The DayType when the Block was worked on."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Block"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.startTime",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -6164,6 +6184,20 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.dayType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The DayType when the Block was worked on."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Block"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
       ],
       "generalization": []
     },
