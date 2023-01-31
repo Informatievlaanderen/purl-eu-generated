@@ -959,20 +959,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The main transport mode of the Stop Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainSize",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1025,6 +1011,20 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlace",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Reference to a Topographic Place with which the Site is associated."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
       ],
       "generalization": []
     },
@@ -1304,6 +1304,34 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#servesTopographicPlace",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Topographic Place served by the Stop Place."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#servesPointOfInterest",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Point of Interest served by the Stop Place."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#selfPropelled",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -1510,6 +1538,20 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#duration"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#postcode",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Postcode or partial postcode associated with the Topographic Place."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "generalization": []
     },
@@ -3058,20 +3100,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportMode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Transport mode of the Journey."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Journey"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3159,20 +3187,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.serves",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Topographic Place served by the Stop Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.servedBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3191,20 +3205,6 @@
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "Alternative identifier of the Topographic Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.postcode",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Postcode or partial postcode associated with the Topographic Place."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
@@ -3438,6 +3438,20 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.transportmode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The main transport mode of the Stop Place."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
       ],
       "generalization": []
     },
@@ -4134,34 +4148,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.topographicPlace",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Reference to a Topographic Place with which the Point of Interest is associated."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.serves",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Point of Interest served by the Stop Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.servedBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -4849,6 +4835,20 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Transport submode of the Journey."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Journey"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Transportmode"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Transport mode of the Journey."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Journey"
