@@ -12,8 +12,8 @@
     "documentconfig": {},
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
     "statuslabel": "Erkende Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/8d49c7871f1590f639d0d04065de163bf09d9c75",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/8d49c7871f1590f639d0d04065de163bf09d9c75/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/dbe42e00798a9f746ed69ffae734fd4263462b27",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/dbe42e00798a9f746ed69ffae734fd4263462b27/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://purl.eu",
     "usesVocs": [],
@@ -1056,7 +1056,7 @@
       "usage": {},
       "equivalent": [],
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+        "https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern"
       ]
     },
     {
@@ -1117,6 +1117,22 @@
       "equivalent": [],
       "parents": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern",
+      "name": "Timing Point in Journey Pattern",
+      "label": {
+        "en": "Timing Point in Journey Pattern"
+      },
+      "sort": "Timing Point in Journey Pattern",
+      "description": {
+        "en": "A point in a Journey Pattern which is a Timing Point"
+      },
+      "usage": {},
+      "equivalent": [],
+      "parents": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
       ]
     },
     {
@@ -1319,6 +1335,25 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
+      "name": "viewed as",
+      "label": {
+        "en": "viewed as"
+      },
+      "sort": "viewed as",
+      "description": {
+        "en": "As used as a Point in a kink sequence."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ],
       "parents": []
     },
@@ -2836,6 +2871,44 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#madeUsing",
+      "name": "made using",
+      "label": {
+        "en": "made using"
+      },
+      "sort": "made using",
+      "description": {
+        "en": "Journey Pattern used to make the Vehicle Journey."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
+      "name": "made up of",
+      "label": {
+        "en": "made up of"
+      },
+      "sort": "made up of",
+      "description": {
+        "en": "The ordered sequence of Points that together make up the Journey Pattern."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lowFloor",
       "name": "low floor",
       "label": {
@@ -2982,6 +3055,27 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration",
+      "name": "journey duration",
+      "label": {
+        "en": "journey duration"
+      },
+      "sort": "journey duration",
+      "description": {
+        "en": "Total length of the Vehicle Journey."
+      },
+      "usage": {
+        "en": "Can be computed from individual times. Add to departure time to obtain Journey arrival time."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#duration"
       ],
       "parents": []
     },
@@ -3556,6 +3650,25 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplay",
+      "name": "destination display",
+      "label": {
+        "en": "destination display"
+      },
+      "sort": "destination display",
+      "description": {
+        "en": "Destination Display associated with the Point In Journey Pattern."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
       "name": "described by",
       "label": {
@@ -3571,25 +3684,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#departureDayOffset",
-      "name": "departure day offset",
-      "label": {
-        "en": "departure day offset"
-      },
-      "sort": "departure day offset",
-      "description": {
-        "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
       ],
       "parents": []
     },
@@ -3666,25 +3760,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#dayType",
-      "name": "day type",
-      "label": {
-        "en": "day type"
-      },
-      "sort": "day type",
-      "description": {
-        "en": "Day Type for the Service Journey."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
       ],
       "parents": []
     },
@@ -3993,6 +4068,25 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay",
+      "name": "change of destination display",
+      "label": {
+        "en": "change of destination display"
+      },
+      "sort": "change of destination display",
+      "description": {
+        "en": "Indicates whether the Destination Display changes at this point."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
       "name": "centroid",
       "label": {
@@ -4278,6 +4372,25 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
+      "name": "a view of",
+      "label": {
+        "en": "a view of"
+      },
+      "sort": "a view of",
+      "description": {
+        "en": "Reference to the abstract Point."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^locatedIn",
       "name": "located in",
       "label": {
@@ -4392,46 +4505,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing",
-      "name": "made using",
-      "label": {
-        "en": "made using"
-      },
-      "sort": "made using",
-      "description": {
-        "en": "Journey Pattern used to make the Vehicle Journey."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.journeyDuration",
-      "name": "journey duration",
-      "label": {
-        "en": "journey duration"
-      },
-      "sort": "journey duration",
-      "description": {
-        "en": "Total length of the Vehicle Journey."
-      },
-      "usage": {
-        "en": "Can be computed from individual times. Add to departure time to obtain Journey arrival time."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#duration"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.in",
       "name": "in",
       "label": {
@@ -4470,7 +4543,26 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset",
+      "name": "departure day offset",
+      "label": {
+        "en": "departure day offset"
+      },
+      "sort": "departure day offset",
+      "description": {
+        "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day."
+      },
+      "usage": {},
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.daytype",
       "name": "day type",
       "label": {
         "en": "day type"
@@ -4485,25 +4577,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.shortName",
-      "name": "short name",
-      "label": {
-        "en": "short name"
-      },
-      "sort": "short name",
-      "description": {
-        "en": "Short name for the Topographic Place."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "parents": []
     },
@@ -4523,63 +4596,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.privateCode",
-      "name": "private code",
-      "label": {
-        "en": "private code"
-      },
-      "sort": "private code",
-      "description": {
-        "en": "Alternative identifier of the Topographic Place."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "sort": "name",
-      "description": {
-        "en": "Name of the Topographic Place."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.description",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "sort": "description",
-      "description": {
-        "en": "Description of the Topographic Place."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "parents": []
     },
@@ -4772,63 +4788,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.destinationDisplay",
-      "name": "destination display",
-      "label": {
-        "en": "destination display"
-      },
-      "sort": "destination display",
-      "description": {
-        "en": "Destination Display values to show at this point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.changeOfDestinationDisplay",
-      "name": "change of destination display",
-      "label": {
-        "en": "change of destination display"
-      },
-      "sort": "change of destination display",
-      "description": {
-        "en": "Indicates whether Destination Display changes at this point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf",
-      "name": "a view of",
-      "label": {
-        "en": "a view of"
-      },
-      "sort": "a view of",
-      "description": {
-        "en": "Reference to the Scheduled Stop Point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
       ],
       "parents": []
     },
@@ -5042,25 +5001,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf",
-      "name": "made up of",
-      "label": {
-        "en": "made up of"
-      },
-      "sort": "made up of",
-      "description": {
-        "en": "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line",
       "name": "line",
       "label": {
@@ -5194,84 +5134,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing",
-      "name": "made using",
-      "label": {
-        "en": "made using"
-      },
-      "sort": "made using",
-      "description": {
-        "en": "Service Journey Pattern that was followed to make the Service Journey."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration",
-      "name": "journey duration",
-      "label": {
-        "en": "journey duration"
-      },
-      "sort": "journey duration",
-      "description": {
-        "en": "Total length of the Service Journey. Can be computed from individual times."
-      },
-      "usage": {
-        "en": "Add to departure time to obtain the Service Journey arrival time."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#duration"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime",
-      "name": "departure time",
-      "label": {
-        "en": "departure time"
-      },
-      "sort": "departure time",
-      "description": {
-        "en": "Time of departure."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#time"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureDayOffset",
-      "name": "departure day offset",
-      "label": {
-        "en": "departure day offset"
-      },
-      "sort": "departure day offset",
-      "description": {
-        "en": "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.toDate",
       "name": "to date",
       "label": {
@@ -5325,25 +5187,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#date"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
-      "name": "viewed as",
-      "label": {
-        "en": "viewed as"
-      },
-      "sort": "viewed as",
-      "description": {
-        "en": "As used as a Stop Point in a Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
       ],
       "parents": []
     },
@@ -5498,25 +5341,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.viewedAs",
-      "name": "viewed as",
-      "label": {
-        "en": "viewed as"
-      },
-      "sort": "viewed as",
-      "description": {
-        "en": "As used as a Point on a Route."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
       ],
       "parents": []
     },
@@ -5787,25 +5611,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf",
-      "name": "a view of",
-      "label": {
-        "en": "a view of"
-      },
-      "sort": "a view of",
-      "description": {
-        "en": "Reference to the Route Point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.servedBy",
       "name": "served by",
       "label": {
@@ -5878,82 +5683,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay",
-      "name": "destination display",
-      "label": {
-        "en": "destination display"
-      },
-      "sort": "destination display",
-      "description": {
-        "en": "Destination Display associated with the Point In Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay",
-      "name": "change of destination display",
-      "label": {
-        "en": "change of destination display"
-      },
-      "sort": "change of destination display",
-      "description": {
-        "en": "Indicates whether the Destination Display changes at this point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf",
-      "name": "a view of",
-      "label": {
-        "en": "a view of"
-      },
-      "sort": "a view of",
-      "description": {
-        "en": "Reference to the abstract Point."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
-      "name": "viewed as",
-      "label": {
-        "en": "viewed as"
-      },
-      "sort": "viewed as",
-      "description": {
-        "en": "As used as a Point in a Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
       ],
       "parents": []
     },
@@ -6653,25 +6382,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.madeUpOf",
-      "name": "made up of",
-      "label": {
-        "en": "made up of"
-      },
-      "sort": "made up of",
-      "description": {
-        "en": "The ordered sequence of Points that together make up the Journey Pattern."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.direction",
       "name": "direction",
       "label": {
@@ -6952,82 +6662,6 @@
       "usage": {},
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.shortName",
-      "name": "short name",
-      "label": {
-        "en": "short name"
-      },
-      "sort": "short name",
-      "description": {
-        "en": "Short name of the Garage."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.purposeOfGrouping",
-      "name": "purpose of grouping",
-      "label": {
-        "en": "purpose of grouping"
-      },
-      "sort": "purpose of grouping",
-      "description": {
-        "en": "Purpose of grouping of the Garage."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.privateCode",
-      "name": "private code",
-      "label": {
-        "en": "private code"
-      },
-      "sort": "private code",
-      "description": {
-        "en": "Private code of the Garage."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.name",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "sort": "name",
-      "description": {
-        "en": "Name of the Garage."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -7426,63 +7060,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.shortName",
-      "name": "short name",
-      "label": {
-        "en": "short name"
-      },
-      "sort": "short name",
-      "description": {
-        "en": "Short name for the Crew Base."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.purposeOfGrouping",
-      "name": "purpose of grouping",
-      "label": {
-        "en": "purpose of grouping"
-      },
-      "sort": "purpose of grouping",
-      "description": {
-        "en": "Purpose of grouping of the Crew Base."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.privateCode",
-      "name": "private code",
-      "label": {
-        "en": "private code"
-      },
-      "sort": "private code",
-      "description": {
-        "en": "Private code of the Crew Base."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.name",
       "name": "name",
       "label": {
@@ -7491,25 +7068,6 @@
       "sort": "name",
       "description": {
         "en": "Name of the Crew Base."
-      },
-      "usage": {},
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.description",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "sort": "description",
-      "description": {
-        "en": "Description of the Crew Base."
       },
       "usage": {},
       "domain": [

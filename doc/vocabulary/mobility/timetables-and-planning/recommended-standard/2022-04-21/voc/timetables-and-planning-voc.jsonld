@@ -653,7 +653,7 @@
         "en": "Each Point inJourney Pattern specifies the visit of a Service to a specific Scheduled Stop Point in a particular order within the pattern."
       },
       "parents": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+        "https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern"
       ]
     },
     {
@@ -690,6 +690,16 @@
       },
       "parents": [
         "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A point in a Journey Pattern which is a Timing Point"
+      },
+      "parents": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
       ]
     },
     {
@@ -826,6 +836,20 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "As used as a Point in a kink sequence."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ],
       "generalization": []
     },
@@ -1954,6 +1978,34 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUsing",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Journey Pattern used to make the Vehicle Journey."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The ordered sequence of Points that together make up the Journey Pattern."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#lowFloor",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -2059,6 +2111,23 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Total length of the Vehicle Journey."
+      },
+      "usage": {
+        "en": "Can be computed from individual times. Add to departure time to obtain Journey arrival time."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#duration"
       ],
       "generalization": []
     },
@@ -2484,6 +2553,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplay",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Destination Display associated with the Point In Journey Pattern."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -2494,20 +2577,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#departureDayOffset",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
       ],
       "generalization": []
     },
@@ -2564,20 +2633,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayType",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Day Type for the Service Journey."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
       ],
       "generalization": []
     },
@@ -2806,6 +2861,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Indicates whether the Destination Display changes at this point."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3016,6 +3085,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Reference to the abstract Point."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^locatedIn",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3100,37 +3183,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Journey Pattern used to make the Vehicle Journey."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.journeyDuration",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Total length of the Vehicle Journey."
-      },
-      "usage": {
-        "en": "Can be computed from individual times. Add to departure time to obtain Journey arrival time."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#duration"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.in",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3159,7 +3211,21 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.daytype",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Day Type on which the Vehicle Journey is worked."
@@ -3169,20 +3235,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#DayType"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.shortName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Short name for the Topographic Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "generalization": []
     },
@@ -3197,48 +3249,6 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.privateCode",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Alternative identifier of the Topographic Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Name of the Topographic Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.description",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Description of the Topographic Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "generalization": []
     },
@@ -3382,48 +3392,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.destinationDisplay",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Destination Display values to show at this point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.changeOfDestinationDisplay",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Indicates whether Destination Display changes at this point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Reference to the Scheduled Stop Point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
       ],
       "generalization": []
     },
@@ -3582,20 +3550,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3694,65 +3648,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Service Journey Pattern that was followed to make the Service Journey."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Total length of the Service Journey. Can be computed from individual times."
-      },
-      "usage": {
-        "en": "Add to departure time to obtain the Service Journey arrival time."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#duration"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Time of departure."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#time"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureDayOffset",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.toDate",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -3791,20 +3686,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#date"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "As used as a Stop Point in a Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
       ],
       "generalization": []
     },
@@ -3920,20 +3801,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.viewedAs",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "As used as a Point on a Route."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
       ],
       "generalization": []
     },
@@ -4134,20 +4001,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Reference to the Route Point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.servedBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -4200,62 +4053,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Destination Display associated with the Point In Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Indicates whether the Destination Display changes at this point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Reference to the abstract Point."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "As used as a Point in a Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
       ],
       "generalization": []
     },
@@ -4772,20 +4569,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.madeUpOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The ordered sequence of Points that together make up the Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.direction",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -4992,62 +4775,6 @@
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.shortName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Short name of the Garage."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.purposeOfGrouping",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Purpose of grouping of the Garage."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.privateCode",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Private code of the Garage."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage.name",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Name of the Garage."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Garage"
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
@@ -5343,66 +5070,10 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.shortName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Short name for the Crew Base."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.purposeOfGrouping",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Purpose of grouping of the Crew Base."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Code"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.privateCode",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Private code of the Crew Base."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.name",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "Name of the Crew Base."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase.description",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Description of the Crew Base."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase"
