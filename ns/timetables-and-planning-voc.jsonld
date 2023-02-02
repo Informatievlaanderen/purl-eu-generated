@@ -1143,34 +1143,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Submode associated with the Stop Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Submode of the Group of Stop Places."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopUse",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1670,7 +1642,7 @@
         "en": "Part of the Journey."
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Journey"
+        "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney"
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart"
@@ -1688,6 +1660,20 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#parentSite",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Parent Site which contains the Site."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
       ],
       "generalization": []
     },
@@ -2016,6 +2002,20 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#locatedIn",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Country where the Site Element is located."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Country"
       ],
       "generalization": []
     },
@@ -2542,27 +2542,15 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplayVariantType",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Type of the Destination Variant Display."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant"
       ],
-      "range": [],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplay",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Destination Display associated with the Point In Journey Pattern."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
-      ],
       "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -2750,14 +2738,16 @@
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Indicates whether the Site Element is covered."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
       "generalization": []
     },
     {
@@ -3097,20 +3087,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^locatedIn",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Country where the Stop Place is located."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Country"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Via.name",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -3436,6 +3412,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.submode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Submode associated with the Stop Place."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.publicCode",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -3446,20 +3436,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Parent Site which contains this Stop Place."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
       ],
       "generalization": []
     },
@@ -3516,6 +3492,20 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Level of the Quay."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Level"
       ],
       "generalization": []
     },
@@ -3873,20 +3863,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.distance",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Distance of the Route Link."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#RouteLink"
-      ],
-      "range": [
-        "https://schema.org/QuantitativeValue"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.line",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3939,20 +3915,6 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.level",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Level of the Quay."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Level"
       ],
       "generalization": []
     },
@@ -4013,20 +3975,6 @@
       "generalization": []
     },
     {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.parentSite",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Parent Site which contains the Point of Interest."
-      },
-      "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-      ],
-      "range": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.level",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -4051,6 +3999,20 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Destination Display associated with the Point In Journey Pattern."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay"
       ],
       "generalization": []
     },
@@ -4658,6 +4620,20 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Transport mode of the Group of Stop Places."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.submode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Submode of the Group of Stop Places."
       },
       "domain": [
         "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
