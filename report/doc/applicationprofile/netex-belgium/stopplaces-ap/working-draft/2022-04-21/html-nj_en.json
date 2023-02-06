@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/0b5accea93a2b589e9d4fa539e269e6e698a6028",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/0b5accea93a2b589e9d4fa539e269e6e698a6028/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/542e5311e25b81023ad893d7a165dacb4ea2f824",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/542e5311e25b81023ad893d7a165dacb4ea2f824/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -187,6 +187,76 @@
       ],
       "properties": [
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+          "name": "lighting",
+          "sort": "lighting",
+          "label": {
+            "en": "lighting"
+          },
+          "description": {
+            "en": "Indicates how the Entrance is lit."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LightingType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Lighting Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Lighting Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#landmark",
+          "name": "landmark",
+          "sort": "landmark",
+          "label": {
+            "en": "landmark"
+          },
+          "description": {
+            "en": "Name of a nearby Landmark."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isExternal",
           "name": "is external",
           "sort": "is external",
@@ -292,6 +362,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+          "name": "gated",
+          "sort": "gated",
+          "label": {
+            "en": "gated"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance is within a gated area."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GatedType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gated Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Gated Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType",
           "name": "entrance type",
           "sort": "entrance type",
@@ -362,14 +467,191 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#crossRoad",
+          "name": "cross road",
+          "sort": "cross road",
+          "label": {
+            "en": "cross road"
+          },
+          "description": {
+            "en": "Name of nearest cross road or crossing street on which site is and which can be used to locate the Entrance."
+          },
+          "usage": {
+            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
+          },
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+          "name": "covered",
+          "sort": "covered",
+          "label": {
+            "en": "covered"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance is covered of outdoors."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CoveredType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Covered Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Covered Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^accessMode",
+          "name": "access mode",
+          "sort": "access mode",
+          "label": {
+            "en": "access mode"
+          },
+          "description": {
+            "en": "Access modes of the Entrance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessMode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Access Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Access Mode"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessibilityAssessment",
+          "name": "accessibility assessment",
+          "sort": "accessibility assessment",
+          "label": {
+            "en": "accessibility assessment"
+          },
+          "description": {
+            "en": "Accessibility of the Entrance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessibilityAssessment",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Accessibility Assessment",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
+              "range_label": {
+                "en": "Accessibility Assessment"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level",
+          "name": "level",
+          "sort": "level",
+          "label": {
+            "en": "level"
+          },
+          "description": {
+            "en": "Level of the Entrance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
+              "range_label": {
+                "en": "Level"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.width",
           "name": "width",
           "sort": "width",
           "label": {
             "en": "width"
           },
           "description": {
-            "en": "Width of the Site Entrance."
+            "en": "Width of the Entrance."
           },
           "usage": {},
           "domain": [
@@ -397,7 +679,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.publicCode",
           "name": "public code",
           "sort": "public code",
           "label": {
@@ -432,119 +714,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting",
-          "name": "lighting",
-          "sort": "lighting",
-          "label": {
-            "en": "lighting"
-          },
-          "description": {
-            "en": "Indicates how the Site Entrance is lit."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LightingType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Lighting Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Lighting Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level",
-          "name": "level",
-          "sort": "level",
-          "label": {
-            "en": "level"
-          },
-          "description": {
-            "en": "Level of the Site Entrance."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Level",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Level",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
-              "range_label": {
-                "en": "Level"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark",
-          "name": "landmark",
-          "sort": "landmark",
-          "label": {
-            "en": "landmark"
-          },
-          "description": {
-            "en": "Name of a nearby landmark."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.label",
           "name": "label",
           "sort": "label",
           "label": {
             "en": "label"
           },
           "description": {
-            "en": "Label of the Site Entrance."
+            "en": "Label of the Entrance."
           },
           "usage": {},
           "domain": [
@@ -572,14 +749,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.height",
           "name": "height",
           "sort": "height",
           "label": {
             "en": "height"
           },
           "description": {
-            "en": "Height of the Site Entrance."
+            "en": "Height of the Entrance."
           },
           "usage": {},
           "domain": [
@@ -604,183 +781,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated",
-          "name": "gated",
-          "sort": "gated",
-          "label": {
-            "en": "gated"
-          },
-          "description": {
-            "en": "Indicates whether the Site Entrance is within a gated area."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GatedType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gated Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Gated Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad",
-          "name": "cross road",
-          "sort": "cross road",
-          "label": {
-            "en": "cross road"
-          },
-          "description": {
-            "en": "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."
-          },
-          "usage": {
-            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
-          },
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered",
-          "name": "covered",
-          "sort": "covered",
-          "label": {
-            "en": "covered"
-          },
-          "description": {
-            "en": "Indicates whether the Site Entrance is covered of outdoors."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CoveredType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Covered Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Covered Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment",
-          "name": "accessibility assessment",
-          "sort": "accessibility assessment",
-          "label": {
-            "en": "accessibility assessment"
-          },
-          "description": {
-            "en": "Accessibility assessment of the Site Entrance."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessibilityAssessment",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Accessibility Assessment",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
-              "range_label": {
-                "en": "Accessibility Assessment"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode",
-          "name": "access mode",
-          "sort": "access mode",
-          "label": {
-            "en": "access mode"
-          },
-          "description": {
-            "en": "Access modes of the Site Entrance."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Entrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessMode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Access Mode",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Access Mode"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -891,42 +891,7 @@
       ],
       "properties": [
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-          "name": "submode",
-          "sort": "submode",
-          "label": {
-            "en": "submode"
-          },
-          "description": {
-            "en": "Submode of the Group of Stop Places"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfStopPlaces",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Transportmode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Transportmode",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transportmode"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportMode",
           "name": "transport mode",
           "sort": "transport mode",
           "label": {
@@ -961,14 +926,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.shortName",
-          "name": "short name",
-          "sort": "short name",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.submode",
+          "name": "submode",
+          "sort": "submode",
           "label": {
-            "en": "short name"
+            "en": "submode"
           },
           "description": {
-            "en": "Short name for the Group of Stop Places."
+            "en": "Submode of the Group of Stop Places"
           },
           "usage": {},
           "domain": [
@@ -979,86 +944,16 @@
           ],
           "range": [
             {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.purposeOfGrouping",
-          "name": "purpose of grouping",
-          "sort": "purpose of grouping",
-          "label": {
-            "en": "purpose of grouping"
-          },
-          "description": {
-            "en": "Purpose of grouping the Stop Places."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfStopPlaces",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
+              "range_label": "Transportmode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Code",
+              "range_uri": "#Transportmode",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.privateCode",
-          "name": "private code",
-          "sort": "private code",
-          "label": {
-            "en": "private code"
-          },
-          "description": {
-            "en": "Private code associated with the Group of Stop Places."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfStopPlaces",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
+                "en": "Transportmode"
               }
             }
           ],
@@ -1098,6 +993,111 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName",
+          "name": "short name",
+          "sort": "short name",
+          "label": {
+            "en": "short name"
+          },
+          "description": {
+            "en": "Short name for the Group of Stop Places."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.purposeOfGrouping",
+          "name": "purpose of grouping",
+          "sort": "purpose of grouping",
+          "label": {
+            "en": "purpose of grouping"
+          },
+          "description": {
+            "en": "Purpose of grouping the Stop Places."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Code",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode",
+          "name": "private code",
+          "sort": "private code",
+          "label": {
+            "en": "private code"
+          },
+          "description": {
+            "en": "Private code associated with the Group of Stop Places."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1256,41 +1256,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#accessibility",
-          "name": "Level.accessibility",
-          "sort": "Level.accessibility",
-          "label": {
-            "en": "Level.accessibility"
-          },
-          "description": {
-            "en": "Accessibility of the Level."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Level",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessibilityAssessment",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Accessibility Assessment",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
-              "range_label": {
-                "en": "Accessibility Assessment"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level.shortName",
           "name": "short name",
           "sort": "short name",
@@ -1354,6 +1319,41 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
                 "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level.accessibilityAssessment",
+          "name": "accessiblilty assessment",
+          "sort": "accessiblilty assessment",
+          "label": {
+            "en": "accessiblilty assessment"
+          },
+          "description": {
+            "en": "Accessibility of the Level."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Level",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessibilityAssessment",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Accessibility Assessment",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
+              "range_label": {
+                "en": "Accessibility Assessment"
               }
             }
           ],
@@ -1928,6 +1928,146 @@
       ],
       "properties": [
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlace",
+          "name": "topographic place",
+          "sort": "topographic place",
+          "label": {
+            "en": "topographic place"
+          },
+          "description": {
+            "en": "Reference to a Topographic Place with which the Point of Interest is associated."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Topographic Place",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
+              "range_label": {
+                "en": "Topographic Place"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#polygon",
+          "name": "polygon",
+          "sort": "polygon",
+          "label": {
+            "en": "polygon"
+          },
+          "description": {
+            "en": "Polygon associated with the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Polygon",
+              "range_uri": "http://www.opengis.net/ont/sf#Polygon"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Polygon",
+              "range_puri": "http://www.opengis.net/ont/sf#Polygon",
+              "range_label": {
+                "en": "Polygon"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#parentSite",
+          "name": "parent site",
+          "sort": "parent site",
+          "label": {
+            "en": "parent site"
+          },
+          "description": {
+            "en": "Parent Site which contains the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Site",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Site",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
+              "range_label": {
+                "en": "Site"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#organisation",
+          "name": "organisation",
+          "sort": "organisation",
+          "label": {
+            "en": "organisation"
+          },
+          "description": {
+            "en": "Reference to the Operator of the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Operator",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Operator",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
+              "range_label": {
+                "en": "Operator"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace",
           "name": "near topographic place",
           "sort": "near topographic place",
@@ -1960,6 +2100,41 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#locale",
+          "name": "locale",
+          "sort": "locale",
+          "label": {
+            "en": "locale"
+          },
+          "description": {
+            "en": "Locale setting time zone, default language, etc., for the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Locale",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Locale",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
+              "range_label": {
+                "en": "Locale"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2033,6 +2208,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
+          "name": "centroid",
+          "sort": "centroid",
+          "label": {
+            "en": "centroid"
+          },
+          "description": {
+            "en": "Centre Point of the Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point2",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point (Datatype)",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_label": {
+                "en": "Point (Datatype)"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#additionalTopographicPlace",
           "name": "additional topographic place",
           "sort": "additional topographic place",
@@ -2065,41 +2275,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.topographicPlace",
-          "name": "topographic place",
-          "sort": "topographic place",
-          "label": {
-            "en": "topographic place"
-          },
-          "description": {
-            "en": "Reference to a Topographic Place with which the Point of Interest is associated."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOfInterest",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TopographicPlace",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Topographic Place",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
-              "range_label": {
-                "en": "Topographic Place"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2138,111 +2313,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.parentSite",
-          "name": "parent site",
-          "sort": "parent site",
-          "label": {
-            "en": "parent site"
-          },
-          "description": {
-            "en": "Parent Site which contains the Point of Interest."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOfInterest",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Site",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Site",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
-              "range_label": {
-                "en": "Site"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.organisation",
-          "name": "organisation",
-          "sort": "organisation",
-          "label": {
-            "en": "organisation"
-          },
-          "description": {
-            "en": "Reference to the Operator of the Point of Interest."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOfInterest",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Operator",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Operator",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
-              "range_label": {
-                "en": "Operator"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.locale",
-          "name": "locale",
-          "sort": "locale",
-          "label": {
-            "en": "locale"
-          },
-          "description": {
-            "en": "Locale setting time zone, default language, etc., for the Point of Interest."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PointOfInterest",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Locale",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Locale",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
-              "range_label": {
-                "en": "Locale"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.level",
           "name": "level",
           "sort": "level",
@@ -2275,6 +2345,146 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName",
+          "name": "short name",
+          "sort": "short name",
+          "label": {
+            "en": "short name"
+          },
+          "description": {
+            "en": "Short name of the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode",
+          "name": "private code",
+          "sort": "private code",
+          "label": {
+            "en": "private code"
+          },
+          "description": {
+            "en": "Private code of the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "Description of the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the Point of Interest."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PointOfInterest",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -2408,6 +2618,183 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+          "name": "lighting",
+          "sort": "lighting",
+          "label": {
+            "en": "lighting"
+          },
+          "description": {
+            "en": "Indicates how the Quay is lit."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LightingType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Lighting Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Lighting Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#landmark",
+          "name": "landmark",
+          "sort": "landmark",
+          "label": {
+            "en": "landmark"
+          },
+          "description": {
+            "en": "Name of a nearby landmark."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+          "name": "gated",
+          "sort": "gated",
+          "label": {
+            "en": "gated"
+          },
+          "description": {
+            "en": "Indicates whether the Quay is within a gated area."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GatedType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gated Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Gated Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#crossRoad",
+          "name": "cross road",
+          "sort": "cross road",
+          "label": {
+            "en": "cross road"
+          },
+          "description": {
+            "en": "Name of nearest cross road or crossing street which can be used to locate the Quay."
+          },
+          "usage": {
+            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
+          },
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+          "name": "covered",
+          "sort": "covered",
+          "label": {
+            "en": "covered"
+          },
+          "description": {
+            "en": "Indicates whether the Quay is covered."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CoveredType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Covered Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Covered Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#compassBearing",
           "name": "compass bearing",
           "sort": "compass bearing",
@@ -2436,6 +2823,146 @@
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
                 "en": "Quantitative Value"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#accessMode",
+          "name": "access mode",
+          "sort": "access mode",
+          "label": {
+            "en": "access mode"
+          },
+          "description": {
+            "en": "Access mode of the Quay."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessMode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Access Mode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Access Mode"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace.label",
+          "name": "label",
+          "sort": "label",
+          "label": {
+            "en": "label"
+          },
+          "description": {
+            "en": "Label of the Quay."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessibilityAssessment",
+          "name": "accessibility assessment",
+          "sort": "accessibility assessment",
+          "label": {
+            "en": "accessibility assessment"
+          },
+          "description": {
+            "en": "Accessibility of the Quay."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessibilityAssessment",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Accessibility Assessment",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
+              "range_label": {
+                "en": "Accessibility Assessment"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level",
+          "name": "level",
+          "sort": "level",
+          "label": {
+            "en": "level"
+          },
+          "description": {
+            "en": "Level of the Quay."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
+              "range_label": {
+                "en": "Level"
               }
             }
           ],
@@ -2475,323 +3002,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.lighting",
-          "name": "lighting",
-          "sort": "lighting",
-          "label": {
-            "en": "lighting"
-          },
-          "description": {
-            "en": "Indicates how the Quay is lit."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LightingType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Lighting Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Lighting Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.level",
-          "name": "level",
-          "sort": "level",
-          "label": {
-            "en": "level"
-          },
-          "description": {
-            "en": "Level of the Quay."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Level",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Level",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
-              "range_label": {
-                "en": "Level"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.landmark",
-          "name": "landmark",
-          "sort": "landmark",
-          "label": {
-            "en": "landmark"
-          },
-          "description": {
-            "en": "Name of a nearby landmark."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.label",
-          "name": "label",
-          "sort": "label",
-          "label": {
-            "en": "label"
-          },
-          "description": {
-            "en": "Label of the Quay."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.gated",
-          "name": "gated",
-          "sort": "gated",
-          "label": {
-            "en": "gated"
-          },
-          "description": {
-            "en": "Indicates whether the Quay is within a gated area."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GatedType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gated Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Gated Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.crossRoad",
-          "name": "cross road",
-          "sort": "cross road",
-          "label": {
-            "en": "cross road"
-          },
-          "description": {
-            "en": "Name of nearest cross road or crossing street which can be used to locate the Quay."
-          },
-          "usage": {
-            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
-          },
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.covered",
-          "name": "covered",
-          "sort": "covered",
-          "label": {
-            "en": "covered"
-          },
-          "description": {
-            "en": "Indicates whether the Quay is covered."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CoveredType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Covered Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Covered Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessibilityAssessment",
-          "name": "accessibility assessment",
-          "sort": "accessibility assessment",
-          "label": {
-            "en": "accessibility assessment"
-          },
-          "description": {
-            "en": "Accessibility of the Quay."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessibilityAssessment",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Accessibility Assessment",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
-              "range_label": {
-                "en": "Accessibility Assessment"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessMode",
-          "name": "access mode",
-          "sort": "access mode",
-          "label": {
-            "en": "access mode"
-          },
-          "description": {
-            "en": "Access mode of the Quay."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessMode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Access Mode",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Access Mode"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -2983,76 +3193,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode",
-          "name": "transport mode",
-          "sort": "transport mode",
-          "label": {
-            "en": "transport mode"
-          },
-          "description": {
-            "en": "The main transport mode of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Transportmode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Transportmode",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transportmode"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-          "name": "submode",
-          "sort": "submode",
-          "label": {
-            "en": "submode"
-          },
-          "description": {
-            "en": "Subordinate transport mode in the Stop place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Transportmode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Transportmode",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Transportmode"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceWeight",
           "name": "stop place weight",
           "sort": "stop place weight",
@@ -3125,6 +3265,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#servesTopographicPlace",
+          "name": "serves",
+          "sort": "serves",
+          "label": {
+            "en": "serves"
+          },
+          "description": {
+            "en": "Topographic Place served by the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TopographicPlace",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Topographic Place",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
+              "range_label": {
+                "en": "Topographic Place"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
           "name": "scheduled stop point",
           "sort": "scheduled stop point",
@@ -3160,6 +3335,146 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#roadAddress",
+          "name": "road address",
+          "sort": "road address",
+          "label": {
+            "en": "road address"
+          },
+          "description": {
+            "en": "Address of a numbered building on a named road."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AddressRepresentation",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address Representation",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address Representation"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#postalAddress",
+          "name": "postal address",
+          "sort": "postal address",
+          "label": {
+            "en": "postal address"
+          },
+          "description": {
+            "en": "A postal address to which mail can be sent."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AddressRepresentation",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address Representation",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address Representation"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#polygon",
+          "name": "polygon",
+          "sort": "polygon",
+          "label": {
+            "en": "polygon"
+          },
+          "description": {
+            "en": "Polygon describing the spatial extent of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Polygon",
+              "range_uri": "http://www.opengis.net/ont/sf#Polygon"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Polygon",
+              "range_puri": "http://www.opengis.net/ont/sf#Polygon",
+              "range_label": {
+                "en": "Polygon"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#parentSite",
+          "name": "parent site",
+          "sort": "parent site",
+          "label": {
+            "en": "parent site"
+          },
+          "description": {
+            "en": "Parent Site which contains this Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Site",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Site",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
+              "range_label": {
+                "en": "Site"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#otherTransportmode",
           "name": "other transportmode",
           "sort": "other transportmode",
@@ -3188,6 +3503,218 @@
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Transportmode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#organisation",
+          "name": "organisation",
+          "sort": "organisation",
+          "label": {
+            "en": "organisation"
+          },
+          "description": {
+            "en": "Reference to the Operator of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Operator",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Operator",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
+              "range_label": {
+                "en": "Operator"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#locale",
+          "name": "locale",
+          "sort": "locale",
+          "label": {
+            "en": "locale"
+          },
+          "description": {
+            "en": "Locale setting the time zone, default language, etc., for the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Locale",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Locale",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
+              "range_label": {
+                "en": "Locale"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+          "name": "lighting",
+          "sort": "lighting",
+          "label": {
+            "en": "lighting"
+          },
+          "description": {
+            "en": "Indicates how well the Stop Place is lit."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LightingType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Lighting Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Lighting Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#landmark",
+          "name": "landmark",
+          "sort": "landmark",
+          "label": {
+            "en": "landmark"
+          },
+          "description": {
+            "en": "Name of a nearby landmark."
+          },
+          "usage": {
+            "en": "Mainly relevant for bus modes."
+          },
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#image",
+          "name": "image",
+          "sort": "image",
+          "label": {
+            "en": "image"
+          },
+          "description": {
+            "en": "Image of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+          "name": "gated",
+          "sort": "gated",
+          "label": {
+            "en": "gated"
+          },
+          "description": {
+            "en": "Indicates whether the Stop Place is within a gated area."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GatedType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gated Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Gated Type"
               }
             }
           ],
@@ -3265,6 +3792,78 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#crossRoad",
+          "name": "cross road",
+          "sort": "cross road",
+          "label": {
+            "en": "cross road"
+          },
+          "description": {
+            "en": "Name of nearest cross road or crossing street which can be used to locate the Stop Place."
+          },
+          "usage": {
+            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
+          },
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+          "name": "covered",
+          "sort": "covered",
+          "label": {
+            "en": "covered"
+          },
+          "description": {
+            "en": "Indicates whether the Stop Place is covered or outdoors."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CoveredType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Covered Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Covered Type"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#containing",
           "name": "containing",
           "sort": "containing",
@@ -3297,6 +3896,41 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
+          "name": "centroid",
+          "sort": "centroid",
+          "label": {
+            "en": "centroid"
+          },
+          "description": {
+            "en": "Centre Point of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point2",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point (Datatype)",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_label": {
+                "en": "Point (Datatype)"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3370,14 +4004,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.serves",
-          "name": "serves",
-          "sort": "serves",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.transportmode",
+          "name": "transport mode",
+          "sort": "transport mode",
           "label": {
-            "en": "serves"
+            "en": "transport mode"
           },
           "description": {
-            "en": "Topographic Place served by the Stop Place."
+            "en": "The main transport mode of the Stop Place."
           },
           "usage": {},
           "domain": [
@@ -3388,51 +4022,16 @@
           ],
           "range": [
             {
-              "range_label": "TopographicPlace",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Topographic Place",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace",
+              "range_uri": "#Transportmode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Topographic Place"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.url",
-          "name": "url",
-          "sort": "url",
-          "label": {
-            "en": "url"
-          },
-          "description": {
-            "en": "Default URL for the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
+                "en": "Transportmode"
               }
             }
           ],
@@ -3475,14 +4074,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.roadAddress",
-          "name": "road address",
-          "sort": "road address",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.submode",
+          "name": "submode",
+          "sort": "submode",
           "label": {
-            "en": "road address"
+            "en": "submode"
           },
           "description": {
-            "en": "Address of a numbered building on a named road."
+            "en": "Subordinate transport mode in the Stop place."
           },
           "usage": {},
           "domain": [
@@ -3493,16 +4092,16 @@
           ],
           "range": [
             {
-              "range_label": "AddressRepresentation",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Address Representation",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_uri": "#Transportmode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Address Representation"
+                "en": "Transportmode"
               }
             }
           ],
@@ -3545,288 +4144,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.postalAddress",
-          "name": "postal address",
-          "sort": "postal address",
-          "label": {
-            "en": "postal address"
-          },
-          "description": {
-            "en": "A postal address to which mail can be sent."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AddressRepresentation",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Address Representation",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "en": "Address Representation"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.polygon",
-          "name": "polygon",
-          "sort": "polygon",
-          "label": {
-            "en": "polygon"
-          },
-          "description": {
-            "en": "Polygon describing the spatial extent of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Polygon",
-              "range_uri": "http://www.opengis.net/ont/sf#Polygon"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Polygon",
-              "range_puri": "http://www.opengis.net/ont/sf#Polygon",
-              "range_label": {
-                "en": "Polygon"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite",
-          "name": "parent site",
-          "sort": "parent site",
-          "label": {
-            "en": "parent site"
-          },
-          "description": {
-            "en": "Parent Site which contains this Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Site",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Site",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Site",
-              "range_label": {
-                "en": "Site"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.organisation",
-          "name": "organisation",
-          "sort": "organisation",
-          "label": {
-            "en": "organisation"
-          },
-          "description": {
-            "en": "Reference to the Operator of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Operator",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Operator",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
-              "range_label": {
-                "en": "Operator"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.locale",
-          "name": "locale",
-          "sort": "locale",
-          "label": {
-            "en": "locale"
-          },
-          "description": {
-            "en": "Locale setting the time zone, default language, etc., for the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Locale",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Locale",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Locale",
-              "range_label": {
-                "en": "Locale"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.lighting",
-          "name": "lighting",
-          "sort": "lighting",
-          "label": {
-            "en": "lighting"
-          },
-          "description": {
-            "en": "Indicates how well the Stop Place is lit."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LightingType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Lighting Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Lighting Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.level",
-          "name": "level",
-          "sort": "level",
-          "label": {
-            "en": "level"
-          },
-          "description": {
-            "en": "Floor of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Level",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Level",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
-              "range_label": {
-                "en": "Level"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.landmark",
-          "name": "landmark",
-          "sort": "landmark",
-          "label": {
-            "en": "landmark"
-          },
-          "description": {
-            "en": "Name of a nearby landmark."
-          },
-          "usage": {
-            "en": "Mainly relevant for bus modes."
-          },
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.in",
           "name": "in",
           "sort": "in",
@@ -3859,183 +4176,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.image",
-          "name": "image",
-          "sort": "image",
-          "label": {
-            "en": "image"
-          },
-          "description": {
-            "en": "Image of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.gated",
-          "name": "gated",
-          "sort": "gated",
-          "label": {
-            "en": "gated"
-          },
-          "description": {
-            "en": "Indicates whether the Stop Place is within a gated area."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GatedType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gated Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Gated Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.crossRoad",
-          "name": "cross road",
-          "sort": "cross road",
-          "label": {
-            "en": "cross road"
-          },
-          "description": {
-            "en": "Name of nearest cross road or crossing street which can be used to locate the Stop Place."
-          },
-          "usage": {
-            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user."
-          },
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.covered",
-          "name": "covered",
-          "sort": "covered",
-          "label": {
-            "en": "covered"
-          },
-          "description": {
-            "en": "Indicates whether the Stop Place is covered or outdoors."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CoveredType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Covered Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Covered Type"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.centroid",
-          "name": "centroid",
-          "sort": "centroid",
-          "label": {
-            "en": "centroid"
-          },
-          "description": {
-            "en": "Centre Point of the Stop Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Point2",
-              "range_uri": "http://www.opengis.net/ont/sf#Point"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Point (Datatype)",
-              "range_puri": "http://www.opengis.net/ont/sf#Point",
-              "range_label": {
-                "en": "Point (Datatype)"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -4074,7 +4214,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessabilityAssessment",
           "name": "accessability assessment",
           "sort": "accessability assessment",
           "label": {
@@ -4106,6 +4246,41 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site.level",
+          "name": "level",
+          "sort": "level",
+          "label": {
+            "en": "level"
+          },
+          "description": {
+            "en": "Floor of the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Level",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
+              "range_label": {
+                "en": "Level"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -4207,6 +4382,41 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
                 "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace.url",
+          "name": "url",
+          "sort": "url",
+          "label": {
+            "en": "url"
+          },
+          "description": {
+            "en": "Default URL for the Stop Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
               }
             }
           ],
@@ -4447,6 +4657,76 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#postcode",
+          "name": "postcode",
+          "sort": "postcode",
+          "label": {
+            "en": "postcode"
+          },
+          "description": {
+            "en": "Postcode or partial postcode associated with the Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#placeType",
+          "name": "place type",
+          "sort": "place type",
+          "label": {
+            "en": "place type"
+          },
+          "description": {
+            "en": "Categorisation of the Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PlaceType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Place Type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Place Type"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -4695,41 +4975,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.postcode",
-          "name": "postcode",
-          "sort": "postcode",
-          "label": {
-            "en": "postcode"
-          },
-          "description": {
-            "en": "Postcode or partial postcode associated with the Topographic Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TopographicPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.polygon",
           "name": "polygon",
           "sort": "polygon",
@@ -4762,76 +5007,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.placeType",
-          "name": "place type",
-          "sort": "place type",
-          "label": {
-            "en": "place type"
-          },
-          "description": {
-            "en": "Categorisation of the Topographic Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TopographicPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PlaceType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Place Type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Place Type"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.member",
-          "name": "member",
-          "sort": "member",
-          "label": {
-            "en": "member"
-          },
-          "description": {
-            "en": "List of Points within the Topographic Place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TopographicPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Point",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Point (Class)",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
-              "range_label": {
-                "en": "Point (Class)"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -4902,6 +5077,146 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints.member",
+          "name": "member",
+          "sort": "member",
+          "label": {
+            "en": "member"
+          },
+          "description": {
+            "en": "List of Points within the Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Point",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Point (Class)",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
+              "range_label": {
+                "en": "Point (Class)"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName",
+          "name": "short name",
+          "sort": "short name",
+          "label": {
+            "en": "short name"
+          },
+          "description": {
+            "en": "Short name of Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode",
+          "name": "private code",
+          "sort": "private code",
+          "label": {
+            "en": "private code"
+          },
+          "description": {
+            "en": "Private code of the Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "Description of Topographic Place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -5294,10 +5609,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType",
       "name": {
-        "en": "transport mode",
-        "undefined": "transport mode"
+        "en": "topographic place type",
+        "undefined": "topographic place type"
       },
       "description": {},
       "domain": [
@@ -5309,10 +5624,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#topographicPlace",
       "name": {
-        "en": "topographic place type",
-        "undefined": "topographic place type"
+        "en": "topographic place",
+        "undefined": "topographic place"
       },
       "description": {},
       "domain": [
@@ -5343,36 +5658,6 @@
       "name": {
         "en": "summer time zone offset",
         "undefined": "summer time zone offset"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-      "name": {
-        "en": "submode",
-        "undefined": "submode"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
-      "name": {
-        "en": "submode",
-        "undefined": "submode"
       },
       "description": {},
       "domain": [
@@ -5429,10 +5714,40 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#servesTopographicPlace",
+      "name": {
+        "en": "serves",
+        "undefined": "serves"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint",
       "name": {
         "en": "scheduled stop point",
         "undefined": "scheduled stop point"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#roadAddress",
+      "name": {
+        "en": "road address",
+        "undefined": "road address"
       },
       "description": {},
       "domain": [
@@ -5489,10 +5804,100 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#postalAddress",
+      "name": {
+        "en": "postal address",
+        "undefined": "postal address"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#polygon",
+      "name": {
+        "en": "polygon",
+        "undefined": "polygon"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#polygon",
+      "name": {
+        "en": "polygon",
+        "undefined": "polygon"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#placeType",
+      "name": {
+        "en": "place type",
+        "undefined": "place type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#parentTopographicPlace",
       "name": {
         "en": "parent topographic place",
         "undefined": "parent topographic place"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#parentSite",
+      "name": {
+        "en": "parent site",
+        "undefined": "parent site"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#parentSite",
+      "name": {
+        "en": "parent site",
+        "undefined": "parent site"
       },
       "description": {},
       "domain": [
@@ -5549,6 +5954,36 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#organisation",
+      "name": {
+        "en": "organisation",
+        "undefined": "organisation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#organisation",
+      "name": {
+        "en": "organisation",
+        "undefined": "organisation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace",
       "name": {
         "en": "near topographic place",
@@ -5579,10 +6014,130 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#locale",
+      "name": {
+        "en": "locale",
+        "undefined": "locale"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#locale",
+      "name": {
+        "en": "locale",
+        "undefined": "locale"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+      "name": {
+        "en": "lighting",
+        "undefined": "lighting"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+      "name": {
+        "en": "lighting",
+        "undefined": "lighting"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#lighting",
+      "name": {
+        "en": "lighting",
+        "undefined": "lighting"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#language",
       "name": {
         "en": "language",
         "undefined": "language"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+      "name": {
+        "en": "gated",
+        "undefined": "gated"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+      "name": {
+        "en": "gated",
+        "undefined": "gated"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#gated",
+      "name": {
+        "en": "gated",
+        "undefined": "gated"
       },
       "description": {},
       "domain": [
@@ -5669,6 +6224,51 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+      "name": {
+        "en": "covered",
+        "undefined": "covered"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+      "name": {
+        "en": "covered",
+        "undefined": "covered"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#covered",
+      "name": {
+        "en": "covered",
+        "undefined": "covered"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#containing",
       "name": {
         "en": "containing",
@@ -5744,6 +6344,36 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
+      "name": {
+        "en": "centroid",
+        "undefined": "centroid"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
+      "name": {
+        "en": "centroid",
+        "undefined": "centroid"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#additionalTopographicPlace",
       "name": {
         "en": "additional topographic place",
@@ -5759,10 +6389,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#accessibility",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#accessMode",
       "name": {
-        "en": "Level.accessibility",
-        "undefined": "Level.accessibility"
+        "en": "access mode",
+        "undefined": "access mode"
       },
       "description": {},
       "domain": [
@@ -5804,10 +6434,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.serves",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#^accessMode",
       "name": {
-        "en": "serves",
-        "undefined": "serves"
+        "en": "access mode",
+        "undefined": "access mode"
       },
       "description": {},
       "domain": [
@@ -5849,36 +6479,6 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.placeType",
-      "name": {
-        "en": "place type",
-        "undefined": "place type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.member",
-      "name": {
-        "en": "member",
-        "undefined": "member"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.country",
       "name": {
         "en": "country",
@@ -5909,6 +6509,21 @@
       "parents": []
     },
     {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.transportmode",
+      "name": {
+        "en": "transport mode",
+        "undefined": "transport mode"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.tariffZone",
       "name": {
         "en": "tariff zone",
@@ -5924,115 +6539,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.roadAddress",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.submode",
       "name": {
-        "en": "road address",
-        "undefined": "road address"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.postalAddress",
-      "name": {
-        "en": "postal address",
-        "undefined": "postal address"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.polygon",
-      "name": {
-        "en": "polygon",
-        "undefined": "polygon"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite",
-      "name": {
-        "en": "parent site",
-        "undefined": "parent site"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.organisation",
-      "name": {
-        "en": "organisation",
-        "undefined": "organisation"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.locale",
-      "name": {
-        "en": "locale",
-        "undefined": "locale"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.lighting",
-      "name": {
-        "en": "lighting",
-        "undefined": "lighting"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.level",
-      "name": {
-        "en": "level",
-        "undefined": "level"
+        "en": "submode",
+        "undefined": "submode"
       },
       "description": {},
       "domain": [
@@ -6059,10 +6569,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.gated",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessibilityAssessment",
       "name": {
-        "en": "gated",
-        "undefined": "gated"
+        "en": "accessibility assessment",
+        "undefined": "accessibility assessment"
       },
       "description": {},
       "domain": [
@@ -6074,10 +6584,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.covered",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessibilityAssessment",
       "name": {
-        "en": "covered",
-        "undefined": "covered"
+        "en": "accessibility assessment",
+        "undefined": "accessibility assessment"
       },
       "description": {},
       "domain": [
@@ -6089,22 +6599,7 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.centroid",
-      "name": {
-        "en": "centroid",
-        "undefined": "centroid"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessabilityAssessment",
       "name": {
         "en": "accessability assessment",
         "undefined": "accessability assessment"
@@ -6119,37 +6614,7 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width",
-      "name": {
-        "en": "width",
-        "undefined": "width"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting",
-      "name": {
-        "en": "lighting",
-        "undefined": "lighting"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level",
       "name": {
         "en": "level",
         "undefined": "level"
@@ -6164,97 +6629,7 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height",
-      "name": {
-        "en": "height",
-        "undefined": "height"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated",
-      "name": {
-        "en": "gated",
-        "undefined": "gated"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered",
-      "name": {
-        "en": "covered",
-        "undefined": "covered"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment",
-      "name": {
-        "en": "accessibility assessment",
-        "undefined": "accessibility assessment"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode",
-      "name": {
-        "en": "access mode",
-        "undefined": "access mode"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.lighting",
-      "name": {
-        "en": "lighting",
-        "undefined": "lighting"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.level",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level",
       "name": {
         "en": "level",
         "undefined": "level"
@@ -6269,70 +6644,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.gated",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Site.level",
       "name": {
-        "en": "gated",
-        "undefined": "gated"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.covered",
-      "name": {
-        "en": "covered",
-        "undefined": "covered"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessibilityAssessment",
-      "name": {
-        "en": "accessibility assessment",
-        "undefined": "accessibility assessment"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessMode",
-      "name": {
-        "en": "access mode",
-        "undefined": "access mode"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.topographicPlace",
-      "name": {
-        "en": "topographic place",
-        "undefined": "topographic place"
+        "en": "level",
+        "undefined": "level"
       },
       "description": {},
       "domain": [
@@ -6363,51 +6678,6 @@
       "name": {
         "en": "served by",
         "undefined": "served by"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.parentSite",
-      "name": {
-        "en": "parent site",
-        "undefined": "parent site"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.organisation",
-      "name": {
-        "en": "organisation",
-        "undefined": "organisation"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.locale",
-      "name": {
-        "en": "locale",
-        "undefined": "locale"
       },
       "description": {},
       "domain": [
@@ -6464,7 +6734,22 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level.accessibilityAssessment",
+      "name": {
+        "en": "accessiblilty assessment",
+        "undefined": "accessiblilty assessment"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportMode",
       "name": {
         "en": "transport mode",
         "undefined": "transport mode"
@@ -6479,10 +6764,10 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.purposeOfGrouping",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.submode",
       "name": {
-        "en": "purpose of grouping",
-        "undefined": "purpose of grouping"
+        "en": "submode",
+        "undefined": "submode"
       },
       "description": {},
       "domain": [
@@ -6498,6 +6783,66 @@
       "name": {
         "en": "member",
         "undefined": "member"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints.member",
+      "name": {
+        "en": "member",
+        "undefined": "member"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.purposeOfGrouping",
+      "name": {
+        "en": "purpose of grouping",
+        "undefined": "purpose of grouping"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.width",
+      "name": {
+        "en": "width",
+        "undefined": "width"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance.height",
+      "name": {
+        "en": "height",
+        "undefined": "height"
       },
       "description": {},
       "domain": [
