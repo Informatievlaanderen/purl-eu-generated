@@ -13,8 +13,8 @@
     "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/df3d159c2edde08bfa6d759594c49d1f4d9f29a6",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/df3d159c2edde08bfa6d759594c49d1f4d9f29a6/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/tree/0b5accea93a2b589e9d4fa539e269e6e698a6028",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/blob/0b5accea93a2b589e9d4fa539e269e6e698a6028/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-mobiliteitDienstregelingEnPlanning/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -98,7 +98,44 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Country.name",
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "alternative name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "alternative name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Alternative name for the Country.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Country",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Country"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/elements/1.1/title",
           "name": "name",
           "sort": "Enter your translation here",
           "label": {
@@ -133,9 +170,678 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance",
+      "name": "Entrance",
+      "label": {
+        "en": "Entrance",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Physical entrance or exit to/from a Site.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "May be a door, barrier, gate or other recognisable point of access.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [
+        {
+          "label": "Site Component",
+          "name": "SiteComponent",
+          "package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent",
+          "scoped_uri": "#Site Component"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isExternal",
+          "name": "is external",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is external",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Site Entrance opens externally.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Country.alternativeName",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isExit",
+          "name": "is exit",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is exit",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance can be used for exit from the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isEntry",
+          "name": "is entry",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is entry",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Entrance can be used for entry to the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType",
+          "name": "entrance type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "entrance type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EntranceType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Entrance Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside",
+          "name": "dropped kerb outside",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "dropped kerb outside",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether there is a drobbed kerb outside the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width",
+          "name": "width",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "width",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Width of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "QuantitativeValue",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "en": "Quantitative Value",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode",
+          "name": "public code",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "public code",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Public code for the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting",
+          "name": "lighting",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "lighting",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates how the Site Entrance is lit.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LightingType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Lighting Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level",
+          "name": "level",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "level",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Level of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Level",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
+              "range_label": {
+                "en": "Level",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark",
+          "name": "landmark",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "landmark",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of a nearby landmark.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label",
+          "name": "label",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "label",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Label of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height",
+          "name": "height",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "height",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Height of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "QuantitativeValue",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "en": "Quantitative Value",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated",
+          "name": "gated",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "gated",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Site Entrance is within a gated area.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GatedType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Gated Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad",
+          "name": "cross road",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "cross road",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered",
+          "name": "covered",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "covered",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether the Site Entrance is covered of outdoors.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CoveredType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Covered Type",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment",
+          "name": "accessibility assessment",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "accessibility assessment",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Accessibility assessment of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessibilityAssessment",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
+              "range_label": {
+                "en": "Accessibility Assessment",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode",
+          "name": "access mode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "access mode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Access modes of the Site Entrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AccessMode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Access Mode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
           "name": "alternative name",
           "sort": "Enter your translation here",
           "label": {
@@ -143,14 +849,14 @@
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Alternative name for the Country.",
+            "en": "Alternative name for the Site Entrance.",
             "nl": "Enter your translation here"
           },
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Country",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Country"
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
             }
           ],
           "range": [
@@ -169,6 +875,43 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of theEntrance.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Entrance",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -212,6 +955,82 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
+          "name": "submode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "submode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Submode of the Group of Stop Places",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Transportmode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode",
+          "name": "transport mode",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "transport mode",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Transport mode of the Group of Stop Places.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GroupOfStopPlaces",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportmode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Transportmode",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.shortName",
           "name": "short name",
@@ -324,43 +1143,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Name of the Group of Stop Places.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GroupOfStopPlaces",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.member",
           "name": "member",
           "sort": "Enter your translation here",
@@ -399,7 +1181,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description",
+          "uri": "http://purl.org/dc/terms/description",
           "name": "description",
           "sort": "Enter your translation here",
           "label": {
@@ -436,15 +1218,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlace.transportmode",
-          "name": "transport mode",
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
           "sort": "Enter your translation here",
           "label": {
-            "en": "transport mode",
+            "en": "name",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Transport mode of the Group of Stop Places.",
+            "en": "Name of the Group of Stop Places.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -456,17 +1238,16 @@
           ],
           "range": [
             {
-              "range_label": "Transportmode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Transportmode",
-                "nl": "Enter your translation here"
+                "nl": "LanguageString"
               }
             }
           ],
@@ -677,15 +1458,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level.name",
-          "name": "name",
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
           "sort": "Enter your translation here",
           "label": {
-            "en": "name",
+            "en": "description",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Name of the Level.",
+            "en": "Description of the Level.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -714,15 +1495,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level.description",
-          "name": "description",
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
           "sort": "Enter your translation here",
           "label": {
-            "en": "description",
+            "en": "name",
             "nl": "Enter your translation here"
           },
           "description": {
-            "en": "Description of the Level.",
+            "en": "Name of the Level.",
             "nl": "Enter your translation here"
           },
           "usage": {},
@@ -1063,7 +1844,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.address",
+          "uri": "http://www.w3.org/ns/locn#address",
           "name": "address",
           "sort": "Enter your translation here",
           "label": {
@@ -1353,16 +2134,16 @@
           ],
           "range": [
             {
-              "range_label": "SiteEntrance",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
+              "range_label": "Entrance",
+              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance",
+              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance",
               "range_label": {
-                "en": "Site Entrance",
+                "en": "Entrance",
                 "nl": "Enter your translation here"
               }
             }
@@ -2156,43 +2937,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.alternativeName",
-          "name": "alternative name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "alternative name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Alternative name for the Quay.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Quay",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.accessibilityAssessment",
           "name": "accessibility assessment",
           "sort": "Enter your translation here",
@@ -2262,6 +3006,43 @@
               "range_label": {
                 "en": "Access Mode",
                 "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "alternative name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "alternative name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Alternative name for the Quay.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Quay",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Quay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
               }
             }
           ],
@@ -2374,712 +3155,6 @@
       "usage": {},
       "parents": [],
       "properties": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance",
-      "name": "Site Entrance",
-      "label": {
-        "en": "Site Entrance",
-        "nl": "Enter your translation here"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "en": "Physical entrance or exit to/from a Site.",
-        "nl": "Enter your translation here"
-      },
-      "usage": {
-        "en": "May be a door, barrier, gate or other recognisable point of access.",
-        "nl": "Enter your translation here"
-      },
-      "parents": [
-        {
-          "label": "Site Component",
-          "name": "SiteComponent",
-          "package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent",
-          "scoped_uri": "#Site Component"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isExternal",
-          "name": "is external",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "is external",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Site Entrance opens externally.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isExit",
-          "name": "is exit",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "is exit",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Entrance can be used for exit from the Stop Place.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#isEntry",
-          "name": "is entry",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "is entry",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Entrance can be used for entry to the Stop Place.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#entranceType",
-          "name": "entrance type",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "entrance type",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Type of Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EntranceType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Entrance Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside",
-          "name": "dropped kerb outside",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "dropped kerb outside",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether there is a drobbed kerb outside the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width",
-          "name": "width",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "width",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Width of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "QuantitativeValue",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "en": "Quantitative Value",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode",
-          "name": "public code",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "public code",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Public code for the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting",
-          "name": "lighting",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "lighting",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates how the Site Entrance is lit.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LightingType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Lighting Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level",
-          "name": "level",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "level",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Level of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Level",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#Level"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#Level",
-              "range_label": {
-                "en": "Level",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark",
-          "name": "landmark",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "landmark",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Name of a nearby landmark.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label",
-          "name": "label",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "label",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Label of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height",
-          "name": "height",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "height",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Height of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "QuantitativeValue",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "en": "Quantitative Value",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated",
-          "name": "gated",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "gated",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Site Entrance is within a gated area.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GatedType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Gated Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad",
-          "name": "cross road",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "cross road",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {
-            "en": "Mainly relevant for bus modes, where the cross road may provide necessary context to describe the stop to a user.",
-            "nl": "Enter your translation here"
-          },
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered",
-          "name": "covered",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "covered",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Indicates whether the Site Entrance is covered of outdoors.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CoveredType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Covered Type",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.alternativeName",
-          "name": "alternative name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "alternative name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Alternative name for the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment",
-          "name": "accessibility assessment",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "accessibility assessment",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Accessibility assessment of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessibilityAssessment",
-              "range_uri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
-              "range_label": {
-                "en": "Accessibility Assessment",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode",
-          "name": "access mode",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "access mode",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Access modes of the Site Entrance.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "SiteEntrance",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AccessMode",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Access Mode",
-                "nl": "Enter your translation here"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
@@ -4323,46 +4398,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName",
-          "name": "alternative name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "alternative name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Alternative name for the Stop Place.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {
-            "en": "Used for Stops that have multiple aliases.",
-            "nl": "Enter your translation here"
-          },
-          "domain": [
-            {
-              "EA-Name": "StopPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment",
           "name": "accessability assessment",
           "sort": "Enter your translation here",
@@ -4437,6 +4472,194 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName",
+          "name": "short name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "short name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Short name of the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode",
+          "name": "private code",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "private code",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Private code of the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "alternative name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "alternative name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Alternative name for the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Used for Stops that have multiple aliases.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Description of the Stop place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Stop Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "StopPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LangString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -4455,11 +4678,11 @@
       "usage": {},
       "parents": [
         {
-          "label": "Site Entrance",
-          "name": "SiteEntrance",
+          "label": "Entrance",
+          "name": "Entrance",
           "package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance",
-          "scoped_uri": "#Site Entrance"
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Entrance",
+          "scoped_uri": "#Entrance"
         },
         {
           "label": "Stop Place Space",
@@ -4959,43 +5182,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "en": "name",
-            "nl": "Enter your translation here"
-          },
-          "description": {
-            "en": "Name of the Topographic Place.",
-            "nl": "Enter your translation here"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "TopographicPlace",
-              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LanguageString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "LanguageString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.member",
           "name": "member",
           "sort": "Enter your translation here",
@@ -5107,6 +5293,43 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/elements/1.1/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Name of the Topographic Place.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "TopographicPlace",
+              "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LanguageString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "LanguageString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -5550,6 +5773,22 @@
         "en": "summer time zone offset",
         "nl": "Enter your translation here",
         "undefined": "summer time zone offset"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#submode",
+      "name": {
+        "en": "submode",
+        "nl": "Enter your translation here",
+        "undefined": "submode"
       },
       "description": {},
       "domain": [
@@ -6729,11 +6968,11 @@
       "parents": []
     },
     {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.address",
+      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode",
       "name": {
-        "en": "address",
+        "en": "transport mode",
         "nl": "Enter your translation here",
-        "undefined": "address"
+        "undefined": "transport mode"
       },
       "description": {},
       "domain": [
@@ -6766,22 +7005,6 @@
         "en": "member",
         "nl": "Enter your translation here",
         "undefined": "member"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlace.transportmode",
-      "name": {
-        "en": "transport mode",
-        "nl": "Enter your translation here",
-        "undefined": "transport mode"
       },
       "description": {},
       "domain": [

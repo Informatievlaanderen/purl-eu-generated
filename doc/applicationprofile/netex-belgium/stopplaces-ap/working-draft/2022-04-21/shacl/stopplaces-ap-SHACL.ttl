@@ -1,4 +1,5 @@
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,6 +13,7 @@
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21> rdfs:member <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#AccessibilityAssessmentShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#CountryShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfEntitiesShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#LevelShape>,
@@ -25,7 +27,6 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#ScheduledStopPointShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteComponentShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceEntranceShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceSpaceShape>,
@@ -716,7 +717,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Country."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -724,14 +725,14 @@
   shacl:description "Name of the Country."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#CountryShape/45b15ba29c98ac584fc8a034f731f0f0183997ad> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Country%3Aalternative%20name";
   shacl:description "Alternative name for the Country."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.alternativeName>;
+  shacl:path skos:altLabel;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor alternative name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -748,14 +749,14 @@
   shacl:description "Name of the Country."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#CountryShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Country%3Aname";
   shacl:description "Name of the Country."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -764,7 +765,7 @@
   shacl:description "Alternative name for the Country."@en;
   shacl:name "alternative name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor alternative name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -780,7 +781,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Alternative name for the Country."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Country.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van alternative name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -791,6 +792,541 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#DecimalShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass xsd:decimal .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/00027184f67bb516e52541294abbb2a3190df176>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/0624f53106f6c8e265a6637987aa84df1f51e3ec>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/0bd795da83fda6ce4f3f616ed84ae084bd86c7dd>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/1189bffdbbd28d32dfff74ff424cbf10f0c70416>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/14d904c273174d47147b0ba293788fbc4638163d>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/14f2458d6408d1737eb68fbacf2aca77561f38ae>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/15dca917e9881319586d1b8123ab249c9dfbc8ae>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/1c3f862fa071ff6c3624a2c12388816087dc9baa>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2a6982f7d54b27a09fbcf0178bf9f0fc65bca577>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2bac35a819a1bbca8c2c446d613a40d33e3d4c5c>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2c43de4425881b208be6c9bd5f8f179a3686f23a>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2cf48140315e7b775cbe4f3266ce05e93bf160de>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/35d110b82eafd87795c7874141cea84f4476e21d>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/398fb93e389fba9a790e6adb0152f10f2ba6023a>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/3e28a58e095830f46dc732d0aaca2d5045031c82>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/3e779df5a94a3c5e8a20908d53988e76e25a9f75>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/41a039dc56f5a8dd582ed06e9371bdf1e3475a48>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/43bb1a5e717102d95d8dbf8d6f191f88cb35ff32>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/48772d2f6506eca30618b2adb2e0b41b5292f2e2>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/526ca38fc0238653a09cb63c518d431441c7b736>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/52955487257ebc3eadae9e98c1f23a7a52b19dd5>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/58e33644d838c631648b4f5593fa41c4497debe4>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/5db3379fccc7b6fe33da3100d43657b262f07644>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6cbfaa89ce0d8b97b2f0395577ce74e34b947029>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6d965de32d0d1b0eeb2ba6f0f8bc5f812ef65d4d>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/786da2754d6d1b0c821a72d1c4f2f2cb64ddd678>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/7b9317be1e3ad38736b9cce852bcc8cf2b851a7b>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/81af4c7b2fb6faffcd5fd06d6b8a93529b734a68>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/823f1606e9e578ae40eb8cac3c8030f433a9d738>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/8712d48523fe4a31331ea27de44aca4c18b40f37>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/891cf2181278da154cdaebb261666e4d9feab1c1>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/8c70f9d172ea12b0f4f2e93b1e0911df7d28abcd>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/938e83a00706f348dd91a26d7f4e06c2910853e5>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/976db67264db4fd55973e14eeba659454432a61f>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/99805c828fca748ffc7ba5838aaa98973df7fe12>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/9b437af682d747dd61e73577261bf72c00014cc4>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/9caf9e629daa0e64ece77788576468821d7cff8c>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/a69a1a6180b326ac0a81c2fa34bb014dba3c5eb4>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b2b788187d85eed06c9e905306703ac13af623e5>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b4c12b77173069273911b8a0e31dbabe43be85d8>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b90b247bb13e91144281e9f50bfa32a86ee2f36b>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/bfedbb29028317c16e21817e39e0fdaf7563e811>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/c56ed5a233a70e9c4a6338f07a2aee5cfc6bacbf>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/cfb87c626c92b60922bca62533beaeb8d3a8caf1>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d0a223dba354a8f35119b2d0ceb69075bc892ab9>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d480f9e7cdf7c531bcf9b912d64b19796eac595a>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d732916ff5b181bf9c479a25c4616d3b8f662d91>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/e2302efc04a35ec8392f996505192afdb5bea30f>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/e8bcec54e20d97aebc048d2c5b1c7d4b02426d5e>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ee3c2c43044ebe5bd2b6238074074973eb7ca883>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f027a784dc2b6638e41c9f5a13b3c32899d1b7f7>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f138612a5fffed0d4daa1a176e0de7d53a99eddd>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f261b873f82a741a933f58f837f8d48ceb846327>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ff2174913cd14b56475fb7b1db1a40d40d768991>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ff3657b9c2bd7d1a35889b046544ed0a8e812264>;
+  shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#Entrance> .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/00027184f67bb516e52541294abbb2a3190df176> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20exit";
+  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
+  shacl:maxCount 1;
+  shacl:name "is exit"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is exit"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/0624f53106f6c8e265a6637987aa84df1f51e3ec> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alevel";
+  shacl:description "Level of the Site Entrance."@en;
+  shacl:name "level"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor level is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/0bd795da83fda6ce4f3f616ed84ae084bd86c7dd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Adropped%20kerb%20outside";
+  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "dropped kerb outside"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor dropped kerb outside"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/1189bffdbbd28d32dfff74ff424cbf10f0c70416> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Adropped%20kerb%20outside";
+  shacl:datatype xsd:boolean;
+  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
+  shacl:name "dropped kerb outside"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van dropped kerb outside moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/14d904c273174d47147b0ba293788fbc4638163d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Acovered";
+  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
+  shacl:name "covered"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor covered is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/14f2458d6408d1737eb68fbacf2aca77561f38ae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Across%20road";
+  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
+  shacl:name "cross road"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor cross road is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/15dca917e9881319586d1b8123ab249c9dfbc8ae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alighting";
+  shacl:description "Indicates how the Site Entrance is lit."@en;
+  shacl:name "lighting"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor lighting is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/1c3f862fa071ff6c3624a2c12388816087dc9baa> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aheight";
+  shacl:description "Height of the Site Entrance."@en;
+  shacl:name "height"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor height is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aname";
+  shacl:datatype rdf:langString;
+  shacl:description "Name of theEntrance."@en;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2a6982f7d54b27a09fbcf0178bf9f0fc65bca577> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alandmark";
+  shacl:datatype rdf:langString;
+  shacl:description "Name of a nearby landmark."@en;
+  shacl:name "landmark"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van landmark moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2bac35a819a1bbca8c2c446d613a40d33e3d4c5c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Apublic%20code";
+  shacl:description "Public code for the Site Entrance."@en;
+  shacl:name "public code"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor public code is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2c43de4425881b208be6c9bd5f8f179a3686f23a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20entry";
+  shacl:datatype xsd:boolean;
+  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
+  shacl:name "is entry"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is entry moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/2cf48140315e7b775cbe4f3266ce05e93bf160de> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aentrance%20type";
+  shacl:description "Type of Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "entrance type"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor entrance type"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/35d110b82eafd87795c7874141cea84f4476e21d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Across%20road";
+  shacl:datatype rdf:langString;
+  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
+  shacl:name "cross road"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van cross road moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/398fb93e389fba9a790e6adb0152f10f2ba6023a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aname";
+  shacl:description "Name of theEntrance."@en;
+  shacl:maxCount 1;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/3e28a58e095830f46dc732d0aaca2d5045031c82> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alabel";
+  shacl:description "Label of the Site Entrance."@en;
+  shacl:name "label"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor label is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/3e779df5a94a3c5e8a20908d53988e76e25a9f75> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alabel";
+  shacl:description "Label of the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "label"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor label"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/41a039dc56f5a8dd582ed06e9371bdf1e3475a48> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aentrance%20type";
+  shacl:description "Type of Site Entrance."@en;
+  shacl:name "entrance type"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor entrance type is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/43bb1a5e717102d95d8dbf8d6f191f88cb35ff32> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aaccessibility%20assessment";
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment>;
+  shacl:description "Accessibility assessment of the Site Entrance."@en;
+  shacl:name "accessibility assessment"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van accessibility assessment moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aalternative%20name";
+  shacl:description "Alternative name for the Site Entrance."@en;
+  shacl:name "alternative name"@en;
+  shacl:path skos:altLabel;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor alternative name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/48772d2f6506eca30618b2adb2e0b41b5292f2e2> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Agated";
+  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
+  shacl:maxCount 1;
+  shacl:name "gated"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor gated"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/526ca38fc0238653a09cb63c518d431441c7b736> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Agated";
+  shacl:class skos:Concept;
+  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
+  shacl:name "gated"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van gated moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/52955487257ebc3eadae9e98c1f23a7a52b19dd5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aentrance%20type";
+  shacl:class skos:Concept;
+  shacl:description "Type of Site Entrance."@en;
+  shacl:name "entrance type"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van entrance type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/58e33644d838c631648b4f5593fa41c4497debe4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Acovered";
+  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
+  shacl:maxCount 1;
+  shacl:name "covered"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor covered"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/5db3379fccc7b6fe33da3100d43657b262f07644> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aaccess%20mode";
+  shacl:class skos:Concept;
+  shacl:description "Access modes of the Site Entrance."@en;
+  shacl:name "access mode"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van access mode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Apublic%20code";
+  shacl:description "Public code for the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "public code"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor public code"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6cbfaa89ce0d8b97b2f0395577ce74e34b947029> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alevel";
+  shacl:description "Level of the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "level"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor level"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/6d965de32d0d1b0eeb2ba6f0f8bc5f812ef65d4d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20external";
+  shacl:description "Indicates whether the Site Entrance opens externally."@en;
+  shacl:maxCount 1;
+  shacl:name "is external"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is external"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/786da2754d6d1b0c821a72d1c4f2f2cb64ddd678> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alighting";
+  shacl:description "Indicates how the Site Entrance is lit."@en;
+  shacl:maxCount 1;
+  shacl:name "lighting"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor lighting"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/7b9317be1e3ad38736b9cce852bcc8cf2b851a7b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20entry";
+  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
+  shacl:maxCount 1;
+  shacl:name "is entry"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is entry"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/81af4c7b2fb6faffcd5fd06d6b8a93529b734a68> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alandmark";
+  shacl:description "Name of a nearby landmark."@en;
+  shacl:name "landmark"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor landmark is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/823f1606e9e578ae40eb8cac3c8030f433a9d738> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20exit";
+  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
+  shacl:name "is exit"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is exit is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/8712d48523fe4a31331ea27de44aca4c18b40f37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Apublic%20code";
+  shacl:datatype xsd:string;
+  shacl:description "Public code for the Site Entrance."@en;
+  shacl:name "public code"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van public code moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/891cf2181278da154cdaebb261666e4d9feab1c1> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Adropped%20kerb%20outside";
+  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
+  shacl:name "dropped kerb outside"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor dropped kerb outside is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/8c70f9d172ea12b0f4f2e93b1e0911df7d28abcd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alighting";
+  shacl:class skos:Concept;
+  shacl:description "Indicates how the Site Entrance is lit."@en;
+  shacl:name "lighting"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van lighting moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/938e83a00706f348dd91a26d7f4e06c2910853e5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20exit";
+  shacl:datatype xsd:boolean;
+  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
+  shacl:name "is exit"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is exit moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/976db67264db4fd55973e14eeba659454432a61f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aheight";
+  shacl:description "Height of the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "height"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor height"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/99805c828fca748ffc7ba5838aaa98973df7fe12> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Awidth";
+  shacl:description "Width of the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "width"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor width"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/9b437af682d747dd61e73577261bf72c00014cc4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alevel";
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  shacl:description "Level of the Site Entrance."@en;
+  shacl:name "level"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van level moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Level> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/9caf9e629daa0e64ece77788576468821d7cff8c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aname";
+  shacl:description "Name of theEntrance."@en;
+  shacl:name "name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/a69a1a6180b326ac0a81c2fa34bb014dba3c5eb4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Awidth";
+  shacl:class schemas:QuantitativeValue;
+  shacl:description "Width of the Site Entrance."@en;
+  shacl:name "width"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van width moet van het type <https://schema.org/QuantitativeValue> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b2b788187d85eed06c9e905306703ac13af623e5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aaccess%20mode";
+  shacl:description "Access modes of the Site Entrance."@en;
+  shacl:name "access mode"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor access mode is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b4c12b77173069273911b8a0e31dbabe43be85d8> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Agated";
+  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
+  shacl:name "gated"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor gated is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/b90b247bb13e91144281e9f50bfa32a86ee2f36b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aheight";
+  shacl:class schemas:QuantitativeValue;
+  shacl:description "Height of the Site Entrance."@en;
+  shacl:name "height"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van height moet van het type <https://schema.org/QuantitativeValue> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aname";
+  shacl:description "Name of theEntrance."@en;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/bfedbb29028317c16e21817e39e0fdaf7563e811> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20external";
+  shacl:description "Indicates whether the Site Entrance opens externally."@en;
+  shacl:name "is external"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is external is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/c56ed5a233a70e9c4a6338f07a2aee5cfc6bacbf> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aalternative%20name";
+  shacl:description "Alternative name for the Site Entrance."@en;
+  shacl:name "alternative name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path skos:altLabel;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor alternative name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/cfb87c626c92b60922bca62533beaeb8d3a8caf1> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Acovered";
+  shacl:class skos:Concept;
+  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
+  shacl:name "covered"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van covered moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d0a223dba354a8f35119b2d0ceb69075bc892ab9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20entry";
+  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
+  shacl:name "is entry"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is entry is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d480f9e7cdf7c531bcf9b912d64b19796eac595a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aaccessibility%20assessment";
+  shacl:description "Accessibility assessment of the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "accessibility assessment"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor accessibility assessment"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/d732916ff5b181bf9c479a25c4616d3b8f662d91> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Ais%20external";
+  shacl:datatype xsd:boolean;
+  shacl:description "Indicates whether the Site Entrance opens externally."@en;
+  shacl:name "is external"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is external moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/e2302efc04a35ec8392f996505192afdb5bea30f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Awidth";
+  shacl:description "Width of the Site Entrance."@en;
+  shacl:name "width"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor width is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/e8bcec54e20d97aebc048d2c5b1c7d4b02426d5e> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alabel";
+  shacl:datatype xsd:string;
+  shacl:description "Label of the Site Entrance."@en;
+  shacl:name "label"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van label moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ee3c2c43044ebe5bd2b6238074074973eb7ca883> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alandmark";
+  shacl:description "Name of a nearby landmark."@en;
+  shacl:name "landmark"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor landmark"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f027a784dc2b6638e41c9f5a13b3c32899d1b7f7> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Across%20road";
+  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
+  shacl:name "cross road"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor cross road"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f138612a5fffed0d4daa1a176e0de7d53a99eddd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aalternative%20name";
+  shacl:datatype rdf:langString;
+  shacl:description "Alternative name for the Site Entrance."@en;
+  shacl:name "alternative name"@en;
+  shacl:path skos:altLabel;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van alternative name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/f261b873f82a741a933f58f837f8d48ceb846327> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Alandmark";
+  shacl:description "Name of a nearby landmark."@en;
+  shacl:maxCount 1;
+  shacl:name "landmark"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor landmark"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ff2174913cd14b56475fb7b1db1a40d40d768991> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Across%20road";
+  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
+  shacl:maxCount 1;
+  shacl:name "cross road"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor cross road"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceShape/ff3657b9c2bd7d1a35889b046544ed0a8e812264> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Entrance%3Aaccessibility%20assessment";
+  shacl:description "Accessibility assessment of the Site Entrance."@en;
+  shacl:name "accessibility assessment"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor accessibility assessment is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#EntranceTypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -873,10 +1409,13 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/276cf2a435e700b7e65e2c401469aae55212494c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/34c4ee795d4863b0a6def72c319af4e03d8e5823>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/362d1bf0eab8051024cf5ec1345eb1ce50762580>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/392c0da76ea5e7d7ff9affdb3899f4188256ef6e>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/398fb93e389fba9a790e6adb0152f10f2ba6023a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/4b212be18fc41517aa80a35e697766eaa061b462>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/4f1054efb6696b11893b08daa9b3f6f173ad32d1>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/5622cfd3676a95f0048453077c5dd10cd2030efa>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/611cb057ebda329e9c27d5c503f25e59de77b448>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/617f43a237e9e2d24dd6a8370c3c99400d645d7b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/68bb002a8884513c92d75d4c480a2d7175b9a246>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/6cae9880e515253132af1452a38a8a5827165149>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/738d443172c0f3ce58e607fca1f52c4265e88f80>,
@@ -905,7 +1444,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Group of Stop Places."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -929,15 +1468,23 @@
   shacl:description "Description of the Group of Stop Places."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/392c0da76ea5e7d7ff9affdb3899f4188256ef6e> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Asubmode";
+  shacl:description "Submode of the Group of Stop Places"@en;
+  shacl:maxCount 1;
+  shacl:name "submode"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#submode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor submode"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/398fb93e389fba9a790e6adb0152f10f2ba6023a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Aname";
   shacl:description "Name of the Group of Stop Places."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -965,11 +1512,27 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor private code is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/611cb057ebda329e9c27d5c503f25e59de77b448> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Asubmode";
+  shacl:class skos:Concept;
+  shacl:description "Submode of the Group of Stop Places"@en;
+  shacl:name "submode"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#submode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van submode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/617f43a237e9e2d24dd6a8370c3c99400d645d7b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Asubmode";
+  shacl:description "Submode of the Group of Stop Places"@en;
+  shacl:name "submode"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#submode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor submode is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/68bb002a8884513c92d75d4c480a2d7175b9a246> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Atransport%20mode";
   shacl:description "Transport mode of the Group of Stop Places."@en;
   shacl:name "transport mode"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlace.transportmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor transport mode is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -977,7 +1540,7 @@
   shacl:description "Description of the Group of Stop Places."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -985,14 +1548,14 @@
   shacl:class skos:Concept;
   shacl:description "Transport mode of the Group of Stop Places."@en;
   shacl:name "transport mode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlace.transportmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van transport mode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Adescription";
   shacl:description "Description of the Group of Stop Places."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1001,7 +1564,7 @@
   shacl:description "Name of the Group of Stop Places."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1009,7 +1572,7 @@
   shacl:description "Transport mode of the Group of Stop Places."@en;
   shacl:maxCount 1;
   shacl:name "transport mode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlace.transportmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor transport mode"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1024,7 +1587,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlacesShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#GroupOfStopPlaces%3Aname";
   shacl:description "Name of the Group of Stop Places."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1057,7 +1620,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Group of Stop Places."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1253,7 +1816,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Level."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1277,7 +1840,7 @@
   shacl:description "Description of the Level."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1285,7 +1848,7 @@
   shacl:description "Name of the Level."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1333,7 +1896,7 @@
   shacl:description "Description of the Level."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1356,7 +1919,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#LevelShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Level%3Adescription";
   shacl:description "Description of the Level."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1373,7 +1936,7 @@
   shacl:description "Name of the Level."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1388,7 +1951,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#LevelShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Level%3Aname";
   shacl:description "Name of the Level."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1405,7 +1968,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Level."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Level.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1711,7 +2274,7 @@
   shacl:description "Postal address of the Operator."@en;
   shacl:maxCount 1;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor address"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1735,7 +2298,7 @@
   shacl:description "Postal address of the Operator."@en;
   shacl:name "address"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor address is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1759,7 +2322,7 @@
   shacl:class <http://www.w3.org/ns/locn#Address>;
   shacl:description "Postal address of the Operator."@en;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van address moet van het type <http://www.w3.org/ns/locn#Address> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2139,11 +2702,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#PointOfInterestShape/7434d9a05fefa3388b3420faa6ada633bdb0558f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#PointOfInterest%3Aentrance";
-  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance>;
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
   shacl:description "Entrance to the Point of Interest."@en;
   shacl:name "entrance"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entrance>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van entrance moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van entrance moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Entrance> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#PointOfInterestShape/796d9384d4b80019a95e07cb1233981a6ccd4259> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#PointOfInterest%3Anear%20topographic%20place";
@@ -2541,7 +3104,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#QuayShape/45b15ba29c98ac584fc8a034f731f0f0183997ad> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#Quay%3Aalternative%20name";
   shacl:description "Alternative name for the Quay."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Quay.alternativeName>;
+  shacl:path skos:altLabel;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor alternative name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -2694,7 +3257,7 @@
   shacl:description "Alternative name for the Quay."@en;
   shacl:name "alternative name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Quay.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor alternative name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2758,7 +3321,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Alternative name for the Quay."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Quay.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van alternative name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2901,505 +3464,6 @@
   shacl:closed false;
   shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent> .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/00027184f67bb516e52541294abbb2a3190df176>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/0624f53106f6c8e265a6637987aa84df1f51e3ec>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/0bd795da83fda6ce4f3f616ed84ae084bd86c7dd>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/1189bffdbbd28d32dfff74ff424cbf10f0c70416>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/14d904c273174d47147b0ba293788fbc4638163d>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/14f2458d6408d1737eb68fbacf2aca77561f38ae>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/15dca917e9881319586d1b8123ab249c9dfbc8ae>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/1c3f862fa071ff6c3624a2c12388816087dc9baa>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2a6982f7d54b27a09fbcf0178bf9f0fc65bca577>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2bac35a819a1bbca8c2c446d613a40d33e3d4c5c>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2c43de4425881b208be6c9bd5f8f179a3686f23a>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2cf48140315e7b775cbe4f3266ce05e93bf160de>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/35d110b82eafd87795c7874141cea84f4476e21d>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/3e28a58e095830f46dc732d0aaca2d5045031c82>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/3e779df5a94a3c5e8a20908d53988e76e25a9f75>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/41a039dc56f5a8dd582ed06e9371bdf1e3475a48>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/43bb1a5e717102d95d8dbf8d6f191f88cb35ff32>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/48772d2f6506eca30618b2adb2e0b41b5292f2e2>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/526ca38fc0238653a09cb63c518d431441c7b736>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/52955487257ebc3eadae9e98c1f23a7a52b19dd5>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/58e33644d838c631648b4f5593fa41c4497debe4>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/5db3379fccc7b6fe33da3100d43657b262f07644>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6cbfaa89ce0d8b97b2f0395577ce74e34b947029>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6d965de32d0d1b0eeb2ba6f0f8bc5f812ef65d4d>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/786da2754d6d1b0c821a72d1c4f2f2cb64ddd678>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/7b9317be1e3ad38736b9cce852bcc8cf2b851a7b>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/81af4c7b2fb6faffcd5fd06d6b8a93529b734a68>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/823f1606e9e578ae40eb8cac3c8030f433a9d738>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/8712d48523fe4a31331ea27de44aca4c18b40f37>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/891cf2181278da154cdaebb261666e4d9feab1c1>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/8c70f9d172ea12b0f4f2e93b1e0911df7d28abcd>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/938e83a00706f348dd91a26d7f4e06c2910853e5>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/976db67264db4fd55973e14eeba659454432a61f>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/99805c828fca748ffc7ba5838aaa98973df7fe12>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/9b437af682d747dd61e73577261bf72c00014cc4>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/a69a1a6180b326ac0a81c2fa34bb014dba3c5eb4>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b2b788187d85eed06c9e905306703ac13af623e5>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b4c12b77173069273911b8a0e31dbabe43be85d8>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b90b247bb13e91144281e9f50bfa32a86ee2f36b>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/bfedbb29028317c16e21817e39e0fdaf7563e811>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/c56ed5a233a70e9c4a6338f07a2aee5cfc6bacbf>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/cfb87c626c92b60922bca62533beaeb8d3a8caf1>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d0a223dba354a8f35119b2d0ceb69075bc892ab9>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d480f9e7cdf7c531bcf9b912d64b19796eac595a>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d732916ff5b181bf9c479a25c4616d3b8f662d91>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/e2302efc04a35ec8392f996505192afdb5bea30f>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/e8bcec54e20d97aebc048d2c5b1c7d4b02426d5e>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ee3c2c43044ebe5bd2b6238074074973eb7ca883>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f027a784dc2b6638e41c9f5a13b3c32899d1b7f7>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f138612a5fffed0d4daa1a176e0de7d53a99eddd>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f261b873f82a741a933f58f837f8d48ceb846327>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ff2174913cd14b56475fb7b1db1a40d40d768991>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ff3657b9c2bd7d1a35889b046544ed0a8e812264>;
-  shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance> .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/00027184f67bb516e52541294abbb2a3190df176> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20exit";
-  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
-  shacl:maxCount 1;
-  shacl:name "is exit"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is exit"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/0624f53106f6c8e265a6637987aa84df1f51e3ec> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alevel";
-  shacl:description "Level of the Site Entrance."@en;
-  shacl:name "level"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor level is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/0bd795da83fda6ce4f3f616ed84ae084bd86c7dd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Adropped%20kerb%20outside";
-  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "dropped kerb outside"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor dropped kerb outside"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/1189bffdbbd28d32dfff74ff424cbf10f0c70416> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Adropped%20kerb%20outside";
-  shacl:datatype xsd:boolean;
-  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
-  shacl:name "dropped kerb outside"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van dropped kerb outside moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/14d904c273174d47147b0ba293788fbc4638163d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Acovered";
-  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
-  shacl:name "covered"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor covered is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/14f2458d6408d1737eb68fbacf2aca77561f38ae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Across%20road";
-  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
-  shacl:name "cross road"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor cross road is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/15dca917e9881319586d1b8123ab249c9dfbc8ae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alighting";
-  shacl:description "Indicates how the Site Entrance is lit."@en;
-  shacl:name "lighting"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor lighting is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/1c3f862fa071ff6c3624a2c12388816087dc9baa> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aheight";
-  shacl:description "Height of the Site Entrance."@en;
-  shacl:name "height"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor height is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2a6982f7d54b27a09fbcf0178bf9f0fc65bca577> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alandmark";
-  shacl:datatype rdf:langString;
-  shacl:description "Name of a nearby landmark."@en;
-  shacl:name "landmark"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van landmark moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2bac35a819a1bbca8c2c446d613a40d33e3d4c5c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Apublic%20code";
-  shacl:description "Public code for the Site Entrance."@en;
-  shacl:name "public code"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor public code is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2c43de4425881b208be6c9bd5f8f179a3686f23a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20entry";
-  shacl:datatype xsd:boolean;
-  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
-  shacl:name "is entry"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is entry moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/2cf48140315e7b775cbe4f3266ce05e93bf160de> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aentrance%20type";
-  shacl:description "Type of Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "entrance type"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor entrance type"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/35d110b82eafd87795c7874141cea84f4476e21d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Across%20road";
-  shacl:datatype rdf:langString;
-  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
-  shacl:name "cross road"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van cross road moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/3e28a58e095830f46dc732d0aaca2d5045031c82> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alabel";
-  shacl:description "Label of the Site Entrance."@en;
-  shacl:name "label"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor label is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/3e779df5a94a3c5e8a20908d53988e76e25a9f75> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alabel";
-  shacl:description "Label of the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "label"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor label"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/41a039dc56f5a8dd582ed06e9371bdf1e3475a48> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aentrance%20type";
-  shacl:description "Type of Site Entrance."@en;
-  shacl:name "entrance type"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor entrance type is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/43bb1a5e717102d95d8dbf8d6f191f88cb35ff32> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aaccessibility%20assessment";
-  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment>;
-  shacl:description "Accessibility assessment of the Site Entrance."@en;
-  shacl:name "accessibility assessment"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van accessibility assessment moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aalternative%20name";
-  shacl:description "Alternative name for the Site Entrance."@en;
-  shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.alternativeName>;
-  shacl:uniqueLang true;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor alternative name"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/48772d2f6506eca30618b2adb2e0b41b5292f2e2> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Agated";
-  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
-  shacl:maxCount 1;
-  shacl:name "gated"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor gated"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/526ca38fc0238653a09cb63c518d431441c7b736> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Agated";
-  shacl:class skos:Concept;
-  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
-  shacl:name "gated"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van gated moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/52955487257ebc3eadae9e98c1f23a7a52b19dd5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aentrance%20type";
-  shacl:class skos:Concept;
-  shacl:description "Type of Site Entrance."@en;
-  shacl:name "entrance type"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#entranceType>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van entrance type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/58e33644d838c631648b4f5593fa41c4497debe4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Acovered";
-  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
-  shacl:maxCount 1;
-  shacl:name "covered"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor covered"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/5db3379fccc7b6fe33da3100d43657b262f07644> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aaccess%20mode";
-  shacl:class skos:Concept;
-  shacl:description "Access modes of the Site Entrance."@en;
-  shacl:name "access mode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van access mode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Apublic%20code";
-  shacl:description "Public code for the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "public code"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor public code"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6cbfaa89ce0d8b97b2f0395577ce74e34b947029> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alevel";
-  shacl:description "Level of the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "level"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor level"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/6d965de32d0d1b0eeb2ba6f0f8bc5f812ef65d4d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20external";
-  shacl:description "Indicates whether the Site Entrance opens externally."@en;
-  shacl:maxCount 1;
-  shacl:name "is external"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is external"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/786da2754d6d1b0c821a72d1c4f2f2cb64ddd678> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alighting";
-  shacl:description "Indicates how the Site Entrance is lit."@en;
-  shacl:maxCount 1;
-  shacl:name "lighting"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor lighting"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/7b9317be1e3ad38736b9cce852bcc8cf2b851a7b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20entry";
-  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
-  shacl:maxCount 1;
-  shacl:name "is entry"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor is entry"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/81af4c7b2fb6faffcd5fd06d6b8a93529b734a68> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alandmark";
-  shacl:description "Name of a nearby landmark."@en;
-  shacl:name "landmark"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor landmark is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/823f1606e9e578ae40eb8cac3c8030f433a9d738> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20exit";
-  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
-  shacl:name "is exit"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is exit is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/8712d48523fe4a31331ea27de44aca4c18b40f37> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Apublic%20code";
-  shacl:datatype xsd:string;
-  shacl:description "Public code for the Site Entrance."@en;
-  shacl:name "public code"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.publicCode>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van public code moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/891cf2181278da154cdaebb261666e4d9feab1c1> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Adropped%20kerb%20outside";
-  shacl:description "Indicates whether there is a drobbed kerb outside the Site Entrance."@en;
-  shacl:name "dropped kerb outside"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor dropped kerb outside is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/8c70f9d172ea12b0f4f2e93b1e0911df7d28abcd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alighting";
-  shacl:class skos:Concept;
-  shacl:description "Indicates how the Site Entrance is lit."@en;
-  shacl:name "lighting"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.lighting>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van lighting moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/938e83a00706f348dd91a26d7f4e06c2910853e5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20exit";
-  shacl:datatype xsd:boolean;
-  shacl:description "Indicates whether the Entrance can be used for exit from the Stop Place."@en;
-  shacl:name "is exit"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExit>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is exit moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/976db67264db4fd55973e14eeba659454432a61f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aheight";
-  shacl:description "Height of the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "height"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor height"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/99805c828fca748ffc7ba5838aaa98973df7fe12> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Awidth";
-  shacl:description "Width of the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "width"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor width"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/9b437af682d747dd61e73577261bf72c00014cc4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alevel";
-  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
-  shacl:description "Level of the Site Entrance."@en;
-  shacl:name "level"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.level>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van level moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Level> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/a69a1a6180b326ac0a81c2fa34bb014dba3c5eb4> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Awidth";
-  shacl:class schemas:QuantitativeValue;
-  shacl:description "Width of the Site Entrance."@en;
-  shacl:name "width"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van width moet van het type <https://schema.org/QuantitativeValue> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b2b788187d85eed06c9e905306703ac13af623e5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aaccess%20mode";
-  shacl:description "Access modes of the Site Entrance."@en;
-  shacl:name "access mode"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessMode>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor access mode is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b4c12b77173069273911b8a0e31dbabe43be85d8> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Agated";
-  shacl:description "Indicates whether the Site Entrance is within a gated area."@en;
-  shacl:name "gated"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.gated>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor gated is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/b90b247bb13e91144281e9f50bfa32a86ee2f36b> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aheight";
-  shacl:class schemas:QuantitativeValue;
-  shacl:description "Height of the Site Entrance."@en;
-  shacl:name "height"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.height>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van height moet van het type <https://schema.org/QuantitativeValue> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/bfedbb29028317c16e21817e39e0fdaf7563e811> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20external";
-  shacl:description "Indicates whether the Site Entrance opens externally."@en;
-  shacl:name "is external"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is external is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/c56ed5a233a70e9c4a6338f07a2aee5cfc6bacbf> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aalternative%20name";
-  shacl:description "Alternative name for the Site Entrance."@en;
-  shacl:name "alternative name"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.alternativeName>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor alternative name is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/cfb87c626c92b60922bca62533beaeb8d3a8caf1> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Acovered";
-  shacl:class skos:Concept;
-  shacl:description "Indicates whether the Site Entrance is covered of outdoors."@en;
-  shacl:name "covered"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.covered>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van covered moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d0a223dba354a8f35119b2d0ceb69075bc892ab9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20entry";
-  shacl:description "Indicates whether the Entrance can be used for entry to the Stop Place."@en;
-  shacl:name "is entry"@en;
-  shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isEntry>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor is entry is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d480f9e7cdf7c531bcf9b912d64b19796eac595a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aaccessibility%20assessment";
-  shacl:description "Accessibility assessment of the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "accessibility assessment"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor accessibility assessment"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/d732916ff5b181bf9c479a25c4616d3b8f662d91> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Ais%20external";
-  shacl:datatype xsd:boolean;
-  shacl:description "Indicates whether the Site Entrance opens externally."@en;
-  shacl:name "is external"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#isExternal>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van is external moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/e2302efc04a35ec8392f996505192afdb5bea30f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Awidth";
-  shacl:description "Width of the Site Entrance."@en;
-  shacl:name "width"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.width>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor width is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/e8bcec54e20d97aebc048d2c5b1c7d4b02426d5e> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alabel";
-  shacl:datatype xsd:string;
-  shacl:description "Label of the Site Entrance."@en;
-  shacl:name "label"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.label>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van label moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ee3c2c43044ebe5bd2b6238074074973eb7ca883> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alandmark";
-  shacl:description "Name of a nearby landmark."@en;
-  shacl:name "landmark"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
-  shacl:uniqueLang true;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor landmark"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f027a784dc2b6638e41c9f5a13b3c32899d1b7f7> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Across%20road";
-  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
-  shacl:name "cross road"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
-  shacl:uniqueLang true;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor cross road"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f138612a5fffed0d4daa1a176e0de7d53a99eddd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aalternative%20name";
-  shacl:datatype rdf:langString;
-  shacl:description "Alternative name for the Site Entrance."@en;
-  shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.alternativeName>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van alternative name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/f261b873f82a741a933f58f837f8d48ceb846327> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Alandmark";
-  shacl:description "Name of a nearby landmark."@en;
-  shacl:maxCount 1;
-  shacl:name "landmark"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.landmark>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor landmark"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ff2174913cd14b56475fb7b1db1a40d40d768991> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Across%20road";
-  shacl:description "Name of nearest cross road or crossing street on which site is and which can be used to locate the Site Entrance."@en;
-  shacl:maxCount 1;
-  shacl:name "cross road"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.crossRoad>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor cross road"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntranceShape/ff3657b9c2bd7d1a35889b046544ed0a8e812264> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteEntrance%3Aaccessibility%20assessment";
-  shacl:description "Accessibility assessment of the Site Entrance."@en;
-  shacl:name "accessibility assessment"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance.accessibilityAssessment>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor accessibility assessment is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#SiteShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
@@ -3416,6 +3480,7 @@
   shacl:closed false;
   shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/02012d4ca486a91e958c7ab5aab811e285b77805>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/0624f53106f6c8e265a6637987aa84df1f51e3ec>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/06b38e07a19aa522d4c27f7acaf8bf4b0bb767d5>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/08fef3a8fed75baf41c04c482cc8cc3bbf150112>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/09e6a4f30ad128248b3410ad9c47732df2f816a9>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/1073c4ae40d9849e419c3fecfec757e93dcb08c7>,
@@ -3433,20 +3498,27 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/22f59abbdf7adf36635cb45520b41bdb0bcbff86>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/2393af46da26e0610f04d43c21cfc9fd51c45af2>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/23b5bf0d3a3d481cf127efb715c28c3e61b35beb>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/276cf2a435e700b7e65e2c401469aae55212494c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/28ab67cb0fcbe48ba5470349341ea7d4c1300b55>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/2a6982f7d54b27a09fbcf0178bf9f0fc65bca577>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/2bac35a819a1bbca8c2c446d613a40d33e3d4c5c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/35d110b82eafd87795c7874141cea84f4476e21d>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/362d1bf0eab8051024cf5ec1345eb1ce50762580>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/392c0da76ea5e7d7ff9affdb3899f4188256ef6e>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/398fb93e389fba9a790e6adb0152f10f2ba6023a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/41f91167a57218c045d012bf224b775bd80da105>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4435e32b37fc24ae77aeac66b961de8b305cc4b6>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/46589d652d04cb87c9373274484f42565cfd6628>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/48772d2f6506eca30618b2adb2e0b41b5292f2e2>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4a1f860d53b4f7f38f6172542c0b78b42670ffba>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4b212be18fc41517aa80a35e697766eaa061b462>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4d0b1b686b162926a45ac646d27c495e250fdc5d>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4f1054efb6696b11893b08daa9b3f6f173ad32d1>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/522fbf629f2387a83ea19128c6ee0624d031e8d8>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/526ca38fc0238653a09cb63c518d431441c7b736>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/5622cfd3676a95f0048453077c5dd10cd2030efa>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/570ebbdad507ff9840e0b4bd21000b6700f4e575>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/58e33644d838c631648b4f5593fa41c4497debe4>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/5db3379fccc7b6fe33da3100d43657b262f07644>,
@@ -3456,10 +3528,12 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/611cb057ebda329e9c27d5c503f25e59de77b448>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/617f43a237e9e2d24dd6a8370c3c99400d645d7b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/68bb002a8884513c92d75d4c480a2d7175b9a246>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/6cae9880e515253132af1452a38a8a5827165149>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/6e332e23357667d4a85c8f5d3ebf28f85fdf884a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/738d443172c0f3ce58e607fca1f52c4265e88f80>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/7540a4be588ffddc4d1c4bb2680ab68369530a04>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/768bb4171e00505886fe9a1e949b4cd71f0eb548>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/778d27bbdfde43a627131fe7da5a96a69371a059>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/786da2754d6d1b0c821a72d1c4f2f2cb64ddd678>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/7b4ee03c976116e361c6091c1eed4ba3115316ad>,
@@ -3478,6 +3552,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/9a44999b2b135e065a1dea3ed06cb0c4de040a8f>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/9b0e1f703bfcb2028b199528247f09efa9de71fe>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/9b437af682d747dd61e73577261bf72c00014cc4>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/9caf9e629daa0e64ece77788576468821d7cff8c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/a0c180305d45dd5980251499a4a8bfc5ca1d1001>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/a1603763e217508bff29625d7693de416324cacb>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/a19d53f0abb7c2ed6aa9e8cae7bf96460d5444ab>,
@@ -3489,7 +3564,9 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/b4c12b77173069273911b8a0e31dbabe43be85d8>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/b53e02ed023c84b84167db5a06ffb4e0fde0647b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/b6429451f818a9baa0a1d52fbeea3b32649e0e1b>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/b95799bbdeee776c7cde4154d26eaf43dfd05fae>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/bc176f15101448b45e9918d975c07ee9eb8eb019>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/c14cf9c5efbd1f03002e90812bedb6fb98fe7c35>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/c2b5561b81670c93017c051a57a0ecfb2cc801a2>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/c320e058b7b78c2ed01bd49ba082c51187f7b371>,
@@ -3499,6 +3576,8 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/c6570d54dfcc2458a388d894d0cbbe4a1fb103e0>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/caa9d15ad38096046fd527702c7620800aea178b>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/cfb87c626c92b60922bca62533beaeb8d3a8caf1>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d203a676aae3fb41b7fbbe159c8caae16cbe6a84>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d4d4f2399b8cf2f615ac658920373b714726bed0>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d842eba2d340a04c9285b1ad3143182f0f1d9e69>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/e3ef7d58f0574982a8b76452b723c1e40dec69d7>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/e43363a40306619f14d81eba3616cb846e82bc19>,
@@ -3527,6 +3606,14 @@
   shacl:nodekind "sh:BlankNodeOrIRI";
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.level>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor level is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/06b38e07a19aa522d4c27f7acaf8bf4b0bb767d5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Ashort%20name";
+  shacl:description "Short name of the Stop Place."@en;
+  shacl:maxCount 1;
+  shacl:name "short name"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor short name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/08fef3a8fed75baf41c04c482cc8cc3bbf150112> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aroad%20address";
@@ -3668,6 +3755,22 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor entered through is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aname";
+  shacl:datatype rdf:langString;
+  shacl:description "Name of the Stop Place."@en;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/276cf2a435e700b7e65e2c401469aae55212494c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Ashort%20name";
+  shacl:description "Short name of the Stop Place."@en;
+  shacl:name "short name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor short name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/28ab67cb0fcbe48ba5470349341ea7d4c1300b55> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Acontaining";
   shacl:description "The platforms in the stopping area, that is, platforms, jetties, bays, taxi ranks and other points of physical vehicle access."@en;
   shacl:name "containing"@en;
@@ -3700,12 +3803,28 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van cross road moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/362d1bf0eab8051024cf5ec1345eb1ce50762580> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Adescription";
+  shacl:description "Description of the Stop place."@en;
+  shacl:maxCount 1;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/392c0da76ea5e7d7ff9affdb3899f4188256ef6e> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Asubmode";
   shacl:description "Subordinate transport mode in the Stop place."@en;
   shacl:maxCount 1;
   shacl:name "submode"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#submode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor submode"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/398fb93e389fba9a790e6adb0152f10f2ba6023a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aname";
+  shacl:description "Name of the Stop Place."@en;
+  shacl:maxCount 1;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/41f91167a57218c045d012bf224b775bd80da105> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Astop%20place%20type";
@@ -3727,7 +3846,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/45b15ba29c98ac584fc8a034f731f0f0183997ad> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aalternative%20name";
   shacl:description "Alternative name for the Stop Place."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName>;
+  shacl:path skos:altLabel;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor alternative name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3756,12 +3875,28 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor accessability assessment"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4b212be18fc41517aa80a35e697766eaa061b462> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Ashort%20name";
+  shacl:description "Short name of the Stop Place."@en;
+  shacl:name "short name"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName>;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor short name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4d0b1b686b162926a45ac646d27c495e250fdc5d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aurl";
   shacl:description "Default URL for the Stop Place."@en;
   shacl:name "url"@en;
   shacl:nodekind "sh:Literal";
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.url>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor url is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/4f1054efb6696b11893b08daa9b3f6f173ad32d1> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Ashort%20name";
+  shacl:datatype rdf:langString;
+  shacl:description "Short name of the Stop Place."@en;
+  shacl:name "short name"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van short name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/522fbf629f2387a83ea19128c6ee0624d031e8d8> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aborder%20crossing";
@@ -3778,6 +3913,14 @@
   shacl:name "gated"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.gated>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van gated moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/5622cfd3676a95f0048453077c5dd10cd2030efa> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aprivate%20code";
+  shacl:description "Private code of the Stop Place."@en;
+  shacl:name "private code"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor private code is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/570ebbdad507ff9840e0b4bd21000b6700f4e575> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Afor";
@@ -3854,6 +3997,14 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor transport mode is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/6cae9880e515253132af1452a38a8a5827165149> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Adescription";
+  shacl:description "Description of the Stop place."@en;
+  shacl:name "description"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/6cbf0539af8d79c7c31f428f9516a32da665acbd> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Apublic%20code";
   shacl:description "Code used to identify a Stop Place to the public as an alternative to a name."@en;
   shacl:maxCount 1;
@@ -3884,6 +4035,14 @@
   shacl:name "stop place type"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceType>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor stop place type"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Adescription";
+  shacl:description "Description of the Stop place."@en;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/778d27bbdfde43a627131fe7da5a96a69371a059> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aother%20transportmode";
@@ -4027,6 +4186,14 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van level moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Level> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/9caf9e629daa0e64ece77788576468821d7cff8c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aname";
+  shacl:description "Name of the Stop Place."@en;
+  shacl:name "name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc11:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/a0c180305d45dd5980251499a4a8bfc5ca1d1001> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Alocale";
   shacl:description "Locale setting the time zone, default language, etc., for the Stop Place."@en;
   shacl:maxCount 1;
@@ -4115,12 +4282,28 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor road address is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/b95799bbdeee776c7cde4154d26eaf43dfd05fae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aprivate%20code";
+  shacl:description "Private code of the Stop Place."@en;
+  shacl:maxCount 1;
+  shacl:name "private code"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor private code"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/bc176f15101448b45e9918d975c07ee9eb8eb019> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aweighting";
   shacl:class skos:Concept;
   shacl:description "Relative weight of the Stop Place with respect to interchange possibilities."@en;
   shacl:name "weighting"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#weighting>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van weighting moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aname";
+  shacl:description "Name of the Stop Place."@en;
+  shacl:name "name"@en;
+  shacl:path dc11:title;
+  shacl:uniqueLang true;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/c14cf9c5efbd1f03002e90812bedb6fb98fe7c35> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aweighting";
@@ -4167,7 +4350,7 @@
   shacl:description "Alternative name for the Stop Place."@en;
   shacl:name "alternative name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor alternative name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4192,6 +4375,22 @@
   shacl:name "covered"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.covered>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van covered moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d203a676aae3fb41b7fbbe159c8caae16cbe6a84> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aprivate%20code";
+  shacl:datatype xsd:string;
+  shacl:description "Private code of the Stop Place."@en;
+  shacl:name "private code"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van private code moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d4d4f2399b8cf2f615ac658920373b714726bed0> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Adescription";
+  shacl:datatype rdf:langString;
+  shacl:description "Description of the Stop place."@en;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlaceShape/d842eba2d340a04c9285b1ad3143182f0f1d9e69> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#StopPlace%3Aweighting";
@@ -4238,7 +4437,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Alternative name for the Stop Place."@en;
   shacl:name "alternative name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.alternativeName>;
+  shacl:path skos:altLabel;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van alternative name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4374,7 +4573,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Topographic Place."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4390,7 +4589,7 @@
   shacl:description "Name of the Topographic Place."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4542,7 +4741,7 @@
   shacl:description "Name of the Topographic Place."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4581,7 +4780,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlaceShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21#TopographicPlace%3Aname";
   shacl:description "Name of the Topographic Place."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
