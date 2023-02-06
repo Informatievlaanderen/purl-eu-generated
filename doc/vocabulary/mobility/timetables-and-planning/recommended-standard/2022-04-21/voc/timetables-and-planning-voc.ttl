@@ -14,11 +14,6 @@
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:anyURI .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#Authority.address> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Authority>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <http://www.w3.org/ns/locn#Address> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#Authority.country> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Authority>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -408,11 +403,6 @@ descriptive information."""@en;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:dateTime .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#Operator.address> a owl:ObjectProperty;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Operator>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <http://www.w3.org/ns/locn#Address> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Operator.country> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Operator>;
@@ -1605,6 +1595,14 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> .
 
+<http://www.w3.org/ns/locn#address> a rdf:Property;
+  rdfs:label "address"@en .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Authority> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf org:Organization,
+    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
@@ -1632,11 +1630,6 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 
 <https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#Authority> a owl:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:subClassOf org:Organization,
-    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#DeadRun> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1779,6 +1772,11 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#Operator> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf org:Organization,
+    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
@@ -1792,11 +1790,6 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
 
 <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#Operator> a owl:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:subClassOf org:Organization,
-    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
@@ -1899,4 +1892,5 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
     foaf:homepage <https://purl.eu>;
     foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
     foaf:name "Purl.eu"
-  ] .
+  ];
+  rdfs:seeAlso <http://www.w3.org/ns/locn#address> .
