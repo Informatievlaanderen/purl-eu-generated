@@ -59,13 +59,13 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TariffZoneShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimeTabledPassingTimeShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimingPointShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TrainNumberShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#UicOperatingPeriodShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleJourneyShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ViaShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AgentShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ContactInfoShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape>,
@@ -1073,11 +1073,11 @@
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/3d245b41bdd49c532146920e4cdf8d3b1cae551d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Atimeband";
-  shacl:class dc11:title;
+  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>;
   shacl:description "Timeband associated with the Day Type."@en;
   shacl:name "timeband"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timeband>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timeband moet van het type <http://purl.org/dc/elements/1.1/title> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timeband moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/406b9479cd5d261c4d59cd3dde39cb8822215193> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Aday%20length";
@@ -3180,7 +3180,7 @@
   shacl:description "Start operating date (inclusive)."@en;
   shacl:maxCount 1;
   shacl:name "from date"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriode.fromDate>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor from date"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3196,7 +3196,7 @@
   shacl:description "Start operating date (inclusive)."@en;
   shacl:minCount 1;
   shacl:name "from date"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriode.fromDate>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor from date"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3244,7 +3244,7 @@
   shacl:datatype xsd:dateTime;
   shacl:description "Start operating date (inclusive)."@en;
   shacl:name "from date"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriode.fromDate>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van from date moet van het type <http://www.w3.org/2001/XMLSchema#dateTime> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3252,7 +3252,7 @@
   shacl:description "Start operating date (inclusive)."@en;
   shacl:name "from date"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriode.fromDate>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor from date is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3727,7 +3727,7 @@
   shacl:description "Order of Point in Journey Pattern within Journey Pattern."@en;
   shacl:maxCount 1;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor order"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3735,7 +3735,7 @@
   shacl:description "Reference to the abstract Point."@en;
   shacl:name "a view of"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor a view of is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3743,7 +3743,7 @@
   shacl:description "Order of Point in Journey Pattern within Journey Pattern."@en;
   shacl:name "order"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor order is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3751,7 +3751,7 @@
   shacl:description "Reference to the abstract Point."@en;
   shacl:maxCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3759,7 +3759,7 @@
   shacl:description "Order of Point in Journey Pattern within Journey Pattern."@en;
   shacl:minCount 1;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor order"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3815,7 +3815,7 @@
   shacl:datatype xsd:boolean;
   shacl:description "Indicates whether the Destination Display changes at this point."@en;
   shacl:name "change of destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van change of destination display moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3823,7 +3823,7 @@
   shacl:description "Reference to the abstract Point."@en;
   shacl:minCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3847,7 +3847,7 @@
   shacl:description "Indicates whether the Destination Display changes at this point."@en;
   shacl:name "change of destination display"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor change of destination display is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3855,7 +3855,7 @@
   shacl:description "Indicates whether the Destination Display changes at this point."@en;
   shacl:minCount 1;
   shacl:name "change of destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor change of destination display"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3863,7 +3863,7 @@
   shacl:datatype xsd:integer;
   shacl:description "Order of Point in Journey Pattern within Journey Pattern."@en;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.order>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van order moet van het type <http://www.w3.org/2001/XMLSchema#integer> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3879,7 +3879,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
   shacl:description "Reference to the abstract Point."@en;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van a view of moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Point> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3887,7 +3887,7 @@
   shacl:description "Indicates whether the Destination Display changes at this point."@en;
   shacl:maxCount 1;
   shacl:name "change of destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor change of destination display"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3923,7 +3923,7 @@
   shacl:description "Reference to the Route Point."@en;
   shacl:name "a view of"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor a view of is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3939,7 +3939,7 @@
   shacl:description "Reference to the Route Point."@en;
   shacl:maxCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3979,7 +3979,7 @@
   shacl:description "Reference to the Route Point."@en;
   shacl:minCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4003,7 +4003,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint>;
   shacl:description "Reference to the Route Point."@en;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van a view of moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4029,7 +4029,7 @@
   shacl:description "Arbitrary alternative identifier for the Point."@en;
   shacl:name "point number"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#pointNumber>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor point number is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4069,7 +4069,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern>;
   shacl:description "As used as a Point in a Journey Pattern."@en;
   shacl:name "viewed as"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van viewed as moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4101,7 +4101,7 @@
   shacl:description "Arbitrary alternative identifier for the Point."@en;
   shacl:maxCount 1;
   shacl:name "point number"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#pointNumber>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor point number"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4117,7 +4117,7 @@
   shacl:datatype xsd:string;
   shacl:description "Arbitrary alternative identifier for the Point."@en;
   shacl:name "point number"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.pointNumber>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#pointNumber>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van point number moet van het type <http://www.w3.org/2001/XMLSchema#string> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4125,7 +4125,7 @@
   shacl:description "As used as a Point in a Journey Pattern."@en;
   shacl:name "viewed as"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor viewed as is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4783,7 +4783,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute>;
   shacl:description "As used as a Point on a Route."@en;
   shacl:name "viewed as"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van viewed as moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4823,7 +4823,7 @@
   shacl:description "As used as a Point on a Route."@en;
   shacl:name "viewed as"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor viewed as is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4875,7 +4875,7 @@
   shacl:description "Distance of the Route."@en;
   shacl:maxCount 1;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor distance"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4907,7 +4907,7 @@
   shacl:description "Distance of the Route."@en;
   shacl:name "distance"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor distance is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4979,7 +4979,7 @@
   shacl:description "Line the Route is associated with."@en;
   shacl:name "line"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#line>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.line>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor line is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4987,7 +4987,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
   shacl:description "Line the Route is associated with."@en;
   shacl:name "line"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#line>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.line>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van line moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Line> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5003,7 +5003,7 @@
   shacl:class schemas:QuantitativeValue;
   shacl:description "Distance of the Route."@en;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van distance moet van het type <https://schema.org/QuantitativeValue> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5027,7 +5027,7 @@
   shacl:description "Line the Route is associated with."@en;
   shacl:maxCount 1;
   shacl:name "line"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#line>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.line>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor line"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5059,15 +5059,16 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/362d1bf0eab8051024cf5ec1345eb1ce50762580>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/36ff4cc8d5e93ea83170570706bdbb7dec452655>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/398fb93e389fba9a790e6adb0152f10f2ba6023a>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/3fe1daae0a9cae03a3fd4239db00ae07b4426915>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/4b212be18fc41517aa80a35e697766eaa061b462>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/4f1054efb6696b11893b08daa9b3f6f173ad32d1>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5101231682fbc7abee802f06c42884dd8b8c6f14>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5502d443622d98a8f6635c57e75445337ceb3f0c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5622cfd3676a95f0048453077c5dd10cd2030efa>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6aaed0759bdd231ee85614b27b194c5d2347a4f7>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6cae9880e515253132af1452a38a8a5827165149>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6cbf0539af8d79c7c31f428f9516a32da665acbd>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6e332e23357667d4a85c8f5d3ebf28f85fdf884a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/768bb4171e00505886fe9a1e949b4cd71f0eb548>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/805cb810ae0b2297613fcd61feecee8d3c596f43>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/8435554a2840f172e321a6a5de4bcd3cad9c783f>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/8643a4cebaf5d808f432d5a5c95946f1f1a0f517>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/8712d48523fe4a31331ea27de44aca4c18b40f37>,
@@ -5078,7 +5079,6 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/96f13a1a67c07e1afe88bc4c9bd4de79661fd2ed>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/9caf9e629daa0e64ece77788576468821d7cff8c>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/a7760ef34c8bc85460f186072f4aaefd62ae6213>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b4d2d3e7febf04346c14b475f6c4597d3b0062d5>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b95799bbdeee776c7cde4154d26eaf43dfd05fae>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b9f63de9676b8c940d0442945027f2db6d98db22>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9>,
@@ -5103,7 +5103,7 @@
   shacl:description "Location of the Scheduled Stop Point."@en;
   shacl:maxCount 1;
   shacl:name "location"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.location>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor location"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5111,7 +5111,7 @@
   shacl:description "Location of the Scheduled Stop Point."@en;
   shacl:name "location"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.location>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor location is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5171,6 +5171,14 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/3fe1daae0a9cae03a3fd4239db00ae07b4426915> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20type";
+  shacl:description "Timing status of the Scheduled Stop Point."@en;
+  shacl:name "timingpoint type"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingPointType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor timingpoint type is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/4b212be18fc41517aa80a35e697766eaa061b462> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Ashort%20name";
   shacl:description "Short name of the Scheduled Stop Point."@en;
   shacl:name "short name"@en;
@@ -5187,20 +5195,28 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van short name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5101231682fbc7abee802f06c42884dd8b8c6f14> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20type";
+  shacl:description "Timing status of the Scheduled Stop Point."@en;
+  shacl:maxCount 1;
+  shacl:name "timingpoint type"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingPointType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor timingpoint type"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5502d443622d98a8f6635c57e75445337ceb3f0c> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20type";
+  shacl:class skos:Concept;
+  shacl:description "Timing status of the Scheduled Stop Point."@en;
+  shacl:name "timingpoint type"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingPointType>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timingpoint type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/5622cfd3676a95f0048453077c5dd10cd2030efa> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Aprivate%20code";
   shacl:description "Alternative identifier of the Scheduled Stop Point."@en;
   shacl:name "private code"@en;
   shacl:nodekind "sh:Literal";
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.privateCode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor private code is een Literal"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6aaed0759bdd231ee85614b27b194c5d2347a4f7> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20status";
-  shacl:description "Timing status of the Scheduled Stop Point."@en;
-  shacl:maxCount 1;
-  shacl:name "timingpoint status"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor timingpoint status"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/6cae9880e515253132af1452a38a8a5827165149> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Adescription";
@@ -5235,19 +5251,11 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/805cb810ae0b2297613fcd61feecee8d3c596f43> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20status";
-  shacl:description "Timing status of the Scheduled Stop Point."@en;
-  shacl:name "timingpoint status"@en;
-  shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor timingpoint status is een rdfs:Resource (URI of blank node)"];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/8435554a2840f172e321a6a5de4bcd3cad9c783f> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Aviewed%20as";
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
   shacl:description "As used as a Stop Point in a Journey Pattern."@en;
   shacl:name "viewed as"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van viewed as moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5319,16 +5327,8 @@
   shacl:class <http://www.opengis.net/ont/sf#Point>;
   shacl:description "Location of the Scheduled Stop Point."@en;
   shacl:name "location"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.location>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van location moet van het type <http://www.opengis.net/ont/sf#Point> zijn."];
-  <https://data.vlaanderen.be/ns/shacl#rule> "" .
-
-<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b4d2d3e7febf04346c14b475f6c4597d3b0062d5> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Atimingpoint%20status";
-  shacl:class skos:Concept;
-  shacl:description "Timing status of the Scheduled Stop Point."@en;
-  shacl:name "timingpoint status"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timingpoint status moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/b95799bbdeee776c7cde4154d26eaf43dfd05fae> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Aprivate%20code";
@@ -5391,7 +5391,7 @@
   shacl:description "As used as a Stop Point in a Journey Pattern."@en;
   shacl:name "viewed as"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.viewedAs>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#viewedAs>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor viewed as is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5399,7 +5399,7 @@
   shacl:description "Location of the Scheduled Stop Point."@en;
   shacl:minCount 1;
   shacl:name "location"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.location>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.location>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor location"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5833,7 +5833,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
   shacl:description "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."@en;
   shacl:name "made up of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van made up of moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5841,7 +5841,7 @@
   shacl:description "The Stop Points in Journey Pattern that together make up the Service Journey Pattern."@en;
   shacl:name "made up of"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor made up of is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5913,7 +5913,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern>;
   shacl:description "Service Journey Pattern that was followed to make the Service Journey."@en;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van made using moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5921,7 +5921,7 @@
   shacl:description "Total length of the Service Journey. Can be computed from individual times."@en;
   shacl:name "journey duration"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor journey duration is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5945,7 +5945,7 @@
   shacl:description "Total length of the Service Journey. Can be computed from individual times."@en;
   shacl:maxCount 1;
   shacl:name "journey duration"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor journey duration"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5953,7 +5953,7 @@
   shacl:description "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."@en;
   shacl:name "departure day offset"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureDayOffset>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor departure day offset is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5961,7 +5961,7 @@
   shacl:datatype xsd:integer;
   shacl:description "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."@en;
   shacl:name "departure day offset"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureDayOffset>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van departure day offset moet van het type <http://www.w3.org/2001/XMLSchema#integer> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5969,7 +5969,7 @@
   shacl:description "Day offset if the day of departure time of the Service Journey differs from the current Operating Day."@en;
   shacl:maxCount 1;
   shacl:name "departure day offset"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureDayOffset>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor departure day offset"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5977,7 +5977,7 @@
   shacl:description "Day Type for the Service Journey."@en;
   shacl:name "day type"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#dayType>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor day type is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5993,7 +5993,7 @@
   shacl:description "Service Journey Pattern that was followed to make the Service Journey."@en;
   shacl:name "made using"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor made using is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6001,7 +6001,7 @@
   shacl:description "Time of departure."@en;
   shacl:name "departure time"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor departure time is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6009,7 +6009,7 @@
   shacl:description "Service Journey Pattern that was followed to make the Service Journey."@en;
   shacl:minCount 1;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor made using"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6017,7 +6017,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
   shacl:description "Day Type for the Service Journey."@en;
   shacl:name "day type"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#dayType>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van day type moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#DayType> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6049,7 +6049,7 @@
   shacl:datatype xsd:duration;
   shacl:description "Total length of the Service Journey. Can be computed from individual times."@en;
   shacl:name "journey duration"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.journeyDuration>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van journey duration moet van het type <http://www.w3.org/2001/XMLSchema#duration> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6057,7 +6057,7 @@
   shacl:description "Time of departure."@en;
   shacl:maxCount 1;
   shacl:name "departure time"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor departure time"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6081,7 +6081,7 @@
   shacl:description "Service Journey Pattern that was followed to make the Service Journey."@en;
   shacl:maxCount 1;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor made using"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6089,7 +6089,7 @@
   shacl:datatype xsd:time;
   shacl:description "Time of departure."@en;
   shacl:name "departure time"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.departureTime>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van departure time moet van het type <http://www.w3.org/2001/XMLSchema#time> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6127,7 +6127,7 @@
   shacl:description "Distance of the Service Link."@en;
   shacl:maxCount 1;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Link.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor distance"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6159,7 +6159,7 @@
   shacl:description "Distance of the Service Link."@en;
   shacl:name "distance"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Link.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor distance is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6183,7 +6183,6 @@
   shacl:class <http://www.opengis.net/ont/sf#LineString>;
   shacl:description "Linestring that specifies the Service Link."@en;
   shacl:name "linestring"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.linestring>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van linestring moet van het type <http://www.opengis.net/ont/sf#LineString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6199,7 +6198,6 @@
   shacl:description "Linestring that specifies the Service Link."@en;
   shacl:maxCount 1;
   shacl:name "linestring"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.linestring>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor linestring"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6239,7 +6237,6 @@
   shacl:description "Linestring that specifies the Service Link."@en;
   shacl:name "linestring"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.linestring>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor linestring is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6247,7 +6244,7 @@
   shacl:class schemas:QuantitativeValue;
   shacl:description "Distance of the Service Link."@en;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Link.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van distance moet van het type <https://schema.org/QuantitativeValue> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6352,7 +6349,6 @@
   shacl:description "Order of Stop Point in Journey Pattern within Journey Pattern."@en;
   shacl:maxCount 1;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor order"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6360,7 +6356,7 @@
   shacl:description "Reference to the Scheduled Stop Point."@en;
   shacl:name "a view of"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor a view of is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6368,7 +6364,6 @@
   shacl:description "Order of Stop Point in Journey Pattern within Journey Pattern."@en;
   shacl:name "order"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor order is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6376,7 +6371,7 @@
   shacl:description "Reference to the Scheduled Stop Point."@en;
   shacl:maxCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6400,7 +6395,6 @@
   shacl:description "Order of Stop Point in Journey Pattern within Journey Pattern."@en;
   shacl:minCount 1;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor order"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6416,7 +6410,7 @@
   shacl:description "Destination Display values to show at this point."@en;
   shacl:name "destination display"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.destinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor destination display is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6456,7 +6450,7 @@
   shacl:description "Destination Display values to show at this point."@en;
   shacl:maxCount 1;
   shacl:name "destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.destinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor destination display"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6464,7 +6458,7 @@
   shacl:datatype xsd:boolean;
   shacl:description "Indicates whether Destination Display changes at this point."@en;
   shacl:name "change of destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van change of destination display moet van het type <http://www.w3.org/2001/XMLSchema#boolean> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6480,7 +6474,7 @@
   shacl:description "Reference to the Scheduled Stop Point."@en;
   shacl:minCount 1;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor a view of"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6496,7 +6490,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
   shacl:description "Destination Display values to show at this point."@en;
   shacl:name "destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.destinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van destination display moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6504,7 +6498,7 @@
   shacl:description "Indicates whether Destination Display changes at this point."@en;
   shacl:name "change of destination display"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor change of destination display is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6568,7 +6562,6 @@
   shacl:datatype xsd:integer;
   shacl:description "Order of Stop Point in Journey Pattern within Journey Pattern."@en;
   shacl:name "order"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.order>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van order moet van het type <http://www.w3.org/2001/XMLSchema#integer> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6592,7 +6585,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
   shacl:description "Reference to the Scheduled Stop Point."@en;
   shacl:name "a view of"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.aViewOf>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#aViewOf>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van a view of moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6600,7 +6593,7 @@
   shacl:description "Indicates whether Destination Display changes at this point."@en;
   shacl:maxCount 1;
   shacl:name "change of destination display"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.changeOfDestinationDisplay>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor change of destination display"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6780,7 +6773,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/df70c3d231c35c56da9b5d6be2e87ff4322c759e>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/e6d4e21bf5642e6443beb278b26ff238306ce664>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/f3b3fe103292b4de4cd8ebe4846ded1dfe63cffd>;
-  shacl:targetClass dc11:title .
+  shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/13958b9c87e7ef8b6b97b68c3e5e6484f0c21d74> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Timeband%3Aend%20time";
   shacl:datatype xsd:time;
@@ -6995,7 +6988,7 @@
   shacl:description "Transport submode of the Journey."@en;
   shacl:maxCount 1;
   shacl:name "transport submode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportSubmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportSubmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor transport submode"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7011,7 +7004,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern>;
   shacl:description "Journey Pattern used to make the Vehicle Journey."@en;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van made using moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7019,7 +7012,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart>;
   shacl:description "Part of the Vehicle Journey."@en;
   shacl:name "part"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.part>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#part>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van part moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7035,7 +7028,7 @@
   shacl:description "Transport mode of the Journey."@en;
   shacl:name "transport mode"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportMode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor transport mode is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7043,7 +7036,7 @@
   shacl:class skos:Concept;
   shacl:description "Transport mode of the Journey."@en;
   shacl:name "transport mode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportMode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van transport mode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7051,7 +7044,7 @@
   shacl:description "Part of the Vehicle Journey."@en;
   shacl:name "part"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.part>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#part>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor part is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7059,7 +7052,7 @@
   shacl:class skos:Concept;
   shacl:description "Transport submode of the Journey."@en;
   shacl:name "transport submode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportSubmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportSubmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van transport submode moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7075,7 +7068,7 @@
   shacl:description "Journey Pattern used to make the Vehicle Journey."@en;
   shacl:name "made using"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor made using is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7091,7 +7084,7 @@
   shacl:description "Transport submode of the Journey."@en;
   shacl:name "transport submode"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportSubmode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportSubmode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor transport submode is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7099,7 +7092,7 @@
   shacl:description "Journey Pattern used to make the Vehicle Journey."@en;
   shacl:minCount 1;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor made using"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7107,7 +7100,7 @@
   shacl:description "Transport mode of the Journey."@en;
   shacl:maxCount 1;
   shacl:name "transport mode"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.transportMode>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor transport mode"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7131,7 +7124,7 @@
   shacl:description "Notice relevant for the whole Journey."@en;
   shacl:name "notice assignment"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.noticeAssignment>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.noticeAssignment>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor notice assignment is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7139,7 +7132,7 @@
   shacl:description "Journey Pattern used to make the Vehicle Journey."@en;
   shacl:maxCount 1;
   shacl:name "made using"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.madeUsing>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#madeUsing>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor made using"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7147,7 +7140,7 @@
   shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment>;
   shacl:description "Notice relevant for the whole Journey."@en;
   shacl:name "notice assignment"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.noticeAssignment>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Journey.noticeAssignment>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van notice assignment moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
