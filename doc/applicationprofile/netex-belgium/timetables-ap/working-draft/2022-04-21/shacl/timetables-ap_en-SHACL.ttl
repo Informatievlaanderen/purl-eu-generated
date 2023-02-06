@@ -1,4 +1,5 @@
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -58,13 +59,13 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#StopPointInJourneyPatternShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TariffZoneShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimeTabledPassingTimeShape>,
-    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimingPointShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TrainNumberShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#UicOperatingPeriodShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleJourneyShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ViaShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#AgentShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ContactInfoShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OpeningHoursSpecificationShape>,
@@ -507,7 +508,7 @@
   shacl:description "Postal address of the Authority."@en;
   shacl:maxCount 1;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Authority.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor address"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -515,7 +516,7 @@
   shacl:description "Postal address of the Authority."@en;
   shacl:name "address"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Authority.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor address is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -523,7 +524,7 @@
   shacl:class <http://www.w3.org/ns/locn#Address>;
   shacl:description "Postal address of the Authority."@en;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Authority.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van address moet van het type <http://www.w3.org/ns/locn#Address> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -831,7 +832,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Day Type Assignment."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -855,7 +856,7 @@
   shacl:description "Name of the Day Type Assignment."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -935,7 +936,7 @@
   shacl:description "Name of the Day Type Assignment."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -966,7 +967,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeAssignmentShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeAssignment%3Aname";
   shacl:description "Name of the Day Type Assignment."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1043,7 +1044,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Day Type."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1059,7 +1060,7 @@
   shacl:description "Description of the Day Type."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1067,16 +1068,16 @@
   shacl:description "Name of the Day Type."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/3d245b41bdd49c532146920e4cdf8d3b1cae551d> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Atimeband";
-  shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>;
+  shacl:class dc11:title;
   shacl:description "Timeband associated with the Day Type."@en;
   shacl:name "timeband"@en;
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timeband>;
-  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timeband moet van het type <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van timeband moet van het type <http://purl.org/dc/elements/1.1/title> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/406b9479cd5d261c4d59cd3dde39cb8822215193> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Aday%20length";
@@ -1115,14 +1116,14 @@
   shacl:description "Description of the Day Type."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Adescription";
   shacl:description "Description of the Day Type."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1147,7 +1148,7 @@
   shacl:description "Name of the Day Type."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1162,7 +1163,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayTypeShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#DayType%3Aname";
   shacl:description "Name of the Day Type."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1179,7 +1180,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Day Type."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DayType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1641,7 +1642,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Group of Lines."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1649,7 +1650,7 @@
   shacl:description "Name of the Group of Lines."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1681,7 +1682,7 @@
   shacl:description "Name of the Group of Lines."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -1712,7 +1713,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#GroupOfLinesShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#GroupOfLines%3Aname";
   shacl:description "Name of the Group of Lines."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -1983,7 +1984,7 @@
   shacl:description "Text description to use for frequency, e.g. \"every five minutes\"."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2007,14 +2008,14 @@
   shacl:description "Text description to use for frequency, e.g. \"every five minutes\"."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#JourneyFrequencyShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#JourneyFrequency%3Adescription";
   shacl:description "Text description to use for frequency, e.g. \"every five minutes\"."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -2047,7 +2048,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Text description to use for frequency, e.g. \"every five minutes\"."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2090,7 +2091,7 @@
   shacl:description "Distance of the Journey Pattern."@en;
   shacl:maxCount 1;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor distance"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2098,7 +2099,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Journey Pattern."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2114,7 +2115,7 @@
   shacl:description "Distance of the Journey Pattern."@en;
   shacl:name "distance"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor distance is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2130,7 +2131,7 @@
   shacl:description "Name of the Journey Pattern."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2186,7 +2187,7 @@
   shacl:description "Name of the Journey Pattern."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2202,7 +2203,7 @@
   shacl:class schemas:QuantitativeValue;
   shacl:description "Distance of the Journey Pattern."@en;
   shacl:name "distance"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.distance>;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van distance moet van het type <https://schema.org/QuantitativeValue> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2217,7 +2218,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#JourneyPatternShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#JourneyPattern%3Aname";
   shacl:description "Name of the Journey Pattern."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -2346,7 +2347,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Line."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2394,7 +2395,7 @@
   shacl:description "Description of the Line."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2410,7 +2411,7 @@
   shacl:description "Name of the Line."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2506,7 +2507,7 @@
   shacl:description "Description of the Line."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2537,7 +2538,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#LineShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Line%3Adescription";
   shacl:description "Description of the Line."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -2586,7 +2587,7 @@
   shacl:description "Name of the Line."@en;
   shacl:minCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2610,7 +2611,7 @@
   shacl:description "Name of the Line."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2641,7 +2642,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#LineShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Line%3Aname";
   shacl:description "Name of the Line."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -2690,7 +2691,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Line."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Line.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2772,7 +2773,7 @@
   shacl:datatype rdf:langString;
   shacl:description "The name of the Network."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Network.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2796,7 +2797,7 @@
   shacl:description "The name of the Network."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Network.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2820,7 +2821,7 @@
   shacl:description "The name of the Network."@en;
   shacl:minCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Network.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -2828,14 +2829,14 @@
   shacl:description "The name of the Network."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Network.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#NetworkShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Network%3Aname";
   shacl:description "The name of the Network."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Network.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3035,7 +3036,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Operating Day."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3043,7 +3044,7 @@
   shacl:description "Name of the Operating Day."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3091,7 +3092,7 @@
   shacl:description "Name of the Operating Day."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3106,7 +3107,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OperatingDayShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OperatingDay%3Aname";
   shacl:description "Name of the Operating Day."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3171,7 +3172,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Operating Period."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3187,7 +3188,7 @@
   shacl:description "Name of the Operating Period."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3219,7 +3220,7 @@
   shacl:description "Name of the Operating Period."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3234,7 +3235,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OperatingPeriodShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#OperatingPeriod%3Aname";
   shacl:description "Name of the Operating Period."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3272,7 +3273,7 @@
   shacl:description "Postal address of the Operator."@en;
   shacl:maxCount 1;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor address"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3296,7 +3297,7 @@
   shacl:description "Postal address of the Operator."@en;
   shacl:name "address"@en;
   shacl:nodekind "sh:BlankNodeOrIRI";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor address is een rdfs:Resource (URI of blank node)"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3320,7 +3321,7 @@
   shacl:class <http://www.w3.org/ns/locn#Address>;
   shacl:description "Postal address of the Operator."@en;
   shacl:name "address"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Operator.address>;
+  shacl:path <http://www.w3.org/ns/locn#address>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van address moet van het type <http://www.w3.org/ns/locn#Address> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3766,7 +3767,7 @@
   shacl:description "Description of the Point in Journey Pattern."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3790,7 +3791,7 @@
   shacl:description "Description of the Point in Journey Pattern."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3805,7 +3806,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointInJourneyPatternShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointInJourneyPattern%3Adescription";
   shacl:description "Description of the Point in Journey Pattern."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3870,7 +3871,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Point in Journey Pattern."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3954,7 +3955,7 @@
   shacl:description "Description of the Point on Route."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -3962,14 +3963,14 @@
   shacl:description "Description of the Point on Route."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointOnRouteShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointOnRoute%3Adescription";
   shacl:description "Description of the Point on Route."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -3994,7 +3995,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Point on Route."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4052,7 +4053,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Point."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4060,7 +4061,7 @@
   shacl:description "Name of the Point."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4076,7 +4077,7 @@
   shacl:description "Name of the Point."@en;
   shacl:minCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4084,7 +4085,7 @@
   shacl:description "Name of the Point."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4107,7 +4108,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PointShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Point%3Aname";
   shacl:description "Name of the Point."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Point.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -4225,7 +4226,7 @@
   shacl:datatype rdf:langString;
   shacl:description "The name of the Property of Day."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4257,7 +4258,7 @@
   shacl:description "Description of the Property of Day."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4265,7 +4266,7 @@
   shacl:description "The name of the Property of Day."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4305,14 +4306,14 @@
   shacl:description "Description of the Property of Day."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PropertyOfDayShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PropertyOfDay%3Adescription";
   shacl:description "Description of the Property of Day."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -4321,7 +4322,7 @@
   shacl:description "Description of the Property of Day."@en;
   shacl:minCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4329,7 +4330,7 @@
   shacl:description "The name of the Property of Day."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4400,7 +4401,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PropertyOfDayShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#PropertyOfDay%3Aname";
   shacl:description "The name of the Property of Day."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -4449,7 +4450,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Property of Day."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4617,7 +4618,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Route Link."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4641,7 +4642,7 @@
   shacl:description "Name of the Route Link."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4697,7 +4698,7 @@
   shacl:description "Name of the Route Link."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4728,7 +4729,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RouteLinkShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RouteLink%3Aname";
   shacl:description "Name of the Route Link."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -4898,7 +4899,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Route."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4922,7 +4923,7 @@
   shacl:description "Name of the Route."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -4970,7 +4971,7 @@
   shacl:description "Name of the Route."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5017,7 +5018,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#RouteShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Route%3Aname";
   shacl:description "Name of the Route."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Route.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -5118,7 +5119,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Scheduled Stop Point."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5150,7 +5151,7 @@
   shacl:description "Description of the Scheduled Stop Point."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5166,7 +5167,7 @@
   shacl:description "Name of the Scheduled Stop Point."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5206,7 +5207,7 @@
   shacl:description "Description of the Scheduled Stop Point."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5229,7 +5230,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Adescription";
   shacl:description "Description of the Scheduled Stop Point."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -5294,7 +5295,7 @@
   shacl:description "Name of the Scheduled Stop Point."@en;
   shacl:minCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5310,7 +5311,7 @@
   shacl:description "Name of the Scheduled Stop Point."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5349,7 +5350,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPointShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ScheduledStopPoint%3Aname";
   shacl:description "Name of the Scheduled Stop Point."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -5374,7 +5375,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of the Scheduled Stop Point."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5446,7 +5447,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Service Calendar."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5470,7 +5471,7 @@
   shacl:description "Name of the Service Calendar."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5502,7 +5503,7 @@
   shacl:description "Name of the Service Calendar."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -5517,7 +5518,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ServiceCalendarShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ServiceCalendar%3Aname";
   shacl:description "Name of the Service Calendar."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -6150,7 +6151,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Service Link."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6166,7 +6167,7 @@
   shacl:description "Name of the Service Link."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6222,7 +6223,7 @@
   shacl:description "Name of the Service Link."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -6253,7 +6254,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ServiceLinkShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ServiceLink%3Aname";
   shacl:description "Name of the Service Link."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -6779,7 +6780,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/df70c3d231c35c56da9b5d6be2e87ff4322c759e>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/e6d4e21bf5642e6443beb278b26ff238306ce664>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/f3b3fe103292b4de4cd8ebe4846ded1dfe63cffd>;
-  shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> .
+  shacl:targetClass dc11:title .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#TimebandShape/13958b9c87e7ef8b6b97b68c3e5e6484f0c21d74> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Timeband%3Aend%20time";
   shacl:datatype xsd:time;
@@ -7227,7 +7228,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Vehicle Type."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7251,7 +7252,7 @@
   shacl:description "Description of Vehicle Type."@en;
   shacl:maxCount 1;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7259,7 +7260,7 @@
   shacl:description "Name of the Vehicle Type."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7315,7 +7316,7 @@
   shacl:description "Description of Vehicle Type."@en;
   shacl:name "description"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor description is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7338,7 +7339,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleTypeShape/768bb4171e00505886fe9a1e949b4cd71f0eb548> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleType%3Adescription";
   shacl:description "Description of Vehicle Type."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.description>;
+  shacl:path dc:description;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -7395,7 +7396,7 @@
   shacl:description "Name of the Vehicle Type."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7442,7 +7443,7 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleTypeShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#VehicleType%3Aname";
   shacl:description "Name of the Vehicle Type."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
@@ -7475,7 +7476,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Description of Vehicle Type."@en;
   shacl:name "description"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.description>;
+  shacl:path dc:description;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van description moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7516,7 +7517,7 @@
   shacl:datatype rdf:langString;
   shacl:description "Name of the Via."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Via.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De range van name moet van het type <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7524,7 +7525,7 @@
   shacl:description "Name of the Via."@en;
   shacl:maxCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Via.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Maximaal 1 waarden toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7532,7 +7533,7 @@
   shacl:description "Name of the Via."@en;
   shacl:minCount 1;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Via.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Minimaal 1 waarden verwacht voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
@@ -7540,14 +7541,14 @@
   shacl:description "Name of the Via."@en;
   shacl:name "name"@en;
   shacl:nodekind "sh:Literal";
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Via.name>;
+  shacl:path dc11:title;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "De verwachte waarde voor name is een Literal"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#ViaShape/be01df43f1c288b656b3ca3879eb3dd9d8c700b9> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21#Via%3Aname";
   shacl:description "Name of the Via."@en;
   shacl:name "name"@en;
-  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#Via.name>;
+  shacl:path dc11:title;
   shacl:uniqueLang true;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21en> "Slechts 1 waarde voor elke taal toegelaten voor name"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
