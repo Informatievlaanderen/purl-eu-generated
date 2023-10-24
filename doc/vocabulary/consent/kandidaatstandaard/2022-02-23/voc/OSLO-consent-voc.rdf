@@ -1,287 +1,169 @@
-<?xml version='1.0' encoding='utf-8' ?>
-<rdf:RDF xmlns:dc='http://purl.org/dc/terms/' xmlns:foaf='http://xmlns.com/foaf/0.1/' xmlns:ns0='http://purl.org/vocab/vann/' xmlns:owl='http://www.w3.org/2002/07/owl#' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#' xmlns:xsd='http://www.w3.org/2001/XMLSchema#'>
-<rdfs:Class rdf:about='https://dpvcg.github.io/dpv/#dfn-legalbasis'>
-<rdfs:label xml:lang='en'>Legal Basis Type</rdfs:label>
-
-</rdfs:Class>
-
-<rdfs:Class rdf:about='https://w3id.org/GConsent#Medium'>
-<rdfs:label xml:lang='en'>Medium Type</rdfs:label>
-
-</rdfs:Class>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Consent.inHumanReadableForm'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#Consent' />
-
-<rdfs:isDefinedBy>
-<owl:Ontology rdf:about='https://purl.eu/ns/consent'>
-<rdfs:label xml:lang='en'>OSLO-consent-voc</rdfs:label>
- <rdfs:label xml:lang='nl'>OSLO-consent-voc</rdfs:label>
-
-<dc:issued>TODO</dc:issued>
-
-<dc:license>https://creativecommons.org/publicdomain/zero/1.0/</dc:license>
- <dc:license rdf:resource='https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0' />
-
-<dc:mediator>
-<rdf:Description rdf:nodeID='g454840'>
-<foaf:homepage rdf:resource='https://purl.eu' />
-
-<foaf:mbox rdf:resource='mailto:digitaal.vlaanderen@vlaanderen.be' />
-
-<foaf:name>Purl.eu</foaf:name>
-
-</rdf:Description>
-
-</dc:mediator>
-
-<rdfs:seeAlso rdf:resource='https://dpvcg.github.io/dpv/#dfn-legalbasis' />
- <rdfs:seeAlso rdf:resource='https://w3id.org/GConsent#Medium' />
- <rdfs:seeAlso>
-<rdf:Property rdf:about='https://dpvcg.github.io/dpv/#Processing'>
-<rdfs:label xml:lang='en'>processing</rdfs:label>
-
-</rdf:Property>
-
-</rdfs:seeAlso>
-
-</owl:Ontology>
-
-</rdfs:isDefinedBy>
-
-<rdfs:range rdf:resource='http://xmlns.com/foaf/spec/#term_Document' />
-
-</owl:ObjectProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#Consent.notice'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#Consent' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#langString' />
-
-</owl:DatatypeProperty>
-
-<owl:Class rdf:about='https://purl.eu/ns/consent#ConsentStatus'>
-<ns0:usageNote xml:lang='en'>This status should be used whenever a datasubject invokes the right to cancel a given consent.</ns0:usageNote>
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-</owl:Class>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#DataProcessor.identifier'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#DataProcessor' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://fixme.com#Identifier' />
-
-</owl:ObjectProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#DataProcessor.legalName'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#DataProcessor' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#langString' />
-
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#DataRetention.expiryDate'>
-<rdfs:domain>
-<owl:Class rdf:about='https://purl.eu/ns/consent#DataRetention'>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-</owl:Class>
-
-</rdfs:domain>
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#dateTime' />
-
-</owl:DatatypeProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#DataRetention.expiryTime'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#DataRetention' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://data.europa.eu/m8g/PeriodOfTime' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#DataRetention.inHumanReadableForm'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#DataRetention' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://xmlns.com/foaf/spec/#term_Document' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#DataRetention.legalBasis'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#DataRetention' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='https://dpvcg.github.io/dpv/#LegalBasis' />
-
-</owl:ObjectProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#DataRetention.liveData'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#DataRetention' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#boolean' />
-
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#DataRetention.startDate'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#DataRetention' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#dateTime' />
-
-</owl:DatatypeProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#Delegation' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='https://purl.eu/dc/terms/Agent' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Expiry.expiryCadance'>
-<rdfs:domain>
-<owl:Class rdf:about='https://purl.eu/ns/consent#Expiry'>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:subClassOf rdf:resource='http://data.europa.eu/m8g/#Criterion' />
-
-</owl:Class>
-
-</rdfs:domain>
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://data.europa.eu/m8g/PeriodOfTime' />
-
-</owl:ObjectProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#Expiry.expiryDate'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#Expiry' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#dateTime' />
-
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about='https://purl.eu/ns/consent#Expiry.expiryFrequency'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#Expiry' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#integer' />
-
-</owl:DatatypeProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Expiry.expiryTime'>
-<rdfs:domain rdf:resource='https://purl.eu/ns/consent#Expiry' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://data.europa.eu/m8g/PeriodOfTime' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Filter.period'>
-<rdfs:domain>
-<owl:Class rdf:about='https://purl.eu/ns/consent#Filter'>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-</owl:Class>
-
-</rdfs:domain>
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://data.europa.eu/m8g/PeriodOfTime' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#LegalBasis.type'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#LegalBasis' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='https://dpvcg.github.io/dpv/#dfn-legalbasis' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#PersonalData.inHumanReadableForm'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#PersonalData' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://xmlns.com/foaf/spec/#term_Document' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#PersonalDataHandling' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://xmlns.com/foaf/spec/#term_Document' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#PersonalDataHandling.liveData'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#PersonalDataHandling' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range>
-<owl:Class rdf:about='https://purl.eu/ns/consent#LiveData'>
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-</owl:Class>
-
-</rdfs:range>
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#PersonalDataHandling.personalDataType'>
-<rdfs:domain rdf:resource='https://dpvcg.github.io/dpv/#PersonalDataHandling' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://fixme.com#PersonalDataType' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Processing.type'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#Processing' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://fixme.com#ProcessingType' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://purl.eu/ns/consent#Purpose.type'>
-<rdfs:domain rdf:resource='https://w3id.org/GConsent#Purpose' />
-
-<rdfs:isDefinedBy rdf:resource='https://purl.eu/ns/consent' />
-
-<rdfs:range rdf:resource='http://fixme.com#PurposeType' />
-
-</owl:ObjectProperty>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/terms/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns0="http://purl.org/vocab/vann/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Consent.inHumanReadableForm">
+    <rdfs:isDefinedBy>
+      <owl:Ontology rdf:about="https://purl.eu/ns/consent">
+        <dc:license>https://creativecommons.org/publicdomain/zero/1.0/</dc:license>
+        <dc:license rdf:resource="https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0"/>
+        <dc:mediator>
+          <rdf:Description rdf:nodeID="g454740">
+            <foaf:homepage rdf:resource="https://purl.eu"/>
+            <foaf:mbox rdf:resource="mailto:digitaal.vlaanderen@vlaanderen.be"/>
+            <foaf:name>Purl.eu</foaf:name>
+          </rdf:Description>
+        </dc:mediator>
+        <rdfs:label xml:lang="en">OSLO-consent-voc</rdfs:label>
+        <rdfs:label xml:lang="nl">OSLO-consent-voc</rdfs:label>
+        <dc:issued>TODO</dc:issued>
+        <rdfs:seeAlso>
+          <rdfs:Class rdf:about="https://dpvcg.github.io/dpv/#dfn-legalbasis">
+            <rdfs:label xml:lang="en">Legal Basis Type</rdfs:label>
+          </rdfs:Class>
+        </rdfs:seeAlso>
+        <rdfs:seeAlso>
+          <rdfs:Class rdf:about="https://w3id.org/GConsent#Medium">
+            <rdfs:label xml:lang="en">Medium Type</rdfs:label>
+          </rdfs:Class>
+        </rdfs:seeAlso>
+        <rdfs:seeAlso>
+          <rdf:Property rdf:about="https://dpvcg.github.io/dpv/#Processing">
+            <rdfs:label xml:lang="en">processing</rdfs:label>
+          </rdf:Property>
+        </rdfs:seeAlso>
+      </owl:Ontology>
+    </rdfs:isDefinedBy>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#Consent"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/spec/#term_Document"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#Consent.notice">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#Consent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://purl.eu/ns/consent#ConsentStatus">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <ns0:usageNote xml:lang="en">This status should be used whenever a datasubject invokes the right to cancel a given consent.</ns0:usageNote>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#DataProcessor.identifier">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#DataProcessor"/>
+    <rdfs:range rdf:resource="http://fixme.com#Identifier"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#DataProcessor.legalName">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#DataProcessor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#DataRetention.expiryDate">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain>
+      <owl:Class rdf:about="https://purl.eu/ns/consent#DataRetention">
+        <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#DataRetention.expiryTime">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#DataRetention"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/m8g/PeriodOfTime"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#DataRetention.inHumanReadableForm">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#DataRetention"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/spec/#term_Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#DataRetention.legalBasis">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#DataRetention"/>
+    <rdfs:range rdf:resource="https://dpvcg.github.io/dpv/#LegalBasis"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#DataRetention.liveData">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#DataRetention"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#DataRetention.startDate">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#DataRetention"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#Delegation"/>
+    <rdfs:range rdf:resource="https://purl.eu/dc/terms/Agent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Expiry.expiryCadance">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain>
+      <owl:Class rdf:about="https://purl.eu/ns/consent#Expiry">
+        <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/m8g/#Criterion"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://data.europa.eu/m8g/PeriodOfTime"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#Expiry.expiryDate">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#Expiry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://purl.eu/ns/consent#Expiry.expiryFrequency">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#Expiry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Expiry.expiryTime">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://purl.eu/ns/consent#Expiry"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/m8g/PeriodOfTime"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Filter.period">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain>
+      <owl:Class rdf:about="https://purl.eu/ns/consent#Filter">
+        <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://data.europa.eu/m8g/PeriodOfTime"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#LegalBasis.type">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#LegalBasis"/>
+    <rdfs:range rdf:resource="https://dpvcg.github.io/dpv/#dfn-legalbasis"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#PersonalData.inHumanReadableForm">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#PersonalData"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/spec/#term_Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#PersonalDataHandling"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/spec/#term_Document"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#PersonalDataHandling.liveData">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#PersonalDataHandling"/>
+    <rdfs:range>
+      <owl:Class rdf:about="https://purl.eu/ns/consent#LiveData">
+        <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#PersonalDataHandling.personalDataType">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://dpvcg.github.io/dpv/#PersonalDataHandling"/>
+    <rdfs:range rdf:resource="http://fixme.com#PersonalDataType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Processing.type">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#Processing"/>
+    <rdfs:range rdf:resource="http://fixme.com#ProcessingType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://purl.eu/ns/consent#Purpose.type">
+    <rdfs:isDefinedBy rdf:resource="https://purl.eu/ns/consent"/>
+    <rdfs:domain rdf:resource="https://w3id.org/GConsent#Purpose"/>
+    <rdfs:range rdf:resource="http://fixme.com#PurposeType"/>
+  </owl:ObjectProperty>
 </rdf:RDF>
