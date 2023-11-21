@@ -1,0 +1,1764 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix schemas: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace.url> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Authority.country> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Authority>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Block.dayType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Block.endTime> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "In principle this can be derived from the start time of the last Vehicle Journey and the finishing duration."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Block.startTime> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "In principle this can be derived from the start time of the first Vehicle Journey and the preparation duration."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayType.dayLength> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayType.earliestTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayType.shortName> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.dayType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.serviceCalendar> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DeadRun.directionType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DeadRun>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DeadRunPattern> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.frontText> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.sideText> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.via> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Via> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.frontText> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.sideText> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant.via> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Via> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Direction.directionType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Direction>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Entrance.height> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Entrance.label> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Entrance.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Entrance.width> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.purposeOfGrouping> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.transportmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints.member> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.member> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.submode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces.transportMode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Journey.noticeAssignment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Journey>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Journey>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportSubmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Journey>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.destinationDisplay> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.direction> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> """Direction is available for the purposes of filtering (for
+example in a journey planner UI or timetable information
+system) but is not expected to be provided as
+descriptive information."""@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Direction> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.madeUpOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Level.accessibilityAssessment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Level.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Level.shortName> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.accessibilityAssessment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.madeUpOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Route> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.noticeAssignment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.presentation> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Presentation> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.privateCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.shortName> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.transportOrganisation> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.transportSubmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.transportmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line.url> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Link.distance> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Link>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Network.madeUpOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Network>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Network.transportOrganisation> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Network>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.dayLength> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.earliestTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.toDate> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Operator.country> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Operator>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Point.location> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <http://www.opengis.net/ont/sf#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest.servedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.country> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Quay.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Quay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Route.direction> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Direction> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Route.directionType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Route.line> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.from> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RouteLink.to> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.borderCrossing> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.endOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint.startOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#RouteLink> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.endOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.presentation> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Presentation> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.privateCode> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Can be used to associate with legacy systems."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.shortName> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.startOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint.tariffZone> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TariffZone> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.fromDate> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:date .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.toDate> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:date .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.from> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.to> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Site.level> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Level> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent.level> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Level> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#SiteElement.accessibilityAssessment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.borderCrossing> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.in> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.submode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.tariffZone> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TariffZone> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.transportmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace.label> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.forAlighting> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.forBoarding> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern.noticeAssignment> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime.departureDayOffset> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime.departureTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Timeband.dayOffset> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "If same day, zero."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Timeband.endTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Timeband.startTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Timeband>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.country> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace.servedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.in> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Block> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.height> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.width> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#aViewOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#accessMode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AccessMode> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#additionalOperator> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#additionalTopographicPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#allAreasWheelchair> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Direction> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#allowedForWaitTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#arrivalDayOffset> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:time .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#at> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#available> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#belongingTo> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Garage> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#bookingArrangements> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#calendarDate> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:date .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#capacity> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#category> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#centroid> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Zone>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#classification> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#compassBearing> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Quay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#composedOf> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#contactDetails> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schema:ContactPoint .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#contained> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#containedIn> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#containing> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Quay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#covered> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#coveredBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#crewBase> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#crossRoad> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#crowding> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#date> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:date .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#dayOfMonth> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://www.w3.org/2001/XMLSchema#gday> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:gMonthDay .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#daysOfWeek> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#deadRunType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DeadRun>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#defaultLanguage> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:language .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#definedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#describedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#destinationDisplayVariantType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#documentLink> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#droppedKerbOutside> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#endTimeDayOffset> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#endedAt> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "A vehicle's return to park at a Parking Point marks the end of a Block."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#enteredThrough> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#entrance> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Entrance> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#entranceType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#euroClass> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#facility> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#fareClass> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#finishingDuration> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#flexible> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#for> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#frequency> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#frequencyRegulated> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#garage> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#CrewBase>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Garage> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#garagePoint> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#gated> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#hasLiftOrRamp> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#headway> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#headwayDisplay> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#holidayType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#image> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:anyURI .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#including> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#inverseRoute> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Route> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#isEntry> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#isExit> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#isExternal> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#isoCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Can be computed from individual times. Add to departure time to obtain Journey arrival time."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#landmark> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdf:langString .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#language> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:language .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#length> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#lighting> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#linestring> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Link>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <http://www.opengis.net/ont/sf#LineString> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#linkSequence> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#locale> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Locale> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#locatedIn> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#lowFloor> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#madeUsing> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#mainTerminus> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#mainline> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#managedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#minimumHeadwayInterval> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#monitored> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:gMonth .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#onwardServiceLink> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> """This attribute shall only be used if multiple Service Links 
+are available between two consecutive Scheduled Stop Points. Otherwise, the sequence of Stop Points in Journey Pattern to the Scheduled Stop Point is sufficient and remains the main way of describing the stop sequence."""@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#operatedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Operator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#operatingDay> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#operatingPeriod> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#operator> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Operator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Direction>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Direction> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#order> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#organisation> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Operator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#otherCountry> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Country> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#otherMode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#otherTransportmode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#parentQuay> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "This allows to represent composite platforms with two or more sides or named sections. Allows routeplanning to a higher level of detail."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Quay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Quay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#parentSite> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#parentTopographicPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#part> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#passedAt> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#placeType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Place>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#plateCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Quay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#pointNumber> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#polygon> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Zone>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <http://www.opengis.net/ont/sf#Polygon> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#postalAddress> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <http://www.w3.org/ns/locn#Address> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#postcode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#preparationDuration> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#primaryMode> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Operator>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#publicUse> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#pushChairCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#quay> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Quay> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#quayType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Quay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#requestMethod> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#requestStop> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#roadAddress> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <http://www.w3.org/ns/locn#Address> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#route> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Route> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#scheduledHeadwayInterval> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#scheduledStopPoint> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#season> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#seatingCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#selfPropelled> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#servesPointOfInterest> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#servesTopographicPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#site> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#specialPlaceCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#specifiedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#standingCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#startTimeDayOffset> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#startedAt> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#stopPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceWeight> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "For use in journey planner."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#stopType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#stopUse> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#summerTimeZoneOffset> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Can be plus or minus."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:decimal .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#through> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timeZone> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timeZoneOffset> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Can be plus, or minus. May be decimal for fractional differences."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:decimal .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timeband> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DayType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timingPointType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#topographicPlace> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Site>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#totalCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#trainNumber> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#trainSize> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#typeOfFuel> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#typeOfLine> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#uicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Country>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range rdfs:Literal .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#usedBy> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Operator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#usedToDescribe> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#using> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#validDayBits> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Normally there will be a bit for every day between start and end date. If bit is missing, assume available."@en;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#variant> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#vehicleType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#viewedAs> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Point>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#weekOfMonth> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#weight> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range schemas:QuantitativeValue .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#weighting> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#wheelchairPlaceCapacity> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:integer .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#within> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> .
+
+dc11:title a rdf:Property;
+  rdfs:label "name"@en .
+
+dc:description a rdf:Property;
+  rdfs:label "description"@en .
+
+skos:altLabel a rdf:Property;
+  rdfs:label "alternative name"@en .
+
+<http://www.w3.org/ns/locn#address> a rdf:Property;
+  rdfs:label "address"@en .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Authority> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf org:Organization,
+    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassingTime> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Entrance>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DeadRun> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Network> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Presentation> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TariffZone> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Via> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Zone> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Link> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "An Operating Day may last more than 24 hours."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Place> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Zone> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RouteLink> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Link> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#Journey> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Timeband> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Abstract class, i.e. one of its subclasses Authority or Operator should be instantiated."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Journey> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Link> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Place> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Direction> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Locale> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Operator> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf org:Organization,
+    <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Point> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Country> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Place> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Garage> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#PassingTime> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Abstract class."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Level> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Point> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Quay> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#TimingPointInJourneyPattern> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Route> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#SiteElement> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#DayType> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "For example: weekday in school holidays."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Entrance> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "May be a door,barrier,gate or other recognisable point of access."@en;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteComponent> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Site> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Block> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Journey> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#VehicleType> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Place> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Line> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning> a owl:Ontology;
+  rdfs:label "timetables-and-planning-voc"@en,
+    "timetables-and-planning-voc"@nl;
+  dc:issued "TODO";
+  dc:license "https://creativecommons.org/publicdomain/zero/1.0/",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:mediator [
+    foaf:homepage <https://purl.eu>;
+    foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
+    foaf:name "Purl.eu"
+  ];
+  rdfs:seeAlso <http://www.w3.org/ns/locn#address>,
+    skos:altLabel,
+    dc:description,
+    dc11:title .
