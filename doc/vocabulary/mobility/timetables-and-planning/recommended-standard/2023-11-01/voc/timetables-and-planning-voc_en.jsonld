@@ -187,6 +187,14 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "TODO"
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -275,14 +283,6 @@
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A part of a Vehicle Journey created according to a specific functional purpose, for instance in situations when vehicle coupling or separation occurs."
-      },
-      "parents": []
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart - Copy",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs."
       },
       "parents": []
     },
@@ -583,7 +583,9 @@
       "definition": {
         "en": "Describes the Facilities available onboard a service. It additionally allows the type of Accommodation (seating, couchettes, etc.) to be described."
       },
-      "parents": []
+      "parents": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet"
+      ]
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney",
@@ -2660,6 +2662,20 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#identifier",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Identifier of the TrainNumber."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber"
+      ],
+      "range": [
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -3491,7 +3507,7 @@
         "en": "TODO"
       },
       "domain": [
-        "https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet"
+        "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"

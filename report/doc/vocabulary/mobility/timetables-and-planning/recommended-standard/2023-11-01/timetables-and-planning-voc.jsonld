@@ -1444,6 +1444,65 @@
             ]
         },
         {
+            "@id": "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet",
+            "@type": "http://www.w3.org/2002/07/owl#Class",
+            "label-en": {
+                "en": "FaciltySet"
+            },
+            "definition-en": {
+                "en": "TODO"
+            },
+            "definition": {
+                "en": "TODO"
+            },
+            "label": {
+                "en": "FaciltySet"
+            },
+            "extra": {
+                "EA-Name": "FacilitySet",
+                "EA-Guid": "{E6FB3874-1BCE-47db-91F4-CCC5BB921F1D}",
+                "EA-Package": "TimetablesAndPlanning",
+                "EA-Type": "CLASS",
+                "EA-Parents": "",
+                "EA-Parents2": [],
+                "parentclasses": "",
+                "label": {
+                    "en": "FaciltySet"
+                },
+                "definition": {
+                    "en": "TODO"
+                },
+                "usage": "",
+                "label-en": {
+                    "en": "FaciltySet"
+                },
+                "definition-en": {
+                    "en": "TODO"
+                },
+                "usageNote-en": "",
+                "equivalent": "",
+                "subclass": "",
+                "subclass1": "",
+                "sameAs": "",
+                "RawTags": [
+                    {
+                        "key": "definition-en",
+                        "value": "TODO",
+                        "note": "null"
+                    },
+                    {
+                        "key": "label-en",
+                        "value": "FaciltySet",
+                        "note": "null"
+                    }
+                ],
+                "Scope": "FULL_DEFINITON"
+            },
+            "inpackage": "ACTIVE_PACKAGE",
+            "name": "FaciltySet",
+            "parents": []
+        },
+        {
             "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Garage",
             "@type": "http://www.w3.org/2002/07/owl#Class",
             "label-en": {
@@ -2158,75 +2217,6 @@
                     {
                         "key": "definition-nl",
                         "value": "Een deel van een voertuigrit gecreëerd volgens een specifiek functioneel doel, bijvoorbeeld in situaties wanneer het koppelen of scheiden van het voertuig optreedt.",
-                        "note": "null"
-                    }
-                ],
-                "Scope": "FULL_DEFINITON"
-            },
-            "inpackage": "ACTIVE_PACKAGE",
-            "name": "Journey Part",
-            "parents": []
-        },
-        {
-            "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart - Copy",
-            "@type": "http://www.w3.org/2002/07/owl#Class",
-            "label-en": {
-                "en": "Journey Part"
-            },
-            "definition-en": {
-                "en": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs."
-            },
-            "definition": {
-                "en": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs."
-            },
-            "label": {
-                "en": "Journey Part"
-            },
-            "extra": {
-                "EA-Name": "JourneyPart - Copy",
-                "EA-Guid": "{46F84F95-5FD0-4285-9C57-85FB868719C1}",
-                "EA-Package": "TimetablesAndPlanning",
-                "EA-Type": "CLASS",
-                "EA-Parents": "",
-                "EA-Parents2": [],
-                "parentclasses": "",
-                "label": {
-                    "en": "Journey Part"
-                },
-                "definition": {
-                    "en": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs."
-                },
-                "usage": "",
-                "label-en": {
-                    "en": "Journey Part"
-                },
-                "definition-en": {
-                    "en": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs."
-                },
-                "usageNote-en": "",
-                "equivalent": "",
-                "subclass": "",
-                "subclass1": "",
-                "sameAs": "",
-                "RawTags": [
-                    {
-                        "key": "definition-en",
-                        "value": "A part of a Vehicle Journey created according to a specific functional purpose,for instance in situations when vehicle coupling or separation occurs.",
-                        "note": "null"
-                    },
-                    {
-                        "key": "definition-nl",
-                        "value": "Een deel van een voertuigrit gecreëerd volgens een specifiek functioneel doel,bijvoorbeeld in situaties wanneer het koppelen of scheiden van het voertuig optreedt.",
-                        "note": "null"
-                    },
-                    {
-                        "key": "label-en",
-                        "value": "Journey Part",
-                        "note": "null"
-                    },
-                    {
-                        "key": "label-nl",
-                        "value": "Ritdeel",
                         "note": "null"
                     }
                 ],
@@ -4567,9 +4557,16 @@
                 "EA-Guid": "{6BF72EF9-6E39-43bf-97AB-C526C94B6356}",
                 "EA-Package": "TimetablesAndPlanning",
                 "EA-Type": "CLASS",
-                "EA-Parents": "",
-                "EA-Parents2": [],
-                "parentclasses": "",
+                "EA-Parents": "FacilitySet",
+                "EA-Parents2": [
+                    {
+                        "name": "FacilitySet",
+                        "label": "FaciltySet",
+                        "package": "TimetablesAndPlanning",
+                        "uri": "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet"
+                    }
+                ],
+                "parentclasses": "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet",
                 "label": {
                     "en": "Service Facility Set"
                 },
@@ -4614,7 +4611,9 @@
             },
             "inpackage": "ACTIVE_PACKAGE",
             "name": "Service Facility Set",
-            "parents": []
+            "parents": [
+                "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet"
+            ]
         },
         {
             "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney",
@@ -13362,16 +13361,19 @@
         {
             "@id": "https://purl.eu/ns/mobility/timetables-and-planning#positionInTrain",
             "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-            "name": "",
+            "name": "positionInTrain",
             "inpackage": "ACTIVE_PACKAGE",
             "label-en": {
-                "en": "TODO"
+                "en": "positionInTrain"
             },
             "definition-en": {
                 "en": "TODO"
             },
             "definition": {
                 "en": "TODO"
+            },
+            "label": {
+                "en": "positionInTrain"
             },
             "extra": {
                 "EA-Name": "positionInTrain",
@@ -13386,13 +13388,15 @@
                     "EA-Package": "",
                     "uri": "http://www.w3.org/2001/XMLSchema#integer"
                 },
-                "label": "",
+                "label": {
+                    "en": "positionInTrain"
+                },
                 "definition": {
                     "en": "TODO"
                 },
                 "usage": "",
                 "label-en": {
-                    "en": "TODO"
+                    "en": "positionInTrain"
                 },
                 "definition-en": {
                     "en": "TODO"
@@ -13404,13 +13408,13 @@
                 "sameAs": "",
                 "RawTags": [
                     {
-                        "key": "label-nl",
-                        "value": "positionInTrain",
+                        "key": "definition-en",
+                        "value": "TODO",
                         "note": "null"
                     },
                     {
-                        "key": "definition-en",
-                        "value": "TODO",
+                        "key": "label-en",
+                        "value": "positionInTrain",
                         "note": "null"
                     }
                 ],
@@ -18956,6 +18960,86 @@
             ],
             "generalization": [],
             "minCardinality": "0",
+            "maxCardinality": "1"
+        },
+        {
+            "@id": "https://purl.eu/ns/mobility/timetables-and-planning#identifier",
+            "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+            "name": "identifier",
+            "inpackage": "ACTIVE_PACKAGE",
+            "label-en": {
+                "en": "identifier"
+            },
+            "definition-en": {
+                "en": "TODO"
+            },
+            "definition": {
+                "en": "Identifier of the TrainNumber."
+            },
+            "label": {
+                "en": "identifier"
+            },
+            "extra": {
+                "EA-Name": "identifier",
+                "EA-Guid": "{F9D05EFB-1497-42d6-937F-086D912D1681}",
+                "EA-Package": "TimetablesAndPlanning",
+                "EA-Type": "attribute",
+                "EA-Domain": "TrainNumber",
+                "EA-Domain-Guid": "{7B58FEC8-A0AE-46f9-8F12-F002DDAAD19B}",
+                "EA-Range": "Literal",
+                "RangeData": {
+                    "EA-Name": "Literal",
+                    "EA-Package": "",
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                },
+                "label": {
+                    "en": "identifier"
+                },
+                "definition": {
+                    "en": "Identifier of the TrainNumber."
+                },
+                "usage": "",
+                "label-en": {
+                    "en": "identifier"
+                },
+                "definition-en": {
+                    "en": "TODO"
+                },
+                "usageNote-en": "",
+                "equivalent": "",
+                "subclass": "",
+                "subclass1": "",
+                "sameAs": "",
+                "RawTags": [
+                    {
+                        "key": "label-en",
+                        "value": "identifier",
+                        "note": "null"
+                    },
+                    {
+                        "key": "definition",
+                        "value": "Identifier of the TrainNumber.",
+                        "note": "null"
+                    }
+                ],
+                "Scope": "FULL_DEFINITON"
+            },
+            "codelist": [],
+            "domain": [
+                {
+                    "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber",
+                    "EA-Name": "TrainNumber"
+                }
+            ],
+            "range": [
+                {
+                    "EA-Name": "Literal",
+                    "EA-Package": "",
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                }
+            ],
+            "generalization": [],
+            "minCardinality": "1",
             "maxCardinality": "1"
         },
         {
@@ -24527,8 +24611,8 @@
                 "EA-Guid": "{75F0C6AC-3472-45aa-B843-C13EBAE1A9ED}",
                 "EA-Package": "TimetablesAndPlanning",
                 "EA-Type": "attribute",
-                "EA-Domain": "ServiceFacilitySet",
-                "EA-Domain-Guid": "{6BF72EF9-6E39-43bf-97AB-C526C94B6356}",
+                "EA-Domain": "FacilitySet",
+                "EA-Domain-Guid": "{E6FB3874-1BCE-47db-91F4-CCC5BB921F1D}",
                 "EA-Range": "CommonFacilityType",
                 "RangeData": {
                     "EA-Name": "CommonFacilityType",
@@ -24571,8 +24655,8 @@
             "codelist": [],
             "domain": [
                 {
-                    "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet",
-                    "EA-Name": "ServiceFacilitySet"
+                    "uri": "https://purl.eu/ns/mobility/timetables-and-planning#FacilitySet",
+                    "EA-Name": "FacilitySet"
                 }
             ],
             "range": [

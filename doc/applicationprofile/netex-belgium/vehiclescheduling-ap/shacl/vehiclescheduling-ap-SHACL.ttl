@@ -64,6 +64,7 @@
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#VehicleJourneyShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#VehicleTypeShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#ViaShape>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#FacilitySetShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#ContactInfoShape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#Point2Shape>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#PolygonShape>,
@@ -2016,6 +2017,10 @@
 <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#DirectionTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#FacilitySetShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://fixme.com#FacilitySet> .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#FareClassShape> a shacl:NodeShape;
   shacl:closed false;
@@ -6585,10 +6590,14 @@
   shacl:closed false;
   shacl:property <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/362d1bf0eab8051024cf5ec1345eb1ce50762580>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/454a9c2b48691a8e5db499a9a9616b10c73d209f>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/6cae9880e515253132af1452a38a8a5827165149>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/768bb4171e00505886fe9a1e949b4cd71f0eb548>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/aadbd67a77a624f073be2076627fb9dc883cbe48>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/c0d17764e84e711728581fda7356a51e99a9040a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/d4d4f2399b8cf2f615ac658920373b714726bed0>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/e1344934e1df68ad8b6cf1303b6d42ad0c107fc3>,
+    <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/e2017f72421063cd9ff494011ec78f35f9632a4a>,
     <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/fd5da432ae2118520ec086329ee322af7d456774>;
   shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber> .
 
@@ -6608,6 +6617,14 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "Maximaal 1 waarden toegelaten voor forAdvertisement"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Aidentifier";
+  shacl:description "Identifier of the TrainNumber."@en;
+  shacl:minCount 1;
+  shacl:name "identifier"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#identifier>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "Minimaal 1 waarden verwacht voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/6cae9880e515253132af1452a38a8a5827165149> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Adescription";
   shacl:description "TODO"@en;
   shacl:name "description"@en;
@@ -6624,6 +6641,22 @@
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "Slechts 1 waarde voor elke taal toegelaten voor description"];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
+<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Aidentifier";
+  shacl:description "Identifier of the TrainNumber."@en;
+  shacl:name "identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#identifier>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "De verwachte waarde voor identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/c0d17764e84e711728581fda7356a51e99a9040a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Aidentifier";
+  shacl:description "Identifier of the TrainNumber."@en;
+  shacl:maxCount 1;
+  shacl:name "identifier"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#identifier>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "Maximaal 1 waarden toegelaten voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
 <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/d4d4f2399b8cf2f615ac658920373b714726bed0> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Adescription";
   shacl:datatype rdf:langString;
   shacl:description "TODO"@en;
@@ -6638,6 +6671,14 @@
   shacl:nodekind "sh:Literal";
   shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#forAdvertisement>;
   <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "De verwachte waarde voor forAdvertisement is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/e2017f72421063cd9ff494011ec78f35f9632a4a> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3Aidentifier";
+  shacl:datatype rdfs:Literal;
+  shacl:description "Identifier of the TrainNumber."@en;
+  shacl:name "identifier"@en;
+  shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#identifier>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01en> "De range van identifier moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
   <https://data.vlaanderen.be/ns/shacl#rule> "" .
 
 <https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumberShape/fd5da432ae2118520ec086329ee322af7d456774> rdfs:seeAlso "https://purl.eu/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01#TrainNumber%3AforAdvertisement";
