@@ -1009,6 +1009,11 @@ descriptive information."""@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:boolean .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#endPointInSequence> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#endedAt> a owl:ObjectProperty;
   <http://purl.org/vocab/vann/usageNote> "A vehicle's return to park at a Parking Point marks the end of a Block."@en;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
@@ -1242,6 +1247,16 @@ descriptive information."""@en;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#notice> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Notice> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#noticeType> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Notice>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range skos:Concept .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#nuisanceFacility> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Accommodation>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1385,6 +1400,11 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range skos:Concept .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#publicCode> a owl:DatatypeProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Notice>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:string .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#publicUse> a owl:DatatypeProperty;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Level>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1480,6 +1500,11 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:integer .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#startPointInPattern> a owl:ObjectProperty;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#startedAt> a owl:ObjectProperty;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1516,6 +1541,10 @@ are available between two consecutive Scheduled Stop Points. Otherwise, the sequ
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Locale>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:decimal .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#text> a rdf:Property;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Notice>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#textColour> a owl:ObjectProperty;
   <http://purl.org/vocab/vann/usageNote> "Eg he colour of the name of a Line."@en;
@@ -1752,9 +1781,6 @@ skos:altLabel a rdf:Property;
 <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartPosition> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> a owl:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint> .
@@ -1791,6 +1817,9 @@ skos:altLabel a rdf:Property;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Link> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#Notice> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay> a owl:Class;
@@ -1877,13 +1906,13 @@ skos:altLabel a rdf:Property;
 <https://purl.eu/ns/mobility/timetables-and-planning#Locale> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#Operator> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf org:Organization,
     <https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1925,6 +1954,9 @@ skos:altLabel a rdf:Property;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Point> a owl:Class;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Quay> a owl:Class;

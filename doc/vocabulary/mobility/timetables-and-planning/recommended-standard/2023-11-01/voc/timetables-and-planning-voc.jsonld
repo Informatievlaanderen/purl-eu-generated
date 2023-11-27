@@ -361,6 +361,14 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Notice",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+      },
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -1262,6 +1270,18 @@
       "generalization": []
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#text",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "definition": {
+        "en": "Content text of the Notice."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+      ],
+      "range": [],
+      "generalization": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#summerTimeZoneOffset",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1362,6 +1382,20 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startPointInPattern",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Point at which applicability of Notice starts."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ],
       "generalization": []
     },
@@ -1628,6 +1662,20 @@
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#publicCode",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Public code of the Notice."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "generalization": []
     },
@@ -2026,6 +2074,34 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#noticeType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of the Notice."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#notice",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Reference to the assigned Notice."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
       ],
       "generalization": []
     },
@@ -2676,6 +2752,20 @@
       ],
       "range": [
         "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#endPointInSequence",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Point at which applicability of Notice ends."
+      },
+      "domain": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+      ],
+      "range": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
       ],
       "generalization": []
     },
@@ -5558,6 +5648,13 @@
         "en": "description"
       },
       "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://purl.org/dc/elements/1.1/title",
       "@type": "rdf:Property"
     },
     {

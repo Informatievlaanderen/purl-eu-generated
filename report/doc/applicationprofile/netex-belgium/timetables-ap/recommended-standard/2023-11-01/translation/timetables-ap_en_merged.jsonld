@@ -1674,6 +1674,63 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Notice",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+      "ap-definition-en": {
+        "en": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+      },
+      "ap-label-en": {
+        "en": "Notice"
+      },
+      "definition": {
+        "en": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+      },
+      "extra": {
+        "EA-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+        "EA-Name": "Notice",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Notice"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+        },
+        "ap-label-en": {
+          "en": "Notice"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Additional information for passengers that may help them in planning or executing\r\ntheir trip."
+        },
+        "label": {
+          "en": "Notice"
+        },
+        "parentclasses": "",
+        "usage": ""
+      },
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "Notice"
+      },
+      "name": "Notice",
+      "parents": []
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{944DE351-FDDA-4faf-8585-8750598DA3AA}",
@@ -1692,7 +1749,7 @@
         "EA-Package": "TimetablesAndPlanning",
         "EA-Parents": "",
         "EA-Parents2": [],
-        "EA-Type": "CLASS",
+        "EA-Type": "DATATYPE",
         "RawTags": [
           {
             "key": "label-en",
@@ -3606,7 +3663,14 @@
         "EA-Name": "TariffZone",
         "EA-Package": "TimetablesAndPlanning",
         "EA-Parents": "",
-        "EA-Parents2": [],
+        "EA-Parents2": [
+          {
+            "label": "Zone",
+            "name": "Zone",
+            "package": "TimetablesAndPlanning",
+            "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Zone"
+          }
+        ],
         "EA-Type": "CLASS",
         "RawTags": [
           {
@@ -3645,7 +3709,7 @@
         "label": {
           "en": "Tariff Zone"
         },
-        "parentclasses": "",
+        "parentclasses": "https://purl.eu/ns/mobility/timetables-and-planning#Zone",
         "usage": ""
       },
       "inpackage": "ACTIVE_PACKAGE",
@@ -3653,7 +3717,9 @@
         "en": "Tariff Zone"
       },
       "name": "Tariff Zone",
-      "parents": []
+      "parents": [
+        "https://purl.eu/ns/mobility/timetables-and-planning#Zone"
+      ]
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
@@ -4506,8 +4572,8 @@
   "contributors-column": "Dienstregeling",
   "contributors-file": "stakeholders.csv",
   "diagram": "Timetables",
-  "documentcommit": "5e6187171c64bd58ebf7092311e4461269ba02a4",
-  "dummy": "geert-015",
+  "documentcommit": "47a5dd1611622e9635a25e8ccfea77d80a9e3fa4",
+  "dummy": "geert-016",
   "eap": "OSLO-DienstregelingEnPlanning-TimeTables-AP.EAP",
   "editors": [
     {
@@ -9479,11 +9545,12 @@
         "EA-Guid": "{543CB1CB-EE52-4eed-8010-F9D96B2394B0}",
         "EA-Name": "description",
         "EA-Package": "TimetablesAndPlanning",
-        "EA-Range": "LangString",
+        "EA-Range": "LanguageString",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "LangString",
-          "EA-Package": "",
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
@@ -9530,8 +9597,9 @@
       "name": "description",
       "range": [
         {
-          "EA-Name": "LangString",
-          "EA-Package": "",
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ]
@@ -11964,6 +12032,91 @@
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ]
+    },
+    {
+      "@id": "http://purl.org/dc/elements/1.1/title",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{7880F26B-3FFE-4f5b-8F46-6CDCD48962D9}",
+      "ap-definition-en": {
+        "en": "Name of the Notice."
+      },
+      "ap-label-en": {
+        "en": "name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Name of the Notice."
+      },
+      "domain": [
+        {
+          "EA-Name": "Notice",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Notice",
+        "EA-Domain-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+        "EA-Guid": "{7880F26B-3FFE-4f5b-8F46-6CDCD48962D9}",
+        "EA-Name": "name",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "LanguageString",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/elements/1.1/title"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "name"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Name of the Notice."
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Name of the Notice."
+        },
+        "ap-label-en": {
+          "en": "name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Name of the Notice."
+        },
+        "label": {
+          "en": "name"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "name"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "name",
+      "range": [
+        {
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
     }
   ],
   "externals": [
@@ -12022,6 +12175,72 @@
         "en": "FaciltySet"
       },
       "name": "FaciltySet"
+    },
+    {
+      "@id": "http://fixme.com#Zone",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{66A42778-8931-4925-A882-E6F6C8078C54}",
+      "ap-definition-en": {
+        "en": "Two-dimensional place within the service area of a public transport operator."
+      },
+      "ap-label-en": {
+        "en": "Zone"
+      },
+      "definition": {
+        "en": "Two-dimensional place within the service area of a public transport operator."
+      },
+      "extra": {
+        "EA-Guid": "{66A42778-8931-4925-A882-E6F6C8078C54}",
+        "EA-Name": "Zone",
+        "EA-Package": "Dummy",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Two-dimensional place within the service area of a public transport operator."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Zone"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "Eg an administrative zone,tariff zone,access zone etc."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Two-dimensional place within the service area of a public transport operator."
+        },
+        "ap-label-en": {
+          "en": "Zone"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Two-dimensional place within the service area of a public transport operator."
+        },
+        "label": {
+          "en": "Zone"
+        },
+        "parentclasses": "",
+        "usage": {
+          "en": "Eg an administrative zone,tariff zone,access zone etc."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Zone"
+      },
+      "name": "Zone",
+      "usage": {
+        "en": "Eg an administrative zone,tariff zone,access zone etc."
+      }
     },
     {
       "@id": "http://purl.org/dc/terms/Agent",
@@ -12441,6 +12660,104 @@
         "en": "Point (Datatype)"
       },
       "name": "Point (Datatype)"
+    },
+    {
+      "@id": "http://www.opengis.net/ont/sf#Polygon",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{FCCC8FA5-F5BE-4392-9F38-5D6CDC50A3FC}",
+      "ap-definition-en": {
+        "en": "Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon."
+      },
+      "ap-label-en": {
+        "en": "Polygon"
+      },
+      "ap-usageNote-en": {
+        "en": "The boundaries are so-called linear rings, that is, they are closed (non-self-intersecting) LineStrings. The outer boundary is distinguished from the inner boundary by the clockwise and counterclockwise directions in which the ring runs."
+      },
+      "definition": {
+        "en": "Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon."
+      },
+      "extra": {
+        "EA-Guid": "{FCCC8FA5-F5BE-4392-9F38-5D6CDC50A3FC}",
+        "EA-Name": "Polygon",
+        "EA-Package": "OpenGIS-SF",
+        "EA-Parents": "Geometry",
+        "EA-Parents2": [
+          {
+            "label": "Geometry",
+            "name": "Geometry",
+            "package": "locn",
+            "uri": "http://www.w3.org/ns/locn#Geometry"
+          }
+        ],
+        "EA-Type": "DATATYPE",
+        "RawTags": [
+          {
+            "key": "ap-definition-nl",
+            "note": "null",
+            "value": "Oppervlak bestaande uit 1 buitengrens en 0 of meer binnengrenzen. Elke binnengrens vormt een gat in de polygoon."
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "note": "null",
+            "value": "De grenzen zijn zgn lineaire ringen,ttz het zijn gesloten (niet zelfsnijdende) lijnstringen. De buitengrens wordt onderscheiden vd binnengrens door resp de kloksgewijze en tegenkloksgewijze richting waarin de ring loopt."
+          },
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "Polygoon"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.opengis.net/ont/sf#Polygon"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Polygon"
+          },
+          {
+            "key": "ap-definition-en",
+            "note": "null",
+            "value": "Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon."
+          },
+          {
+            "key": "ap-usageNote-en",
+            "note": "The boundaries are so-called linear rings, that is, they are closed (non-self-intersecting) LineStrings. The outer boundary is distinguished from the inner boundary by the clockwise and counterclockwise directions in which the ring runs.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon."
+        },
+        "ap-label-en": {
+          "en": "Polygon"
+        },
+        "ap-usageNote-en": {
+          "en": "The boundaries are so-called linear rings, that is, they are closed (non-self-intersecting) LineStrings. The outer boundary is distinguished from the inner boundary by the clockwise and counterclockwise directions in which the ring runs."
+        },
+        "definition": {
+          "en": "Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon."
+        },
+        "label": {
+          "en": "Polygon"
+        },
+        "parentclasses": "http://www.w3.org/ns/locn#Geometry",
+        "usage": {
+          "en": "The boundaries are so-called linear rings, that is, they are closed (non-self-intersecting) LineStrings. The outer boundary is distinguished from the inner boundary by the clockwise and counterclockwise directions in which the ring runs."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Polygon"
+      },
+      "name": "Polygon",
+      "usage": {
+        "en": "The boundaries are so-called linear rings, that is, they are closed (non-self-intersecting) LineStrings. The outer boundary is distinguished from the inner boundary by the clockwise and counterclockwise directions in which the ring runs."
+      }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -13915,6 +14232,57 @@
       "name": "TrainElementtype"
     },
     {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{668E8403-83CF-44b1-8C2D-59221EEB0D4C}",
+      "ap-definition-en": {
+        "en": "TODO"
+      },
+      "ap-label-en": {
+        "en": "NoticeType"
+      },
+      "extra": {
+        "EA-Guid": "{668E8403-83CF-44b1-8C2D-59221EEB0D4C}",
+        "EA-Name": "NoticeType",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "ENUMERATION",
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/2004/02/skos/core#Concept"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "NoticeType"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "TODO"
+        },
+        "ap-label-en": {
+          "en": "NoticeType"
+        },
+        "ap-usageNote-en": "",
+        "definition": "",
+        "label": {
+          "en": "NoticeType"
+        },
+        "parentclasses": "",
+        "usage": ""
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "NoticeType"
+      },
+      "name": "NoticeType"
+    },
+    {
       "@id": "http://www.w3.org/ns/adms#Identifier",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{17ECBDD0-9F2F-4d4f-9ECC-17F771CE7EBB}",
@@ -15261,121 +15629,6 @@
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
-      "ap-definition-en": {
-        "en": "As used as a Stop Point in a Journey Pattern."
-      },
-      "ap-label-en": {
-        "en": "viewed as"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "As used as a Stop Point in a Journey Pattern."
-      },
-      "domain": [
-        {
-          "EA-Name": "ScheduledStopPoint",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ],
-      "extra": {
-        "DestRoleTags": [
-          {
-            "key": "definition-nl",
-            "note": "Zoals gebruikt als een stoppunt in een ritpatroon.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-nl",
-            "note": "gezien als",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "viewed as",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "As used as a Stop Point in a Journey Pattern.",
-            "value": "NOTE"
-          }
-        ],
-        "EA-Domain": "ScheduledStopPoint",
-        "EA-Domain-Guid": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
-        "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
-        "EA-Name": "viewedAs",
-        "EA-Package": "",
-        "EA-Range": "StopPointInJourneyPattern",
-        "EA-Type": "connector",
-        "RangeData": {
-          "EA-GUID": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
-          "EA-Name": "StopPointInJourneyPattern",
-          "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-        },
-        "RawTags": [
-          {
-            "key": "definition-nl",
-            "note": "Zoals gebruikt als een stoppunt in een ritpatroon.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-nl",
-            "note": "gezien als",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "viewed as",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "As used as a Stop Point in a Journey Pattern.",
-            "value": "NOTE"
-          }
-        ],
-        "Scope": "FULL_DEFINITON",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "As used as a Stop Point in a Journey Pattern."
-        },
-        "ap-label-en": {
-          "en": "viewed as"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "As used as a Stop Point in a Journey Pattern."
-        },
-        "derived": "false",
-        "destRole": "viewedAs",
-        "label": {
-          "en": "viewed as"
-        },
-        "sourceRole": "aViewOf",
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "ACTIVE_PACKAGE",
-      "label": {
-        "en": "viewed as"
-      },
-      "maxCardinality": "*",
-      "minCardinality": "0",
-      "name": "viewed as",
-      "range": [
-        {
-          "EA-GUID": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
-          "EA-Name": "StopPointInJourneyPattern",
-          "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-        }
-      ]
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{066931BE-777B-4107-BC0F-A87E324F31F5}",
       "ap-definition-en": {
         "en": "As used as a Point in a Journey Pattern."
@@ -15600,6 +15853,121 @@
           "EA-Name": "PointOnRoute",
           "EA-Package": "TimetablesAndPlanning",
           "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
+      "ap-definition-en": {
+        "en": "As used as a Stop Point in a Journey Pattern."
+      },
+      "ap-label-en": {
+        "en": "viewed as"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "As used as a Stop Point in a Journey Pattern."
+      },
+      "domain": [
+        {
+          "EA-Name": "ScheduledStopPoint",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "definition-nl",
+            "note": "Zoals gebruikt als een stoppunt in een ritpatroon.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-nl",
+            "note": "gezien als",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "viewed as",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "As used as a Stop Point in a Journey Pattern.",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "ScheduledStopPoint",
+        "EA-Domain-Guid": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
+        "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
+        "EA-Name": "viewedAs",
+        "EA-Package": "",
+        "EA-Range": "StopPointInJourneyPattern",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
+          "EA-Name": "StopPointInJourneyPattern",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
+        },
+        "RawTags": [
+          {
+            "key": "definition-nl",
+            "note": "Zoals gebruikt als een stoppunt in een ritpatroon.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-nl",
+            "note": "gezien als",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "viewed as",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "As used as a Stop Point in a Journey Pattern.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "As used as a Stop Point in a Journey Pattern."
+        },
+        "ap-label-en": {
+          "en": "viewed as"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "As used as a Stop Point in a Journey Pattern."
+        },
+        "derived": "false",
+        "destRole": "viewedAs",
+        "label": {
+          "en": "viewed as"
+        },
+        "sourceRole": "aViewOf",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "viewed as"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "viewed as",
+      "range": [
+        {
+          "EA-GUID": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
+          "EA-Name": "StopPointInJourneyPattern",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
         }
       ]
     },
@@ -17660,6 +18028,86 @@
       }
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#text",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{9025AC1F-4FEA-40af-AD1D-5535D689ABD1}",
+      "ap-definition-en": {
+        "en": "Content text of the Notice."
+      },
+      "ap-label-en": {
+        "en": "text"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Content text of the Notice."
+      },
+      "domain": [
+        {
+          "EA-Name": "Notice",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Notice",
+        "EA-Domain-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+        "EA-Guid": "{9025AC1F-4FEA-40af-AD1D-5535D689ABD1}",
+        "EA-Name": "text",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "LanguageString",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "text"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Content text of the Notice."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Content text of the Notice."
+        },
+        "ap-label-en": {
+          "en": "text"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Content text of the Notice."
+        },
+        "label": {
+          "en": "text"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "text"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "text",
+      "range": [
+        {
+          "EA-GUID": "{249D5BA2-167A-4402-B089-E89A25B94EA1}",
+          "EA-Name": "LanguageString",
+          "EA-Package": "RDF",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopUse",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{79C21925-EF59-475e-B2E6-EF44F70E22B3}",
@@ -18148,6 +18596,86 @@
           "EA-Name": "Time",
           "EA-Package": "",
           "uri": "http://www.w3.org/2001/XMLSchema#time"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startPointInPattern",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{3C07951B-059E-4286-B3E8-893A66435C76}",
+      "ap-definition-en": {
+        "en": "Point at which applicability of Notice starts."
+      },
+      "ap-label-en": {
+        "en": "startPointInPattern"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Point at which applicability of Notice starts."
+      },
+      "domain": [
+        {
+          "EA-Name": "NoticeAssignment",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "NoticeAssignment",
+        "EA-Domain-Guid": "{944DE351-FDDA-4faf-8585-8750598DA3AA}",
+        "EA-Guid": "{3C07951B-059E-4286-B3E8-893A66435C76}",
+        "EA-Name": "startPointInPattern",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "PointInLinkSequence",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{0D7F7783-8805-4705-AAF9-3E2DFF6A78A0}",
+          "EA-Name": "PointInLinkSequence",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "startPointInPattern"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Point at which applicability of Notice starts."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Point at which applicability of Notice starts."
+        },
+        "ap-label-en": {
+          "en": "startPointInPattern"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Point at which applicability of Notice starts."
+        },
+        "label": {
+          "en": "startPointInPattern"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "startPointInPattern"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "startPointInPattern",
+      "range": [
+        {
+          "EA-GUID": "{0D7F7783-8805-4705-AAF9-3E2DFF6A78A0}",
+          "EA-Name": "PointInLinkSequence",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
         }
       ]
     },
@@ -19338,6 +19866,84 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#publicCode",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{5BC376B1-9892-4bbd-A8FF-BB3089CA701D}",
+      "ap-definition-en": {
+        "en": "Public code of the Notice."
+      },
+      "ap-label-en": {
+        "en": "publicCode"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Public code of the Notice."
+      },
+      "domain": [
+        {
+          "EA-Name": "Notice",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Notice",
+        "EA-Domain-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+        "EA-Guid": "{5BC376B1-9892-4bbd-A8FF-BB3089CA701D}",
+        "EA-Name": "publicCode",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "publicCode"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Public code of the Notice."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Public code of the Notice."
+        },
+        "ap-label-en": {
+          "en": "publicCode"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Public code of the Notice."
+        },
+        "label": {
+          "en": "publicCode"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "publicCode"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "publicCode",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{0977D806-07B7-4b8a-B2B9-7C4F607160C1}",
@@ -19426,6 +20032,96 @@
           "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         }
       ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#presentation",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{7D80092C-26FA-482f-BCBF-77931B2EBB40}",
+      "ap-definition-en": {
+        "en": "Presentation features of the TariffZone."
+      },
+      "ap-label-en": {
+        "en": "presentation"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Presentation features of the TariffZone."
+      },
+      "domain": [
+        {
+          "EA-Name": "TariffZone",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "TariffZone",
+        "EA-Domain-Guid": "{ADB57584-869F-4131-8C96-87F7C5A8D3E2}",
+        "EA-Guid": "{7D80092C-26FA-482f-BCBF-77931B2EBB40}",
+        "EA-Name": "presentation",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "Presentation",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{EDE11449-C7FC-425f-A9E3-E0F27F11EA8E}",
+          "EA-Name": "Presentation",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Presentation"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "presentation"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Presentation features of the TariffZone."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "Such as the colour associated with the zone."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Presentation features of the TariffZone."
+        },
+        "ap-label-en": {
+          "en": "presentation"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Presentation features of the TariffZone."
+        },
+        "label": {
+          "en": "presentation"
+        },
+        "usage": {
+          "en": "Such as the colour associated with the zone."
+        }
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "presentation"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "presentation",
+      "range": [
+        {
+          "EA-GUID": "{EDE11449-C7FC-425f-A9E3-E0F27F11EA8E}",
+          "EA-Name": "Presentation",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Presentation"
+        }
+      ],
+      "usage": {
+        "en": "Such as the colour associated with the zone."
+      }
     },
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#positionInTrain",
@@ -20849,6 +21545,156 @@
           "EA-Name": "NuisanceFacilityType",
           "EA-Package": "TimetablesAndPlanning",
           "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#noticeType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{46C7111A-F84A-4282-BFC0-45B9738849E7}",
+      "ap-definition-en": {
+        "en": "Type of the Notice."
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Type of the Notice."
+      },
+      "domain": [
+        {
+          "EA-Name": "Notice",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Notice",
+        "EA-Domain-Guid": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+        "EA-Guid": "{46C7111A-F84A-4282-BFC0-45B9738849E7}",
+        "EA-Name": "noticeType",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "NoticeType",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{668E8403-83CF-44b1-8C2D-59221EEB0D4C}",
+          "EA-Name": "NoticeType",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [
+          {
+            "key": "label-rn",
+            "note": "null",
+            "value": "noticeType"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Type of the Notice."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Type of the Notice."
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Type of the Notice."
+        },
+        "label": "",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "",
+      "range": [
+        {
+          "EA-GUID": "{668E8403-83CF-44b1-8C2D-59221EEB0D4C}",
+          "EA-Name": "NoticeType",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#notice",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{EFC59F2B-BA60-4c8b-B5AB-D6FEE2BF7342}",
+      "ap-definition-en": {
+        "en": "Reference to the assigned Notice."
+      },
+      "ap-label-en": {
+        "en": "notice"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Reference to the assigned Notice."
+      },
+      "domain": [
+        {
+          "EA-Name": "NoticeAssignment",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "NoticeAssignment",
+        "EA-Domain-Guid": "{944DE351-FDDA-4faf-8585-8750598DA3AA}",
+        "EA-Guid": "{EFC59F2B-BA60-4c8b-B5AB-D6FEE2BF7342}",
+        "EA-Name": "notice",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "Notice",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+          "EA-Name": "Notice",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "notice"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Reference to the assigned Notice."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Reference to the assigned Notice."
+        },
+        "ap-label-en": {
+          "en": "notice"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Reference to the assigned Notice."
+        },
+        "label": {
+          "en": "notice"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "notice"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "notice",
+      "range": [
+        {
+          "EA-GUID": "{7776D7B0-EDE5-40c8-83EA-CAA65DBA9963}",
+          "EA-Name": "Notice",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Notice"
         }
       ]
     },
@@ -24274,6 +25120,81 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#endPointInSequence",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{68449C0F-C07B-4973-A29C-E5EBF67C70FD}",
+      "ap-definition-en": {
+        "en": "Point at which applicability of Notice ends."
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Point at which applicability of Notice ends."
+      },
+      "domain": [
+        {
+          "EA-Name": "NoticeAssignment",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "NoticeAssignment",
+        "EA-Domain-Guid": "{944DE351-FDDA-4faf-8585-8750598DA3AA}",
+        "EA-Guid": "{68449C0F-C07B-4973-A29C-E5EBF67C70FD}",
+        "EA-Name": "endPointInSequence",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "PointInLinkSequence",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{0D7F7783-8805-4705-AAF9-3E2DFF6A78A0}",
+          "EA-Name": "PointInLinkSequence",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+        },
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "note": "null",
+            "value": "endPointInSequence"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Point at which applicability of Notice ends."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Point at which applicability of Notice ends."
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Point at which applicability of Notice ends."
+        },
+        "label": {
+          "en": "endPointInSequence"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "endPointInSequence"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "endPointInSequence",
+      "range": [
+        {
+          "EA-GUID": "{0D7F7783-8805-4705-AAF9-3E2DFF6A78A0}",
+          "EA-Name": "PointInLinkSequence",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence"
+        }
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#documentLink",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{32A0DE8F-DAA7-44cf-9BB5-30356076567D}",
@@ -27143,121 +28064,6 @@
     {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
-      "ap-definition-en": {
-        "en": "Reference to the Scheduled Stop Point."
-      },
-      "ap-label-en": {
-        "en": "a view of"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "Reference to the Scheduled Stop Point."
-      },
-      "domain": [
-        {
-          "EA-Name": "StopPointInJourneyPattern",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
-        }
-      ],
-      "extra": {
-        "DestRoleTags": [
-          {
-            "key": "label-nl",
-            "note": "een view van",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-nl",
-            "note": "Verwijzing naar de geplande stopplaats.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "a view of",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "Reference to the Scheduled Stop Point.",
-            "value": "NOTE"
-          }
-        ],
-        "EA-Domain": "StopPointInJourneyPattern",
-        "EA-Domain-Guid": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
-        "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
-        "EA-Name": "aViewOf",
-        "EA-Package": "",
-        "EA-Range": "ScheduledStopPoint",
-        "EA-Type": "connector",
-        "RangeData": {
-          "EA-GUID": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
-          "EA-Name": "ScheduledStopPoint",
-          "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        },
-        "RawTags": [
-          {
-            "key": "label-nl",
-            "note": "een view van",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-nl",
-            "note": "Verwijzing naar de geplande stopplaats.",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "a view of",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "Reference to the Scheduled Stop Point.",
-            "value": "NOTE"
-          }
-        ],
-        "Scope": "FULL_DEFINITON",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "Reference to the Scheduled Stop Point."
-        },
-        "ap-label-en": {
-          "en": "a view of"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "Reference to the Scheduled Stop Point."
-        },
-        "derived": "false",
-        "destRole": "aViewOf",
-        "label": {
-          "en": "a view of"
-        },
-        "sourceRole": "viewedAs",
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "ACTIVE_PACKAGE",
-      "label": {
-        "en": "a view of"
-      },
-      "maxCardinality": "1",
-      "minCardinality": "1",
-      "name": "a view of",
-      "range": [
-        {
-          "EA-GUID": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
-          "EA-Name": "ScheduledStopPoint",
-          "EA-Package": "TimetablesAndPlanning",
-          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
-        }
-      ]
-    },
-    {
-      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{066931BE-777B-4107-BC0F-A87E324F31F5}",
       "ap-definition-en": {
         "en": "Reference to the abstract Point."
@@ -27506,6 +28312,201 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
+      "ap-definition-en": {
+        "en": "Reference to the Scheduled Stop Point."
+      },
+      "ap-label-en": {
+        "en": "a view of"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Reference to the Scheduled Stop Point."
+      },
+      "domain": [
+        {
+          "EA-Name": "StopPointInJourneyPattern",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "label-nl",
+            "note": "een view van",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-nl",
+            "note": "Verwijzing naar de geplande stopplaats.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "a view of",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "Reference to the Scheduled Stop Point.",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "StopPointInJourneyPattern",
+        "EA-Domain-Guid": "{D8C72519-1BCE-4eb0-A6D0-01AA2F1A9C9B}",
+        "EA-Guid": "{2A19BB5F-312E-4a66-BFBF-B01039B7F548}",
+        "EA-Name": "aViewOf",
+        "EA-Package": "",
+        "EA-Range": "ScheduledStopPoint",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
+          "EA-Name": "ScheduledStopPoint",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        },
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "note": "een view van",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-nl",
+            "note": "Verwijzing naar de geplande stopplaats.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "a view of",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "Reference to the Scheduled Stop Point.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Reference to the Scheduled Stop Point."
+        },
+        "ap-label-en": {
+          "en": "a view of"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Reference to the Scheduled Stop Point."
+        },
+        "derived": "false",
+        "destRole": "aViewOf",
+        "label": {
+          "en": "a view of"
+        },
+        "sourceRole": "viewedAs",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "a view of"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "1",
+      "name": "a view of",
+      "range": [
+        {
+          "EA-GUID": "{5D4210A5-0938-4d98-8232-DBD6597B3C00}",
+          "EA-Name": "ScheduledStopPoint",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^polygon",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{C112AD28-A3CC-4139-9374-8A38B09CD3B5}",
+      "ap-definition-en": {
+        "en": "Polygon associated with the Zone"
+      },
+      "ap-label-en": {
+        "en": "polygon"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Polygon associated with the Zone"
+      },
+      "domain": [
+        {
+          "EA-Name": "TariffZone",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "TariffZone",
+        "EA-Domain-Guid": "{ADB57584-869F-4131-8C96-87F7C5A8D3E2}",
+        "EA-Guid": "{C112AD28-A3CC-4139-9374-8A38B09CD3B5}",
+        "EA-Name": "^polygon",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "Polygon",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{FCCC8FA5-F5BE-4392-9F38-5D6CDC50A3FC}",
+          "EA-Name": "Polygon",
+          "EA-Package": "OpenGIS-SF",
+          "uri": "http://www.opengis.net/ont/sf#Polygon"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "polygon"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Polygon associated with the Zone"
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Polygon associated with the Zone"
+        },
+        "ap-label-en": {
+          "en": "polygon"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Polygon associated with the Zone"
+        },
+        "label": {
+          "en": "polygon"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "polygon"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "polygon",
+      "range": [
+        {
+          "EA-GUID": "{FCCC8FA5-F5BE-4392-9F38-5D6CDC50A3FC}",
+          "EA-Name": "Polygon",
+          "EA-Package": "OpenGIS-SF",
+          "uri": "http://www.opengis.net/ont/sf#Polygon"
+        }
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^order",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{9A903D5F-B541-4a5f-A916-0B32E4375697}",
@@ -27678,6 +28679,86 @@
           "EA-Name": "Boolean",
           "EA-Package": "",
           "uri": "http://www.w3.org/2001/XMLSchema#boolean"
+        }
+      ]
+    },
+    {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#^centroid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{D33B5E16-F003-46f6-BA38-4D8581863B56}",
+      "ap-definition-en": {
+        "en": "Centre Point of the Zone."
+      },
+      "ap-label-en": {
+        "en": "centroid"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Centre Point of the Zone."
+      },
+      "domain": [
+        {
+          "EA-Name": "TariffZone",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "TariffZone",
+        "EA-Domain-Guid": "{ADB57584-869F-4131-8C96-87F7C5A8D3E2}",
+        "EA-Guid": "{D33B5E16-F003-46f6-BA38-4D8581863B56}",
+        "EA-Name": "^centroid",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "Point",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{26D5DAB9-4B77-476e-B3B2-46441002A3C8}",
+          "EA-Name": "Point",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "centroid"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Centre Point of the Zone."
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Centre Point of the Zone."
+        },
+        "ap-label-en": {
+          "en": "centroid"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Centre Point of the Zone."
+        },
+        "label": {
+          "en": "centroid"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "centroid"
+      },
+      "maxCardinality": "1",
+      "minCardinality": "0",
+      "name": "centroid",
+      "range": [
+        {
+          "EA-GUID": "{26D5DAB9-4B77-476e-B3B2-46441002A3C8}",
+          "EA-Name": "Point",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
         }
       ]
     },
@@ -35264,6 +36345,91 @@
       ]
     },
     {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints.member",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{21FA01CC-1026-4d1c-BC07-B7356CB204E9}",
+      "ap-definition-en": {
+        "en": "List of Points within the Group of Points."
+      },
+      "ap-label-en": {
+        "en": "member"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "List of Points within the Group of Points."
+      },
+      "domain": [
+        {
+          "EA-Name": "TariffZone",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#TariffZone"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "TariffZone",
+        "EA-Domain-Guid": "{ADB57584-869F-4131-8C96-87F7C5A8D3E2}",
+        "EA-Guid": "{21FA01CC-1026-4d1c-BC07-B7356CB204E9}",
+        "EA-Name": "^member",
+        "EA-Package": "TimetablesAndPlanning",
+        "EA-Range": "Point",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{26D5DAB9-4B77-476e-B3B2-46441002A3C8}",
+          "EA-Name": "Point",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "member"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "List of Points within the Group of Points."
+          },
+          {
+            "key": "name",
+            "note": "null",
+            "value": "GroupOfPoints.member"
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "List of Points within the Group of Points."
+        },
+        "ap-label-en": {
+          "en": "member"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "List of Points within the Group of Points."
+        },
+        "label": {
+          "en": "member"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "member"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "member",
+      "range": [
+        {
+          "EA-GUID": "{26D5DAB9-4B77-476e-B3B2-46441002A3C8}",
+          "EA-Name": "Point",
+          "EA-Package": "TimetablesAndPlanning",
+          "uri": "https://purl.eu/ns/mobility/timetables-and-planning#Point"
+        }
+      ]
+    },
+    {
       "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.transportmode",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{CB776FBB-4615-4f3d-B336-44DD79D808B9}",
@@ -36613,7 +37779,7 @@
   "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
   "template": "timetables-ap_en.j2",
   "title": "NeTEx Belgium: Timetables (application profile)",
-  "toolchaincommit": "74dc1cf1ae40170ec35070d3b2f91075f7535163",
+  "toolchaincommit": "f0537ef8da0373b10345d01d1ad7c79fc120c722",
   "translation": [
     {
       "language": "en",
