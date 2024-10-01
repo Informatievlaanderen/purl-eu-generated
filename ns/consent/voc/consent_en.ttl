@@ -1,0 +1,27 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:Concept a rdfs:Class .
+
+<https://purl.eu/ns/consent#liveData> a owl:ObjectProperty;
+  rdfs:domain <https://w3id.org/dpv/dpv-owl#PersonalData>;
+  rdfs:isDefinedBy <https://purl.eu/ns/consent>;
+  rdfs:range skos:Concept .
+
+<https://purl.eu/ns/consent> a owl:Ontology;
+  rdfs:label "consent"@en,
+    "consent"@nl;
+  dc:issued "TODO";
+  dc:license "https://creativecommons.org/publicdomain/zero/1.0/",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:mediator [
+    foaf:homepage <https://purl.eu>;
+    foaf:mbox <mailto:digitaal.vlaanderen@vlaanderen.be>;
+    foaf:name "Purl.eu"
+  ];
+  rdfs:seeAlso skos:Concept .
