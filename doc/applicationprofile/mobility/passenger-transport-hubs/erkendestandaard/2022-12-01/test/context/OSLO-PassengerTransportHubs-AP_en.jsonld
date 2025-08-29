@@ -1,3 +1,732 @@
 {
-  "@context": {}
+  "@context": {
+    "AccessMode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Accessibility": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Accessibility",
+    "AccessibilityComponent": "http://www.w3.org/2004/02/skos/core#Concept",
+    "AccessibilityLevel": "http://www.w3.org/2004/02/skos/core#Concept",
+    "AccessibilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "AdditionalService": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService",
+    "AdditionalService.accessibility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.accessibility",
+      "@type": "@id"
+    },
+    "AdditionalService.availability": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.availability",
+      "@type": "@id"
+    },
+    "AdditionalService.availableAtInfrastructureElement": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#availableAtInfrastructureElement",
+      "@type": "@id"
+    },
+    "AdditionalService.provider": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#AdditionalService.provider",
+      "@type": "@id"
+    },
+    "AdditionalServiceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "AddressRepresentation": "http://www.w3.org/ns/locn#Address",
+    "Agent": "http://purl.org/dc/terms/Agent",
+    "AutomatedParkingGarage": "http://schema.mobivoc.org/#AutomatedParkingGarage",
+    "Availability": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Availability",
+    "Availability.openingHours": {
+      "@id": "https://schema.org/hoursAvailable",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Availability.period": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid.periode",
+      "@type": "@id"
+    },
+    "BicycleParking": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling",
+    "BicycleParkingStation": "http://schema.mobivoc.org/#BicycleParkingStation",
+    "BrandType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "BusShelter": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Bushok",
+    "Capacity": "http://schema.mobivoc.org/#Capacity",
+    "Charger": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger",
+    "Charger.meansOfTransport": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport",
+      "@type": "@id"
+    },
+    "ChargerType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "CivicStructure": "https://schema.org/CivicStructure",
+    "ContactInformation": "http://schema.org/ContactPoint",
+    "DataExchangeInfrastructure": "https://purl.eu/ns/mobility/passenger-transport-hubs#DataExchangeInfrastructure",
+    "DateTime": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "DirectedLink": "https://data.vlaanderen.be/ns/netwerk#GerichteLink",
+    "Duration": "http://www.w3.org/2001/XMLSchema#duration",
+    "Element": "https://data.vlaanderen.be/ns/openbaardomein#Element",
+    "Executor": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Executor",
+    "FormalFramework": "http://purl.org/vocab/cpsv#FormalFramework",
+    "GeographicalName": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "Geometry": "http://www.w3.org/ns/locn#Geometry",
+    "HoppinColumn": "https://purl.eu/ns/mobility/passenger-transport-hubs#HoppinColumn",
+    "Hoppinpoint": "https://purl.eu/ns/mobility/passenger-transport-hubs#Hoppinpoint",
+    "Hoppinpoint.classification": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Hoppinpoint.classification",
+      "@type": "@id"
+    },
+    "Hoppinpoint.status": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Hoppinpoint.status",
+      "@type": "@id"
+    },
+    "HoppinpointStatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "HoppinpointType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Identifier": "http://www.w3.org/ns/adms#Identifier",
+    "InformationCarrier": "https://purl.eu/ns/mobility/passenger-transport-hubs#InformationCarrier",
+    "InformationColumn": "https://data.vlaanderen.be/doc/applicatieprofiel/infrastructuurelementen/#Infozuil",
+    "InformationColumnType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "InfrastructureElement": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+    "InfrastructureElement.accessibility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#InfrastructureElement.accessibility",
+      "@type": "@id"
+    },
+    "InfrastructureElement.identifier": {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "InfrastructureElement.service": {
+      "@container": "@set",
+      "@id": "http://todo.com/service",
+      "@type": "@id"
+    },
+    "InfrastructureElement.transportHub": {
+      "@container": "@set",
+      "@id": "http://todo.com/transportHub",
+      "@type": "@id"
+    },
+    "InfrastructureElement.transportObject": {
+      "@container": "@set",
+      "@id": "http://todo.com/transportObject",
+      "@type": "@id"
+    },
+    "InfrastructureElementType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Integer": "http://www.w3.org/2001/XMLSchema#integer",
+    "LanguageString": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "License": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#License",
+    "License.period": {
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "@id"
+    },
+    "Location": "http://www.w3.org/ns/prov#Location",
+    "MeansOfTransport": "http://www.w3.org/2004/02/skos/core#Concept",
+    "MobilityService": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#MobilityService",
+    "MobilityService.accessibility": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.toegankelijkheid",
+      "@type": "@id"
+    },
+    "MobilityService.availability": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.beschikbaarheid",
+      "@type": "@id"
+    },
+    "MobilityService.availableAtInfrastructureElement": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#MobilityService.availableAtInfrastructureElement",
+      "@type": "@id"
+    },
+    "MobilityService.meansOfTransport": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel",
+      "@type": "@id"
+    },
+    "MobilityService.performedBy": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitgevoerdDoor",
+      "@type": "@id"
+    },
+    "MobilityService.provider": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#provider",
+      "@type": "@id"
+    },
+    "MobilityService.transportHub": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub",
+      "@type": "@id"
+    },
+    "MobilityServiceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "MonetaryAmount": "https://schema.org/MonetaryAmount",
+    "Network": "https://data.vlaanderen.be/ns/netwerk#Netwerk",
+    "NetworkElement": "https://data.vlaanderen.be/ns/netwerk#Netwerkelement",
+    "Node": "https://data.vlaanderen.be/ns/netwerk#Knoop",
+    "OpeningHours": "https://schema.org/hoursAvailable",
+    "ParkingFacility": "http://schema.mobivoc.org/#ParkingFacility",
+    "ParkingFacility.openingHours": {
+      "@id": "http://schema.org/openingHoursSpecification",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "ParkingFacilityFeatureType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "ParkingGarage": "http://schema.mobivoc.org/#ParkingGarage",
+    "ParkingLot": "http://schema.mobivoc.org/#ParkingLot",
+    "ParkingSpace": "http://schema.mobivoc.org/#ParkingSpace",
+    "ParkingSpaceFeatureType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "PassengerTransportHubStatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "PassengerTransportHubType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Period": "http://data.europa.eu/m8g/PeriodOfTime",
+    "PlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "PlugType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Point": "http://www.opengis.net/ont/sf#Point",
+    "Polygon": "http://www.opengis.net/ont/sf#Polygon",
+    "PriceSpecification": "https://schema.org/PriceSpecification",
+    "PropulsionType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Provider": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider",
+    "PublicOrganisation": "http://data.europa.eu/m8g/PublicOrganisation",
+    "Quay": "https://purl.eu/ns/mobility/timetables-and-planning#Quay",
+    "Quay.publicCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Quay.publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "RegisteredTransportHub": "https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub",
+    "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+    "Resource.identifier": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#identifier",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Resource.propulsion": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#propulsion",
+      "@type": "@id"
+    },
+    "Resource.status": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#status",
+      "@type": "@id"
+    },
+    "ResourceReport": "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport",
+    "ResourceReport.meansOfTransport": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.meansOfTransport",
+      "@type": "@id"
+    },
+    "ResourceReport.propulsion": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion",
+      "@type": "@id"
+    },
+    "ResourceReport.service": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.service",
+      "@type": "@id"
+    },
+    "ResourceReport.status": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#ResourceReport.status",
+      "@type": "@id"
+    },
+    "ResourceStatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "ResourceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Route": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+    "Route.arrivalTime": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.aankomsttijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Route.consistsOf": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.bestaatUit",
+      "@type": "@id"
+    },
+    "Route.departureTime": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.vertrektijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "RouteDescription": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteDescription",
+    "RouteNode": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteNode",
+    "RouteNode.realisedBy": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop.gerealiseerdDoor",
+      "@type": "@id"
+    },
+    "RouteNode.realisedWith": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedWith",
+      "@type": "@id"
+    },
+    "RoutePlanner": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RoutePlanner",
+    "RouteSegment": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#RouteSegment",
+    "RouteSegment.meansOfTransport": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.vervoermiddel",
+      "@type": "@id"
+    },
+    "RouteSegment.realisedWith": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.gerealiseerdMet",
+      "@type": "@id"
+    },
+    "RouteType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Service": "http://purl.org/dc/dcmitype/Service",
+    "Sign": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Site": "https://purl.eu/ns/mobility/timetables-and-planning#site",
+    "StopPlace": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace",
+    "StopPlace.accessibility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.accessabilityAssessment",
+      "@type": "@id"
+    },
+    "StopPlace.publicCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.publicCode",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "StopPost": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Haltepaal",
+    "StoppingPlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "StreetFurniture": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Straatmeubilair",
+    "String": "http://www.w3.org/2001/XMLSchema#string",
+    "Timetable": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Timetable",
+    "Transfer": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer",
+    "Transfer.meansOfTransport": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.vervoermiddel",
+      "@type": "@id"
+    },
+    "TransportConnection": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#TransportConnection",
+    "TransportHub": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub",
+    "TransportHub.accessibility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.accessibility",
+      "@type": "@id"
+    },
+    "TransportHub.classification": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.classification",
+      "@type": "@id"
+    },
+    "TransportHub.status": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.status",
+      "@type": "@id"
+    },
+    "TransportHub.transportObject": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportObject",
+      "@type": "@id"
+    },
+    "TransportMode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TransportModeOnMap": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TransportNetwork": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk",
+    "TransportNetwork.consistsOf": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/netwerk#bestaatUit",
+      "@type": "@id"
+    },
+    "TransportNode": "https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop",
+    "TransportNodeType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TransportObject": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+    "TransportObject.accessibility": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid",
+      "@type": "@id"
+    },
+    "TransportObject.availability": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.beschikbaarheid",
+      "@type": "@id"
+    },
+    "TransportObject.service": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#service",
+      "@type": "@id"
+    },
+    "TransportObject.transportHub": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub",
+      "@type": "@id"
+    },
+    "TransportRegion": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportRegion",
+    "TransportType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Traveler": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Traveler",
+    "Trip": "https://schema.org/Trip",
+    "Trip.arrivalTime": {
+      "@id": "https://schema.org/arrivalTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Trip.departureTime": {
+      "@id": "https://schema.org/departureTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "UndergroundParking": "http://schema.mobivoc.org/#UndergroundParkingGarage",
+    "UserType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "VehicleType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "VirtualNode": "https://purl.eu/ns/mobility/passenger-transport-hubs#VirtualNode",
+    "accessModes": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#accessModes",
+      "@type": "@id"
+    },
+    "additionalService": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#additionalService",
+      "@type": "@id"
+    },
+    "arrivalNode": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstknoop",
+      "@type": "@id"
+    },
+    "asGML": {
+      "@id": "http://www.opengis.net/ont/geosparql#asGML",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "asWKT": {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "availableAt": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp",
+      "@type": "@id"
+    },
+    "availableOnTransportObject": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#availableOnTransportObject",
+      "@type": "@id"
+    },
+    "boxNumber": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "brand": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.brand",
+      "@type": "@id"
+    },
+    "calculatedWith": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#calculatedWith",
+      "@type": "@id"
+    },
+    "capacity": {
+      "@container": "@set",
+      "@id": "http://schema.mobivoc.org/#capacity",
+      "@type": "@id"
+    },
+    "centroid": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.centroid",
+      "@type": "@id"
+    },
+    "chosenRoute": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#chosenRoute",
+      "@type": "@id"
+    },
+    "columnName": {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "columnNumber": {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "component": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#component",
+      "@type": "@id"
+    },
+    "connects": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/netwerk#verbindt",
+      "@type": "@id"
+    },
+    "containing": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#containing",
+      "@type": "@id"
+    },
+    "costPrice": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#costPrice",
+      "@type": "@id"
+    },
+    "departureNode": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekknoop",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "displayedTransportationModeOnMap": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart",
+      "@type": "@id"
+    },
+    "endTime": {
+      "@id": "http://data.europa.eu/m8g/endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "entrance": {
+      "@container": "@set",
+      "@id": "http://schema.mobivoc.org/#entrance",
+      "@type": "@id"
+    },
+    "executedRoute": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#executedRoute",
+      "@type": "@id"
+    },
+    "executor": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitvoerder",
+      "@type": "@id"
+    },
+    "exit": {
+      "@container": "@set",
+      "@id": "http://schema.mobivoc.org/#exit",
+      "@type": "@id"
+    },
+    "feature": {
+      "@container": "@set",
+      "@id": "http://schema.mobivoc.org/#feature",
+      "@type": "@id"
+    },
+    "geographicalName": {
+      "@id": "https://data.vlaanderen.be/ns/transportnetwerk#geografischeNaam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "geometry": {
+      "@id": "http://www.w3.org/ns/locn#geometry",
+      "@type": "@id"
+    },
+    "houseNumber": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "identifier": {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "includes": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#omvat",
+      "@type": "@id"
+    },
+    "infrastructureElement": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#infrastructureElement",
+      "@type": "@id"
+    },
+    "isFellowTravelerOf": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isFellowTravelerOf",
+      "@type": "@id"
+    },
+    "itinerary": {
+      "@container": "@set",
+      "@id": "http://schema.org/itinerary",
+      "@type": "@id"
+    },
+    "level": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#level",
+      "@type": "@id"
+    },
+    "license": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#license",
+      "@type": "@id"
+    },
+    "location": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "@id"
+    },
+    "locationName": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "maximum": {
+      "@id": "http://schema.mobivoc.org/#maximumValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "meansOfTransport": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel",
+      "@type": "@id"
+    },
+    "number": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#number",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "offeredWithin": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#offeredWithin",
+      "@type": "@id"
+    },
+    "parkingSpace": {
+      "@container": "@set",
+      "@id": "http://todo.com/parkingSpace",
+      "@type": "@id"
+    },
+    "partOfTrip": {
+      "@container": "@set",
+      "@id": "http://schema.org/partOfTrip",
+      "@type": "@id"
+    },
+    "placeName": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "placeType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.placeType",
+      "@type": "@id"
+    },
+    "plug": {
+      "@container": "@set",
+      "@id": "http://schema.mobivoc.org/#plug",
+      "@type": "@id"
+    },
+    "polygon": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.polygon",
+      "@type": "@id"
+    },
+    "possibleRoute": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#possibleRoute",
+      "@type": "@id"
+    },
+    "postCode": {
+      "@id": "http://www.w3.org/ns/locn#postCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "priceSpecification": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#priceSpecification",
+      "@type": "@id"
+    },
+    "propulsion": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#propulsion",
+      "@type": "@id"
+    },
+    "pseudonym": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#pseudonym",
+      "@type": "@id"
+    },
+    "quay": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#quay",
+      "@type": "@id"
+    },
+    "realisedAt": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedAt",
+      "@type": "@id"
+    },
+    "realisedBy": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#realisedBy",
+      "@type": "@id"
+    },
+    "realisedOn": {
+      "@id": "http://todo.com/realisedOn",
+      "@type": "@id"
+    },
+    "registration": {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "reportTime": {
+      "@id": "http://purl.org/dc/elements/1.1/date",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "resource": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#resource",
+      "@type": "@id"
+    },
+    "roadAuthority": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#TransportHub.roadAuthority",
+      "@type": "@id"
+    },
+    "routeNode(Source)": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer.routeNode.source",
+      "@type": "@id"
+    },
+    "routeNode(Target)": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transfer.routeNode.target",
+      "@type": "@id"
+    },
+    "routedescription": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#routeDescription",
+      "@type": "@id"
+    },
+    "service": {
+      "@container": "@set",
+      "@id": "http://todo.com/service",
+      "@type": "@id"
+    },
+    "spatialCoverage": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "@id"
+    },
+    "specification": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#RegisteredTransportHub.specification",
+      "@type": "@id"
+    },
+    "startTime": {
+      "@id": "http://data.europa.eu/m8g/startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "stopPlace": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#Quay.stopPlace",
+      "@type": "@id"
+    },
+    "stopPlaceType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#stopPlaceType",
+      "@type": "@id"
+    },
+    "territorialApplication": {
+      "@container": "@set",
+      "@id": "http://data.europa.eu/m8g/territorialApplication",
+      "@type": "@id"
+    },
+    "timetable": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#timetable",
+      "@type": "@id"
+    },
+    "title": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "total": {
+      "@id": "http://schema.mobivoc.org/#totalCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "transfer": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transfer",
+      "@type": "@id"
+    },
+    "transferTime": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transferTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "transportAuthority": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#transportAuthority",
+      "@type": "@id"
+    },
+    "transportHub": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportHub",
+      "@type": "@id"
+    },
+    "transportMode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#transportMode",
+      "@type": "@id"
+    },
+    "transportNetwork": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#transportNetwork",
+      "@type": "@id"
+    },
+    "travelTime": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#travelTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "type": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "undertakes": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#undertakes",
+      "@type": "@id"
+    },
+    "user": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#person",
+      "@type": "@id"
+    },
+    "validityPeriod": {
+      "@id": "http://purl.org/dc/elements/1.1/date",
+      "@type": "@id"
+    },
+    "vehicleType": {
+      "@id": "https://purl.eu/ns/mobility/passenger-transport-hubs#vehicleType",
+      "@type": "@id"
+    }
+  }
 }
