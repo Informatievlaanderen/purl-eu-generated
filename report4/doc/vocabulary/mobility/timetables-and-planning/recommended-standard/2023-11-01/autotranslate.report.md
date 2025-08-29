@@ -2,6 +2,114 @@
 
 #||# -------------------------------------  
 
+#||#  update the translation file from the memory
+
+#||# 
+
+#||# start reading  
+
+#||# done  
+
+#||# start processing  
+
+#||# create new translation file with existing translations included  
+
+http://www.w3.org/2004/02/skos/core#prefLabel
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/regorg#legalName
+
+new term introduced, no translation found
+
+http://purl.org/dc/elements/1.1/title
+
+new term introduced, no translation found
+
+http://www.w3.org/2004/02/skos/core#altLabel
+
+new term introduced, no translation found
+
+http://purl.org/dc/terms/description
+
+new term introduced, no translation found
+
+http://purl.org/dc/terms/description
+
+new term introduced, no translation found
+
+http://purl.org/dc/terms/description
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#adminUnitL1
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#adminUnitL2
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#addressArea
+
+new term introduced, no translation found
+
+https://data.vlaanderen.be/ns/adres#land
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#locatorName
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#postName
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#thoroughfare
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#fullAddress
+
+new term introduced, no translation found
+
+https://purl.eu/ns/mobility/timetables-and-planning#text
+
+new term introduced, no translation found
+
+https://data.vlaanderen.be/ns/adres#gemeentenaam
+
+new term introduced, no translation found
+
+http://schema.org/contactPoint
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/regorg#registration
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/locn#address
+
+new term introduced, no translation found
+
+http://schema.org/hoursAvailable
+
+new term introduced, no translation found
+
+http://www.w3.org/1999/02/22-rdf-syntax-ns#langString
+
+new term introduced, no translation found
+
+http://schema.org/OpeningHoursSpecification
+
+new term introduced, no translation found
+
+#||# Write complete  
+
+#||# the file was saved to: /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/translation_input/timetables-and-planning_nl.json  
+
 #||# 
 
 #||#  autotranslate the translation file for language nl
@@ -14,7 +122,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 45  
+#||# Number of calls: 0  
 
 #||# start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/timetables-and-planning_nl.json  
 
@@ -24,17 +132,11 @@
 
 #||# 
 
-start reading file stopplaces-ap_en.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/stopplaces-ap_en_nl.j2
+#||# 
 
 #||# 
 
@@ -42,17 +144,11 @@ start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and
 
 #||# 
 
-start reading file TimetablesAndPlanning-en-voc.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# purl-voc2_en
-
-#||#  filename contains prime language reference purl-voc2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/TimetablesAndPlanning-en-voc_nl.j2
+#||# 
 
 #||# 
 
@@ -60,17 +156,11 @@ start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and
 
 #||# 
 
-start reading file TimetablesAndPlanning-nl-voc.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# voc2
-
-#||#  filename does not contains language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/TimetablesAndPlanning-nl-voc_nl.j2
+#||# 
 
 #||# 
 
@@ -78,17 +168,11 @@ start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and
 
 #||# 
 
-start reading file stopplaatsen-ap.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# ap2
-
-#||#  filename does not contains language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/stopplaatsen-ap_nl.j2
+#||# 
 
 #||# 
 
@@ -96,123 +180,15 @@ start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and
 
 #||# 
 
-start reading file stopplaces-ap_nl.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/stopplaces-ap_nl_nl.j2
-
 #||# 
 
 #||#  autotranslate the J2 templates for language nl
 
 #||# 
 
-start reading file tijdstabellen-ap.j2
-
-#||#  start converting filename in extend blocks
-
-#||# ap2
-
-#||#  filename does not contains language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/tijdstabellen-ap_nl.j2
-
 #||# 
 
 #||#  autotranslate the J2 templates for language nl
 
 #||# 
-
-start reading file timetables-ap_nl.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/timetables-ap_nl_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file vehiclescheduling-ap_nl.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/vehiclescheduling-ap_nl_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file voertuigplanning-ap.j2
-
-#||#  start converting filename in extend blocks
-
-#||# ap2
-
-#||#  filename does not contains language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/voertuigplanning-ap_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file timetables-ap_en.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/timetables-ap_en_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file vehiclescheduling-ap_en.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/vehiclescheduling-ap_en_nl.j2
 
