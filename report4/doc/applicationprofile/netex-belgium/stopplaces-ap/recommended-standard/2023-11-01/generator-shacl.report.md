@@ -16,7 +16,7 @@ Error: Unable to find a label for subject "[urn:oslo-toolchain:97e3aa694503a5129
 
 #||# -------------------------------------  
 
-2025-08-29T14:28:43.196Z warn: Unable to find the description for subject "[urn:oslo-toolchain:d062b9fb836733281f93b184d6b22d810d81d67a950736fc8ca168bfd55401c8](all-stopplaces-ap.jsonld#L8424)".
+2025-09-01T12:56:50.775Z warn: Unable to find the description for subject "[urn:oslo-toolchain:d062b9fb836733281f93b184d6b22d810d81d67a950736fc8ca168bfd55401c8](all-stopplaces-ap.jsonld#L8424)".
 
-2025-08-29T14:28:43.198Z warn: Unable to find the description for subject "[urn:oslo-toolchain:e087627193dd9e26cc8442bdb3e2d2b0b47b13fe417e2e81497d8fbd0ed4c10a](all-stopplaces-ap.jsonld#L8443)".
+2025-09-01T12:56:50.777Z warn: Unable to find the description for subject "[urn:oslo-toolchain:e087627193dd9e26cc8442bdb3e2d2b0b47b13fe417e2e81497d8fbd0ed4c10a](all-stopplaces-ap.jsonld#L8443)".
 
