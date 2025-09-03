@@ -1,0 +1,13 @@
+{% extends "purl-ap2_nl.j2" %}
+
+{% block summary %}
+<p>Het applicatieprofiel NETEX Belgium - Vehicle Scheduling beschrijft hoe de termen uit de bijbehorende <a href="https://purl.eu/ns/mobility/timetables-and-planning">woordenschat</a> moeten worden gebruikt om te beschrijven hoe een openbaarvervoersbedrijf zijn voertuigen gebruikt om de dienst uit te voeren.</p>
+<p>De standaard is gebaseerd op <a href="https://netex-cen.eu/">NETEX.</a></p>
+<p>Blok is hierin de centrale klasse. Een blok is een verzameling van opeenvolgende ritten die met hetzelfde voertuig zijn voltooid vanaf het moment dat het de garage verlaat totdat het daar terugkeert. Blokken vormen de basis voor het efficiënt inzetten van voertuigen en chauffeurs, bijvoorbeeld door Journeys van verschillende lijnen op elkaar te zetten.</p>
+<p>Blokken omvatten zowel Service Journeys (waarop passagiers kunnen in- of uitstappen, zie <a href="https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap">NETEX-Belgium - Dienstregelingen</a> voor meer info) als Dead Runs.</p>
+<p>Doordat Ritten gekoppeld zijn aan Dagtypes (doordeweekse dagen, schoolvakanties, etc) is dit ook het geval voor de Blokken waar ze bij horen en kan er een Servicekalender worden opgesteld door de Dagtypes te koppelen aan actuele data.</p>
+<p>Verder worden blokken beschreven door de Parkeerpunten (depots) waar de eerste Reis vertrekt en de laatste aankomt. Deze kunnen verder worden gespecialiseerd naar Garage Point en gekoppeld worden aan fysieke Garages en serviceruimtes (Crew Base klasse).</p>
+<p>Het Voertuigtype waarmee de Ritten van het Blok worden uitgevoerd, kan ook worden gespecificeerd, inclusief informatie over de beschikbare Passagierscapaciteit.</p>
+<p>Omdat er naast Service journeys ook Dead Runs beschreven kunnen worden, hebben we naast Service Journey Patterns ook Dead Run Patterns. Meer informatie over de Routes van deze Reizen en de bijbehorende Lijnen volgt uit de associatie met de Routeklasse. Verder kan per Traject worden aangegeven welke Punten onderweg bezocht zullen worden met de bijhorende Passagetijden (voor een verdere beschrijving, zie ook <a href="https://purl.eu/doc/applicationprofile/netex-belgium/timetables-ap">NETEX Belgium - Dienstregelingen</a>).</p>
+<p>Momenteel staat het koppelen van daadwerkelijke voertuigen en coureurs aan blokken niet in deze standaard. Rijtijden zijn op dit moment ook buiten het bereik.</p>
+{% endblock %}

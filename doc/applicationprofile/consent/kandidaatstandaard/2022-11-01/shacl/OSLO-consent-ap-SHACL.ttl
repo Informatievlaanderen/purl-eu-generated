@@ -1,0 +1,461 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#> rdfs:member <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataprocessorShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentnoticeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LegalbasisShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldataShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LegalentityShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#EntityShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RiskShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RightShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposetypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatacontrollerShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatasubjecttypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentstatusShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RecipientShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingtypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldatatypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#TechnicalmeasureShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldatahandlingShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StoragedurationShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageconditionShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatasubjectShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationalmeasureShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#AgentShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredPersonShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredorganisationShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IndicationmethodtypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationtypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LivedatatypeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IdentifierShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatetimeShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StringShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LiteralShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LangstringShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape>,
+    <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LocationShape> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#AgentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Agent .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Isindicatedattime>;
+    shacl:datatype xsd:dateTime;
+    shacl:description "Moment when this stage of the Consent was created."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "isIndicatedAtTime"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#isIndicatedAtTime>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Hasconsentstatus>;
+    shacl:class skos:Concept;
+    shacl:description "Specifies the state or status of consent."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasConsentStatus"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasConsentStatus>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Hasduration>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Duration>;
+    shacl:description "Indicates information about the Duration of the Consent."@en;
+    shacl:maxCount "1";
+    shacl:name "hasDuration"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Haslocation>;
+    shacl:class prov:Location;
+    shacl:description "Location where this stage of the Consent was created."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasLocation"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasLocation>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Hasnotice>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#ConsentNotice>;
+    shacl:description "Reference to the applied or used ConsentNotice."@en;
+    shacl:name "hasNotice"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasNotice>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Hasindicationmethod>;
+    shacl:class skos:Concept;
+    shacl:description "Way in which the current state of Consent realized."@en;
+    shacl:maxCount "1";
+    shacl:name "hasIndicationMethod"@en;
+    shacl:path <https://w3id.org/dpv#hasIndicationMethod>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Isindicatedby>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Entity>;
+    shacl:description "Entity that is responsible for this stage of the Consent."@en;
+    shacl:maxCount "1";
+    shacl:name "isIndicatedBy"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#isIndicatedBy>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Consent.Hasdatasubject>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#DataSubject>;
+    shacl:description "Indicates the association of the Consent with a DataSubject."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasDataSubject"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDataSubject>
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Consent> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentnoticeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#ConsentNotice> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ConsentstatusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatacontrollerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#DataController> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DataprocessorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#DataProcessor> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatasubjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Datasubject.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Type of DataSubject."@en;
+    shacl:maxCount "1";
+    shacl:name "type"@en;
+    shacl:path dc11:type
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#DataSubject> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatasubjecttypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DatetimeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:dateTime .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Duration.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Type of Duration"@en;
+    shacl:maxCount "1";
+    shacl:name "type"@en;
+    shacl:path dc11:type
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Duration> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#DurationtypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#EntityShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Entity.Hasrelationwithdatasubject>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#DataSubject>;
+    shacl:description "Indicates the relation between the Entity and a DataSubject."@en;
+    shacl:name "hasRelationWithDataSubject"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasRelationWithDataSubject>
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Entity> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IdentifierShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier.Attributedat>;
+    shacl:datatype xsd:dateTime;
+    shacl:description "The date on which the identifier was issued."@en;
+    shacl:maxCount "1";
+    shacl:name "attributedAt"@en;
+    shacl:path dc:issued
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier.Attributedbyasstring>;
+    shacl:datatype xsd:string;
+    shacl:description "Name of the Agent that issued the identifier."@en;
+    shacl:maxCount "1";
+    shacl:name "attributedByAsString"@en;
+    shacl:path <http://www.w3.org/ns/adms#schemaAgency>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier.Identifier>;
+    shacl:description "String used to uniquely identify the object."@en;
+    shacl:maxCount "1";
+    shacl:name "identifier"@en;
+    shacl:path skos:notation
+  ];
+  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#IndicationmethodtypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LangstringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdf:langString .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LegalbasisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Legalbasis.Haspersonaldatahandling>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#PersonalDataHandling>;
+    shacl:description "Indicates the association with the PersonalDataHandling."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasPersonalDataHandling"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasPersonalDataHandling>
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#LegalBasis> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LegalentityShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#LegalEntity> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LiteralShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LivedatatypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#LocationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass prov:Location .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass org:Organization .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#OrganisationalmeasureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://www.w3.org/ns/person#Person> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldataShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldata.Livedata>;
+    shacl:class skos:Concept;
+    shacl:description "Indicates how current the data is."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "liveData"@en;
+    shacl:path <https://purl.eu/ns/consent#liveData>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldata.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Type of PersonalData."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "type"@en;
+    shacl:path dc11:type
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#PersonalData> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldatahandlingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasright>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Right>;
+    shacl:description "Indicates the use or applicability of a Right with the PersonalDataHandling."@en;
+    shacl:name "hasRight"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasRight>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasrisk>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Risk>;
+    shacl:description "Indicates the applicability of a Risk associated with the PersonalDataHandling."@en;
+    shacl:name "hasRisk"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasRisk>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.HasTechnicalOrganisationalMeasure>;
+    shacl:class skos:Concept;
+    shacl:description "Indicates the use or applicability of a Technical Organisational Measure."@en;
+    shacl:name "has Technical Organisational Measure"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasTechnicalOrganisationalMeasure>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasdatasubject>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#DataSubject>;
+    shacl:description "Indicates the association with the DataSubject."@en;
+    shacl:minCount "1";
+    shacl:name "hasDataSubject"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDataSubject>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasprocessing>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Processing>;
+    shacl:description "Indicates the association with the Processing."@en;
+    shacl:minCount "1";
+    shacl:name "hasProcessing"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasProcessing>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasrecipient>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Recipient>;
+    shacl:description "Indicates the Recipient of the PersonalData."@en;
+    shacl:name "hasRecipient"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasRecipient>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Haspurpose>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Purpose>;
+    shacl:description "Indicates the association with the Purpose."@en;
+    shacl:minCount "1";
+    shacl:name "hasPurpose"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasPurpose>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasdatacontroller>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#DataController>;
+    shacl:description "Indicates the association with the DataController."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasDataController"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDataController>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Haspersonaldata>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#PersonalData>;
+    shacl:description "Indicates the association with the PersonalData."@en;
+    shacl:minCount "1";
+    shacl:name "hasPersonalData"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasPersonalData>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Haslegalbasis>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#LegalBasis>;
+    shacl:description "Indicates the use or applicability of a LegalBasis."@en;
+    shacl:minCount "1";
+    shacl:name "hasLegalBasis"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasLegalBasis>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Personaldatahandling.Hasdataprocessor>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#DataProcessor>;
+    shacl:description "Indicates the inclusion or applicability of a DataProcessor."@en;
+    shacl:name "hasDataProcessor"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDataProcessor>
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#PersonalDataHandling> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PersonaldatatypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Processing.Hasstoragecondition>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#StorageCondition>;
+    shacl:description "Indicates information about the storage of the PersonalData."@en;
+    shacl:maxCount "1";
+    shacl:name "hasStorageCondition"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasStorageCondition>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Processing.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Type of Processing."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "type"@en;
+    shacl:path dc11:type
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Processing> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#ProcessingtypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Purpose.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Type of Purpose."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "type"@en;
+    shacl:path dc11:type
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Purpose> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#PurposetypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RecipientShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Recipient> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredPersonShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredPerson.Fullname>;
+    shacl:datatype xsd:string;
+    shacl:description "The full name of the person, in a general a combination of the first and last name."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "fullName"@en;
+    shacl:path <https://data.vlaanderen.be/ns/persoon#volledigeNaam>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredorganisationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Registeredorganisation.Legalname>;
+    shacl:datatype rdf:langString;
+    shacl:description "The legal name of the organisation."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "legalName"@en;
+    shacl:path <http://www.w3.org/ns/regorg#legalName>
+  ];
+  shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RightShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Right> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RiskShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#Risk> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StorageconditionShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#StorageCondition> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StoragedurationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Storageduration.Hasduration>;
+    shacl:class <https://w3id.org/dpv/dpv-owl#Duration>;
+    shacl:description "Indicates information about the Duration of the storage."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "hasDuration"@en;
+    shacl:path <https://w3id.org/dpv/dpv-owl#hasDuration>
+  ];
+  shacl:targetClass <https://w3id.org/dpv/dpv-owl#StorageDuration> .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#StringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .
+
+<https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#TechnicalmeasureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .

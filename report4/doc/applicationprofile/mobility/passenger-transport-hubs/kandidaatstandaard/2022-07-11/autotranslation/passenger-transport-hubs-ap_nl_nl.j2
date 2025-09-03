@@ -1,0 +1,26 @@
+{% extends "purl-ap2_nl.j2" %}
+
+{% block summary %}
+<p>Het applicatieprofiel OSLO-PassengerTransportHubs geeft weer hoe termen uit de bijbehorende <a href="https://purl.eu/ns/mobility/passenger-transport-hubs">woordenschat</a> worden gebruikt om gegevens over vervoersknooppunten voor passagiers uit te wisselen.</p>
+
+<p>Door het diverse aanbod en de overstapmogelijkheden spelen vervoersknooppunten waar reizigers kunnen overstappen een belangrijke rol bij het realiseren van basisbereikbaarheid.</p>
+
+<p>Het model bestaat uit twee delen. Het eerste deel geeft een algemene definitie van een Transport Hub en beschrijft de bijbehorende elementen, met specifieke aandacht voor personenvervoer. Het tweede deel richt zich op de Reiziger die Vervoersknooppunten gebruikt voor zijn Reis of Route.</p>
+
+<p>Hieronder richten we ons op deel één, voor meer informatie over deel twee verwijzen wij u naar het <a href="https://data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod">toepassingsprofiel OSLO Mobility: Trips and Offerings</a>.</p>
+
+<p>Vervoersknooppunten bestaan uit 1) infrastructuurelementen, 2) vervoersnetwerken, 3) mobiliteitsdiensten en 4) aanvullende diensten.</p>
+
+<p>De klasse TransportHub is verder gespecialiseerd naar Hoppinppoint, de Vlaamse versie van een Transport Hub.</p>
+
+<p>InfrastructureElements vertegenwoordigen het fysieke aspect van een Transport Hub, het gaat om objecten zoals Informatiezuilen (zoals de Hoppin-kolom), Stopplaatsen, Parkeerplaatsen, Fietsenrekken, Opladers etc. die nodig zijn voor de aangesloten Transportnetwerken en de diensten die worden aangeboden op de Transport Hubs. De InfrastructureElements en hun specialisaties zijn beschreven binnen <a href="https://data.vlaanderen.be/doc/vocabularium/openbaardomein/infrastructuur">OSLO Public Domain - InfrastructureElements</a>, <a href="https://data.vlaanderen.be/doc/applicatieprofiel/mobiliteit/dienstregeling-en-planning/stopplaatsen/kandidaatstandaard/2022-03-17">OSLO Mobility - Timetables and Planning - Stopplaces</a> en out of <a href="https://www.mobivoc.org/">Open Mobility Vocabulary</a>.</p>
+
+<p>De TransportNetworks die beschikbaar zijn op een Transport Hub zijn toegankelijk via TransportObjects zoals TransportNodes (haltes, stations... ) en TransportConnections tussen die knooppunten. Ook VirtualNodes (punten op een verbinding tussen twee Transport Nodes, bijvoorbeeld de positie van een gedeelde trede die achterblijft in een stad) zijn mogelijk. De klasse TransportObject en zijn subklassen zijn hergebruikt uit de woordenschat van <a href="https://data.vlaanderen.be/ns/transportnetwerk">OSLO Transportnetwork</a>.</p>
+
+<p>Via de beschikbare InfrastructureElements en TransportObjects zijn MobilityServices beschikbaar op de Transporthub. Dit kunnen lijndiensten of gedeelde trappen zijn, maar net zo goed parkeerplaatsen of fietspompen. Een Mobiliteitsdienst kan ook andere Mobiliteitsdiensten omvatten, in het geval van een Aanbieder die zijn diensten op verschillende granulariteitsniveaus beschrijft (op een hoog niveau de dienst "deelmobiliteit in Vlaanderen" en op een lager niveau, de diensten "deelauto's in Antwerpen" en "deelfietsen in Gent").  De MobilityService en aanverwante lessen komen uit de woordenschat <a href="https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod">OSLO-Mobility: Trips and Offerings</a>.</p>
+
+<p>Bij een TransportHub vinden we meestal ook allerlei soorten AdditionalServices, waaronder diensten die de Reiziger extra ritten besparen, zoals brievenbussen, bakkerijen, krantenwinkels, enz.</p>
+
+<p>Opsommingen worden in principe buiten het toepassingsprofiel beschreven, dus de opsommingswaarden die in het diagram worden weergegeven, zijn illustratief.</p>
+
+{% endblock %}
