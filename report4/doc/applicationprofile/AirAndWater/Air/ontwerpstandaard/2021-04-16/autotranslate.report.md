@@ -2,6 +2,22 @@
 
 #||# -------------------------------------  
 
+#||#  update the translation file from the memory
+
+#||# 
+
+#||# start reading  
+
+#||# done  
+
+#||# start processing  
+
+#||# create new translation file with existing translations included  
+
+#||# Write complete  
+
+#||# the file was saved to: /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/translation_input/OSLO-airAndWater-Air-ap_nl.json  
+
 #||# 
 
 #||#  autotranslate the translation file for language nl
@@ -24,17 +40,11 @@
 
 #||# 
 
-start reading file airandwaterAir-ap_nl.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterAir-ap_nl_nl.j2
+#||# 
 
 #||# 
 
@@ -42,17 +52,11 @@ start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air
 
 #||# 
 
-start reading file airandwaterCore-ap_nl.j2
+#||# 
 
-#||#  start converting filename in extend blocks
+#||#  autotranslate the J2 templates for language nl
 
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterCore-ap_nl_nl.j2
+#||# 
 
 #||# 
 
@@ -60,69 +64,9 @@ start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air
 
 #||# 
 
-start reading file airandwaterWater-ap_nl.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_nl
-
-#||#  filename contains goal language reference
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterWater-ap_nl_nl.j2
-
 #||# 
 
 #||#  autotranslate the J2 templates for language nl
 
 #||# 
-
-start reading file airandwaterAir-ap_en.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterAir-ap_en_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file airandwaterCore-ap_en.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterCore-ap_en_nl.j2
-
-#||# 
-
-#||#  autotranslate the J2 templates for language nl
-
-#||# 
-
-start reading file airandwaterWater-ap_en.j2
-
-#||#  start converting filename in extend blocks
-
-#||# purl-ap2_en
-
-#||#  filename contains prime language reference purl-ap2
-
-start translating blocks
-
-start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/2021-04-16/autotranslation/airandwaterWater-ap_en_nl.j2
 
