@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 45  
 
 #||# start writing file /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2023-11-01/autotranslation/timetables-and-planning_nl.json  
 
