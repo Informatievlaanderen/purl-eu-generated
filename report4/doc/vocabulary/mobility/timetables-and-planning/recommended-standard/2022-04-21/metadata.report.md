@@ -6,15 +6,11 @@
 
 #||# done  
 
-#||# start processing  
+SyntaxError: /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2022-04-21/all-timetables-and-planning-voc.jsonld: Unexpected end of JSON input
 
-#||# Checking Namespaces  
+    at JSON.parse (<anonymous>)
 
-#||# Finished  
-
-#||# start writing  
-
-#||# The file has been saved to /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2022-04-21/html/meta_timetables-and-planning-voc_en.json  
+    at Object._readFile (/app/node_modules/jsonfile/index.js:25:16)
 
 #||# metadata for language nl   
 
@@ -24,13 +20,9 @@
 
 #||# done  
 
-#||# start processing  
+SyntaxError: /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2022-04-21/all-timetables-and-planning-voc.jsonld: Unexpected end of JSON input
 
-#||# Checking Namespaces  
+    at JSON.parse (<anonymous>)
 
-#||# Finished  
-
-#||# start writing  
-
-#||# The file has been saved to /tmp/workspace/report4/doc/vocabulary/mobility/timetables-and-planning/recommended-standard/2022-04-21/html/meta_timetables-and-planning-voc_nl.json  
+    at Object._readFile (/app/node_modules/jsonfile/index.js:25:16)
 
