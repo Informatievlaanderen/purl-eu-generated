@@ -42,11 +42,6 @@ error: missing '/tmp/generated/ns/consent//index.html'
 #||# Directory check
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/working-draft/2022-05-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/kandidaatstandaard/2022-07-11/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/erkendestandaard/2022-12-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/erkendestandaard/2022-12-01/test/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs//index.html'
 
 #||#    + checking /home/circleci/project/config/dev/stopplaces.publication.json
 #||# 
