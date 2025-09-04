@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 30  
+#||# Number of calls: 0  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/netex-belgium/stopplaces-ap/working-draft/2022-04-21/autotranslation/stopplaces-ap_nl.json  
 
