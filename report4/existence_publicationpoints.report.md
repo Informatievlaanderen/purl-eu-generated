@@ -34,9 +34,6 @@ error: missing '/tmp/generated/ns/air-and-water/water//index.html'
 #||# Directory check
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/consent/kandidaatstandaard/2022-02-23/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/consent//index.html'
 error: missing '/tmp/generated/doc/vocabulary/consent/kandidaatstandaard/2022-02-23/index.html'
 error: missing '/tmp/generated/ns/consent//index.html'
 
