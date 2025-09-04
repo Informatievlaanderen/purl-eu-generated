@@ -2,7 +2,7 @@
 <html>
   <head><meta charset="utf-8"/>
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
-    <script class="remove">var respecConfig = {"specStatus":"unofficial","editors":[{"name":"John Doe"}],"publishDate":"2025-09-04T08:26:40.156Z"}</script>
+    <script class="remove">var respecConfig = {"specStatus":"unofficial","editors":[{"name":"John Doe"}],"publishDate":"2025-09-04T08:25:40.780Z"}</script>
   </head>
 
   <style>
@@ -25,7 +25,7 @@
     }
   </style> 
   <body>
-    <h1 id="title">vehiclescheduling-ap_nl.j2</h1>
+    <h1 id="title">timetables-ap_nl.j2</h1>
     <section id="abstract"></section>
 
     <h1>Entities</h1>
@@ -47,7 +47,63 @@ The accessibility characteristics of an entity used by passengers such as a Stop
 
 <br>
 
-<p><b><i>No properties defined for this entity</b></i></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>accessibilityLimitation</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityLimitation</td>
+    <td>Reference to an AccessibilityLimitation making up the AccessibilityAssessment.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  AccessibilityLimitation
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityLimitation">https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityLimitation</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Describes the usability of an entity for passengers with certain needs.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>accessibilityLevel</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Level of usability.</td>
+  </tr>
+  
+  <tr>
+    <td>accessibilityType</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Type of usability.</td>
+  </tr>
+  
+</table>
 
 
     
@@ -165,18 +221,18 @@ Information that makes it possible to refer in a structured and unique way to a 
 
     
       <h2>
-  Addressable Place
+  Agent
 </h2>
 
 <b>URI</b>
 <br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace">https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace</a>
+<a href="http://purl.org/dc/terms/Agent">http://purl.org/dc/terms/Agent</a>
 
 <br>
 
 <b>Definition</b>
 <br>
-Place that has an Address.
+Someone who or something that can act or produce an effect.
 
 <br>
 
@@ -225,97 +281,22 @@ An Authority or an Operator.
 
     
       <h2>
-  Block
+  Booking Arrangement
 </h2>
 
 <b>URI</b>
 <br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#Block">https://purl.eu/ns/mobility/timetables-and-planning#Block</a>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement">https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement</a>
 
 <br>
 
 <b>Definition</b>
 <br>
-The work of a vehicle from the time it leaves a Parking Point after parking until its next return to park at a Parking Point.
+Information on how to book a public transport service.
 
 <br>
 
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>day type</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#DayType</td>
-    <td>The Day Type when the Block was worked on.</td>
-  </tr>
-  
-  <tr>
-    <td>end time</td>
-    <td>http://www.w3.org/2001/XMLSchema#time</td>
-    <td>Time when the Block ended.</td>
-  </tr>
-  
-  <tr>
-    <td>end time day offset</td>
-    <td>http://www.w3.org/2001/XMLSchema#integer</td>
-    <td>Number of days after journey start time that end time is.</td>
-  </tr>
-  
-  <tr>
-    <td>ended at</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint</td>
-    <td>The Parking Point where the Block ended at.</td>
-  </tr>
-  
-  <tr>
-    <td>finishing duration</td>
-    <td>http://www.w3.org/2001/XMLSchema#duration</td>
-    <td>Time needed to complete the Block.</td>
-  </tr>
-  
-  <tr>
-    <td>including</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney</td>
-    <td>Vehicle Journeys included in the Block.</td>
-  </tr>
-  
-  <tr>
-    <td>preparation duration</td>
-    <td>http://www.w3.org/2001/XMLSchema#duration</td>
-    <td>Time needed to prepare the Block.</td>
-  </tr>
-  
-  <tr>
-    <td>start time</td>
-    <td>http://www.w3.org/2001/XMLSchema#time</td>
-    <td>Time when the Block started.</td>
-  </tr>
-  
-  <tr>
-    <td>start time day offset</td>
-    <td>http://www.w3.org/2001/XMLSchema#integer</td>
-    <td>Number of days after journey start time that start time is.</td>
-  </tr>
-  
-  <tr>
-    <td>started at</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint</td>
-    <td>The Parking Point where the Block started at.</td>
-  </tr>
-  
-  <tr>
-    <td>using</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#VehicleType</td>
-    <td>Vehicle Type used to execute the Block.</td>
-  </tr>
-  
-</table>
+<p><b><i>No properties defined for this entity</b></i></p>
 
 
     
@@ -326,26 +307,6 @@ The work of a vehicle from the time it leaves a Parking Point after parking unti
 <b>URI</b>
 <br>
 <a href="http://www.w3.org/2001/XMLSchema#boolean">http://www.w3.org/2001/XMLSchema#boolean</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-
-
-<br>
-
-<p><b><i>No properties defined for this entity</b></i></p>
-
-
-    
-      <h2>
-  Code
-</h2>
-
-<b>URI</b>
-<br>
-<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
@@ -380,41 +341,6 @@ The work of a vehicle from the time it leaves a Parking Point after parking unti
 
     
       <h2>
-  Crew Base
-</h2>
-
-<b>URI</b>
-<br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#CrewBase">https://purl.eu/ns/mobility/timetables-and-planning#CrewBase</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-A place where operating employees (e.g. drivers) report on and register their work.
-
-<br>
-
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>garage</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Garage</td>
-    <td>Garage associated with the Crew Base.</td>
-  </tr>
-  
-</table>
-
-
-    
-      <h2>
   Crowding
 </h2>
 
@@ -426,7 +352,7 @@ A place where operating employees (e.g. drivers) report on and register their wo
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -461,6 +387,26 @@ TODO
 <b>URI</b>
 <br>
 <a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Day Of Week
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
@@ -565,18 +511,6 @@ The assignment of operational characteristics, expressed by Day Types, to partic
 
   
   <tr>
-    <td>DayTypeAssignment.DayType</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#DayType</td>
-    <td></td>
-  </tr>
-  
-  <tr>
-    <td>DayTypeAssignment.ServiceCalendar</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar</td>
-    <td></td>
-  </tr>
-  
-  <tr>
     <td>available</td>
     <td>http://www.w3.org/2001/XMLSchema#boolean</td>
     <td>Whether available on assigned day.</td>
@@ -589,113 +523,24 @@ The assignment of operational characteristics, expressed by Day Types, to partic
   </tr>
   
   <tr>
+    <td>day type</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#DayType</td>
+    <td>TODO</td>
+  </tr>
+  
+  <tr>
     <td>operating period</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod</td>
     <td>Reference to the Operating Period assigned by this Day Type Assignment.</td>
   </tr>
   
-</table>
-
-
-    
-      <h2>
-  Day of Week
-</h2>
-
-<b>URI</b>
-<br>
-<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-TODO
-
-<br>
-
-<p><b><i>No properties defined for this entity</b></i></p>
-
-
-    
-      <h2>
-  Dead Run
-</h2>
-
-<b>URI</b>
-<br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#DeadRun">https://purl.eu/ns/mobility/timetables-and-planning#DeadRun</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-A non-service Vehicle Journey.
-
-<br>
-
-<table>
   <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>dead run type</td>
-    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Type of Dead Run.</td>
-  </tr>
-  
-  <tr>
-    <td>direction type</td>
-    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Direction Type of the Dead Run.</td>
+    <td>service calender</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar</td>
+    <td>TODO</td>
   </tr>
   
 </table>
-
-
-    
-      <h2>
-  Dead Run Pattern
-</h2>
-
-<b>URI</b>
-<br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#DeadRunPattern">https://purl.eu/ns/mobility/timetables-and-planning#DeadRunPattern</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-Journey Pattern to be used for Dead Runs.
-
-<br>
-
-<p><b><i>No properties defined for this entity</b></i></p>
-
-
-    
-      <h2>
-  Dead Run Type
-</h2>
-
-<b>URI</b>
-<br>
-<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-TODO
-
-<br>
-
-<p><b><i>No properties defined for this entity</b></i></p>
 
 
     
@@ -743,12 +588,91 @@ An advertised destination of a specific Line or Journey Pattern, usually display
   </tr>
   
   <tr>
+    <td>variant</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant</td>
+    <td>Variant of the Destination Display.</td>
+  </tr>
+  
+  <tr>
     <td>via</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#Via</td>
     <td>Text to display for Via display.</td>
   </tr>
   
 </table>
+
+
+    
+      <h2>
+  Destination Display Variant
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant">https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Variant of a given Destination Display, as needed for different media channels (electronic, printed, audio, mobile app, etc.).
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>destination display variant type</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Type of the Destination Display Variant.</td>
+  </tr>
+  
+  <tr>
+    <td>front text</td>
+    <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
+    <td>Front of vehicle text associated with the Destination Display Variant.</td>
+  </tr>
+  
+  <tr>
+    <td>side text</td>
+    <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
+    <td>Text to display on the side of the vehicle associated with the Destination Display Variant.</td>
+  </tr>
+  
+  <tr>
+    <td>via</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Via</td>
+    <td>Text to show for Via display.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Destination Display Variant Type
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
 
 
     
@@ -786,7 +710,7 @@ States the relative direction of use of a Line, e.g. &quot;North Bound&quot;, &q
   <tr>
     <td>opposite direction</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#Direction</td>
-    <td>Reference to a Direcition that runs counter to this Direction.</td>
+    <td>Reference to a Direction that runs counter to this Direction.</td>
   </tr>
   
 </table>
@@ -805,7 +729,7 @@ States the relative direction of use of a Line, e.g. &quot;North Bound&quot;, &q
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -834,7 +758,7 @@ TODO
 
     
       <h2>
-  FacilitySet
+  FaciltySet
 </h2>
 
 <b>URI</b>
@@ -890,166 +814,6 @@ A recognized organization, recognized in a broad sense or more specifically in a
 <br>
 
 <p><b><i>No properties defined for this entity</b></i></p>
-
-
-    
-      <h2>
-  Garage
-</h2>
-
-<b>URI</b>
-<br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#Garage">https://purl.eu/ns/mobility/timetables-and-planning#Garage</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-Facility used for parking and maintaining vehicles.
-
-<br>
-
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>centroid</td>
-    <td>http://www.opengis.net/ont/sf#Point</td>
-    <td>Centre Point of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>contact details</td>
-    <td>http://schema.org/ContactPoint</td>
-    <td>Contact details of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>crew base</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#CrewBase</td>
-    <td>Crew Base near the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>garage point</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint</td>
-    <td>GaragePoint associated with the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>image</td>
-    <td>http://www.w3.org/2001/XMLSchema#anyURI</td>
-    <td>Image of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>member</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Point</td>
-    <td>List of Points within the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>operated by</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Operator</td>
-    <td>Operator that operates the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>place type</td>
-    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Categorisation of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>polygon</td>
-    <td>http://www.opengis.net/ont/sf#Polygon</td>
-    <td>Polygon of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>postal address</td>
-    <td>http://www.w3.org/ns/locn#Address</td>
-    <td>Postal address of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>private code</td>
-    <td>http://www.w3.org/2001/XMLSchema#string</td>
-    <td>Private code of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>purpose of grouping</td>
-    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Purpose of grouping of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>road address</td>
-    <td>http://www.w3.org/ns/locn#Address</td>
-    <td>Road address of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>short name</td>
-    <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
-    <td>Short name of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>url</td>
-    <td>http://www.w3.org/2001/XMLSchema#anyURI</td>
-    <td>URL of the Garage.</td>
-  </tr>
-  
-  <tr>
-    <td>used by</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Operator</td>
-    <td>Operator that uses the Garage.</td>
-  </tr>
-  
-</table>
-
-
-    
-      <h2>
-  Garage Point
-</h2>
-
-<b>URI</b>
-<br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint">https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-Parking Point in a Garage.
-
-<br>
-
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>belonging to</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Garage</td>
-    <td>The Garage to which the Garage Point belongs.</td>
-  </tr>
-  
-</table>
 
 
     
@@ -1127,11 +891,11 @@ Group of Lines can be used to define several kinds of PT networks and sub-networ
   <tr>
     <td>mainline</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#Line</td>
-    <td>Main line of the Group of Lines.</td>
+    <td>The main Line of a Group of Lines.</td>
   </tr>
   
   <tr>
-    <td>transportmode</td>
+    <td>transport mode</td>
     <td>http://www.w3.org/2004/02/skos/core#Concept</td>
     <td>Transportmode of the Group of Lines.</td>
   </tr>
@@ -1152,7 +916,7 @@ Group of Lines can be used to define several kinds of PT networks and sub-networ
 
 <b>Definition</b>
 <br>
-A time interval or a duration defining a headway period and characterizing Headway Journey Groups (e.g. every 10 min,every 4-6 min).
+A time interval or a duration defining a headway period and characterizing Headway Journey Groups (e.g. every 10 min, every 4-6 min).
 
 <br>
 
@@ -1199,7 +963,7 @@ A time interval or a duration defining a headway period and characterizing Headw
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -1279,11 +1043,86 @@ Travel from one place to another.
 
 <b>Definition</b>
 <br>
-A part of a Vehicle Journey created according to a specific functional purpose.
+A part of a Vehicle Journey created according to a specific functional purpose, for instance in situations when vehicle coupling or separation occurs.
 
 <br>
 
-<p><b><i>No properties defined for this entity</b></i></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>endTime</td>
+    <td>http://www.w3.org/2001/XMLSchema#time</td>
+    <td>EndTime of the JourneyPart.</td>
+  </tr>
+  
+  <tr>
+    <td>endTimeDayOffset</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Number of days after the journey startTime that the endTime is.</td>
+  </tr>
+  
+  <tr>
+    <td>facility</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet</td>
+    <td>Facility available during the JourneyPart.</td>
+  </tr>
+  
+  <tr>
+    <td>fromStopPoint</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Reference to the ScheduledStopPoint the JourneyPart starts from.</td>
+  </tr>
+  
+  <tr>
+    <td>journeyPartCouple</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartCouple</td>
+    <td>Reference to the JourneyPartCouple of the Journey that the JourneyPart joins.</td>
+  </tr>
+  
+  <tr>
+    <td>journeyPartPosition</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartPosition</td>
+    <td>Position in the Train of the JourneyPart.</td>
+  </tr>
+  
+  <tr>
+    <td>mainPart</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartCouple</td>
+    <td>Reference to the JourneyPartCouple of the main Journey of the JourneyPart.</td>
+  </tr>
+  
+  <tr>
+    <td>startTime</td>
+    <td>http://www.w3.org/2001/XMLSchema#time</td>
+    <td>StartTime of the JourneyPart.</td>
+  </tr>
+  
+  <tr>
+    <td>startTimeDayOffset</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Number of days after the journey startTime that the startTime is.</td>
+  </tr>
+  
+  <tr>
+    <td>toStopPoint</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Reference to the ScheduledStopPoint where the JourneyPart ends.</td>
+  </tr>
+  
+  <tr>
+    <td>trainNumber</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber</td>
+    <td>Reference to the TrainNumber of the JourneyPart.</td>
+  </tr>
+  
+</table>
 
 
     
@@ -1347,12 +1186,176 @@ An ordered list of Scheduled Stop Points and Timing Points on a single Route, de
 
     
       <h2>
+  JourneyPartCouple
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartCouple">https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartCouple</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A set of two ore more JourneyParts of different VehicleJourneys, served simultaneously by the same Train by coupling individual vehicles.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>endTime</td>
+    <td>http://www.w3.org/2001/XMLSchema#time</td>
+    <td>EndTime of the JourneyPartCouple.</td>
+  </tr>
+  
+  <tr>
+    <td>endTimeDayOffset</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Number of days after the journey startTime that the endTime is.</td>
+  </tr>
+  
+  <tr>
+    <td>fromStopPoint</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Reference to the ScheduledStopPoint the JourneyPartCouple starts from.</td>
+  </tr>
+  
+  <tr>
+    <td>journeyPart</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart</td>
+    <td>References to a JourneyPart of the Journey that the JourneyPart joins.</td>
+  </tr>
+  
+  <tr>
+    <td>mainPart</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartCouple</td>
+    <td>Reference to the JourneyPartCouple of the main journey of a JourneyPartCouple.</td>
+  </tr>
+  
+  <tr>
+    <td>startTime</td>
+    <td>http://www.w3.org/2001/XMLSchema#time</td>
+    <td>StartTime of the JourneyPartCouple.</td>
+  </tr>
+  
+  <tr>
+    <td>startTimeDayOffset</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Number of days after the journey startTime that the startTime is.</td>
+  </tr>
+  
+  <tr>
+    <td>toStopPoint</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Reference to the ScheduledStopPoint where the JourneyPartCouple ends.</td>
+  </tr>
+  
+  <tr>
+    <td>trainNumber</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber</td>
+    <td>Reference to the TrainNumber of the JourneyPart.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  JourneyPartPosition
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartPosition">https://purl.eu/ns/mobility/timetables-and-planning#JourneyPartPosition</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+The relative position in the train of a JourneyPart from a given stop onwards.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>positionInTrain</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Position of the JourneyPart in the Train.</td>
+  </tr>
+  
+  <tr>
+    <td>scheduledStopPoint</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>ScheduledStopPoint from which the position is counted.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
   LangString
 </h2>
 
 <b>URI</b>
 <br>
 <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  LimitationStatus
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  LimitationType
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
@@ -1464,6 +1467,12 @@ A grouping of Routes that is generally known to the public by a similar name or 
   </tr>
   
   <tr>
+    <td>transport mode</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Identifier of the primary transport mode of the Line.</td>
+  </tr>
+  
+  <tr>
     <td>transport organisation</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator</td>
     <td>Authority or Operator associated with the Line.</td>
@@ -1476,12 +1485,6 @@ A grouping of Routes that is generally known to the public by a similar name or 
   </tr>
   
   <tr>
-    <td>transportmode</td>
-    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Identifier of the primary transport mode of the Line.</td>
-  </tr>
-  
-  <tr>
     <td>type of line</td>
     <td>http://www.w3.org/2004/02/skos/core#Concept</td>
     <td>Reference to a Type of Line.</td>
@@ -1490,10 +1493,50 @@ A grouping of Routes that is generally known to the public by a similar name or 
   <tr>
     <td>url</td>
     <td>http://www.w3.org/2001/XMLSchema#anyURI</td>
-    <td>URL associated with the Line.</td>
+    <td>A URL associated with the Line.</td>
   </tr>
   
 </table>
+
+
+    
+      <h2>
+  Line String
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.opengis.net/ont/sf#LineString">http://www.opengis.net/ont/sf#LineString</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Link
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#Link">https://purl.eu/ns/mobility/timetables-and-planning#Link</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Oriented spatial object of dimension 1 with view to the overall description of a Network, describing a connection between two Points.
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
 
 
     
@@ -1509,7 +1552,7 @@ A grouping of Routes that is generally known to the public by a similar name or 
 
 <b>Definition</b>
 <br>
-A Link Sequence describes a path through a Network,such as a bus route. It can consist of an ordered set of Points in Sequence (referencing Points of a particular type) or Links in Sequence (referencing Links of a particular type).
+A Link Sequence describes a path through a Network, such as a bus route. It can consist of an ordered set of Points in Sequence (referencing Points of a particular type) or Links in Sequence (referencing Links of a particular type).
 
 <br>
 
@@ -1734,6 +1777,26 @@ The assignment of a Notice to an Entity.
 
     
       <h2>
+  Opening Hours Specification
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://schema.org/OpeningHoursSpecification">http://schema.org/OpeningHoursSpecification</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Information about the opening hours of the place or service.
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
   Operating Day
 </h2>
 
@@ -1883,73 +1946,22 @@ A company providing public transport services.
 
     
       <h2>
-  Parking Point
+  Organization Type
 </h2>
 
 <b>URI</b>
 <br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint">https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint</a>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
 <b>Definition</b>
 <br>
-A Relief Point where vehicles may stay unattended for a long time.
+
 
 <br>
 
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Definition</th>
-    <th>Cardinality</th>
-  </tr>
-
-  
-  <tr>
-    <td>allowed for wait time</td>
-    <td>http://www.w3.org/2001/XMLSchema#duration</td>
-    <td>Default wait time to use for timing patterns that use the Parking Point.</td>
-  </tr>
-  
-  <tr>
-    <td>category</td>
-    <td>http://www.w3.org/2001/XMLSchema#string</td>
-    <td>Category of the Parking Point.</td>
-  </tr>
-  
-  <tr>
-    <td>flexible</td>
-    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
-    <td>Indicates whether the Parking Point is flexible.</td>
-  </tr>
-  
-  <tr>
-    <td>location</td>
-    <td>http://www.opengis.net/ont/sf#Point</td>
-    <td>Location of the Parking Point.</td>
-  </tr>
-  
-  <tr>
-    <td>managed by</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#CrewBase</td>
-    <td>Crew Base that manages the Parking Point.</td>
-  </tr>
-  
-  <tr>
-    <td>point number</td>
-    <td>http://www.w3.org/2001/XMLSchema#string</td>
-    <td>Arbitrary alternative identifer for the Parking Point.</td>
-  </tr>
-  
-  <tr>
-    <td>timing point type</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus</td>
-    <td>Type of Timing Point.</td>
-  </tr>
-  
-</table>
+<p><b><i>No properties defined for this entity</b></i></p>
 
 
     
@@ -2005,19 +2017,60 @@ The maximum number of passengers that can travel with a Vehicle.
   <tr>
     <td>standing capacity</td>
     <td>http://www.w3.org/2001/XMLSchema#integer</td>
-    <td>Number of standing places.</td>
+    <td>Number of passengers that can stand.</td>
   </tr>
   
   <tr>
     <td>total capacity</td>
     <td>http://www.w3.org/2001/XMLSchema#integer</td>
-    <td>Total number of passengers.</td>
+    <td>Total capacity</td>
   </tr>
   
   <tr>
     <td>wheelchair place capacity</td>
     <td>http://www.w3.org/2001/XMLSchema#integer</td>
     <td>Number of designated wheelchair areas.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Passenger Stop Assignment
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment">https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+The allocation of a Scheduled Stop Point to a Stop Place.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>scheduled Stop Point</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>TODO</td>
+  </tr>
+  
+  <tr>
+    <td>stop place</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#StopPlace</td>
+    <td>TODO</td>
   </tr>
   
 </table>
@@ -2057,26 +2110,6 @@ The maximum number of passengers that can travel with a Vehicle.
 <b>Definition</b>
 <br>
 A Passing Time associates a time with a Point in Journey Pattern.
-
-<br>
-
-<p><b><i>No properties defined for this entity</b></i></p>
-
-
-    
-      <h2>
-  Place Type
-</h2>
-
-<b>URI</b>
-<br>
-<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
-
-<br>
-
-<b>Definition</b>
-<br>
-TODO
 
 <br>
 
@@ -2246,7 +2279,28 @@ A Point on Route indicates the sequence of a Route Point within a Route. This in
 
 <br>
 
-<p><b><i>No properties defined for this entity</b></i></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>a view of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint</td>
+    <td>Reference to the Route Point.</td>
+  </tr>
+  
+  <tr>
+    <td>order</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Order of Point on Route within Route.</td>
+  </tr>
+  
+</table>
 
 
     
@@ -2262,7 +2316,7 @@ A Point on Route indicates the sequence of a Route Point within a Route. This in
 
 <b>Definition</b>
 <br>
-
+Surface consisting of 1 outer boundary and 0 or more inner boundaries. Each inner boundary forms a hole in the polygon.
 
 <br>
 
@@ -2286,7 +2340,46 @@ Defines a uniform set of values to control appearances of an element (on a map, 
 
 <br>
 
-<p><b><i>No properties defined for this entity</b></i></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>backgroundColour</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Default RGB background colour value for graphics associated with an entity.</td>
+  </tr>
+  
+  <tr>
+    <td>colour</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>RGB colour value to use for an entity in the user interface.</td>
+  </tr>
+  
+  <tr>
+    <td>infoLink</td>
+    <td>http://www.w3.org/2001/XMLSchema#anyURI</td>
+    <td>URL of an image associated with the entity.</td>
+  </tr>
+  
+  <tr>
+    <td>textColour</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Colour value to use forthe  text of an entity in the user interface.</td>
+  </tr>
+  
+  <tr>
+    <td>textFont</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Font of the tekst.</td>
+  </tr>
+  
+</table>
 
 
     
@@ -2420,18 +2513,18 @@ A property which a day may possess, such as school holiday, weekday, summer, win
 
     
       <h2>
-  Relief Point
+  Request Method Type
 </h2>
 
 <b>URI</b>
 <br>
-<a href="https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint">https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint</a>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
 <b>Definition</b>
 <br>
-A Timing Point where a relief is possible, i.e. a driver may take on or hand over a vehicle. The vehicle may sometimes be left unattended.
+
 
 <br>
 
@@ -2511,6 +2604,207 @@ Ordered list of located Points defining one single path through the road (or rai
 
     
       <h2>
+  Route Link
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#RouteLink">https://purl.eu/ns/mobility/timetables-and-planning#RouteLink</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+An oriented link between two Route Points allowing the definition of a unique path through the Network. The same Route Link may be used in different Routes.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>distance</td>
+    <td>https://schema.org/QuantitativeValue</td>
+    <td>Distance of the Route Link.</td>
+  </tr>
+  
+  <tr>
+    <td>from</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint</td>
+    <td>Route Point at which the Route Link starts.</td>
+  </tr>
+  
+  <tr>
+    <td>linestring</td>
+    <td>http://www.opengis.net/ont/sf#LineString</td>
+    <td>Linestring specifying the Route Link.</td>
+  </tr>
+  
+  <tr>
+    <td>to</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint</td>
+    <td>Route Point at which the Route Link ends.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Route Point
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint">https://purl.eu/ns/mobility/timetables-and-planning#RoutePoint</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A Point used to define the shape of a Route through the Network. The same Point may be used in different Routes using a Point on Route.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>border crossing</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates whether the Route Point is a border crossing (defined for country borders).</td>
+  </tr>
+  
+  <tr>
+    <td>end of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#RouteLink</td>
+    <td>Route Link of which the Route Point is the end.</td>
+  </tr>
+  
+  <tr>
+    <td>start of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#RouteLink</td>
+    <td>Route Link of which the Route Point is the start.</td>
+  </tr>
+  
+  <tr>
+    <td>viewed as</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute</td>
+    <td>As used as a Point on a Route.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Scheduled Stop Point
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint">https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A Point where passengers can board or alight from vehicles.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>end of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink</td>
+    <td>Service Link of which the Schedule Stop Point is the end.</td>
+  </tr>
+  
+  <tr>
+    <td>location</td>
+    <td>http://www.opengis.net/ont/sf#Point</td>
+    <td>Location of the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>presentation</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Presentation</td>
+    <td>Presentation values to use when rendering the Stop Point such as a colour and font.</td>
+  </tr>
+  
+  <tr>
+    <td>private code</td>
+    <td>http://www.w3.org/2001/XMLSchema#string</td>
+    <td>Alternative identifier of the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>public code</td>
+    <td>http://www.w3.org/2001/XMLSchema#string</td>
+    <td>Public code of the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>short name</td>
+    <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</td>
+    <td>Short name of the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>start of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink</td>
+    <td>Service Link of which the Schedule Stop Point is the start.</td>
+  </tr>
+  
+  <tr>
+    <td>stop type</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Type of Stop Place.</td>
+  </tr>
+  
+  <tr>
+    <td>tariff zone</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#TariffZone</td>
+    <td>Tariff Zones to which the Scheduled Stop Point belongs.</td>
+  </tr>
+  
+  <tr>
+    <td>timingpoint type</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Timing status of the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>viewed as</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern</td>
+    <td>As used as a Stop Point in a Journey Pattern.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
   Season
 </h2>
 
@@ -2522,7 +2816,7 @@ Ordered list of located Points defining one single path through the road (or rai
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -2601,7 +2895,7 @@ Collection of Day Types Assignments.
 
 <b>Definition</b>
 <br>
-Describes the Facilities available onboard a service. It additionally allows the type of Accommodation (seating, couchettes, etc.) to be described.
+Describes the Facilities available onboard a service.
 
 <br>
 
@@ -2662,9 +2956,39 @@ Vehicle Journey on which passengers will be allowed to board or alight from vehi
 
   
   <tr>
+    <td>day type</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#DayType</td>
+    <td>Day Type for the Service Journey.</td>
+  </tr>
+  
+  <tr>
+    <td>departure day offset</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Day offset if the day of departure time of the Service Journey differs from the current Operating Day.</td>
+  </tr>
+  
+  <tr>
+    <td>departure time</td>
+    <td>http://www.w3.org/2001/XMLSchema#time</td>
+    <td>Time of departure.</td>
+  </tr>
+  
+  <tr>
     <td>facility</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet</td>
     <td>Facility on the Service Journey.</td>
+  </tr>
+  
+  <tr>
+    <td>journey duration</td>
+    <td>http://www.w3.org/2001/XMLSchema#duration</td>
+    <td>Total length of the Service Journey. Can be computed from individual times.</td>
+  </tr>
+  
+  <tr>
+    <td>made using</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern</td>
+    <td>Service Journey Pattern that was followed to make the Service Journey.</td>
   </tr>
   
   <tr>
@@ -2683,6 +3007,83 @@ Vehicle Journey on which passengers will be allowed to board or alight from vehi
     <td>train size</td>
     <td>http://www.w3.org/2004/02/skos/core#Concept</td>
     <td>Requirements for Train Size.</td>
+  </tr>
+  
+  <tr>
+    <td>vehicle type</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#VehicleType</td>
+    <td>Reference to the Vehicle Type to use on the Service Journey.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Service Journey Link
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink">https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+The connection between two successive Scheduled Stop Points in a Service Journey. Since a Journey is always valid for a specific time (on a specific Day Type), each Service Journey Link has a specific departure and arrival time. Service Journey Links allow Route Planners to more easily calculate the shortest Routes.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>arrival stop</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Stop Point where the Link arrives.</td>
+  </tr>
+  
+  <tr>
+    <td>arrival time</td>
+    <td>http://www.w3.org/2001/XMLSchema#dateTime</td>
+    <td>Time when the Link arrives.</td>
+  </tr>
+  
+  <tr>
+    <td>departure stop</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Stop Place from where the Link departs.</td>
+  </tr>
+  
+  <tr>
+    <td>departure time</td>
+    <td>http://www.w3.org/2001/XMLSchema#dateTime</td>
+    <td>Time when the Link departs.</td>
+  </tr>
+  
+  <tr>
+    <td>for alighting</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates if the Link is for alighting.</td>
+  </tr>
+  
+  <tr>
+    <td>for boarding</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates if the Link is for boarding.</td>
+  </tr>
+  
+  <tr>
+    <td>line</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Line</td>
+    <td>The Line.</td>
   </tr>
   
 </table>
@@ -2705,7 +3106,75 @@ Journey Pattern for a (passenger carrying) Service Journey.
 
 <br>
 
-<p><b><i>No properties defined for this entity</b></i></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>made up of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern</td>
+    <td>The Stop Points in Journey Pattern that together make up the Service Journey Pattern.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Service Link
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink">https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Link between an ordered pair of Scheduled Stop Points.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>distance</td>
+    <td>https://schema.org/QuantitativeValue</td>
+    <td>Distance of the Service Link.</td>
+  </tr>
+  
+  <tr>
+    <td>from</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Start of the Service Link.</td>
+  </tr>
+  
+  <tr>
+    <td>linestring</td>
+    <td>http://www.opengis.net/ont/sf#LineString</td>
+    <td>Linestring that specifies the Service Link.</td>
+  </tr>
+  
+  <tr>
+    <td>to</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>End of the Service Link.</td>
+  </tr>
+  
+</table>
 
 
     
@@ -2722,6 +3191,26 @@ Journey Pattern for a (passenger carrying) Service Journey.
 <b>Definition</b>
 <br>
 
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Site
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#Site">https://purl.eu/ns/mobility/timetables-and-planning#Site</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A type of Place, such as a Stop Place, Point of Interest or Address, to which passengers may wish to travel.
 
 <br>
 
@@ -2750,12 +3239,246 @@ Unit established by a standardizing organization.
 
     
       <h2>
+  Stop Place
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#StopPlace">https://purl.eu/ns/mobility/timetables-and-planning#StopPlace</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A Stop Place represents a station, stop, port, airport or any physical point of access to the transport network.
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Stop Place Type
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Stop Point in Journey Pattern
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern">https://purl.eu/ns/mobility/timetables-and-planning#StopPointInJourneyPattern</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Each Point inJourney Pattern specifies the visit of a Service to a specific Scheduled Stop Point in a particular order within the pattern.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>a view of</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint</td>
+    <td>Reference to the Scheduled Stop Point.</td>
+  </tr>
+  
+  <tr>
+    <td>booking arrangements</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#BookingArrangement</td>
+    <td>Booking Arrangement for stop if different from those for Service Journey.</td>
+  </tr>
+  
+  <tr>
+    <td>change of destination display</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates whether Destination Display changes at this point.</td>
+  </tr>
+  
+  <tr>
+    <td>destination display</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay</td>
+    <td>Destination Display values to show at this point.</td>
+  </tr>
+  
+  <tr>
+    <td>for alighting</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates whetherthe Stop Point may be used for alighting.</td>
+  </tr>
+  
+  <tr>
+    <td>for boarding</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates whetherthe Stop Point may be used for boarding.</td>
+  </tr>
+  
+  <tr>
+    <td>notice assignment</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment</td>
+    <td>Notice for the Stop Point in Journey Pattern.</td>
+  </tr>
+  
+  <tr>
+    <td>onward service link</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink</td>
+    <td>Next Service Link after Stop Point in Journey Pattern visit.</td>
+  </tr>
+  
+  <tr>
+    <td>order</td>
+    <td>http://www.w3.org/2001/XMLSchema#integer</td>
+    <td>Order of Stop Point in Journey Pattern within Journey Pattern.</td>
+  </tr>
+  
+  <tr>
+    <td>request method</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Method to request stop in this particular service pattern; if none specified, as per stop.</td>
+  </tr>
+  
+  <tr>
+    <td>request stop</td>
+    <td>http://www.w3.org/2001/XMLSchema#boolean</td>
+    <td>Indicates whether stop is a request for stop in this journey. Default if false.</td>
+  </tr>
+  
+  <tr>
+    <td>stop use</td>
+    <td>http://www.w3.org/2004/02/skos/core#Concept</td>
+    <td>Nature of use of stop. Default is &quot;access&quot;.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  Stop Use
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
   String
 </h2>
 
 <b>URI</b>
 <br>
 <a href="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/XMLSchema#string</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Tariff Zone
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#TariffZone">https://purl.eu/ns/mobility/timetables-and-planning#TariffZone</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A Zone used to define a zonal fare structure.
+
+<br>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Definition</th>
+    <th>Cardinality</th>
+  </tr>
+
+  
+  <tr>
+    <td>centroid</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Point</td>
+    <td>Centre Point of the Zone.</td>
+  </tr>
+  
+  <tr>
+    <td>member</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Point</td>
+    <td>List of Points within the Group of Points.</td>
+  </tr>
+  
+  <tr>
+    <td>polygon</td>
+    <td>http://www.opengis.net/ont/sf#Polygon</td>
+    <td>Polygon associated with the Zone</td>
+  </tr>
+  
+  <tr>
+    <td>presentation</td>
+    <td>https://purl.eu/ns/mobility/timetables-and-planning#Presentation</td>
+    <td>Presentation features of the TariffZone.</td>
+  </tr>
+  
+</table>
+
+
+    
+      <h2>
+  TextFontType
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
 
 <br>
 
@@ -2823,7 +3546,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
   </tr>
   
   <tr>
-    <td>arrivalTime</td>
+    <td>arrival time</td>
     <td>http://www.w3.org/2001/XMLSchema#time</td>
     <td>Arrival time at Point in Pattern.</td>
   </tr>
@@ -2835,7 +3558,7 @@ The TimeTabledPassingTimes are normally generated a long time before the day of 
   </tr>
   
   <tr>
-    <td>departureTime</td>
+    <td>departure time</td>
     <td>http://www.w3.org/2001/XMLSchema#time</td>
     <td>Departure time at Point in Pattern.</td>
   </tr>
@@ -2898,6 +3621,46 @@ A period in a day, significant for some aspect of public transport, e.g. similar
 
     
       <h2>
+  Timing Point
+</h2>
+
+<b>URI</b>
+<br>
+<a href="https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint">https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+A Point against which the timing information necessary to build schedules may be recorded.
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Timingpoint Status
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
   Train
 </h2>
 
@@ -2909,7 +3672,7 @@ A period in a day, significant for some aspect of public transport, e.g. similar
 
 <b>Definition</b>
 <br>
-Vehicle composed of TrainElements in a certain order, i.e. of wagons assembled together and propelled by a locomotive or one of the wagons.
+A Train is a vehicle composed of TrainElements in a certain order, i.e. of wagons assembled together and propelled by a locomotive or one of the wagons.
 
 <br>
 
@@ -2956,7 +3719,7 @@ Vehicle composed of TrainElements in a certain order, i.e. of wagons assembled t
 
 <b>Definition</b>
 <br>
-Provides the specification of codes assigned to particular Vehicle Journeys when operated by Trains of Compound Trains according to a functional purpose (passenger information, operation follow-up, etc.).
+Provides the specification of codes assigned to particular VehicleJourneys when operated by Trains according to a functional purpose (passenger information, operation follow-up, etc.).
 
 <br>
 
@@ -2978,7 +3741,7 @@ Provides the specification of codes assigned to particular Vehicle Journeys when
   <tr>
     <td>identifier</td>
     <td>http://www.w3.org/2000/01/rdf-schema#Literal</td>
-    <td>The actual TrainNumber.</td>
+    <td></td>
   </tr>
   
 </table>
@@ -2997,7 +3760,7 @@ Provides the specification of codes assigned to particular Vehicle Journeys when
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -3119,7 +3882,7 @@ Elementary component of a Train.
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -3148,7 +3911,7 @@ TODO
 
     
       <h2>
-  Type of Line
+  Type Of Line
 </h2>
 
 <b>URI</b>
@@ -3159,7 +3922,7 @@ TODO
 
 <b>Definition</b>
 <br>
-TODO
+
 
 <br>
 
@@ -3262,25 +4025,19 @@ A VehicleJourney is the defined movement of a vehicle using a specified Journey 
   <tr>
     <td>departure day offset</td>
     <td>http://www.w3.org/2001/XMLSchema#integer</td>
-    <td>Day offset if the day of departure time of the Vehicle Journey differs from the current Operating Day.</td>
+    <td>Day offset if the day of departure time of the Service Journey differs from the current Operating Day.</td>
   </tr>
   
   <tr>
-    <td>departureTime</td>
+    <td>departure time</td>
     <td>http://www.w3.org/2001/XMLSchema#time</td>
     <td>Time of departure.</td>
   </tr>
   
   <tr>
-    <td>in</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#Block</td>
-    <td>Block the Vehicle Journey is part of.</td>
-  </tr>
-  
-  <tr>
     <td>journey duration</td>
     <td>http://www.w3.org/2001/XMLSchema#duration</td>
-    <td>Total length of the Vehicle Journey.</td>
+    <td>Total length of the Service Journey. Can be computed from individual times.</td>
   </tr>
   
   <tr>
@@ -3298,19 +4055,13 @@ A VehicleJourney is the defined movement of a vehicle using a specified Journey 
   <tr>
     <td>part</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart</td>
-    <td>Journey Part of a Journey.</td>
-  </tr>
-  
-  <tr>
-    <td>part</td>
-    <td>https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart</td>
-    <td>TODO</td>
+    <td>Part of the Vehicle Journey.</td>
   </tr>
   
   <tr>
     <td>passed at</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime</td>
-    <td>Time at which the Vehicle Journey passes.</td>
+    <td>Time Tabled Passing Time at which the Vehicle Journey passes.</td>
   </tr>
   
   <tr>
@@ -3320,15 +4071,15 @@ A VehicleJourney is the defined movement of a vehicle using a specified Journey 
   </tr>
   
   <tr>
-    <td>transportsubmode</td>
+    <td>transport submode</td>
     <td>http://www.w3.org/2004/02/skos/core#Concept</td>
-    <td>Transport submode of the Vehicle Journey.</td>
+    <td>Transport submode of the Journey.</td>
   </tr>
   
   <tr>
     <td>vehicle type</td>
     <td>https://purl.eu/ns/mobility/timetables-and-planning#VehicleType</td>
-    <td>Reference to the Vehicle Type to use on the Service Journey.</td>
+    <td>Reference to the Vehicle Type to use on the Vehicle Journey.</td>
   </tr>
   
 </table>
@@ -3436,7 +4187,7 @@ Vehicles may be classified using a Vehicle Type according to how they meet vehic
 
 <b>Definition</b>
 <br>
-Optional part of a Destination Display that distinguishes different possible paths.
+An optional part of a Destination Display that distinguishes different possible paths between an origin and a destination.
 
 <br>
 
@@ -3445,7 +4196,7 @@ Optional part of a Destination Display that distinguishes different possible pat
 
     
       <h2>
-  Week of Month
+  Week Of Month
 </h2>
 
 <b>URI</b>
@@ -3456,7 +4207,47 @@ Optional part of a Destination Display that distinguishes different possible pat
 
 <b>Definition</b>
 <br>
-TODO
+
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  Zone
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://todo.com/Zone">http://todo.com/Zone</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+Two-dimensional place within the service area of a public transport operator.
+
+<br>
+
+<p><b><i>No properties defined for this entity</b></i></p>
+
+
+    
+      <h2>
+  kleur-type
+</h2>
+
+<b>URI</b>
+<br>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+
+<br>
+
+<b>Definition</b>
+<br>
+
 
 <br>
 
