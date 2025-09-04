@@ -18,7 +18,6 @@ error: missing '/tmp/generated/ns/air-and-water/air//index.html'
 #||# index.html check
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/index.html'
 error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/kandidaatstandaard/2021-10-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/2021-04-16/index.html'
 error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core//index.html'
 error: missing '/tmp/generated/ns/air-and-water/core//index.html'
 
