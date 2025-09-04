@@ -73,7 +73,4 @@ error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-a
 #||# Directory check
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/vehiclescheduling-ap//index.html'
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/working-draft/2022-04-21/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01/index.html'
 

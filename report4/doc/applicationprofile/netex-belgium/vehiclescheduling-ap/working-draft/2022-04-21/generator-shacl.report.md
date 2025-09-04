@@ -16,7 +16,7 @@ Error: Unable to find a label for subject "[urn:oslo-toolchain:18baad6bb2fee726c
 
 #||# -------------------------------------  
 
-2025-09-04T08:26:41.273Z warn: Unable to find the description for subject "[urn:oslo-toolchain:22c1c4e45a7669435a6b3719eaba10f281f5791243b5bef5472256cdfd304b7c](all-vehiclescheduling-ap.jsonld#L11009)".
+2025-09-04T09:03:09.472Z warn: Unable to find the description for subject "[urn:oslo-toolchain:22c1c4e45a7669435a6b3719eaba10f281f5791243b5bef5472256cdfd304b7c](all-vehiclescheduling-ap.jsonld#L11009)".
 
-2025-09-04T08:26:41.276Z warn: Unable to find the description for subject "[urn:oslo-toolchain:3855891030544c3f95972fc63c80e04ca2d4f98f9cc7920c75e10d080954d652](all-vehiclescheduling-ap.jsonld#L11028)".
+2025-09-04T09:03:09.474Z warn: Unable to find the description for subject "[urn:oslo-toolchain:3855891030544c3f95972fc63c80e04ca2d4f98f9cc7920c75e10d080954d652](all-vehiclescheduling-ap.jsonld#L11028)".
 
