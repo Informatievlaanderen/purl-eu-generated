@@ -2,44 +2,52 @@
   "baseURI": "https://purl.eu/ns/consent#",
   "classes": [
     {
-      "id": "https://purl.eu/dc/terms/Agent",
+      "id": "http://purl.org/dc/terms/Agent",
       "vocabularyLabel": {
         "en": "Agent"
       },
       "applicationProfileLabel": {
         "en": "Agent"
       },
-      "vocabularyDefinition": {
-        "en": "Someone or something that can perform actions or produce an effect."
-      },
       "applicationProfileDefinition": {
-        "en": "Someone or something that can perform actions or produce an effect."
+        "en": "A resource that acts or has the power to act."
       },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPublicationEnvironment",
+      "parents": [
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#Entity",
+          "vocabularyLabel": {
+            "en": "Entity"
+          },
+          "applicationProfileLabel": {
+            "en": "Entity"
+          }
+        }
+      ],
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://w3id.org/GConsent#Consent",
+      "id": "https://w3id.org/dpv/dpv-owl#Consent",
       "vocabularyLabel": {
         "en": "Consent"
       },
       "applicationProfileLabel": {
         "en": "Consent"
       },
-      "vocabularyDefinition": {
-        "en": "Consent of the data subject regarding processing of their personal data"
-      },
       "applicationProfileDefinition": {
-        "en": "Consent of the data subject regarding processing of their personal data"
+        "en": "Consent of the DataSubject for the specified Processing of their PersonalData."
+      },
+      "applicationProfileUsageNote": {
+        "en": "REMARK: The name of this class does not imply that Consent has been given or is valid. This  depends on the value of attributes like hasConsentStatus and others."
       },
       "parents": [
         {
-          "id": "https://dpvcg.github.io/dpv/#LegalBasis",
+          "id": "https://w3id.org/dpv/dpv-owl#LegalBasis",
           "vocabularyLabel": {
-            "en": "Legal Basis"
+            "en": "LegalBasis"
           },
           "applicationProfileLabel": {
-            "en": "Legal Basis"
+            "en": "LegalBasis"
           }
         }
       ],
@@ -47,970 +55,197 @@
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
+          "id": "https://w3id.org/dpv/dpv-owl#hasConsentStatus",
           "vocabularyLabel": {
-            "en": "consent document"
+            "en": "hasConsentStatus"
           },
           "applicationProfileLabel": {
-            "en": "consent document"
-          },
-          "vocabularyDefinition": {
-            "en": "An human readable document is provided of the consent."
+            "en": "hasConsentStatus"
           },
           "applicationProfileDefinition": {
-            "en": "An human readable document is provided of the consent."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "http://xmlns.com/foaf/spec/#term_Document",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "Document"
-            },
-            "applicationProfileLabel": {
-              "en": "Document"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://w3id.org/GConsent#atTime",
-          "vocabularyLabel": {
-            "en": "creation time"
-          },
-          "applicationProfileLabel": {
-            "en": "creation time"
-          },
-          "vocabularyDefinition": {
-            "en": "The moment in time in which this specific version of the consent was created"
-          },
-          "applicationProfileDefinition": {
-            "en": "The moment in time in which this specific version of the consent was created"
-          },
-          "vocabularyUsageNote": {
-            "en": "This moment changes whenever the status of the consent is being updated. For example, when a data controller requests a consent a consent will be made with the creation time being equal with the moment of the request. When later on the data subject gives consent a new consent will be made with a new status (e.g. explicitlyGiven) and the creation time of this consent will be equal to the moment in which the data subject has granted consent."
+            "en": "Specifies the state or status of consent."
           },
           "applicationProfileUsageNote": {
-            "en": "This moment changes whenever the status of the consent is being updated. For example, when a data controller requests a consent a consent will be made with the creation time being equal with the moment of the request. When later on the data subject gives consent a new consent will be made with a new status (e.g. explicitlyGiven) and the creation time of this consent will be equal to the moment in which the data subject has granted consent."
+            "en": "Examples are: ConsentRequested, ConsentGiven, ConsentWithdrawn etc."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
           "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "listedInDocument": false,
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "DateTime"
+              "en": "ConsentStatus"
             },
             "applicationProfileLabel": {
-              "en": "DateTime"
+              "en": "ConsentStatus"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasDataSubject",
+          "vocabularyLabel": {
+            "en": "hasDataSubject"
+          },
+          "applicationProfileLabel": {
+            "en": "hasDataSubject"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the association of the Consent with a DataSubject."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#DataSubject",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "DataSubject"
+            },
+            "applicationProfileLabel": {
+              "en": "DataSubject"
             }
           },
           "minCount": "1",
           "maxCount": "1"
         },
         {
-          "id": "https://w3id.org/GConsent#forPersonalData",
+          "id": "https://w3id.org/dpv/dpv-owl#hasDuration",
           "vocabularyLabel": {
-            "en": "for personal data"
+            "en": "hasDuration"
           },
           "applicationProfileLabel": {
-            "en": "for personal data"
-          },
-          "vocabularyDefinition": {
-            "en": "The personal data for which the consent was given"
+            "en": "hasDuration"
           },
           "applicationProfileDefinition": {
-            "en": "The personal data for which the consent was given"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#PersonalData",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Personal Data"
-            },
-            "applicationProfileLabel": {
-              "en": "Personal Data"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Consent.invalidates",
-          "vocabularyLabel": {
-            "en": "invalidates"
-          },
-          "applicationProfileLabel": {
-            "en": "invalidates"
-          },
-          "vocabularyDefinition": {
-            "en": "A newer version of a consent invalidates a previous version of the consent"
-          },
-          "applicationProfileDefinition": {
-            "en": "A newer version of a consent invalidates a previous version of the consent"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isConsentForDataSubject",
-          "vocabularyLabel": {
-            "en": "is consent for data subject"
-          },
-          "applicationProfileLabel": {
-            "en": "is consent for data subject"
-          },
-          "vocabularyDefinition": {
-            "en": "Links a consent instance with the data subject it is associated with."
-          },
-          "applicationProfileDefinition": {
-            "en": "Links a consent instance with the data subject it is associated with."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#DataSubject",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Data Subject"
-            },
-            "applicationProfileLabel": {
-              "en": "Data Subject"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "http://todo.com/isContingentOn",
-          "vocabularyLabel": {
-            "en": "is contingent on"
-          },
-          "applicationProfileLabel": {
-            "en": "is contingent on"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates that the consent is depending on one or more criteria."
-          },
-          "applicationProfileDefinition": {
-            "en": "Indicates that the consent is depending on one or more criteria."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "http://data.europa.eu/m8g/#Criterion",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Criterion"
-            },
-            "applicationProfileLabel": {
-              "en": "Criterion"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Consent.isInvalidatedBy",
-          "vocabularyLabel": {
-            "en": "is invalidated by"
-          },
-          "applicationProfileLabel": {
-            "en": "is invalidated by"
-          },
-          "vocabularyDefinition": {
-            "en": "A previous version of the consent is invalidated by a newer version of the consent"
-          },
-          "applicationProfileDefinition": {
-            "en": "A previous version of the consent is invalidated by a newer version of the consent"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isPreviousConsentFor",
-          "vocabularyLabel": {
-            "en": "is previous consent for"
-          },
-          "applicationProfileLabel": {
-            "en": "is previous consent for"
-          },
-          "vocabularyDefinition": {
-            "en": "Denotes that this consent instance is the previous consent for the specified consent instance."
-          },
-          "applicationProfileDefinition": {
-            "en": "Denotes that this consent instance is the previous consent for the specified consent instance."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isProvidedByDataSubject",
-          "vocabularyLabel": {
-            "en": "is provided by data subject"
-          },
-          "applicationProfileLabel": {
-            "en": "is provided by data subject"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates that the consent is given by the data subject."
-          },
-          "applicationProfileDefinition": {
-            "en": "Indicates that the consent is given by the data subject."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#DataSubject",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Data Subject"
-            },
-            "applicationProfileLabel": {
-              "en": "Data Subject"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isProvidedByDelegation",
-          "vocabularyLabel": {
-            "en": "is provided by delegation"
-          },
-          "applicationProfileLabel": {
-            "en": "is provided by delegation"
-          },
-          "vocabularyDefinition": {
-            "en": "Specifies the delegation that provided this consent."
-          },
-          "applicationProfileDefinition": {
-            "en": "Specifies the delegation that provided this consent."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Delegation",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Delegation"
-            },
-            "applicationProfileLabel": {
-              "en": "Delegation"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isProvidedTo",
-          "vocabularyLabel": {
-            "en": "is provided to"
-          },
-          "applicationProfileLabel": {
-            "en": "is provided to"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates the Person or Data Controller the consent was provided to."
-          },
-          "applicationProfileDefinition": {
-            "en": "Indicates the Person or Data Controller the consent was provided to."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Delegation",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Delegation"
-            },
-            "applicationProfileLabel": {
-              "en": "Delegation"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isProvidedToController",
-          "vocabularyLabel": {
-            "en": "is provided to controller"
-          },
-          "applicationProfileLabel": {
-            "en": "is provided to controller"
-          },
-          "vocabularyDefinition": {
-            "en": "The consent that is provided to the data controller"
-          },
-          "applicationProfileDefinition": {
-            "en": "The consent that is provided to the data controller"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#DataController",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Data Controller"
-            },
-            "applicationProfileLabel": {
-              "en": "Data Controller"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isUpdatedConsentFor",
-          "vocabularyLabel": {
-            "en": "is updated consent for"
-          },
-          "applicationProfileLabel": {
-            "en": "is updated consent for"
-          },
-          "vocabularyDefinition": {
-            "en": "Specifies the consent instance which this instance is an update or revision of."
-          },
-          "applicationProfileDefinition": {
-            "en": "Specifies the consent instance which this instance is an update or revision of."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#inMedium",
-          "vocabularyLabel": {
-            "en": "medium"
-          },
-          "applicationProfileLabel": {
-            "en": "medium"
-          },
-          "vocabularyDefinition": {
-            "en": "The way this specific version of the consent was created"
-          },
-          "applicationProfileDefinition": {
-            "en": "The way this specific version of the consent was created"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://w3id.org/GConsent#Medium",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Medium Type"
-            },
-            "applicationProfileLabel": {
-              "en": "Medium Type"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Consent.notice",
-          "vocabularyLabel": {
-            "en": "notice"
-          },
-          "applicationProfileLabel": {
-            "en": "notice"
-          },
-          "vocabularyDefinition": {
-            "en": "Additional note added to the consent"
-          },
-          "applicationProfileDefinition": {
-            "en": "Additional note added to the consent"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "LangString"
-            },
-            "applicationProfileLabel": {
-              "en": "LangString"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "http://todo.com/oSLO::IsGivenFor",
-          "vocabularyLabel": {
-            "en": "oSLO: :is given for"
-          },
-          "applicationProfileLabel": {
-            "en": "oSLO: :is given for"
-          },
-          "vocabularyDefinition": {
-            "en": "The consent that is given for the personal data handling"
-          },
-          "applicationProfileDefinition": {
-            "en": "The consent that is given for the personal data handling"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
-          "range": {
-            "id": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Personal Data Handling"
-            },
-            "applicationProfileLabel": {
-              "en": "Personal Data Handling"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://w3id.org/GConsent#hasStatus",
-          "vocabularyLabel": {
-            "en": "status"
-          },
-          "applicationProfileLabel": {
-            "en": "status"
-          },
-          "vocabularyDefinition": {
-            "en": "Represents the status of consent for the data subject."
-          },
-          "applicationProfileDefinition": {
-            "en": "Represents the status of consent for the data subject."
-          },
-          "vocabularyUsageNote": {
-            "en": "This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
+            "en": "Indicates information about the Duration of the Consent."
           },
           "applicationProfileUsageNote": {
-            "en": "This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."
+            "en": "For example to indicate how long the Consent is valid (eg 6 months), or until what time (eg 31 december 2022) or until which event (eg account closure)."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Consent",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
           "range": {
-            "id": "https://purl.eu/ns/consent#ConsentStatus",
+            "id": "https://w3id.org/dpv/dpv-owl#Duration",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Consent Status"
+              "en": "Duration2"
             },
             "applicationProfileLabel": {
-              "en": "Consent Status"
+              "en": "Duration"
             }
           },
-          "minCount": "1",
+          "minCount": "0",
           "maxCount": "1"
-        }
-      ]
-    },
-    {
-      "id": "https://purl.eu/ns/consent#ConsentStatus",
-      "vocabularyLabel": {
-        "en": "Consent Status"
-      },
-      "applicationProfileLabel": {
-        "en": "Consent Status"
-      },
-      "vocabularyDefinition": {
-        "en": "DataSubject cancelled a consent which was previously given."
-      },
-      "applicationProfileDefinition": {
-        "en": "DataSubject cancelled a consent which was previously given."
-      },
-      "vocabularyUsageNote": {
-        "en": "This status should be used whenever a datasubject invokes the right to cancel a given consent."
-      },
-      "applicationProfileUsageNote": {
-        "en": "This status should be used whenever a datasubject invokes the right to cancel a given consent."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "http://data.europa.eu/m8g/#Criterion",
-      "vocabularyLabel": {
-        "en": "Criterion"
-      },
-      "applicationProfileLabel": {
-        "en": "Criterion"
-      },
-      "vocabularyDefinition": {
-        "en": "Condition for evaluation or assessment."
-      },
-      "applicationProfileDefinition": {
-        "en": "Condition for evaluation or assessment."
-      },
-      "vocabularyUsageNote": {
-        "en": "In general, Criteria are used for comparison, filtering or selection purposes. Criteria usually set minimum conditions (e.g. limits, intervals, thresholds, etc.) that need to be met in order to pass the requirements or to fulfil them to a certain degree or quality. The concept of Criteria is broader than the concept of Constraint since it covers more usages. The evaluation of the fulfilment is usually supported by the provision of Evidence. For example in the eProcurement domain, the eProcurement Ontology defines different subclasses of Criterion such as exclusion grounds, selection criteria or award criteria. A concrete example of a Criterion is 'participation in a criminal organisation' which could also be considered as an exclusion ground criterion in the procurement domain or for requiring a public service."
-      },
-      "applicationProfileUsageNote": {
-        "en": "Checking the Criterion can require extra info (hence the class InformationRequirement) which in turn can require the class Evidence. A full description of this class is to be found in the CCCEV-ontology."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "https://w3id.org/GConsent#DataController",
-      "vocabularyLabel": {
-        "en": "Data Controller"
-      },
-      "applicationProfileLabel": {
-        "en": "Data Controller"
-      },
-      "vocabularyDefinition": {
-        "en": "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
-      },
-      "applicationProfileDefinition": {
-        "en": "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
+        },
         {
-          "id": "https://purl.eu/ns/consent#DataController.canWithdrawConsent",
+          "id": "https://w3id.org/dpv#hasIndicationMethod",
           "vocabularyLabel": {
-            "en": "can withdraw consent"
+            "en": "hasIndicationMethod"
           },
           "applicationProfileLabel": {
-            "en": "can withdraw consent"
-          },
-          "vocabularyDefinition": {
-            "en": "Refering to the possibility for a data controller to withdraw the consent"
+            "en": "hasIndicationMethod"
           },
           "applicationProfileDefinition": {
-            "en": "Refering to the possibility for a data controller to withdraw the consent"
-          },
-          "vocabularyUsageNote": {
-            "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
+            "en": "Way in which the current state of Consent realized."
           },
           "applicationProfileUsageNote": {
-            "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#DataController",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataController.wasProvidedConsent",
-          "vocabularyLabel": {
-            "en": "was provided consent"
-          },
-          "applicationProfileLabel": {
-            "en": "was provided consent"
-          },
-          "vocabularyDefinition": {
-            "en": "The consent was provided to the data controller"
-          },
-          "applicationProfileDefinition": {
-            "en": "The consent was provided to the data controller"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#DataController",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        }
-      ]
-    },
-    {
-      "id": "https://dpvcg.github.io/dpv/#DataProcessor",
-      "vocabularyLabel": {
-        "en": "Data Processor"
-      },
-      "applicationProfileLabel": {
-        "en": "Data Processor"
-      },
-      "vocabularyDefinition": {
-        "en": "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller."
-      },
-      "applicationProfileDefinition": {
-        "en": "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller."
-      },
-      "vocabularyUsageNote": {
-        "en": "A data processor will only be used if the controller is commissioned by the data controller to perform the processing for the data controller."
-      },
-      "applicationProfileUsageNote": {
-        "en": "A data processor will only be used if the controller is commissioned by the data controller to perform the processing for the data controller."
-      },
-      "parents": [
-        {
-          "id": "https://w3id.org/GConsent#ThirdParty",
-          "vocabularyLabel": {
-            "en": "Third Party"
-          },
-          "applicationProfileLabel": {
-            "en": "Third Party"
-          }
-        }
-      ],
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#DataProcessor.identifier",
-          "vocabularyLabel": {
-            "en": "identifier"
-          },
-          "applicationProfileLabel": {
-            "en": "identifier"
-          },
-          "vocabularyDefinition": {
-            "en": "Unique method to prove the identify of the Data Processor."
-          },
-          "applicationProfileDefinition": {
-            "en": "Unique method to prove the identify of the Data Processor."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#DataProcessor",
-          "range": {
-            "id": "http://todo.com/Identifier",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "Identifier"
-            },
-            "applicationProfileLabel": {
-              "en": "Identifier"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataProcessor.legalName",
-          "vocabularyLabel": {
-            "en": "legal name"
-          },
-          "applicationProfileLabel": {
-            "en": "legal name"
-          },
-          "vocabularyDefinition": {
-            "en": "The legal name under which the Data Processor is registered."
-          },
-          "applicationProfileDefinition": {
-            "en": "The legal name under which the Data Processor is registered."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#DataProcessor",
-          "range": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "LangString"
-            },
-            "applicationProfileLabel": {
-              "en": "LangString"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        }
-      ]
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention",
-      "vocabularyLabel": {
-        "en": "Data Retention"
-      },
-      "applicationProfileLabel": {
-        "en": "Data Retention"
-      },
-      "vocabularyDefinition": {
-        "en": "The policies of persistent data management for meeting legal and business data archival requirements"
-      },
-      "applicationProfileDefinition": {
-        "en": "The policies of persistent data management for meeting legal and business data archival requirements"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-          "vocabularyLabel": {
-            "en": "data retention policy document"
-          },
-          "applicationProfileLabel": {
-            "en": "data retention policy document"
-          },
-          "vocabularyDefinition": {
-            "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-          },
-          "applicationProfileDefinition": {
-            "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
-          "range": {
-            "id": "http://xmlns.com/foaf/spec/#term_Document",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "Document"
-            },
-            "applicationProfileLabel": {
-              "en": "Document"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataRetention.expiryDate",
-          "vocabularyLabel": {
-            "en": "expiry date"
-          },
-          "applicationProfileLabel": {
-            "en": "expiry date"
-          },
-          "vocabularyDefinition": {
-            "en": "The date on which the data retention stops"
-          },
-          "applicationProfileDefinition": {
-            "en": "The date on which the data retention stops"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "DateTime"
-            },
-            "applicationProfileLabel": {
-              "en": "DateTime"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-          "vocabularyLabel": {
-            "en": "expiry time"
-          },
-          "applicationProfileLabel": {
-            "en": "expiry time"
-          },
-          "vocabularyDefinition": {
-            "en": "The duration of the data retention, starting from the start date"
-          },
-          "applicationProfileDefinition": {
-            "en": "The duration of the data retention, starting from the start date"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
-          "range": {
-            "id": "http://data.europa.eu/m8g/PeriodOfTime",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Period Of Time"
-            },
-            "applicationProfileLabel": {
-              "en": "Period Of Time"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-          "vocabularyLabel": {
-            "en": "legal basis"
-          },
-          "applicationProfileLabel": {
-            "en": "legal basis"
-          },
-          "vocabularyDefinition": {
-            "en": "The legal basis that substantiates the data retention"
-          },
-          "applicationProfileDefinition": {
-            "en": "The legal basis that substantiates the data retention"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
-          "range": {
-            "id": "https://dpvcg.github.io/dpv/#LegalBasis",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Legal Basis"
-            },
-            "applicationProfileLabel": {
-              "en": "Legal Basis"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#DataRetention.liveData",
-          "vocabularyLabel": {
-            "en": "live data"
-          },
-          "applicationProfileLabel": {
-            "en": "live data"
-          },
-          "vocabularyDefinition": {
-            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-          },
-          "applicationProfileDefinition": {
-            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#boolean",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "Boolean"
-            },
-            "applicationProfileLabel": {
-              "en": "Boolean"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://dpvcg.github.io/dpv/#Processing",
-          "vocabularyLabel": {
-            "en": "processing"
-          },
-          "applicationProfileLabel": {
-            "en": "processing"
-          },
-          "vocabularyDefinition": {
-            "en": "Processing specifies what is happening to/with the data."
-          },
-          "applicationProfileDefinition": {
-            "en": "Processing specifies what is happening to/with the data."
+            "en": "Eg for a state equal to GivenConsent if the Consent was given in an analogue or electronic way and if electronic for example by DigitalTickbox or DigitalSignature or other."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
           "range": {
-            "id": "http://todo.com/ProcessingType",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Processing Type"
+              "en": "IndicationMethodType"
             },
             "applicationProfileLabel": {
-              "en": "Processing Type"
+              "en": "IndicationMethodType"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "1"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasLocation",
+          "vocabularyLabel": {
+            "en": "hasLocation"
+          },
+          "applicationProfileLabel": {
+            "en": "hasLocation"
+          },
+          "applicationProfileDefinition": {
+            "en": "Location where this stage of the Consent was created."
+          },
+          "applicationProfileUsageNote": {
+            "en": "To be updated when the ConsentStatus changes."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
+          "range": {
+            "id": "http://www.w3.org/ns/prov#Location",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "Location"
+            },
+            "applicationProfileLabel": {
+              "en": "Location"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasNotice",
+          "vocabularyLabel": {
+            "en": "hasNotice"
+          },
+          "applicationProfileLabel": {
+            "en": "hasNotice"
+          },
+          "applicationProfileDefinition": {
+            "en": "Reference to the applied or used ConsentNotice."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#ConsentNotice",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "ConsentNotice"
+            },
+            "applicationProfileLabel": {
+              "en": "ConsentNotice"
             }
           },
           "minCount": "0",
           "maxCount": "*"
         },
         {
-          "id": "https://purl.eu/ns/consent#DataRetention.startDate",
+          "id": "https://w3id.org/dpv/dpv-owl#isIndicatedAtTime",
           "vocabularyLabel": {
-            "en": "start date"
+            "en": "isIndicatedAtTime"
           },
           "applicationProfileLabel": {
-            "en": "start date"
-          },
-          "vocabularyDefinition": {
-            "en": "The moment in time when the data retention starts"
+            "en": "isIndicatedAtTime"
           },
           "applicationProfileDefinition": {
-            "en": "The moment in time when the data retention starts"
+            "en": "Moment when this stage of the Consent was created."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
+          "applicationProfileUsageNote": {
+            "en": "To be updated when the ConsentStatus changes."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#DataRetention",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
           "range": {
             "id": "http://www.w3.org/2001/XMLSchema#dateTime",
             "listedInDocument": false,
@@ -1023,488 +258,98 @@
           },
           "minCount": "1",
           "maxCount": "1"
-        }
-      ]
-    },
-    {
-      "id": "https://w3id.org/GConsent#DataSubject",
-      "vocabularyLabel": {
-        "en": "Data Subject"
-      },
-      "applicationProfileLabel": {
-        "en": "Data Subject"
-      },
-      "vocabularyDefinition": {
-        "en": "The individual whose personal data is being processed."
-      },
-      "applicationProfileDefinition": {
-        "en": "The individual whose personal data is being processed."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#DataSubject.canCancelConsent",
-          "vocabularyLabel": {
-            "en": "can cancel consent"
-          },
-          "applicationProfileLabel": {
-            "en": "can cancel consent"
-          },
-          "vocabularyDefinition": {
-            "en": "Refering to the possibility for a data subject to cancel a previously given consent"
-          },
-          "applicationProfileDefinition": {
-            "en": "Refering to the possibility for a data subject to cancel a previously given consent"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#DataSubject",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
         },
         {
-          "id": "https://w3id.org/GConsent#hasConsent",
+          "id": "https://w3id.org/dpv/dpv-owl#isIndicatedBy",
           "vocabularyLabel": {
-            "en": "has consent"
+            "en": "isIndicatedBy"
           },
           "applicationProfileLabel": {
-            "en": "has consent"
-          },
-          "vocabularyDefinition": {
-            "en": "Links a data subject to their consent."
+            "en": "isIndicatedBy"
           },
           "applicationProfileDefinition": {
-            "en": "Links a data subject to their consent."
+            "en": "Entity that is responsible for this stage of the Consent."
+          },
+          "applicationProfileUsageNote": {
+            "en": "Eg the Dat Controller if the status is ConsentRequested or the DataSubject for a ConsentGiven. To be updated when the ConsentStatus changes. REMARK: Required in case of Consent by delegation, such as in the case of a parent or a guardian responsible for providing or affirming Consent. Can be omitted if the referenced entity is identical to the DataSubject."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#DataSubject",
+          "domain": "https://w3id.org/dpv/dpv-owl#Consent",
           "range": {
-            "id": "https://w3id.org/GConsent#Consent",
+            "id": "https://w3id.org/dpv/dpv-owl#Entity",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Consent"
+              "en": "Entity"
             },
             "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://w3id.org/GConsent#providedConsent",
-          "vocabularyLabel": {
-            "en": "provided consent"
-          },
-          "applicationProfileLabel": {
-            "en": "provided consent"
-          },
-          "vocabularyDefinition": {
-            "en": "The data subject is the entity which provided the consent"
-          },
-          "applicationProfileDefinition": {
-            "en": "The data subject is the entity which provided the consent"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#DataSubject",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        }
-      ]
-    },
-    {
-      "id": "https://w3id.org/GConsent#Delegation",
-      "vocabularyLabel": {
-        "en": "Delegation"
-      },
-      "applicationProfileLabel": {
-        "en": "Delegation"
-      },
-      "vocabularyDefinition": {
-        "en": "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject."
-      },
-      "applicationProfileDefinition": {
-        "en": "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
-          "vocabularyLabel": {
-            "en": "has consent given by delegate"
-          },
-          "applicationProfileLabel": {
-            "en": "has consent given by delegate"
-          },
-          "vocabularyDefinition": {
-            "en": "The delegation has been provided by a certain delegate."
-          },
-          "applicationProfileDefinition": {
-            "en": "The delegation has been provided by a certain delegate."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Delegation",
-          "range": {
-            "id": "https://purl.eu/dc/terms/Agent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Agent"
-            },
-            "applicationProfileLabel": {
-              "en": "Agent"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Delegation.isConsentDelegationFor",
-          "vocabularyLabel": {
-            "en": "is consent delegation for"
-          },
-          "applicationProfileLabel": {
-            "en": "is consent delegation for"
-          },
-          "vocabularyDefinition": {
-            "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
-          },
-          "applicationProfileDefinition": {
-            "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Delegation",
-          "range": {
-            "id": "https://w3id.org/GConsent#DataSubject",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Data Subject"
-            },
-            "applicationProfileLabel": {
-              "en": "Data Subject"
+              "en": "Entity"
             }
           },
           "minCount": "0",
           "maxCount": "1"
-        },
-        {
-          "id": "http://todo.com/providedConsent",
-          "vocabularyLabel": {
-            "en": "provided consent"
-          },
-          "applicationProfileLabel": {
-            "en": "provided consent"
-          },
-          "vocabularyDefinition": {
-            "en": "The entity which provided the consent is the one to whom the consent has been delegated."
-          },
-          "applicationProfileDefinition": {
-            "en": "The entity which provided the consent is the one to whom the consent has been delegated."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Delegation",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
         }
       ]
     },
     {
-      "id": "http://xmlns.com/foaf/spec/#term_Document",
+      "id": "https://w3id.org/dpv/dpv-owl#ConsentNotice",
       "vocabularyLabel": {
-        "en": "Document"
+        "en": "ConsentNotice"
       },
       "applicationProfileLabel": {
-        "en": "Document"
-      },
-      "vocabularyDefinition": {
-        "en": "Document containing detailed information on the identity of the controller, the planned processing operations, the purpose and legal basis and on the measures taken to protect its data."
+        "en": "ConsentNotice"
       },
       "applicationProfileDefinition": {
-        "en": "Document containing detailed information on the identity of the controller, the planned processing operations, the purpose and legal basis and on the measures taken to protect its data."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "http://data.europa.eu/m8g/EvidenceType",
-      "vocabularyLabel": {
-        "en": "Evidence Type"
-      },
-      "applicationProfileLabel": {
-        "en": "Evidence Type"
-      },
-      "vocabularyDefinition": {
-        "en": "Information about the characteristics of an Evidence."
-      },
-      "applicationProfileDefinition": {
-        "en": "Information about the characteristics of an Evidence."
-      },
-      "vocabularyUsageNote": {
-        "en": "The Evidence Type and the characteristics it describes are not concrete individual responses to a Requirement (i.e. Evidence), but descriptions about the desired form, content, source and/or other characteristics that an actual response should have and provide (e.g. membership of a class of Evidences)."
+        "en": "A Notice for information provision associated with a Consent."
       },
       "applicationProfileUsageNote": {
-        "en": "A full description of this class is to be found in the CCCEV-ontology."
+        "en": "This is to inform the Data Subject before his Consent can be obtained. To be substituted by a String, URL or Document referencing the actual Notice."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://purl.eu/ns/consent#Expiry",
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
       "vocabularyLabel": {
-        "en": "Expiry"
+        "en": "ConsentStatus"
       },
       "applicationProfileLabel": {
-        "en": "Expiry"
+        "en": "ConsentStatus"
       },
-      "vocabularyDefinition": {
-        "en": "Specifying when or under which quantifiable condition(s) the consent will expire"
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#DataController",
+      "vocabularyLabel": {
+        "en": "DataController"
+      },
+      "applicationProfileLabel": {
+        "en": "DataController"
       },
       "applicationProfileDefinition": {
-        "en": "Specifying when or under which quantifiable condition(s) the consent will expire"
+        "en": "The individual or organisation that decides (or controls) the purpose(s) of processing the PersonalData."
+      },
+      "applicationProfileUsageNote": {
+        "en": "The terms 'Controller' is usually the more common form of indicating a DataController. In <a href=\"https://www.iso.org/standard/80392.html\">ISO/IEC</a> the term 'PII Controller' is used."
       },
       "parents": [
         {
-          "id": "http://data.europa.eu/m8g/#Criterion",
+          "id": "http://purl.org/dc/terms/Agent",
           "vocabularyLabel": {
-            "en": "Criterion"
+            "en": "Agent"
           },
           "applicationProfileLabel": {
-            "en": "Criterion"
+            "en": "Agent"
           }
-        }
-      ],
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-          "vocabularyLabel": {
-            "en": "expiry cadance"
-          },
-          "applicationProfileLabel": {
-            "en": "expiry cadance"
-          },
-          "vocabularyDefinition": {
-            "en": "The time between moments in time when the data may be retreived for processing"
-          },
-          "applicationProfileDefinition": {
-            "en": "The time between moments in time when the data may be retreived for processing"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#Expiry",
-          "range": {
-            "id": "http://data.europa.eu/m8g/PeriodOfTime",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Period Of Time"
-            },
-            "applicationProfileLabel": {
-              "en": "Period Of Time"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
         },
         {
-          "id": "https://purl.eu/ns/consent#Expiry.expiryDate",
+          "id": "http://todo.com/LegalEntity",
           "vocabularyLabel": {
-            "en": "expiry date"
+            "en": "LegalEntity"
           },
           "applicationProfileLabel": {
-            "en": "expiry date"
-          },
-          "vocabularyDefinition": {
-            "en": "The moment in time up to which the data may be processed"
-          },
-          "applicationProfileDefinition": {
-            "en": "The moment in time up to which the data may be processed"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#Expiry",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "DateTime"
-            },
-            "applicationProfileLabel": {
-              "en": "DateTime"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Expiry.expiryFrequency",
-          "vocabularyLabel": {
-            "en": "expiry frequency"
-          },
-          "applicationProfileLabel": {
-            "en": "expiry frequency"
-          },
-          "vocabularyDefinition": {
-            "en": "The number of times the data may be processed"
-          },
-          "applicationProfileDefinition": {
-            "en": "The number of times the data may be processed"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#Expiry",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#integer",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "Integer"
-            },
-            "applicationProfileLabel": {
-              "en": "Integer"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Expiry.expiryTime",
-          "vocabularyLabel": {
-            "en": "expiry time"
-          },
-          "applicationProfileLabel": {
-            "en": "expiry time"
-          },
-          "vocabularyDefinition": {
-            "en": "The duration during which the data may be processed"
-          },
-          "applicationProfileDefinition": {
-            "en": "The duration during which the data may be processed"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#Expiry",
-          "range": {
-            "id": "http://data.europa.eu/m8g/PeriodOfTime",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Period Of Time"
-            },
-            "applicationProfileLabel": {
-              "en": "Period Of Time"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        }
-      ]
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Filter",
-      "vocabularyLabel": {
-        "en": "Filter"
-      },
-      "applicationProfileLabel": {
-        "en": "Filter"
-      },
-      "vocabularyDefinition": {
-        "en": "A filter added to the personal data to further limit the specifications of the personal data."
-      },
-      "applicationProfileDefinition": {
-        "en": "A filter added to the personal data to further limit the specifications of the personal data."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "https://purl.eu/ns/consent#Filter.period",
-          "vocabularyLabel": {
-            "en": "period"
-          },
-          "applicationProfileLabel": {
-            "en": "period"
-          },
-          "vocabularyDefinition": {
-            "en": "A period of time."
-          },
-          "applicationProfileDefinition": {
-            "en": "A period of time."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://purl.eu/ns/consent#Filter",
-          "range": {
-            "id": "http://data.europa.eu/m8g/PeriodOfTime",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Period Of Time"
-            },
-            "applicationProfileLabel": {
-              "en": "Period Of Time"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        }
-      ]
-    },
-    {
-      "id": "https://w3id.org/GConsent#GivenConsent",
-      "vocabularyLabel": {
-        "en": "Given Consent"
-      },
-      "applicationProfileLabel": {
-        "en": "Given Consent"
-      },
-      "vocabularyDefinition": {
-        "en": "Represents a consent entity that is considered given whether implicitly, explicitly, or by delegation."
-      },
-      "applicationProfileDefinition": {
-        "en": "Represents a consent entity that is considered given whether implicitly, explicitly, or by delegation."
-      },
-      "parents": [
-        {
-          "id": "https://w3id.org/GConsent#Consent",
-          "vocabularyLabel": {
-            "en": "Consent"
-          },
-          "applicationProfileLabel": {
-            "en": "Consent"
+            "en": "LegalEntity"
           }
         }
       ],
@@ -1512,100 +357,230 @@
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "http://data.europa.eu/m8g/InformationRequirement",
+      "id": "https://w3id.org/dpv/dpv-owl#DataProcessor",
       "vocabularyLabel": {
-        "en": "Information Required"
+        "en": "DataProcessor"
       },
       "applicationProfileLabel": {
-        "en": "Information Required"
-      },
-      "vocabularyDefinition": {
-        "en": "Requested data that is to be proven by Evidence."
+        "en": "DataProcessor"
       },
       "applicationProfileDefinition": {
-        "en": "Requested data that is to be proven by Evidence."
+        "en": "A 'processor' means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the DataController."
       },
-      "vocabularyUsageNote": {
-        "en": "Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover. They represent requests for data that prove one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. The response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). The Information Requirement can require structured data or documents of any form. For structured data, the Requirement can use 'Concepts' to specify the structure and type of the data expected in the response. For both structured and unstructured data, the Information Requirement can indicate the expected Type of Evidence, its format, source, and other properties related to the Evidence."
-      },
-      "applicationProfileUsageNote": {
-        "en": "A full description of this class is to be found in the CCCEV-ontology."
-      },
+      "parents": [
+        {
+          "id": "http://purl.org/dc/terms/Agent",
+          "vocabularyLabel": {
+            "en": "Agent"
+          },
+          "applicationProfileLabel": {
+            "en": "Agent"
+          }
+        },
+        {
+          "id": "http://todo.com/LegalEntity",
+          "vocabularyLabel": {
+            "en": "LegalEntity"
+          },
+          "applicationProfileLabel": {
+            "en": "LegalEntity"
+          }
+        }
+      ],
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#LegalBasis",
+      "id": "https://w3id.org/dpv/dpv-owl#DataSubject",
       "vocabularyLabel": {
-        "en": "Legal Basis"
+        "en": "DataSubject"
       },
       "applicationProfileLabel": {
-        "en": "Legal Basis"
-      },
-      "vocabularyDefinition": {
-        "en": "The Legal basis used to justify processing of personal data"
+        "en": "DataSubject"
       },
       "applicationProfileDefinition": {
-        "en": "The Legal basis used to justify processing of personal data"
+        "en": "The individual (or category of individuals) whose PersonalData is being processed."
       },
+      "applicationProfileUsageNote": {
+        "en": "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the <a href=\"https://www.iso.org/standard/80392.html\">ISO/IEC</a> term 'PII Principle'. REMARK: Can also be instantiated as a category, eg PersonalDataHandling123 for DataSubject(s) of type Customer."
+      },
+      "parents": [
+        {
+          "id": "http://todo.com/LegalEntity",
+          "vocabularyLabel": {
+            "en": "LegalEntity"
+          },
+          "applicationProfileLabel": {
+            "en": "LegalEntity"
+          }
+        },
+        {
+          "id": "http://www.w3.org/ns/person#Person",
+          "vocabularyLabel": {
+            "en": "Person"
+          },
+          "applicationProfileLabel": {
+            "en": "Person"
+          }
+        }
+      ],
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "https://purl.eu/ns/consent#LegalBasis.isLegalBasisFor",
-          "vocabularyLabel": {
-            "en": "oSLO:is legal basis for"
-          },
-          "applicationProfileLabel": {
-            "en": "oSLO:is legal basis for"
-          },
-          "vocabularyDefinition": {
-            "en": "The legal basis under which the data handling takes place"
-          },
-          "applicationProfileDefinition": {
-            "en": "The legal basis under which the data handling takes place"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#LegalBasis",
-          "range": {
-            "id": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Personal Data Handling"
-            },
-            "applicationProfileLabel": {
-              "en": "Personal Data Handling"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#LegalBasis.type",
+          "id": "http://purl.org/dc/elements/1.1/type",
           "vocabularyLabel": {
             "en": "type"
           },
           "applicationProfileLabel": {
             "en": "type"
           },
-          "vocabularyDefinition": {
-            "en": "The type of legal basis."
-          },
           "applicationProfileDefinition": {
-            "en": "The type of legal basis."
+            "en": "Type of DataSubject."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
+          "applicationProfileUsageNote": {
+            "en": "For example age-based types like Adult, Child or domain-based ones like Patient, Employee ore jurisdictional roles like Citizen, Immigrant."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#LegalBasis",
+          "domain": "https://w3id.org/dpv/dpv-owl#DataSubject",
           "range": {
-            "id": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Legal Basis Type"
+              "en": "DataSubjectType"
             },
             "applicationProfileLabel": {
-              "en": "Legal Basis Type"
+              "en": "DataSubjectType"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
+        }
+      ]
+    },
+    {
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "vocabularyLabel": {
+        "en": "DataSubjectType"
+      },
+      "applicationProfileLabel": {
+        "en": "DataSubjectType"
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "vocabularyLabel": {
+        "en": "DurationType"
+      },
+      "applicationProfileLabel": {
+        "en": "DurationType"
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#Entity",
+      "vocabularyLabel": {
+        "en": "Entity"
+      },
+      "applicationProfileLabel": {
+        "en": "Entity"
+      },
+      "applicationProfileDefinition": {
+        "en": "A human or non-human 'thing' that constitutes as an entity."
+      },
+      "applicationProfileUsageNote": {
+        "en": "To be used as an abstract superclass and to be substituted by an Agent like a Person or Organisation and/or a LegalEntity like a DataSubject, DataController etc."
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+      "properties": [
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasRelationWithDataSubject",
+          "vocabularyLabel": {
+            "en": "hasrelationWithDataSubject"
+          },
+          "applicationProfileLabel": {
+            "en": "hasRelationWithDataSubject"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the relation between the Entity and a DataSubject."
+          },
+          "applicationProfileUsageNote": {
+            "en": "Typically used in case of Consent by delagation, ie to specify that the Entity that indicated the Consent is related to the DataSubject. The kind of relationship is implied by the types of DataSubject and Entity (typically Child and Parent/Guardian of DataSubject respectively)."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Entity",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#DataSubject",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "DataSubject"
+            },
+            "applicationProfileLabel": {
+              "en": "DataSubject"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "*"
+        }
+      ]
+    },
+    {
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "vocabularyLabel": {
+        "en": "IndicationMethodType"
+      },
+      "applicationProfileLabel": {
+        "en": "IndicationMethodType"
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#LegalBasis",
+      "vocabularyLabel": {
+        "en": "LegalBasis"
+      },
+      "applicationProfileLabel": {
+        "en": "LegalBasis"
+      },
+      "applicationProfileDefinition": {
+        "en": "The legal basis used to justify the Processing of the PersonalData."
+      },
+      "applicationProfileUsageNote": {
+        "en": "REMARK: This profile focusses on one kind of Legal Basis, namely Consent. REMARK: DPV provides the possiblity to use LegalBasis as a category, eg the LegalBasis of PersonalDataHandling123 is Consent."
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+      "properties": [
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasPersonalDataHandling",
+          "vocabularyLabel": {
+            "en": "hasPersonalDataHandling"
+          },
+          "applicationProfileLabel": {
+            "en": "hasPersonalDataHandling"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the association with the PersonalDataHandling."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#LegalBasis",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "PersonalDataHandling"
+            },
+            "applicationProfileLabel": {
+              "en": "PersonalDataHandling"
             }
           },
           "minCount": "1",
@@ -1614,72 +589,27 @@
       ]
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
+      "id": "https://w3id.org/dpv/dpv-owl#LegalEntity",
       "vocabularyLabel": {
-        "en": "Legal Basis Type"
+        "en": "LegalEntity"
       },
       "applicationProfileLabel": {
-        "en": "Legal Basis Type"
-      },
-      "vocabularyDefinition": {
-        "en": "The Legal basis used to justify processing of personal data"
+        "en": "LegalEntity"
       },
       "applicationProfileDefinition": {
-        "en": "The list of Legal Basisses defined in GDPR."
+        "en": "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law."
       },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#LiveData",
-      "vocabularyLabel": {
-        "en": "LiveData"
-      },
-      "applicationProfileLabel": {
-        "en": "LiveData"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "https://w3id.org/GConsent#Medium",
-      "vocabularyLabel": {
-        "en": "Medium Type"
-      },
-      "applicationProfileLabel": {
-        "en": "Medium Type"
-      },
-      "vocabularyDefinition": {
-        "en": "Describes a list of mediums through which consent can be given/provided."
-      },
-      "applicationProfileDefinition": {
-        "en": "Describes a list of mediums through which consent can be given/provided."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "https://w3id.org/GConsent#MinorDataSubject",
-      "vocabularyLabel": {
-        "en": "Minor Data Subject"
-      },
-      "applicationProfileLabel": {
-        "en": "Minor Data Subject"
-      },
-      "vocabularyDefinition": {
-        "en": "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent."
-      },
-      "applicationProfileDefinition": {
-        "en": "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent."
+      "applicationProfileUsageNote": {
+        "en": "Superclass of entities like Data Subject, DataController etc, ie roles with legal importance in the GDPR."
       },
       "parents": [
         {
-          "id": "https://w3id.org/GConsent#DataSubject",
+          "id": "https://w3id.org/dpv/dpv-owl#Entity",
           "vocabularyLabel": {
-            "en": "Data Subject"
+            "en": "Entity"
           },
           "applicationProfileLabel": {
-            "en": "Data Subject"
+            "en": "Entity"
           }
         }
       ],
@@ -1687,287 +617,336 @@
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://w3id.org/GConsent#PersonalData",
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
       "vocabularyLabel": {
-        "en": "Personal Data"
+        "en": "LiveDataType"
       },
       "applicationProfileLabel": {
-        "en": "Personal Data"
+        "en": "LiveDataType"
       },
-      "vocabularyDefinition": {
-        "en": "Any information relating to an identified or identifiable natural person (i.e., the DataSubject)."
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "http://www.w3.org/ns/org#Organization",
+      "vocabularyLabel": {
+        "en": "Organisation"
+      },
+      "applicationProfileLabel": {
+        "en": "Organisation"
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "vocabularyLabel": {
+        "en": "OrganisationalMeasure"
+      },
+      "applicationProfileLabel": {
+        "en": "OrganisationalMeasure"
+      },
+      "parents": [
+        {
+          "id": "http://www.w3.org/2004/02/skos/core#Concept",
+          "vocabularyLabel": {
+            "en": "TechnicalOrganisationalMeasure"
+          }
+        }
+      ],
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "http://www.w3.org/ns/person#Person",
+      "vocabularyLabel": {
+        "en": "Person"
+      },
+      "applicationProfileLabel": {
+        "en": "Person"
       },
       "applicationProfileDefinition": {
-        "en": "Any information relating to an identified or identifiable natural person (i.e., the DataSubject)."
+        "en": "A natural person."
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
+    },
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#PersonalData",
+      "vocabularyLabel": {
+        "en": "PersonalData"
+      },
+      "applicationProfileLabel": {
+        "en": "PersonalData"
+      },
+      "applicationProfileDefinition": {
+        "en": "Data directly or indirectly associated or related to an individual."
+      },
+      "applicationProfileUsageNote": {
+        "en": "This definition of personal data encompasses the concepts used in GDPR Art.4-1 for 'personal data' and ISO/IEC 2700 for 'personally identifiable information (PII)'."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "http://todo.com/hasFilter",
+          "id": "https://purl.eu/ns/consent#liveData",
           "vocabularyLabel": {
-            "en": "has filter"
+            "en": "liveData"
           },
           "applicationProfileLabel": {
-            "en": "has filter"
-          },
-          "vocabularyDefinition": {
-            "en": "The personal data has a filter."
+            "en": "liveData"
           },
           "applicationProfileDefinition": {
-            "en": "The personal data has a filter."
-          },
-          "vocabularyUsageNote": {
-            "en": "A filter can be added to the personal data, which makes it possible to further specify which part of the personal data is needed for the consent."
+            "en": "Indicates how current the data is."
           },
           "applicationProfileUsageNote": {
-            "en": "A filter can be added to the personal data, which makes it possible to further specify which part of the personal data is needed for the consent."
+            "en": "Eg if the data is from a snaphot or if it is up-to-date."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#PersonalData",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalData",
           "range": {
-            "id": "https://purl.eu/ns/consent#Filter",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Filter"
+              "en": "LiveDataType"
             },
             "applicationProfileLabel": {
-              "en": "Filter"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "http://todo.com/hasRetentionPeriod",
-          "vocabularyLabel": {
-            "en": "has retention period"
-          },
-          "applicationProfileLabel": {
-            "en": "has retention period"
-          },
-          "vocabularyDefinition": {
-            "en": "The personal data used in this consent has a retention period linked to it"
-          },
-          "applicationProfileDefinition": {
-            "en": "The personal data used in this consent has a retention period linked to it"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#PersonalData",
-          "range": {
-            "id": "https://purl.eu/ns/consent#DataRetention",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Data Retention"
-            },
-            "applicationProfileLabel": {
-              "en": "Data Retention"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://w3id.org/GConsent#isPersonalDataForConsent",
-          "vocabularyLabel": {
-            "en": "is personal data for consent"
-          },
-          "applicationProfileLabel": {
-            "en": "is personal data for consent"
-          },
-          "vocabularyDefinition": {
-            "en": "Links personal data with the consent it is associated with."
-          },
-          "applicationProfileDefinition": {
-            "en": "Links personal data with the consent it is associated with."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#PersonalData",
-          "range": {
-            "id": "https://w3id.org/GConsent#Consent",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Consent"
-            },
-            "applicationProfileLabel": {
-              "en": "Consent"
+              "en": "LiveDataType"
             }
           },
           "minCount": "1",
           "maxCount": "1"
         },
         {
-          "id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
+          "id": "http://purl.org/dc/elements/1.1/type",
           "vocabularyLabel": {
-            "en": "personal data document"
+            "en": "type"
           },
           "applicationProfileLabel": {
-            "en": "personal data document"
-          },
-          "vocabularyDefinition": {
-            "en": "An human readable document is provided explaining what personal data which is part of the consent."
+            "en": "type"
           },
           "applicationProfileDefinition": {
-            "en": "An human readable document is provided explaining what personal data which is part of the consent."
+            "en": "Type of PersonalData."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
+          "applicationProfileUsageNote": {
+            "en": "Examples from the DPV codelist are based on the source of the data (like Derived, Inferred, Observed) or on their sensitivity or other. REMARK: More thematic categories can be found in the <a href=\"https://w3c.github.io/dpv/dpv-pd/\" >DPV Extended Personal Data concepts</a> codelist."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#PersonalData",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalData",
           "range": {
-            "id": "http://xmlns.com/foaf/spec/#term_Document",
-            "listedInDocument": false,
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Document"
+              "en": "PersonalDataType"
             },
             "applicationProfileLabel": {
-              "en": "Document"
+              "en": "PersonalDataType"
             }
           },
-          "minCount": "0",
-          "maxCount": "*"
+          "minCount": "1",
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
         }
       ]
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
+      "id": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
       "vocabularyLabel": {
-        "en": "Personal Data Category"
+        "en": "PersonalDataHandling"
       },
       "applicationProfileLabel": {
-        "en": "Personal Data Category"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-      "vocabularyLabel": {
-        "en": "Personal Data Handling"
-      },
-      "applicationProfileLabel": {
-        "en": "Personal Data Handling"
-      },
-      "vocabularyDefinition": {
-        "en": "A high-level Class to describe 'data handling'. This can consist of personal data being processed for a purpose, involving entities, using technical and organisational, applicable risks, rights, and legal basis."
+        "en": "PersonalDataHandling"
       },
       "applicationProfileDefinition": {
-        "en": "A high-level Class to describe 'data handling'. This can consist of personal data being processed for a purpose, involving entities, using technical and organisational, applicable risks, rights, and legal basis."
+        "en": "A high-level Class to describe 'data handling'. This can consist of PersonalData being processed for a Purpose, involving Entities, using TechnicalOrganisationalMeasures, applicable Risks, Rights, and LegalBasis."
+      },
+      "applicationProfileUsageNote": {
+        "en": "REMARK: DPV uses the term 'data handling' to distinguish between the general meaning of processing (eg collect PersonalData from DataSubject123 by DataController456 for the Purpose of marketing) versus the operations pereformed with the data (eg consult, share etc)."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
+          "id": "https://w3id.org/dpv/dpv-owl#hasTechnicalOrganisationalMeasure",
           "vocabularyLabel": {
-            "en": "data handling document"
+            "en": "hasTechnicalOrganisationalMeasure"
           },
           "applicationProfileLabel": {
-            "en": "data handling document"
-          },
-          "vocabularyDefinition": {
-            "en": "An human readable document explaining how the personal data will be handled."
+            "en": "has Technical Organisational Measure"
           },
           "applicationProfileDefinition": {
-            "en": "An human readable document explaining how the personal data will be handled."
+            "en": "Indicates the use or applicability of a Technical Organisational Measure."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
+          "applicationProfileUsageNote": {
+            "en": "Refers to the type of the Technical Organisational Measure that has been taken to protect the the PersonalData. Examples of TechnicalMeasures are Anonymisation, Encryption, WebSecurityProtocols. OrganisationalMeasures could be measures like ConsentNotices, Privacy Notices, CredentialManagement."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "http://xmlns.com/foaf/spec/#term_Document",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": false,
             "vocabularyLabel": {
-              "en": "Document"
+              "en": "TechnicalOrganisationalMeasure"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "*",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasDataController",
+          "vocabularyLabel": {
+            "en": "hasDataController"
+          },
+          "applicationProfileLabel": {
+            "en": "hasDataController"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the association with the DataController."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#DataController",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "DataController"
             },
             "applicationProfileLabel": {
-              "en": "Document"
+              "en": "DataController"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasDataProcessor",
+          "vocabularyLabel": {
+            "en": "hasDataProcessor"
+          },
+          "applicationProfileLabel": {
+            "en": "hasDataProcessor"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the inclusion or applicability of a DataProcessor."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#DataProcessor",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "DataProcessor"
+            },
+            "applicationProfileLabel": {
+              "en": "DataProcessor"
             }
           },
           "minCount": "0",
           "maxCount": "*"
         },
         {
-          "id": "http://todo.com/hasDataSubject",
+          "id": "https://w3id.org/dpv/dpv-owl#hasDataSubject",
           "vocabularyLabel": {
-            "en": "has data subject"
+            "en": "hasDataSubject"
           },
           "applicationProfileLabel": {
-            "en": "has data subject"
-          },
-          "vocabularyDefinition": {
-            "en": "Reference to the data subject from whom personal data is being processed"
+            "en": "hasDataSubject"
           },
           "applicationProfileDefinition": {
-            "en": "Reference to the data subject from whom personal data is being processed"
+            "en": "Indicates the association with the DataSubject."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://w3id.org/GConsent#DataSubject",
+            "id": "https://w3id.org/dpv/dpv-owl#DataSubject",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Data Subject"
+              "en": "DataSubject"
             },
             "applicationProfileLabel": {
-              "en": "Data Subject"
+              "en": "DataSubject"
             }
           },
-          "minCount": "0",
-          "maxCount": "1"
+          "minCount": "1",
+          "maxCount": "*"
         },
         {
-          "id": "https://dpvcg.github.io/dpv/#hasLegalBasis",
+          "id": "https://w3id.org/dpv/dpv-owl#hasLegalBasis",
           "vocabularyLabel": {
-            "en": "has legal basis"
+            "en": "hasLegalBasis"
           },
           "applicationProfileLabel": {
-            "en": "has legal basis"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates that the handling of personal data has a legal basis."
+            "en": "hasLegalBasis"
           },
           "applicationProfileDefinition": {
-            "en": "Indicates that the handling of personal data has a legal basis."
+            "en": "Indicates the use or applicability of a LegalBasis."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://dpvcg.github.io/dpv/#LegalBasis",
+            "id": "https://w3id.org/dpv/dpv-owl#LegalBasis",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Legal Basis"
+              "en": "LegalBasis"
             },
             "applicationProfileLabel": {
-              "en": "Legal Basis"
+              "en": "LegalBasis"
             }
           },
-          "minCount": "0",
-          "maxCount": "1"
+          "minCount": "1",
+          "maxCount": "*"
         },
         {
-          "id": "http://todo.com/hasProcessing",
+          "id": "https://w3id.org/dpv/dpv-owl#hasPersonalData",
           "vocabularyLabel": {
-            "en": "has processing"
+            "en": "hasPersonalData"
           },
           "applicationProfileLabel": {
-            "en": "has processing"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates that the data handling has a processing activity."
+            "en": "hasPersonalData"
           },
           "applicationProfileDefinition": {
-            "en": "Indicates that the data handling has a processing activity."
+            "en": "Indicates the association with the PersonalData."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://w3id.org/GConsent#Processing",
+            "id": "https://w3id.org/dpv/dpv-owl#PersonalData",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "PersonalData"
+            },
+            "applicationProfileLabel": {
+              "en": "PersonalData"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "*"
+        },
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasProcessing",
+          "vocabularyLabel": {
+            "en": "hasProcessing"
+          },
+          "applicationProfileLabel": {
+            "en": "hasProcessing"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates the association with the Processing."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#Processing",
             "listedInDocument": true,
             "vocabularyLabel": {
               "en": "Processing"
@@ -1980,24 +959,21 @@
           "maxCount": "*"
         },
         {
-          "id": "http://todo.com/hasPurpose",
+          "id": "https://w3id.org/dpv/dpv-owl#hasPurpose",
           "vocabularyLabel": {
-            "en": "has purpose"
+            "en": "hasPurpose"
           },
           "applicationProfileLabel": {
-            "en": "has purpose"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates that the data handling has a purpose."
+            "en": "hasPurpose"
           },
           "applicationProfileDefinition": {
-            "en": "Indicates that the data handling has a purpose."
+            "en": "Indicates the association with the Purpose."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://w3id.org/GConsent#Purpose",
+            "id": "https://w3id.org/dpv/dpv-owl#Purpose",
             "listedInDocument": true,
             "vocabularyLabel": {
               "en": "Purpose"
@@ -2007,147 +983,51 @@
             }
           },
           "minCount": "1",
-          "maxCount": "1"
+          "maxCount": "*"
         },
         {
-          "id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
+          "id": "https://w3id.org/dpv/dpv-owl#hasRecipient",
           "vocabularyLabel": {
-            "en": "live data"
+            "en": "hasRecipient"
           },
           "applicationProfileLabel": {
-            "en": "live data"
-          },
-          "vocabularyDefinition": {
-            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
+            "en": "hasRecipient"
           },
           "applicationProfileDefinition": {
-            "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-          "range": {
-            "id": "https://purl.eu/ns/consent#LiveData",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "LiveData"
-            },
-            "applicationProfileLabel": {
-              "en": "LiveData"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
-          "vocabularyLabel": {
-            "en": "measure"
-          },
-          "applicationProfileLabel": {
-            "en": "measure"
-          },
-          "vocabularyDefinition": {
-            "en": "Technical measures required/followed when processing data of the declared category"
-          },
-          "applicationProfileDefinition": {
-            "en": "Technical measures required/followed when processing data of the declared category"
+            "en": "Indicates the Recipient of the PersonalData."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
+            "id": "https://w3id.org/dpv/dpv-owl#Recipient",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Technical Organisational Measure"
+              "en": "Recipient"
             },
             "applicationProfileLabel": {
-              "en": "Technical Organisational Measure"
+              "en": "Recipient"
             }
           },
           "minCount": "0",
           "maxCount": "*"
         },
         {
-          "id": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
+          "id": "https://w3id.org/dpv/dpv-owl#hasRight",
           "vocabularyLabel": {
-            "en": "personal data category"
+            "en": "hasRight"
           },
           "applicationProfileLabel": {
-            "en": "personal data category"
-          },
-          "vocabularyDefinition": {
-            "en": "A category of personal data"
+            "en": "hasRight"
           },
           "applicationProfileDefinition": {
-            "en": "A category of personal data"
+            "en": "Indicates the use or applicability of a Right with the PersonalDataHandling."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://dpvcg.github.io/dpv/#PersonalDataCategory",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Personal Data Category"
-            },
-            "applicationProfileLabel": {
-              "en": "Personal Data Category"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
-          "vocabularyLabel": {
-            "en": "personal data type"
-          },
-          "applicationProfileLabel": {
-            "en": "personal data type"
-          },
-          "vocabularyDefinition": {
-            "en": "A type of personal data"
-          },
-          "applicationProfileDefinition": {
-            "en": "A type of personal data"
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-          "range": {
-            "id": "http://todo.com/PersonalDataType",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Personal Data Type"
-            },
-            "applicationProfileLabel": {
-              "en": "Personal Data Type"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "https://dpvcg.github.io/dpv/#Right",
-          "vocabularyLabel": {
-            "en": "right"
-          },
-          "applicationProfileLabel": {
-            "en": "right"
-          },
-          "vocabularyDefinition": {
-            "en": "The right(s) applicable, provided, or expected."
-          },
-          "applicationProfileDefinition": {
-            "en": "The right(s) applicable, provided, or expected."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-          "range": {
-            "id": "https://dpvcg.github.io/dpv/#Right",
+            "id": "https://w3id.org/dpv/dpv-owl#Right",
             "listedInDocument": true,
             "vocabularyLabel": {
               "en": "Right"
@@ -2156,28 +1036,25 @@
               "en": "Right"
             }
           },
-          "minCount": "1",
-          "maxCount": "1"
+          "minCount": "0",
+          "maxCount": "*"
         },
         {
-          "id": "https://dpvcg.github.io/dpv/#Risk",
+          "id": "https://w3id.org/dpv/dpv-owl#hasRisk",
           "vocabularyLabel": {
-            "en": "risk"
+            "en": "hasRisk"
           },
           "applicationProfileLabel": {
-            "en": "risk"
-          },
-          "vocabularyDefinition": {
-            "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
+            "en": "hasRisk"
           },
           "applicationProfileDefinition": {
-            "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
+            "en": "Indicates the applicability of a Risk associated with the PersonalDataHandling."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
+          "domain": "https://w3id.org/dpv/dpv-owl#PersonalDataHandling",
           "range": {
-            "id": "https://dpvcg.github.io/dpv/#Risk",
+            "id": "https://w3id.org/dpv/dpv-owl#Risk",
             "listedInDocument": true,
             "vocabularyLabel": {
               "en": "Risk"
@@ -2186,192 +1063,182 @@
               "en": "Risk"
             }
           },
-          "minCount": "1",
-          "maxCount": "1"
+          "minCount": "0",
+          "maxCount": "*"
         }
       ]
     },
     {
-      "id": "http://todo.com/PersonalDataType",
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
       "vocabularyLabel": {
-        "en": "Personal Data Type"
+        "en": "PersonalDataType"
       },
       "applicationProfileLabel": {
-        "en": "Personal Data Type"
+        "en": "PersonalDataType"
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://w3id.org/GConsent#Processing",
+      "id": "https://w3id.org/dpv/dpv-owl#Processing",
       "vocabularyLabel": {
         "en": "Processing"
       },
       "applicationProfileLabel": {
         "en": "Processing"
       },
-      "vocabularyDefinition": {
-        "en": "Processing specifies what is happening to/with the data."
-      },
       "applicationProfileDefinition": {
-        "en": "Processing specifies what is happening to/with the data."
+        "en": "The processing performed on the Personal Data."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "https://w3id.org/GConsent#involvesThirdParty",
+          "id": "https://w3id.org/dpv/dpv-owl#hasStorageCondition",
           "vocabularyLabel": {
-            "en": "involves third party"
+            "en": "hasStorageCondition"
           },
           "applicationProfileLabel": {
-            "en": "involves third party"
-          },
-          "vocabularyDefinition": {
-            "en": "Indicates wheter a ThirdParty in involved in processing the data or not."
+            "en": "hasStorageCondition"
           },
           "applicationProfileDefinition": {
-            "en": "Indicates wheter a ThirdParty in involved in processing the data or not."
+            "en": "Indicates information about the storage of the PersonalData."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Processing",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#StorageCondition",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "StorageCondition"
+            },
+            "applicationProfileLabel": {
+              "en": "StorageCondition"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "1"
+        },
+        {
+          "id": "http://purl.org/dc/elements/1.1/type",
+          "vocabularyLabel": {
+            "en": "type"
+          },
+          "applicationProfileLabel": {
+            "en": "type"
+          },
+          "applicationProfileDefinition": {
+            "en": "Type of Processing."
           },
           "applicationProfileUsageNote": {
-            "en": "For example the dataProcessor that processes the data on behalf of the DataController."
+            "en": "Refers to the kind of operation that is performed  on the PersonalData. Examples are Collect, Disclose, Share."
           },
           "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Processing",
+          "domain": "https://w3id.org/dpv/dpv-owl#Processing",
           "range": {
-            "id": "https://w3id.org/GConsent#ThirdParty",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Third Party"
+              "en": "ProcessingType"
             },
             "applicationProfileLabel": {
-              "en": "Third Party"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "*"
-        },
-        {
-          "id": "https://purl.eu/ns/consent#Processing.type",
-          "vocabularyLabel": {
-            "en": "type"
-          },
-          "applicationProfileLabel": {
-            "en": "type"
-          },
-          "vocabularyDefinition": {
-            "en": "The type of processing."
-          },
-          "applicationProfileDefinition": {
-            "en": "The type of processing."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Processing",
-          "range": {
-            "id": "http://todo.com/ProcessingType",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Processing Type"
-            },
-            "applicationProfileLabel": {
-              "en": "Processing Type"
+              "en": "ProcessingType"
             }
           },
           "minCount": "1",
-          "maxCount": "1"
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
         }
       ]
     },
     {
-      "id": "http://todo.com/ProcessingType",
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
       "vocabularyLabel": {
-        "en": "Processing Type"
+        "en": "ProcessingType"
       },
       "applicationProfileLabel": {
-        "en": "Processing Type"
+        "en": "ProcessingType"
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://w3id.org/GConsent#Purpose",
+      "id": "https://w3id.org/dpv/dpv-owl#Purpose",
       "vocabularyLabel": {
         "en": "Purpose"
       },
       "applicationProfileLabel": {
         "en": "Purpose"
       },
-      "vocabularyDefinition": {
-        "en": "Purpose refers to the aim or goal towards which the data is processed (or associated with any other form of action)."
-      },
       "applicationProfileDefinition": {
-        "en": "Purpose refers to the aim or goal towards which the data is processed (or associated with any other form of action)."
+        "en": "The purpose of processing the PersonalData."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
       "properties": [
         {
-          "id": "https://purl.eu/ns/consent#Purpose.type",
+          "id": "http://purl.org/dc/elements/1.1/type",
           "vocabularyLabel": {
             "en": "type"
           },
           "applicationProfileLabel": {
             "en": "type"
           },
-          "vocabularyDefinition": {
-            "en": "The type of purpose."
-          },
           "applicationProfileDefinition": {
-            "en": "The type of purpose."
+            "en": "Type of Purpose."
           },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
+          "applicationProfileUsageNote": {
+            "en": "Refers to the reason or justification for the PersonalDataHandling. Examples in the context of Consent are Marketing, Personalised Advertising, Commercial research."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
           "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "https://w3id.org/GConsent#Purpose",
+          "domain": "https://w3id.org/dpv/dpv-owl#Purpose",
           "range": {
-            "id": "http://todo.com/PurposeType",
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
             "listedInDocument": true,
             "vocabularyLabel": {
-              "en": "Purpose Type"
+              "en": "PurposeType"
             },
             "applicationProfileLabel": {
-              "en": "Purpose Type"
+              "en": "PurposeType"
             }
           },
           "minCount": "1",
-          "maxCount": "1"
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
         }
       ]
     },
     {
-      "id": "http://todo.com/PurposeType",
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
       "vocabularyLabel": {
-        "en": "Purpose Type"
+        "en": "PurposeType"
       },
       "applicationProfileLabel": {
-        "en": "Purpose Type"
+        "en": "PurposeType"
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+      "id": "https://w3id.org/dpv/dpv-owl#Recipient",
       "vocabularyLabel": {
-        "en": "Registered Organisation"
+        "en": "Recipient"
       },
       "applicationProfileLabel": {
-        "en": "Registered Organisation"
-      },
-      "vocabularyDefinition": {
-        "en": "An organization that is legally registered"
+        "en": "Recipient"
       },
       "applicationProfileDefinition": {
-        "en": "An organization that is legally registered"
+        "en": "Entitiy that receives the PersonalData."
+      },
+      "applicationProfileUsageNote": {
+        "en": "A Recipient of Personal Data can be used to indicate any Entity that receives the data. This can be a Third Party, Processor (GDPR), or even a Controller."
       },
       "parents": [
         {
-          "id": "https://purl.eu/dc/terms/Agent",
+          "id": "http://purl.org/dc/terms/Agent",
           "vocabularyLabel": {
             "en": "Agent"
           },
@@ -2380,79 +1247,17 @@
           }
         },
         {
-          "id": "http://www.w3.org/ns/org#Organization",
+          "id": "http://todo.com/LegalEntity",
           "vocabularyLabel": {
-            "en": "Organisation"
+            "en": "LegalEntity"
           },
           "applicationProfileLabel": {
-            "en": "Organisation"
+            "en": "LegalEntity"
           }
         }
       ],
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "http://www.w3.org/ns/regorg#legalName",
-          "vocabularyLabel": {
-            "en": "legal name"
-          },
-          "applicationProfileLabel": {
-            "en": "legal name"
-          },
-          "vocabularyDefinition": {
-            "en": "The legal name of the organisation."
-          },
-          "applicationProfileDefinition": {
-            "en": "The legal name of the organisation."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-          "range": {
-            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "LangString"
-            },
-            "applicationProfileLabel": {
-              "en": "LangString"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        },
-        {
-          "id": "http://www.w3.org/ns/regorg#registration",
-          "vocabularyLabel": {
-            "en": "registration"
-          },
-          "applicationProfileLabel": {
-            "en": "registration"
-          },
-          "vocabularyDefinition": {
-            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
-          },
-          "applicationProfileDefinition": {
-            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-          "range": {
-            "id": "http://www.w3.org/ns/adms#Identifier",
-            "listedInDocument": true,
-            "vocabularyLabel": {
-              "en": "Identifier"
-            },
-            "applicationProfileLabel": {
-              "en": "Identifier"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        }
-      ]
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
       "id": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
@@ -2470,7 +1275,7 @@
       },
       "parents": [
         {
-          "id": "https://purl.eu/dc/terms/Agent",
+          "id": "http://purl.org/dc/terms/Agent",
           "vocabularyLabel": {
             "en": "Agent"
           },
@@ -2497,7 +1302,7 @@
             "en": "full name"
           },
           "applicationProfileLabel": {
-            "en": "full name"
+            "en": "fullName"
           },
           "vocabularyDefinition": {
             "en": "The full name of the person, in a general a combination of the first and last name."
@@ -2564,69 +1369,283 @@
       ]
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#Right",
+      "id": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+      "vocabularyLabel": {
+        "en": "Registered Organisation"
+      },
+      "applicationProfileLabel": {
+        "en": "RegisteredOrganisation"
+      },
+      "vocabularyDefinition": {
+        "en": "An organization that is legally registered"
+      },
+      "applicationProfileDefinition": {
+        "en": "An organization that is legally registered"
+      },
+      "parents": [
+        {
+          "id": "http://purl.org/dc/terms/Agent",
+          "vocabularyLabel": {
+            "en": "Agent"
+          },
+          "applicationProfileLabel": {
+            "en": "Agent"
+          }
+        },
+        {
+          "id": "http://www.w3.org/ns/org#Organization",
+          "vocabularyLabel": {
+            "en": "Organisation"
+          },
+          "applicationProfileLabel": {
+            "en": "Organisation"
+          }
+        }
+      ],
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+      "properties": [
+        {
+          "id": "http://www.w3.org/ns/regorg#legalName",
+          "vocabularyLabel": {
+            "en": "legal name"
+          },
+          "applicationProfileLabel": {
+            "en": "legalName"
+          },
+          "vocabularyDefinition": {
+            "en": "The legal name of the organisation."
+          },
+          "applicationProfileDefinition": {
+            "en": "The legal name of the organisation."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+          "range": {
+            "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+            "listedInDocument": false,
+            "vocabularyLabel": {
+              "en": "LangString"
+            },
+            "applicationProfileLabel": {
+              "en": "LangString"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1"
+        },
+        {
+          "id": "http://www.w3.org/ns/regorg#registration",
+          "vocabularyLabel": {
+            "en": "registration"
+          },
+          "applicationProfileLabel": {
+            "en": "registration"
+          },
+          "vocabularyDefinition": {
+            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
+          },
+          "applicationProfileDefinition": {
+            "en": "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+          "range": {
+            "id": "http://www.w3.org/ns/adms#Identifier",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "Identifier"
+            },
+            "applicationProfileLabel": {
+              "en": "Identifier"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1"
+        }
+      ]
+    },
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#Right",
       "vocabularyLabel": {
         "en": "Right"
       },
       "applicationProfileLabel": {
         "en": "Right"
       },
-      "vocabularyDefinition": {
-        "en": "The right(s) applicable, provided, or expected."
-      },
       "applicationProfileDefinition": {
         "en": "The right(s) applicable, provided, or expected."
+      },
+      "applicationProfileUsageNote": {
+        "en": "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictates the norms regarding what is allowed or owed. Rights as a concept encompass a broad area of norms and entities, and are not specific to individuals or Data Protection / Privacy. REMARK: For individual specific rights, see DPV:DataSubjectRight and <a href=\"https://w3c.github.io/dpv/rights/eu/\">EU Fundamental Rights</a>."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#Risk",
+      "id": "https://w3id.org/dpv/dpv-owl#Risk",
       "vocabularyLabel": {
         "en": "Risk"
       },
       "applicationProfileLabel": {
         "en": "Risk"
       },
-      "vocabularyDefinition": {
-        "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
-      },
       "applicationProfileDefinition": {
         "en": "A risk or possibility or uncertainty of negative effects, impacts, or consequences."
+      },
+      "applicationProfileUsageNote": {
+        "en": "Risks can be associated with one or more different concepts such as Purpose, Processing, PersonalData, TechnicalOrganisationalMeasures. REMARK: More info on this class in <a href=\"https://w3c.github.io/dpv/risk/\">DPV-Risk</a>."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://dpvcg.github.io/dpv/#TechnicalOrganisationalMeasure",
+      "id": "https://w3id.org/dpv/dpv-owl#StorageCondition",
       "vocabularyLabel": {
-        "en": "Technical Organisational Measure"
+        "en": "StorageCondition"
       },
       "applicationProfileLabel": {
-        "en": "Technical Organisational Measure"
+        "en": "StorageCondition"
+      },
+      "applicationProfileDefinition": {
+        "en": "Conditions required or followed regarding storage of data."
+      },
+      "applicationProfileUsageNote": {
+        "en": "When the type of Processing is 'store', subclasses of this abstract class allow to specify duration, location etc of the storage."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     },
     {
-      "id": "https://w3id.org/GConsent#ThirdParty",
+      "id": "https://w3id.org/dpv/dpv-owl#StorageDuration",
       "vocabularyLabel": {
-        "en": "Third Party"
+        "en": "StorageDuration"
       },
       "applicationProfileLabel": {
-        "en": "Third Party"
-      },
-      "vocabularyDefinition": {
-        "en": "Represents an Agent that is a Person or an Organisation other than the current entity (w.r.t. data protection laws)."
+        "en": "StorageDuration"
       },
       "applicationProfileDefinition": {
-        "en": "Represents an Agent that is a Person or an Organisation other than the current entity (w.r.t. data protection laws)."
+        "en": "Duration or temporal limitation on the storage of the PersonalData."
       },
+      "parents": [
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#StorageCondition",
+          "vocabularyLabel": {
+            "en": "StorageCondition"
+          },
+          "applicationProfileLabel": {
+            "en": "StorageCondition"
+          }
+        }
+      ],
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+      "properties": [
+        {
+          "id": "https://w3id.org/dpv/dpv-owl#hasDuration",
+          "vocabularyLabel": {
+            "en": "hasDuration"
+          },
+          "applicationProfileLabel": {
+            "en": "hasDuration"
+          },
+          "applicationProfileDefinition": {
+            "en": "Indicates information about the Duration of the storage."
+          },
+          "applicationProfileUsageNote": {
+            "en": "For example how long the data is stored (eg 6 months), or until what time (eg 31 december 2022) or until which event (eg account closure)."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#StorageDuration",
+          "range": {
+            "id": "https://w3id.org/dpv/dpv-owl#Duration",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "Duration2"
+            },
+            "applicationProfileLabel": {
+              "en": "Duration"
+            }
+          },
+          "minCount": "1",
+          "maxCount": "1"
+        }
+      ]
+    },
+    {
+      "id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "vocabularyLabel": {
+        "en": "TechnicalMeasure"
+      },
+      "applicationProfileLabel": {
+        "en": "TechnicalMeasure"
+      },
+      "parents": [
+        {
+          "id": "http://www.w3.org/2004/02/skos/core#Concept",
+          "vocabularyLabel": {
+            "en": "TechnicalOrganisationalMeasure"
+          }
+        }
+      ],
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
     }
   ],
   "dataTypes": [
+    {
+      "id": "https://w3id.org/dpv/dpv-owl#Duration",
+      "vocabularyLabel": {
+        "en": "Duration2"
+      },
+      "applicationProfileLabel": {
+        "en": "Duration"
+      },
+      "applicationProfileDefinition": {
+        "en": "The duration or temporal limitation."
+      },
+      "applicationProfileUsageNote": {
+        "en": "REMARK: The details of this class can be provided by using the <a href=\"https://www.w3.org/TR/owl-time/\">Time Ontology</a> according to the type of Duration. Eg if the type is DPV:TemporalDuration one could adda OWL-TIME:TemporalEntity as an additional type and hasXSDDuration as an attribute."
+      },
+      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+      "properties": [
+        {
+          "id": "http://purl.org/dc/elements/1.1/type",
+          "vocabularyLabel": {
+            "en": "type"
+          },
+          "applicationProfileLabel": {
+            "en": "type"
+          },
+          "applicationProfileDefinition": {
+            "en": "Type of Duration"
+          },
+          "applicationProfileUsageNote": {
+            "en": "Examples are TemporalDuration (eg 6 months), UnitilTimeDuration (eg till 31 december 2022), UntilEventDuration (eg until account closure)."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "https://w3id.org/dpv/dpv-owl#Duration",
+          "range": {
+            "id": "http://www.w3.org/2004/02/skos/core#Concept",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "DurationType"
+            },
+            "applicationProfileLabel": {
+              "en": "DurationType"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "1",
+          "codelist": "https://w3c.github.io/dpv/dpv-skos/"
+        }
+      ]
+    },
     {
       "id": "http://www.w3.org/ns/adms#Identifier",
       "vocabularyLabel": {
@@ -2656,7 +1675,7 @@
             "en": "attributed at"
           },
           "applicationProfileLabel": {
-            "en": "attributed at"
+            "en": "attributedAt"
           },
           "vocabularyDefinition": {
             "en": "The date on which the identifier was issued."
@@ -2681,12 +1700,42 @@
           "maxCount": "1"
         },
         {
+          "id": "http://purl.org/dc/terms/creator",
+          "vocabularyLabel": {
+            "en": "attributed by"
+          },
+          "applicationProfileLabel": {
+            "en": "attributedBy"
+          },
+          "vocabularyDefinition": {
+            "en": "Link to the Agent that issued the identifier."
+          },
+          "applicationProfileDefinition": {
+            "en": "Link to the Agent that issued the identifier."
+          },
+          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
+          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+          "domain": "http://www.w3.org/ns/adms#Identifier",
+          "range": {
+            "id": "http://purl.org/dc/terms/Agent",
+            "listedInDocument": true,
+            "vocabularyLabel": {
+              "en": "Agent"
+            },
+            "applicationProfileLabel": {
+              "en": "Agent"
+            }
+          },
+          "minCount": "0",
+          "maxCount": "1"
+        },
+        {
           "id": "http://www.w3.org/ns/adms#schemaAgency",
           "vocabularyLabel": {
             "en": "attributed by as string"
           },
           "applicationProfileLabel": {
-            "en": "attributed by as string"
+            "en": "attributedByAsString"
           },
           "vocabularyDefinition": {
             "en": "Name of the Agent that issued the identifier."
@@ -2764,993 +1813,38 @@
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/External",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard"
-    },
-    {
-      "id": "http://data.europa.eu/m8g/PeriodOfTime",
-      "vocabularyLabel": {
-        "en": "Period Of Time"
-      },
-      "applicationProfileLabel": {
-        "en": "Period Of Time"
-      },
-      "vocabularyDefinition": {
-        "en": "A temporal entity with non-zero extent or duration."
-      },
-      "applicationProfileDefinition": {
-        "en": "A temporal entity with non-zero extent or duration."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "properties": [
-        {
-          "id": "http://data.europa.eu/m8g/endTime",
-          "vocabularyLabel": {
-            "en": "end"
-          },
-          "applicationProfileLabel": {
-            "en": "end"
-          },
-          "vocabularyDefinition": {
-            "en": "Time instant at which the Period was terminated."
-          },
-          "applicationProfileDefinition": {
-            "en": "Time instant at which the Period was terminated."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "http://data.europa.eu/m8g/PeriodOfTime",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "DateTime"
-            },
-            "applicationProfileLabel": {
-              "en": "DateTime"
-            }
-          },
-          "minCount": "0",
-          "maxCount": "1"
-        },
-        {
-          "id": "http://data.europa.eu/m8g/startTime",
-          "vocabularyLabel": {
-            "en": "start"
-          },
-          "applicationProfileLabel": {
-            "en": "start"
-          },
-          "vocabularyDefinition": {
-            "en": "Time instant at which the Period was initiated."
-          },
-          "applicationProfileDefinition": {
-            "en": "Time instant at which the Period was initiated."
-          },
-          "scope": "https://data.vlaanderen.be/id/concept/scope/External",
-          "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-          "domain": "http://data.europa.eu/m8g/PeriodOfTime",
-          "range": {
-            "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-            "listedInDocument": false,
-            "vocabularyLabel": {
-              "en": "DateTime"
-            },
-            "applicationProfileLabel": {
-              "en": "DateTime"
-            }
-          },
-          "minCount": "1",
-          "maxCount": "1"
-        }
-      ]
     }
   ],
   "properties": [
     {
-      "id": "https://purl.eu/ns/consent#DataSubject.canCancelConsent",
+      "id": "https://purl.eu/ns/consent#liveData",
       "vocabularyLabel": {
-        "en": "can cancel consent"
+        "en": "liveData"
       },
       "applicationProfileLabel": {
-        "en": "can cancel consent"
-      },
-      "vocabularyDefinition": {
-        "en": "Refering to the possibility for a data subject to cancel a previously given consent"
+        "en": "liveData"
       },
       "applicationProfileDefinition": {
-        "en": "Refering to the possibility for a data subject to cancel a previously given consent"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#DataSubject",
-      "range": {
-        "id": "https://w3id.org/GConsent#Consent",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Consent"
-        },
-        "applicationProfileLabel": {
-          "en": "Consent"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataController.canWithdrawConsent",
-      "vocabularyLabel": {
-        "en": "can withdraw consent"
-      },
-      "applicationProfileLabel": {
-        "en": "can withdraw consent"
-      },
-      "vocabularyDefinition": {
-        "en": "Refering to the possibility for a data controller to withdraw the consent"
-      },
-      "applicationProfileDefinition": {
-        "en": "Refering to the possibility for a data controller to withdraw the consent"
-      },
-      "vocabularyUsageNote": {
-        "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
+        "en": "Indicates how current the data is."
       },
       "applicationProfileUsageNote": {
-        "en": "This should be used in cases where the data controller made a mistake in the consent. To stop the request or make a new one the controller should first withdraw the previous consent."
+        "en": "Eg if the data is from a snaphot or if it is up-to-date."
       },
       "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
       "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#DataController",
+      "domain": "https://w3id.org/dpv/dpv-owl#PersonalData",
       "range": {
-        "id": "https://w3id.org/GConsent#Consent",
+        "id": "http://www.w3.org/2004/02/skos/core#Concept",
         "listedInDocument": true,
         "vocabularyLabel": {
-          "en": "Consent"
+          "en": "LiveDataType"
         },
         "applicationProfileLabel": {
-          "en": "Consent"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Consent.inHumanReadableForm",
-      "vocabularyLabel": {
-        "en": "consent document"
-      },
-      "applicationProfileLabel": {
-        "en": "consent document"
-      },
-      "vocabularyDefinition": {
-        "en": "An human readable document is provided of the consent."
-      },
-      "applicationProfileDefinition": {
-        "en": "An human readable document is provided of the consent."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Consent",
-      "range": {
-        "id": "http://xmlns.com/foaf/spec/#term_Document",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Document"
-        },
-        "applicationProfileLabel": {
-          "en": "Document"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#PersonalDataHandling.inHumanReadableForm",
-      "vocabularyLabel": {
-        "en": "data handling document"
-      },
-      "applicationProfileLabel": {
-        "en": "data handling document"
-      },
-      "vocabularyDefinition": {
-        "en": "An human readable document explaining how the personal data will be handled."
-      },
-      "applicationProfileDefinition": {
-        "en": "An human readable document explaining how the personal data will be handled."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-      "range": {
-        "id": "http://xmlns.com/foaf/spec/#term_Document",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Document"
-        },
-        "applicationProfileLabel": {
-          "en": "Document"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.inHumanReadableForm",
-      "vocabularyLabel": {
-        "en": "data retention policy document"
-      },
-      "applicationProfileLabel": {
-        "en": "data retention policy document"
-      },
-      "vocabularyDefinition": {
-        "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-      },
-      "applicationProfileDefinition": {
-        "en": "An human readable document is provided explaining what are the data retention requirements related to the consent."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "http://xmlns.com/foaf/spec/#term_Document",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Document"
-        },
-        "applicationProfileLabel": {
-          "en": "Document"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Expiry.expiryCadance",
-      "vocabularyLabel": {
-        "en": "expiry cadance"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry cadance"
-      },
-      "vocabularyDefinition": {
-        "en": "The time between moments in time when the data may be retreived for processing"
-      },
-      "applicationProfileDefinition": {
-        "en": "The time between moments in time when the data may be retreived for processing"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#Expiry",
-      "range": {
-        "id": "http://data.europa.eu/m8g/PeriodOfTime",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Period Of Time"
-        },
-        "applicationProfileLabel": {
-          "en": "Period Of Time"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.expiryDate",
-      "vocabularyLabel": {
-        "en": "expiry date"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry date"
-      },
-      "vocabularyDefinition": {
-        "en": "The date on which the data retention stops"
-      },
-      "applicationProfileDefinition": {
-        "en": "The date on which the data retention stops"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "DateTime"
-        },
-        "applicationProfileLabel": {
-          "en": "DateTime"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Expiry.expiryDate",
-      "vocabularyLabel": {
-        "en": "expiry date"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry date"
-      },
-      "vocabularyDefinition": {
-        "en": "The moment in time up to which the data may be processed"
-      },
-      "applicationProfileDefinition": {
-        "en": "The moment in time up to which the data may be processed"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#Expiry",
-      "range": {
-        "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "DateTime"
-        },
-        "applicationProfileLabel": {
-          "en": "DateTime"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Expiry.expiryFrequency",
-      "vocabularyLabel": {
-        "en": "expiry frequency"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry frequency"
-      },
-      "vocabularyDefinition": {
-        "en": "The number of times the data may be processed"
-      },
-      "applicationProfileDefinition": {
-        "en": "The number of times the data may be processed"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#Expiry",
-      "range": {
-        "id": "http://www.w3.org/2001/XMLSchema#integer",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Integer"
-        },
-        "applicationProfileLabel": {
-          "en": "Integer"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.expiryTime",
-      "vocabularyLabel": {
-        "en": "expiry time"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry time"
-      },
-      "vocabularyDefinition": {
-        "en": "The duration of the data retention, starting from the start date"
-      },
-      "applicationProfileDefinition": {
-        "en": "The duration of the data retention, starting from the start date"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "http://data.europa.eu/m8g/PeriodOfTime",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Period Of Time"
-        },
-        "applicationProfileLabel": {
-          "en": "Period Of Time"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Expiry.expiryTime",
-      "vocabularyLabel": {
-        "en": "expiry time"
-      },
-      "applicationProfileLabel": {
-        "en": "expiry time"
-      },
-      "vocabularyDefinition": {
-        "en": "The duration during which the data may be processed"
-      },
-      "applicationProfileDefinition": {
-        "en": "The duration during which the data may be processed"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#Expiry",
-      "range": {
-        "id": "http://data.europa.eu/m8g/PeriodOfTime",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Period Of Time"
-        },
-        "applicationProfileLabel": {
-          "en": "Period Of Time"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Delegation.hasConsentGivenByDelegate",
-      "vocabularyLabel": {
-        "en": "has consent given by delegate"
-      },
-      "applicationProfileLabel": {
-        "en": "has consent given by delegate"
-      },
-      "vocabularyDefinition": {
-        "en": "The delegation has been provided by a certain delegate."
-      },
-      "applicationProfileDefinition": {
-        "en": "The delegation has been provided by a certain delegate."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Delegation",
-      "range": {
-        "id": "https://purl.eu/dc/terms/Agent",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Agent"
-        },
-        "applicationProfileLabel": {
-          "en": "Agent"
+          "en": "LiveDataType"
         }
       },
       "minCount": "1",
       "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataProcessor.identifier",
-      "vocabularyLabel": {
-        "en": "identifier"
-      },
-      "applicationProfileLabel": {
-        "en": "identifier"
-      },
-      "vocabularyDefinition": {
-        "en": "Unique method to prove the identify of the Data Processor."
-      },
-      "applicationProfileDefinition": {
-        "en": "Unique method to prove the identify of the Data Processor."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#DataProcessor",
-      "range": {
-        "id": "http://todo.com/Identifier",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Identifier"
-        },
-        "applicationProfileLabel": {
-          "en": "Identifier"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Consent.invalidates",
-      "vocabularyLabel": {
-        "en": "invalidates"
-      },
-      "applicationProfileLabel": {
-        "en": "invalidates"
-      },
-      "vocabularyDefinition": {
-        "en": "A newer version of a consent invalidates a previous version of the consent"
-      },
-      "applicationProfileDefinition": {
-        "en": "A newer version of a consent invalidates a previous version of the consent"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Consent",
-      "range": {
-        "id": "https://w3id.org/GConsent#Consent",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Consent"
-        },
-        "applicationProfileLabel": {
-          "en": "Consent"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Delegation.isConsentDelegationFor",
-      "vocabularyLabel": {
-        "en": "is consent delegation for"
-      },
-      "applicationProfileLabel": {
-        "en": "is consent delegation for"
-      },
-      "vocabularyDefinition": {
-        "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
-      },
-      "applicationProfileDefinition": {
-        "en": "The delegation is a consent delegation for someone to give consent in name of the data subject"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Delegation",
-      "range": {
-        "id": "https://w3id.org/GConsent#DataSubject",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Data Subject"
-        },
-        "applicationProfileLabel": {
-          "en": "Data Subject"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Consent.isInvalidatedBy",
-      "vocabularyLabel": {
-        "en": "is invalidated by"
-      },
-      "applicationProfileLabel": {
-        "en": "is invalidated by"
-      },
-      "vocabularyDefinition": {
-        "en": "A previous version of the consent is invalidated by a newer version of the consent"
-      },
-      "applicationProfileDefinition": {
-        "en": "A previous version of the consent is invalidated by a newer version of the consent"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Consent",
-      "range": {
-        "id": "https://w3id.org/GConsent#Consent",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Consent"
-        },
-        "applicationProfileLabel": {
-          "en": "Consent"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.legalBasis",
-      "vocabularyLabel": {
-        "en": "legal basis"
-      },
-      "applicationProfileLabel": {
-        "en": "legal basis"
-      },
-      "vocabularyDefinition": {
-        "en": "The legal basis that substantiates the data retention"
-      },
-      "applicationProfileDefinition": {
-        "en": "The legal basis that substantiates the data retention"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "https://dpvcg.github.io/dpv/#LegalBasis",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Legal Basis"
-        },
-        "applicationProfileLabel": {
-          "en": "Legal Basis"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataProcessor.legalName",
-      "vocabularyLabel": {
-        "en": "legal name"
-      },
-      "applicationProfileLabel": {
-        "en": "legal name"
-      },
-      "vocabularyDefinition": {
-        "en": "The legal name under which the Data Processor is registered."
-      },
-      "applicationProfileDefinition": {
-        "en": "The legal name under which the Data Processor is registered."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#DataProcessor",
-      "range": {
-        "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "LangString"
-        },
-        "applicationProfileLabel": {
-          "en": "LangString"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.liveData",
-      "vocabularyLabel": {
-        "en": "live data"
-      },
-      "applicationProfileLabel": {
-        "en": "live data"
-      },
-      "vocabularyDefinition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "applicationProfileDefinition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "http://www.w3.org/2001/XMLSchema#boolean",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Boolean"
-        },
-        "applicationProfileLabel": {
-          "en": "Boolean"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#PersonalDataHandling.liveData",
-      "vocabularyLabel": {
-        "en": "live data"
-      },
-      "applicationProfileLabel": {
-        "en": "live data"
-      },
-      "vocabularyDefinition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "applicationProfileDefinition": {
-        "en": "Stating if the data should be a snapshot (i.e., not live data) or if the consent requires access to the latest version of the data (i.e., live data)"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-      "range": {
-        "id": "https://purl.eu/ns/consent#LiveData",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "LiveData"
-        },
-        "applicationProfileLabel": {
-          "en": "LiveData"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Consent.notice",
-      "vocabularyLabel": {
-        "en": "notice"
-      },
-      "applicationProfileLabel": {
-        "en": "notice"
-      },
-      "vocabularyDefinition": {
-        "en": "Additional note added to the consent"
-      },
-      "applicationProfileDefinition": {
-        "en": "Additional note added to the consent"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Consent",
-      "range": {
-        "id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "LangString"
-        },
-        "applicationProfileLabel": {
-          "en": "LangString"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#LegalBasis.isLegalBasisFor",
-      "vocabularyLabel": {
-        "en": "oSLO:is legal basis for"
-      },
-      "applicationProfileLabel": {
-        "en": "oSLO:is legal basis for"
-      },
-      "vocabularyDefinition": {
-        "en": "The legal basis under which the data handling takes place"
-      },
-      "applicationProfileDefinition": {
-        "en": "The legal basis under which the data handling takes place"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#LegalBasis",
-      "range": {
-        "id": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Personal Data Handling"
-        },
-        "applicationProfileLabel": {
-          "en": "Personal Data Handling"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Filter.period",
-      "vocabularyLabel": {
-        "en": "period"
-      },
-      "applicationProfileLabel": {
-        "en": "period"
-      },
-      "vocabularyDefinition": {
-        "en": "A period of time."
-      },
-      "applicationProfileDefinition": {
-        "en": "A period of time."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#Filter",
-      "range": {
-        "id": "http://data.europa.eu/m8g/PeriodOfTime",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Period Of Time"
-        },
-        "applicationProfileLabel": {
-          "en": "Period Of Time"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#PersonalData.inHumanReadableForm",
-      "vocabularyLabel": {
-        "en": "personal data document"
-      },
-      "applicationProfileLabel": {
-        "en": "personal data document"
-      },
-      "vocabularyDefinition": {
-        "en": "An human readable document is provided explaining what personal data which is part of the consent."
-      },
-      "applicationProfileDefinition": {
-        "en": "An human readable document is provided explaining what personal data which is part of the consent."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#PersonalData",
-      "range": {
-        "id": "http://xmlns.com/foaf/spec/#term_Document",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "Document"
-        },
-        "applicationProfileLabel": {
-          "en": "Document"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#PersonalDataHandling.personalDataType",
-      "vocabularyLabel": {
-        "en": "personal data type"
-      },
-      "applicationProfileLabel": {
-        "en": "personal data type"
-      },
-      "vocabularyDefinition": {
-        "en": "A type of personal data"
-      },
-      "applicationProfileDefinition": {
-        "en": "A type of personal data"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#PersonalDataHandling",
-      "range": {
-        "id": "http://todo.com/PersonalDataType",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Personal Data Type"
-        },
-        "applicationProfileLabel": {
-          "en": "Personal Data Type"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataRetention.startDate",
-      "vocabularyLabel": {
-        "en": "start date"
-      },
-      "applicationProfileLabel": {
-        "en": "start date"
-      },
-      "vocabularyDefinition": {
-        "en": "The moment in time when the data retention starts"
-      },
-      "applicationProfileDefinition": {
-        "en": "The moment in time when the data retention starts"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://purl.eu/ns/consent#DataRetention",
-      "range": {
-        "id": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "listedInDocument": false,
-        "vocabularyLabel": {
-          "en": "DateTime"
-        },
-        "applicationProfileLabel": {
-          "en": "DateTime"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#LegalBasis.type",
-      "vocabularyLabel": {
-        "en": "type"
-      },
-      "applicationProfileLabel": {
-        "en": "type"
-      },
-      "vocabularyDefinition": {
-        "en": "The type of legal basis."
-      },
-      "applicationProfileDefinition": {
-        "en": "The type of legal basis."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://dpvcg.github.io/dpv/#LegalBasis",
-      "range": {
-        "id": "https://dpvcg.github.io/dpv/#dfn-legalbasis",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Legal Basis Type"
-        },
-        "applicationProfileLabel": {
-          "en": "Legal Basis Type"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Processing.type",
-      "vocabularyLabel": {
-        "en": "type"
-      },
-      "applicationProfileLabel": {
-        "en": "type"
-      },
-      "vocabularyDefinition": {
-        "en": "The type of processing."
-      },
-      "applicationProfileDefinition": {
-        "en": "The type of processing."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Processing",
-      "range": {
-        "id": "http://todo.com/ProcessingType",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Processing Type"
-        },
-        "applicationProfileLabel": {
-          "en": "Processing Type"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#Purpose.type",
-      "vocabularyLabel": {
-        "en": "type"
-      },
-      "applicationProfileLabel": {
-        "en": "type"
-      },
-      "vocabularyDefinition": {
-        "en": "The type of purpose."
-      },
-      "applicationProfileDefinition": {
-        "en": "The type of purpose."
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#Purpose",
-      "range": {
-        "id": "http://todo.com/PurposeType",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Purpose Type"
-        },
-        "applicationProfileLabel": {
-          "en": "Purpose Type"
-        }
-      },
-      "minCount": "1",
-      "maxCount": "1"
-    },
-    {
-      "id": "https://purl.eu/ns/consent#DataController.wasProvidedConsent",
-      "vocabularyLabel": {
-        "en": "was provided consent"
-      },
-      "applicationProfileLabel": {
-        "en": "was provided consent"
-      },
-      "vocabularyDefinition": {
-        "en": "The consent was provided to the data controller"
-      },
-      "applicationProfileDefinition": {
-        "en": "The consent was provided to the data controller"
-      },
-      "scope": "https://data.vlaanderen.be/id/concept/scope/InPackage",
-      "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-      "domain": "https://w3id.org/GConsent#DataController",
-      "range": {
-        "id": "https://w3id.org/GConsent#Consent",
-        "listedInDocument": true,
-        "vocabularyLabel": {
-          "en": "Consent"
-        },
-        "applicationProfileLabel": {
-          "en": "Consent"
-        }
-      },
-      "minCount": "0",
-      "maxCount": "*"
     }
   ]
 }

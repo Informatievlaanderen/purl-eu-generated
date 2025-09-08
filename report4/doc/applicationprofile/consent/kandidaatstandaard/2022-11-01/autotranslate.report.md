@@ -14,6 +14,18 @@
 
 #||# create new translation file with existing translations included  
 
+http://purl.org/dc/terms/creator
+
+new term introduced, no translation found
+
+https://data.vlaanderen.be/ns/persoon#registratie
+
+new term introduced, no translation found
+
+http://www.w3.org/ns/regorg#registration
+
+new term introduced, no translation found
+
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01/translation_input/OSLO-consent-ap_nl.json  
@@ -30,7 +42,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 56  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01/autotranslation/OSLO-consent-ap_nl.json  
 

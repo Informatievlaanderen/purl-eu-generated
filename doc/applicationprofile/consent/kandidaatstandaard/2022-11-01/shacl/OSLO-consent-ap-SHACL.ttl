@@ -201,6 +201,13 @@
     shacl:maxCount "1";
     shacl:name "identifier"@en;
     shacl:path skos:notation
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Identifier.Attributedby>;
+    shacl:class dc:Agent;
+    shacl:description "Link to the Agent that issued the identifier."@en;
+    shacl:maxCount "1";
+    shacl:name "attributedBy"@en;
+    shacl:path dc:creator
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -411,6 +418,14 @@
     shacl:minCount "1";
     shacl:name "fullName"@en;
     shacl:path <https://data.vlaanderen.be/ns/persoon#volledigeNaam>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#RegisteredPerson.Registration>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identification code of the person in the register."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "registration"@en;
+    shacl:path <https://data.vlaanderen.be/ns/persoon#registratie>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon> .
 
@@ -424,6 +439,14 @@
     shacl:minCount "1";
     shacl:name "legalName"@en;
     shacl:path <http://www.w3.org/ns/regorg#legalName>
+  ], [
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01#Registeredorganisation.Registration>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "The registration is a fundamental relationship between a legal entity and the authority with which it is registered and that confers legal status upon it."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "registration"@en;
+    shacl:path <http://www.w3.org/ns/regorg#registration>
   ];
   shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 
