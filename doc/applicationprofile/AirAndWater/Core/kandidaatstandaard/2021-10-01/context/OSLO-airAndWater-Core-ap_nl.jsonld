@@ -1,3 +1,328 @@
 {
-  "@context": {}
+  "@context": {
+    "Agent": "http://purl.org/dc/terms/Agent",
+    "Any": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+    "DateTime": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "Device": "https://saref.etsi.org/core/Device",
+    "EnterYourTranslationHere": "http://www.w3.org/ns/ssn/systems/OperatingRange",
+    "EnterYourTranslationHere.identifier": {
+      "@id": "http://purl.org/dc/elements/1.1/identifier",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.metadata": {
+      "@id": "https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.observedProperty": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.parameter": {
+      "@id": "https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.phenomenonTime": {
+      "@id": "http://www.w3.org/ns/sosa/phenomenonTime",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.resultTime": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "EnterYourTranslationHere.role": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.role",
+      "@type": "@id"
+    },
+    "EnterYourTranslationHere.specification": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "EnterYourTranslationHere.type": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/air-and-water/core#SamplingProcedure.type",
+      "@type": "@id"
+    },
+    "Identifier": "http://www.w3.org/ns/adms#Identifier",
+    "Identifier.identifier": {
+      "@id": "http://www.w3.org/2004/02/skos/core#notation",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Literal": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "Location": "http://www.w3.org/ns/prov#Location",
+    "ObservationProcedureType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Sampler": "http://www.w3.org/ns/sosa/Sampler",
+    "SamplingMethodType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "SamplingProcedureType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "URI": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "asGML": {
+      "@id": "http://www.opengis.net/ont/geosparql#asGML",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "asWKT": {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "contributor": {
+      "@id": "http://purl.org/dc/elements/1.1/contributor",
+      "@type": "@id"
+    },
+    "creator": {
+      "@id": "http://purl.org/dc/elements/1.1/creator",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "http://purl.org/dc/elements/1.1/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "featureOfInterest": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest",
+      "@type": "@id"
+    },
+    "function": {
+      "@container": "@set",
+      "@id": "https://saref.etsi.org/core/hasFunction",
+      "@type": "@id"
+    },
+    "hasFeatureOfInterest": {
+      "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/hasMember",
+      "@type": "@id"
+    },
+    "hasOperatingProperty": {
+      "@id": "http://www.w3.org/ns/ssn/systems/hasOperatingProperty",
+      "@type": "@id"
+    },
+    "hasOperatingRange": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/systems/hasOperatingRange",
+      "@type": "@id"
+    },
+    "hasResult": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": {
+      "@id": "http://www.w3.org/ns/sosa/hasSimpleResult",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "hasSurvivalProperty": {
+      "@id": "http://www.w3.org/ns/ssn/systems/hasSurvivalProperty",
+      "@type": "@id"
+    },
+    "hasSurvivalRange": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/systems/hasSurvivalRange",
+      "@type": "@id"
+    },
+    "hasSystemCapability": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
+      "@type": "@id"
+    },
+    "hasSystemProperty": {
+      "@id": "http://www.w3.org/ns/ssn/systems/hasSystemProperty",
+      "@type": "@id"
+    },
+    "hasUltimateFeatureOfInterest": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
+      "@type": "@id"
+    },
+    "hosts": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/hosts",
+      "@type": "@id"
+    },
+    "implementedBy": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/implementedBy",
+      "@type": "@id"
+    },
+    "implements": {
+      "@id": "http://www.w3.org/ns/ssn/implements",
+      "@type": "@id"
+    },
+    "inCondition": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/systems/inCondition",
+      "@type": "@id"
+    },
+    "isHostedBy": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/isHostedBy",
+      "@type": "@id"
+    },
+    "isObservedBy": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/isObservedBy",
+      "@type": "@id"
+    },
+    "isResultOf": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/isResultOf",
+      "@type": "@id"
+    },
+    "lineage": {
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.lineage",
+      "@type": "@id"
+    },
+    "location": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/prov#atLocation",
+      "@type": "@id"
+    },
+    "madeBySampler": {
+      "@id": "http://www.w3.org/ns/sosa/madeBySampler",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "http://www.w3.org/ns/sosa/madeBySensor",
+      "@type": "@id"
+    },
+    "madeObservation": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/madeObservation",
+      "@type": "@id"
+    },
+    "madeSampling": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/madeSampling",
+      "@type": "@id"
+    },
+    "manufacturer": {
+      "@id": "https://saref.etsi.org/core/hasManufacturer",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "materialClass": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.materialClass",
+      "@type": "@id"
+    },
+    "model": {
+      "@id": "https://saref.etsi.org/core/hasModel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "observation(Source)": {
+      "@id": "https://purl.eu/ns/observations#ObservationContext.observation.source",
+      "@type": "@id"
+    },
+    "observation(Target)": {
+      "@id": "https://purl.eu/ns/observations#ObservationContext.observation.target",
+      "@type": "@id"
+    },
+    "observes": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/observes",
+      "@type": "@id"
+    },
+    "preparationStep.SamplingProces": {
+      "@id": "https://purl.eu/ns/observations#PreparationStep.SamplingProces",
+      "@type": "@id"
+    },
+    "preparationStep.Specimen": {
+      "@id": "https://purl.eu/ns/observations#PreparationStep.Specimen",
+      "@type": "@id"
+    },
+    "processOperator": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#PreparationStep.processOperator",
+      "@type": "@id"
+    },
+    "processingDetails": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.processingDetails",
+      "@type": "@id"
+    },
+    "propertyValueProviider": {
+      "@container": "@set",
+      "@id": "http://todo/",
+      "@type": "@id"
+    },
+    "publisher": {
+      "@id": "http://purl.org/dc/elements/1.1/publisher",
+      "@type": "@id"
+    },
+    "relatedObservation": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
+      "@type": "@id"
+    },
+    "relatedSamplingFeature": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature",
+      "@type": "@id"
+    },
+    "result": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#Observation.result",
+      "@type": "@id"
+    },
+    "resultQuality": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality",
+      "@type": "@id"
+    },
+    "resultTime": {
+      "@id": "http://www.w3.org/ns/sosa/resultTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "rights": {
+      "@id": "http://purl.org/dc/elements/1.1/rights",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "sampledFeature": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
+      "@type": "@id"
+    },
+    "samplingFeature(Source)": {
+      "@id": "https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.source",
+      "@type": "@id"
+    },
+    "samplingFeature(Target)": {
+      "@id": "https://purl.eu/ns/observations#SamplingFeaturecomplex.samplingFeature.target",
+      "@type": "@id"
+    },
+    "samplingLocation": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.samplingLocation",
+      "@type": "@id"
+    },
+    "samplingMethod": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.samplingMethod",
+      "@type": "@id"
+    },
+    "samplingTime": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.samplingTime",
+      "@type": "@id"
+    },
+    "shape": {
+      "@id": "https://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SpatialSamplingFeature.shape",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "http://purl.org/dc/elements/1.1/subject",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "task": {
+      "@container": "@set",
+      "@id": "https://saref.etsi.org/core/accomplishes",
+      "@type": "@id"
+    },
+    "time": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#PreparationStep.time",
+      "@type": "@id"
+    },
+    "title": {
+      "@id": "http://purl.org/dc/elements/1.1/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "usedProcedure": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/sosa/usedProcedure",
+      "@type": "@id"
+    }
+  }
 }

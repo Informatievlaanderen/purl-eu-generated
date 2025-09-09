@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 56  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/consent/kandidaatstandaard/2022-11-01/autotranslation/OSLO-consent-ap_nl.json  
 

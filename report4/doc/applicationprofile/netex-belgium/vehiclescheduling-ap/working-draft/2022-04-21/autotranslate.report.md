@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 35  
+#||# Number of calls: 0  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/working-draft/2022-04-21/autotranslation/vehiclescheduling-ap_nl.json  
 
