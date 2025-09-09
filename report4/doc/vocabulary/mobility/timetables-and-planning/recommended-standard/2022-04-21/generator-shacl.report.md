@@ -2,7 +2,7 @@
 
 #||# -------------------------------------  
 
-Error: Unable to find a label for subject "[urn:oslo-toolchain:693ca8839ea3e0fd30dd39be539b8a4ab0cfb80a9e3ff3415c5ae6f109d00222](all-timetables-and-planning-voc.jsonld#L15204)".
+Error: Unable to find a label for subject "[urn:oslo-toolchain:97e3aa694503a51291efe2a2214d33bd961dc3ceeb0e031192733eaf73f2a853](all-timetables-and-planning-voc.jsonld#L9338)".
 
     at ShaclTemplateGenerationService.createSubjectToShapeIdMap (/usr/local/lib/node_modules/@oslo-flanders/shacl-template-generator/lib/ShaclTemplateGenerationService.js:98:23)
 
@@ -15,4 +15,8 @@ Error: Unable to find a label for subject "[urn:oslo-toolchain:693ca8839ea3e0fd3
 #||# oslo-shacl-template-generator for language nl  
 
 #||# -------------------------------------  
+
+2025-09-09T13:16:52.210Z warn: Unable to find the description for subject "[urn:oslo-toolchain:d062b9fb836733281f93b184d6b22d810d81d67a950736fc8ca168bfd55401c8](all-timetables-and-planning-voc.jsonld#L8424)".
+
+2025-09-09T13:16:52.212Z warn: Unable to find the description for subject "[urn:oslo-toolchain:e087627193dd9e26cc8442bdb3e2d2b0b47b13fe417e2e81497d8fbd0ed4c10a](all-timetables-and-planning-voc.jsonld#L8443)".
 
