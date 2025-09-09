@@ -14,7 +14,11 @@
 
 #||# create new translation file with existing translations included  
 
-https://purl.eu/ns/observations#resultQuality
+http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality
+
+new term introduced, no translation found
+
+http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter
 
 new term introduced, no translation found
 
@@ -34,7 +38,7 @@ new term introduced, no translation found
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 140  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/2021-04-16/autotranslation/OSLO-airAndWater-Core-ap_nl.json  
 
