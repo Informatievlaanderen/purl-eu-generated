@@ -14,14 +14,6 @@
 
 #||# create new translation file with existing translations included  
 
-http://purl.org/dc/elements/1.1/title
-
-new term introduced, no translation found
-
-https://purl.eu/ns/mobility/timetables-and-planning#text
-
-new term introduced, no translation found
-
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01/translation_input/vehiclescheduling-ap_nl.json  
@@ -38,7 +30,7 @@ new term introduced, no translation found
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 59  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/recommended-standard/2023-11-01/autotranslation/vehiclescheduling-ap_nl.json  
 

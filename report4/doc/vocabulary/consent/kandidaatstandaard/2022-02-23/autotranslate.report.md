@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 56  
+#||# Number of calls: 0  
 
 #||# start writing file /tmp/workspace/report4/doc/vocabulary/consent/kandidaatstandaard/2022-02-23/autotranslation/consent_nl.json  
 
