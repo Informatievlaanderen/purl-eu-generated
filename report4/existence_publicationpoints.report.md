@@ -3,8 +3,6 @@
 #||#    + checking /home/circleci/project/config/dev/air-and-water-air.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/vocabulary/air-and-water/air/ontwerpstandaard/toolchain4'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Air/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/air/kandidaatstandaard/2021-10-01/index.html'
@@ -18,8 +16,6 @@ error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Air/ontwerpsta
 #||#    + checking /home/circleci/project/config/dev/air-and-water-core.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/vocabulary/air-and-water/core/ontwerpstandaard/toolchain4'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/index.html'
@@ -27,19 +23,15 @@ error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/kandidaat
 error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core//index.html'
 error: missing '/tmp/generated/ns/air-and-water/core//index.html'
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/core/ontwerpstandaard/toolchain4/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/air-and-water-water.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/vocabulary/air-and-water/water/ontwerpstandaard/toolchain4'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Water/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/water/kandidaatstandaard/2021-10-01/index.html'
 error: missing '/tmp/generated/ns/air-and-water/water//index.html'
 error: missing '/tmp/generated/doc/vocabulary/air-and-water/water/ontwerpstandaard/toolchain4/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Water/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/consent.publication.json
 #||# 
