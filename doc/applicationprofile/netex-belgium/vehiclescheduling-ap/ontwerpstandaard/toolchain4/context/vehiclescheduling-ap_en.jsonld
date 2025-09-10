@@ -1,0 +1,952 @@
+{
+  "@context": {
+    "AccessibilityAssessment": "https://purl.eu/ns/mobility/timetables-and-planning#AccessibilityAssessment",
+    "Accommodation": "https://purl.eu/ns/mobility/timetables-and-planning#Accommodation",
+    "Accommodation.fareClass": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#fareClass",
+      "@type": "@id"
+    },
+    "AcommodationFacilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Address": "https://data.vlaanderen.be/ns/adres#Adres",
+    "AddressRepresentation": "http://www.w3.org/ns/locn#Address",
+    "AddressRepresentation.country": {
+      "@id": "https://data.vlaanderen.be/ns/adres#land",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "AddressablePlace": "https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace",
+    "Authority": "https://purl.eu/ns/mobility/timetables-and-planning#Authority",
+    "AuthorityOrOperator": "https://purl.eu/ns/mobility/timetables-and-planning#AuthorityOrOperator",
+    "Block": "https://purl.eu/ns/mobility/timetables-and-planning#Block",
+    "Block.dayType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.dayType",
+      "@type": "@id"
+    },
+    "Block.endTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "Block.startTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "Boolean": "http://www.w3.org/2001/XMLSchema#boolean",
+    "Code": "http://www.w3.org/2004/02/skos/core#Concept",
+    "CommonFacilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "CrewBase": "https://purl.eu/ns/mobility/timetables-and-planning#CrewBase",
+    "Crowding": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Date": "http://www.w3.org/2001/XMLSchema#date",
+    "DateTime": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "DayOfWeek": "http://www.w3.org/2004/02/skos/core#Concept",
+    "DayType": "https://purl.eu/ns/mobility/timetables-and-planning#DayType",
+    "DayType.dayLength": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.dayLength",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "DayType.earliestTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.earliestTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "DayType.shortName": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayType.shortName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "DayTypeAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment",
+    "DeadRun": "https://purl.eu/ns/mobility/timetables-and-planning#DeadRun",
+    "DeadRun.directionType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DeadRun.directionType",
+      "@type": "@id"
+    },
+    "DeadRunPattern": "https://purl.eu/ns/mobility/timetables-and-planning#DeadRunPattern",
+    "DeadRunType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "DestinationDisplay": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay",
+    "DestinationDisplay.publicCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Direction": "https://purl.eu/ns/mobility/timetables-and-planning#Direction",
+    "Direction.directionType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Direction.directionType",
+      "@type": "@id"
+    },
+    "DirectionType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Duration": "http://www.w3.org/2001/XMLSchema#duration",
+    "FacilitySet": "http://todo.com/FacilitySet",
+    "FareClass": "http://www.w3.org/2004/02/skos/core#Concept",
+    "FormalOrganization": "http://www.w3.org/ns/org#FormalOrganization",
+    "Garage": "https://purl.eu/ns/mobility/timetables-and-planning#Garage",
+    "Garage.privateCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.privateCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Garage.shortName": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.shortName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Garage.url": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace.url",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "GaragePoint": "https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint",
+    "Geometry": "http://www.w3.org/ns/locn#Geometry",
+    "GroupOfEntities": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities",
+    "GroupOfLines": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines",
+    "GroupOfLines.transportmode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfLines.transportmode",
+      "@type": "@id"
+    },
+    "HeadwayInterval": "https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval",
+    "HolidayType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Identifier": "http://www.w3.org/ns/adms#Identifier",
+    "Integer": "http://www.w3.org/2001/XMLSchema#integer",
+    "Journey": "https://purl.eu/ns/mobility/timetables-and-planning#Journey",
+    "JourneyPart": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart",
+    "JourneyPattern": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern",
+    "JourneyPattern.destinationDisplay": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.destinationDisplay",
+      "@type": "@id"
+    },
+    "JourneyPattern.direction": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern.direction",
+      "@type": "@id"
+    },
+    "LangString": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "Line": "https://purl.eu/ns/mobility/timetables-and-planning#Line",
+    "Line.madeUpOf": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.madeUpOf",
+      "@type": "@id"
+    },
+    "Line.noticeAssignment": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.noticeAssignment",
+      "@type": "@id"
+    },
+    "Line.privateCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.privateCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Line.publicCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Line.shortName": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.shortName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Line.transportOrganisation": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.transportOrganisation",
+      "@type": "@id"
+    },
+    "Line.transportmode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.transportmode",
+      "@type": "@id"
+    },
+    "Line.url": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.url",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "LinkSequence": "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence",
+    "Literal": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "Network": "https://purl.eu/ns/mobility/timetables-and-planning#Network",
+    "Network.madeUpOf": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
+      "@type": "@id"
+    },
+    "Network.transportOrganisation": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Network.transportOrganisation",
+      "@type": "@id"
+    },
+    "Notice": "https://purl.eu/ns/mobility/timetables-and-planning#Notice",
+    "NoticeAssignment": "https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment",
+    "NoticeType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "NuisanceFacilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Number": "https://schema.org/Number",
+    "OperatingDay": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay",
+    "OperatingDay.dayLength": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.dayLength",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "OperatingDay.earliestTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingDay.earliestTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "OperatingPeriod": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod",
+    "OperatingPeriod.fromDate": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.fromDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "OperatingPeriod.toDate": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod.toDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Operator": "https://purl.eu/ns/mobility/timetables-and-planning#Operator",
+    "Operator.country": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Operator.country",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Organization": "http://www.w3.org/ns/org#Organization",
+    "ParkingPoint": "https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint",
+    "PassengerCapacity": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity",
+    "PassengerCommsFacilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "PassingTime": "https://purl.eu/ns/mobility/timetables-and-planning#PassingTime",
+    "PlaceType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Point(Class)": "https://purl.eu/ns/mobility/timetables-and-planning#Point",
+    "Point(Datatype)": "http://www.opengis.net/ont/sf#Point",
+    "PointInJourneyPattern": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern",
+    "PointInJourneyPattern.destinationDisplay": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PointInJourneyPattern.destinationDisplay",
+      "@type": "@id"
+    },
+    "PointInLinkSequence": "https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence",
+    "PointOnRoute": "https://purl.eu/ns/mobility/timetables-and-planning#PointOnRoute",
+    "Polygon": "http://www.opengis.net/ont/sf#Polygon",
+    "Presentation": "https://purl.eu/ns/mobility/timetables-and-planning#Presentation",
+    "PropertyOfDay": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay",
+    "PropertyOfDay.country": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.country",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "QuantitativeValue": "https://schema.org/QuantitativeValue",
+    "RegisteredOrganization": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "ReliefPoint": "https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint",
+    "Route": "https://purl.eu/ns/mobility/timetables-and-planning#Route",
+    "Route.direction": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.direction",
+      "@type": "@id"
+    },
+    "Season": "http://www.w3.org/2004/02/skos/core#Concept",
+    "ServiceCalendar": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar",
+    "ServiceCalendar.fromDate": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.fromDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "ServiceCalendar.toDate": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceCalendar.toDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "ServiceFacilitySet": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet",
+    "ServiceFacilityType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "ServiceJourney": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney",
+    "ServiceJourneyPattern": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern",
+    "StandardUnit": "https://schema.org/unitCode",
+    "String": "http://www.w3.org/2001/XMLSchema#string",
+    "Time": "http://www.w3.org/2001/XMLSchema#time",
+    "TimeTabledPassingTime": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime",
+    "TimeTabledPassingTime.departureDayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime.departureDayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "TimeTabledPassingTime.departureTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime.departureTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "Timeband": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband",
+    "Timeband.endTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband.endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "Timeband.startTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband.startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "Train": "https://purl.eu/ns/mobility/timetables-and-planning#Train",
+    "TrainComponent": "https://purl.eu/ns/mobility/timetables-and-planning#TrainComponent",
+    "TrainElement": "https://purl.eu/ns/mobility/timetables-and-planning#TrainElement",
+    "TrainElement.fareClass": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TrainElement.fareClass",
+      "@type": "@id"
+    },
+    "TrainElementtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TrainNumber": "https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber",
+    "TrainSizetype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Transportmode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TypeOfFuel": "http://www.w3.org/2004/02/skos/core#Concept",
+    "TypeOfLine": "http://www.w3.org/2004/02/skos/core#Concept",
+    "URI": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "UicOperatingPeriod": "https://purl.eu/ns/mobility/timetables-and-planning#UicOperatingPeriod",
+    "VehicleJourney": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney",
+    "VehicleJourney.dayType": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.dayType",
+      "@type": "@id"
+    },
+    "VehicleJourney.departureDayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureDayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "VehicleJourney.departureTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.departureTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "VehicleJourney.noticeAssignment": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Journey.noticeAssignment",
+      "@type": "@id"
+    },
+    "VehicleType": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType",
+    "Via": "https://purl.eu/ns/mobility/timetables-and-planning#Via",
+    "WeekOfMonth": "http://www.w3.org/2004/02/skos/core#Concept",
+    "aViewOf": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#aViewOf",
+      "@type": "@id"
+    },
+    "accessibilityAssessment": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.accessibilityAssessment",
+      "@type": "@id"
+    },
+    "accommodation": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#accomodation",
+      "@type": "@id"
+    },
+    "accommodationFacility": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#accomodationFacility",
+      "@type": "@id"
+    },
+    "additionalOperator": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#additionalOperator",
+      "@type": "@id"
+    },
+    "address": {
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "@id"
+    },
+    "administrativeUnitName": {
+      "@id": "https://fixme.com/",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "allowedDirection": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#allowedDirection",
+      "@type": "@id"
+    },
+    "allowedForWaitTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#allowedForWaitTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "arrivalDayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalDayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "arrivalTime": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#time"
+    },
+    "at": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#at",
+      "@type": "@id"
+    },
+    "available": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#available",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "belongingTo": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#belongingTo",
+      "@type": "@id"
+    },
+    "busNumber": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "calendarDate": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#calendarDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "capacity": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#capacity",
+      "@type": "@id"
+    },
+    "category": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#category",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "centroid": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#centroid",
+      "@type": "@id"
+    },
+    "changeOfDestinationDisplay": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#changeOfDestinationDisplay",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "commonFacility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#commonFacility",
+      "@type": "@id"
+    },
+    "component": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#component",
+      "@type": "@id"
+    },
+    "composedOf": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#composedOf",
+      "@type": "@id"
+    },
+    "contactDetails": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#contactDetails",
+      "@type": "@id"
+    },
+    "coveredBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#coveredBy",
+      "@type": "@id"
+    },
+    "crewBase": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#crewBase",
+      "@type": "@id"
+    },
+    "crowding": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#crowding",
+      "@type": "@id"
+    },
+    "date": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#date",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "dayOfMonth": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfMonth",
+      "@type": "https://www.w3.org/2001/XMLSchema#gday"
+    },
+    "dayOfWeek": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek",
+      "@type": "@id"
+    },
+    "dayOfYear": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear",
+      "@type": "https://www.w3.org/2001/XMLSchema#gmonthday"
+    },
+    "dayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Timeband.dayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "dayTypeAssignment.DayType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.DayType",
+      "@type": "@id"
+    },
+    "dayTypeAssignment.ServiceCalendar": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DayTypeAssignment.ServiceCalendar",
+      "@type": "@id"
+    },
+    "daysOfWeek": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#daysOfWeek",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "deadRunType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#deadRunType",
+      "@type": "@id"
+    },
+    "definedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#definedBy",
+      "@type": "@id"
+    },
+    "describedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#describedBy",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "directionType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Route.directionType",
+      "@type": "@id"
+    },
+    "distance": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#LinkSequence.distance",
+      "@type": "@id"
+    },
+    "documentLink": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#documentLink",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "endPointInSequence": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#endPointInSequence",
+      "@type": "@id"
+    },
+    "endTimeDayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.endTimeDayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "endedAt": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#endedAt",
+      "@type": "@id"
+    },
+    "euroClass": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#euroClass",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "facility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney.facility",
+      "@type": "@id"
+    },
+    "fareClass": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#PassengerCapacity.fareClass",
+      "@type": "@id"
+    },
+    "finishingDuration": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#finishingDuration",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "flexible": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#flexible",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "forAdvertisement": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#forAdvertisement",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "frontText": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.frontText",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "fullAddress": {
+      "@id": "http://www.w3.org/ns/locn#fullAddress",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "garage": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#garage",
+      "@type": "@id"
+    },
+    "garagePoint": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#garagePoint",
+      "@type": "@id"
+    },
+    "hasLiftOrRamp": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#hasLiftOrRamp",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "headway": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#headway",
+      "@type": "@id"
+    },
+    "height": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.height",
+      "@type": "@id"
+    },
+    "holidayType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#holidayType",
+      "@type": "@id"
+    },
+    "houseNumber": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "identifier": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#identifier",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "image": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#image",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "in": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.in",
+      "@type": "@id"
+    },
+    "including": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#including",
+      "@type": "@id"
+    },
+    "inverseRoute": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#inverseRoute",
+      "@type": "@id"
+    },
+    "journeyDuration": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#journeyDuration",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "label": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#TrainComponent.label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "legalName": {
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "length": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#length",
+      "@type": "@id"
+    },
+    "line": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#line",
+      "@type": "@id"
+    },
+    "location": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Point.location",
+      "@type": "@id"
+    },
+    "locatorDesignator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/locn#locatorDesignator",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "lowFloor": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#lowFloor",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "madeUpOf": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUpOf",
+      "@type": "@id"
+    },
+    "madeUsing": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#madeUsing",
+      "@type": "@id"
+    },
+    "mainline": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#mainline",
+      "@type": "@id"
+    },
+    "managedBy": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#managedBy",
+      "@type": "@id"
+    },
+    "maximumHeadwayInterval": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "member": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfPoints.member",
+      "@type": "@id"
+    },
+    "minimumHeadwayInterval": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#minimumHeadwayInterval",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "monitored": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#monitored",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "monthOfYear": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear",
+      "@type": "https://www.w3.org/2001/XMLSchema#gmonth"
+    },
+    "municipalityName": {
+      "@id": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "name": {
+      "@id": "http://purl.org/dc/elements/1.1/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "notice": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#notice",
+      "@type": "@id"
+    },
+    "noticeType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#noticeType",
+      "@type": "@id"
+    },
+    "nuisanceFacility": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#nuisanceFacility",
+      "@type": "@id"
+    },
+    "numberOfCars": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#numberOfCars",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "operatedBy": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operatedBy",
+      "@type": "@id"
+    },
+    "operatingDay": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operatingDay",
+      "@type": "@id"
+    },
+    "operatingPeriod": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operatingPeriod",
+      "@type": "@id"
+    },
+    "operator": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#operator",
+      "@type": "@id"
+    },
+    "oppositeDirection": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#oppositeDirection",
+      "@type": "@id"
+    },
+    "order": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#order",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "otherMode": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#otherMode",
+      "@type": "@id"
+    },
+    "part": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#part",
+      "@type": "@id"
+    },
+    "passedAt": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#passedAt",
+      "@type": "@id"
+    },
+    "passengerCommFacility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#passengerCommsFacility",
+      "@type": "@id"
+    },
+    "placeType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#placeType",
+      "@type": "@id"
+    },
+    "pointNumber": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#pointNumber",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "polygon": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#polygon",
+      "@type": "@id"
+    },
+    "postName": {
+      "@id": "http://www.w3.org/ns/locn#postName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "postOfficeBox": {
+      "@id": "http://www.w3.org/ns/locn#poBox",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "postalAddress": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#postalAddress",
+      "@type": "@id"
+    },
+    "postcode": {
+      "@id": "http://www.w3.org/ns/locn#postCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "preparationDuration": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#preparationDuration",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "presentation": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.presentation",
+      "@type": "@id"
+    },
+    "primaryMode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#primaryMode",
+      "@type": "@id"
+    },
+    "publicCode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Notice.publicCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "purposeOfGrouping": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities.purposeOfGrouping",
+      "@type": "@id"
+    },
+    "pushChairCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#pushChairCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "refersTo": {
+      "@id": "https://data.vlaanderen.be/ns/adres#verwijstNaar",
+      "@type": "@id"
+    },
+    "registration": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
+    "roadAddress": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#roadAddress",
+      "@type": "@id"
+    },
+    "route": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#route",
+      "@type": "@id"
+    },
+    "scheduledHeadwayInterval": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#scheduledHeadwayInterval",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "season": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#season",
+      "@type": "@id"
+    },
+    "seatingCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#seatingCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "selfPropelled": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#selfPropelled",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "serviceFacility": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#serviceFacility",
+      "@type": "@id"
+    },
+    "sideText": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.sideText",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "specialPlaceCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#specialPlaceCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "specifiedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#specifiedBy",
+      "@type": "@id"
+    },
+    "standingCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#standingCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "startPointInPattern": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startPointInPattern",
+      "@type": "@id"
+    },
+    "startTimeDayOffset": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Block.startTimeDayOffset",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "startedAt": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#startedAt",
+      "@type": "@id"
+    },
+    "text": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#text",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "thoroughfare": {
+      "@id": "http://www.w3.org/ns/locn#thoroughfare",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "through": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#through",
+      "@type": "@id"
+    },
+    "timeband": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timeband",
+      "@type": "@id"
+    },
+    "timingPointType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#timingPointType",
+      "@type": "@id"
+    },
+    "totalCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#totalCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "trainElement": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainElement",
+      "@type": "@id"
+    },
+    "trainElementtype": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainElemenType",
+      "@type": "@id"
+    },
+    "trainNumber": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainNumber",
+      "@type": "@id"
+    },
+    "trainSize": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainSize",
+      "@type": "@id"
+    },
+    "trainSizeType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#trainSizeType",
+      "@type": "@id"
+    },
+    "transportMode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportMode",
+      "@type": "@id"
+    },
+    "transportSubmode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Line.transportSubmode",
+      "@type": "@id"
+    },
+    "transportsubmode": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#Journey.transportSubmode",
+      "@type": "@id"
+    },
+    "typeOfFuel": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#typeOfFuel",
+      "@type": "@id"
+    },
+    "typeOfLine": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#typeOfLine",
+      "@type": "@id"
+    },
+    "usedBy": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#usedBy",
+      "@type": "@id"
+    },
+    "usedToDescribe": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#usedToDescribe",
+      "@type": "@id"
+    },
+    "using": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#using",
+      "@type": "@id"
+    },
+    "validDayBits": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#validDayBits",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "value": {
+      "@id": "https://schema.org/value",
+      "@type": "@id"
+    },
+    "vehicleType": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#vehicleType",
+      "@type": "@id"
+    },
+    "via": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.via",
+      "@type": "@id"
+    },
+    "viewedAs": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#viewedAs",
+      "@type": "@id"
+    },
+    "weekOfMonth": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#weekOfMonth",
+      "@type": "@id"
+    },
+    "weight": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#weight",
+      "@type": "@id"
+    },
+    "wheelchairPlaceCapacity": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#wheelchairPlaceCapacity",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "width": {
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#VehicleType.width",
+      "@type": "@id"
+    },
+    "within": {
+      "@container": "@set",
+      "@id": "https://purl.eu/ns/mobility/timetables-and-planning#within",
+      "@type": "@id"
+    }
+  }
+}

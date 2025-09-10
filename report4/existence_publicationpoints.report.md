@@ -71,19 +71,15 @@ error: missing '/tmp/generated/doc/vocabulary/mobility/timetables-and-planning/o
 #||#    + checking /home/circleci/project/config/dev/timetables.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-ap/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-ap//index.html'
 error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-ap/working-draft/2022-04-21/index.html'
 error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-ap/recommended-standard/2023-11-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/timetables-ap/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/vehicle-scheduling.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/vehiclescheduling-ap/ontwerpstandaard/toolchain4/index.html'
 
