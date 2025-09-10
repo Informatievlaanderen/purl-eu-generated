@@ -44,13 +44,10 @@ error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Water/ontwerps
 #||#    + checking /home/circleci/project/config/dev/consent.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/applicationprofile/consent/ontwerpstandaard/toolchain4'
-error: missing '/tmp/generated/doc/vocabulary/consent/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/vocabulary/consent/kandidaatstandaard/2022-02-23/index.html'
 error: missing '/tmp/generated/ns/consent//index.html'
-error: missing '/tmp/generated/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/index.html'
 error: missing '/tmp/generated/doc/vocabulary/consent/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/passenger-transport-hubs.publication.json
