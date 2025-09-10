@@ -1,0 +1,26 @@
+{% extends "purl-ap2_nl.j2" %}
+
+{% block summary %}
+<p>Het applicatieprofiel OSLO-PassengerTransportHubs laat zien hoe termen uit de bijbehorende <a href="https://purl.eu/ns/mobility/passenger-transport-hubs">woordenschat</a> moeten worden gebruikt om gegevens over Transport Hubs voor passagiers uit te wisselen.</p>
+
+<p>Door de verscheidenheid aan vervoersaanbiedingen en de bijbehorende transfermogelijkheden spelen vervoersknooppunten, waar reizigers kunnen overstappen tussen vervoerswijzen, een belangrijke rol bij het bereiken van basisbereikbaarheid.</p>
+
+<p>Het model bestaat uit twee delen. Het eerste deel geeft een algemene definitie van een Transport Hub en beschrijft de onderdelen ervan, met bijzondere aandacht voor personenvervoer. Het tweede deel richt zich op de Reiziger die Vervoersknooppunten gebruikt voor zijn Reis of Route.</p>
+
+<p>Hieronder richten we ons op deel één, voor meer info over deel twee verwijzen we naar het <a href="https://data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod">applicatieprofiel OSLO Mobility: Trips and Offerings</a>.</p>
+
+<p>Vervoersknooppunten bestaan uit 1) infrastructuurelementen, 2) vervoersnetwerken, 3) mobiliteitsdiensten en 4) aanvullende diensten.</p>
+
+<p>De klasse TransportHub is verder gespecialiseerd naar Hoppinppoint, de Vlaamse versie van een Transport Hub.</p>
+
+<p>InfrastructureElements vertegenwoordigen het fysieke aspect van een Transport Hub, het gaat om objecten zoals Informatiezuilen (zoals de Hoppin-zuil), Stopplaatsen, Parkeerplaatsen, Fietsenrekken, Opladers etc. Die allemaal nodig zijn voor de beschikbare transportnetwerken en de diensten die worden aangeboden op de transporthubs. De Infrastructure Elements en hun specialisaties zijn beschreven in de vocabulaires <a href="https://data.vlaanderen.be/doc/vocabularium/openbaardomein/infrastructuur">OSLO Public Domain - InfrastructureElements</a>, <a href="https://data.vlaanderen.be/doc/applicatieprofiel/mobiliteit/dienstregeling-en-planning/stopplaatsen/kandidaatstandaard/2022-03-17">OSLO Mobility - Timetables and Planning - Stopplaces</a> en out of <a href="https://www.mobivoc.org/">Open Mobility Vocabulary</a>.</p>
+
+<p>De transportnetwerken die beschikbaar zijn op een transportknooppunt zijn toegankelijk via transportobjecten zoals transportknooppunten (haltes, stations...) en transportverbindingen tussen die knooppunten. Er kan ook gebruik worden gemaakt van virtuele knooppunten (punten die zich op een verbinding tussen twee vervoersknooppunten bevinden, bijvoorbeeld de positie van een ongebruikte gedeelde trede in een stad of op het adres van een reiziger). De klasse Transport Object en zijn subklassen zijn hergebruikt uit de woordenschat van <a href="https://data.vlaanderen.be/ns/transportnetwerk">OSLO Transportnetwork</a>.</p>
+
+<p>Mobiliteitsdiensten zijn beschikbaar voor consumptie op de Vervoershub via de aanwezige Infrastructuurelementen en Vervoersobjecten. Dit kunnen lijndiensten of gedeelde trappen zijn, maar net zo goed parkeerplaatsen of fietspompen. Een Mobiliteitsdienst kan andere Mobiliteitsdiensten omvatten om diensten op verschillende granulariteitsniveaus te beschrijven (op een hoog niveau de dienst "deelmobiliteit in Vlaanderen" en op een lager niveau de diensten "deelauto's in Antwerpen" en "deelfietsen in Gent"). De Mobiliteitsdienst en aanverwante lessen komen uit de woordenschat <a href="https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod">OSLO-Mobility: Trips and Offerings</a>. Er is een klasse ResourceReport toegevoegd om bijvoorbeeld te rapporteren over het aantal deelfietsen dat beschikbaar is op een bepaalde locatie (bijvoorbeeld een fietsdeeldock).</p>
+
+<p>Ook bij een Transport Hub vinden we meestal ook allerlei Aanvullende Diensten, waaronder diensten die de Reiziger extra ritten besparen zoals brievenbussen, bakkerijen, krantenwinkels, etc.</p>
+
+<p>Opsommingen worden in principe buiten het toepassingsprofiel beschreven, vandaar dat de opsommingswaarden die in het diagram worden weergegeven, illustratief zijn.</p>
+
+{% endblock %}

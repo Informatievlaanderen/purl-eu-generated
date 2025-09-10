@@ -45,19 +45,15 @@ error: missing '/tmp/generated/doc/vocabulary/consent/ontwerpstandaard/toolchain
 #||#    + checking /home/circleci/project/config/dev/passenger-transport-hubs.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/stopplaces.publication.json
 #||# 
 #||# Directory check
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/stopplaces-ap/ontwerpstandaard/toolchain4'
 #||# 
 #||# index.html check
 error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/stopplaces-ap//index.html'
-error: missing '/tmp/generated/doc/applicationprofile/netex-belgium/stopplaces-ap/ontwerpstandaard/toolchain4/index.html'
 
 #||#    + checking /home/circleci/project/config/dev/timetables-and-planning.publication.json
 #||# 
