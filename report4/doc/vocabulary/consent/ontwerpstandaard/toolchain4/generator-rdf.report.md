@@ -2,11 +2,11 @@
 
 #||# -------------------------------------  
 
-2025-09-10T11:34:15.233Z error: Unable to find the definition for property [urn:oslo-toolchain:23b4fe42a6656b4d4f026e062e55d4909d7ca89b8eb9470c7d966bbb2f607cba](all-consent.jsonld#L1324).
+2025-09-25T09:12:41.417Z error: Unable to find the definition for property [urn:oslo-toolchain:23b4fe42a6656b4d4f026e062e55d4909d7ca89b8eb9470c7d966bbb2f607cba](all-consent.jsonld#L1324).
 
 #||# oslo-generator-rdf for language nl  
 
 #||# -------------------------------------  
 
-2025-09-10T11:34:15.842Z error: Unable to find the definition for property [urn:oslo-toolchain:23b4fe42a6656b4d4f026e062e55d4909d7ca89b8eb9470c7d966bbb2f607cba](all-consent.jsonld#L1324).
+2025-09-25T09:12:42.116Z error: Unable to find the definition for property [urn:oslo-toolchain:23b4fe42a6656b4d4f026e062e55d4909d7ca89b8eb9470c7d966bbb2f607cba](all-consent.jsonld#L1324).
 

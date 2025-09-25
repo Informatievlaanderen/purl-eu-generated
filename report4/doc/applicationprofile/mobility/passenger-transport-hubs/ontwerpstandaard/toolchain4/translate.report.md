@@ -1,3 +1,9 @@
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/translation/OSLO-PassengerTransportHubs-AP_en.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/translation/OSLO-PassengerTransportHubs-AP_en.json
+
+TRANSLATIONFILE: OSLO-PassengerTransportHubs-AP_en.json
+
 #||# translate for language en  
 
 #||# -------------------------------------  
@@ -13,6 +19,12 @@ WARNING The entered language values are the same!
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/translation/OSLO-PassengerTransportHubs-AP_en.json  
+
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/translation/OSLO-PassengerTransportHubs-AP_nl.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4/translation/OSLO-PassengerTransportHubs-AP_nl.json
+
+TRANSLATIONFILE: OSLO-PassengerTransportHubs-AP_nl.json
 
 #||# translate for language nl  
 

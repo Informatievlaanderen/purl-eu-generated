@@ -1,3 +1,9 @@
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/translation/OSLO-consent-ap_en.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/translation/OSLO-consent-ap_en.json
+
+TRANSLATIONFILE: OSLO-consent-ap_en.json
+
 #||# translate for language en  
 
 #||# -------------------------------------  
@@ -13,6 +19,12 @@ WARNING The entered language values are the same!
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/translation/OSLO-consent-ap_en.json  
+
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/translation/OSLO-consent-ap_nl.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/applicationprofile/consent/ontwerpstandaard/toolchain4/translation/OSLO-consent-ap_nl.json
+
+TRANSLATIONFILE: OSLO-consent-ap_nl.json
 
 #||# translate for language nl  
 

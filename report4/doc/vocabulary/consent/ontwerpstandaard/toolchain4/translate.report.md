@@ -1,3 +1,9 @@
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/vocabulary/consent/ontwerpstandaard/toolchain4/translation/consent_en.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/vocabulary/consent/ontwerpstandaard/toolchain4/translation/consent_en.json
+
+TRANSLATIONFILE: consent_en.json
+
 #||# translate for language en  
 
 #||# -------------------------------------  
@@ -13,6 +19,12 @@ WARNING The entered language values are the same!
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/vocabulary/consent/ontwerpstandaard/toolchain4/translation/consent_en.json  
+
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/vocabulary/consent/ontwerpstandaard/toolchain4/translation/consent_nl.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/vocabulary/consent/ontwerpstandaard/toolchain4/translation/consent_nl.json
+
+TRANSLATIONFILE: consent_nl.json
 
 #||# translate for language nl  
 
