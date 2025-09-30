@@ -16,13 +16,13 @@ Error: Unable to find a label for subject "[urn:oslo-toolchain:d582d3b4e2944a24f
 
 #||# -------------------------------------  
 
-2025-09-30T09:21:01.098Z warn: Unable to find the description for subject "[urn:oslo-toolchain:2049156247](all-OSLO-airAndWater-Water-ap.jsonld#L3257)".
+2025-09-30T09:30:23.788Z warn: Unable to find the description for subject "[urn:oslo-toolchain:2049156247](all-OSLO-airAndWater-Water-ap.jsonld#L3257)".
 
-2025-09-30T09:21:01.099Z warn: Unable to find the description for subject "[urn:oslo-toolchain:499715870](all-OSLO-airAndWater-Water-ap.jsonld#L3268)".
+2025-09-30T09:30:23.790Z warn: Unable to find the description for subject "[urn:oslo-toolchain:499715870](all-OSLO-airAndWater-Water-ap.jsonld#L3268)".
 
-2025-09-30T09:21:01.100Z warn: Unable to find the description for subject "urn:oslo-toolchain:487667944".
+2025-09-30T09:30:23.790Z warn: Unable to find the description for subject "urn:oslo-toolchain:487667944".
 
-2025-09-30T09:21:01.106Z warn: Unable to find the description for subject "[urn:oslo-toolchain:6ce0a740a381e7f07c4791356a53c071a0d3cce7c78b5c4143c19f57f77dc169](all-OSLO-airAndWater-Water-ap.jsonld#L2647)".
+2025-09-30T09:30:23.797Z warn: Unable to find the description for subject "[urn:oslo-toolchain:6ce0a740a381e7f07c4791356a53c071a0d3cce7c78b5c4143c19f57f77dc169](all-OSLO-airAndWater-Water-ap.jsonld#L2647)".
 
 Error: Unable to find a label for the domain "urn:oslo-toolchain:8099096f24ae3664e60cf21699bf50cedfe7e2195458db5ddd8cb2a82ccfc93f" of subject "[urn:oslo-toolchain:6ce0a740a381e7f07c4791356a53c071a0d3cce7c78b5c4143c19f57f77dc169](all-OSLO-airAndWater-Water-ap.jsonld#L2647)".
 
