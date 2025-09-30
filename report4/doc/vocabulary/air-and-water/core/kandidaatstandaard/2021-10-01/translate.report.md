@@ -1,3 +1,9 @@
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/translation/core_en.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/translation/core_en.json
+
+TRANSLATIONFILE: core_en.json
+
 #||# translate for language en  
 
 #||# -------------------------------------  
@@ -13,6 +19,12 @@ WARNING The entered language values are the same!
 #||# Write complete  
 
 #||# the file was saved to: /tmp/workspace/report4/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/translation/core_en.json  
+
+INPUTTRANSLATIONFILE: /tmp/workspace/src/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/translation/core_nl.json
+
+OUTPUTTRANSLATIONFILE: /tmp/workspace/report4/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/translation/core_nl.json
+
+TRANSLATIONFILE: core_nl.json
 
 #||# translate for language nl  
 

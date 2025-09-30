@@ -20,11 +20,5 @@
 #||#  
 Error: the following directories are unsupported
 [
-  "/tmp/generated/ns/air-and-water",
-  "/tmp/generated/ns/air-and-water/core",
-  "/tmp/generated/ns/air-and-water/water",
-  "/tmp/generated/ns/air-and-water/air",
-  "/tmp/generated/ns/consent",
-  "/tmp/generated/ns/mobility",
-  "/tmp/generated/ns/mobility/timetables-and-planning"
+  "/tmp/generated/ns/air-and-water/core"
 ]

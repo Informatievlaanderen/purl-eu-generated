@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 140  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Core/ontwerpstandaard/toolchain4/autotranslation/OSLO-airAndWater-Core-ap_nl.json  
 

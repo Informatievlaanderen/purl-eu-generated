@@ -30,7 +30,49 @@
 
 #||# start translating json  
 
-#||# Number of calls: 0  
+#||# Number of calls: 140  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+#||# Retry translation  
+
+#||# Retry translation  
+
+#||# Retry translation  
+
+#||# Retry translation  
+
+#||# Retry translation  
+
+#||# Retry translation  
+
+An error occured while translating text, thrown by Azure Translator  
+
+error The server rejected the request because the client has exceeded request limits.  
+
+#||# Retry translation  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Core/kandidaatstandaard/2021-10-01/autotranslation/OSLO-airAndWater-Core-ap_nl.json  
 

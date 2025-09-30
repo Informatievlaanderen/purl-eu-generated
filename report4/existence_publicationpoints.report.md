@@ -18,10 +18,6 @@ error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Air/ontwerpsta
 #||# Directory check
 #||# 
 #||# index.html check
-error: missing '/tmp/generated/doc/vocabulary/air-and-water/core/kandidaatstandaard/2021-10-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core/kandidaatstandaard/2021-10-01/index.html'
-error: missing '/tmp/generated/doc/applicationprofile/AirAndWater/Core//index.html'
-error: missing '/tmp/generated/ns/air-and-water/core//index.html'
 
 #||#    + checking /home/circleci/project/config/dev/air-and-water-water.publication.json
 #||# 

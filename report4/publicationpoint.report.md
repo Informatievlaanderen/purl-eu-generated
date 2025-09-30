@@ -1,3 +1,3 @@
 | Execution | Existence | Support |
 | --- | --- | --- |
-| [commit 63810b8cd5f7e52d209cfef349205e7b11b6ab40](https://github.com/Informatievlaanderen/purl-eu/commit/63810b8cd5f7e52d209cfef349205e7b11b6ab40) | [&#9736;](/report4/existence_publicationpoints.report.md)| [&#9736;](/report4/support_publicationpoints.report.md)|
+| [commit c5862ce16ccd749e7e64300b1e575cbb326e0952](https://github.com/Informatievlaanderen/purl-eu/commit/c5862ce16ccd749e7e64300b1e575cbb326e0952) | [&#9736;](/report4/existence_publicationpoints.report.md)| [&#9736;](/report4/support_publicationpoints.report.md)|
