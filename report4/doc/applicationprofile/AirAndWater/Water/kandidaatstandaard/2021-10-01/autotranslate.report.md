@@ -30,7 +30,7 @@
 
 #||# start translating json  
 
-#||# Number of calls: 53  
+#||# Number of calls: 0  
 
 #||# start writing file /tmp/workspace/report4/doc/applicationprofile/AirAndWater/Water/kandidaatstandaard/2021-10-01/autotranslation/OSLO-airAndWater-Water-ap_nl.json  
 

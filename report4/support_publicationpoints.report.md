@@ -20,5 +20,6 @@
 #||#  
 Error: the following directories are unsupported
 [
-  "/tmp/generated/ns/air-and-water/core"
+  "/tmp/generated/ns/air-and-water/core",
+  "/tmp/generated/ns/air-and-water/water"
 ]
