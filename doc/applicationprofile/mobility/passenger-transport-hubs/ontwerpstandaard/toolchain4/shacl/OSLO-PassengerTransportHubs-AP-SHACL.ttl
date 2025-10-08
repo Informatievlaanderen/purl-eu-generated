@@ -98,25 +98,25 @@
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#ResourcereportShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#AddressrepresentationShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#StringShape>,
+    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#LanguagestringShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#CapacityShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#IntegerShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#GeographicalnameShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#DatetimeShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#DurationShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#GeometryShape>,
-    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#LanguagestringShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#PeriodShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#AvailabilityShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#AccessibilityShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#IdentifierShape>,
+    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#DirectedlinkShape>,
+    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#PointShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#RoutedescriptionShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#MonetaryamountShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#TimetableShape>,
-    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#PointShape>,
     <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#PolygonShape>,
-    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#OpeninghoursShape>,
-    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#DirectedlinkShape>,
-    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#ContactinformationShape> .
+    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#ContactinformationShape>,
+    <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#OpeninghoursShape> .
 
 <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#AccessibilityShape> a shacl:NodeShape;
   rdfs:label "Accessibility"@en;
@@ -184,6 +184,17 @@
   rdfs:comment "Service that complements or supports other Services."@en;
   shacl:closed false;
   shacl:property [
+    a shacl:PropertyShape;
+    rdfs:label "title"@en;
+    rdfs:comment "Name of the additional service."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Additionalservice.Title>;
+    shacl:datatype rdf:langString;
+    shacl:description "Name of the additional service."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "title"@en;
+    shacl:path dc:title
+  ], [
     a shacl:PropertyShape;
     rdfs:label "type"@en;
     <http://purl.org/vocab/vann/usageNote> "E.g. ticketing, waiting facilities, sanitary facilities, AED..."@en;
@@ -284,6 +295,36 @@
     shacl:maxCount "1";
     shacl:name "boxNumber"@en;
     shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "streetName"@en;
+    rdfs:comment "Street name of the address."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Addressrepresentation.Streetname>;
+    shacl:datatype rdf:langString;
+    shacl:description "Street name of the address."@en;
+    shacl:maxCount "1";
+    shacl:name "streetName"@en;
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "municipalityName"@en;
+    rdfs:comment "Municipality name of the address."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Addressrepresentation.Municipalityname>;
+    shacl:datatype rdf:langString;
+    shacl:description "Municipality name of the address."@en;
+    shacl:maxCount "1";
+    shacl:name "municipalityName"@en;
+    shacl:path <https://data.vlaanderen.be/ns/adres#gemeentenaam>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "country"@en;
+    rdfs:comment "Country where the address is located in."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Addressrepresentation.Country>;
+    shacl:datatype rdf:langString;
+    shacl:description "Country where the address is located in."@en;
+    shacl:maxCount "1";
+    shacl:name "country"@en;
+    shacl:path <https://data.vlaanderen.be/ns/adres#land>
   ], [
     a shacl:PropertyShape;
     rdfs:label "postCode"@en;
@@ -444,6 +485,15 @@
     shacl:description "Means of transport that is electrically powered."@en;
     shacl:name "meansOfTransport"@en;
     shacl:path <https://purl.eu/ns/mobility/passenger-transport-hubs#Charger.meansOfTransport>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "plugType"@en;
+    rdfs:comment "The type of charger."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Charger.Plugtype>;
+    shacl:class skos:Concept;
+    shacl:description "The type of charger."@en;
+    shacl:name "plugType"@en;
+    shacl:path <http://schema.mobivoc.org/#plugType>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility/passenger-transport-hubs#Charger> .
 
@@ -482,6 +532,18 @@
   rdfs:label "DirectedLink"@en;
   rdfs:comment "Link in either its positive or negative direction."@en;
   shacl:closed false;
+  shacl:property [
+    a shacl:PropertyShape;
+    rdfs:label "direction"@en;
+    rdfs:comment "Indicates whether the direction of the link corresponds to its positive or negative direction."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Directedlink.Direction>;
+    shacl:class skos:Concept;
+    shacl:description "Indicates whether the direction of the link corresponds to its positive or negative direction."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "direction"@en;
+    shacl:path <https://data.vlaanderen.be/ns/netwerk#richting>
+  ];
   shacl:targetClass <https://data.vlaanderen.be/ns/netwerk#GerichteLink> .
 
 <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#DurationShape> a shacl:NodeShape;
@@ -500,6 +562,39 @@
   rdfs:label "Executor"@en;
   rdfs:comment "Agent performing mobility service."@en;
   shacl:closed false;
+  shacl:property [
+    a shacl:PropertyShape;
+    rdfs:label "preferredLabel"@en;
+    rdfs:comment "Name by which the performer is preferably identified."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Executor.Preferredlabel>;
+    shacl:datatype rdf:langString;
+    shacl:description "Name by which the performer is preferably identified."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "preferredLabel"@en;
+    shacl:path skos:prefLabel
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "registration"@en;
+    <http://purl.org/vocab/vann/usageNote> "In the CBE, this is the enterprise number."@en;
+    rdfs:comment "The registration of the executor."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Executor.Registration>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "The registration of the executor."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "registration"@en;
+    shacl:path <http://www.w3.org/ns/regorg#registration>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "contactInformation"@en;
+    rdfs:comment "Information such as e-mail, telephone... which allows the executor to be contacted."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Executor.Contactinformation>;
+    shacl:class schema:ContactPoint;
+    shacl:description "Information such as e-mail, telephone... which allows the executor to be contacted."@en;
+    shacl:name "contactInformation"@en;
+    shacl:path schema:contactPoint
+  ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Executor> .
 
 <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#FormalframeworkShape> a shacl:NodeShape;
@@ -885,6 +980,17 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   shacl:closed false;
   shacl:property [
     a shacl:PropertyShape;
+    rdfs:label "title"@en;
+    rdfs:comment "Name of the Mobility Service."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Mobilityservice.Title>;
+    shacl:datatype rdf:langString;
+    shacl:description "Name of the Mobility Service."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "title"@en;
+    shacl:path dc:title
+  ], [
+    a shacl:PropertyShape;
     rdfs:label "provider"@en;
     rdfs:comment "The Mobility Service provider."@en;
     rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Mobilityservice.Provider>;
@@ -944,6 +1050,16 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:description "Price plan of the Mobility Service."@en;
     shacl:name "priceSpecification"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#priceSpecification>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "spatialCoverage"@en;
+    <http://purl.org/vocab/vann/usageNote> "E.g. Brussels Region, Antwerp..."@en;
+    rdfs:comment "Area or Place within which the Mobility Service is offered."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Mobilityservice.Spatialcoverage>;
+    shacl:class dc:Location;
+    shacl:description "Area or Place within which the Mobility Service is offered."@en;
+    shacl:name "spatialCoverage"@en;
+    shacl:path dc:spatial
   ], [
     a shacl:PropertyShape;
     rdfs:label "availability"@en;
@@ -1286,6 +1402,27 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   <http://purl.org/vocab/vann/usageNote> "By a registered organisation, we mean an organisation with a legal status (established through registration), e.g. LC,  NPO..."@en;
   rdfs:comment "Registered Organisation providing Mobility Services."@en;
   shacl:closed false;
+  shacl:property [
+    a shacl:PropertyShape;
+    rdfs:label "preferredLabel"@en;
+    rdfs:comment "Name preferred by the Organisation."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Provider.Preferredlabel>;
+    shacl:datatype rdf:langString;
+    shacl:description "Name preferred by the Organisation."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "preferredLabel"@en;
+    shacl:path skos:prefLabel
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "contactInformation"@en;
+    rdfs:comment "Information such as email, telephone... which allows the Organisation to be contacted."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Provider.Contactinformation>;
+    shacl:class schema:ContactPoint;
+    shacl:description "Information such as email, telephone... which allows the Organisation to be contacted."@en;
+    shacl:name "contactInformation"@en;
+    shacl:path schema:contactPoint
+  ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Provider> .
 
 <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#PublicorganisationShape> a shacl:NodeShape;
@@ -1401,6 +1538,17 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:path dc:type
   ], [
     a shacl:PropertyShape;
+    rdfs:label "location"@en;
+    <http://purl.org/vocab/vann/usageNote> "This could be the real-time location of the vehicle, e.g. in free-floating part transport."@en;
+    rdfs:comment "Location of the Resource."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Resource.Location>;
+    shacl:class prov:Location;
+    shacl:description "Location of the Resource."@en;
+    shacl:maxCount "1";
+    shacl:name "location"@en;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#location>
+  ], [
+    a shacl:PropertyShape;
     rdfs:label "status"@en;
     <http://purl.org/vocab/vann/usageNote> "E.g. reserved, inactive, available. Determines whether a resource can be used."@en;
     rdfs:comment "State of a Resource."@en;
@@ -1468,6 +1616,16 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:description "Engine of the means of transport."@en;
     shacl:name "propulsion"@en;
     shacl:path <https://purl.eu/ns/mobility/passenger-transport-hubs#propulsion>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "location"@en;
+    <http://purl.org/vocab/vann/usageNote> "This could be the real-time location of the vehicle, e.g. in free-floating part transport."@en;
+    rdfs:comment "Location of the Resource."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Resourcereport.Location>;
+    shacl:class prov:Location;
+    shacl:description "Location of the Resource."@en;
+    shacl:name "location"@en;
+    shacl:path dc:spatial
   ], [
     a shacl:PropertyShape;
     rdfs:label "meansOfTransport"@en;
@@ -1603,6 +1761,28 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:path dc:type
   ], [
     a shacl:PropertyShape;
+    rdfs:label "departurePoint"@en;
+    rdfs:comment "Location where the Route starts."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Route.Departurepoint>;
+    shacl:class prov:Location;
+    shacl:description "Location where the Route starts."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "departurePoint"@en;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#departurePoint>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "arrivalPoint"@en;
+    rdfs:comment "Location where the Route ends."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Route.Arrivalpoint>;
+    shacl:class prov:Location;
+    shacl:description "Location where the Route ends."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "arrivalPoint"@en;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#arrivalPoint>
+  ], [
+    a shacl:PropertyShape;
     rdfs:label "consistsOf"@en;
     rdfs:comment "Sequence of Route Segments that make up the Route."@en;
     rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Route.Consistsof>;
@@ -1626,6 +1806,27 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
   rdfs:comment "Significant position in the Route that always coincides with the beginning or the end of a Route segment."@en;
   shacl:closed false;
   shacl:property [
+    a shacl:PropertyShape;
+    rdfs:label "type"@en;
+    rdfs:comment "Nature of the Route node"@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Routenode.Type>;
+    shacl:class skos:Concept;
+    shacl:description "Nature of the Route node"@en;
+    shacl:maxCount "1";
+    shacl:name "type"@en;
+    shacl:path dc:type
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "geometry"@en;
+    rdfs:comment "Location of the Route node."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Routenode.Geometry>;
+    shacl:class <http://www.opengis.net/ont/sf#Point>;
+    shacl:description "Location of the Route node."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "geometry"@en;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
     a shacl:PropertyShape;
     rdfs:label "realisedBy"@en;
     <http://purl.org/vocab/vann/usageNote> "E.g. parking."@en;
@@ -1719,6 +1920,16 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:minCount "1";
     shacl:name "meansOfTransport"@en;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.vervoermiddel>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "link"@en;
+    rdfs:comment "Sequence of Directed Links that make up the Route Segment."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Routesegment.Link>;
+    shacl:class <https://data.vlaanderen.be/ns/netwerk#GerichteLink>;
+    shacl:description "Sequence of Directed Links that make up the Route Segment."@en;
+    shacl:minCount "1";
+    shacl:name "link"@en;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.link>
   ], [
     a shacl:PropertyShape;
     rdfs:label "propulsion"@en;
@@ -1868,6 +2079,16 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.placeType>
   ], [
     a shacl:PropertyShape;
+    rdfs:label "roadAdress"@en;
+    rdfs:comment "Address of a numbered building on a named road."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Stopplace.Roadadress>;
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:description "Address of a numbered building on a named road."@en;
+    shacl:maxCount "1";
+    shacl:name "roadAdress"@en;
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.roadAddress>
+  ], [
+    a shacl:PropertyShape;
     rdfs:label "centroid"@en;
     rdfs:comment "Centre of the stopping point."@en;
     rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Stopplace.Centroid>;
@@ -1886,6 +2107,16 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:maxCount "1";
     shacl:name "polygon"@en;
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.polygon>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "parentSite"@en;
+    rdfs:comment "Parent site containing this stop."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Stopplace.Parentsite>;
+    shacl:class <http://todo.com/Site>;
+    shacl:description "Parent site containing this stop."@en;
+    shacl:maxCount "1";
+    shacl:name "parentSite"@en;
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.parentSite>
   ], [
     a shacl:PropertyShape;
     rdfs:label "transportMode"@en;
@@ -2214,6 +2445,27 @@ More info can be found in the implementation model: https://wegenenverkeer.data.
     shacl:minCount "1";
     shacl:name "type"@en;
     shacl:path dc:type
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "geometry"@en;
+    rdfs:comment "Location of the Transport node."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Transportnode.Geometry>;
+    shacl:class <http://www.opengis.net/ont/sf#Point>;
+    shacl:description "Location of the Transport node."@en;
+    shacl:maxCount "1";
+    shacl:minCount "1";
+    shacl:name "geometry"@en;
+    shacl:path <https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie>
+  ], [
+    a shacl:PropertyShape;
+    rdfs:label "identifier"@en;
+    rdfs:comment "Identifier of the Transport node."@en;
+    rdfs:seeAlso <https://purl.eu/doc/applicationprofile/mobility/passenger-transport-hubs/ontwerpstandaard/toolchain4#Transportnode.Identifier>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identifier of the Transport node."@en;
+    shacl:maxCount "1";
+    shacl:name "identifier"@en;
+    shacl:path <https://data.vlaanderen.be/ns/netwerk#identificator>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/transportnetwerk#Transportknoop> .
 
